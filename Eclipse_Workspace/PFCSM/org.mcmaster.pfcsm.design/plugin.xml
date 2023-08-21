@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="OpenEmbeddedEditor" name="OpenEmbeddedEditor " schema="schema/OpenEmbeddedEditor.exsd"/>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.mcmaster.pfcsm.design.Activator"
+               id="org.mcmaster.pfcsm.design"
+	       name="pfcsm">
+    </component>
+  </extension>
+</plugin>

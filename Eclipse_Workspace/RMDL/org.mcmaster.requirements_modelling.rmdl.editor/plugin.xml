@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rmdl -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.mcmaster.requirements_modelling.rmdl.presentation.RmdlModelWizardID"
+            name="%_UI_RmdlModelWizard_label"
+            class="org.mcmaster.requirements_modelling.rmdl.presentation.RmdlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RmdlModelFile.gif">
+         <description>%_UI_RmdlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated rmdl -->
+      <editor
+            id="org.mcmaster.requirements_modelling.rmdl.presentation.RmdlEditorID"
+            name="%_UI_RmdlEditor_label"
+            icon="icons/full/obj16/RmdlModelFile.gif"
+            extensions="rmdl"
+            class="org.mcmaster.requirements_modelling.rmdl.presentation.RmdlEditor"
+            contributorClass="org.mcmaster.requirements_modelling.rmdl.presentation.RmdlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.mcmaster.pfcsm.edit;singleton:=true
+Automatic-Module-Name: org.mcmaster.pfcsm.edit
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.mcmaster.pfcsm.provider.PfcsmEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.mcmaster.pfcsm.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.mcmaster.pfcsm;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

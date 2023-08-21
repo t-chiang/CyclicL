@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="pfcsm" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint" modelFileExtension="pfcsm">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Traditional Class Diagram" initialisation="true" showOnStartup="true" domainClass="pfcsm::ModelRoot" enablePopupBars="true">
+      <metamodel href="../../org.mcmaster.pfcsm/model/pfcsm.ecore#/"/>
+      <defaultLayer name="Default"/>
+      <additionalLayers name="Traditional Diagram Layer" activeByDefault="true" optional="false">
+        <edgeMappings name="Association" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Association" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <beginLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:srcMult">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <endLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:tgtMult">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Composition" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Composition" useDomainElement="true">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <endLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:tgtMult">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Inheritance" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Inheritance" useDomainElement="true">
+          <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="XOR" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::XOR" useDomainElement="true">
+          <style lineStyle="dot" sourceArrow="OutputClosedArrow" targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Abstract Class" semanticCandidatesExpression="feature:class" domainClass="pfcsm::AbstractClass" childrenPresentation="List">
+          <subNodeMappings name="Operation" semanticCandidatesExpression="feature:operation" domainClass="pfcsm::Operation">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="15" verticalDiameterComputationExpression="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Class Variable" semanticCandidatesExpression="feature:classvariable" domainClass="pfcsm::ClassVariable">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW" width="15" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" widthComputationExpression="20" heightComputationExpression="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+          <conditionnalStyles predicateExpression="feature:isOptional">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="50" arcHeight="50" borderSizeComputationExpression="1" labelSize="12" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <containerMappings name="Concrete Class" semanticCandidatesExpression="feature:class" domainClass="pfcsm::ConcreteClass" childrenPresentation="List">
+          <subNodeMappings name="Class Variable" semanticCandidatesExpression="feature:classvariable" domainClass="pfcsm::ClassVariable">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW" width="15" height="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Operation" semanticCandidatesExpression="feature:operation" domainClass="pfcsm::Operation">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="15" verticalDiameterComputationExpression="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" widthComputationExpression="20" heightComputationExpression="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+          <conditionnalStyles predicateExpression="feature:isOptional">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="50" arcHeight="50" borderSizeComputationExpression="1" labelSize="12" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="Class Elements">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Class" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::ConcreteClass" referenceName="class">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Class'+container.class->filter(pfcsm::Class)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Abstract Class" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::AbstractClass" referenceName="class">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Class'+container.class->filter(pfcsm::Class)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Class Variable" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Class%20Variable']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::ClassVariable" referenceName="classvariable">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Variable'+container.classvariable->filter(pfcsm::ClassVariable)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Operation" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Operation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Operation" referenceName="operation">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Operation'+container.operation->filter(pfcsm::Operation)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Association" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Association']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Association" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Composition" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Composition']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Composition" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Inheritance" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Inheritance']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Inheritance" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="XOR" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='XOR']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::XOR" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Derived elements"/>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Detailed Class Diagram" domainClass="pfcsm::ModelRoot" enablePopupBars="true">
+      <defaultLayer name="Default"/>
+      <additionalLayers name="Detailed diagram layer" activeByDefault="true" optional="false">
+        <edgeMappings name="Association" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']/@subNodeMappings[name='Class%20Variable'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']/@subNodeMappings[name='Operation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Class%20Variable'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Operation']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']/@subNodeMappings[name='Class%20Variable'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']/@subNodeMappings[name='Operation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Class%20Variable'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Operation']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Association" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <beginLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:srcMult">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </beginLabelStyleDescription>
+            <endLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:tgtMult">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Composition" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Composition" useDomainElement="true">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <endLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:tgtMult">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </endLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Inheritance" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Inheritance" useDomainElement="true">
+          <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="XOR" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Composition']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Abstract%20Class'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Concrete%20Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::XOR" useDomainElement="true">
+          <style lineStyle="dot" sourceArrow="OutputClosedArrow" targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Abstract Class" semanticCandidatesExpression="feature:class" domainClass="pfcsm::AbstractClass">
+          <subNodeMappings name="Operation" semanticCandidatesExpression="feature:operation" domainClass="pfcsm::Operation">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="20" verticalDiameterComputationExpression="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Class Variable" semanticCandidatesExpression="feature:classvariable" domainClass="pfcsm::ClassVariable">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW" width="20" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" widthComputationExpression="20" heightComputationExpression="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+          <conditionnalStyles predicateExpression="feature:isOptional">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="50" arcHeight="50" borderSizeComputationExpression="1" labelSize="12" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <containerMappings name="Concrete Class" semanticCandidatesExpression="feature:class" domainClass="pfcsm::ConcreteClass">
+          <subNodeMappings name="Class Variable" semanticCandidatesExpression="feature:classvariable" domainClass="pfcsm::ClassVariable">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW" width="20" height="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' + self.type" labelPosition="node" resizeKind="NSEW" width="20" height="3">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Operation" semanticCandidatesExpression="feature:operation" domainClass="pfcsm::Operation">
+            <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '- ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="20" verticalDiameterComputationExpression="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="feature:public">
+              <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="aql: '+ ' + self.name + ' : ' +  self.returnType" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="20" verticalDiameterComputationExpression="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" widthComputationExpression="20" heightComputationExpression="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+          <conditionnalStyles predicateExpression="feature:isOptional">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="50" arcHeight="50" borderSizeComputationExpression="1" labelSize="12" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="Class Elements">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Class" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::ConcreteClass" referenceName="class">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Class'+container.class->filter(pfcsm::Class)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Abstract Class" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::AbstractClass" referenceName="class">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Class'+container.class->filter(pfcsm::Class)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Class Variable" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']/@subNodeMappings[name='Class%20Variable'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Class%20Variable']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::ClassVariable" referenceName="classvariable">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Variable'+container.classvariable->filter(pfcsm::ClassVariable)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Operation" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Abstract%20Class']/@subNodeMappings[name='Operation'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@containerMappings[name='Concrete%20Class']/@subNodeMappings[name='Operation']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Operation" referenceName="operation">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Operation'+container.operation->filter(pfcsm::Operation)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Association" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Traditional%20Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Association']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Association" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Composition" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@edgeMappings[name='Composition']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Composition" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Inheritance" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@edgeMappings[name='Inheritance']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Inheritance" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="XOR" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Detailed%20Class%20Diagram']/@additionalLayers[name='Detailed%20diagram%20layer']/@edgeMappings[name='XOR']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::ModelRoot)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::XOR" referenceName="reference" variableName="reference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Finite State Machine (Operation) Diagram" domainClass="pfcsm::Operation" enablePopupBars="true">
+      <metamodel href="../../org.mcmaster.pfcsm/model/pfcsm.ecore#/"/>
+      <defaultLayer name="Default"/>
+      <additionalLayers name="Diagram Layer" activeByDefault="true" optional="false">
+        <edgeMappings name="Transition" semanticCandidatesExpression="feature:transition" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Finite%20State%20Machine%20(Operation)%20Diagram']/@additionalLayers[name='Diagram%20Layer']/@containerMappings[name='State']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Finite%20State%20Machine%20(Operation)%20Diagram']/@additionalLayers[name='Diagram%20Layer']/@containerMappings[name='State']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Transition" useDomainElement="true">
+          <style sizeComputationExpression="5">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12" labelExpression="aql: self.order +' ' + self.condition">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="State" semanticCandidatesExpression="feature:state" domainClass="pfcsm::State">
+          <subNodeMappings name="Action" semanticCandidatesExpression="feature:action" domainClass="pfcsm::Action">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="feature:body" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="20" height="20">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:ShapeContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" widthComputationExpression="50" heightComputationExpression="50">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="FSM Elements">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="State" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Finite%20State%20Machine%20(Operation)%20Diagram']/@additionalLayers[name='Diagram%20Layer']/@containerMappings[name='State']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::State" referenceName="state">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: 'State' + container.state -> filter(pfcsm::State) -> size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Transition" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Finite%20State%20Machine%20(Operation)%20Diagram']/@additionalLayers[name='Diagram%20Layer']/@edgeMappings[name='Transition']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::Operation)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Transition" referenceName="transition" variableName="transition">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="condition" valueExpression="aql: 'Some condition'"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="order" valueExpression="aql: container.transition->filter(pfcsm::Transition)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Action" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Finite%20State%20Machine%20(Operation)%20Diagram']/@additionalLayers[name='Diagram%20Layer']/@containerMappings[name='State']/@subNodeMappings[name='Action']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Action" referenceName="action">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="body" valueExpression="aql: 'hello world'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.mcmaster.pfcsm.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

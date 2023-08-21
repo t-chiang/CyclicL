@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.mcmaster.requirements_modelling.rmdl/src-gen"
+    creationIcons="false" editDirectory="/org.mcmaster.requirements_modelling.rmdl.edit/src-gen"
+    editorDirectory="/org.mcmaster.requirements_modelling.rmdl.editor/src-gen" modelPluginID="org.mcmaster.requirements_modelling.rmdl"
+    modelName="Rmdl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>rmdl.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Rmdl" basePackage="org.mcmaster.requirements_modelling" disposableProviderFactory="true"
+      ecorePackage="rmdl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rmdl.ecore#//TestType">
+      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/UnitTest"/>
+      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/ClassTest"/>
+      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/WhiteBox"/>
+      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/BlackBox"/>
+    </genEnums>
+    <genClasses ecoreClass="rmdl.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement/verifyMethod"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement/child"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Functional"/>
+    <genClasses ecoreClass="rmdl.ecore#//Qualitative"/>
+    <genClasses ecoreClass="rmdl.ecore#//Constraint"/>
+    <genClasses ecoreClass="rmdl.ecore#//Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Package/requirement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Package/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Package/entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Package/packageID"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//ModelRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/testcase"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Safety"/>
+    <genClasses ecoreClass="rmdl.ecore#//Entity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Entity/satisfiedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Entity/verificationTgt"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Reference"/>
+    <genClasses ecoreClass="rmdl.ecore#//Trace">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Trace/designelement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Trace/requirement"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//DesignElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/satisfies"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//TestCase">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//TestCase/verificationSrc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/description"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Verification">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Verification/testcase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Verification/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Decomposition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Decomposition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Decomposition/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

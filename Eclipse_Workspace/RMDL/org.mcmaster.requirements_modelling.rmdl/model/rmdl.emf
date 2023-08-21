@@ -1,0 +1,49 @@
+@namespace(uri="http://www.example.org/rmdl", prefix="rmdl")
+package rmdl;
+
+abstract class Requirement extends Entity {
+	attr String[1] name;
+	attr String[1] ~id;
+	attr String description;
+}
+
+class Functional extends Requirement {
+}
+
+class Qualitative extends Requirement {
+}
+
+class Constraint extends Requirement {
+}
+
+class Package extends Entity {
+	val Requirement[*] requirement;
+	attr String[1] name;
+	val Package[*] ~package;
+}
+
+class ModelRoot {
+	val Entity[*] entity;
+	val References[*] references;
+}
+
+class Safety extends Requirement {
+}
+
+abstract class Entity {
+	ref Trace#requirement traceTgt;
+}
+
+abstract class References {
+}
+
+class Trace extends References {
+	ref DesignElement[1]#traceSrc designelement;
+	ref Entity[1]#traceTgt requirement;
+}
+
+class DesignElement extends Entity {
+	attr String[1] name;
+	ref Trace[*]#designelement traceSrc;
+}
+
