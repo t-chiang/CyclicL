@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="Test Project" default="Des2Req" basedir = ".">
+	<property name = "build" location = ".build"/>
+	<target name= "Des2Req" depends = "InitReqDiag"> 
+	</target>
+	
+	<target name="InitReqDiag">
+		<input addproperty = "ReqDiagName"
+			defaultvalue = "ReqDiag"
+			message = "Enter name of generated requirment diagram file">
+		</input>
+		<touch file= "newfile.txt"/>
+		<mkdir dir= "${basedir}/build/build"/>
+		<echo>name of new file is ${ReqDiagName}</echo>
+	</target>
+
+</project>
+
