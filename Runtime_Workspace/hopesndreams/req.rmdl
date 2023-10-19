@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rmdl="http://www.example.org/rmdl">
+  <rmdl:ModelRoot/>
+  <rmdl:DesignElement name="Class1"/>
+</xmi:XMI>

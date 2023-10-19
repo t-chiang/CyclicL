@@ -1,0 +1,17 @@
+import "HelperFunctions.eol";
+
+rule root2root
+	transform source : design!ModelRoot
+	to target : requirement!ModelRoot{
+		target.entity.addAll(source.class.equivalents().flatten().println("Eq Classes "));		
+	}
+
+rule concreteClass2designElement
+	transform source : design!ConcreteClass
+	to target : requirement!DesignElement{
+		target.name = source.name;
+//		target.eContainer = source.eContainer.equivalent(); not recommended
+	}
+	
+	
+
