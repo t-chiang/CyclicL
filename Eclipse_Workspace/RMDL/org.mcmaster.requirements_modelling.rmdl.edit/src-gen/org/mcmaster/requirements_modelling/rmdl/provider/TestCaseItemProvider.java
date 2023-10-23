@@ -57,6 +57,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 			addIdPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addModelrootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -121,6 +122,21 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 								"_UI_TestCase_type"),
 						RmdlPackage.Literals.TEST_CASE__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Modelroot feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModelrootPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_TestCase_modelroot_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_modelroot_feature",
+								"_UI_TestCase_type"),
+						RmdlPackage.Literals.TEST_CASE__MODELROOT, true, false, true, null, null, null));
 	}
 
 	/**

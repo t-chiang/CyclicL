@@ -52,6 +52,7 @@ public class EntityItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addSatisfiedByPropertyDescriptor(object);
 			addVerificationTgtPropertyDescriptor(object);
+			addModelrootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +85,21 @@ public class EntityItemProvider extends ItemProviderAdapter implements IEditingD
 						getString("_UI_PropertyDescriptor_description", "_UI_Entity_verificationTgt_feature",
 								"_UI_Entity_type"),
 						RmdlPackage.Literals.ENTITY__VERIFICATION_TGT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Modelroot feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModelrootPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Entity_modelroot_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Entity_modelroot_feature",
+								"_UI_Entity_type"),
+						RmdlPackage.Literals.ENTITY__MODELROOT, true, false, true, null, null, null));
 	}
 
 	/**

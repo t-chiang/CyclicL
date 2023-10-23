@@ -125,7 +125,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 			org.mcmaster.requirements_modelling.rmdl.Package package_ = (org.mcmaster.requirements_modelling.rmdl.Package) theEObject;
 			T result = casePackage(package_);
 			if (result == null)
-				result = caseEntity(package_);
+				result = caseModelRoot(package_);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

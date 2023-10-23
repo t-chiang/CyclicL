@@ -16,8 +16,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.TestType;
@@ -35,6 +37,7 @@ import org.mcmaster.requirements_modelling.rmdl.Verification;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getModelroot <em>Modelroot</em>}</li>
  * </ul>
  *
  * @generated
@@ -211,12 +214,61 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ModelRoot getModelroot() {
+		if (eContainerFeatureID() != RmdlPackage.TEST_CASE__MODELROOT)
+			return null;
+		return (ModelRoot) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModelroot(ModelRoot newModelroot, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newModelroot, RmdlPackage.TEST_CASE__MODELROOT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModelroot(ModelRoot newModelroot) {
+		if (newModelroot != eInternalContainer()
+				|| (eContainerFeatureID() != RmdlPackage.TEST_CASE__MODELROOT && newModelroot != null)) {
+			if (EcoreUtil.isAncestor(this, newModelroot))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModelroot != null)
+				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.MODEL_ROOT__TESTCASE,
+						ModelRoot.class, msgs);
+			msgs = basicSetModelroot(newModelroot, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.TEST_CASE__MODELROOT, newModelroot,
+					newModelroot));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVerificationSrc()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetModelroot((ModelRoot) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -231,8 +283,24 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		switch (featureID) {
 		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
 			return ((InternalEList<?>) getVerificationSrc()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			return basicSetModelroot(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.MODEL_ROOT__TESTCASE, ModelRoot.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -251,6 +319,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return getType();
 		case RmdlPackage.TEST_CASE__DESCRIPTION:
 			return getDescription();
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			return getModelroot();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,6 +347,9 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			setModelroot((ModelRoot) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -301,6 +374,9 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			setModelroot((ModelRoot) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -321,6 +397,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return type != TYPE_EDEFAULT;
 		case RmdlPackage.TEST_CASE__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case RmdlPackage.TEST_CASE__MODELROOT:
+			return getModelroot() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rmdl" nsURI="http://www.example.org/rmdl" nsPrefix="rmdl">
   <eClassifiers xsi:type="ecore:EClass" name="Requirement" abstract="true" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="verifyMethod" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -15,29 +15,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="Functional" eSuperTypes="#//Requirement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Qualitative" eSuperTypes="#//Requirement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//Requirement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
-        eType="#//Requirement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//ModelRoot">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
-        eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelroot" lowerBound="1"
+        eType="#//ModelRoot" eOpposite="#//ModelRoot/package"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelRoot">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
-        eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" upperBound="-1"
         eType="#//Reference" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" upperBound="-1"
-        eType="#//TestCase" containment="true"/>
+        eType="#//TestCase" containment="true" eOpposite="#//TestCase/modelroot"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
+        eType="#//Entity" containment="true" eOpposite="#//Entity/modelroot"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" upperBound="-1"
+        eType="#//Package" containment="true" eOpposite="#//Package/modelroot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="#//Requirement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedBy" eType="#//Trace"
-        eOpposite="#//Trace/requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedBy" upperBound="-1"
+        eType="#//Trace" eOpposite="#//Trace/requirement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="verificationTgt" upperBound="-1"
         eType="#//Verification" eOpposite="#//Verification/entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelroot" lowerBound="1"
+        eType="#//ModelRoot" eOpposite="#//ModelRoot/entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Trace" eSuperTypes="#//Reference">
@@ -58,6 +60,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TestType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelroot" lowerBound="1"
+        eType="#//ModelRoot" eOpposite="#//ModelRoot/testcase"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Verification" eSuperTypes="#//Reference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" lowerBound="1"

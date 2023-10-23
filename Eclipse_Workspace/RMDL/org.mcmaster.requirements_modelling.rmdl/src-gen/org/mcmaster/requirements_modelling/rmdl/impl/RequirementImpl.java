@@ -68,7 +68,7 @@ public abstract class RequirementImpl extends EntityImpl implements Requirement 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final int ID_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -78,7 +78,7 @@ public abstract class RequirementImpl extends EntityImpl implements Requirement 
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -185,7 +185,7 @@ public abstract class RequirementImpl extends EntityImpl implements Requirement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getID() {
+	public int getID() {
 		return id;
 	}
 
@@ -194,8 +194,8 @@ public abstract class RequirementImpl extends EntityImpl implements Requirement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setID(String newID) {
-		String oldID = id;
+	public void setID(int newID) {
+		int oldID = id;
 		id = newID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENT__ID, oldID, id));
@@ -401,7 +401,7 @@ public abstract class RequirementImpl extends EntityImpl implements Requirement 
 			setName((String) newValue);
 			return;
 		case RmdlPackage.REQUIREMENT__ID:
-			setID((String) newValue);
+			setID((Integer) newValue);
 			return;
 		case RmdlPackage.REQUIREMENT__DESCRIPTION:
 			setDescription((String) newValue);
@@ -461,7 +461,7 @@ public abstract class RequirementImpl extends EntityImpl implements Requirement 
 		case RmdlPackage.REQUIREMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RmdlPackage.REQUIREMENT__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			return id != ID_EDEFAULT;
 		case RmdlPackage.REQUIREMENT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case RmdlPackage.REQUIREMENT__VERIFY_METHOD:

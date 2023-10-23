@@ -83,7 +83,7 @@ public class RequirementItemProvider extends EntityItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_ID_feature",
 								"_UI_Requirement_type"),
 						RmdlPackage.Literals.REQUIREMENT__ID, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**

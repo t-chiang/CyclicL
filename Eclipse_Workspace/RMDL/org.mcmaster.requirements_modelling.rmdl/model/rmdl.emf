@@ -3,8 +3,11 @@ package rmdl;
 
 abstract class Requirement extends Entity {
 	attr String[1] name;
-	attr String[1] ~id;
+	attr String[1] ID;
 	attr String description;
+	attr String[1] verifyMethod;
+	ref Decomposition[*]#source child;
+	ref Decomposition[1]#target parent;
 }
 
 class Functional extends Requirement {
@@ -19,31 +22,59 @@ class Constraint extends Requirement {
 class Package extends Entity {
 	val Requirement[*] requirement;
 	attr String[1] name;
-	val Package[*] ~package;
+	val Entity[*] entity;
+	attr String[1] packageID;
 }
 
 class ModelRoot {
 	val Entity[*] entity;
-	val References[*] references;
+	val Reference[*] reference;
+	val TestCase[*] testcase;
 }
 
 class Safety extends Requirement {
 }
 
 abstract class Entity {
-	ref Trace#requirement traceTgt;
+	ref ModelRoot#entity root;
+	ref Trace#requirement satisfiedBy;
+	ref Verification[*]#entity verificationTgt;
 }
 
-abstract class References {
+abstract class Reference {
 }
 
-class Trace extends References {
-	ref DesignElement[1]#traceSrc designelement;
-	ref Entity[1]#traceTgt requirement;
+class Trace extends Reference {
+	ref DesignElement[1]#satisfies designelement;
+	ref Entity[1]#satisfiedBy requirement;
 }
 
 class DesignElement extends Entity {
 	attr String[1] name;
-	ref Trace[*]#designelement traceSrc;
+	ref Trace[*]#designelement satisfies;
+}
+
+class TestCase {
+	ref Verification[*]#testcase verificationSrc;
+	attr String[1] ~id;
+	attr TestType[1] type;
+	attr String[1] description;
+}
+
+class Verification extends Reference {
+	ref TestCase[1]#verificationSrc testcase;
+	ref Entity[1]#verificationTgt entity;
+}
+
+class Decomposition extends Reference {
+	ref Requirement[1]#child source;
+	ref Requirement[1]#parent target;
+}
+
+enum TestType {
+	UnitTest = 0;
+	ClassTest = 1;
+	WhiteBox = 2;
+	BlackBox = 3;
 }
 

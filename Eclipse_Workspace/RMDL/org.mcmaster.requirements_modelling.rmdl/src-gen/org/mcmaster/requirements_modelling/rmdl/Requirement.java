@@ -53,12 +53,12 @@ public interface Requirement extends Entity {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>ID</em>' attribute.
-	 * @see #setID(String)
+	 * @see #setID(int)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_ID()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getID();
+	int getID();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getID <em>ID</em>}' attribute.
@@ -68,7 +68,7 @@ public interface Requirement extends Entity {
 	 * @see #getID()
 	 * @generated
 	 */
-	void setID(String value);
+	void setID(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
