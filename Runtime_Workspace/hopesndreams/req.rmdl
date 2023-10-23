@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rmdl="http://www.example.org/rmdl">
-  <rmdl:ModelRoot/>
-  <rmdl:DesignElement name="Class1"/>
-</xmi:XMI>
+<rmdl:ModelRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <reference xsi:type="rmdl:Trace" designelement="//@entity.0" requirement="//@entity.1"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@entity.2" requirement="//@entity.3"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@entity.4" requirement="//@entity.5"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@entity.6" requirement="//@entity.7"/>
+  <entity xsi:type="rmdl:DesignElement" name="Transmission" satisfies="//@reference.0"/>
+  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.0" name="FunctionalReq"/>
+  <entity xsi:type="rmdl:DesignElement" name="Vehicle" satisfies="//@reference.1"/>
+  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.1" name="FunctionalReq" ID="1"/>
+  <entity xsi:type="rmdl:DesignElement" name="Torque_Converter" satisfies="//@reference.2"/>
+  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.2" name="FunctionalReq" ID="2"/>
+  <entity xsi:type="rmdl:DesignElement" name="Transmission_Radio" satisfies="//@reference.3"/>
+  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.3" name="FunctionalReq" ID="3"/>
+</rmdl:ModelRoot>

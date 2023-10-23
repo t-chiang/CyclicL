@@ -1,17 +1,42 @@
 import "HelperFunctions.eol";
 
+pre{
+	var functionals :Integer =0;
+}
+
 rule root2root
-	transform source : design!ModelRoot
-	to target : requirement!ModelRoot{
-		target.entity.addAll(source.class.equivalents().flatten().println("Eq Classes "));		
-	}
+	transform sourceRoot : design!ModelRoot
+	to targetRoot : requirement!ModelRoot{
+//		target.entity.addAll(source.class.equivalents().flatten().println("Eq Classes: "));
+		targetRoot.entity.addAll(sourceRoot.class.equivalent().flatten().select(eq | eq.isKindOf(requirement!Entity)));
+		targetRoot.reference.addAll(sourceRoot.class.equivalent().flatten().select(ref | ref.isKindOf(requirement!Reference)));
+}
 
 rule concreteClass2designElement
-	transform source : design!ConcreteClass
-	to target : requirement!DesignElement{
-		target.name = source.name;
-//		target.eContainer = source.eContainer.equivalent(); not recommended
+	transform designClass : design!ConcreteClass
+	to desElement : requirement!DesignElement,
+		req: requirement!Functional,
+		link: requirement!Trace{
+		desElement.name = designClass.name;
+		req.setName("FunctionalReq");
+		req.setID(functionals);
+		functionals++;
+		req.equivalent().size().println("Size of array of requirements: ");
+		req.eContainer().println("Container is: ");
+		link.requirement = req;
+		link.designelement = desElement;
 	}
-	
+
+post{
+	var requirements : Set = requirement!Functional.equivalent();
+	requirements.println("Set of requirements: ");
+}
+
+
+//rule concreteClass2designElement
+//	transform source : design!ConcreteClass
+//	to target : requirement!DesignElement{
+//		target.name = source.name;
+//	}
 	
 

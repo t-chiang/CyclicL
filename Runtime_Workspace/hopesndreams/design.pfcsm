@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pfcsm:ModelRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <class xsi:type="pfcsm:ConcreteClass" name="Class1"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Transmission" referenceTo="//@reference.0"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Vehicle" referenceTo="//@reference.1 //@reference.2" referenceFrom="//@reference.0"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Torque_Converter" referenceFrom="//@reference.1"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Transmission_Radio" referenceFrom="//@reference.2"/>
+  <reference xsi:type="pfcsm:Association" source="//@class.0" target="//@class.1"/>
+  <reference xsi:type="pfcsm:Composition" source="//@class.1" target="//@class.2"/>
+  <reference xsi:type="pfcsm:Composition" source="//@class.1" target="//@class.3"/>
 </pfcsm:ModelRoot>
