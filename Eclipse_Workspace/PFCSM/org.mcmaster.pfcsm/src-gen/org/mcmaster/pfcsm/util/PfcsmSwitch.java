@@ -8,23 +8,18 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Action;
 import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.ClassVariable;
+import org.mcmaster.pfcsm.Attribute;
+import org.mcmaster.pfcsm.Class_Diagram_Root;
 import org.mcmaster.pfcsm.Composition;
 import org.mcmaster.pfcsm.ConcreteClass;
 import org.mcmaster.pfcsm.Element;
 import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.ModelRoot;
 import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.OperationVariable;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Produces;
 import org.mcmaster.pfcsm.Reference;
-import org.mcmaster.pfcsm.State;
-import org.mcmaster.pfcsm.Transition;
 import org.mcmaster.pfcsm.Uses;
-import org.mcmaster.pfcsm.Variable;
 import org.mcmaster.pfcsm.XOR;
 
 /**
@@ -91,9 +86,9 @@ public class PfcsmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PfcsmPackage.MODEL_ROOT: {
-			ModelRoot modelRoot = (ModelRoot) theEObject;
-			T result = caseModelRoot(modelRoot);
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT: {
+			Class_Diagram_Root class_Diagram_Root = (Class_Diagram_Root) theEObject;
+			T result = caseClass_Diagram_Root(class_Diagram_Root);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -150,72 +145,11 @@ public class PfcsmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PfcsmPackage.CLASS_VARIABLE: {
-			ClassVariable classVariable = (ClassVariable) theEObject;
-			T result = caseClassVariable(classVariable);
-			if (result == null)
-				result = caseVariable(classVariable);
-			if (result == null)
-				result = caseElement(classVariable);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.OPERATION: {
-			Operation operation = (Operation) theEObject;
-			T result = caseOperation(operation);
-			if (result == null)
-				result = caseElement(operation);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.STATE: {
-			State state = (State) theEObject;
-			T result = caseState(state);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.TRANSITION: {
-			Transition transition = (Transition) theEObject;
-			T result = caseTransition(transition);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case PfcsmPackage.CONCRETE_CLASS: {
 			ConcreteClass concreteClass = (ConcreteClass) theEObject;
 			T result = caseConcreteClass(concreteClass);
 			if (result == null)
 				result = caseClass(concreteClass);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.VARIABLE: {
-			Variable variable = (Variable) theEObject;
-			T result = caseVariable(variable);
-			if (result == null)
-				result = caseElement(variable);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.OPERATION_VARIABLE: {
-			OperationVariable operationVariable = (OperationVariable) theEObject;
-			T result = caseOperationVariable(operationVariable);
-			if (result == null)
-				result = caseVariable(operationVariable);
-			if (result == null)
-				result = caseElement(operationVariable);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.ACTION: {
-			Action action = (Action) theEObject;
-			T result = caseAction(action);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -249,6 +183,24 @@ public class PfcsmSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case PfcsmPackage.ATTRIBUTE: {
+			Attribute attribute = (Attribute) theEObject;
+			T result = caseAttribute(attribute);
+			if (result == null)
+				result = caseElement(attribute);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PfcsmPackage.OPERATION: {
+			Operation operation = (Operation) theEObject;
+			T result = caseOperation(operation);
+			if (result == null)
+				result = caseElement(operation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -270,17 +222,17 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Root</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Class Diagram Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Root</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Class Diagram Root</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelRoot(ModelRoot object) {
+	public T caseClass_Diagram_Root(Class_Diagram_Root object) {
 		return null;
 	}
 
@@ -375,21 +327,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseClassVariable(ClassVariable object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -405,36 +342,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseState(State object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Transition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTransition(Transition object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Concrete Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -446,51 +353,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConcreteClass(ConcreteClass object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVariable(Variable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOperationVariable(OperationVariable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAction(Action object) {
 		return null;
 	}
 
@@ -536,6 +398,21 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProduces(Produces object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttribute(Attribute object) {
 		return null;
 	}
 

@@ -56,6 +56,7 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 			addNamePropertyDescriptor(object);
 			addAssociationToPropertyDescriptor(object);
 			addAssociationFromPropertyDescriptor(object);
+			addIsPublicPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,6 +107,22 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Public feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsPublicPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Element_isPublic_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Element_isPublic_feature",
+								"_UI_Element_type"),
+						PfcsmPackage.Literals.ELEMENT__IS_PUBLIC, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,6 +158,7 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 
 		switch (notification.getFeatureID(Element.class)) {
 		case PfcsmPackage.ELEMENT__NAME:
+		case PfcsmPackage.ELEMENT__IS_PUBLIC:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

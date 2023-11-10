@@ -73,26 +73,26 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.ModelRoot} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Class_Diagram_Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelRootItemProvider modelRootItemProvider;
+	protected Class_Diagram_RootItemProvider class_Diagram_RootItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.ModelRoot}.
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Class_Diagram_Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelRootAdapter() {
-		if (modelRootItemProvider == null) {
-			modelRootItemProvider = new ModelRootItemProvider(this);
+	public Adapter createClass_Diagram_RootAdapter() {
+		if (class_Diagram_RootItemProvider == null) {
+			class_Diagram_RootItemProvider = new Class_Diagram_RootItemProvider(this);
 		}
 
-		return modelRootItemProvider;
+		return class_Diagram_RootItemProvider;
 	}
 
 	/**
@@ -211,29 +211,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.ClassVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ClassVariableItemProvider classVariableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.ClassVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createClassVariableAdapter() {
-		if (classVariableItemProvider == null) {
-			classVariableItemProvider = new ClassVariableItemProvider(this);
-		}
-
-		return classVariableItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Operation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,52 +234,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.State} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateItemProvider stateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.State}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStateAdapter() {
-		if (stateItemProvider == null) {
-			stateItemProvider = new StateItemProvider(this);
-		}
-
-		return stateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Transition} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TransitionItemProvider transitionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Transition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTransitionAdapter() {
-		if (transitionItemProvider == null) {
-			transitionItemProvider = new TransitionItemProvider(this);
-		}
-
-		return transitionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.ConcreteClass} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -323,52 +254,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return concreteClassItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.OperationVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OperationVariableItemProvider operationVariableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.OperationVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createOperationVariableAdapter() {
-		if (operationVariableItemProvider == null) {
-			operationVariableItemProvider = new OperationVariableItemProvider(this);
-		}
-
-		return operationVariableItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Action} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionItemProvider actionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
-		}
-
-		return actionItemProvider;
 	}
 
 	/**
@@ -415,6 +300,29 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return producesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Attribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeItemProvider attributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeAdapter() {
+		if (attributeItemProvider == null) {
+			attributeItemProvider = new AttributeItemProvider(this);
+		}
+
+		return attributeItemProvider;
 	}
 
 	/**
@@ -516,8 +424,8 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (modelRootItemProvider != null)
-			modelRootItemProvider.dispose();
+		if (class_Diagram_RootItemProvider != null)
+			class_Diagram_RootItemProvider.dispose();
 		if (abstractClassItemProvider != null)
 			abstractClassItemProvider.dispose();
 		if (associationItemProvider != null)
@@ -528,24 +436,16 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 			inheritanceItemProvider.dispose();
 		if (xorItemProvider != null)
 			xorItemProvider.dispose();
-		if (classVariableItemProvider != null)
-			classVariableItemProvider.dispose();
-		if (operationItemProvider != null)
-			operationItemProvider.dispose();
-		if (stateItemProvider != null)
-			stateItemProvider.dispose();
-		if (transitionItemProvider != null)
-			transitionItemProvider.dispose();
 		if (concreteClassItemProvider != null)
 			concreteClassItemProvider.dispose();
-		if (operationVariableItemProvider != null)
-			operationVariableItemProvider.dispose();
-		if (actionItemProvider != null)
-			actionItemProvider.dispose();
 		if (usesItemProvider != null)
 			usesItemProvider.dispose();
 		if (producesItemProvider != null)
 			producesItemProvider.dispose();
+		if (attributeItemProvider != null)
+			attributeItemProvider.dispose();
+		if (operationItemProvider != null)
+			operationItemProvider.dispose();
 	}
 
 }

@@ -10,27 +10,28 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.pfcsm.Action;
+import org.mcmaster.pfcsm.Class_Diagram_Root;
+import org.mcmaster.pfcsm.PfcsmFactory;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Action} object.
+ * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Class_Diagram_Root} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +39,7 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionItemProvider(AdapterFactory adapterFactory) {
+	public Class_Diagram_RootItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,35 +54,50 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBodyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Body feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBodyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Action_body_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Action_body_feature", "_UI_Action_type"),
-						PfcsmPackage.Literals.ACTION__BODY, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__CLASS);
+			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This returns Action.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns Class_Diagram_Root.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Action"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Class_Diagram_Root"));
 	}
 
 	/**
@@ -102,9 +118,7 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Action) object).getBody();
-		return label == null || label.length() == 0 ? getString("_UI_Action_type")
-				: getString("_UI_Action_type") + " " + label;
+		return getString("_UI_Class_Diagram_Root_type");
 	}
 
 	/**
@@ -118,9 +132,10 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Action.class)) {
-		case PfcsmPackage.ACTION__BODY:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+		switch (notification.getFeatureID(Class_Diagram_Root.class)) {
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__CLASS:
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -136,6 +151,30 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__CLASS,
+				PfcsmFactory.eINSTANCE.createAbstractClass()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__CLASS,
+				PfcsmFactory.eINSTANCE.createConcreteClass()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createAssociation()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createComposition()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createInheritance()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createXOR()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createUses()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createProduces()));
 	}
 
 	/**

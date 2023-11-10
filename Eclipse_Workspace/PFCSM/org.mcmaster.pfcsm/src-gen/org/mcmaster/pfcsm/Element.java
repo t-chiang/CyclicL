@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.pfcsm.Element#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Element#getAssociationTo <em>Association To</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Element#getAssociationFrom <em>Association From</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Element#isIsPublic <em>Is Public</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.pfcsm.PfcsmPackage#getElement()
@@ -73,5 +74,28 @@ public interface Element extends EObject {
 	 * @generated
 	 */
 	EList<Association> getAssociationFrom();
+
+	/**
+	 * Returns the value of the '<em><b>Is Public</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Public</em>' attribute.
+	 * @see #setIsPublic(boolean)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getElement_IsPublic()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isIsPublic();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Element#isIsPublic <em>Is Public</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Public</em>' attribute.
+	 * @see #isIsPublic()
+	 * @generated
+	 */
+	void setIsPublic(boolean value);
 
 } // Element

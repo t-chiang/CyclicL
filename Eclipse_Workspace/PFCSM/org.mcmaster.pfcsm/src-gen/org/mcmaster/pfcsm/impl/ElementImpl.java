@@ -30,6 +30,7 @@ import org.mcmaster.pfcsm.PfcsmPackage;
  *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getAssociationTo <em>Association To</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getAssociationFrom <em>Association From</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#isIsPublic <em>Is Public</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,6 +75,26 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Association> associationFrom;
+
+	/**
+	 * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsPublic()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_PUBLIC_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsPublic()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isPublic = IS_PUBLIC_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,6 +167,28 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsPublic() {
+		return isPublic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsPublic(boolean newIsPublic) {
+		boolean oldIsPublic = isPublic;
+		isPublic = newIsPublic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ELEMENT__IS_PUBLIC, oldIsPublic,
+					isPublic));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -188,6 +231,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			return getAssociationTo();
 		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
 			return getAssociationFrom();
+		case PfcsmPackage.ELEMENT__IS_PUBLIC:
+			return isIsPublic();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +257,9 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			getAssociationFrom().clear();
 			getAssociationFrom().addAll((Collection<? extends Association>) newValue);
 			return;
+		case PfcsmPackage.ELEMENT__IS_PUBLIC:
+			setIsPublic((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,6 +281,9 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
 			getAssociationFrom().clear();
 			return;
+		case PfcsmPackage.ELEMENT__IS_PUBLIC:
+			setIsPublic(IS_PUBLIC_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +302,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			return associationTo != null && !associationTo.isEmpty();
 		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
 			return associationFrom != null && !associationFrom.isEmpty();
+		case PfcsmPackage.ELEMENT__IS_PUBLIC:
+			return isPublic != IS_PUBLIC_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,6 +321,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", isPublic: ");
+		result.append(isPublic);
 		result.append(')');
 		return result.toString();
 	}

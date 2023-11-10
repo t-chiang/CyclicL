@@ -3,23 +3,24 @@
 package org.mcmaster.pfcsm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.mcmaster.pfcsm.Operation;
+
+import org.mcmaster.pfcsm.Attribute;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation</b></em>'.
+ * An implementation of the model object '<em><b>Attribute</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class OperationImpl extends ElementImpl implements Operation {
+public class AttributeImpl extends ElementImpl implements Attribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationImpl() {
+	protected AttributeImpl() {
 		super();
 	}
 
@@ -30,7 +31,7 @@ public class OperationImpl extends ElementImpl implements Operation {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PfcsmPackage.Literals.OPERATION;
+		return PfcsmPackage.Literals.ATTRIBUTE;
 	}
 
-} //OperationImpl
+} //AttributeImpl

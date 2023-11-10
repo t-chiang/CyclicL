@@ -12,22 +12,18 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Action;
 import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.ClassVariable;
+import org.mcmaster.pfcsm.Attribute;
+import org.mcmaster.pfcsm.Class_Diagram_Root;
 import org.mcmaster.pfcsm.Composition;
 import org.mcmaster.pfcsm.ConcreteClass;
 import org.mcmaster.pfcsm.DataStructure;
 import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.ModelRoot;
 import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.OperationVariable;
 import org.mcmaster.pfcsm.PfcsmFactory;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.PrimitiveType;
 import org.mcmaster.pfcsm.Produces;
-import org.mcmaster.pfcsm.State;
-import org.mcmaster.pfcsm.Transition;
 import org.mcmaster.pfcsm.Uses;
 import org.mcmaster.pfcsm.XOR;
 
@@ -74,8 +70,8 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case PfcsmPackage.MODEL_ROOT:
-			return createModelRoot();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT:
+			return createClass_Diagram_Root();
 		case PfcsmPackage.ABSTRACT_CLASS:
 			return createAbstractClass();
 		case PfcsmPackage.ASSOCIATION:
@@ -86,24 +82,16 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 			return createInheritance();
 		case PfcsmPackage.XOR:
 			return createXOR();
-		case PfcsmPackage.CLASS_VARIABLE:
-			return createClassVariable();
-		case PfcsmPackage.OPERATION:
-			return createOperation();
-		case PfcsmPackage.STATE:
-			return createState();
-		case PfcsmPackage.TRANSITION:
-			return createTransition();
 		case PfcsmPackage.CONCRETE_CLASS:
 			return createConcreteClass();
-		case PfcsmPackage.OPERATION_VARIABLE:
-			return createOperationVariable();
-		case PfcsmPackage.ACTION:
-			return createAction();
 		case PfcsmPackage.USES:
 			return createUses();
 		case PfcsmPackage.PRODUCES:
 			return createProduces();
+		case PfcsmPackage.ATTRIBUTE:
+			return createAttribute();
+		case PfcsmPackage.OPERATION:
+			return createOperation();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -148,9 +136,9 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelRoot createModelRoot() {
-		ModelRootImpl modelRoot = new ModelRootImpl();
-		return modelRoot;
+	public Class_Diagram_Root createClass_Diagram_Root() {
+		Class_Diagram_RootImpl class_Diagram_Root = new Class_Diagram_RootImpl();
+		return class_Diagram_Root;
 	}
 
 	/**
@@ -208,16 +196,6 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassVariable createClassVariable() {
-		ClassVariableImpl classVariable = new ClassVariableImpl();
-		return classVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Operation createOperation() {
 		OperationImpl operation = new OperationImpl();
 		return operation;
@@ -228,49 +206,9 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State createState() {
-		StateImpl state = new StateImpl();
-		return state;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Transition createTransition() {
-		TransitionImpl transition = new TransitionImpl();
-		return transition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ConcreteClass createConcreteClass() {
 		ConcreteClassImpl concreteClass = new ConcreteClassImpl();
 		return concreteClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationVariable createOperationVariable() {
-		OperationVariableImpl operationVariable = new OperationVariableImpl();
-		return operationVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
 	}
 
 	/**
@@ -291,6 +229,16 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	public Produces createProduces() {
 		ProducesImpl produces = new ProducesImpl();
 		return produces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
 	}
 
 	/**
