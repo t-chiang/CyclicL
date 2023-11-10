@@ -1,15 +1,16 @@
 import "HelperFunctions.eol";
 
 pre{
-	var functionals :Integer =0;
+	var functionals :Integer = 1;
 }
 
 rule root2root
-	transform sourceRoot : design!ModelRoot
-	to targetRoot : requirement!ModelRoot{
+	transform sourceRoot : design!Class_Diagram_Root
+	to targetRoot : requirement!Requirement_Root{
 //		target.entity.addAll(source.class.equivalents().flatten().println("Eq Classes: "));
 		targetRoot.entity.addAll(sourceRoot.class.equivalent().flatten().select(eq | eq.isKindOf(requirement!Entity)));
 		targetRoot.reference.addAll(sourceRoot.class.equivalent().flatten().select(ref | ref.isKindOf(requirement!Reference)));
+		targetRoot.designelement.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
 }
 
 rule concreteClass2designElement
