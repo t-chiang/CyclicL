@@ -55,17 +55,17 @@ public interface Entity extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Modelroot</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.ModelRoot#getEntity <em>Entity</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getEntity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Modelroot</em>' container reference.
-	 * @see #setModelroot(ModelRoot)
+	 * @see #setModelroot(Requirement_Root)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getEntity_Modelroot()
-	 * @see org.mcmaster.requirements_modelling.rmdl.ModelRoot#getEntity
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getEntity
 	 * @model opposite="entity" required="true" transient="false"
 	 * @generated
 	 */
-	ModelRoot getModelroot();
+	Requirement_Root getModelroot();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Entity#getModelroot <em>Modelroot</em>}' container reference.
@@ -75,6 +75,6 @@ public interface Entity extends EObject {
 	 * @see #getModelroot()
 	 * @generated
 	 */
-	void setModelroot(ModelRoot value);
+	void setModelroot(Requirement_Root value);
 
 } // Entity

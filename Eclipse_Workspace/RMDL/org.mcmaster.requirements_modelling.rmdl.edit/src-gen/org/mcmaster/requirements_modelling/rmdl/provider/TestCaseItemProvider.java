@@ -89,7 +89,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 						getResourceLocator(), getString("_UI_TestCase_id_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_id_feature", "_UI_TestCase_type"),
 						RmdlPackage.Literals.TEST_CASE__ID, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -168,9 +168,8 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TestCase) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_TestCase_type")
-				: getString("_UI_TestCase_type") + " " + label;
+		TestCase testCase = (TestCase) object;
+		return getString("_UI_TestCase_type") + " " + testCase.getId();
 	}
 
 	/**

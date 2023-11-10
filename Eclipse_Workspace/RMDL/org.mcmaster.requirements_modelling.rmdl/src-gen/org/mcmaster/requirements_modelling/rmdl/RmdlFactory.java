@@ -58,13 +58,13 @@ public interface RmdlFactory extends EFactory {
 	Package createPackage();
 
 	/**
-	 * Returns a new object of class '<em>Model Root</em>'.
+	 * Returns a new object of class '<em>Requirement Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Root</em>'.
+	 * @return a new object of class '<em>Requirement Root</em>'.
 	 * @generated
 	 */
-	ModelRoot createModelRoot();
+	Requirement_Root createRequirement_Root();
 
 	/**
 	 * Returns a new object of class '<em>Safety</em>'.

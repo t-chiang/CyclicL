@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="rmdl" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="rmdl" version="12.0.0.2017041100">
   <ownedViewpoints name="Requirement Modelling Viewpoint" modelFileExtension="rmdl">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirements Diagram" showOnStartup="true" domainClass="rmdl::ModelRoot" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirements Diagram" showOnStartup="true" domainClass="rmdl::Requirement_Root" enablePopupBars="true">
       <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
-      <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
-      <defaultLayer name="Default"/>
+      <defaultLayer name="Default">
+        <toolSections name="Custom tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="editEntityNames">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
       <additionalLayers name="Model Layer" activeByDefault="true">
-        <nodeMappings name="Functional Requirement" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Functional">
+        <nodeMappings name="Functional Requirement" labelDirectEdit="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Functional">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="17" height="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Qualitative Requirement" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Qualitative">
+        <nodeMappings name="Qualitative Requirement" labelDirectEdit="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Qualitative">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="17" height="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Constraint Requirement" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Constraint">
+        <nodeMappings name="Constraint Requirement" labelDirectEdit="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Constraint">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="17" height="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Safety Requirement" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Safety">
+        <nodeMappings name="Safety Requirement" labelDirectEdit="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:entity" domainClass="rmdl::Safety">
           <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="17" height="10">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="Design Element" semanticCandidatesExpression="feature:entity" domainClass="rmdl::DesignElement">
+        <nodeMappings name="Design Element" labelDirectEdit="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:designelement" domainClass="rmdl::DesignElement">
           <style xsi:type="style:EllipseNodeDescription" labelSize="12" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -128,14 +136,14 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Functional Requirement" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@containerMappings[name='Package']/@subNodeMappings[name='Functional%20Requirement']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Functional Requirement" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="entity">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'FunctionalReq'+container.entity->filter(rmdl::Functional)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::ModelRoot).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -147,7 +155,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Qualitative" referenceName="entity">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Qualitative'+container.entity->filter(rmdl::Qualitative)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:'Requirement'+ self.eContainer(rmdl::ModelRoot).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -159,7 +167,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Constraint" referenceName="entity">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Constraint'+container.entity->filter(rmdl::Constraint)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:'Requirement'+ self.eContainer(rmdl::ModelRoot).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -171,7 +179,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Safety" referenceName="entity">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Safety'+container.entity->filter(rmdl::Safety)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:'Requirement'+ self.eContainer(rmdl::ModelRoot).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -181,8 +189,8 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::DesignElement" referenceName="entity">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'DesignElement'+container.entity->filter(rmdl::DesignElement)->size()"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::DesignElement" referenceName="designelement">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'DesignElement'+container.designelement->filter(rmdl::DesignElement)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -206,7 +214,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(rmdl::ModelRoot)/]">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(rmdl::Requirement_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Decomposition" referenceName="reference">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
@@ -220,7 +228,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(rmdl::ModelRoot)/]">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(rmdl::Requirement_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Trace" referenceName="reference">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="requirement" valueExpression="var:source"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="designelement" valueExpression="var:target"/>
@@ -234,7 +242,7 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(rmdl::ModelRoot)/]">
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(rmdl::Requirement_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Verification" referenceName="reference">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="testcase" valueExpression="var:target"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:source"/>
@@ -246,5 +254,13 @@
       </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.mcmaster.rmdl.design.Services"/>
+  </ownedViewpoints>
+  <ownedViewpoints name="Traceability Table Viewpoint" modelFileExtension="rmdl">
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Traceability Matrix" domainClass="rmdl::Requirement_Root">
+      <ownedLineMappings name="Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="feature:entity" headerLabelExpression="[name/]"/>
+      <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
+      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="20" canEdit="true" featureName="description"/>
+      <ownedColumnMappings name="aql: self.satisfiedBy.designelement.name" label="Design Element" headerLabelExpression="Design Element" initialWidth="20" canEdit="true" featureName="Design Element"/>
+    </ownedRepresentations>
   </ownedViewpoints>
 </description:Group>

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
@@ -27,7 +27,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *
  * @generated
  */
-public class PackageImpl extends ModelRootImpl implements org.mcmaster.requirements_modelling.rmdl.Package {
+public class PackageImpl extends Requirement_RootImpl implements org.mcmaster.requirements_modelling.rmdl.Package {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -135,10 +135,10 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelRoot getModelroot() {
+	public Requirement_Root getModelroot() {
 		if (eContainerFeatureID() != RmdlPackage.PACKAGE__MODELROOT)
 			return null;
-		return (ModelRoot) eInternalContainer();
+		return (Requirement_Root) eInternalContainer();
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModelroot(ModelRoot newModelroot, NotificationChain msgs) {
+	public NotificationChain basicSetModelroot(Requirement_Root newModelroot, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newModelroot, RmdlPackage.PACKAGE__MODELROOT, msgs);
 		return msgs;
 	}
@@ -156,7 +156,7 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelroot(ModelRoot newModelroot) {
+	public void setModelroot(Requirement_Root newModelroot) {
 		if (newModelroot != eInternalContainer()
 				|| (eContainerFeatureID() != RmdlPackage.PACKAGE__MODELROOT && newModelroot != null)) {
 			if (EcoreUtil.isAncestor(this, newModelroot))
@@ -165,8 +165,8 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newModelroot != null)
-				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.MODEL_ROOT__PACKAGE,
-						ModelRoot.class, msgs);
+				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.REQUIREMENT_ROOT__PACKAGE,
+						Requirement_Root.class, msgs);
 			msgs = basicSetModelroot(newModelroot, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -186,7 +186,7 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 		case RmdlPackage.PACKAGE__MODELROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetModelroot((ModelRoot) otherEnd, msgs);
+			return basicSetModelroot((Requirement_Root) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -214,7 +214,8 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.PACKAGE__MODELROOT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.MODEL_ROOT__PACKAGE, ModelRoot.class, msgs);
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__PACKAGE,
+					Requirement_Root.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -253,7 +254,7 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 			setPackageID((String) newValue);
 			return;
 		case RmdlPackage.PACKAGE__MODELROOT:
-			setModelroot((ModelRoot) newValue);
+			setModelroot((Requirement_Root) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -274,7 +275,7 @@ public class PackageImpl extends ModelRootImpl implements org.mcmaster.requireme
 			setPackageID(PACKAGE_ID_EDEFAULT);
 			return;
 		case RmdlPackage.PACKAGE__MODELROOT:
-			setModelroot((ModelRoot) null);
+			setModelroot((Requirement_Root) null);
 			return;
 		}
 		super.eUnset(featureID);

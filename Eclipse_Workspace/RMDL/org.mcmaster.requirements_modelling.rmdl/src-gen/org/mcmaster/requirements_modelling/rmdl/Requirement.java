@@ -137,7 +137,7 @@ public interface Requirement extends Entity {
 	 * @see #setParent(Decomposition)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Parent()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Decomposition#getTarget
-	 * @model opposite="target" required="true"
+	 * @model opposite="target"
 	 * @generated
 	 */
 	Decomposition getParent();

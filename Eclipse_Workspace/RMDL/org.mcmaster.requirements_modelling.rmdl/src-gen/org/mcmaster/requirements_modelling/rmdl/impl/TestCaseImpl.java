@@ -18,8 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.TestType;
@@ -61,7 +60,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final int ID_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -71,7 +70,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -150,7 +149,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -159,8 +158,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(String newId) {
-		String oldId = id;
+	public void setId(int newId) {
+		int oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.TEST_CASE__ID, oldId, id));
@@ -214,10 +213,10 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelRoot getModelroot() {
+	public Requirement_Root getModelroot() {
 		if (eContainerFeatureID() != RmdlPackage.TEST_CASE__MODELROOT)
 			return null;
-		return (ModelRoot) eInternalContainer();
+		return (Requirement_Root) eInternalContainer();
 	}
 
 	/**
@@ -225,7 +224,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModelroot(ModelRoot newModelroot, NotificationChain msgs) {
+	public NotificationChain basicSetModelroot(Requirement_Root newModelroot, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newModelroot, RmdlPackage.TEST_CASE__MODELROOT, msgs);
 		return msgs;
 	}
@@ -235,7 +234,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelroot(ModelRoot newModelroot) {
+	public void setModelroot(Requirement_Root newModelroot) {
 		if (newModelroot != eInternalContainer()
 				|| (eContainerFeatureID() != RmdlPackage.TEST_CASE__MODELROOT && newModelroot != null)) {
 			if (EcoreUtil.isAncestor(this, newModelroot))
@@ -244,8 +243,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newModelroot != null)
-				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.MODEL_ROOT__TESTCASE,
-						ModelRoot.class, msgs);
+				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.REQUIREMENT_ROOT__TESTCASE,
+						Requirement_Root.class, msgs);
 			msgs = basicSetModelroot(newModelroot, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -268,7 +267,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__MODELROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetModelroot((ModelRoot) otherEnd, msgs);
+			return basicSetModelroot((Requirement_Root) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -298,7 +297,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.TEST_CASE__MODELROOT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.MODEL_ROOT__TESTCASE, ModelRoot.class, msgs);
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__TESTCASE,
+					Requirement_Root.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -339,7 +339,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			getVerificationSrc().addAll((Collection<? extends Verification>) newValue);
 			return;
 		case RmdlPackage.TEST_CASE__ID:
-			setId((String) newValue);
+			setId((Integer) newValue);
 			return;
 		case RmdlPackage.TEST_CASE__TYPE:
 			setType((TestType) newValue);
@@ -348,7 +348,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			setDescription((String) newValue);
 			return;
 		case RmdlPackage.TEST_CASE__MODELROOT:
-			setModelroot((ModelRoot) newValue);
+			setModelroot((Requirement_Root) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -375,7 +375,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
 		case RmdlPackage.TEST_CASE__MODELROOT:
-			setModelroot((ModelRoot) null);
+			setModelroot((Requirement_Root) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -392,7 +392,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
 			return verificationSrc != null && !verificationSrc.isEmpty();
 		case RmdlPackage.TEST_CASE__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			return id != ID_EDEFAULT;
 		case RmdlPackage.TEST_CASE__TYPE:
 			return type != TYPE_EDEFAULT;
 		case RmdlPackage.TEST_CASE__DESCRIPTION:

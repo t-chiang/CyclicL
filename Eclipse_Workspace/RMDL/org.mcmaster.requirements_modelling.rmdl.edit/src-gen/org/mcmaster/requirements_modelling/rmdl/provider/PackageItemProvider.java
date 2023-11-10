@@ -19,7 +19,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider extends ModelRootItemProvider {
+public class PackageItemProvider extends Requirement_RootItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

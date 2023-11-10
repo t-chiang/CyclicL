@@ -33,11 +33,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Package/packageID"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Package/modelroot"/>
     </genClasses>
-    <genClasses ecoreClass="rmdl.ecore#//ModelRoot">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/reference"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/testcase"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/entity"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ModelRoot/package"/>
+    <genClasses ecoreClass="rmdl.ecore#//Requirement_Root">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/testcase"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/entity"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/package"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/designelement"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Safety"/>
     <genClasses ecoreClass="rmdl.ecore#//Entity">
@@ -53,6 +54,8 @@
     <genClasses ecoreClass="rmdl.ecore#//DesignElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/satisfies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/modelroot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/children"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//TestCase">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//TestCase/verificationSrc"/>

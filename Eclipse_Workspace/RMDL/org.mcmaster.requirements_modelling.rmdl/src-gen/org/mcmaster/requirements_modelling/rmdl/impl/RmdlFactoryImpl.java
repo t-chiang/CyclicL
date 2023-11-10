@@ -15,8 +15,8 @@ import org.mcmaster.requirements_modelling.rmdl.Constraint;
 import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
@@ -76,8 +76,8 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createConstraint();
 		case RmdlPackage.PACKAGE:
 			return createPackage();
-		case RmdlPackage.MODEL_ROOT:
-			return createModelRoot();
+		case RmdlPackage.REQUIREMENT_ROOT:
+			return createRequirement_Root();
 		case RmdlPackage.SAFETY:
 			return createSafety();
 		case RmdlPackage.TRACE:
@@ -170,9 +170,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelRoot createModelRoot() {
-		ModelRootImpl modelRoot = new ModelRootImpl();
-		return modelRoot;
+	public Requirement_Root createRequirement_Root() {
+		Requirement_RootImpl requirement_Root = new Requirement_RootImpl();
+		return requirement_Root;
 	}
 
 	/**

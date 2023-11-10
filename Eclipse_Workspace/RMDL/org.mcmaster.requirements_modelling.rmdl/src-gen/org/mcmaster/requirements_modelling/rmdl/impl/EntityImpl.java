@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.requirements_modelling.rmdl.Entity;
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Trace;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
@@ -109,10 +109,10 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelRoot getModelroot() {
+	public Requirement_Root getModelroot() {
 		if (eContainerFeatureID() != RmdlPackage.ENTITY__MODELROOT)
 			return null;
-		return (ModelRoot) eInternalContainer();
+		return (Requirement_Root) eInternalContainer();
 	}
 
 	/**
@@ -120,7 +120,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModelroot(ModelRoot newModelroot, NotificationChain msgs) {
+	public NotificationChain basicSetModelroot(Requirement_Root newModelroot, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newModelroot, RmdlPackage.ENTITY__MODELROOT, msgs);
 		return msgs;
 	}
@@ -130,7 +130,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelroot(ModelRoot newModelroot) {
+	public void setModelroot(Requirement_Root newModelroot) {
 		if (newModelroot != eInternalContainer()
 				|| (eContainerFeatureID() != RmdlPackage.ENTITY__MODELROOT && newModelroot != null)) {
 			if (EcoreUtil.isAncestor(this, newModelroot))
@@ -139,8 +139,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newModelroot != null)
-				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.MODEL_ROOT__ENTITY,
-						ModelRoot.class, msgs);
+				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.REQUIREMENT_ROOT__ENTITY,
+						Requirement_Root.class, msgs);
 			msgs = basicSetModelroot(newModelroot, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -165,7 +165,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 		case RmdlPackage.ENTITY__MODELROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetModelroot((ModelRoot) otherEnd, msgs);
+			return basicSetModelroot((Requirement_Root) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -197,7 +197,8 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.ENTITY__MODELROOT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.MODEL_ROOT__ENTITY, ModelRoot.class, msgs);
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__ENTITY,
+					Requirement_Root.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -238,7 +239,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			getVerificationTgt().addAll((Collection<? extends Verification>) newValue);
 			return;
 		case RmdlPackage.ENTITY__MODELROOT:
-			setModelroot((ModelRoot) newValue);
+			setModelroot((Requirement_Root) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,7 +260,7 @@ public abstract class EntityImpl extends MinimalEObjectImpl.Container implements
 			getVerificationTgt().clear();
 			return;
 		case RmdlPackage.ENTITY__MODELROOT:
-			setModelroot((ModelRoot) null);
+			setModelroot((Requirement_Root) null);
 			return;
 		}
 		super.eUnset(featureID);

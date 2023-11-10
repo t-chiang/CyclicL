@@ -165,26 +165,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.ModelRoot} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelRootItemProvider modelRootItemProvider;
+	protected Requirement_RootItemProvider requirement_RootItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.ModelRoot}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelRootAdapter() {
-		if (modelRootItemProvider == null) {
-			modelRootItemProvider = new ModelRootItemProvider(this);
+	public Adapter createRequirement_RootAdapter() {
+		if (requirement_RootItemProvider == null) {
+			requirement_RootItemProvider = new Requirement_RootItemProvider(this);
 		}
 
-		return modelRootItemProvider;
+		return requirement_RootItemProvider;
 	}
 
 	/**
@@ -432,8 +432,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			constraintItemProvider.dispose();
 		if (packageItemProvider != null)
 			packageItemProvider.dispose();
-		if (modelRootItemProvider != null)
-			modelRootItemProvider.dispose();
+		if (requirement_RootItemProvider != null)
+			requirement_RootItemProvider.dispose();
 		if (safetyItemProvider != null)
 			safetyItemProvider.dispose();
 		if (traceItemProvider != null)

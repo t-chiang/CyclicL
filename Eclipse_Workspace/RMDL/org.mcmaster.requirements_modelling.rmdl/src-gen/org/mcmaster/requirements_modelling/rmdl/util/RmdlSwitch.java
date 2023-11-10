@@ -12,10 +12,10 @@ import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Entity;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
@@ -125,14 +125,14 @@ public class RmdlSwitch<T> extends Switch<T> {
 			org.mcmaster.requirements_modelling.rmdl.Package package_ = (org.mcmaster.requirements_modelling.rmdl.Package) theEObject;
 			T result = casePackage(package_);
 			if (result == null)
-				result = caseModelRoot(package_);
+				result = caseRequirement_Root(package_);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.MODEL_ROOT: {
-			ModelRoot modelRoot = (ModelRoot) theEObject;
-			T result = caseModelRoot(modelRoot);
+		case RmdlPackage.REQUIREMENT_ROOT: {
+			Requirement_Root requirement_Root = (Requirement_Root) theEObject;
+			T result = caseRequirement_Root(requirement_Root);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -174,8 +174,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 		case RmdlPackage.DESIGN_ELEMENT: {
 			DesignElement designElement = (DesignElement) theEObject;
 			T result = caseDesignElement(designElement);
-			if (result == null)
-				result = caseEntity(designElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -286,17 +284,17 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Root</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Requirement Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Root</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Requirement Root</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelRoot(ModelRoot object) {
+	public T caseRequirement_Root(Requirement_Root object) {
 		return null;
 	}
 

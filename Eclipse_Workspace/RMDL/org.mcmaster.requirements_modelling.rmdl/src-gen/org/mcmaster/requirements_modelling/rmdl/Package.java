@@ -20,7 +20,7 @@ package org.mcmaster.requirements_modelling.rmdl;
  * @model
  * @generated
  */
-public interface Package extends ModelRoot {
+public interface Package extends Requirement_Root {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,17 +67,17 @@ public interface Package extends ModelRoot {
 
 	/**
 	 * Returns the value of the '<em><b>Modelroot</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.ModelRoot#getPackage <em>Package</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Modelroot</em>' container reference.
-	 * @see #setModelroot(ModelRoot)
+	 * @see #setModelroot(Requirement_Root)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getPackage_Modelroot()
-	 * @see org.mcmaster.requirements_modelling.rmdl.ModelRoot#getPackage
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage
 	 * @model opposite="package" required="true" transient="false"
 	 * @generated
 	 */
-	ModelRoot getModelroot();
+	Requirement_Root getModelroot();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Package#getModelroot <em>Modelroot</em>}' container reference.
@@ -87,6 +87,6 @@ public interface Package extends ModelRoot {
 	 * @see #getModelroot()
 	 * @generated
 	 */
-	void setModelroot(ModelRoot value);
+	void setModelroot(Requirement_Root value);
 
 } // Package

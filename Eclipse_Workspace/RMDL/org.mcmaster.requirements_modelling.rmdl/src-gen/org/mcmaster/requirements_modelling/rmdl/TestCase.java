@@ -46,12 +46,12 @@ public interface TestCase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
+	 * @see #setId(int)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Id()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getId();
+	int getId();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getId <em>Id</em>}' attribute.
@@ -61,7 +61,7 @@ public interface TestCase extends EObject {
 	 * @see #getId()
 	 * @generated
 	 */
-	void setId(String value);
+	void setId(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
@@ -112,17 +112,17 @@ public interface TestCase extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Modelroot</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.ModelRoot#getTestcase <em>Testcase</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase <em>Testcase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Modelroot</em>' container reference.
-	 * @see #setModelroot(ModelRoot)
+	 * @see #setModelroot(Requirement_Root)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Modelroot()
-	 * @see org.mcmaster.requirements_modelling.rmdl.ModelRoot#getTestcase
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase
 	 * @model opposite="testcase" required="true" transient="false"
 	 * @generated
 	 */
-	ModelRoot getModelroot();
+	Requirement_Root getModelroot();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getModelroot <em>Modelroot</em>}' container reference.
@@ -132,6 +132,6 @@ public interface TestCase extends EObject {
 	 * @see #getModelroot()
 	 * @generated
 	 */
-	void setModelroot(ModelRoot value);
+	void setModelroot(Requirement_Root value);
 
 } // TestCase

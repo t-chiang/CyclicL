@@ -15,10 +15,10 @@ import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Entity;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
@@ -74,7 +74,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelRootEClass = null;
+	private EClass requirement_RootEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -334,8 +334,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelRoot() {
-		return modelRootEClass;
+	public EClass getRequirement_Root() {
+		return requirement_RootEClass;
 	}
 
 	/**
@@ -343,8 +343,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelRoot_Entity() {
-		return (EReference) modelRootEClass.getEStructuralFeatures().get(2);
+	public EReference getRequirement_Root_Reference() {
+		return (EReference) requirement_RootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -352,8 +352,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelRoot_Package() {
-		return (EReference) modelRootEClass.getEStructuralFeatures().get(3);
+	public EReference getRequirement_Root_Testcase() {
+		return (EReference) requirement_RootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -361,8 +361,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelRoot_Reference() {
-		return (EReference) modelRootEClass.getEStructuralFeatures().get(0);
+	public EReference getRequirement_Root_Entity() {
+		return (EReference) requirement_RootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -370,8 +370,17 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelRoot_Testcase() {
-		return (EReference) modelRootEClass.getEStructuralFeatures().get(1);
+	public EReference getRequirement_Root_Package() {
+		return (EReference) requirement_RootEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirement_Root_Designelement() {
+		return (EReference) requirement_RootEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -480,6 +489,24 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 */
 	public EReference getDesignElement_Satisfies() {
 		return (EReference) designElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDesignElement_Modelroot() {
+		return (EReference) designElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDesignElement_Children() {
+		return (EAttribute) designElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -647,11 +674,12 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEAttribute(packageEClass, PACKAGE__PACKAGE_ID);
 		createEReference(packageEClass, PACKAGE__MODELROOT);
 
-		modelRootEClass = createEClass(MODEL_ROOT);
-		createEReference(modelRootEClass, MODEL_ROOT__REFERENCE);
-		createEReference(modelRootEClass, MODEL_ROOT__TESTCASE);
-		createEReference(modelRootEClass, MODEL_ROOT__ENTITY);
-		createEReference(modelRootEClass, MODEL_ROOT__PACKAGE);
+		requirement_RootEClass = createEClass(REQUIREMENT_ROOT);
+		createEReference(requirement_RootEClass, REQUIREMENT_ROOT__REFERENCE);
+		createEReference(requirement_RootEClass, REQUIREMENT_ROOT__TESTCASE);
+		createEReference(requirement_RootEClass, REQUIREMENT_ROOT__ENTITY);
+		createEReference(requirement_RootEClass, REQUIREMENT_ROOT__PACKAGE);
+		createEReference(requirement_RootEClass, REQUIREMENT_ROOT__DESIGNELEMENT);
 
 		safetyEClass = createEClass(SAFETY);
 
@@ -669,6 +697,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		designElementEClass = createEClass(DESIGN_ELEMENT);
 		createEAttribute(designElementEClass, DESIGN_ELEMENT__NAME);
 		createEReference(designElementEClass, DESIGN_ELEMENT__SATISFIES);
+		createEReference(designElementEClass, DESIGN_ELEMENT__MODELROOT);
+		createEAttribute(designElementEClass, DESIGN_ELEMENT__CHILDREN);
 
 		testCaseEClass = createEClass(TEST_CASE);
 		createEReference(testCaseEClass, TEST_CASE__VERIFICATION_SRC);
@@ -722,10 +752,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		functionalEClass.getESuperTypes().add(this.getRequirement());
 		qualitativeEClass.getESuperTypes().add(this.getRequirement());
 		constraintEClass.getESuperTypes().add(this.getRequirement());
-		packageEClass.getESuperTypes().add(this.getModelRoot());
+		packageEClass.getESuperTypes().add(this.getRequirement_Root());
 		safetyEClass.getESuperTypes().add(this.getRequirement());
 		traceEClass.getESuperTypes().add(this.getReference());
-		designElementEClass.getESuperTypes().add(this.getEntity());
 		verificationEClass.getESuperTypes().add(this.getReference());
 		decompositionEClass.getESuperTypes().add(this.getReference());
 
@@ -746,7 +775,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirement_Parent(), this.getDecomposition(), this.getDecomposition_Target(), "parent", null,
-				1, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionalEClass, Functional.class, "Functional", !IS_ABSTRACT, !IS_INTERFACE,
@@ -766,24 +795,28 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEAttribute(getPackage_PackageID(), ecorePackage.getEString(), "packageID", null, 1, 1,
 				org.mcmaster.requirements_modelling.rmdl.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Modelroot(), this.getModelRoot(), this.getModelRoot_Package(), "modelroot", null, 1,
-				1, org.mcmaster.requirements_modelling.rmdl.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Modelroot(), this.getRequirement_Root(), this.getRequirement_Root_Package(),
+				"modelroot", null, 1, 1, org.mcmaster.requirements_modelling.rmdl.Package.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(modelRootEClass, ModelRoot.class, "ModelRoot", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(requirement_RootEClass, Requirement_Root.class, "Requirement_Root", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelRoot_Reference(), this.getReference(), null, "reference", null, 0, -1, ModelRoot.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelRoot_Testcase(), this.getTestCase(), this.getTestCase_Modelroot(), "testcase", null, 0,
-				-1, ModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getRequirement_Root_Reference(), this.getReference(), null, "reference", null, 0, -1,
+				Requirement_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelRoot_Entity(), this.getEntity(), this.getEntity_Modelroot(), "entity", null, 0, -1,
-				ModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelRoot_Package(), this.getPackage(), this.getPackage_Modelroot(), "package", null, 0, -1,
-				ModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Root_Testcase(), this.getTestCase(), this.getTestCase_Modelroot(), "testcase",
+				null, 0, -1, Requirement_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Root_Entity(), this.getEntity(), this.getEntity_Modelroot(), "entity", null, 0,
+				-1, Requirement_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Root_Package(), this.getPackage(), this.getPackage_Modelroot(), "package", null,
+				0, -1, Requirement_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Root_Designelement(), this.getDesignElement(), this.getDesignElement_Modelroot(),
+				"designelement", null, 0, -1, Requirement_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(safetyEClass, Safety.class, "Safety", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -794,9 +827,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getEntity_VerificationTgt(), this.getVerification(), this.getVerification_Entity(),
 				"verificationTgt", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Modelroot(), this.getModelRoot(), this.getModelRoot_Entity(), "modelroot", null, 1, 1,
-				Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Modelroot(), this.getRequirement_Root(), this.getRequirement_Root_Entity(),
+				"modelroot", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -816,21 +849,28 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getDesignElement_Satisfies(), this.getTrace(), this.getTrace_Designelement(), "satisfies", null,
 				0, -1, DesignElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignElement_Modelroot(), this.getRequirement_Root(),
+				this.getRequirement_Root_Designelement(), "modelroot", null, 1, 1, DesignElement.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getDesignElement_Children(), ecorePackage.getEJavaClass(), "children", null, 0, -1,
+				DesignElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTestCase_VerificationSrc(), this.getVerification(), this.getVerification_Testcase(),
 				"verificationSrc", null, 0, -1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTestCase_Id(), ecorePackage.getEString(), "id", null, 1, 1, TestCase.class, !IS_TRANSIENT,
+		initEAttribute(getTestCase_Id(), ecorePackage.getEInt(), "id", null, 1, 1, TestCase.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestCase_Type(), this.getTestType(), "type", null, 1, 1, TestCase.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestCase_Description(), ecorePackage.getEString(), "description", null, 1, 1, TestCase.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTestCase_Modelroot(), this.getModelRoot(), this.getModelRoot_Testcase(), "modelroot", null, 1,
-				1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTestCase_Modelroot(), this.getRequirement_Root(), this.getRequirement_Root_Testcase(),
+				"modelroot", null, 1, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(verificationEClass, Verification.class, "Verification", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
