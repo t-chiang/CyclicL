@@ -13,7 +13,7 @@ package org.mcmaster.requirements_modelling.rmdl;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Package#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Package#getPackageID <em>Package ID</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Package#getModelroot <em>Modelroot</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Package#getRequirement_root <em>Requirement root</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getPackage()
@@ -66,27 +66,27 @@ public interface Package extends Requirement_Root {
 	void setPackageID(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Modelroot</b></em>' container reference.
+	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modelroot</em>' container reference.
-	 * @see #setModelroot(Requirement_Root)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getPackage_Modelroot()
+	 * @return the value of the '<em>Requirement root</em>' container reference.
+	 * @see #setRequirement_root(Requirement_Root)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getPackage_Requirement_root()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage
 	 * @model opposite="package" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Root getModelroot();
+	Requirement_Root getRequirement_root();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Package#getModelroot <em>Modelroot</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Package#getRequirement_root <em>Requirement root</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Modelroot</em>' container reference.
-	 * @see #getModelroot()
+	 * @param value the new value of the '<em>Requirement root</em>' container reference.
+	 * @see #getRequirement_root()
 	 * @generated
 	 */
-	void setModelroot(Requirement_Root value);
+	void setRequirement_root(Requirement_Root value);
 
 } // Package

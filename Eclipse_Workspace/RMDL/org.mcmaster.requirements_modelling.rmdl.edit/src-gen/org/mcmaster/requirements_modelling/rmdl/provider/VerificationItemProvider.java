@@ -42,7 +42,7 @@ public class VerificationItemProvider extends ReferenceItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTestcasePropertyDescriptor(object);
-			addEntityPropertyDescriptor(object);
+			addRequirementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,18 +63,18 @@ public class VerificationItemProvider extends ReferenceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Entity feature.
+	 * This adds a property descriptor for the Requirement feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityPropertyDescriptor(Object object) {
+	protected void addRequirementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Verification_entity_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Verification_entity_feature",
+						getResourceLocator(), getString("_UI_Verification_requirement_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Verification_requirement_feature",
 								"_UI_Verification_type"),
-						RmdlPackage.Literals.VERIFICATION__ENTITY, true, false, true, null, null, null));
+						RmdlPackage.Literals.VERIFICATION__REQUIREMENT, true, false, true, null, null, null));
 	}
 
 	/**

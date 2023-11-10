@@ -9,9 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Entity;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Trace;
 
@@ -48,7 +47,7 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity requirement;
+	protected Requirements requirement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,10 +141,10 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity getRequirement() {
+	public Requirements getRequirement() {
 		if (requirement != null && requirement.eIsProxy()) {
 			InternalEObject oldRequirement = (InternalEObject) requirement;
-			requirement = (Entity) eResolveProxy(oldRequirement);
+			requirement = (Requirements) eResolveProxy(oldRequirement);
 			if (requirement != oldRequirement) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.TRACE__REQUIREMENT,
@@ -160,7 +159,7 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetRequirement() {
+	public Requirements basicGetRequirement() {
 		return requirement;
 	}
 
@@ -169,8 +168,8 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRequirement(Entity newRequirement, NotificationChain msgs) {
-		Entity oldRequirement = requirement;
+	public NotificationChain basicSetRequirement(Requirements newRequirement, NotificationChain msgs) {
+		Requirements oldRequirement = requirement;
 		requirement = newRequirement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -188,15 +187,15 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequirement(Entity newRequirement) {
+	public void setRequirement(Requirements newRequirement) {
 		if (newRequirement != requirement) {
 			NotificationChain msgs = null;
 			if (requirement != null)
-				msgs = ((InternalEObject) requirement).eInverseRemove(this, RmdlPackage.ENTITY__SATISFIED_BY,
-						Entity.class, msgs);
+				msgs = ((InternalEObject) requirement).eInverseRemove(this, RmdlPackage.REQUIREMENTS__SATISFIED_BY,
+						Requirements.class, msgs);
 			if (newRequirement != null)
-				msgs = ((InternalEObject) newRequirement).eInverseAdd(this, RmdlPackage.ENTITY__SATISFIED_BY,
-						Entity.class, msgs);
+				msgs = ((InternalEObject) newRequirement).eInverseAdd(this, RmdlPackage.REQUIREMENTS__SATISFIED_BY,
+						Requirements.class, msgs);
 			msgs = basicSetRequirement(newRequirement, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -220,9 +219,9 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 			return basicSetDesignelement((DesignElement) otherEnd, msgs);
 		case RmdlPackage.TRACE__REQUIREMENT:
 			if (requirement != null)
-				msgs = ((InternalEObject) requirement).eInverseRemove(this, RmdlPackage.ENTITY__SATISFIED_BY,
-						Entity.class, msgs);
-			return basicSetRequirement((Entity) otherEnd, msgs);
+				msgs = ((InternalEObject) requirement).eInverseRemove(this, RmdlPackage.REQUIREMENTS__SATISFIED_BY,
+						Requirements.class, msgs);
+			return basicSetRequirement((Requirements) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -275,7 +274,7 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 			setDesignelement((DesignElement) newValue);
 			return;
 		case RmdlPackage.TRACE__REQUIREMENT:
-			setRequirement((Entity) newValue);
+			setRequirement((Requirements) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,7 +292,7 @@ public class TraceImpl extends ReferenceImpl implements Trace {
 			setDesignelement((DesignElement) null);
 			return;
 		case RmdlPackage.TRACE__REQUIREMENT:
-			setRequirement((Entity) null);
+			setRequirement((Requirements) null);
 			return;
 		}
 		super.eUnset(featureID);

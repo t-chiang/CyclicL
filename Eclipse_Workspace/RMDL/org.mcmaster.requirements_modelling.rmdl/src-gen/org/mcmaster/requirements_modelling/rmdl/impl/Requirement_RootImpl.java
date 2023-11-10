@@ -14,11 +14,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Entity;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 
@@ -32,9 +31,9 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getEntity <em>Entity</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getDesignelement <em>Designelement</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,16 +60,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	protected EList<TestCase> testcase;
 
 	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntity()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Entity> entity;
-
-	/**
 	 * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +78,16 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<DesignElement> designelement;
+
+	/**
+	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirements> requirements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,22 +129,9 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	public EList<TestCase> getTestcase() {
 		if (testcase == null) {
 			testcase = new EObjectContainmentWithInverseEList<TestCase>(TestCase.class, this,
-					RmdlPackage.REQUIREMENT_ROOT__TESTCASE, RmdlPackage.TEST_CASE__MODELROOT);
+					RmdlPackage.REQUIREMENT_ROOT__TESTCASE, RmdlPackage.TEST_CASE__REQUIREMENT_ROOT);
 		}
 		return testcase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Entity> getEntity() {
-		if (entity == null) {
-			entity = new EObjectContainmentWithInverseEList<Entity>(Entity.class, this,
-					RmdlPackage.REQUIREMENT_ROOT__ENTITY, RmdlPackage.ENTITY__MODELROOT);
-		}
-		return entity;
 	}
 
 	/**
@@ -157,7 +143,7 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 		if (package_ == null) {
 			package_ = new EObjectContainmentWithInverseEList<org.mcmaster.requirements_modelling.rmdl.Package>(
 					org.mcmaster.requirements_modelling.rmdl.Package.class, this, RmdlPackage.REQUIREMENT_ROOT__PACKAGE,
-					RmdlPackage.PACKAGE__MODELROOT);
+					RmdlPackage.PACKAGE__REQUIREMENT_ROOT);
 		}
 		return package_;
 	}
@@ -170,9 +156,22 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	public EList<DesignElement> getDesignelement() {
 		if (designelement == null) {
 			designelement = new EObjectContainmentWithInverseEList<DesignElement>(DesignElement.class, this,
-					RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT, RmdlPackage.DESIGN_ELEMENT__MODELROOT);
+					RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT);
 		}
 		return designelement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Requirements> getRequirements() {
+		if (requirements == null) {
+			requirements = new EObjectContainmentWithInverseEList<Requirements>(Requirements.class, this,
+					RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS, RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT);
+		}
+		return requirements;
 	}
 
 	/**
@@ -186,12 +185,12 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestcase()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getEntity()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPackage()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDesignelement()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -208,12 +207,12 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return ((InternalEList<?>) getReference()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return ((InternalEList<?>) getTestcase()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
-			return ((InternalEList<?>) getEntity()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 			return ((InternalEList<?>) getPackage()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			return ((InternalEList<?>) getDesignelement()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+			return ((InternalEList<?>) getRequirements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -230,12 +229,12 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return getReference();
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return getTestcase();
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
-			return getEntity();
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 			return getPackage();
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			return getDesignelement();
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+			return getRequirements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,10 +256,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			getTestcase().clear();
 			getTestcase().addAll((Collection<? extends TestCase>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
-			getEntity().clear();
-			getEntity().addAll((Collection<? extends Entity>) newValue);
-			return;
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 			getPackage().clear();
 			getPackage().addAll((Collection<? extends org.mcmaster.requirements_modelling.rmdl.Package>) newValue);
@@ -268,6 +263,10 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			getDesignelement().clear();
 			getDesignelement().addAll((Collection<? extends DesignElement>) newValue);
+			return;
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+			getRequirements().clear();
+			getRequirements().addAll((Collection<? extends Requirements>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,14 +286,14 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			getTestcase().clear();
 			return;
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
-			getEntity().clear();
-			return;
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 			getPackage().clear();
 			return;
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			getDesignelement().clear();
+			return;
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+			getRequirements().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -312,12 +311,12 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return reference != null && !reference.isEmpty();
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return testcase != null && !testcase.isEmpty();
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
-			return entity != null && !entity.isEmpty();
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 			return package_ != null && !package_.isEmpty();
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			return designelement != null && !designelement.isEmpty();
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+			return requirements != null && !requirements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

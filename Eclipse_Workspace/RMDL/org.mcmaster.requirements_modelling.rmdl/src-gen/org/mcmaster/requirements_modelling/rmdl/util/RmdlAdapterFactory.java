@@ -8,16 +8,14 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
 import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Entity;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
-import org.mcmaster.requirements_modelling.rmdl.Requirement;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
@@ -80,8 +78,8 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RmdlSwitch<Adapter> modelSwitch = new RmdlSwitch<Adapter>() {
 		@Override
-		public Adapter caseRequirement(Requirement object) {
-			return createRequirementAdapter();
+		public Adapter caseRequirements(Requirements object) {
+			return createRequirementsAdapter();
 		}
 
 		@Override
@@ -112,11 +110,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseSafety(Safety object) {
 			return createSafetyAdapter();
-		}
-
-		@Override
-		public Adapter caseEntity(Entity object) {
-			return createEntityAdapter();
 		}
 
 		@Override
@@ -169,16 +162,16 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Requirement <em>Requirement</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Requirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements
 	 * @generated
 	 */
-	public Adapter createRequirementAdapter() {
+	public Adapter createRequirementsAdapter() {
 		return null;
 	}
 
@@ -263,20 +256,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSafetyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Entity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Entity
-	 * @generated
-	 */
-	public Adapter createEntityAdapter() {
 		return null;
 	}
 

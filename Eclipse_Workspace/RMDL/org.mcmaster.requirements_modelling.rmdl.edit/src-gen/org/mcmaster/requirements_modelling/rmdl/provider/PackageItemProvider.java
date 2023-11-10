@@ -43,7 +43,7 @@ public class PackageItemProvider extends Requirement_RootItemProvider {
 
 			addNamePropertyDescriptor(object);
 			addPackageIDPropertyDescriptor(object);
-			addModelrootPropertyDescriptor(object);
+			addRequirement_rootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,18 +80,18 @@ public class PackageItemProvider extends Requirement_RootItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Modelroot feature.
+	 * This adds a property descriptor for the Requirement root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModelrootPropertyDescriptor(Object object) {
+	protected void addRequirement_rootPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Package_modelroot_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Package_modelroot_feature",
+						getResourceLocator(), getString("_UI_Package_requirement_root_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Package_requirement_root_feature",
 								"_UI_Package_type"),
-						RmdlPackage.Literals.PACKAGE__MODELROOT, true, false, true, null, null, null));
+						RmdlPackage.Literals.PACKAGE__REQUIREMENT_ROOT, true, false, true, null, null, null));
 	}
 
 	/**

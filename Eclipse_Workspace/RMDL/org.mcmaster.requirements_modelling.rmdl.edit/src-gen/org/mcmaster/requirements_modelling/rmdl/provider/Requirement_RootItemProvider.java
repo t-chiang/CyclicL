@@ -55,26 +55,11 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityPropertyDescriptor(object);
 			addPackagePropertyDescriptor(object);
 			addDesignelementPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Root_entity_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_entity_feature",
-								"_UI_Requirement_Root_type"),
-						RmdlPackage.Literals.REQUIREMENT_ROOT__ENTITY, true, false, true, null, null, null));
 	}
 
 	/**
@@ -108,6 +93,21 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * This adds a property descriptor for the Requirements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Root_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_requirements_feature",
+								"_UI_Requirement_Root_type"),
+						RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -121,9 +121,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__ENTITY);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -187,9 +187,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		switch (notification.getFeatureID(Requirement_Root.class)) {
 		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
-		case RmdlPackage.REQUIREMENT_ROOT__ENTITY:
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -219,23 +219,23 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE,
 				RmdlFactory.eINSTANCE.createTestCase()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createFunctional()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createQualitative()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createConstraint()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createSafety()));
-
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE,
 				RmdlFactory.eINSTANCE.createPackage()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT,
 				RmdlFactory.eINSTANCE.createDesignElement()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createFunctional()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createQualitative()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createConstraint()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createSafety()));
 	}
 
 	/**

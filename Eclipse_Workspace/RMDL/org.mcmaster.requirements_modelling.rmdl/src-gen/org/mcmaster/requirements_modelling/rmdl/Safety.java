@@ -12,5 +12,5 @@ package org.mcmaster.requirements_modelling.rmdl;
  * @model
  * @generated
  */
-public interface Safety extends Requirement {
+public interface Safety extends Requirements {
 } // Safety

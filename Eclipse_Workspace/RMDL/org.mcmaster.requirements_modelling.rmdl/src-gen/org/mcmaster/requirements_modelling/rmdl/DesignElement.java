@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getModelroot <em>Modelroot</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getChildren <em>Children</em>}</li>
  * </ul>
  *
@@ -62,28 +62,28 @@ public interface DesignElement extends EObject {
 	EList<Trace> getSatisfies();
 
 	/**
-	 * Returns the value of the '<em><b>Modelroot</b></em>' container reference.
+	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modelroot</em>' container reference.
-	 * @see #setModelroot(Requirement_Root)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Modelroot()
+	 * @return the value of the '<em>Requirement root</em>' container reference.
+	 * @see #setRequirement_root(Requirement_Root)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Requirement_root()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement
 	 * @model opposite="designelement" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Root getModelroot();
+	Requirement_Root getRequirement_root();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getModelroot <em>Modelroot</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Modelroot</em>' container reference.
-	 * @see #getModelroot()
+	 * @param value the new value of the '<em>Requirement root</em>' container reference.
+	 * @see #getRequirement_root()
 	 * @generated
 	 */
-	void setModelroot(Requirement_Root value);
+	void setRequirement_root(Requirement_Root value);
 
 	/**
 	 * Returns the value of the '<em><b>Children</b></em>' attribute list.

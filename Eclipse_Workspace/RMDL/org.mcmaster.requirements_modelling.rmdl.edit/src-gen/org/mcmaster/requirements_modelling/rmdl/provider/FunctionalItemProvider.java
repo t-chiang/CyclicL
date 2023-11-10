@@ -18,7 +18,7 @@ import org.mcmaster.requirements_modelling.rmdl.Functional;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FunctionalItemProvider extends RequirementItemProvider {
+public class FunctionalItemProvider extends RequirementsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

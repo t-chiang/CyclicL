@@ -3,47 +3,48 @@
 package org.mcmaster.requirements_modelling.rmdl;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Requirement</b></em>'.
+ * A representation of the model object '<em><b>Requirements</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getID <em>ID</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getVerifyMethod <em>Verify Method</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getChild <em>Child</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getParent <em>Parent</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getVerificationTgt <em>Verification Tgt</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getSatisfiedBy <em>Satisfied By</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod <em>Verify Method</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getChild <em>Child</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getParent <em>Parent</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy <em>Satisfied By</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
  * </ul>
  *
- * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement()
+ * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
  * @model abstract="true"
  * @generated
  */
-public interface Requirement extends EObject {
+public interface Requirements extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Name()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -58,14 +59,14 @@ public interface Requirement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(int)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_ID()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_ID()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getID();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getID <em>ID</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>ID</em>' attribute.
@@ -80,14 +81,14 @@ public interface Requirement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Description()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Description()
 	 * @model
 	 * @generated
 	 */
 	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getDescription <em>Description</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Description</em>' attribute.
@@ -102,14 +103,14 @@ public interface Requirement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Verify Method</em>' attribute.
 	 * @see #setVerifyMethod(String)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_VerifyMethod()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_VerifyMethod()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getVerifyMethod();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getVerifyMethod <em>Verify Method</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod <em>Verify Method</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Verify Method</em>' attribute.
@@ -125,7 +126,7 @@ public interface Requirement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Child</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Child()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Child()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Decomposition#getSource
 	 * @model opposite="source"
 	 * @generated
@@ -139,7 +140,7 @@ public interface Requirement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent</em>' reference.
 	 * @see #setParent(Decomposition)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Parent()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Parent()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Decomposition#getTarget
 	 * @model opposite="target"
 	 * @generated
@@ -147,7 +148,7 @@ public interface Requirement extends EObject {
 	Decomposition getParent();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getParent <em>Parent</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Parent</em>' reference.
@@ -163,7 +164,7 @@ public interface Requirement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Verification Tgt</em>' reference.
 	 * @see #setVerificationTgt(Verification)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_VerificationTgt()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_VerificationTgt()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Verification#getRequirement
 	 * @model opposite="requirement"
 	 * @generated
@@ -171,7 +172,7 @@ public interface Requirement extends EObject {
 	Verification getVerificationTgt();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getVerificationTgt <em>Verification Tgt</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Verification Tgt</em>' reference.
@@ -187,7 +188,7 @@ public interface Requirement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Satisfied By</em>' reference.
 	 * @see #setSatisfiedBy(Trace)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_SatisfiedBy()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_SatisfiedBy()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Trace#getRequirement
 	 * @model opposite="requirement"
 	 * @generated
@@ -195,7 +196,7 @@ public interface Requirement extends EObject {
 	Trace getSatisfiedBy();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getSatisfiedBy <em>Satisfied By</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy <em>Satisfied By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Satisfied By</em>' reference.
@@ -205,27 +206,27 @@ public interface Requirement extends EObject {
 	void setSatisfiedBy(Trace value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement root</b></em>' reference.
+	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement root</em>' reference.
+	 * @return the value of the '<em>Requirement root</em>' container reference.
 	 * @see #setRequirement_root(Requirement_Root)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Requirement_root()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Requirement_root()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements
-	 * @model opposite="requirements" required="true"
+	 * @model opposite="requirements" required="true" transient="false"
 	 * @generated
 	 */
 	Requirement_Root getRequirement_root();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement#getRequirement_root <em>Requirement root</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement root</em>' reference.
+	 * @param value the new value of the '<em>Requirement root</em>' container reference.
 	 * @see #getRequirement_root()
 	 * @generated
 	 */
 	void setRequirement_root(Requirement_Root value);
 
-} // Requirement
+} // Requirements

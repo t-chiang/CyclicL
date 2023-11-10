@@ -12,5 +12,5 @@ package org.mcmaster.requirements_modelling.rmdl;
  * @model
  * @generated
  */
-public interface Functional extends Requirement {
+public interface Functional extends Requirements {
 } // Functional

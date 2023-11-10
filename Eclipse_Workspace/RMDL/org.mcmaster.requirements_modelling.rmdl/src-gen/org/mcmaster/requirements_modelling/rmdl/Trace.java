@@ -46,17 +46,17 @@ public interface Trace extends Reference {
 
 	/**
 	 * Returns the value of the '<em><b>Requirement</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Entity#getSatisfiedBy <em>Satisfied By</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy <em>Satisfied By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement</em>' reference.
-	 * @see #setRequirement(Entity)
+	 * @see #setRequirement(Requirements)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTrace_Requirement()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Entity#getSatisfiedBy
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy
 	 * @model opposite="satisfiedBy" required="true"
 	 * @generated
 	 */
-	Entity getRequirement();
+	Requirements getRequirement();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Trace#getRequirement <em>Requirement</em>}' reference.
@@ -66,6 +66,6 @@ public interface Trace extends Reference {
 	 * @see #getRequirement()
 	 * @generated
 	 */
-	void setRequirement(Entity value);
+	void setRequirement(Requirements value);
 
 } // Trace

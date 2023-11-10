@@ -9,9 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.mcmaster.requirements_modelling.rmdl.Decomposition;
-import org.mcmaster.requirements_modelling.rmdl.Requirement;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
@@ -37,7 +36,7 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * @generated
 	 * @ordered
 	 */
-	protected Requirement source;
+	protected Requirements source;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -47,7 +46,7 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * @generated
 	 * @ordered
 	 */
-	protected Requirement target;
+	protected Requirements target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,10 +72,10 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement getSource() {
+	public Requirements getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
-			source = (Requirement) eResolveProxy(oldSource);
+			source = (Requirements) eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.DECOMPOSITION__SOURCE,
@@ -91,7 +90,7 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement basicGetSource() {
+	public Requirements basicGetSource() {
 		return source;
 	}
 
@@ -100,8 +99,8 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSource(Requirement newSource, NotificationChain msgs) {
-		Requirement oldSource = source;
+	public NotificationChain basicSetSource(Requirements newSource, NotificationChain msgs) {
+		Requirements oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -119,15 +118,15 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(Requirement newSource) {
+	public void setSource(Requirements newSource) {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, RmdlPackage.REQUIREMENT__CHILD,
-						Requirement.class, msgs);
+				msgs = ((InternalEObject) source).eInverseRemove(this, RmdlPackage.REQUIREMENTS__CHILD,
+						Requirements.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject) newSource).eInverseAdd(this, RmdlPackage.REQUIREMENT__CHILD,
-						Requirement.class, msgs);
+				msgs = ((InternalEObject) newSource).eInverseAdd(this, RmdlPackage.REQUIREMENTS__CHILD,
+						Requirements.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -141,10 +140,10 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement getTarget() {
+	public Requirements getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
-			target = (Requirement) eResolveProxy(oldTarget);
+			target = (Requirements) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.DECOMPOSITION__TARGET,
@@ -159,7 +158,7 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement basicGetTarget() {
+	public Requirements basicGetTarget() {
 		return target;
 	}
 
@@ -168,8 +167,8 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(Requirement newTarget, NotificationChain msgs) {
-		Requirement oldTarget = target;
+	public NotificationChain basicSetTarget(Requirements newTarget, NotificationChain msgs) {
+		Requirements oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -187,15 +186,15 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Requirement newTarget) {
+	public void setTarget(Requirements newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, RmdlPackage.REQUIREMENT__PARENT,
-						Requirement.class, msgs);
+				msgs = ((InternalEObject) target).eInverseRemove(this, RmdlPackage.REQUIREMENTS__PARENT,
+						Requirements.class, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject) newTarget).eInverseAdd(this, RmdlPackage.REQUIREMENT__PARENT,
-						Requirement.class, msgs);
+				msgs = ((InternalEObject) newTarget).eInverseAdd(this, RmdlPackage.REQUIREMENTS__PARENT,
+						Requirements.class, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -214,14 +213,14 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 		switch (featureID) {
 		case RmdlPackage.DECOMPOSITION__SOURCE:
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, RmdlPackage.REQUIREMENT__CHILD,
-						Requirement.class, msgs);
-			return basicSetSource((Requirement) otherEnd, msgs);
+				msgs = ((InternalEObject) source).eInverseRemove(this, RmdlPackage.REQUIREMENTS__CHILD,
+						Requirements.class, msgs);
+			return basicSetSource((Requirements) otherEnd, msgs);
 		case RmdlPackage.DECOMPOSITION__TARGET:
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, RmdlPackage.REQUIREMENT__PARENT,
-						Requirement.class, msgs);
-			return basicSetTarget((Requirement) otherEnd, msgs);
+				msgs = ((InternalEObject) target).eInverseRemove(this, RmdlPackage.REQUIREMENTS__PARENT,
+						Requirements.class, msgs);
+			return basicSetTarget((Requirements) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -271,10 +270,10 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case RmdlPackage.DECOMPOSITION__SOURCE:
-			setSource((Requirement) newValue);
+			setSource((Requirements) newValue);
 			return;
 		case RmdlPackage.DECOMPOSITION__TARGET:
-			setTarget((Requirement) newValue);
+			setTarget((Requirements) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,10 +288,10 @@ public class DecompositionImpl extends ReferenceImpl implements Decomposition {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case RmdlPackage.DECOMPOSITION__SOURCE:
-			setSource((Requirement) null);
+			setSource((Requirements) null);
 			return;
 		case RmdlPackage.DECOMPOSITION__TARGET:
-			setTarget((Requirement) null);
+			setTarget((Requirements) null);
 			return;
 		}
 		super.eUnset(featureID);

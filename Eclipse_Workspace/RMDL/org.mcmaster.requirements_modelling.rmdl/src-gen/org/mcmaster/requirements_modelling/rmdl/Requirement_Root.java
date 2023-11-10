@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getReference <em>Reference</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getEntity <em>Entity</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage <em>Package</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root()
@@ -42,41 +42,27 @@ public interface Requirement_Root extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Testcase</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.TestCase}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getModelroot <em>Modelroot</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Testcase</em>' containment reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Testcase()
-	 * @see org.mcmaster.requirements_modelling.rmdl.TestCase#getModelroot
-	 * @model opposite="modelroot" containment="true"
+	 * @see org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root
+	 * @model opposite="requirement_root" containment="true"
 	 * @generated
 	 */
 	EList<TestCase> getTestcase();
 
 	/**
-	 * Returns the value of the '<em><b>Entity</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Entity}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Entity#getModelroot <em>Modelroot</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Entity()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Entity#getModelroot
-	 * @model opposite="modelroot" containment="true"
-	 * @generated
-	 */
-	EList<Entity> getEntity();
-
-	/**
 	 * Returns the value of the '<em><b>Package</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Package}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Package#getModelroot <em>Modelroot</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Package#getRequirement_root <em>Requirement root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Package</em>' containment reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Package()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Package#getModelroot
-	 * @model opposite="modelroot" containment="true"
+	 * @see org.mcmaster.requirements_modelling.rmdl.Package#getRequirement_root
+	 * @model opposite="requirement_root" containment="true"
 	 * @generated
 	 */
 	EList<org.mcmaster.requirements_modelling.rmdl.Package> getPackage();
@@ -84,15 +70,29 @@ public interface Requirement_Root extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Designelement</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getModelroot <em>Modelroot</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Designelement</em>' containment reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Designelement()
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getModelroot
-	 * @model opposite="modelroot" containment="true"
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root
+	 * @model opposite="requirement_root" containment="true"
 	 * @generated
 	 */
 	EList<DesignElement> getDesignelement();
+
+	/**
+	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirements</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Requirements()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root
+	 * @model opposite="requirement_root" containment="true"
+	 * @generated
+	 */
+	EList<Requirements> getRequirements();
 
 } // Requirement_Root

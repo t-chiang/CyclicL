@@ -35,7 +35,7 @@ import org.mcmaster.requirements_modelling.rmdl.Trace;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getSatisfies <em>Satisfies</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getModelroot <em>Modelroot</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getChildren <em>Children</em>}</li>
  * </ul>
  *
@@ -140,8 +140,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_Root getModelroot() {
-		if (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__MODELROOT)
+	public Requirement_Root getRequirement_root() {
+		if (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT)
 			return null;
 		return (Requirement_Root) eInternalContainer();
 	}
@@ -151,8 +151,9 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModelroot(Requirement_Root newModelroot, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newModelroot, RmdlPackage.DESIGN_ELEMENT__MODELROOT, msgs);
+	public NotificationChain basicSetRequirement_root(Requirement_Root newRequirement_root, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newRequirement_root, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
+				msgs);
 		return msgs;
 	}
 
@@ -161,23 +162,24 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelroot(Requirement_Root newModelroot) {
-		if (newModelroot != eInternalContainer()
-				|| (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__MODELROOT && newModelroot != null)) {
-			if (EcoreUtil.isAncestor(this, newModelroot))
+	public void setRequirement_root(Requirement_Root newRequirement_root) {
+		if (newRequirement_root != eInternalContainer()
+				|| (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT
+						&& newRequirement_root != null)) {
+			if (EcoreUtil.isAncestor(this, newRequirement_root))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newModelroot != null)
-				msgs = ((InternalEObject) newModelroot).eInverseAdd(this, RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT,
-						Requirement_Root.class, msgs);
-			msgs = basicSetModelroot(newModelroot, msgs);
+			if (newRequirement_root != null)
+				msgs = ((InternalEObject) newRequirement_root).eInverseAdd(this,
+						RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT, Requirement_Root.class, msgs);
+			msgs = basicSetRequirement_root(newRequirement_root, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__MODELROOT, newModelroot,
-					newModelroot));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
+					newRequirement_root, newRequirement_root));
 	}
 
 	/**
@@ -203,10 +205,10 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSatisfies()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetModelroot((Requirement_Root) otherEnd, msgs);
+			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -221,8 +223,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
 			return ((InternalEList<?>) getSatisfies()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
-			return basicSetModelroot(null, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return basicSetRequirement_root(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,7 +237,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT,
 					Requirement_Root.class, msgs);
 		}
@@ -254,8 +256,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return getName();
 		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
 			return getSatisfies();
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
-			return getModelroot();
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return getRequirement_root();
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			return getChildren();
 		}
@@ -278,8 +280,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			getSatisfies().clear();
 			getSatisfies().addAll((Collection<? extends Trace>) newValue);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
-			setModelroot((Requirement_Root) newValue);
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			setRequirement_root((Requirement_Root) newValue);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			getChildren().clear();
@@ -303,8 +305,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
 			getSatisfies().clear();
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
-			setModelroot((Requirement_Root) null);
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			setRequirement_root((Requirement_Root) null);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			getChildren().clear();
@@ -325,8 +327,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
 			return satisfies != null && !satisfies.isEmpty();
-		case RmdlPackage.DESIGN_ELEMENT__MODELROOT:
-			return getModelroot() != null;
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return getRequirement_root() != null;
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			return children != null && !children.isEmpty();
 		}

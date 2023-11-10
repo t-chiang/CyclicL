@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getId <em>Id</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getModelroot <em>Modelroot</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase()
@@ -111,27 +111,27 @@ public interface TestCase extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Modelroot</b></em>' container reference.
+	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase <em>Testcase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modelroot</em>' container reference.
-	 * @see #setModelroot(Requirement_Root)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Modelroot()
+	 * @return the value of the '<em>Requirement root</em>' container reference.
+	 * @see #setRequirement_root(Requirement_Root)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirement_root()
 	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase
 	 * @model opposite="testcase" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Root getModelroot();
+	Requirement_Root getRequirement_root();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getModelroot <em>Modelroot</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Modelroot</em>' container reference.
-	 * @see #getModelroot()
+	 * @param value the new value of the '<em>Requirement root</em>' container reference.
+	 * @see #getRequirement_root()
 	 * @generated
 	 */
-	void setModelroot(Requirement_Root value);
+	void setRequirement_root(Requirement_Root value);
 
 } // TestCase
