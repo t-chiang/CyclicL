@@ -257,7 +257,54 @@
   </ownedViewpoints>
   <ownedViewpoints name="Traceability Table Viewpoint" modelFileExtension="rmdl">
     <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Traceability Matrix" domainClass="rmdl::Requirement_Root">
-      <ownedLineMappings name="Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="feature:entity" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="feature:entity" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="feature:entity" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Constraint Requirement" domainClass="rmdl::Constraint" semanticCandidatesExpression="feature:entity" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Safety Requirement" domainClass="rmdl::Safety" semanticCandidatesExpression="feature:entity" headerLabelExpression="[name/]"/>
+      <ownedCreateLine name="Add Functional Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Functional%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="entity">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'FunctionalReq'+container.entity->filter(rmdl::Functional)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedCreateLine name="Add Qualitative Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Qualitative%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Qualitative" referenceName="entity">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Qualitative'+container.entity->filter(rmdl::Qualitative)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedCreateLine name="Add Constraint Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Constraint%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Constraint" referenceName="entity">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Constraint'+container.entity->filter(rmdl::Constraint)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedCreateLine name="Add Safety Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Safety%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Safety" referenceName="entity">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Safety'+container.entity->filter(rmdl::Safety)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirement)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
       <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
       <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="20" canEdit="true" featureName="description"/>
       <ownedColumnMappings name="aql: self.satisfiedBy.designelement.name" label="Design Element" headerLabelExpression="Design Element" initialWidth="20" canEdit="true" featureName="Design Element"/>
