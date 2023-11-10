@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <rmdl:Requirement_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.0" requirement="//@entity.0"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.1" requirement="//@entity.1"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.2" requirement="//@entity.2"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.3" requirement="//@entity.3"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.1" requirement="//@entity.5"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.0" name="FunctionalReq" ID="1"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.1" name="FunctionalReq" ID="2" description="This is the requirement description"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.2" name="FunctionalReq" ID="3"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.3" name="FunctionalReq" ID="4"/>
-  <entity xsi:type="rmdl:Functional" name="FunctionalReq5" ID="5"/>
-  <entity xsi:type="rmdl:Constraint" satisfiedBy="//@reference.4" name="Constraint1" ID="6"/>
-  <entity xsi:type="rmdl:Safety" name="Safety1" ID="7"/>
-  <entity xsi:type="rmdl:Constraint" name="Constraint2" ID="8"/>
-  <entity xsi:type="rmdl:Qualitative" name="Qualitative1" ID="9"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@designelement.0" requirement="//@requirements.0"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@designelement.1" requirement="//@requirements.1"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@designelement.2" requirement="//@requirements.2"/>
+  <reference xsi:type="rmdl:Trace" designelement="//@designelement.3" requirement="//@requirements.3"/>
   <designelement name="Vehicle" satisfies="//@reference.0"/>
-  <designelement name="Transmission" satisfies="//@reference.1 //@reference.4"/>
+  <designelement name="Transmission" satisfies="//@reference.1"/>
   <designelement name="Torque_Converter" satisfies="//@reference.2"/>
   <designelement name="Transmission" satisfies="//@reference.3"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="1" description="Requirement description is here" satisfiedBy="//@reference.0"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" satisfiedBy="//@reference.1"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" satisfiedBy="//@reference.2"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" satisfiedBy="//@reference.3"/>
+  <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="5"/>
+  <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="6"/>
 </rmdl:Requirement_Root>

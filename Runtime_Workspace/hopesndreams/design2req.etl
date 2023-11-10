@@ -7,8 +7,7 @@ pre{
 rule root2root
 	transform sourceRoot : design!Class_Diagram_Root
 	to targetRoot : requirement!Requirement_Root{
-//		target.entity.addAll(source.class.equivalents().flatten().println("Eq Classes: "));
-		targetRoot.entity.addAll(sourceRoot.class.equivalent().flatten().select(eq | eq.isKindOf(requirement!Entity)));
+		targetRoot.requirements.addAll(sourceRoot.class.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
 		targetRoot.reference.addAll(sourceRoot.class.equivalent().flatten().select(ref | ref.isKindOf(requirement!Reference)));
 		targetRoot.designelement.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
 }
@@ -28,10 +27,10 @@ rule concreteClass2designElement
 		link.designelement = desElement;
 	}
 
-post{
-	var requirements : Set = requirement!Functional.equivalent();
-	requirements.println("Set of requirements: ");
-}
+//post{
+//	var requirements : Set = requirement!Functional.equivalent();
+//	requirements.println("Set of requirements: ");
+//}
 
 
 //rule concreteClass2designElement
