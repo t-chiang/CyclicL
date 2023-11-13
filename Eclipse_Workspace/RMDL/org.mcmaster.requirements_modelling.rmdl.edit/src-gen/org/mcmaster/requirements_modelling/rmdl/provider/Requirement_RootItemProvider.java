@@ -208,9 +208,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,
-				RmdlFactory.eINSTANCE.createTrace()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,
 				RmdlFactory.eINSTANCE.createVerification()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,

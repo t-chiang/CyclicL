@@ -17,7 +17,6 @@ import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
-import org.mcmaster.requirements_modelling.rmdl.Trace;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
@@ -139,15 +138,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 		case RmdlPackage.REFERENCE: {
 			Reference reference = (Reference) theEObject;
 			T result = caseReference(reference);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RmdlPackage.TRACE: {
-			Trace trace = (Trace) theEObject;
-			T result = caseTrace(trace);
-			if (result == null)
-				result = caseReference(trace);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -306,21 +296,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReference(Reference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Trace</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Trace</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTrace(Trace object) {
 		return null;
 	}
 

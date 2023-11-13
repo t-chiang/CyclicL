@@ -22,7 +22,6 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.TestType;
-import org.mcmaster.requirements_modelling.rmdl.Trace;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
@@ -87,13 +86,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * @generated
 	 */
 	private EClass referenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass traceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -271,7 +263,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequirements_SatisfiedBy() {
+	public EReference getRequirements_Requirement_root() {
 		return (EReference) requirementsEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -280,7 +272,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequirements_Requirement_root() {
+	public EReference getRequirements_Satisfiedby() {
 		return (EReference) requirementsEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -424,33 +416,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTrace() {
-		return traceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTrace_Designelement() {
-		return (EReference) traceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTrace_Requirement() {
-		return (EReference) traceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDesignElement() {
 		return designElementEClass;
 	}
@@ -469,7 +434,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesignElement_Satisfies() {
+	public EReference getDesignElement_Requirement_root() {
 		return (EReference) designElementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -478,8 +443,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesignElement_Requirement_root() {
-		return (EReference) designElementEClass.getEStructuralFeatures().get(2);
+	public EAttribute getDesignElement_Children() {
+		return (EAttribute) designElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -487,8 +452,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDesignElement_Children() {
-		return (EAttribute) designElementEClass.getEStructuralFeatures().get(3);
+	public EReference getDesignElement_Satisfies() {
+		return (EReference) designElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -645,8 +610,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEReference(requirementsEClass, REQUIREMENTS__CHILD);
 		createEReference(requirementsEClass, REQUIREMENTS__PARENT);
 		createEReference(requirementsEClass, REQUIREMENTS__VERIFICATION_TGT);
-		createEReference(requirementsEClass, REQUIREMENTS__SATISFIED_BY);
 		createEReference(requirementsEClass, REQUIREMENTS__REQUIREMENT_ROOT);
+		createEReference(requirementsEClass, REQUIREMENTS__SATISFIEDBY);
 
 		functionalEClass = createEClass(FUNCTIONAL);
 
@@ -670,15 +635,11 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 
 		referenceEClass = createEClass(REFERENCE);
 
-		traceEClass = createEClass(TRACE);
-		createEReference(traceEClass, TRACE__DESIGNELEMENT);
-		createEReference(traceEClass, TRACE__REQUIREMENT);
-
 		designElementEClass = createEClass(DESIGN_ELEMENT);
 		createEAttribute(designElementEClass, DESIGN_ELEMENT__NAME);
-		createEReference(designElementEClass, DESIGN_ELEMENT__SATISFIES);
 		createEReference(designElementEClass, DESIGN_ELEMENT__REQUIREMENT_ROOT);
 		createEAttribute(designElementEClass, DESIGN_ELEMENT__CHILDREN);
+		createEReference(designElementEClass, DESIGN_ELEMENT__SATISFIES);
 
 		testCaseEClass = createEClass(TEST_CASE);
 		createEReference(testCaseEClass, TEST_CASE__VERIFICATION_SRC);
@@ -733,7 +694,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		constraintEClass.getESuperTypes().add(this.getRequirements());
 		packageEClass.getESuperTypes().add(this.getRequirement_Root());
 		safetyEClass.getESuperTypes().add(this.getRequirements());
-		traceEClass.getESuperTypes().add(this.getReference());
 		verificationEClass.getESuperTypes().add(this.getReference());
 		decompositionEClass.getESuperTypes().add(this.getReference());
 
@@ -759,13 +719,13 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getRequirements_VerificationTgt(), this.getVerification(), this.getVerification_Requirement(),
 				"verificationTgt", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirements_SatisfiedBy(), this.getTrace(), this.getTrace_Requirement(), "satisfiedBy", null,
-				0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirements_Requirement_root(), this.getRequirement_Root(),
 				this.getRequirement_Root_Requirements(), "requirement_root", null, 1, 1, Requirements.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirements_Satisfiedby(), this.getDesignElement(), this.getDesignElement_Satisfies(),
+				"satisfiedby", null, 1, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionalEClass, Functional.class, "Functional", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -814,21 +774,10 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEClass(referenceEClass, Reference.class, "Reference", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(traceEClass, Trace.class, "Trace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTrace_Designelement(), this.getDesignElement(), this.getDesignElement_Satisfies(),
-				"designelement", null, 1, 1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTrace_Requirement(), this.getRequirements(), this.getRequirements_SatisfiedBy(),
-				"requirement", null, 1, 1, Trace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(designElementEClass, DesignElement.class, "DesignElement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDesignElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, DesignElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesignElement_Satisfies(), this.getTrace(), this.getTrace_Designelement(), "satisfies", null,
-				0, -1, DesignElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDesignElement_Requirement_root(), this.getRequirement_Root(),
 				this.getRequirement_Root_Designelement(), "requirement_root", null, 1, 1, DesignElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -836,6 +785,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEAttribute(getDesignElement_Children(), ecorePackage.getEJavaClass(), "children", null, 0, -1,
 				DesignElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignElement_Satisfies(), this.getRequirements(), this.getRequirements_Satisfiedby(),
+				"satisfies", null, 1, -1, DesignElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCaseEClass, TestCase.class, "TestCase", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

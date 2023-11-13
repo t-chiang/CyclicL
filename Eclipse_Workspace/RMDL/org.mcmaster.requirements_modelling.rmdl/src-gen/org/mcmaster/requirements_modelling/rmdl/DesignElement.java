@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getChildren <em>Children</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement()
@@ -46,20 +46,6 @@ public interface DesignElement extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Satisfies</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Trace}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Trace#getDesignelement <em>Designelement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Satisfies</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Satisfies()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Trace#getDesignelement
-	 * @model opposite="designelement"
-	 * @generated
-	 */
-	EList<Trace> getSatisfies();
 
 	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
@@ -96,5 +82,19 @@ public interface DesignElement extends EObject {
 	 * @generated
 	 */
 	EList<Class> getChildren();
+
+	/**
+	 * Returns the value of the '<em><b>Satisfies</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby <em>Satisfiedby</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Satisfies</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Satisfies()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby
+	 * @model opposite="satisfiedby" required="true"
+	 * @generated
+	 */
+	EList<Requirements> getSatisfies();
 
 } // DesignElement

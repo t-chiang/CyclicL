@@ -211,29 +211,6 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Trace} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TraceItemProvider traceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Trace}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTraceAdapter() {
-		if (traceItemProvider == null) {
-			traceItemProvider = new TraceItemProvider(this);
-		}
-
-		return traceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.DesignElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,8 +413,6 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			requirement_RootItemProvider.dispose();
 		if (safetyItemProvider != null)
 			safetyItemProvider.dispose();
-		if (traceItemProvider != null)
-			traceItemProvider.dispose();
 		if (designElementItemProvider != null)
 			designElementItemProvider.dispose();
 		if (testCaseItemProvider != null)

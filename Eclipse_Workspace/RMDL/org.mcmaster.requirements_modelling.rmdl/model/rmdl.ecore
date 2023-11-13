@@ -13,10 +13,10 @@
         eOpposite="#//Decomposition/target"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="verificationTgt" eType="#//Verification"
         eOpposite="#//Verification/requirement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedBy" eType="#//Trace"
-        eOpposite="#//Trace/requirement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
         eType="#//Requirement_Root" eOpposite="#//Requirement_Root/requirements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedby" lowerBound="1"
+        upperBound="-1" eType="#//DesignElement" eOpposite="#//DesignElement/satisfies"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Functional" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Qualitative" eSuperTypes="#//Requirements"/>
@@ -42,20 +42,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Trace" eSuperTypes="#//Reference">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="designelement" lowerBound="1"
-        eType="#//DesignElement" eOpposite="#//DesignElement/satisfies"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" lowerBound="1"
-        eType="#//Requirements" eOpposite="#//Requirements/satisfiedBy"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DesignElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfies" upperBound="-1"
-        eType="#//Trace" eOpposite="#//Trace/designelement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
         eType="#//Requirement_Root" eOpposite="#//Requirement_Root/designelement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="children" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfies" lowerBound="1"
+        upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/satisfiedby"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestCase">
     <eStructuralFeatures xsi:type="ecore:EReference" name="verificationSrc" upperBound="-1"

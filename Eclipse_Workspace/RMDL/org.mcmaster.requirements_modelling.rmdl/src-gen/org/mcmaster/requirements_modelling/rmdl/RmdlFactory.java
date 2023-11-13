@@ -76,15 +76,6 @@ public interface RmdlFactory extends EFactory {
 	Safety createSafety();
 
 	/**
-	 * Returns a new object of class '<em>Trace</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Trace</em>'.
-	 * @generated
-	 */
-	Trace createTrace();
-
-	/**
 	 * Returns a new object of class '<em>Design Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

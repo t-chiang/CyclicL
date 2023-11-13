@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getChild <em>Child</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getParent <em>Parent</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy <em>Satisfied By</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby <em>Satisfiedby</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -182,30 +182,6 @@ public interface Requirements extends EObject {
 	void setVerificationTgt(Verification value);
 
 	/**
-	 * Returns the value of the '<em><b>Satisfied By</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Trace#getRequirement <em>Requirement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Satisfied By</em>' reference.
-	 * @see #setSatisfiedBy(Trace)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_SatisfiedBy()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Trace#getRequirement
-	 * @model opposite="requirement"
-	 * @generated
-	 */
-	Trace getSatisfiedBy();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy <em>Satisfied By</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Satisfied By</em>' reference.
-	 * @see #getSatisfiedBy()
-	 * @generated
-	 */
-	void setSatisfiedBy(Trace value);
-
-	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
@@ -228,5 +204,19 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	void setRequirement_root(Requirement_Root value);
+
+	/**
+	 * Returns the value of the '<em><b>Satisfiedby</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Satisfiedby</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Satisfiedby()
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies
+	 * @model opposite="satisfies" required="true"
+	 * @generated
+	 */
+	EList<DesignElement> getSatisfiedby();
 
 } // Requirements

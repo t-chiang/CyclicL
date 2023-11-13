@@ -22,7 +22,6 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.TestType;
-import org.mcmaster.requirements_modelling.rmdl.Trace;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
@@ -80,8 +79,6 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createRequirement_Root();
 		case RmdlPackage.SAFETY:
 			return createSafety();
-		case RmdlPackage.TRACE:
-			return createTrace();
 		case RmdlPackage.DESIGN_ELEMENT:
 			return createDesignElement();
 		case RmdlPackage.TEST_CASE:
@@ -183,16 +180,6 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	public Safety createSafety() {
 		SafetyImpl safety = new SafetyImpl();
 		return safety;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Trace createTrace() {
-		TraceImpl trace = new TraceImpl();
-		return trace;
 	}
 
 	/**

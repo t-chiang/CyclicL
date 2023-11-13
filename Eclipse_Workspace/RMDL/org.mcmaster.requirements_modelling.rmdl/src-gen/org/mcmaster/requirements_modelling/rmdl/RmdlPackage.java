@@ -131,22 +131,22 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENTS__VERIFICATION_TGT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Satisfied By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENTS__SATISFIED_BY = 7;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__REQUIREMENT_ROOT = 8;
+	int REQUIREMENTS__REQUIREMENT_ROOT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Satisfiedby</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS__SATISFIEDBY = 8;
 
 	/**
 	 * The number of structural features of the '<em>Requirements</em>' class.
@@ -240,15 +240,6 @@ public interface RmdlPackage extends EPackage {
 	int FUNCTIONAL__VERIFICATION_TGT = REQUIREMENTS__VERIFICATION_TGT;
 
 	/**
-	 * The feature id for the '<em><b>Satisfied By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTIONAL__SATISFIED_BY = REQUIREMENTS__SATISFIED_BY;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,6 +247,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTIONAL__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Satisfiedby</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__SATISFIEDBY = REQUIREMENTS__SATISFIEDBY;
 
 	/**
 	 * The number of structural features of the '<em>Functional</em>' class.
@@ -349,15 +349,6 @@ public interface RmdlPackage extends EPackage {
 	int QUALITATIVE__VERIFICATION_TGT = REQUIREMENTS__VERIFICATION_TGT;
 
 	/**
-	 * The feature id for the '<em><b>Satisfied By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITATIVE__SATISFIED_BY = REQUIREMENTS__SATISFIED_BY;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -365,6 +356,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int QUALITATIVE__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Satisfiedby</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__SATISFIEDBY = REQUIREMENTS__SATISFIEDBY;
 
 	/**
 	 * The number of structural features of the '<em>Qualitative</em>' class.
@@ -458,15 +458,6 @@ public interface RmdlPackage extends EPackage {
 	int CONSTRAINT__VERIFICATION_TGT = REQUIREMENTS__VERIFICATION_TGT;
 
 	/**
-	 * The feature id for the '<em><b>Satisfied By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__SATISFIED_BY = REQUIREMENTS__SATISFIED_BY;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -474,6 +465,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Satisfiedby</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__SATISFIEDBY = REQUIREMENTS__SATISFIEDBY;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -740,15 +740,6 @@ public interface RmdlPackage extends EPackage {
 	int SAFETY__VERIFICATION_TGT = REQUIREMENTS__VERIFICATION_TGT;
 
 	/**
-	 * The feature id for the '<em><b>Satisfied By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAFETY__SATISFIED_BY = REQUIREMENTS__SATISFIED_BY;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -756,6 +747,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int SAFETY__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Satisfiedby</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__SATISFIEDBY = REQUIREMENTS__SATISFIEDBY;
 
 	/**
 	 * The number of structural features of the '<em>Safety</em>' class.
@@ -804,52 +804,6 @@ public interface RmdlPackage extends EPackage {
 	int REFERENCE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.TraceImpl <em>Trace</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mcmaster.requirements_modelling.rmdl.impl.TraceImpl
-	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTrace()
-	 * @generated
-	 */
-	int TRACE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Designelement</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACE__DESIGNELEMENT = REFERENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Requirement</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACE__REQUIREMENT = REFERENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Trace</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Trace</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACE_OPERATION_COUNT = REFERENCE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl <em>Design Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,7 +811,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getDesignElement()
 	 * @generated
 	 */
-	int DESIGN_ELEMENT = 9;
+	int DESIGN_ELEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -869,22 +823,13 @@ public interface RmdlPackage extends EPackage {
 	int DESIGN_ELEMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Satisfies</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESIGN_ELEMENT__SATISFIES = 1;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_ELEMENT__REQUIREMENT_ROOT = 2;
+	int DESIGN_ELEMENT__REQUIREMENT_ROOT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' attribute list.
@@ -893,7 +838,16 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_ELEMENT__CHILDREN = 3;
+	int DESIGN_ELEMENT__CHILDREN = 2;
+
+	/**
+	 * The feature id for the '<em><b>Satisfies</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_ELEMENT__SATISFIES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Design Element</em>' class.
@@ -921,7 +875,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTestCase()
 	 * @generated
 	 */
-	int TEST_CASE = 10;
+	int TEST_CASE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Verification Src</b></em>' reference list.
@@ -994,7 +948,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getVerification()
 	 * @generated
 	 */
-	int VERIFICATION = 11;
+	int VERIFICATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference.
@@ -1040,7 +994,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getDecomposition()
 	 * @generated
 	 */
-	int DECOMPOSITION = 12;
+	int DECOMPOSITION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1086,7 +1040,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTestType()
 	 * @generated
 	 */
-	int TEST_TYPE = 13;
+	int TEST_TYPE = 12;
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Requirements <em>Requirements</em>}'.
@@ -1176,17 +1130,6 @@ public interface RmdlPackage extends EPackage {
 	EReference getRequirements_VerificationTgt();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy <em>Satisfied By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Satisfied By</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedBy()
-	 * @see #getRequirements()
-	 * @generated
-	 */
-	EReference getRequirements_SatisfiedBy();
-
-	/**
 	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1196,6 +1139,17 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirements_Requirement_root();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby <em>Satisfiedby</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Satisfiedby</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby()
+	 * @see #getRequirements()
+	 * @generated
+	 */
+	EReference getRequirements_Satisfiedby();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Functional <em>Functional</em>}'.
@@ -1356,38 +1310,6 @@ public interface RmdlPackage extends EPackage {
 	EClass getReference();
 
 	/**
-	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Trace <em>Trace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Trace</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Trace
-	 * @generated
-	 */
-	EClass getTrace();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.Trace#getDesignelement <em>Designelement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Designelement</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Trace#getDesignelement()
-	 * @see #getTrace()
-	 * @generated
-	 */
-	EReference getTrace_Designelement();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.Trace#getRequirement <em>Requirement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Requirement</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Trace#getRequirement()
-	 * @see #getTrace()
-	 * @generated
-	 */
-	EReference getTrace_Requirement();
-
-	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement <em>Design Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1407,17 +1329,6 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDesignElement_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Satisfies</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies()
-	 * @see #getDesignElement()
-	 * @generated
-	 */
-	EReference getDesignElement_Satisfies();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}'.
@@ -1440,6 +1351,17 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDesignElement_Children();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Satisfies</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies()
+	 * @see #getDesignElement()
+	 * @generated
+	 */
+	EReference getDesignElement_Satisfies();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.TestCase <em>Test Case</em>}'.
@@ -1670,20 +1592,20 @@ public interface RmdlPackage extends EPackage {
 		EReference REQUIREMENTS__VERIFICATION_TGT = eINSTANCE.getRequirements_VerificationTgt();
 
 		/**
-		 * The meta object literal for the '<em><b>Satisfied By</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUIREMENTS__SATISFIED_BY = eINSTANCE.getRequirements_SatisfiedBy();
-
-		/**
 		 * The meta object literal for the '<em><b>Requirement root</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference REQUIREMENTS__REQUIREMENT_ROOT = eINSTANCE.getRequirements_Requirement_root();
+
+		/**
+		 * The meta object literal for the '<em><b>Satisfiedby</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENTS__SATISFIEDBY = eINSTANCE.getRequirements_Satisfiedby();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FunctionalImpl <em>Functional</em>}' class.
@@ -1820,32 +1742,6 @@ public interface RmdlPackage extends EPackage {
 		EClass REFERENCE = eINSTANCE.getReference();
 
 		/**
-		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.TraceImpl <em>Trace</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mcmaster.requirements_modelling.rmdl.impl.TraceImpl
-		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTrace()
-		 * @generated
-		 */
-		EClass TRACE = eINSTANCE.getTrace();
-
-		/**
-		 * The meta object literal for the '<em><b>Designelement</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACE__DESIGNELEMENT = eINSTANCE.getTrace_Designelement();
-
-		/**
-		 * The meta object literal for the '<em><b>Requirement</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACE__REQUIREMENT = eINSTANCE.getTrace_Requirement();
-
-		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl <em>Design Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1864,14 +1760,6 @@ public interface RmdlPackage extends EPackage {
 		EAttribute DESIGN_ELEMENT__NAME = eINSTANCE.getDesignElement_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Satisfies</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DESIGN_ELEMENT__SATISFIES = eINSTANCE.getDesignElement_Satisfies();
-
-		/**
 		 * The meta object literal for the '<em><b>Requirement root</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1886,6 +1774,14 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DESIGN_ELEMENT__CHILDREN = eINSTANCE.getDesignElement_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Satisfies</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_ELEMENT__SATISFIES = eINSTANCE.getDesignElement_Satisfies();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl <em>Test Case</em>}' class.

@@ -19,7 +19,6 @@ import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
-import org.mcmaster.requirements_modelling.rmdl.Trace;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
@@ -115,11 +114,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseReference(Reference object) {
 			return createReferenceAdapter();
-		}
-
-		@Override
-		public Adapter caseTrace(Trace object) {
-			return createTraceAdapter();
 		}
 
 		@Override
@@ -270,20 +264,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Trace <em>Trace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Trace
-	 * @generated
-	 */
-	public Adapter createTraceAdapter() {
 		return null;
 	}
 

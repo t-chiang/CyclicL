@@ -53,9 +53,9 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addSatisfiesPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
 			addChildrenPropertyDescriptor(object);
+			addSatisfiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,21 +74,6 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 								"_UI_DesignElement_type"),
 						RmdlPackage.Literals.DESIGN_ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Satisfies feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSatisfiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_satisfies_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_satisfies_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__SATISFIES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -120,6 +105,21 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 								"_UI_DesignElement_type"),
 						RmdlPackage.Literals.DESIGN_ELEMENT__CHILDREN, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Satisfies feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSatisfiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesignElement_satisfies_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_satisfies_feature",
+								"_UI_DesignElement_type"),
+						RmdlPackage.Literals.DESIGN_ELEMENT__SATISFIES, true, false, true, null, null, null));
 	}
 
 	/**

@@ -60,8 +60,8 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addChildPropertyDescriptor(object);
 			addParentPropertyDescriptor(object);
 			addVerificationTgtPropertyDescriptor(object);
-			addSatisfiedByPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
+			addSatisfiedbyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -176,21 +176,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Satisfied By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSatisfiedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_satisfiedBy_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_satisfiedBy_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__SATISFIED_BY, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Requirement root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,6 +188,21 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_requirement_root_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__REQUIREMENT_ROOT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Satisfiedby feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSatisfiedbyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirements_satisfiedby_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_satisfiedby_feature",
+								"_UI_Requirements_type"),
+						RmdlPackage.Literals.REQUIREMENTS__SATISFIEDBY, true, false, true, null, null, null));
 	}
 
 	/**

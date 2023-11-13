@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.requirements_modelling.rmdl.Decomposition;
+import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-import org.mcmaster.requirements_modelling.rmdl.Trace;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
@@ -41,8 +41,8 @@ import org.mcmaster.requirements_modelling.rmdl.Verification;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getChild <em>Child</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getVerificationTgt <em>Verification Tgt</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getSatisfiedBy <em>Satisfied By</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getSatisfiedby <em>Satisfiedby</em>}</li>
  * </ul>
  *
  * @generated
@@ -159,14 +159,14 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	protected Verification verificationTgt;
 
 	/**
-	 * The cached value of the '{@link #getSatisfiedBy() <em>Satisfied By</em>}' reference.
+	 * The cached value of the '{@link #getSatisfiedby() <em>Satisfiedby</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSatisfiedBy()
+	 * @see #getSatisfiedby()
 	 * @generated
 	 * @ordered
 	 */
-	protected Trace satisfiedBy;
+	protected EList<DesignElement> satisfiedby;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -427,74 +427,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trace getSatisfiedBy() {
-		if (satisfiedBy != null && satisfiedBy.eIsProxy()) {
-			InternalEObject oldSatisfiedBy = (InternalEObject) satisfiedBy;
-			satisfiedBy = (Trace) eResolveProxy(oldSatisfiedBy);
-			if (satisfiedBy != oldSatisfiedBy) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.REQUIREMENTS__SATISFIED_BY,
-							oldSatisfiedBy, satisfiedBy));
-			}
-		}
-		return satisfiedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Trace basicGetSatisfiedBy() {
-		return satisfiedBy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSatisfiedBy(Trace newSatisfiedBy, NotificationChain msgs) {
-		Trace oldSatisfiedBy = satisfiedBy;
-		satisfiedBy = newSatisfiedBy;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.REQUIREMENTS__SATISFIED_BY, oldSatisfiedBy, newSatisfiedBy);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSatisfiedBy(Trace newSatisfiedBy) {
-		if (newSatisfiedBy != satisfiedBy) {
-			NotificationChain msgs = null;
-			if (satisfiedBy != null)
-				msgs = ((InternalEObject) satisfiedBy).eInverseRemove(this, RmdlPackage.TRACE__REQUIREMENT, Trace.class,
-						msgs);
-			if (newSatisfiedBy != null)
-				msgs = ((InternalEObject) newSatisfiedBy).eInverseAdd(this, RmdlPackage.TRACE__REQUIREMENT, Trace.class,
-						msgs);
-			msgs = basicSetSatisfiedBy(newSatisfiedBy, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENTS__SATISFIED_BY,
-					newSatisfiedBy, newSatisfiedBy));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Requirement_Root getRequirement_root() {
 		if (eContainerFeatureID() != RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT)
 			return null;
@@ -542,6 +474,19 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<DesignElement> getSatisfiedby() {
+		if (satisfiedby == null) {
+			satisfiedby = new EObjectWithInverseResolvingEList.ManyInverse<DesignElement>(DesignElement.class, this,
+					RmdlPackage.REQUIREMENTS__SATISFIEDBY, RmdlPackage.DESIGN_ELEMENT__SATISFIES);
+		}
+		return satisfiedby;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -558,15 +503,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 				msgs = ((InternalEObject) verificationTgt).eInverseRemove(this, RmdlPackage.VERIFICATION__REQUIREMENT,
 						Verification.class, msgs);
 			return basicSetVerificationTgt((Verification) otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__SATISFIED_BY:
-			if (satisfiedBy != null)
-				msgs = ((InternalEObject) satisfiedBy).eInverseRemove(this, RmdlPackage.TRACE__REQUIREMENT, Trace.class,
-						msgs);
-			return basicSetSatisfiedBy((Trace) otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSatisfiedby()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -585,10 +527,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return basicSetParent(null, msgs);
 		case RmdlPackage.REQUIREMENTS__VERIFICATION_TGT:
 			return basicSetVerificationTgt(null, msgs);
-		case RmdlPackage.REQUIREMENTS__SATISFIED_BY:
-			return basicSetSatisfiedBy(null, msgs);
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return basicSetRequirement_root(null, msgs);
+		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
+			return ((InternalEList<?>) getSatisfiedby()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -634,12 +576,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			if (resolve)
 				return getVerificationTgt();
 			return basicGetVerificationTgt();
-		case RmdlPackage.REQUIREMENTS__SATISFIED_BY:
-			if (resolve)
-				return getSatisfiedBy();
-			return basicGetSatisfiedBy();
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return getRequirement_root();
+		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
+			return getSatisfiedby();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -675,11 +615,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__VERIFICATION_TGT:
 			setVerificationTgt((Verification) newValue);
 			return;
-		case RmdlPackage.REQUIREMENTS__SATISFIED_BY:
-			setSatisfiedBy((Trace) newValue);
-			return;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) newValue);
+			return;
+		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
+			getSatisfiedby().clear();
+			getSatisfiedby().addAll((Collection<? extends DesignElement>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -714,11 +655,11 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__VERIFICATION_TGT:
 			setVerificationTgt((Verification) null);
 			return;
-		case RmdlPackage.REQUIREMENTS__SATISFIED_BY:
-			setSatisfiedBy((Trace) null);
-			return;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) null);
+			return;
+		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
+			getSatisfiedby().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -746,10 +687,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return parent != null;
 		case RmdlPackage.REQUIREMENTS__VERIFICATION_TGT:
 			return verificationTgt != null;
-		case RmdlPackage.REQUIREMENTS__SATISFIED_BY:
-			return satisfiedBy != null;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return getRequirement_root() != null;
+		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
+			return satisfiedby != null && !satisfiedby.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

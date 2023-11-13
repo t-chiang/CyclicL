@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
 <rmdl:Requirement_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.0" requirement="//@requirements.0"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.1" requirement="//@requirements.1"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.2" requirement="//@requirements.2"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@designelement.3" requirement="//@requirements.3"/>
-  <designelement name="Vehicle" satisfies="//@reference.0"/>
-  <designelement name="Transmission" satisfies="//@reference.1"/>
-  <designelement name="Torque_Converter" satisfies="//@reference.2"/>
-  <designelement name="Transmission" satisfies="//@reference.3"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="1" description="Requirement description is here" satisfiedBy="//@reference.0"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" satisfiedBy="//@reference.1"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" satisfiedBy="//@reference.2"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" satisfiedBy="//@reference.3"/>
-  <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="5"/>
-  <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="6"/>
+  <reference xsi:type="rmdl:Verification" testcase="//@testcase.0" requirement="//@requirements.4"/>
+  <testcase verificationSrc="//@reference.0"/>
+  <designelement name="Vehicle" satisfies="//@requirements.0"/>
+  <designelement name="Transmission" satisfies="//@requirements.1"/>
+  <designelement name="Torque_Converter" satisfies="//@requirements.2 //@requirements.4"/>
+  <designelement name="Transmission" satisfies="//@requirements.3 //@requirements.4"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="1" description="hello world" satisfiedby="//@designelement.0"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" satisfiedby="//@designelement.1"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" satisfiedby="//@designelement.2"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" satisfiedby="//@designelement.3"/>
+  <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="5" verificationTgt="//@reference.0" satisfiedby="//@designelement.3 //@designelement.2"/>
 </rmdl:Requirement_Root>

@@ -19,11 +19,10 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-import org.mcmaster.requirements_modelling.rmdl.Trace;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,9 +33,9 @@ import org.mcmaster.requirements_modelling.rmdl.Trace;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getSatisfies <em>Satisfies</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getChildren <em>Children</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getSatisfies <em>Satisfies</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,16 +62,6 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSatisfies() <em>Satisfies</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSatisfies()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Trace> satisfies;
-
-	/**
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,6 +70,16 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * @ordered
 	 */
 	protected EList<Class> children;
+
+	/**
+	 * The cached value of the '{@link #getSatisfies() <em>Satisfies</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSatisfies()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirements> satisfies;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,19 +119,6 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Trace> getSatisfies() {
-		if (satisfies == null) {
-			satisfies = new EObjectWithInverseResolvingEList<Trace>(Trace.class, this,
-					RmdlPackage.DESIGN_ELEMENT__SATISFIES, RmdlPackage.TRACE__DESIGNELEMENT);
-		}
-		return satisfies;
 	}
 
 	/**
@@ -199,16 +185,29 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Requirements> getSatisfies() {
+		if (satisfies == null) {
+			satisfies = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
+					RmdlPackage.DESIGN_ELEMENT__SATISFIES, RmdlPackage.REQUIREMENTS__SATISFIEDBY);
+		}
+		return satisfies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSatisfies()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSatisfies()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -221,10 +220,10 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
-			return ((InternalEList<?>) getSatisfies()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			return basicSetRequirement_root(null, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
+			return ((InternalEList<?>) getSatisfies()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -254,12 +253,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			return getName();
-		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
-			return getSatisfies();
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			return getRequirement_root();
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			return getChildren();
+		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
+			return getSatisfies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -276,16 +275,16 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			setName((String) newValue);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
-			getSatisfies().clear();
-			getSatisfies().addAll((Collection<? extends Trace>) newValue);
-			return;
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) newValue);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			getChildren().clear();
 			getChildren().addAll((Collection<? extends Class>) newValue);
+			return;
+		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
+			getSatisfies().clear();
+			getSatisfies().addAll((Collection<? extends Requirements>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -302,14 +301,14 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
-			getSatisfies().clear();
-			return;
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) null);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			getChildren().clear();
+			return;
+		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
+			getSatisfies().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -325,12 +324,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
-			return satisfies != null && !satisfies.isEmpty();
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			return getRequirement_root() != null;
 		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
 			return children != null && !children.isEmpty();
+		case RmdlPackage.DESIGN_ELEMENT__SATISFIES:
+			return satisfies != null && !satisfies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

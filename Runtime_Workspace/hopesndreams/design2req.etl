@@ -15,16 +15,14 @@ rule root2root
 rule concreteClass2designElement
 	transform designClass : design!ConcreteClass
 	to desElement : requirement!DesignElement,
-		req: requirement!Functional,
-		link: requirement!Trace{
+		req: requirement!Functional{
 		desElement.name = designClass.name;
 		req.setName("FunctionalReq");
 		req.setID(functionals);
 		functionals++;
 		req.equivalent().size().println("Size of array of requirements: ");
 		req.eContainer().println("Container is: ");
-		link.requirement = req;
-		link.designelement = desElement;
+		req.satisfiedby.add(desElement);
 	}
 
 //post{
