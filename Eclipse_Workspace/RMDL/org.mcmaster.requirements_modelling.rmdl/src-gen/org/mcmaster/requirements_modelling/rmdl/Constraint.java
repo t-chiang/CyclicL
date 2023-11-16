@@ -12,5 +12,5 @@ package org.mcmaster.requirements_modelling.rmdl;
  * @model
  * @generated
  */
-public interface Constraint extends Requirement {
+public interface Constraint extends Requirements {
 } // Constraint

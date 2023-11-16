@@ -10,23 +10,18 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Action;
 import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.ClassVariable;
+import org.mcmaster.pfcsm.Attribute;
+import org.mcmaster.pfcsm.Class_Diagram_Root;
 import org.mcmaster.pfcsm.Composition;
 import org.mcmaster.pfcsm.ConcreteClass;
 import org.mcmaster.pfcsm.Element;
 import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.ModelRoot;
 import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.OperationVariable;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Produces;
 import org.mcmaster.pfcsm.Reference;
-import org.mcmaster.pfcsm.State;
-import org.mcmaster.pfcsm.Transition;
 import org.mcmaster.pfcsm.Uses;
-import org.mcmaster.pfcsm.Variable;
 import org.mcmaster.pfcsm.XOR;
 
 /**
@@ -90,8 +85,8 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseModelRoot(ModelRoot object) {
-			return createModelRootAdapter();
+		public Adapter caseClass_Diagram_Root(Class_Diagram_Root object) {
+			return createClass_Diagram_RootAdapter();
 		}
 
 		@Override
@@ -125,43 +120,8 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseClassVariable(ClassVariable object) {
-			return createClassVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseOperation(Operation object) {
-			return createOperationAdapter();
-		}
-
-		@Override
-		public Adapter caseState(State object) {
-			return createStateAdapter();
-		}
-
-		@Override
-		public Adapter caseTransition(Transition object) {
-			return createTransitionAdapter();
-		}
-
-		@Override
 		public Adapter caseConcreteClass(ConcreteClass object) {
 			return createConcreteClassAdapter();
-		}
-
-		@Override
-		public Adapter caseVariable(Variable object) {
-			return createVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseOperationVariable(OperationVariable object) {
-			return createOperationVariableAdapter();
-		}
-
-		@Override
-		public Adapter caseAction(Action object) {
-			return createActionAdapter();
 		}
 
 		@Override
@@ -177,6 +137,16 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseProduces(Produces object) {
 			return createProducesAdapter();
+		}
+
+		@Override
+		public Adapter caseAttribute(Attribute object) {
+			return createAttributeAdapter();
+		}
+
+		@Override
+		public Adapter caseOperation(Operation object) {
+			return createOperationAdapter();
 		}
 
 		@Override
@@ -213,16 +183,16 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.ModelRoot <em>Model Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Class_Diagram_Root <em>Class Diagram Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.ModelRoot
+	 * @see org.mcmaster.pfcsm.Class_Diagram_Root
 	 * @generated
 	 */
-	public Adapter createModelRootAdapter() {
+	public Adapter createClass_Diagram_RootAdapter() {
 		return null;
 	}
 
@@ -311,20 +281,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.ClassVariable <em>Class Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.ClassVariable
-	 * @generated
-	 */
-	public Adapter createClassVariableAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -339,34 +295,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.State <em>State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.State
-	 * @generated
-	 */
-	public Adapter createStateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Transition <em>Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.Transition
-	 * @generated
-	 */
-	public Adapter createTransitionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.ConcreteClass <em>Concrete Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -377,48 +305,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConcreteClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.Variable
-	 * @generated
-	 */
-	public Adapter createVariableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.OperationVariable <em>Operation Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.OperationVariable
-	 * @generated
-	 */
-	public Adapter createOperationVariableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Action <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.Action
-	 * @generated
-	 */
-	public Adapter createActionAdapter() {
 		return null;
 	}
 
@@ -461,6 +347,20 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProducesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Attribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.pfcsm.Attribute
+	 * @generated
+	 */
+	public Adapter createAttributeAdapter() {
 		return null;
 	}
 

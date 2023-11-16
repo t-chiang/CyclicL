@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pfcsm:ModelRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <class xsi:type="pfcsm:ConcreteClass" name="Transmission" referenceTo="//@reference.0"/>
-  <class xsi:type="pfcsm:ConcreteClass" name="Vehicle" referenceTo="//@reference.1 //@reference.2" referenceFrom="//@reference.0"/>
-  <class xsi:type="pfcsm:ConcreteClass" name="Torque_Converter" referenceFrom="//@reference.1"/>
-  <class xsi:type="pfcsm:ConcreteClass" name="Transmission_Radio" referenceFrom="//@reference.2"/>
-  <reference xsi:type="pfcsm:Association" source="//@class.0" target="//@class.1"/>
+<?xml version="1.0" encoding="ASCII"?>
+<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
+  <class xsi:type="pfcsm:ConcreteClass" name="Vehicle" referenceFrom="//@reference.0">
+    <element xsi:type="pfcsm:Attribute" name="vehicleSpd : double"/>
+    <element xsi:type="pfcsm:Attribute" name="throttle : throttle"/>
+    <element xsi:type="pfcsm:Attribute" name="passingManeuver_Brake : pmb"/>
+  </class>
+  <class xsi:type="pfcsm:ConcreteClass" name="Transmission" referenceTo="//@reference.0 //@reference.1 //@reference.2">
+    <element xsi:type="pfcsm:Attribute" name="Ne : double"/>
+    <element xsi:type="pfcsm:Attribute" name="imp_tq : double"/>
+    <element xsi:type="pfcsm:Attribute" name="output_tq : double"/>
+    <element xsi:type="pfcsm:Attribute" name="gear : Gear"/>
+    <element xsi:type="pfcsm:Attribute" name="transmissionSpd : double"/>
+    <element xsi:type="pfcsm:Attribute" name="Nout : double" isPublic="false"/>
+    <element xsi:type="pfcsm:Attribute" name="Nin : double" isPublic="false"/>
+    <element xsi:type="pfcsm:Attribute" name="turbineTq : TurbineTq" isPublic="false"/>
+    <element xsi:type="pfcsm:Operation" name="Gear_Logic(throttle, veh_spd) : gear"/>
+    <element xsi:type="pfcsm:Operation" name="torque_converter(Ne, Nin) : imp_tq) : imp_tq"/>
+    <element xsi:type="pfcsm:Operation" name="transmission_ratio(Tin, gear, Nout) : Nin, Tout"/>
+    <element xsi:type="pfcsm:Operation" name="getTransSpd(transmissionSpd) : double" isPublic="false"/>
+  </class>
+  <class xsi:type="pfcsm:ConcreteClass" name="Torque_Converter" referenceFrom="//@reference.1">
+    <element xsi:type="pfcsm:Operation" name="DetTurbineTq(Ne, Nin) : TurbineTq" isPublic="false"/>
+    <element xsi:type="pfcsm:Operation" name="DetImpellerTq(Ne, Nin) : ImpellerTq" isPublic="false"/>
+  </class>
+  <class xsi:type="pfcsm:ConcreteClass" name="Transmission" referenceFrom="//@reference.2">
+    <element xsi:type="pfcsm:Operation" name="DetOutputTq(Nin, gear) : double"/>
+    <element xsi:type="pfcsm:Operation" name="DetNin(gear, Nout) : double" isPublic="false"/>
+  </class>
+  <reference xsi:type="pfcsm:Association" source="//@class.1" target="//@class.0"/>
   <reference xsi:type="pfcsm:Composition" source="//@class.1" target="//@class.2"/>
   <reference xsi:type="pfcsm:Composition" source="//@class.1" target="//@class.3"/>
-</pfcsm:ModelRoot>
+</pfcsm:Class_Diagram_Root>

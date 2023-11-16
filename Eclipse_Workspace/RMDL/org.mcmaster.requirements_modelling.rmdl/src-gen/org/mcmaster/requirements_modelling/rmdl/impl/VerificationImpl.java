@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.mcmaster.requirements_modelling.rmdl.Entity;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.Verification;
@@ -24,7 +23,7 @@ import org.mcmaster.requirements_modelling.rmdl.Verification;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.VerificationImpl#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.VerificationImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.VerificationImpl#getRequirement <em>Requirement</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,14 +40,14 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 	protected TestCase testcase;
 
 	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+	 * The cached value of the '{@link #getRequirement() <em>Requirement</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntity()
+	 * @see #getRequirement()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity entity;
+	protected Requirements requirement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,17 +141,17 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity getEntity() {
-		if (entity != null && entity.eIsProxy()) {
-			InternalEObject oldEntity = (InternalEObject) entity;
-			entity = (Entity) eResolveProxy(oldEntity);
-			if (entity != oldEntity) {
+	public Requirements getRequirement() {
+		if (requirement != null && requirement.eIsProxy()) {
+			InternalEObject oldRequirement = (InternalEObject) requirement;
+			requirement = (Requirements) eResolveProxy(oldRequirement);
+			if (requirement != oldRequirement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.VERIFICATION__ENTITY,
-							oldEntity, entity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.VERIFICATION__REQUIREMENT,
+							oldRequirement, requirement));
 			}
 		}
-		return entity;
+		return requirement;
 	}
 
 	/**
@@ -160,8 +159,8 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetEntity() {
-		return entity;
+	public Requirements basicGetRequirement() {
+		return requirement;
 	}
 
 	/**
@@ -169,12 +168,12 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
-		Entity oldEntity = entity;
-		entity = newEntity;
+	public NotificationChain basicSetRequirement(Requirements newRequirement, NotificationChain msgs) {
+		Requirements oldRequirement = requirement;
+		requirement = newRequirement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.VERIFICATION__ENTITY, oldEntity, newEntity);
+					RmdlPackage.VERIFICATION__REQUIREMENT, oldRequirement, newRequirement);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -188,21 +187,21 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntity(Entity newEntity) {
-		if (newEntity != entity) {
+	public void setRequirement(Requirements newRequirement) {
+		if (newRequirement != requirement) {
 			NotificationChain msgs = null;
-			if (entity != null)
-				msgs = ((InternalEObject) entity).eInverseRemove(this, RmdlPackage.ENTITY__VERIFICATION_TGT,
-						Entity.class, msgs);
-			if (newEntity != null)
-				msgs = ((InternalEObject) newEntity).eInverseAdd(this, RmdlPackage.ENTITY__VERIFICATION_TGT,
-						Entity.class, msgs);
-			msgs = basicSetEntity(newEntity, msgs);
+			if (requirement != null)
+				msgs = ((InternalEObject) requirement).eInverseRemove(this, RmdlPackage.REQUIREMENTS__VERIFICATION_TGT,
+						Requirements.class, msgs);
+			if (newRequirement != null)
+				msgs = ((InternalEObject) newRequirement).eInverseAdd(this, RmdlPackage.REQUIREMENTS__VERIFICATION_TGT,
+						Requirements.class, msgs);
+			msgs = basicSetRequirement(newRequirement, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.VERIFICATION__ENTITY, newEntity,
-					newEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.VERIFICATION__REQUIREMENT, newRequirement,
+					newRequirement));
 	}
 
 	/**
@@ -218,11 +217,11 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 				msgs = ((InternalEObject) testcase).eInverseRemove(this, RmdlPackage.TEST_CASE__VERIFICATION_SRC,
 						TestCase.class, msgs);
 			return basicSetTestcase((TestCase) otherEnd, msgs);
-		case RmdlPackage.VERIFICATION__ENTITY:
-			if (entity != null)
-				msgs = ((InternalEObject) entity).eInverseRemove(this, RmdlPackage.ENTITY__VERIFICATION_TGT,
-						Entity.class, msgs);
-			return basicSetEntity((Entity) otherEnd, msgs);
+		case RmdlPackage.VERIFICATION__REQUIREMENT:
+			if (requirement != null)
+				msgs = ((InternalEObject) requirement).eInverseRemove(this, RmdlPackage.REQUIREMENTS__VERIFICATION_TGT,
+						Requirements.class, msgs);
+			return basicSetRequirement((Requirements) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -237,8 +236,8 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 		switch (featureID) {
 		case RmdlPackage.VERIFICATION__TESTCASE:
 			return basicSetTestcase(null, msgs);
-		case RmdlPackage.VERIFICATION__ENTITY:
-			return basicSetEntity(null, msgs);
+		case RmdlPackage.VERIFICATION__REQUIREMENT:
+			return basicSetRequirement(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -255,10 +254,10 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 			if (resolve)
 				return getTestcase();
 			return basicGetTestcase();
-		case RmdlPackage.VERIFICATION__ENTITY:
+		case RmdlPackage.VERIFICATION__REQUIREMENT:
 			if (resolve)
-				return getEntity();
-			return basicGetEntity();
+				return getRequirement();
+			return basicGetRequirement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,8 +273,8 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 		case RmdlPackage.VERIFICATION__TESTCASE:
 			setTestcase((TestCase) newValue);
 			return;
-		case RmdlPackage.VERIFICATION__ENTITY:
-			setEntity((Entity) newValue);
+		case RmdlPackage.VERIFICATION__REQUIREMENT:
+			setRequirement((Requirements) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -292,8 +291,8 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 		case RmdlPackage.VERIFICATION__TESTCASE:
 			setTestcase((TestCase) null);
 			return;
-		case RmdlPackage.VERIFICATION__ENTITY:
-			setEntity((Entity) null);
+		case RmdlPackage.VERIFICATION__REQUIREMENT:
+			setRequirement((Requirements) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -309,8 +308,8 @@ public class VerificationImpl extends ReferenceImpl implements Verification {
 		switch (featureID) {
 		case RmdlPackage.VERIFICATION__TESTCASE:
 			return testcase != null;
-		case RmdlPackage.VERIFICATION__ENTITY:
-			return entity != null;
+		case RmdlPackage.VERIFICATION__REQUIREMENT:
+			return requirement != null;
 		}
 		return super.eIsSet(featureID);
 	}

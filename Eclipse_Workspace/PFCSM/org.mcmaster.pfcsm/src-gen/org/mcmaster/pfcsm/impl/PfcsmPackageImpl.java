@@ -11,26 +11,21 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Action;
 import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.ClassVariable;
+import org.mcmaster.pfcsm.Attribute;
+import org.mcmaster.pfcsm.Class_Diagram_Root;
 import org.mcmaster.pfcsm.Composition;
 import org.mcmaster.pfcsm.ConcreteClass;
 import org.mcmaster.pfcsm.DataStructure;
 import org.mcmaster.pfcsm.Element;
 import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.ModelRoot;
 import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.OperationVariable;
 import org.mcmaster.pfcsm.PfcsmFactory;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.PrimitiveType;
 import org.mcmaster.pfcsm.Produces;
 import org.mcmaster.pfcsm.Reference;
-import org.mcmaster.pfcsm.State;
-import org.mcmaster.pfcsm.Transition;
 import org.mcmaster.pfcsm.Uses;
-import org.mcmaster.pfcsm.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +46,7 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelRootEClass = null;
+	private EClass class_Diagram_RootEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,13 +95,6 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass classVariableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass operationEClass = null;
 
 	/**
@@ -114,42 +102,7 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stateEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass transitionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass concreteClassEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass variableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationVariableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,6 +124,13 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * @generated
 	 */
 	private EClass producesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -309,8 +269,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelRoot() {
-		return modelRootEClass;
+	public EClass getClass_Diagram_Root() {
+		return class_Diagram_RootEClass;
 	}
 
 	/**
@@ -318,8 +278,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelRoot_Class() {
-		return (EReference) modelRootEClass.getEStructuralFeatures().get(0);
+	public EReference getClass_Diagram_Root_Class() {
+		return (EReference) class_Diagram_RootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -327,8 +287,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelRoot_Reference() {
-		return (EReference) modelRootEClass.getEStructuralFeatures().get(1);
+	public EReference getClass_Diagram_Root_Reference() {
+		return (EReference) class_Diagram_RootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -453,42 +413,6 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getClassVariable() {
-		return classVariableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getClassVariable_Public() {
-		return (EAttribute) classVariableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getClassVariable_Input() {
-		return (EReference) classVariableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getClassVariable_Output() {
-		return (EReference) classVariableEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOperation() {
 		return operationEClass;
 	}
@@ -498,251 +422,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_State() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getOperation_Transition() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperation_ReturnType() {
-		return (EAttribute) operationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperation_Public() {
-		return (EAttribute) operationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getOperation_Operationvariable() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getOperation_Uses() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getOperation_Produces() {
-		return (EReference) operationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getState() {
-		return stateEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_Outgoing() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_Incoming() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getState_Name() {
-		return (EAttribute) stateEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getState_Action() {
-		return (EReference) stateEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getState_IsInitial() {
-		return (EAttribute) stateEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getState_IsFinal() {
-		return (EAttribute) stateEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTransition() {
-		return transitionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTransition_Source() {
-		return (EReference) transitionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTransition_Target() {
-		return (EReference) transitionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_Order() {
-		return (EAttribute) transitionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_Condition() {
-		return (EAttribute) transitionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getConcreteClass() {
 		return concreteClassEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVariable() {
-		return variableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVariable_Type() {
-		return (EAttribute) variableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVariable_Structure() {
-		return (EAttribute) variableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getOperationVariable() {
-		return operationVariableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationVariable_Local() {
-		return (EAttribute) operationVariableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationVariable_AssignedValue() {
-		return (EAttribute) operationVariableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAction() {
-		return actionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAction_Body() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -786,6 +467,15 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getElement_IsPublic() {
+		return (EAttribute) elementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUses() {
 		return usesEClass;
 	}
@@ -797,6 +487,15 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 */
 	public EClass getProduces() {
 		return producesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttribute() {
+		return attributeEClass;
 	}
 
 	/**
@@ -853,9 +552,9 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		createEReference(classEClass, CLASS__REFERENCE_FROM);
 		createEReference(classEClass, CLASS__ELEMENT);
 
-		modelRootEClass = createEClass(MODEL_ROOT);
-		createEReference(modelRootEClass, MODEL_ROOT__CLASS);
-		createEReference(modelRootEClass, MODEL_ROOT__REFERENCE);
+		class_Diagram_RootEClass = createEClass(CLASS_DIAGRAM_ROOT);
+		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__CLASS);
+		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__REFERENCE);
 
 		abstractClassEClass = createEClass(ABSTRACT_CLASS);
 
@@ -876,55 +575,21 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 
 		xorEClass = createEClass(XOR);
 
-		classVariableEClass = createEClass(CLASS_VARIABLE);
-		createEAttribute(classVariableEClass, CLASS_VARIABLE__PUBLIC);
-		createEReference(classVariableEClass, CLASS_VARIABLE__INPUT);
-		createEReference(classVariableEClass, CLASS_VARIABLE__OUTPUT);
-
-		operationEClass = createEClass(OPERATION);
-		createEReference(operationEClass, OPERATION__STATE);
-		createEReference(operationEClass, OPERATION__TRANSITION);
-		createEAttribute(operationEClass, OPERATION__RETURN_TYPE);
-		createEAttribute(operationEClass, OPERATION__PUBLIC);
-		createEReference(operationEClass, OPERATION__OPERATIONVARIABLE);
-		createEReference(operationEClass, OPERATION__USES);
-		createEReference(operationEClass, OPERATION__PRODUCES);
-
-		stateEClass = createEClass(STATE);
-		createEReference(stateEClass, STATE__OUTGOING);
-		createEReference(stateEClass, STATE__INCOMING);
-		createEAttribute(stateEClass, STATE__NAME);
-		createEAttribute(stateEClass, STATE__IS_INITIAL);
-		createEAttribute(stateEClass, STATE__IS_FINAL);
-		createEReference(stateEClass, STATE__ACTION);
-
-		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__SOURCE);
-		createEReference(transitionEClass, TRANSITION__TARGET);
-		createEAttribute(transitionEClass, TRANSITION__CONDITION);
-		createEAttribute(transitionEClass, TRANSITION__ORDER);
-
 		concreteClassEClass = createEClass(CONCRETE_CLASS);
-
-		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__TYPE);
-		createEAttribute(variableEClass, VARIABLE__STRUCTURE);
-
-		operationVariableEClass = createEClass(OPERATION_VARIABLE);
-		createEAttribute(operationVariableEClass, OPERATION_VARIABLE__LOCAL);
-		createEAttribute(operationVariableEClass, OPERATION_VARIABLE__ASSIGNED_VALUE);
-
-		actionEClass = createEClass(ACTION);
-		createEAttribute(actionEClass, ACTION__BODY);
 
 		elementEClass = createEClass(ELEMENT);
 		createEAttribute(elementEClass, ELEMENT__NAME);
 		createEReference(elementEClass, ELEMENT__ASSOCIATION_TO);
 		createEReference(elementEClass, ELEMENT__ASSOCIATION_FROM);
+		createEAttribute(elementEClass, ELEMENT__IS_PUBLIC);
 
 		usesEClass = createEClass(USES);
 
 		producesEClass = createEClass(PRODUCES);
+
+		attributeEClass = createEClass(ATTRIBUTE);
+
+		operationEClass = createEClass(OPERATION);
 
 		// Create enums
 		primitiveTypeEEnum = createEEnum(PRIMITIVE_TYPE);
@@ -965,13 +630,11 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		compositionEClass.getESuperTypes().add(this.getReference());
 		inheritanceEClass.getESuperTypes().add(this.getReference());
 		xorEClass.getESuperTypes().add(this.getReference());
-		classVariableEClass.getESuperTypes().add(this.getVariable());
-		operationEClass.getESuperTypes().add(this.getElement());
 		concreteClassEClass.getESuperTypes().add(this.getClass_());
-		variableEClass.getESuperTypes().add(this.getElement());
-		operationVariableEClass.getESuperTypes().add(this.getVariable());
 		usesEClass.getESuperTypes().add(this.getAssociation());
 		producesEClass.getESuperTypes().add(this.getAssociation());
+		attributeEClass.getESuperTypes().add(this.getElement());
+		operationEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(classEClass, org.mcmaster.pfcsm.Class.class, "Class", IS_ABSTRACT, !IS_INTERFACE,
@@ -991,14 +654,14 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 				org.mcmaster.pfcsm.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modelRootEClass, ModelRoot.class, "ModelRoot", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelRoot_Class(), this.getClass_(), null, "class", null, 0, -1, ModelRoot.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelRoot_Reference(), this.getReference(), null, "reference", null, 0, -1, ModelRoot.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(class_Diagram_RootEClass, Class_Diagram_Root.class, "Class_Diagram_Root", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getClass_Diagram_Root_Class(), this.getClass_(), null, "class", null, 0, -1,
+				Class_Diagram_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClass_Diagram_Root_Reference(), this.getReference(), null, "reference", null, 0, -1,
+				Class_Diagram_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractClassEClass, AbstractClass.class, "AbstractClass", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1036,90 +699,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		initEClass(xorEClass, org.mcmaster.pfcsm.XOR.class, "XOR", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(classVariableEClass, ClassVariable.class, "ClassVariable", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClassVariable_Public(), ecorePackage.getEBoolean(), "public", null, 1, 1, ClassVariable.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClassVariable_Input(), this.getOperation(), this.getOperation_Uses(), "input", null, 0, -1,
-				ClassVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClassVariable_Output(), this.getOperation(), this.getOperation_Produces(), "output", null, 0,
-				-1, ClassVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperation_State(), this.getState(), null, "state", null, 0, -1, Operation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Transition(), this.getTransition(), null, "transition", null, 0, -1,
-				Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_ReturnType(), this.getPrimitiveType(), "returnType", null, 1, 1, Operation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_Public(), ecorePackage.getEBoolean(), "public", null, 1, 1, Operation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Operationvariable(), this.getOperationVariable(), null, "operationvariable", null,
-				0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Uses(), this.getClassVariable(), this.getClassVariable_Input(), "uses", null, 0, -1,
-				Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Produces(), this.getClassVariable(), this.getClassVariable_Output(), "produces",
-				null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getState_Outgoing(), this.getTransition(), this.getTransition_Source(), "outgoing", null, 0, -1,
-				State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_Incoming(), this.getTransition(), this.getTransition_Target(), "incoming", null, 0, -1,
-				State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 1, 1, State.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_IsInitial(), ecorePackage.getEBoolean(), "isInitial", null, 1, 1, State.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getState_IsFinal(), ecorePackage.getEBoolean(), "isFinal", null, 1, 1, State.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_Action(), this.getAction(), null, "action", null, 1, 1, State.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_Source(), this.getState(), this.getState_Outgoing(), "source", null, 1, 1,
-				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Target(), this.getState(), this.getState_Incoming(), "target", null, 1, 1,
-				Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_Condition(), ecorePackage.getEString(), "condition", null, 1, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_Order(), ecorePackage.getEString(), "order", null, 0, 1, Transition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(concreteClassEClass, ConcreteClass.class, "ConcreteClass", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_Type(), this.getPrimitiveType(), "type", null, 1, 1, Variable.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariable_Structure(), this.getDataStructure(), "structure", null, 1, 1, Variable.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationVariableEClass, OperationVariable.class, "OperationVariable", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationVariable_Local(), ecorePackage.getEBoolean(), "local", "true", 1, 1,
-				OperationVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperationVariable_AssignedValue(), ecorePackage.getEString(), "assignedValue", null, 0, 1,
-				OperationVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_Body(), ecorePackage.getEString(), "body", null, 1, 1, Action.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, Element.class, !IS_TRANSIENT,
@@ -1130,10 +711,18 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		initEReference(getElement_AssociationFrom(), this.getAssociation(), this.getAssociation_AscTgt(),
 				"associationFrom", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getElement_IsPublic(), ecorePackage.getEBoolean(), "isPublic", "true", 1, 1, Element.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(usesEClass, Uses.class, "Uses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(producesEClass, Produces.class, "Produces", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals

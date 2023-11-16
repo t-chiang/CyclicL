@@ -9,8 +9,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -18,8 +16,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
-import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
  * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Entity} object.
@@ -50,56 +46,8 @@ public class EntityItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSatisfiedByPropertyDescriptor(object);
-			addVerificationTgtPropertyDescriptor(object);
-			addModelrootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Satisfied By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSatisfiedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_satisfiedBy_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_satisfiedBy_feature",
-								"_UI_Entity_type"),
-						RmdlPackage.Literals.ENTITY__SATISFIED_BY, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Verification Tgt feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVerificationTgtPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_verificationTgt_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_verificationTgt_feature",
-								"_UI_Entity_type"),
-						RmdlPackage.Literals.ENTITY__VERIFICATION_TGT, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Modelroot feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModelrootPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Entity_modelroot_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Entity_modelroot_feature",
-								"_UI_Entity_type"),
-						RmdlPackage.Literals.ENTITY__MODELROOT, true, false, true, null, null, null));
 	}
 
 	/**

@@ -22,13 +22,13 @@ public interface PfcsmFactory extends EFactory {
 	PfcsmFactory eINSTANCE = org.mcmaster.pfcsm.impl.PfcsmFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Model Root</em>'.
+	 * Returns a new object of class '<em>Class Diagram Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Root</em>'.
+	 * @return a new object of class '<em>Class Diagram Root</em>'.
 	 * @generated
 	 */
-	ModelRoot createModelRoot();
+	Class_Diagram_Root createClass_Diagram_Root();
 
 	/**
 	 * Returns a new object of class '<em>Abstract Class</em>'.
@@ -76,15 +76,6 @@ public interface PfcsmFactory extends EFactory {
 	XOR createXOR();
 
 	/**
-	 * Returns a new object of class '<em>Class Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Class Variable</em>'.
-	 * @generated
-	 */
-	ClassVariable createClassVariable();
-
-	/**
 	 * Returns a new object of class '<em>Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,24 +85,6 @@ public interface PfcsmFactory extends EFactory {
 	Operation createOperation();
 
 	/**
-	 * Returns a new object of class '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State</em>'.
-	 * @generated
-	 */
-	State createState();
-
-	/**
-	 * Returns a new object of class '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Transition</em>'.
-	 * @generated
-	 */
-	Transition createTransition();
-
-	/**
 	 * Returns a new object of class '<em>Concrete Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,24 +92,6 @@ public interface PfcsmFactory extends EFactory {
 	 * @generated
 	 */
 	ConcreteClass createConcreteClass();
-
-	/**
-	 * Returns a new object of class '<em>Operation Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation Variable</em>'.
-	 * @generated
-	 */
-	OperationVariable createOperationVariable();
-
-	/**
-	 * Returns a new object of class '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
-	 * @generated
-	 */
-	Action createAction();
 
 	/**
 	 * Returns a new object of class '<em>Uses</em>'.
@@ -155,6 +110,15 @@ public interface PfcsmFactory extends EFactory {
 	 * @generated
 	 */
 	Produces createProduces();
+
+	/**
+	 * Returns a new object of class '<em>Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute</em>'.
+	 * @generated
+	 */
+	Attribute createAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

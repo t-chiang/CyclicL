@@ -1,0 +1,52 @@
+import "HelperFunctions.eol";
+
+pre{
+	var functionals :Integer = 1;
+	var safeties : Integer = 1;
+	var functionalTests : Integer = 1;
+	var safetyTests : Integer = 1;
+}
+
+rule root2root
+	transform sourceRoot : design!Class_Diagram_Root
+	to targetRoot : requirement!Requirement_Root{
+		targetRoot.requirements.addAll(sourceRoot.class.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.reference.addAll(sourceRoot.class.equivalent().flatten().select(ref | ref.isKindOf(requirement!Reference)));
+		targetRoot.designelement.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+}
+
+rule concreteClass2designElement
+	transform designClass : design!ConcreteClass
+	to desElement : requirement!DesignElement,
+		funcreq: requirement!Functional,
+		safereq : requirement!Safety,
+		functest : requirement!TestCase,
+		safetest : requirement!TestCase{
+		desElement.name = designClass.name;
+		funcreq.setName("FunctionalReq");
+		funcreq.setID(functionals);
+		functionals++;
+		funcreq.satisfiedby.add(desElement);
+		safereq.setName("SafetyReq");
+		safereq.setID(safeties);
+		safeties++;
+		safereq.satisfiedby.add(desElement);
+//		functest.setID(functionalTests);
+//		functionalTests++;
+//		safetyTests.setID(safetyTests);
+//		safetyTests++;
+	}
+
+//post{
+//	var requirements : Set = requirement!Functional.equivalent();
+//	requirements.println("Set of requirements: ");
+//}
+
+
+//rule concreteClass2designElement
+//	transform source : design!ConcreteClass
+//	to target : requirement!DesignElement{
+//		target.name = source.name;
+//	}
+	
+

@@ -22,17 +22,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.requirements_modelling.rmdl.ModelRoot;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.ModelRoot} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelRootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class Requirement_RootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -40,7 +40,7 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelRootItemProvider(AdapterFactory adapterFactory) {
+	public Requirement_RootItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,25 +55,12 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityPropertyDescriptor(object);
 			addPackagePropertyDescriptor(object);
+			addDesignelementPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
+			addReviewPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ModelRoot_entity_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ModelRoot_entity_feature",
-								"_UI_ModelRoot_type"),
-						RmdlPackage.Literals.MODEL_ROOT__ENTITY, true, false, true, null, null, null));
 	}
 
 	/**
@@ -85,10 +72,55 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	protected void addPackagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ModelRoot_package_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ModelRoot_package_feature",
-								"_UI_ModelRoot_type"),
-						RmdlPackage.Literals.MODEL_ROOT__PACKAGE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Requirement_Root_package_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_package_feature",
+								"_UI_Requirement_Root_type"),
+						RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Designelement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDesignelementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Root_designelement_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_designelement_feature",
+								"_UI_Requirement_Root_type"),
+						RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Root_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_requirements_feature",
+								"_UI_Requirement_Root_type"),
+						RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Review feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReviewPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Root_review_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_review_feature",
+								"_UI_Requirement_Root_type"),
+						RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW, true, false, true, null, null, null));
 	}
 
 	/**
@@ -103,10 +135,12 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.MODEL_ROOT__REFERENCE);
-			childrenFeatures.add(RmdlPackage.Literals.MODEL_ROOT__TESTCASE);
-			childrenFeatures.add(RmdlPackage.Literals.MODEL_ROOT__ENTITY);
-			childrenFeatures.add(RmdlPackage.Literals.MODEL_ROOT__PACKAGE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW);
 		}
 		return childrenFeatures;
 	}
@@ -125,14 +159,14 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This returns ModelRoot.gif.
+	 * This returns Requirement_Root.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ModelRoot"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Requirement_Root"));
 	}
 
 	/**
@@ -153,7 +187,7 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelRoot_type");
+		return getString("_UI_Requirement_Root_type");
 	}
 
 	/**
@@ -167,11 +201,13 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ModelRoot.class)) {
-		case RmdlPackage.MODEL_ROOT__REFERENCE:
-		case RmdlPackage.MODEL_ROOT__TESTCASE:
-		case RmdlPackage.MODEL_ROOT__ENTITY:
-		case RmdlPackage.MODEL_ROOT__PACKAGE:
+		switch (notification.getFeatureID(Requirement_Root.class)) {
+		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
+		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
+		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
+		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -189,35 +225,35 @@ public class ModelRootItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(RmdlPackage.Literals.MODEL_ROOT__REFERENCE, RmdlFactory.eINSTANCE.createTrace()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__REFERENCE,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,
 				RmdlFactory.eINSTANCE.createVerification()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__REFERENCE,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,
 				RmdlFactory.eINSTANCE.createDecomposition()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__TESTCASE,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE,
 				RmdlFactory.eINSTANCE.createTestCase()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createFunctional()));
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE,
+				RmdlFactory.eINSTANCE.createPackage()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createQualitative()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__ENTITY,
-				RmdlFactory.eINSTANCE.createConstraint()));
-
-		newChildDescriptors.add(
-				createChildParameter(RmdlPackage.Literals.MODEL_ROOT__ENTITY, RmdlFactory.eINSTANCE.createSafety()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.MODEL_ROOT__ENTITY,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT,
 				RmdlFactory.eINSTANCE.createDesignElement()));
 
-		newChildDescriptors.add(
-				createChildParameter(RmdlPackage.Literals.MODEL_ROOT__PACKAGE, RmdlFactory.eINSTANCE.createPackage()));
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createFunctional()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createQualitative()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createConstraint()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+				RmdlFactory.eINSTANCE.createSafety()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW,
+				RmdlFactory.eINSTANCE.createReview()));
 	}
 
 	/**

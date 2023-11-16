@@ -1,6 +1,6 @@
 /**
  */
-package org.mcmaster.pfcsm.provider;
+package org.mcmaster.requirements_modelling.rmdl.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,16 +20,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.pfcsm.PfcsmPackage;
-import org.mcmaster.pfcsm.Transition;
+import org.mcmaster.requirements_modelling.rmdl.Review;
+import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Transition} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Review} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ReviewItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +37,7 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TransitionItemProvider(AdapterFactory adapterFactory) {
+	public ReviewItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,85 +52,102 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
-			addConditionPropertyDescriptor(object);
-			addOrderPropertyDescriptor(object);
+			addIsApprovedPropertyDescriptor(object);
+			addReviewerPropertyDescriptor(object);
+			addRequirement_rootPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
+			addCommentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source feature.
+	 * This adds a property descriptor for the Is Approved feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourcePropertyDescriptor(Object object) {
+	protected void addIsApprovedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_source_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_source_feature",
-								"_UI_Transition_type"),
-						PfcsmPackage.Literals.TRANSITION__SOURCE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Review_isApproved_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_isApproved_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__IS_APPROVED, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Target feature.
+	 * This adds a property descriptor for the Reviewer feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetPropertyDescriptor(Object object) {
+	protected void addReviewerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_target_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_target_feature",
-								"_UI_Transition_type"),
-						PfcsmPackage.Literals.TRANSITION__TARGET, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Condition feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConditionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_condition_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_condition_feature",
-								"_UI_Transition_type"),
-						PfcsmPackage.Literals.TRANSITION__CONDITION, true, false, false,
+						getResourceLocator(), getString("_UI_Review_reviewer_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_reviewer_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REVIEWER, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Order feature.
+	 * This adds a property descriptor for the Requirement root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOrderPropertyDescriptor(Object object) {
+	protected void addRequirement_rootPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Transition_order_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Transition_order_feature",
-								"_UI_Transition_type"),
-						PfcsmPackage.Literals.TRANSITION__ORDER, true, false, false,
+						getResourceLocator(), getString("_UI_Review_requirement_root_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirement_root_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REQUIREMENT_ROOT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Review_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirements_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REQUIREMENTS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Comments feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Review_comments_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_comments_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__COMMENTS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Transition.gif.
+	 * This returns Review.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Transition"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Review"));
 	}
 
 	/**
@@ -152,9 +168,8 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Transition) object).getCondition();
-		return label == null || label.length() == 0 ? getString("_UI_Transition_type")
-				: getString("_UI_Transition_type") + " " + label;
+		Review review = (Review) object;
+		return getString("_UI_Review_type") + " " + review.isIsApproved();
 	}
 
 	/**
@@ -168,9 +183,10 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Transition.class)) {
-		case PfcsmPackage.TRANSITION__CONDITION:
-		case PfcsmPackage.TRANSITION__ORDER:
+		switch (notification.getFeatureID(Review.class)) {
+		case RmdlPackage.REVIEW__IS_APPROVED:
+		case RmdlPackage.REVIEW__REVIEWER:
+		case RmdlPackage.REVIEW__COMMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -197,7 +213,7 @@ public class TransitionItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return PfcsmEditPlugin.INSTANCE;
+		return RmdlEditPlugin.INSTANCE;
 	}
 
 }

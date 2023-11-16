@@ -12,7 +12,7 @@ package org.mcmaster.requirements_modelling.rmdl;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Verification#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Verification#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Verification#getRequirement <em>Requirement</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getVerification()
@@ -45,27 +45,27 @@ public interface Verification extends Reference {
 	void setTestcase(TestCase value);
 
 	/**
-	 * Returns the value of the '<em><b>Entity</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Entity#getVerificationTgt <em>Verification Tgt</em>}'.
+	 * Returns the value of the '<em><b>Requirement</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity</em>' reference.
-	 * @see #setEntity(Entity)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getVerification_Entity()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Entity#getVerificationTgt
+	 * @return the value of the '<em>Requirement</em>' reference.
+	 * @see #setRequirement(Requirements)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getVerification_Requirement()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt
 	 * @model opposite="verificationTgt" required="true"
 	 * @generated
 	 */
-	Entity getEntity();
+	Requirements getRequirement();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Verification#getEntity <em>Entity</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Verification#getRequirement <em>Requirement</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity</em>' reference.
-	 * @see #getEntity()
+	 * @param value the new value of the '<em>Requirement</em>' reference.
+	 * @see #getRequirement()
 	 * @generated
 	 */
-	void setEntity(Entity value);
+	void setRequirement(Requirements value);
 
 } // Verification

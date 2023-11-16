@@ -18,7 +18,7 @@ import org.mcmaster.requirements_modelling.rmdl.Qualitative;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QualitativeItemProvider extends RequirementItemProvider {
+public class QualitativeItemProvider extends RequirementsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

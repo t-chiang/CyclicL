@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rmdl:ModelRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
-  <reference xsi:type="rmdl:Trace" designelement="//@entity.0" requirement="//@entity.1"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@entity.2" requirement="//@entity.3"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@entity.4" requirement="//@entity.5"/>
-  <reference xsi:type="rmdl:Trace" designelement="//@entity.6" requirement="//@entity.7"/>
-  <entity xsi:type="rmdl:DesignElement" name="Transmission" satisfies="//@reference.0"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.0" name="FunctionalReq"/>
-  <entity xsi:type="rmdl:DesignElement" name="Vehicle" satisfies="//@reference.1"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.1" name="FunctionalReq" ID="1"/>
-  <entity xsi:type="rmdl:DesignElement" name="Torque_Converter" satisfies="//@reference.2"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.2" name="FunctionalReq" ID="2"/>
-  <entity xsi:type="rmdl:DesignElement" name="Transmission_Radio" satisfies="//@reference.3"/>
-  <entity xsi:type="rmdl:Functional" satisfiedBy="//@reference.3" name="FunctionalReq" ID="3"/>
-</rmdl:ModelRoot>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <rmdl:Requirement_Root>
+    <designelement name="Vehicle" satisfies="/0/@requirements.0 /0/@requirements.1"/>
+    <designelement name="Transmission" satisfies="/0/@requirements.2 /0/@requirements.3"/>
+    <designelement name="Torque_Converter" satisfies="/0/@requirements.4 /0/@requirements.5"/>
+    <designelement name="Transmission" satisfies="/0/@requirements.6 /0/@requirements.7"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="1" satisfiedby="/0/@designelement.0"/>
+    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="1" satisfiedby="/0/@designelement.0"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" satisfiedby="/0/@designelement.1"/>
+    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="2" satisfiedby="/0/@designelement.1"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" satisfiedby="/0/@designelement.2"/>
+    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="3" satisfiedby="/0/@designelement.2"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" satisfiedby="/0/@designelement.3"/>
+    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="4" satisfiedby="/0/@designelement.3"/>
+  </rmdl:Requirement_Root>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+  <rmdl:TestCase/>
+</xmi:XMI>

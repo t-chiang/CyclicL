@@ -14,7 +14,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *
  * @generated
  */
-public class ConstraintImpl extends RequirementImpl implements Constraint {
+public class ConstraintImpl extends RequirementsImpl implements Constraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

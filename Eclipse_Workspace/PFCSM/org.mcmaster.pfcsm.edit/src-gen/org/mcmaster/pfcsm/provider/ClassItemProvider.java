@@ -222,14 +222,11 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS__ELEMENT,
-				PfcsmFactory.eINSTANCE.createClassVariable()));
+		newChildDescriptors.add(
+				createChildParameter(PfcsmPackage.Literals.CLASS__ELEMENT, PfcsmFactory.eINSTANCE.createAttribute()));
 
 		newChildDescriptors.add(
 				createChildParameter(PfcsmPackage.Literals.CLASS__ELEMENT, PfcsmFactory.eINSTANCE.createOperation()));
-
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS__ELEMENT,
-				PfcsmFactory.eINSTANCE.createOperationVariable()));
 	}
 
 	/**

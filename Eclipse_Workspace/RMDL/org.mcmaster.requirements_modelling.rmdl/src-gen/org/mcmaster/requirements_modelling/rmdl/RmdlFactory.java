@@ -58,13 +58,13 @@ public interface RmdlFactory extends EFactory {
 	Package createPackage();
 
 	/**
-	 * Returns a new object of class '<em>Model Root</em>'.
+	 * Returns a new object of class '<em>Requirement Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Root</em>'.
+	 * @return a new object of class '<em>Requirement Root</em>'.
 	 * @generated
 	 */
-	ModelRoot createModelRoot();
+	Requirement_Root createRequirement_Root();
 
 	/**
 	 * Returns a new object of class '<em>Safety</em>'.
@@ -74,15 +74,6 @@ public interface RmdlFactory extends EFactory {
 	 * @generated
 	 */
 	Safety createSafety();
-
-	/**
-	 * Returns a new object of class '<em>Trace</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Trace</em>'.
-	 * @generated
-	 */
-	Trace createTrace();
 
 	/**
 	 * Returns a new object of class '<em>Design Element</em>'.
@@ -119,6 +110,15 @@ public interface RmdlFactory extends EFactory {
 	 * @generated
 	 */
 	Decomposition createDecomposition();
+
+	/**
+	 * Returns a new object of class '<em>Review</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Review</em>'.
+	 * @generated
+	 */
+	Review createReview();
 
 	/**
 	 * Returns the package supported by this factory.

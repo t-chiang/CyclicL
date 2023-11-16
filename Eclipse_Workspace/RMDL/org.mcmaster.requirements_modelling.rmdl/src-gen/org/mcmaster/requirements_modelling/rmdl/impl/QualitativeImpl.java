@@ -14,7 +14,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *
  * @generated
  */
-public class QualitativeImpl extends RequirementImpl implements Qualitative {
+public class QualitativeImpl extends RequirementsImpl implements Qualitative {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

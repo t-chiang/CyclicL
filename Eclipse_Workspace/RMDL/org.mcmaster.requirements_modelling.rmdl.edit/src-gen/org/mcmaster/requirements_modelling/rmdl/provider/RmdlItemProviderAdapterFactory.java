@@ -165,26 +165,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.ModelRoot} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelRootItemProvider modelRootItemProvider;
+	protected Requirement_RootItemProvider requirement_RootItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.ModelRoot}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelRootAdapter() {
-		if (modelRootItemProvider == null) {
-			modelRootItemProvider = new ModelRootItemProvider(this);
+	public Adapter createRequirement_RootAdapter() {
+		if (requirement_RootItemProvider == null) {
+			requirement_RootItemProvider = new Requirement_RootItemProvider(this);
 		}
 
-		return modelRootItemProvider;
+		return requirement_RootItemProvider;
 	}
 
 	/**
@@ -208,29 +208,6 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 		}
 
 		return safetyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Trace} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TraceItemProvider traceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Trace}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTraceAdapter() {
-		if (traceItemProvider == null) {
-			traceItemProvider = new TraceItemProvider(this);
-		}
-
-		return traceItemProvider;
 	}
 
 	/**
@@ -323,6 +300,29 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 		}
 
 		return decompositionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Review} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReviewItemProvider reviewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Review}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReviewAdapter() {
+		if (reviewItemProvider == null) {
+			reviewItemProvider = new ReviewItemProvider(this);
+		}
+
+		return reviewItemProvider;
 	}
 
 	/**
@@ -432,12 +432,10 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			constraintItemProvider.dispose();
 		if (packageItemProvider != null)
 			packageItemProvider.dispose();
-		if (modelRootItemProvider != null)
-			modelRootItemProvider.dispose();
+		if (requirement_RootItemProvider != null)
+			requirement_RootItemProvider.dispose();
 		if (safetyItemProvider != null)
 			safetyItemProvider.dispose();
-		if (traceItemProvider != null)
-			traceItemProvider.dispose();
 		if (designElementItemProvider != null)
 			designElementItemProvider.dispose();
 		if (testCaseItemProvider != null)
@@ -446,6 +444,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			verificationItemProvider.dispose();
 		if (decompositionItemProvider != null)
 			decompositionItemProvider.dispose();
+		if (reviewItemProvider != null)
+			reviewItemProvider.dispose();
 	}
 
 }
