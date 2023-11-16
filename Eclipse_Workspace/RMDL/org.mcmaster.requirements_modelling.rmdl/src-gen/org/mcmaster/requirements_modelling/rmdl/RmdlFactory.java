@@ -112,6 +112,15 @@ public interface RmdlFactory extends EFactory {
 	Decomposition createDecomposition();
 
 	/**
+	 * Returns a new object of class '<em>Review</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Review</em>'.
+	 * @generated
+	 */
+	Review createReview();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

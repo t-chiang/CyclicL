@@ -16,6 +16,7 @@ import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
+import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
@@ -134,6 +135,11 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDecomposition(Decomposition object) {
 			return createDecompositionAdapter();
+		}
+
+		@Override
+		public Adapter caseReview(Review object) {
+			return createReviewAdapter();
 		}
 
 		@Override
@@ -320,6 +326,20 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDecompositionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Review <em>Review</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Review
+	 * @generated
+	 */
+	public Adapter createReviewAdapter() {
 		return null;
 	}
 

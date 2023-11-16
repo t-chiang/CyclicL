@@ -58,6 +58,7 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 			addPackagePropertyDescriptor(object);
 			addDesignelementPropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
+			addReviewPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +109,21 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * This adds a property descriptor for the Review feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReviewPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Root_review_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_review_feature",
+								"_UI_Requirement_Root_type"),
+						RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -124,6 +140,7 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW);
 		}
 		return childrenFeatures;
 	}
@@ -190,6 +207,7 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -233,6 +251,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createSafety()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW,
+				RmdlFactory.eINSTANCE.createReview()));
 	}
 
 	/**

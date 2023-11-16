@@ -303,6 +303,29 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Review} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReviewItemProvider reviewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Review}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReviewAdapter() {
+		if (reviewItemProvider == null) {
+			reviewItemProvider = new ReviewItemProvider(this);
+		}
+
+		return reviewItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,6 +444,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			verificationItemProvider.dispose();
 		if (decompositionItemProvider != null)
 			decompositionItemProvider.dispose();
+		if (reviewItemProvider != null)
+			reviewItemProvider.dispose();
 	}
 
 }

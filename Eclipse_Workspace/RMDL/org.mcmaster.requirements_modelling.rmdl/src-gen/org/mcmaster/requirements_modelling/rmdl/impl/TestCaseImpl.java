@@ -37,6 +37,7 @@ import org.mcmaster.requirements_modelling.rmdl.Verification;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#isHasPassed <em>Has Passed</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +112,26 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isHasPassed() <em>Has Passed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHasPassed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean HAS_PASSED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isHasPassed() <em>Has Passed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHasPassed()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean hasPassed = HAS_PASSED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,6 +279,28 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isHasPassed() {
+		return hasPassed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasPassed(boolean newHasPassed) {
+		boolean oldHasPassed = hasPassed;
+		hasPassed = newHasPassed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.TEST_CASE__HAS_PASSED, oldHasPassed,
+					hasPassed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -321,6 +364,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return getDescription();
 		case RmdlPackage.TEST_CASE__REQUIREMENT_ROOT:
 			return getRequirement_root();
+		case RmdlPackage.TEST_CASE__HAS_PASSED:
+			return isHasPassed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -350,6 +395,9 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) newValue);
 			return;
+		case RmdlPackage.TEST_CASE__HAS_PASSED:
+			setHasPassed((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -377,6 +425,9 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) null);
 			return;
+		case RmdlPackage.TEST_CASE__HAS_PASSED:
+			setHasPassed(HAS_PASSED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -399,6 +450,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case RmdlPackage.TEST_CASE__REQUIREMENT_ROOT:
 			return getRequirement_root() != null;
+		case RmdlPackage.TEST_CASE__HAS_PASSED:
+			return hasPassed != HAS_PASSED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -420,6 +473,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		result.append(type);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", hasPassed: ");
+		result.append(hasPassed);
 		result.append(')');
 		return result.toString();
 	}

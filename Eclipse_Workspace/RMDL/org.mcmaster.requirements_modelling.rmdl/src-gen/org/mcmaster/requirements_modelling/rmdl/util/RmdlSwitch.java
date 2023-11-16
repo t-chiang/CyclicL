@@ -14,6 +14,7 @@ import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
+import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
@@ -170,6 +171,13 @@ public class RmdlSwitch<T> extends Switch<T> {
 			T result = caseDecomposition(decomposition);
 			if (result == null)
 				result = caseReference(decomposition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.REVIEW: {
+			Review review = (Review) theEObject;
+			T result = caseReview(review);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -356,6 +364,21 @@ public class RmdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDecomposition(Decomposition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Review</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Review</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReview(Review object) {
 		return null;
 	}
 

@@ -27,6 +27,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/verificationTgt"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/requirement_root"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/satisfiedby"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/review"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Functional"/>
     <genClasses ecoreClass="rmdl.ecore#//Qualitative"/>
@@ -42,6 +43,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/package"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/designelement"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/requirements"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/review"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Safety"/>
     <genClasses ecoreClass="rmdl.ecore#//Reference"/>
@@ -57,6 +59,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//TestCase/requirement_root"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/hasPassed"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Verification">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Verification/testcase"/>
@@ -65,6 +68,13 @@
     <genClasses ecoreClass="rmdl.ecore#//Decomposition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Decomposition/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Decomposition/target"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Review">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/isApproved"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/reviewer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirement_root"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/comments"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

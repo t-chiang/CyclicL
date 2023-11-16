@@ -10,13 +10,13 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
 import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
@@ -87,6 +87,8 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createVerification();
 		case RmdlPackage.DECOMPOSITION:
 			return createDecomposition();
+		case RmdlPackage.REVIEW:
+			return createReview();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -220,6 +222,16 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	public Decomposition createDecomposition() {
 		DecompositionImpl decomposition = new DecompositionImpl();
 		return decomposition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Review createReview() {
+		ReviewImpl review = new ReviewImpl();
+		return review;
 	}
 
 	/**

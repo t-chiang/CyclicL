@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage <em>Package</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getReview <em>Review</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root()
@@ -94,5 +95,19 @@ public interface Requirement_Root extends EObject {
 	 * @generated
 	 */
 	EList<Requirements> getRequirements();
+
+	/**
+	 * Returns the value of the '<em><b>Review</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Review}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_root <em>Requirement root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Review</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Review()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_root
+	 * @model opposite="requirement_root" containment="true"
+	 * @generated
+	 */
+	EList<Review> getReview();
 
 } // Requirement_Root

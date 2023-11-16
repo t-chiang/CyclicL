@@ -50,11 +50,30 @@
           </style>
         </nodeMappings>
         <nodeMappings name="TestCase" semanticCandidatesExpression="feature:testcase" domainClass="rmdl::TestCase">
-          <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelExpression="feature:id" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelExpression="feature:id" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
           </style>
+          <conditionnalStyles predicateExpression="[hasPassed/]">
+            <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelExpression="feature:id" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="Review" semanticCandidatesExpression="feature:review" domainClass="rmdl::Review">
+          <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelExpression="feature:reviewer" sizeComputationExpression="10" resizeKind="NSEW" workspacePath="/org.mcmaster.rmdl.design/icons/Reviewer_not_approved.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[isApproved/]">
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelExpression="feature:reviewer" sizeComputationExpression="10" resizeKind="NSEW" workspacePath="/org.mcmaster.rmdl.design/icons/Reviewer_approved.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <edgeMappings name="Decomposition" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="rmdl::Decomposition" useDomainElement="true">
           <style sourceArrow="FillDiamond" sizeComputationExpression="2">
@@ -64,7 +83,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Verification" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='TestCase']" targetFinderExpression="feature:testcase" sourceFinderExpression="feature:entity" domainClass="rmdl::Verification" useDomainElement="true">
+        <edgeMappings name="Verification" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='TestCase']" targetFinderExpression="feature:testcase" sourceFinderExpression="feature:requirement" domainClass="rmdl::Verification" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -73,6 +92,14 @@
           </style>
         </edgeMappings>
         <edgeMappings name="Trace" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']" targetFinderExpression="feature:satisfiedby">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Review Link" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Review']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetFinderExpression="feature:requirements">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -157,7 +184,18 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::TestCase" referenceName="testcase">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:'TestCase'+container.testcase->filter(rmdl::TestCase)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.testcase->filter(rmdl::TestCase)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Review" nodeMappings="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Review']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Review" referenceName="review">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="reviewer" valueExpression="aql:'Reviewer'+container.review->filter(rmdl::Review)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -200,6 +238,17 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="testcase" valueExpression="var:target"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="requirement" valueExpression="var:source"/>
                 </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Review Link" edgeMappings="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Review%20Link']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="requirements" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -259,9 +308,15 @@
         </firstModelOperation>
       </ownedCreateLine>
       <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
-      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="50" canEdit="true" featureName="description"/>
-      <ownedColumnMappings name="[satisfiedby.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="20" canEdit="true" featureName="satisfiedby"/>
-      <ownedColumnMappings name="[verificationTgt.testcase.id/]" label="Test cse" headerLabelExpression="Verification test case" initialWidth="150" featureName="verificationTgt"/>
+      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="10" canEdit="true" featureName="description"/>
+      <ownedColumnMappings name="[satisfiedby.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="100" canEdit="true" featureName="satisfiedby"/>
+      <ownedColumnMappings name="[verificationTgt.testcase.id/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.id/]"/>
+      <ownedColumnMappings name="[verificationTgt/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="100" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.description/]"/>
+      <ownedColumnMappings name="[verificationTgt/]" label="Test Case Type" headerLabelExpression="Test Case Type" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.type/]"/>
+      <ownedColumnMappings name="[verificationTgt/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.hasPassed/]"/>
+      <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="20" featureName="review" labelExpression="[review.isApproved/]"/>
+      <ownedColumnMappings name="[review/]" label="Comments" headerLabelExpression="Comments" initialWidth="150" canEdit="true" featureName="review" labelExpression="[review.comments/]"/>
+      <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
     </ownedRepresentations>
   </ownedViewpoints>
 </description:Group>

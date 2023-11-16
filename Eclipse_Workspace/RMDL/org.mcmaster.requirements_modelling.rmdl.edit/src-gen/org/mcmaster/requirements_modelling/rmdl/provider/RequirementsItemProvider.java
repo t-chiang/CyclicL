@@ -62,6 +62,7 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addVerificationTgtPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
 			addSatisfiedbyPropertyDescriptor(object);
+			addReviewPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -203,6 +204,21 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_satisfiedby_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__SATISFIEDBY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Review feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReviewPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirements_review_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_review_feature",
+								"_UI_Requirements_type"),
+						RmdlPackage.Literals.REQUIREMENTS__REVIEW, true, false, true, null, null, null));
 	}
 
 	/**

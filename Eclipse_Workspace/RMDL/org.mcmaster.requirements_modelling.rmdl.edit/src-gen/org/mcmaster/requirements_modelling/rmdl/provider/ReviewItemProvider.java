@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,16 +20,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-import org.mcmaster.requirements_modelling.rmdl.TestCase;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.TestCase} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Review} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TestCaseItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ReviewItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +37,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TestCaseItemProvider(AdapterFactory adapterFactory) {
+	public ReviewItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,75 +52,44 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addVerificationSrcPropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
-			addDescriptionPropertyDescriptor(object);
+			addIsApprovedPropertyDescriptor(object);
+			addReviewerPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
-			addHasPassedPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
+			addCommentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Verification Src feature.
+	 * This adds a property descriptor for the Is Approved feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addVerificationSrcPropertyDescriptor(Object object) {
+	protected void addIsApprovedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_verificationSrc_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_verificationSrc_feature",
-								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__VERIFICATION_SRC, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Review_isApproved_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_isApproved_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__IS_APPROVED, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Reviewer feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addReviewerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_id_feature", "_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__ID, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_type_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_type_feature",
-								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__TYPE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_description_feature",
-								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__DESCRIPTION, true, false, false,
+						getResourceLocator(), getString("_UI_Review_reviewer_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_reviewer_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REVIEWER, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -134,37 +102,52 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	protected void addRequirement_rootPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_requirement_root_feature",
-								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__REQUIREMENT_ROOT, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Review_requirement_root_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirement_root_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REQUIREMENT_ROOT, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Has Passed feature.
+	 * This adds a property descriptor for the Requirements feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasPassedPropertyDescriptor(Object object) {
+	protected void addRequirementsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_hasPassed_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_hasPassed_feature",
-								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__HAS_PASSED, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Review_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirements_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REQUIREMENTS, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns TestCase.gif.
+	 * This adds a property descriptor for the Comments feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Review_comments_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_comments_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__COMMENTS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns Review.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TestCase"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Review"));
 	}
 
 	/**
@@ -185,8 +168,8 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		TestCase testCase = (TestCase) object;
-		return getString("_UI_TestCase_type") + " " + testCase.getId();
+		Review review = (Review) object;
+		return getString("_UI_Review_type") + " " + review.isIsApproved();
 	}
 
 	/**
@@ -200,11 +183,10 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TestCase.class)) {
-		case RmdlPackage.TEST_CASE__ID:
-		case RmdlPackage.TEST_CASE__TYPE:
-		case RmdlPackage.TEST_CASE__DESCRIPTION:
-		case RmdlPackage.TEST_CASE__HAS_PASSED:
+		switch (notification.getFeatureID(Review.class)) {
+		case RmdlPackage.REVIEW__IS_APPROVED:
+		case RmdlPackage.REVIEW__REVIEWER:
+		case RmdlPackage.REVIEW__COMMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#isHasPassed <em>Has Passed</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase()
@@ -133,5 +134,28 @@ public interface TestCase extends EObject {
 	 * @generated
 	 */
 	void setRequirement_root(Requirement_Root value);
+
+	/**
+	 * Returns the value of the '<em><b>Has Passed</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Passed</em>' attribute.
+	 * @see #setHasPassed(boolean)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_HasPassed()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isHasPassed();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#isHasPassed <em>Has Passed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Passed</em>' attribute.
+	 * @see #isHasPassed()
+	 * @generated
+	 */
+	void setHasPassed(boolean value);
 
 } // TestCase

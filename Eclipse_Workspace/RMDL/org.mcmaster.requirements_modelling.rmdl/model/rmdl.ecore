@@ -17,6 +17,8 @@
         eType="#//Requirement_Root" eOpposite="#//Requirement_Root/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedby" lowerBound="1"
         upperBound="-1" eType="#//DesignElement" eOpposite="#//DesignElement/satisfies"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="review" lowerBound="1"
+        upperBound="-1" eType="#//Review" eOpposite="#//Review/requirements"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Functional" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Qualitative" eSuperTypes="#//Requirements"/>
@@ -39,6 +41,8 @@
         eType="#//DesignElement" containment="true" eOpposite="#//DesignElement/requirement_root"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
         eType="#//Requirements" containment="true" eOpposite="#//Requirements/requirement_root"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="review" upperBound="-1"
+        eType="#//Review" containment="true" eOpposite="#//Review/requirement_root"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" abstract="true"/>
@@ -60,6 +64,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
         eType="#//Requirement_Root" eOpposite="#//Requirement_Root/testcase"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasPassed" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Verification" eSuperTypes="#//Reference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" lowerBound="1"
@@ -78,5 +84,15 @@
     <eLiterals name="ClassTest" value="1"/>
     <eLiterals name="WhiteBox" value="2"/>
     <eLiterals name="BlackBox" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Review">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isApproved" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reviewer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
+        eType="#//Requirement_Root" eOpposite="#//Requirement_Root/review"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" lowerBound="1"
+        upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/review"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

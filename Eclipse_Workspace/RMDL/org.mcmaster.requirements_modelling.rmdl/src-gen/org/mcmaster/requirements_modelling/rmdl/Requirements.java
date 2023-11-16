@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby <em>Satisfiedby</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -218,5 +219,19 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<DesignElement> getSatisfiedby();
+
+	/**
+	 * Returns the value of the '<em><b>Review</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Review}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Review</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Review()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Review#getRequirements
+	 * @model opposite="requirements" required="true"
+	 * @generated
+	 */
+	EList<Review> getReview();
 
 } // Requirements

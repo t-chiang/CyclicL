@@ -18,6 +18,7 @@ import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
+import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 
@@ -34,6 +35,7 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getDesignelement <em>Designelement</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getReview <em>Review</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +90,16 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<Requirements> requirements;
+
+	/**
+	 * The cached value of the '{@link #getReview() <em>Review</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReview()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Review> review;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,6 +191,19 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Review> getReview() {
+		if (review == null) {
+			review = new EObjectContainmentWithInverseEList<Review>(Review.class, this,
+					RmdlPackage.REQUIREMENT_ROOT__REVIEW, RmdlPackage.REVIEW__REQUIREMENT_ROOT);
+		}
+		return review;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -191,6 +216,8 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDesignelement()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirements()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -213,6 +240,8 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return ((InternalEList<?>) getDesignelement()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 			return ((InternalEList<?>) getRequirements()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+			return ((InternalEList<?>) getReview()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,6 +264,8 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return getDesignelement();
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 			return getRequirements();
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+			return getReview();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,6 +299,10 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			getRequirements().clear();
 			getRequirements().addAll((Collection<? extends Requirements>) newValue);
 			return;
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+			getReview().clear();
+			getReview().addAll((Collection<? extends Review>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -295,6 +330,9 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 			getRequirements().clear();
 			return;
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+			getReview().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -317,6 +355,8 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return designelement != null && !designelement.isEmpty();
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 			return requirements != null && !requirements.isEmpty();
+		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+			return review != null && !review.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
