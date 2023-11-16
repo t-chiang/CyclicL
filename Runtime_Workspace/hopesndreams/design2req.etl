@@ -2,6 +2,9 @@ import "HelperFunctions.eol";
 
 pre{
 	var functionals :Integer = 1;
+	var safeties : Integer = 1;
+	var functionalTests : Integer = 1;
+	var safetyTests : Integer = 1;
 }
 
 rule root2root
@@ -15,14 +18,23 @@ rule root2root
 rule concreteClass2designElement
 	transform designClass : design!ConcreteClass
 	to desElement : requirement!DesignElement,
-		req: requirement!Functional{
+		funcreq: requirement!Functional,
+		safereq : requirement!Safety,
+		functest : requirement!TestCase,
+		safetest : requirement!TestCase{
 		desElement.name = designClass.name;
-		req.setName("FunctionalReq");
-		req.setID(functionals);
+		funcreq.setName("FunctionalReq");
+		funcreq.setID(functionals);
 		functionals++;
-		req.equivalent().size().println("Size of array of requirements: ");
-		req.eContainer().println("Container is: ");
-		req.satisfiedby.add(desElement);
+		funcreq.satisfiedby.add(desElement);
+		safereq.setName("SafetyReq");
+		safereq.setID(safeties);
+		safeties++;
+		safereq.satisfiedby.add(desElement);
+//		functest.setID(functionalTests);
+//		functionalTests++;
+//		safetyTests.setID(safetyTests);
+//		safetyTests++;
 	}
 
 //post{
