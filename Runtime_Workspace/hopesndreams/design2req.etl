@@ -1,18 +1,17 @@
 import "HelperFunctions.eol";
 
 pre{
-	var functionals :Integer = 1;
-	var safeties : Integer = 1;
-	var functionalTests : Integer = 1;
-	var safetyTests : Integer = 1;
+	var requirementID :Integer = 1;
+	var testID : Integer = 1;
 }
 
 rule root2root
 	transform sourceRoot : design!Class_Diagram_Root
 	to targetRoot : requirement!Requirement_Root{
-		targetRoot.requirements.addAll(sourceRoot.class.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
-		targetRoot.reference.addAll(sourceRoot.class.equivalent().flatten().select(ref | ref.isKindOf(requirement!Reference)));
 		targetRoot.designelement.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+		targetRoot.requirements.addAll(sourceRoot.class.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.testcase.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
+		targetRoot.review.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
 }
 
 rule concreteClass2designElement
@@ -21,20 +20,26 @@ rule concreteClass2designElement
 		funcreq: requirement!Functional,
 		safereq : requirement!Safety,
 		functest : requirement!TestCase,
-		safetest : requirement!TestCase{
+		safetest : requirement!TestCase,
+		rev : requirement!Review{
 		desElement.name = designClass.name;
 		funcreq.setName("FunctionalReq");
-		funcreq.setID(functionals);
-		functionals++;
+		funcreq.setID(requirementID);
+		requirementID++;
 		funcreq.satisfiedby.add(desElement);
 		safereq.setName("SafetyReq");
-		safereq.setID(safeties);
-		safeties++;
+		safereq.setID(requirementID);
+		requirementID++;
 		safereq.satisfiedby.add(desElement);
-//		functest.setID(functionalTests);
-//		functionalTests++;
-//		safetyTests.setID(safetyTests);
-//		safetyTests++;
+		functest.requirements.add(funcreq);
+		safetest.requirements.add(safereq);
+		rev.setreviewer("SomePerson");
+		rev.requirements.add(funcreq);
+		rev.requirements.add(safereq);
+		functest.setID(testID);
+		testID++;
+		safetest.setID(testID);
+		testID++;
 	}
 
 //post{

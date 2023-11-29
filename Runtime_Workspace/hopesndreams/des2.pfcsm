@@ -1,2 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pfcsm="http://www.example.org/pfcsm"/>
+<?xml version="1.0" encoding="ASCII"?>
+<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
+  <class xsi:type="pfcsm:ConcreteClass" name="Vehicle"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Transmission"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Torque_Converter"/>
+  <class xsi:type="pfcsm:ConcreteClass" name="Transmission"/>
+</pfcsm:Class_Diagram_Root>
