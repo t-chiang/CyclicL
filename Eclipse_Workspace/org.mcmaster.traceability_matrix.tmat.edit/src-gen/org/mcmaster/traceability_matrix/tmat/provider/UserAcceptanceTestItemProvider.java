@@ -1,6 +1,6 @@
 /**
  */
-package org.mcmaster.requirements_modelling.rmdl.provider;
+package org.mcmaster.traceability_matrix.tmat.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,25 +8,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Decomposition} object.
+ * This is the item provider adapter for a {@link org.mcmaster.traceability_matrix.tmat.UserAcceptanceTest} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DecompositionItemProvider extends ReferenceItemProvider {
+public class UserAcceptanceTestItemProvider extends TestingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DecompositionItemProvider(AdapterFactory adapterFactory) {
+	public UserAcceptanceTestItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,51 +38,19 @@ public class DecompositionItemProvider extends ReferenceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Decomposition_source_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Decomposition_source_feature",
-								"_UI_Decomposition_type"),
-						RmdlPackage.Literals.DECOMPOSITION__SOURCE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Decomposition_target_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Decomposition_target_feature",
-								"_UI_Decomposition_type"),
-						RmdlPackage.Literals.DECOMPOSITION__TARGET, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns Decomposition.gif.
+	 * This returns UserAcceptanceTest.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Decomposition"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UserAcceptanceTest"));
 	}
 
 	/**
@@ -106,7 +71,7 @@ public class DecompositionItemProvider extends ReferenceItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Decomposition_type");
+		return getString("_UI_UserAcceptanceTest_type");
 	}
 
 	/**

@@ -94,24 +94,6 @@ public interface RmdlFactory extends EFactory {
 	TestCase createTestCase();
 
 	/**
-	 * Returns a new object of class '<em>Verification</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Verification</em>'.
-	 * @generated
-	 */
-	Verification createVerification();
-
-	/**
-	 * Returns a new object of class '<em>Decomposition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Decomposition</em>'.
-	 * @generated
-	 */
-	Decomposition createDecomposition();
-
-	/**
 	 * Returns a new object of class '<em>Review</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

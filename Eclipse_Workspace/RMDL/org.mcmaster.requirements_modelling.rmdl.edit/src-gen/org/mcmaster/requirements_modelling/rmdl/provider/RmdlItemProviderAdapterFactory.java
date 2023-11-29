@@ -257,52 +257,6 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Verification} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected VerificationItemProvider verificationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Verification}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createVerificationAdapter() {
-		if (verificationItemProvider == null) {
-			verificationItemProvider = new VerificationItemProvider(this);
-		}
-
-		return verificationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Decomposition} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DecompositionItemProvider decompositionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Decomposition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDecompositionAdapter() {
-		if (decompositionItemProvider == null) {
-			decompositionItemProvider = new DecompositionItemProvider(this);
-		}
-
-		return decompositionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Review} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,10 +394,6 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			designElementItemProvider.dispose();
 		if (testCaseItemProvider != null)
 			testCaseItemProvider.dispose();
-		if (verificationItemProvider != null)
-			verificationItemProvider.dispose();
-		if (decompositionItemProvider != null)
-			decompositionItemProvider.dispose();
 		if (reviewItemProvider != null)
 			reviewItemProvider.dispose();
 	}

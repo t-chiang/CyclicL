@@ -3,26 +3,22 @@
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.TestType;
-import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,42 +28,32 @@ import org.mcmaster.requirements_modelling.rmdl.Verification;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getVerificationSrc <em>Verification Src</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#isHasPassed <em>Has Passed</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCase {
 	/**
-	 * The cached value of the '{@link #getVerificationSrc() <em>Verification Src</em>}' reference list.
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVerificationSrc()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Verification> verificationSrc;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final int ID_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
@@ -134,6 +120,16 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	protected boolean hasPassed = HAS_PASSED_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirements> requirements;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -157,20 +153,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Verification> getVerificationSrc() {
-		if (verificationSrc == null) {
-			verificationSrc = new EObjectWithInverseResolvingEList<Verification>(Verification.class, this,
-					RmdlPackage.TEST_CASE__VERIFICATION_SRC, RmdlPackage.VERIFICATION__TESTCASE);
-		}
-		return verificationSrc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getId() {
+	public int getID() {
 		return id;
 	}
 
@@ -179,11 +162,11 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(int newId) {
-		int oldId = id;
-		id = newId;
+	public void setID(int newID) {
+		int oldID = id;
+		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.TEST_CASE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.TEST_CASE__ID, oldID, id));
 	}
 
 	/**
@@ -301,16 +284,29 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Requirements> getRequirements() {
+		if (requirements == null) {
+			requirements = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
+					RmdlPackage.TEST_CASE__REQUIREMENTS, RmdlPackage.REQUIREMENTS__TESTCASE);
+		}
+		return requirements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVerificationSrc()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.TEST_CASE__REQUIREMENT_ROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
+		case RmdlPackage.TEST_CASE__REQUIREMENTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -323,10 +319,10 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
-			return ((InternalEList<?>) getVerificationSrc()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.TEST_CASE__REQUIREMENT_ROOT:
 			return basicSetRequirement_root(null, msgs);
+		case RmdlPackage.TEST_CASE__REQUIREMENTS:
+			return ((InternalEList<?>) getRequirements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -354,10 +350,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
-			return getVerificationSrc();
 		case RmdlPackage.TEST_CASE__ID:
-			return getId();
+			return getID();
 		case RmdlPackage.TEST_CASE__TYPE:
 			return getType();
 		case RmdlPackage.TEST_CASE__DESCRIPTION:
@@ -366,6 +360,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return getRequirement_root();
 		case RmdlPackage.TEST_CASE__HAS_PASSED:
 			return isHasPassed();
+		case RmdlPackage.TEST_CASE__REQUIREMENTS:
+			return getRequirements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,12 +375,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
-			getVerificationSrc().clear();
-			getVerificationSrc().addAll((Collection<? extends Verification>) newValue);
-			return;
 		case RmdlPackage.TEST_CASE__ID:
-			setId((Integer) newValue);
+			setID((Integer) newValue);
 			return;
 		case RmdlPackage.TEST_CASE__TYPE:
 			setType((TestType) newValue);
@@ -398,6 +390,10 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__HAS_PASSED:
 			setHasPassed((Boolean) newValue);
 			return;
+		case RmdlPackage.TEST_CASE__REQUIREMENTS:
+			getRequirements().clear();
+			getRequirements().addAll((Collection<? extends Requirements>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -410,11 +406,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
-			getVerificationSrc().clear();
-			return;
 		case RmdlPackage.TEST_CASE__ID:
-			setId(ID_EDEFAULT);
+			setID(ID_EDEFAULT);
 			return;
 		case RmdlPackage.TEST_CASE__TYPE:
 			setType(TYPE_EDEFAULT);
@@ -428,6 +421,9 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 		case RmdlPackage.TEST_CASE__HAS_PASSED:
 			setHasPassed(HAS_PASSED_EDEFAULT);
 			return;
+		case RmdlPackage.TEST_CASE__REQUIREMENTS:
+			getRequirements().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -440,8 +436,6 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.TEST_CASE__VERIFICATION_SRC:
-			return verificationSrc != null && !verificationSrc.isEmpty();
 		case RmdlPackage.TEST_CASE__ID:
 			return id != ID_EDEFAULT;
 		case RmdlPackage.TEST_CASE__TYPE:
@@ -452,6 +446,8 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return getRequirement_root() != null;
 		case RmdlPackage.TEST_CASE__HAS_PASSED:
 			return hasPassed != HAS_PASSED_EDEFAULT;
+		case RmdlPackage.TEST_CASE__REQUIREMENTS:
+			return requirements != null && !requirements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -467,7 +463,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
+		result.append(" (ID: ");
 		result.append(id);
 		result.append(", type: ");
 		result.append(type);

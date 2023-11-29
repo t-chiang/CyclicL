@@ -3,7 +3,6 @@
 package org.mcmaster.requirements_modelling.rmdl;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getVerificationSrc <em>Verification Src</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getId <em>Id</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#isHasPassed <em>Has Passed</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase()
@@ -29,40 +28,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TestCase extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Verification Src</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Verification}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Verification#getTestcase <em>Testcase</em>}'.
+	 * Returns the value of the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Verification Src</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_VerificationSrc()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Verification#getTestcase
-	 * @model opposite="testcase"
-	 * @generated
-	 */
-	EList<Verification> getVerificationSrc();
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(int)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Id()
+	 * @return the value of the '<em>ID</em>' attribute.
+	 * @see #setID(int)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_ID()
 	 * @model required="true"
 	 * @generated
 	 */
-	int getId();
+	int getID();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
+	 * @param value the new value of the '<em>ID</em>' attribute.
+	 * @see #getID()
 	 * @generated
 	 */
-	void setId(int value);
+	void setID(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
@@ -157,5 +142,19 @@ public interface TestCase extends EObject {
 	 * @generated
 	 */
 	void setHasPassed(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirements</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirements()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase
+	 * @model opposite="testcase" required="true"
+	 * @generated
+	 */
+	EList<Requirements> getRequirements();
 
 } // TestCase

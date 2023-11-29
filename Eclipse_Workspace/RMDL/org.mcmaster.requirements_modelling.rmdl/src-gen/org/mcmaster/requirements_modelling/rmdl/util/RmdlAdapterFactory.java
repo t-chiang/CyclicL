@@ -9,18 +9,15 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
-import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
-import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
-import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,11 +110,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseReference(Reference object) {
-			return createReferenceAdapter();
-		}
-
-		@Override
 		public Adapter caseDesignElement(DesignElement object) {
 			return createDesignElementAdapter();
 		}
@@ -125,16 +117,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseTestCase(TestCase object) {
 			return createTestCaseAdapter();
-		}
-
-		@Override
-		public Adapter caseVerification(Verification object) {
-			return createVerificationAdapter();
-		}
-
-		@Override
-		public Adapter caseDecomposition(Decomposition object) {
-			return createDecompositionAdapter();
 		}
 
 		@Override
@@ -260,20 +242,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Reference <em>Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Reference
-	 * @generated
-	 */
-	public Adapter createReferenceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement <em>Design Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -298,34 +266,6 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTestCaseAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Verification <em>Verification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Verification
-	 * @generated
-	 */
-	public Adapter createVerificationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Decomposition <em>Decomposition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Decomposition
-	 * @generated
-	 */
-	public Adapter createDecompositionAdapter() {
 		return null;
 	}
 

@@ -19,12 +19,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod <em>Verify Method</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getChild <em>Child</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getParent <em>Parent</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby <em>Satisfiedby</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -121,68 +119,6 @@ public interface Requirements extends EObject {
 	void setVerifyMethod(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Child</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Decomposition}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Decomposition#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Child()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Decomposition#getSource
-	 * @model opposite="source"
-	 * @generated
-	 */
-	EList<Decomposition> getChild();
-
-	/**
-	 * Returns the value of the '<em><b>Parent</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Decomposition#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent</em>' reference.
-	 * @see #setParent(Decomposition)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Parent()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Decomposition#getTarget
-	 * @model opposite="target"
-	 * @generated
-	 */
-	Decomposition getParent();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getParent <em>Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' reference.
-	 * @see #getParent()
-	 * @generated
-	 */
-	void setParent(Decomposition value);
-
-	/**
-	 * Returns the value of the '<em><b>Verification Tgt</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Verification#getRequirement <em>Requirement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Verification Tgt</em>' reference.
-	 * @see #setVerificationTgt(Verification)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_VerificationTgt()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Verification#getRequirement
-	 * @model opposite="requirement"
-	 * @generated
-	 */
-	Verification getVerificationTgt();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerificationTgt <em>Verification Tgt</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Verification Tgt</em>' reference.
-	 * @see #getVerificationTgt()
-	 * @generated
-	 */
-	void setVerificationTgt(Verification value);
-
-	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
@@ -233,5 +169,19 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<Review> getReview();
+
+	/**
+	 * Returns the value of the '<em><b>Testcase</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.TestCase}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Testcase</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Testcase()
+	 * @see org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements
+	 * @model opposite="requirements" required="true"
+	 * @generated
+	 */
+	EList<TestCase> getTestcase();
 
 } // Requirements

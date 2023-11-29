@@ -57,12 +57,10 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addVerifyMethodPropertyDescriptor(object);
-			addChildPropertyDescriptor(object);
-			addParentPropertyDescriptor(object);
-			addVerificationTgtPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
 			addSatisfiedbyPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
+			addTestcasePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -132,51 +130,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Child feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addChildPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_child_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_child_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__CHILD, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_parent_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_parent_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__PARENT, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Verification Tgt feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVerificationTgtPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_verificationTgt_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_verificationTgt_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__VERIFICATION_TGT, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Requirement root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,6 +172,21 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_review_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__REVIEW, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Testcase feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTestcasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirements_testcase_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_testcase_feature",
+								"_UI_Requirements_type"),
+						RmdlPackage.Literals.REQUIREMENTS__TESTCASE, true, false, true, null, null, null));
 	}
 
 	/**

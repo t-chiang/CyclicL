@@ -1,6 +1,6 @@
 /**
  */
-package org.mcmaster.requirements_modelling.rmdl.provider;
+package org.mcmaster.traceability_matrix.tmat.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,25 +8,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Verification} object.
+ * This is the item provider adapter for a {@link org.mcmaster.traceability_matrix.tmat.Scope} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class VerificationItemProvider extends ReferenceItemProvider {
+public class ScopeItemProvider extends ProjectRequirementsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VerificationItemProvider(AdapterFactory adapterFactory) {
+	public ScopeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -41,51 +38,19 @@ public class VerificationItemProvider extends ReferenceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTestcasePropertyDescriptor(object);
-			addRequirementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Testcase feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTestcasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Verification_testcase_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Verification_testcase_feature",
-								"_UI_Verification_type"),
-						RmdlPackage.Literals.VERIFICATION__TESTCASE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Requirement feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequirementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Verification_requirement_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Verification_requirement_feature",
-								"_UI_Verification_type"),
-						RmdlPackage.Literals.VERIFICATION__REQUIREMENT, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns Verification.gif.
+	 * This returns Scope.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Verification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Scope"));
 	}
 
 	/**
@@ -106,7 +71,7 @@ public class VerificationItemProvider extends ReferenceItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Verification_type");
+		return getString("_UI_Scope_type");
 	}
 
 	/**
