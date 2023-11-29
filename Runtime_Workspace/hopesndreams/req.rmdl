@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
   <rmdl:Requirement_Root>
-    <designelement name="Vehicle" satisfies="/0/@requirements.0 /0/@requirements.1"/>
-    <designelement name="Transmission" satisfies="/0/@requirements.2 /0/@requirements.3"/>
+    <reference xsi:type="rmdl:Verification" testcase="/0/@testcase.0" requirement="/0/@requirements.5"/>
+    <reference xsi:type="rmdl:Verification" testcase="/0/@testcase.0" requirement="/0/@requirements.6"/>
+    <testcase verificationSrc="/0/@reference.0 /0/@reference.1" id="1" hasPassed="true"/>
+    <designelement name="Vehicle" satisfies="/0/@requirements.0 /0/@requirements.1 /0/@requirements.8"/>
+    <designelement name="Transmission" satisfies="/0/@requirements.2 /0/@requirements.3 /0/@requirements.10 /0/@requirements.9"/>
     <designelement name="Torque_Converter" satisfies="/0/@requirements.4 /0/@requirements.5"/>
     <designelement name="Transmission" satisfies="/0/@requirements.6 /0/@requirements.7"/>
+    <designelement name="DesignElement5"/>
     <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="1" satisfiedby="/0/@designelement.0"/>
     <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="1" satisfiedby="/0/@designelement.0"/>
     <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" satisfiedby="/0/@designelement.1"/>
-    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="2" satisfiedby="/0/@designelement.1"/>
-    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" satisfiedby="/0/@designelement.2"/>
-    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="3" satisfiedby="/0/@designelement.2"/>
-    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" satisfiedby="/0/@designelement.3"/>
+    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="2" satisfiedby="/0/@designelement.1" review="/0/@review.0"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" satisfiedby="/0/@designelement.2" review="/0/@review.0"/>
+    <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="3" verificationTgt="/0/@reference.0" satisfiedby="/0/@designelement.2"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" verificationTgt="/0/@reference.1" satisfiedby="/0/@designelement.3"/>
     <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="4" satisfiedby="/0/@designelement.3"/>
+    <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="9" satisfiedby="/0/@designelement.0"/>
+    <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="10" satisfiedby="/0/@designelement.1"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq5" ID="11" description="asdfhasijdfnkosafmsadf" satisfiedby="/0/@designelement.1"/>
+    <review isApproved="true" reviewer="Reviewer1" requirements="/0/@requirements.4 /0/@requirements.3"/>
   </rmdl:Requirement_Root>
   <rmdl:TestCase/>
   <rmdl:TestCase/>
