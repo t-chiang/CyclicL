@@ -285,10 +285,10 @@
       <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
       <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="10" canEdit="true" featureName="description"/>
       <ownedColumnMappings name="[satisfiedby.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="100" canEdit="true" featureName="satisfiedby"/>
-      <ownedColumnMappings name="[verificationTgt.testcase.id/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.id/]"/>
-      <ownedColumnMappings name="[verificationTgt/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="100" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.description/]"/>
-      <ownedColumnMappings name="[verificationTgt/]" label="Test Case Type" headerLabelExpression="Test Case Type" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.type/]"/>
-      <ownedColumnMappings name="[verificationTgt/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="verificationTgt" labelExpression="[verificationTgt.testcase.hasPassed/]"/>
+      <ownedColumnMappings name="[.testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="testcase" labelExpression="[testcase.ID/]"/>
+      <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="100" featureName="testcase" labelExpression="[testcase.description/]"/>
+      <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" featureName="testcase" labelExpression="[testcase.type/]"/>
+      <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
       <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="20" featureName="review" labelExpression="[review.isApproved/]"/>
       <ownedColumnMappings name="[review/]" label="Comments" headerLabelExpression="Comments" initialWidth="150" canEdit="true" featureName="review" labelExpression="[review.comments/]"/>
       <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
