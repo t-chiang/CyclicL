@@ -10,12 +10,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.Review;
@@ -30,7 +27,6 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_RootImpl#getDesignelement <em>Designelement</em>}</li>
@@ -41,16 +37,6 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  * @generated
  */
 public class Requirement_RootImpl extends MinimalEObjectImpl.Container implements Requirement_Root {
-	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Reference> reference;
-
 	/**
 	 * The cached value of the '{@link #getTestcase() <em>Testcase</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -118,19 +104,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	protected EClass eStaticClass() {
 		return RmdlPackage.Literals.REQUIREMENT_ROOT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Reference> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<Reference>(Reference.class, this,
-					RmdlPackage.REQUIREMENT_ROOT__REFERENCE);
-		}
-		return reference;
 	}
 
 	/**
@@ -230,8 +203,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
-			return ((InternalEList<?>) getReference()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return ((InternalEList<?>) getTestcase()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
@@ -254,8 +225,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
-			return getReference();
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return getTestcase();
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
@@ -279,10 +248,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
-			getReference().clear();
-			getReference().addAll((Collection<? extends Reference>) newValue);
-			return;
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			getTestcase().clear();
 			getTestcase().addAll((Collection<? extends TestCase>) newValue);
@@ -315,9 +280,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
-			getReference().clear();
-			return;
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			getTestcase().clear();
 			return;
@@ -345,8 +307,6 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
-			return reference != null && !reference.isEmpty();
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 			return testcase != null && !testcase.isEmpty();
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:

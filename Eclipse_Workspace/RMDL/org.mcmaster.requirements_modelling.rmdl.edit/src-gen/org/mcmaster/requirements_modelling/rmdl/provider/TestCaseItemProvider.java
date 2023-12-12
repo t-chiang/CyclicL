@@ -53,42 +53,27 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addVerificationSrcPropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
 			addHasPassedPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Verification Src feature.
+	 * This adds a property descriptor for the ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addVerificationSrcPropertyDescriptor(Object object) {
+	protected void addIDPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_verificationSrc_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_verificationSrc_feature",
-								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__VERIFICATION_SRC, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_id_feature", "_UI_TestCase_type"),
+						getResourceLocator(), getString("_UI_TestCase_ID_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_ID_feature", "_UI_TestCase_type"),
 						RmdlPackage.Literals.TEST_CASE__ID, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
@@ -157,6 +142,21 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
+	 * This adds a property descriptor for the Requirements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_TestCase_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_requirements_feature",
+								"_UI_TestCase_type"),
+						RmdlPackage.Literals.TEST_CASE__REQUIREMENTS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This returns TestCase.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,7 +186,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	@Override
 	public String getText(Object object) {
 		TestCase testCase = (TestCase) object;
-		return getString("_UI_TestCase_type") + " " + testCase.getId();
+		return getString("_UI_TestCase_type") + " " + testCase.getID();
 	}
 
 	/**

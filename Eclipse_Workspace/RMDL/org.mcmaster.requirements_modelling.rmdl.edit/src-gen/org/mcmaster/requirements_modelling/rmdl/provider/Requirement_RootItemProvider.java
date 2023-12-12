@@ -135,7 +135,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
@@ -202,7 +201,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Requirement_Root.class)) {
-		case RmdlPackage.REQUIREMENT_ROOT__REFERENCE:
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
 		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
@@ -224,12 +222,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,
-				RmdlFactory.eINSTANCE.createVerification()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REFERENCE,
-				RmdlFactory.eINSTANCE.createDecomposition()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE,
 				RmdlFactory.eINSTANCE.createTestCase()));

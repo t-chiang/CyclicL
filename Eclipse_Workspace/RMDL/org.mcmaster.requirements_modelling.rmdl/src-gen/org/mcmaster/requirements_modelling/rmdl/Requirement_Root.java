@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getReference <em>Reference</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage <em>Package</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}</li>
@@ -28,18 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Requirement_Root extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Reference</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Reference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reference</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Reference()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Reference> getReference();
-
 	/**
 	 * Returns the value of the '<em><b>Testcase</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.TestCase}.

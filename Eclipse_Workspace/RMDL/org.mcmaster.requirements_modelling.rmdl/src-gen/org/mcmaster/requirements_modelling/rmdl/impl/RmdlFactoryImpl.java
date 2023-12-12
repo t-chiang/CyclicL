@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
-import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
@@ -22,7 +21,6 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 import org.mcmaster.requirements_modelling.rmdl.TestType;
-import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,10 +81,6 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createDesignElement();
 		case RmdlPackage.TEST_CASE:
 			return createTestCase();
-		case RmdlPackage.VERIFICATION:
-			return createVerification();
-		case RmdlPackage.DECOMPOSITION:
-			return createDecomposition();
 		case RmdlPackage.REVIEW:
 			return createReview();
 		default:
@@ -202,26 +196,6 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	public TestCase createTestCase() {
 		TestCaseImpl testCase = new TestCaseImpl();
 		return testCase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Verification createVerification() {
-		VerificationImpl verification = new VerificationImpl();
-		return verification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Decomposition createDecomposition() {
-		DecompositionImpl decomposition = new DecompositionImpl();
-		return decomposition;
 	}
 
 	/**

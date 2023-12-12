@@ -7,18 +7,15 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
-import org.mcmaster.requirements_modelling.rmdl.Decomposition;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
-import org.mcmaster.requirements_modelling.rmdl.Reference;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Safety;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
-import org.mcmaster.requirements_modelling.rmdl.Verification;
 
 /**
  * <!-- begin-user-doc -->
@@ -136,13 +133,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.REFERENCE: {
-			Reference reference = (Reference) theEObject;
-			T result = caseReference(reference);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case RmdlPackage.DESIGN_ELEMENT: {
 			DesignElement designElement = (DesignElement) theEObject;
 			T result = caseDesignElement(designElement);
@@ -153,24 +143,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 		case RmdlPackage.TEST_CASE: {
 			TestCase testCase = (TestCase) theEObject;
 			T result = caseTestCase(testCase);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RmdlPackage.VERIFICATION: {
-			Verification verification = (Verification) theEObject;
-			T result = caseVerification(verification);
-			if (result == null)
-				result = caseReference(verification);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RmdlPackage.DECOMPOSITION: {
-			Decomposition decomposition = (Decomposition) theEObject;
-			T result = caseDecomposition(decomposition);
-			if (result == null)
-				result = caseReference(decomposition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -293,21 +265,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReference(Reference object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Design Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -334,36 +291,6 @@ public class RmdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTestCase(TestCase object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Verification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Verification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVerification(Verification object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Decomposition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Decomposition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDecomposition(Decomposition object) {
 		return null;
 	}
 

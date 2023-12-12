@@ -1,0 +1,11 @@
+rule root2root
+	transform sourceRoot : requirement!Requirement_Root
+	to targetRoot : design!Class_Diagram_Root{
+		targetRoot.class.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!ConcreteClass)));
+	}
+	
+rule designElement2concreteClass
+	transform desElement : requirement!DesignElement
+	to concreteClass : design!ConcreteClass{
+		concreteClass.name = desElement.name;
+	}
