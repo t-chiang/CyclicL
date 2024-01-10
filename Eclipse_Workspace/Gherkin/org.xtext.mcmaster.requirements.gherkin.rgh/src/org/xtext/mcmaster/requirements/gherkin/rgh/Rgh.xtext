@@ -1,0 +1,46 @@
+grammar org.xtext.mcmaster.requirements.gherkin.rgh.Rgh with org.eclipse.xtext.common.Terminals
+
+generate rgh "http://www.xtext.org/mcmaster/requirements/gherkin/rgh/Rgh"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	(requirement+=Steps)*;
+	
+Steps:
+	Given | When | Then;
+	
+//Scenario:
+//	'Scenario' name=ID '{' (Description) '}';
+	
+Given:
+	'Given' '{' (preconditions+=Precondition)* '}';
+
+When:
+	'When' '{' (events+=Event)* '}';
+	
+Then:
+	'Then' '{' (postconditions+=Postcondition)* '}';
+	
+
+//And:
+//	Then | When name = ID'{' (description = Description) '}';
+	
+Precondition:
+	'Precondition' name = ID ':' description = Description
+;
+	
+Event:
+	'Event' name=ID ':' description = Description
+;
+
+Postcondition:
+	'Postcondition' name=ID ':' description=Description
+;
+	
+Description returns Description:
+	value = STRING;
+	
+EString returns ecore::EString:
+	STRING;
+
