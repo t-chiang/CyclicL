@@ -674,7 +674,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirements_ID(), ecorePackage.getEInt(), "ID", null, 1, 1, Requirements.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequirements_Description(), ecorePackage.getEString(), "description", null, 0, 1,
+		initEAttribute(getRequirements_Description(), ecorePackage.getEString(), "description", null, 1, 1,
 				Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirements_VerifyMethod(), ecorePackage.getEString(), "verifyMethod", null, 1, 1,

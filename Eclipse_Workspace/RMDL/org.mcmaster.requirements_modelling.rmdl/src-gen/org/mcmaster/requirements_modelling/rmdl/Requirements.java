@@ -81,7 +81,7 @@ public interface Requirements extends EObject {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Description()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getDescription();
