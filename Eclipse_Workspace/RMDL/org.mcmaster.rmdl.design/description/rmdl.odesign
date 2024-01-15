@@ -75,7 +75,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <edgeMappings name="Trace" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']" targetFinderExpression="feature:satisfiedby">
+        <edgeMappings name="Trace" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Constraint%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Qualitative%20Requirement'] //@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Safety%20Requirement']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']" targetFinderExpression="feature:traceto">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -201,7 +201,7 @@
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="satisfiedby" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="traceto" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -228,7 +228,6 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
-        <toolSections name="Xtext Embedding"/>
       </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.mcmaster.rmdl.design.Services"/>
@@ -285,7 +284,7 @@
       </ownedCreateLine>
       <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
       <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="10" canEdit="true" featureName="description"/>
-      <ownedColumnMappings name="[satisfiedby.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="100" canEdit="true" featureName="satisfiedby"/>
+      <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="100" canEdit="true" featureName="traceto"/>
       <ownedColumnMappings name="[.testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="testcase" labelExpression="[testcase.ID/]"/>
       <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="100" featureName="testcase" labelExpression="[testcase.description/]"/>
       <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" featureName="testcase" labelExpression="[testcase.type/]"/>
@@ -301,9 +300,9 @@
       <pages name="Default Page" labelExpression="Properties" semanticCandidateExpression="var:self">
         <extends href="../../org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@pages.0"/>
       </pages>
-      <pages name="Rgh Gui" labelExpression="Requirement Description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <pages name="Rgh Gui" labelExpression="Requirement Description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0" indented="true"/>
       <groups name="Requirements_DSL" labelExpression="description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties-xtext:XtextMultiLineValueDescription" name="Requirement Description" labelExpression="Description" lineCount="10" valueExpression="feature:description" injectorId="org.mcmaster.rmdl.xtextsirius.RghLangInjectorId">
+        <controls xsi:type="properties-xtext:XtextMultiLineValueDescription" name="Requirement Description" labelExpression="Description" lineCount="100" valueExpression="feature:description" injectorId="org.mcmaster.rmdl.xtextsirius.RghLangInjectorId" cancelOnValidationError="true">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:SetValue" featureName="description" valueExpression="var:newValue"/>
           </initialOperation>

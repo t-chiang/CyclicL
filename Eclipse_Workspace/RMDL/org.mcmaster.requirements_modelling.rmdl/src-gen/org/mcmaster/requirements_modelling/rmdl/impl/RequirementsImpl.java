@@ -38,7 +38,7 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getVerifyMethod <em>Verify Method</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getRequirement_root <em>Requirement root</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getSatisfiedby <em>Satisfiedby</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceto <em>Traceto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTestcase <em>Testcase</em>}</li>
  * </ul>
@@ -127,14 +127,14 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	protected String verifyMethod = VERIFY_METHOD_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSatisfiedby() <em>Satisfiedby</em>}' reference list.
+	 * The cached value of the '{@link #getTraceto() <em>Traceto</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSatisfiedby()
+	 * @see #getTraceto()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DesignElement> satisfiedby;
+	protected EList<DesignElement> traceto;
 
 	/**
 	 * The cached value of the '{@link #getReview() <em>Review</em>}' reference list.
@@ -313,12 +313,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DesignElement> getSatisfiedby() {
-		if (satisfiedby == null) {
-			satisfiedby = new EObjectWithInverseResolvingEList.ManyInverse<DesignElement>(DesignElement.class, this,
-					RmdlPackage.REQUIREMENTS__SATISFIEDBY, RmdlPackage.DESIGN_ELEMENT__SATISFIES);
+	public EList<DesignElement> getTraceto() {
+		if (traceto == null) {
+			traceto = new EObjectWithInverseResolvingEList.ManyInverse<DesignElement>(DesignElement.class, this,
+					RmdlPackage.REQUIREMENTS__TRACETO, RmdlPackage.DESIGN_ELEMENT__TRACEFROM);
 		}
-		return satisfiedby;
+		return traceto;
 	}
 
 	/**
@@ -360,8 +360,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSatisfiedby()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TRACETO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceto()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__TESTCASE:
@@ -380,8 +380,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return basicSetRequirement_root(null, msgs);
-		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
-			return ((InternalEList<?>) getSatisfiedby()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TRACETO:
+			return ((InternalEList<?>) getTraceto()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return ((InternalEList<?>) getReview()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__TESTCASE:
@@ -423,8 +423,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return getVerifyMethod();
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return getRequirement_root();
-		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
-			return getSatisfiedby();
+		case RmdlPackage.REQUIREMENTS__TRACETO:
+			return getTraceto();
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return getReview();
 		case RmdlPackage.REQUIREMENTS__TESTCASE:
@@ -457,9 +457,9 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) newValue);
 			return;
-		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
-			getSatisfiedby().clear();
-			getSatisfiedby().addAll((Collection<? extends DesignElement>) newValue);
+		case RmdlPackage.REQUIREMENTS__TRACETO:
+			getTraceto().clear();
+			getTraceto().addAll((Collection<? extends DesignElement>) newValue);
 			return;
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
@@ -496,8 +496,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) null);
 			return;
-		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
-			getSatisfiedby().clear();
+		case RmdlPackage.REQUIREMENTS__TRACETO:
+			getTraceto().clear();
 			return;
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
@@ -527,8 +527,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return VERIFY_METHOD_EDEFAULT == null ? verifyMethod != null : !VERIFY_METHOD_EDEFAULT.equals(verifyMethod);
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return getRequirement_root() != null;
-		case RmdlPackage.REQUIREMENTS__SATISFIEDBY:
-			return satisfiedby != null && !satisfiedby.isEmpty();
+		case RmdlPackage.REQUIREMENTS__TRACETO:
+			return traceto != null && !traceto.isEmpty();
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return review != null && !review.isEmpty();
 		case RmdlPackage.REQUIREMENTS__TESTCASE:

@@ -8,7 +8,7 @@
     <semanticResources>../plugin.properties</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_u-wvUC1HEe6CK4t5Z3gxTw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u_XzUC1HEe6CK4t5Z3gxTw" name="rmdl" repPath="#_u_RFoC1HEe6CK4t5Z3gxTw" changeId="1704908684984">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u_XzUC1HEe6CK4t5Z3gxTw" name="rmdl" repPath="#_u_RFoC1HEe6CK4t5Z3gxTw" changeId="1705352992027">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="rmdl.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -851,10 +851,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_jc9RsYIhEe6cK-IIR57_HA" sourceNode="_zqllQC1HEe6CK4t5Z3gxTw" targetNode="_yyOLIC1NEe6CK4t5Z3gxTw" beginLabel="[1..*] satisfies" endLabel="[1..*] satisfiedby">
-      <target xmi:type="ecore:EReference" href="rmdl.ecore#//Requirements/satisfiedby"/>
-      <semanticElements xmi:type="ecore:EReference" href="rmdl.ecore#//Requirements/satisfiedby"/>
-      <semanticElements xmi:type="ecore:EReference" href="rmdl.ecore#//DesignElement/satisfies"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_jc9RsYIhEe6cK-IIR57_HA" sourceNode="_zqllQC1HEe6CK4t5Z3gxTw" targetNode="_yyOLIC1NEe6CK4t5Z3gxTw" beginLabel="[1..*] tracefrom" endLabel="[1..*] traceto">
+      <target xmi:type="ecore:EReference" href="rmdl.ecore#//Requirements/traceto"/>
+      <semanticElements xmi:type="ecore:EReference" href="rmdl.ecore#//DesignElement/tracefrom"/>
+      <semanticElements xmi:type="ecore:EReference" href="rmdl.ecore#//Requirements/traceto"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mygRE4IhEe6cK-IIR57_HA" description="_mygREIIhEe6cK-IIR57_HA" sourceArrow="InputArrow" routingStyle="manhattan" strokeColor="0,0,0">
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_mygRFIIhEe6cK-IIR57_HA" showIcon="false">
           <labelFormat>bold</labelFormat>

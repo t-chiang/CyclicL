@@ -10,8 +10,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
         eType="#//Requirement_Root" eOpposite="#//Requirement_Root/requirements"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfiedby" lowerBound="1"
-        upperBound="-1" eType="#//DesignElement" eOpposite="#//DesignElement/satisfies"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="traceto" lowerBound="1"
+        upperBound="-1" eType="#//DesignElement" eOpposite="#//DesignElement/tracefrom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="review" lowerBound="1"
         upperBound="-1" eType="#//Review" eOpposite="#//Review/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" lowerBound="1"
@@ -46,8 +46,8 @@
         eType="#//Requirement_Root" eOpposite="#//Requirement_Root/designelement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="children" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="satisfies" lowerBound="1"
-        upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/satisfiedby"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tracefrom" lowerBound="1"
+        upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/traceto"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestCase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

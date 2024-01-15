@@ -55,7 +55,7 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			addNamePropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
 			addChildrenPropertyDescriptor(object);
-			addSatisfiesPropertyDescriptor(object);
+			addTracefromPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,18 +108,18 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Satisfies feature.
+	 * This adds a property descriptor for the Tracefrom feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSatisfiesPropertyDescriptor(Object object) {
+	protected void addTracefromPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_satisfies_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_satisfies_feature",
+						getResourceLocator(), getString("_UI_DesignElement_tracefrom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_tracefrom_feature",
 								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__SATISFIES, true, false, true, null, null, null));
+						RmdlPackage.Literals.DESIGN_ELEMENT__TRACEFROM, true, false, true, null, null, null));
 	}
 
 	/**

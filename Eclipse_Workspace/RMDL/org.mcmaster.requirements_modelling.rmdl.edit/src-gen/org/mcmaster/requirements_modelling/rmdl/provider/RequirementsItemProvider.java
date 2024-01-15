@@ -58,7 +58,7 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addDescriptionPropertyDescriptor(object);
 			addVerifyMethodPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
-			addSatisfiedbyPropertyDescriptor(object);
+			addTracetoPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 			addTestcasePropertyDescriptor(object);
 		}
@@ -145,18 +145,18 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Satisfiedby feature.
+	 * This adds a property descriptor for the Traceto feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSatisfiedbyPropertyDescriptor(Object object) {
+	protected void addTracetoPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_satisfiedby_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_satisfiedby_feature",
+						getResourceLocator(), getString("_UI_Requirements_traceto_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__SATISFIEDBY, true, false, true, null, null, null));
+						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
 	}
 
 	/**
