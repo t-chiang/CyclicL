@@ -23,16 +23,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.mcmaster.pfcsm.DesClass;
 import org.mcmaster.pfcsm.PfcsmFactory;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Class} object.
+ * This is the item provider adapter for a {@link org.mcmaster.pfcsm.DesClass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClassItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class DesClassItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -40,7 +41,7 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ClassItemProvider(AdapterFactory adapterFactory) {
+	public DesClassItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,6 +60,7 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 			addIsOptionalPropertyDescriptor(object);
 			addReferenceToPropertyDescriptor(object);
 			addReferenceFromPropertyDescriptor(object);
+			addIsAbstractPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,9 +74,10 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Class_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Class_name_feature", "_UI_Class_type"),
-						PfcsmPackage.Literals.CLASS__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_DesClass_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_name_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -87,10 +90,10 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void addIsOptionalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Class_isOptional_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Class_isOptional_feature",
-								"_UI_Class_type"),
-						PfcsmPackage.Literals.CLASS__IS_OPTIONAL, true, false, false,
+						getResourceLocator(), getString("_UI_DesClass_isOptional_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_isOptional_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__IS_OPTIONAL, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -103,10 +106,10 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void addReferenceToPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Class_referenceTo_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Class_referenceTo_feature",
-								"_UI_Class_type"),
-						PfcsmPackage.Literals.CLASS__REFERENCE_TO, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_DesClass_referenceTo_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_referenceTo_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__REFERENCE_TO, true, false, true, null, null, null));
 	}
 
 	/**
@@ -118,10 +121,26 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void addReferenceFromPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Class_referenceFrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Class_referenceFrom_feature",
-								"_UI_Class_type"),
-						PfcsmPackage.Literals.CLASS__REFERENCE_FROM, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_DesClass_referenceFrom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_referenceFrom_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__REFERENCE_FROM, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Abstract feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAbstractPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_isAbstract_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_isAbstract_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__IS_ABSTRACT, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -136,7 +155,7 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PfcsmPackage.Literals.CLASS__ELEMENT);
+			childrenFeatures.add(PfcsmPackage.Literals.DES_CLASS__ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -155,14 +174,14 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
-	 * This returns Class.gif.
+	 * This returns DesClass.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Class"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DesClass"));
 	}
 
 	/**
@@ -183,9 +202,9 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((org.mcmaster.pfcsm.Class) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Class_type")
-				: getString("_UI_Class_type") + " " + label;
+		String label = ((DesClass) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_DesClass_type")
+				: getString("_UI_DesClass_type") + " " + label;
 	}
 
 	/**
@@ -199,12 +218,13 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(org.mcmaster.pfcsm.Class.class)) {
-		case PfcsmPackage.CLASS__NAME:
-		case PfcsmPackage.CLASS__IS_OPTIONAL:
+		switch (notification.getFeatureID(DesClass.class)) {
+		case PfcsmPackage.DES_CLASS__NAME:
+		case PfcsmPackage.DES_CLASS__IS_OPTIONAL:
+		case PfcsmPackage.DES_CLASS__IS_ABSTRACT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case PfcsmPackage.CLASS__ELEMENT:
+		case PfcsmPackage.DES_CLASS__ELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -222,11 +242,11 @@ public class ClassItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(PfcsmPackage.Literals.CLASS__ELEMENT, PfcsmFactory.eINSTANCE.createAttribute()));
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.DES_CLASS__ELEMENT,
+				PfcsmFactory.eINSTANCE.createAttribute()));
 
-		newChildDescriptors.add(
-				createChildParameter(PfcsmPackage.Literals.CLASS__ELEMENT, PfcsmFactory.eINSTANCE.createOperation()));
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.DES_CLASS__ELEMENT,
+				PfcsmFactory.eINSTANCE.createOperation()));
 	}
 
 	/**

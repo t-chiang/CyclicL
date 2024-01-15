@@ -18,28 +18,31 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.mcmaster.pfcsm.DesClass;
 import org.mcmaster.pfcsm.Element;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Reference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class</b></em>'.
+ * An implementation of the model object '<em><b>Des Class</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.pfcsm.impl.ClassImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.ClassImpl#isIsOptional <em>Is Optional</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.ClassImpl#getReferenceTo <em>Reference To</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.ClassImpl#getReferenceFrom <em>Reference From</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.ClassImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.DesClassImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.DesClassImpl#isIsOptional <em>Is Optional</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.DesClassImpl#getReferenceTo <em>Reference To</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.DesClassImpl#getReferenceFrom <em>Reference From</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.DesClassImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.DesClassImpl#isIsAbstract <em>Is Abstract</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ClassImpl extends MinimalEObjectImpl.Container implements org.mcmaster.pfcsm.Class {
+public class DesClassImpl extends MinimalEObjectImpl.Container implements DesClass {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,11 +114,31 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<Element> element;
 
 	/**
+	 * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_ABSTRACT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsAbstract()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClassImpl() {
+	protected DesClassImpl() {
 		super();
 	}
 
@@ -126,7 +149,7 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PfcsmPackage.Literals.CLASS;
+		return PfcsmPackage.Literals.DES_CLASS;
 	}
 
 	/**
@@ -147,7 +170,7 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.CLASS__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.DES_CLASS__NAME, oldName, name));
 	}
 
 	/**
@@ -168,7 +191,7 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 		boolean oldIsOptional = isOptional;
 		isOptional = newIsOptional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.CLASS__IS_OPTIONAL, oldIsOptional,
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.DES_CLASS__IS_OPTIONAL, oldIsOptional,
 					isOptional));
 	}
 
@@ -180,7 +203,7 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	public EList<Reference> getReferenceTo() {
 		if (referenceTo == null) {
 			referenceTo = new EObjectWithInverseResolvingEList<Reference>(Reference.class, this,
-					PfcsmPackage.CLASS__REFERENCE_TO, PfcsmPackage.REFERENCE__SOURCE);
+					PfcsmPackage.DES_CLASS__REFERENCE_TO, PfcsmPackage.REFERENCE__SOURCE);
 		}
 		return referenceTo;
 	}
@@ -193,7 +216,7 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	public EList<Reference> getReferenceFrom() {
 		if (referenceFrom == null) {
 			referenceFrom = new EObjectWithInverseResolvingEList<Reference>(Reference.class, this,
-					PfcsmPackage.CLASS__REFERENCE_FROM, PfcsmPackage.REFERENCE__TARGET);
+					PfcsmPackage.DES_CLASS__REFERENCE_FROM, PfcsmPackage.REFERENCE__TARGET);
 		}
 		return referenceFrom;
 	}
@@ -205,9 +228,31 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public EList<Element> getElement() {
 		if (element == null) {
-			element = new EObjectContainmentEList<Element>(Element.class, this, PfcsmPackage.CLASS__ELEMENT);
+			element = new EObjectContainmentEList<Element>(Element.class, this, PfcsmPackage.DES_CLASS__ELEMENT);
 		}
 		return element;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsAbstract() {
+		return isAbstract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsAbstract(boolean newIsAbstract) {
+		boolean oldIsAbstract = isAbstract;
+		isAbstract = newIsAbstract;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.DES_CLASS__IS_ABSTRACT, oldIsAbstract,
+					isAbstract));
 	}
 
 	/**
@@ -219,9 +264,9 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS__REFERENCE_TO:
+		case PfcsmPackage.DES_CLASS__REFERENCE_TO:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReferenceTo()).basicAdd(otherEnd, msgs);
-		case PfcsmPackage.CLASS__REFERENCE_FROM:
+		case PfcsmPackage.DES_CLASS__REFERENCE_FROM:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReferenceFrom()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -235,11 +280,11 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS__REFERENCE_TO:
+		case PfcsmPackage.DES_CLASS__REFERENCE_TO:
 			return ((InternalEList<?>) getReferenceTo()).basicRemove(otherEnd, msgs);
-		case PfcsmPackage.CLASS__REFERENCE_FROM:
+		case PfcsmPackage.DES_CLASS__REFERENCE_FROM:
 			return ((InternalEList<?>) getReferenceFrom()).basicRemove(otherEnd, msgs);
-		case PfcsmPackage.CLASS__ELEMENT:
+		case PfcsmPackage.DES_CLASS__ELEMENT:
 			return ((InternalEList<?>) getElement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -253,16 +298,18 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS__NAME:
+		case PfcsmPackage.DES_CLASS__NAME:
 			return getName();
-		case PfcsmPackage.CLASS__IS_OPTIONAL:
+		case PfcsmPackage.DES_CLASS__IS_OPTIONAL:
 			return isIsOptional();
-		case PfcsmPackage.CLASS__REFERENCE_TO:
+		case PfcsmPackage.DES_CLASS__REFERENCE_TO:
 			return getReferenceTo();
-		case PfcsmPackage.CLASS__REFERENCE_FROM:
+		case PfcsmPackage.DES_CLASS__REFERENCE_FROM:
 			return getReferenceFrom();
-		case PfcsmPackage.CLASS__ELEMENT:
+		case PfcsmPackage.DES_CLASS__ELEMENT:
 			return getElement();
+		case PfcsmPackage.DES_CLASS__IS_ABSTRACT:
+			return isIsAbstract();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -276,23 +323,26 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS__NAME:
+		case PfcsmPackage.DES_CLASS__NAME:
 			setName((String) newValue);
 			return;
-		case PfcsmPackage.CLASS__IS_OPTIONAL:
+		case PfcsmPackage.DES_CLASS__IS_OPTIONAL:
 			setIsOptional((Boolean) newValue);
 			return;
-		case PfcsmPackage.CLASS__REFERENCE_TO:
+		case PfcsmPackage.DES_CLASS__REFERENCE_TO:
 			getReferenceTo().clear();
 			getReferenceTo().addAll((Collection<? extends Reference>) newValue);
 			return;
-		case PfcsmPackage.CLASS__REFERENCE_FROM:
+		case PfcsmPackage.DES_CLASS__REFERENCE_FROM:
 			getReferenceFrom().clear();
 			getReferenceFrom().addAll((Collection<? extends Reference>) newValue);
 			return;
-		case PfcsmPackage.CLASS__ELEMENT:
+		case PfcsmPackage.DES_CLASS__ELEMENT:
 			getElement().clear();
 			getElement().addAll((Collection<? extends Element>) newValue);
+			return;
+		case PfcsmPackage.DES_CLASS__IS_ABSTRACT:
+			setIsAbstract((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -306,20 +356,23 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS__NAME:
+		case PfcsmPackage.DES_CLASS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case PfcsmPackage.CLASS__IS_OPTIONAL:
+		case PfcsmPackage.DES_CLASS__IS_OPTIONAL:
 			setIsOptional(IS_OPTIONAL_EDEFAULT);
 			return;
-		case PfcsmPackage.CLASS__REFERENCE_TO:
+		case PfcsmPackage.DES_CLASS__REFERENCE_TO:
 			getReferenceTo().clear();
 			return;
-		case PfcsmPackage.CLASS__REFERENCE_FROM:
+		case PfcsmPackage.DES_CLASS__REFERENCE_FROM:
 			getReferenceFrom().clear();
 			return;
-		case PfcsmPackage.CLASS__ELEMENT:
+		case PfcsmPackage.DES_CLASS__ELEMENT:
 			getElement().clear();
+			return;
+		case PfcsmPackage.DES_CLASS__IS_ABSTRACT:
+			setIsAbstract(IS_ABSTRACT_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -333,16 +386,18 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS__NAME:
+		case PfcsmPackage.DES_CLASS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case PfcsmPackage.CLASS__IS_OPTIONAL:
+		case PfcsmPackage.DES_CLASS__IS_OPTIONAL:
 			return isOptional != IS_OPTIONAL_EDEFAULT;
-		case PfcsmPackage.CLASS__REFERENCE_TO:
+		case PfcsmPackage.DES_CLASS__REFERENCE_TO:
 			return referenceTo != null && !referenceTo.isEmpty();
-		case PfcsmPackage.CLASS__REFERENCE_FROM:
+		case PfcsmPackage.DES_CLASS__REFERENCE_FROM:
 			return referenceFrom != null && !referenceFrom.isEmpty();
-		case PfcsmPackage.CLASS__ELEMENT:
+		case PfcsmPackage.DES_CLASS__ELEMENT:
 			return element != null && !element.isEmpty();
+		case PfcsmPackage.DES_CLASS__IS_ABSTRACT:
+			return isAbstract != IS_ABSTRACT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -362,8 +417,10 @@ public abstract class ClassImpl extends MinimalEObjectImpl.Container implements 
 		result.append(name);
 		result.append(", isOptional: ");
 		result.append(isOptional);
+		result.append(", isAbstract: ");
+		result.append(isAbstract);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ClassImpl
+} //DesClassImpl

@@ -11,6 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.mcmaster.pfcsm.Class_Diagram_Root;
+import org.mcmaster.pfcsm.DesClass;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Reference;
 
@@ -24,6 +27,7 @@ import org.mcmaster.pfcsm.Reference;
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.impl.ReferenceImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.ReferenceImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.ReferenceImpl#getClass_diagram_root <em>Class diagram root</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,7 +41,7 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected org.mcmaster.pfcsm.Class source;
+	protected DesClass source;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -47,7 +51,7 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected org.mcmaster.pfcsm.Class target;
+	protected DesClass target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,10 +77,10 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.mcmaster.pfcsm.Class getSource() {
+	public DesClass getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
-			source = (org.mcmaster.pfcsm.Class) eResolveProxy(oldSource);
+			source = (DesClass) eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.REFERENCE__SOURCE, oldSource,
@@ -91,7 +95,7 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.mcmaster.pfcsm.Class basicGetSource() {
+	public DesClass basicGetSource() {
 		return source;
 	}
 
@@ -100,8 +104,8 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSource(org.mcmaster.pfcsm.Class newSource, NotificationChain msgs) {
-		org.mcmaster.pfcsm.Class oldSource = source;
+	public NotificationChain basicSetSource(DesClass newSource, NotificationChain msgs) {
+		DesClass oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -119,15 +123,15 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(org.mcmaster.pfcsm.Class newSource) {
+	public void setSource(DesClass newSource) {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, PfcsmPackage.CLASS__REFERENCE_TO,
-						org.mcmaster.pfcsm.Class.class, msgs);
+				msgs = ((InternalEObject) source).eInverseRemove(this, PfcsmPackage.DES_CLASS__REFERENCE_TO,
+						DesClass.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject) newSource).eInverseAdd(this, PfcsmPackage.CLASS__REFERENCE_TO,
-						org.mcmaster.pfcsm.Class.class, msgs);
+				msgs = ((InternalEObject) newSource).eInverseAdd(this, PfcsmPackage.DES_CLASS__REFERENCE_TO,
+						DesClass.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -141,10 +145,10 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.mcmaster.pfcsm.Class getTarget() {
+	public DesClass getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject) target;
-			target = (org.mcmaster.pfcsm.Class) eResolveProxy(oldTarget);
+			target = (DesClass) eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.REFERENCE__TARGET, oldTarget,
@@ -159,7 +163,7 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.mcmaster.pfcsm.Class basicGetTarget() {
+	public DesClass basicGetTarget() {
 		return target;
 	}
 
@@ -168,8 +172,8 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTarget(org.mcmaster.pfcsm.Class newTarget, NotificationChain msgs) {
-		org.mcmaster.pfcsm.Class oldTarget = target;
+	public NotificationChain basicSetTarget(DesClass newTarget, NotificationChain msgs) {
+		DesClass oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -187,15 +191,15 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(org.mcmaster.pfcsm.Class newTarget) {
+	public void setTarget(DesClass newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, PfcsmPackage.CLASS__REFERENCE_FROM,
-						org.mcmaster.pfcsm.Class.class, msgs);
+				msgs = ((InternalEObject) target).eInverseRemove(this, PfcsmPackage.DES_CLASS__REFERENCE_FROM,
+						DesClass.class, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject) newTarget).eInverseAdd(this, PfcsmPackage.CLASS__REFERENCE_FROM,
-						org.mcmaster.pfcsm.Class.class, msgs);
+				msgs = ((InternalEObject) newTarget).eInverseAdd(this, PfcsmPackage.DES_CLASS__REFERENCE_FROM,
+						DesClass.class, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -209,19 +213,71 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Class_Diagram_Root getClass_diagram_root() {
+		if (eContainerFeatureID() != PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT)
+			return null;
+		return (Class_Diagram_Root) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetClass_diagram_root(Class_Diagram_Root newClass_diagram_root,
+			NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newClass_diagram_root, PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT,
+				msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClass_diagram_root(Class_Diagram_Root newClass_diagram_root) {
+		if (newClass_diagram_root != eInternalContainer()
+				|| (eContainerFeatureID() != PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT
+						&& newClass_diagram_root != null)) {
+			if (EcoreUtil.isAncestor(this, newClass_diagram_root))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newClass_diagram_root != null)
+				msgs = ((InternalEObject) newClass_diagram_root).eInverseAdd(this,
+						PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE, Class_Diagram_Root.class, msgs);
+			msgs = basicSetClass_diagram_root(newClass_diagram_root, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT,
+					newClass_diagram_root, newClass_diagram_root));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case PfcsmPackage.REFERENCE__SOURCE:
 			if (source != null)
-				msgs = ((InternalEObject) source).eInverseRemove(this, PfcsmPackage.CLASS__REFERENCE_TO,
-						org.mcmaster.pfcsm.Class.class, msgs);
-			return basicSetSource((org.mcmaster.pfcsm.Class) otherEnd, msgs);
+				msgs = ((InternalEObject) source).eInverseRemove(this, PfcsmPackage.DES_CLASS__REFERENCE_TO,
+						DesClass.class, msgs);
+			return basicSetSource((DesClass) otherEnd, msgs);
 		case PfcsmPackage.REFERENCE__TARGET:
 			if (target != null)
-				msgs = ((InternalEObject) target).eInverseRemove(this, PfcsmPackage.CLASS__REFERENCE_FROM,
-						org.mcmaster.pfcsm.Class.class, msgs);
-			return basicSetTarget((org.mcmaster.pfcsm.Class) otherEnd, msgs);
+				msgs = ((InternalEObject) target).eInverseRemove(this, PfcsmPackage.DES_CLASS__REFERENCE_FROM,
+						DesClass.class, msgs);
+			return basicSetTarget((DesClass) otherEnd, msgs);
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetClass_diagram_root((Class_Diagram_Root) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -238,8 +294,25 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 			return basicSetSource(null, msgs);
 		case PfcsmPackage.REFERENCE__TARGET:
 			return basicSetTarget(null, msgs);
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			return basicSetClass_diagram_root(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			return eInternalContainer().eInverseRemove(this, PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE,
+					Class_Diagram_Root.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -258,6 +331,8 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 			if (resolve)
 				return getTarget();
 			return basicGetTarget();
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			return getClass_diagram_root();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,10 +346,13 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case PfcsmPackage.REFERENCE__SOURCE:
-			setSource((org.mcmaster.pfcsm.Class) newValue);
+			setSource((DesClass) newValue);
 			return;
 		case PfcsmPackage.REFERENCE__TARGET:
-			setTarget((org.mcmaster.pfcsm.Class) newValue);
+			setTarget((DesClass) newValue);
+			return;
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			setClass_diagram_root((Class_Diagram_Root) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,10 +367,13 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case PfcsmPackage.REFERENCE__SOURCE:
-			setSource((org.mcmaster.pfcsm.Class) null);
+			setSource((DesClass) null);
 			return;
 		case PfcsmPackage.REFERENCE__TARGET:
-			setTarget((org.mcmaster.pfcsm.Class) null);
+			setTarget((DesClass) null);
+			return;
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			setClass_diagram_root((Class_Diagram_Root) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -310,6 +391,8 @@ public abstract class ReferenceImpl extends MinimalEObjectImpl.Container impleme
 			return source != null;
 		case PfcsmPackage.REFERENCE__TARGET:
 			return target != null;
+		case PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT:
+			return getClass_diagram_root() != null;
 		}
 		return super.eIsSet(featureID);
 	}

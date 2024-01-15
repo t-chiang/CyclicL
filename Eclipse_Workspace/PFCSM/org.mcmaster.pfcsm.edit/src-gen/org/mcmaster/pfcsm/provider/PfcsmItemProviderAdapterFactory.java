@@ -73,6 +73,29 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.DesClass} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DesClassItemProvider desClassItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.DesClass}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDesClassAdapter() {
+		if (desClassItemProvider == null) {
+			desClassItemProvider = new DesClassItemProvider(this);
+		}
+
+		return desClassItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Class_Diagram_Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,29 +116,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return class_Diagram_RootItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.AbstractClass} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AbstractClassItemProvider abstractClassItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.AbstractClass}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAbstractClassAdapter() {
-		if (abstractClassItemProvider == null) {
-			abstractClassItemProvider = new AbstractClassItemProvider(this);
-		}
-
-		return abstractClassItemProvider;
 	}
 
 	/**
@@ -231,29 +231,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return operationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.ConcreteClass} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConcreteClassItemProvider concreteClassItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.ConcreteClass}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConcreteClassAdapter() {
-		if (concreteClassItemProvider == null) {
-			concreteClassItemProvider = new ConcreteClassItemProvider(this);
-		}
-
-		return concreteClassItemProvider;
 	}
 
 	/**
@@ -424,10 +401,10 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
+		if (desClassItemProvider != null)
+			desClassItemProvider.dispose();
 		if (class_Diagram_RootItemProvider != null)
 			class_Diagram_RootItemProvider.dispose();
-		if (abstractClassItemProvider != null)
-			abstractClassItemProvider.dispose();
 		if (associationItemProvider != null)
 			associationItemProvider.dispose();
 		if (compositionItemProvider != null)
@@ -436,8 +413,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 			inheritanceItemProvider.dispose();
 		if (xorItemProvider != null)
 			xorItemProvider.dispose();
-		if (concreteClassItemProvider != null)
-			concreteClassItemProvider.dispose();
 		if (usesItemProvider != null)
 			usesItemProvider.dispose();
 		if (producesItemProvider != null)

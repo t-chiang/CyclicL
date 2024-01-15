@@ -8,40 +8,40 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Class</b></em>'.
+ * A representation of the model object '<em><b>Des Class</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.pfcsm.Class#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Class#isIsOptional <em>Is Optional</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Class#getReferenceTo <em>Reference To</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Class#getReferenceFrom <em>Reference From</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Class#getElement <em>Element</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Class#getOperation <em>Operation</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#isIsOptional <em>Is Optional</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#getReferenceTo <em>Reference To</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#getReferenceFrom <em>Reference From</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#getElement <em>Element</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#isIsAbstract <em>Is Abstract</em>}</li>
  * </ul>
  *
- * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_()
- * @model abstract="true"
+ * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass()
+ * @model
  * @generated
  */
-public interface Class extends EObject {
+public interface DesClass extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_Name()
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.Class#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.DesClass#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -56,14 +56,14 @@ public interface Class extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Optional</em>' attribute.
 	 * @see #setIsOptional(boolean)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_IsOptional()
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_IsOptional()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isIsOptional();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.Class#isIsOptional <em>Is Optional</em>}' attribute.
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.DesClass#isIsOptional <em>Is Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Optional</em>' attribute.
@@ -79,7 +79,7 @@ public interface Class extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reference To</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_ReferenceTo()
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_ReferenceTo()
 	 * @see org.mcmaster.pfcsm.Reference#getSource
 	 * @model opposite="source"
 	 * @generated
@@ -93,7 +93,7 @@ public interface Class extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reference From</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_ReferenceFrom()
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_ReferenceFrom()
 	 * @see org.mcmaster.pfcsm.Reference#getTarget
 	 * @model opposite="target"
 	 * @generated
@@ -106,22 +106,33 @@ public interface Class extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Element</em>' containment reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_Element()
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Element()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Element> getElement();
 
 	/**
-	 * Returns the value of the '<em><b>Operation</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation</em>' attribute list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_Operation()
-	 * @model
+	 * @return the value of the '<em>Is Abstract</em>' attribute.
+	 * @see #setIsAbstract(boolean)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_IsAbstract()
+	 * @model default="false" required="true"
 	 * @generated
 	 */
-	EList<String> getOperation();
+	boolean isIsAbstract();
 
-} // Class
+	/**
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.DesClass#isIsAbstract <em>Is Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
+	 * @see #isIsAbstract()
+	 * @generated
+	 */
+	void setIsAbstract(boolean value);
+
+} // DesClass

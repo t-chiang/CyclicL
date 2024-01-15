@@ -22,6 +22,15 @@ public interface PfcsmFactory extends EFactory {
 	PfcsmFactory eINSTANCE = org.mcmaster.pfcsm.impl.PfcsmFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Des Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Des Class</em>'.
+	 * @generated
+	 */
+	DesClass createDesClass();
+
+	/**
 	 * Returns a new object of class '<em>Class Diagram Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,15 +38,6 @@ public interface PfcsmFactory extends EFactory {
 	 * @generated
 	 */
 	Class_Diagram_Root createClass_Diagram_Root();
-
-	/**
-	 * Returns a new object of class '<em>Abstract Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Abstract Class</em>'.
-	 * @generated
-	 */
-	AbstractClass createAbstractClass();
 
 	/**
 	 * Returns a new object of class '<em>Association</em>'.
@@ -83,15 +83,6 @@ public interface PfcsmFactory extends EFactory {
 	 * @generated
 	 */
 	Operation createOperation();
-
-	/**
-	 * Returns a new object of class '<em>Concrete Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Concrete Class</em>'.
-	 * @generated
-	 */
-	ConcreteClass createConcreteClass();
 
 	/**
 	 * Returns a new object of class '<em>Uses</em>'.
