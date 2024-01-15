@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
-<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <class xsi:type="pfcsm:ConcreteClass" name="Vehicle"/>
-  <class xsi:type="pfcsm:ConcreteClass" name="Transmission"/>
-  <class xsi:type="pfcsm:ConcreteClass" name="Torque_Converter"/>
-  <class xsi:type="pfcsm:ConcreteClass" name="Transmission"/>
-</pfcsm:Class_Diagram_Root>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
+  <pfcsm:Class_Diagram_Root>
+    <desclass name="DesignElement1" referenceFrom="/1 /2"/>
+    <desclass name="DesignElement2" referenceTo="/0/@reference.0"/>
+    <desclass name="DesignElement3" referenceTo="/1" referenceFrom="/0/@reference.0"/>
+    <desclass name="DesignElement4" referenceTo="/2" referenceFrom="/0/@reference.1"/>
+    <desclass name="DesignElement5" referenceTo="/0/@reference.1"/>
+    <reference xsi:type="pfcsm:Association" source="/0/@desclass.1" target="/0/@desclass.2"/>
+    <reference xsi:type="pfcsm:Association" source="/0/@desclass.4" target="/0/@desclass.3"/>
+  </pfcsm:Class_Diagram_Root>
+  <pfcsm:Association source="/0/@desclass.2" target="/0/@desclass.0"/>
+  <pfcsm:Association source="/0/@desclass.3" target="/0/@desclass.0"/>
+</xmi:XMI>

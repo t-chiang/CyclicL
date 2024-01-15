@@ -8,38 +8,38 @@ pre{
 rule root2root
 	transform sourceRoot : design!Class_Diagram_Root
 	to targetRoot : requirement!Requirement_Root{
-		targetRoot.designelement.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
-		targetRoot.requirements.addAll(sourceRoot.class.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
-		targetRoot.testcase.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
-		targetRoot.review.addAll(sourceRoot.class.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
+		targetRoot.designelement.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+		targetRoot.requirements.addAll(sourceRoot.desclass.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.testcase.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
+		targetRoot.review.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
 }
 
 rule concreteClass2designElement
-	transform designClass : design!ConcreteClass
+	transform designClass : design!DesClass
 	to desElement : requirement!DesignElement,
 		funcreq: requirement!Functional,
 		safereq : requirement!Safety,
 		functest : requirement!TestCase,
 		safetest : requirement!TestCase,
 		rev : requirement!Review{
-		desElement.name = designClass.name;
-		funcreq.setName("FunctionalReq");
-		funcreq.setID(requirementID);
-		requirementID++;
-		funcreq.satisfiedby.add(desElement);
-		safereq.setName("SafetyReq");
-		safereq.setID(requirementID);
-		requirementID++;
-		safereq.satisfiedby.add(desElement);
-		functest.requirements.add(funcreq);
-		safetest.requirements.add(safereq);
-		rev.setreviewer("SomePerson");
-		rev.requirements.add(funcreq);
-		rev.requirements.add(safereq);
-		functest.setID(testID);
-		testID++;
-		safetest.setID(testID);
-		testID++;
+			desElement.name = designClass.name;
+			funcreq.setName("FunctionalReq");
+			funcreq.setID(requirementID);
+			requirementID++;
+			funcreq.traceto.add(desElement);
+			safereq.setName("SafetyReq");
+			safereq.setID(requirementID);
+			requirementID++;
+			safereq.traceto.add(desElement);
+			functest.requirements.add(funcreq);
+			safetest.requirements.add(safereq);
+			rev.setreviewer("SomePerson");
+			rev.requirements.add(funcreq);
+			rev.requirements.add(safereq);
+			functest.setID(testID);
+			testID++;
+			safetest.setID(testID);
+			testID++;
 	}
 
 //post{
