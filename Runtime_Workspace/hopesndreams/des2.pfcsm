@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <pfcsm:Class_Diagram_Root>
-    <desclass name="DesignElement1" referenceFrom="/1 /2"/>
-    <desclass name="DesignElement2" referenceTo="/0/@reference.0"/>
-    <desclass name="DesignElement3" referenceTo="/1" referenceFrom="/0/@reference.0"/>
-    <desclass name="DesignElement4" referenceTo="/2" referenceFrom="/0/@reference.1"/>
-    <desclass name="DesignElement5" referenceTo="/0/@reference.1"/>
-    <reference xsi:type="pfcsm:Association" source="/0/@desclass.1" target="/0/@desclass.2"/>
-    <reference xsi:type="pfcsm:Association" source="/0/@desclass.4" target="/0/@desclass.3"/>
-  </pfcsm:Class_Diagram_Root>
-  <pfcsm:Association source="/0/@desclass.2" target="/0/@desclass.0"/>
-  <pfcsm:Association source="/0/@desclass.3" target="/0/@desclass.0"/>
-</xmi:XMI>
+<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
+  <desclass name="DesignElement1" referenceTo="//@reference.1" referenceFrom="//@reference.0 //@reference.3"/>
+  <desclass name="DesignElement2" referenceFrom="//@reference.1"/>
+  <desclass name="DesignElement3" referenceTo="//@reference.0"/>
+  <desclass name="DesignElement4" referenceTo="//@reference.3" referenceFrom="//@reference.2"/>
+  <desclass name="DesignElement5" referenceTo="//@reference.2"/>
+  <reference xsi:type="pfcsm:Association" source="//@desclass.2" target="//@desclass.0"/>
+  <reference xsi:type="pfcsm:Association" source="//@desclass.0" target="//@desclass.1"/>
+  <reference xsi:type="pfcsm:Association" source="//@desclass.4" target="//@desclass.3"/>
+  <reference xsi:type="pfcsm:Association" source="//@desclass.3" target="//@desclass.0"/>
+</pfcsm:Class_Diagram_Root>

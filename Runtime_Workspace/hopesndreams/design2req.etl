@@ -18,27 +18,17 @@ rule concreteClass2designElement
 	transform designClass : design!DesClass
 	to desElement : requirement!DesignElement,
 		funcreq: requirement!Functional,
-		safereq : requirement!Safety,
 		functest : requirement!TestCase,
-		safetest : requirement!TestCase,
 		rev : requirement!Review{
 			desElement.name = designClass.name;
 			funcreq.setName("FunctionalReq");
 			funcreq.setID(requirementID);
 			requirementID++;
 			funcreq.traceto.add(desElement);
-			safereq.setName("SafetyReq");
-			safereq.setID(requirementID);
-			requirementID++;
-			safereq.traceto.add(desElement);
 			functest.requirements.add(funcreq);
-			safetest.requirements.add(safereq);
 			rev.setreviewer("SomePerson");
 			rev.requirements.add(funcreq);
-			rev.requirements.add(safereq);
 			functest.setID(testID);
-			testID++;
-			safetest.setID(testID);
 			testID++;
 	}
 

@@ -1,5 +1,5 @@
 pre{
-		var desclass_created : Set;
+	var desclass_created : Set;
 }
 
 rule root2root
@@ -7,6 +7,7 @@ rule root2root
 	to targetRoot : design!Class_Diagram_Root{
 		targetRoot.desclass.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!DesClass)));
 		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(design!Association)));
+		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(Sequence)).flatten());
 	}
 	
 rule designElement2desClass
@@ -16,23 +17,22 @@ rule designElement2desClass
 		desclass_created.add(desClass);
 		
 	}
-
-rule requirement2classNassociation
+	
+rule functional2association
 	transform req : requirement!Functional
-	to assoc : design!Association{
+	to assoc: Sequence{
 		var traceList: Set = req.traceto.asSet();
-		
-		traceList.println("List of traces: ");
 //		This if statement is to do a quick check if a requirement only has 2 classes it's connected traced to and creates a single association between them.
 		if(traceList.size()== 2){
-		
+			var newAssoc = new design!Association;
+			assoc.add(newAssoc);
 			for (d in desclass_created){
 				if(d.name == traceList[0].name)
-				assoc.target = d;
+				newAssoc.target = d;
 			}
 			for (d in desclass_created){
 				if(d.name == traceList[1].name)
-				assoc.source = d;
+				newAssoc.source = d;
 			}
 		}
 //		If there is more than one class that a requirement is traced to, this will iterate through all of them to create a temporary set that will be used to create associations between all relevant classes.
@@ -46,25 +46,22 @@ rule requirement2classNassociation
 					}
 				}
 			}
-			tempClassSet.println("Temp class list: ");
-			var assocList: Sequence;
 			var i:Integer = 0;
 			while(i < tempClassSet.size()-1){
 				if(i==0){
-					assoc.source = tempClassSet[0];
-					assoc.target = tempClassSet[1];
+					var anotherAssoc = new design!Association;
+					assoc.add(anotherAssoc);
+					anotherAssoc.source = tempClassSet[0];
+					anotherAssoc.target = tempClassSet[1];
 					i++;
 				}
 				else{
-					"hello world".println();
 					var anotherAssoc = new design!Association;
-					assoc.class_diagram_root.println();
-//					assoc.eContainer.add(anotherAssoc);
+					assoc.add(anotherAssoc);
 					anotherAssoc.source = tempClassSet[i];
+					anotherAssoc.target = tempClassSet[(i+1)];
 					i++;
-					anotherAssoc.target = tempClassSet[i];
 				}
-				
 			}
 		}
 	}

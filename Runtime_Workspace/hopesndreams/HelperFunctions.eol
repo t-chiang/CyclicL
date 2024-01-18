@@ -2,6 +2,6 @@
 This file is to help with tranformations between languages.
 */
 
-operation setContainer(){
-	
+operation design!Association getRoot() : design!Class_Diagram_Root{
+	return self.eContainer();
 }

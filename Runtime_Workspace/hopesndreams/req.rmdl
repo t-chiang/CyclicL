@@ -4,24 +4,16 @@
   <testcase ID="2" requirements="//@requirements.1"/>
   <testcase ID="3" requirements="//@requirements.2"/>
   <testcase ID="4" requirements="//@requirements.3"/>
-  <testcase ID="5" requirements="//@requirements.4"/>
-  <testcase ID="6" requirements="//@requirements.5"/>
-  <testcase ID="7" requirements="//@requirements.6"/>
-  <testcase ID="8" requirements="//@requirements.7"/>
-  <designelement name="Vehicle" tracefrom="//@requirements.0 //@requirements.1"/>
-  <designelement name="Transmission" tracefrom="//@requirements.2 //@requirements.3"/>
-  <designelement name="TorqueConverter" tracefrom="//@requirements.4 //@requirements.5"/>
-  <designelement name="TransmissionRatio" tracefrom="//@requirements.6 //@requirements.7"/>
+  <designelement name="Vehicle" tracefrom="//@requirements.0"/>
+  <designelement name="Transmission" tracefrom="//@requirements.1"/>
+  <designelement name="TorqueConverter" tracefrom="//@requirements.2"/>
+  <designelement name="TransmissionRatio" tracefrom="//@requirements.3"/>
   <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="1" traceto="//@designelement.0" review="//@review.0" testcase="//@testcase.0"/>
-  <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="2" traceto="//@designelement.0" review="//@review.0" testcase="//@testcase.1"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" traceto="//@designelement.1" review="//@review.1" testcase="//@testcase.2"/>
-  <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="4" traceto="//@designelement.1" review="//@review.1" testcase="//@testcase.3"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="5" traceto="//@designelement.2" review="//@review.2" testcase="//@testcase.4"/>
-  <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="6" traceto="//@designelement.2" review="//@review.2" testcase="//@testcase.5"/>
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="7" traceto="//@designelement.3" review="//@review.3" testcase="//@testcase.6"/>
-  <requirements xsi:type="rmdl:Safety" name="SafetyReq" ID="8" traceto="//@designelement.3" review="//@review.3" testcase="//@testcase.7"/>
-  <review reviewer="SomePerson" requirements="//@requirements.0 //@requirements.1"/>
-  <review reviewer="SomePerson" requirements="//@requirements.2 //@requirements.3"/>
-  <review reviewer="SomePerson" requirements="//@requirements.4 //@requirements.5"/>
-  <review reviewer="SomePerson" requirements="//@requirements.6 //@requirements.7"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" traceto="//@designelement.1" review="//@review.1" testcase="//@testcase.1"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" traceto="//@designelement.2" review="//@review.2" testcase="//@testcase.2"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" traceto="//@designelement.3" review="//@review.3" testcase="//@testcase.3"/>
+  <review reviewer="SomePerson" requirements="//@requirements.0"/>
+  <review reviewer="SomePerson" requirements="//@requirements.1"/>
+  <review reviewer="SomePerson" requirements="//@requirements.2"/>
+  <review reviewer="SomePerson" requirements="//@requirements.3"/>
 </rmdl:Requirement_Root>
