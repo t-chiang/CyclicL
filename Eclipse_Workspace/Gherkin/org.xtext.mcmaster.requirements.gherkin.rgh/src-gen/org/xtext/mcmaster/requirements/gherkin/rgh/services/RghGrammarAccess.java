@@ -40,25 +40,125 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class StepsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Steps");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cGivenParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWhenParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cThenParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cContextParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cGivenParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWhenParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cThenParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Steps:
-		//    Given | When | Then;
+		//    Context | Given | When | Then;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Given | When | Then
+		//Context | Given | When | Then
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//Context
+		public RuleCall getContextParserRuleCall_0() { return cContextParserRuleCall_0; }
+		
 		//Given
-		public RuleCall getGivenParserRuleCall_0() { return cGivenParserRuleCall_0; }
+		public RuleCall getGivenParserRuleCall_1() { return cGivenParserRuleCall_1; }
 		
 		//When
-		public RuleCall getWhenParserRuleCall_1() { return cWhenParserRuleCall_1; }
+		public RuleCall getWhenParserRuleCall_2() { return cWhenParserRuleCall_2; }
 		
 		//Then
-		public RuleCall getThenParserRuleCall_2() { return cThenParserRuleCall_2; }
+		public RuleCall getThenParserRuleCall_3() { return cThenParserRuleCall_3; }
+	}
+	public class ContextElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Context");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cModuleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cOperationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Context:
+		//    Module | Operation
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Module | Operation
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Module
+		public RuleCall getModuleParserRuleCall_0() { return cModuleParserRuleCall_0; }
+		
+		//Operation
+		public RuleCall getOperationParserRuleCall_1() { return cOperationParserRuleCall_1; }
+	}
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//    ID('.' ID)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID('.' ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('.' ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+	public class ModuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Module");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Module:
+		//    'Module' name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Module' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'Module'
+		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class OperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Operation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOperationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Operation:
+		//    'Operation' name=QualifiedName
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Operation' name=QualifiedName
+		public Group getGroup() { return cGroup; }
+		
+		//'Operation'
+		public Keyword getOperationKeyword_0() { return cOperationKeyword_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 	}
 	public class GivenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Given");
@@ -69,8 +169,6 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cPreconditionsPreconditionParserRuleCall_2_0 = (RuleCall)cPreconditionsAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		////Scenario:
-		////    'Scenario' name=ID '{' (Description) '}';
 		//Given:
 		//    'Given' '{' (preconditions+=Precondition)* '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -158,7 +256,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class PreconditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Precondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPreconditionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPrecondKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -168,15 +266,15 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		////And:
 		////    Then | When name = ID'{' (description = Description) '}';
 		//Precondition:
-		//    'Precondition' name = ID ':' description = Description
+		//    'Precond' name = ID ':' description = Description
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Precondition' name = ID ':' description = Description
+		//'Precond' name = ID ':' description = Description
 		public Group getGroup() { return cGroup; }
 		
-		//'Precondition'
-		public Keyword getPreconditionKeyword_0() { return cPreconditionKeyword_0; }
+		//'Precond'
+		public Keyword getPrecondKeyword_0() { return cPrecondKeyword_0; }
 		
 		//name = ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -232,7 +330,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class PostconditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Postcondition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPostconditionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPostcondKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -240,15 +338,15 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cDescriptionDescriptionParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
 		
 		//Postcondition:
-		//    'Postcondition' name=ID ':' description=Description
+		//    'Postcond' name=ID ':' description=Description
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Postcondition' name=ID ':' description=Description
+		//'Postcond' name=ID ':' description=Description
 		public Group getGroup() { return cGroup; }
 		
-		//'Postcondition'
-		public Keyword getPostconditionKeyword_0() { return cPostconditionKeyword_0; }
+		//'Postcond'
+		public Keyword getPostcondKeyword_0() { return cPostcondKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -295,6 +393,10 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	private final ModelElements pModel;
 	private final StepsElements pSteps;
+	private final ContextElements pContext;
+	private final QualifiedNameElements pQualifiedName;
+	private final ModuleElements pModule;
+	private final OperationElements pOperation;
 	private final GivenElements pGiven;
 	private final WhenElements pWhen;
 	private final ThenElements pThen;
@@ -315,6 +417,10 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pSteps = new StepsElements();
+		this.pContext = new ContextElements();
+		this.pQualifiedName = new QualifiedNameElements();
+		this.pModule = new ModuleElements();
+		this.pOperation = new OperationElements();
 		this.pGiven = new GivenElements();
 		this.pWhen = new WhenElements();
 		this.pThen = new ThenElements();
@@ -363,7 +469,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Steps:
-	//    Given | When | Then;
+	//    Context | Given | When | Then;
 	public StepsElements getStepsAccess() {
 		return pSteps;
 	}
@@ -372,8 +478,50 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getStepsAccess().getRule();
 	}
 	
-	////Scenario:
-	////    'Scenario' name=ID '{' (Description) '}';
+	//Context:
+	//    Module | Operation
+	//;
+	public ContextElements getContextAccess() {
+		return pContext;
+	}
+	
+	public ParserRule getContextRule() {
+		return getContextAccess().getRule();
+	}
+	
+	//QualifiedName:
+	//    ID('.' ID)*
+	//;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
+	}
+	
+	//Module:
+	//    'Module' name=ID
+	//;
+	public ModuleElements getModuleAccess() {
+		return pModule;
+	}
+	
+	public ParserRule getModuleRule() {
+		return getModuleAccess().getRule();
+	}
+	
+	//Operation:
+	//    'Operation' name=QualifiedName
+	//;
+	public OperationElements getOperationAccess() {
+		return pOperation;
+	}
+	
+	public ParserRule getOperationRule() {
+		return getOperationAccess().getRule();
+	}
+	
 	//Given:
 	//    'Given' '{' (preconditions+=Precondition)* '}';
 	public GivenElements getGivenAccess() {
@@ -407,7 +555,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	////And:
 	////    Then | When name = ID'{' (description = Description) '}';
 	//Precondition:
-	//    'Precondition' name = ID ':' description = Description
+	//    'Precond' name = ID ':' description = Description
 	//;
 	public PreconditionElements getPreconditionAccess() {
 		return pPrecondition;
@@ -429,7 +577,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Postcondition:
-	//    'Postcondition' name=ID ':' description=Description
+	//    'Postcond' name=ID ':' description=Description
 	//;
 	public PostconditionElements getPostconditionAccess() {
 		return pPostcondition;

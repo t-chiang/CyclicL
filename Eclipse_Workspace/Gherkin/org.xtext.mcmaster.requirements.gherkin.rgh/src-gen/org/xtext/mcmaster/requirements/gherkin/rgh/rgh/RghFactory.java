@@ -42,6 +42,33 @@ public interface RghFactory extends EFactory
   Steps createSteps();
 
   /**
+   * Returns a new object of class '<em>Context</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Context</em>'.
+   * @generated
+   */
+  Context createContext();
+
+  /**
+   * Returns a new object of class '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Module</em>'.
+   * @generated
+   */
+  Module createModule();
+
+  /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
+
+  /**
    * Returns a new object of class '<em>Given</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

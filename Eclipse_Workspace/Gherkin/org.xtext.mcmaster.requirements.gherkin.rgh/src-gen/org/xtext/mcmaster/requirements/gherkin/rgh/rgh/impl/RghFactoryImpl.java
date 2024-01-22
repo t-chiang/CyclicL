@@ -11,7 +11,19 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.*;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Description;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Event;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Given;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Model;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Postcondition;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Precondition;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghFactory;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Steps;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Then;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.When;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,6 +79,9 @@ public class RghFactoryImpl extends EFactoryImpl implements RghFactory
     {
       case RghPackage.MODEL: return createModel();
       case RghPackage.STEPS: return createSteps();
+      case RghPackage.CONTEXT: return createContext();
+      case RghPackage.MODULE: return createModule();
+      case RghPackage.OPERATION: return createOperation();
       case RghPackage.GIVEN: return createGiven();
       case RghPackage.WHEN: return createWhen();
       case RghPackage.THEN: return createThen();
@@ -101,6 +116,42 @@ public class RghFactoryImpl extends EFactoryImpl implements RghFactory
   {
     StepsImpl steps = new StepsImpl();
     return steps;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Context createContext()
+  {
+    ContextImpl context = new ContextImpl();
+    return context;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module createModule()
+  {
+    ModuleImpl module = new ModuleImpl();
+    return module;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operation createOperation()
+  {
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**

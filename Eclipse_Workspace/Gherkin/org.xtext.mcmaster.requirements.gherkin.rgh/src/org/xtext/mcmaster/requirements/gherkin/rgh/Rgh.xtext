@@ -8,11 +8,22 @@ Model:
 	(requirement+=Steps)*;
 	
 Steps:
-	Given | When | Then;
+	Context | Given | When | Then;
 	
-//Scenario:
-//	'Scenario' name=ID '{' (Description) '}';
-	
+Context:
+	Module | Operation
+;
+
+QualifiedName:
+	ID('.' ID)*
+;
+
+Module:
+	'Module' name=ID
+;
+Operation:
+	'Operation' name=QualifiedName
+;
 Given:
 	'Given' '{' (preconditions+=Precondition)* '}';
 
@@ -27,7 +38,7 @@ Then:
 //	Then | When name = ID'{' (description = Description) '}';
 	
 Precondition:
-	'Precondition' name = ID ':' description = Description
+	'Precond' name = ID ':' description = Description
 ;
 	
 Event:
@@ -35,7 +46,7 @@ Event:
 ;
 
 Postcondition:
-	'Postcondition' name=ID ':' description=Description
+	'Postcond' name=ID ':' description=Description
 ;
 	
 Description returns Description:

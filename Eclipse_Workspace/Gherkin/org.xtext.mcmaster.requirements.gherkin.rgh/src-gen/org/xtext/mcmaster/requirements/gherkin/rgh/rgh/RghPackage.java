@@ -105,6 +105,90 @@ public interface RghPackage extends EPackage
   int STEPS_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ContextImpl <em>Context</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ContextImpl
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getContext()
+   * @generated
+   */
+  int CONTEXT = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT__NAME = STEPS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Context</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT_FEATURE_COUNT = STEPS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ModuleImpl <em>Module</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ModuleImpl
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getModule()
+   * @generated
+   */
+  int MODULE = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__NAME = CONTEXT__NAME;
+
+  /**
+   * The number of structural features of the '<em>Module</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.OperationImpl <em>Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.OperationImpl
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getOperation()
+   * @generated
+   */
+  int OPERATION = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__NAME = CONTEXT__NAME;
+
+  /**
+   * The number of structural features of the '<em>Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.GivenImpl <em>Given</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -112,7 +196,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getGiven()
    * @generated
    */
-  int GIVEN = 2;
+  int GIVEN = 5;
 
   /**
    * The feature id for the '<em><b>Preconditions</b></em>' containment reference list.
@@ -140,7 +224,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getWhen()
    * @generated
    */
-  int WHEN = 3;
+  int WHEN = 6;
 
   /**
    * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -168,7 +252,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getThen()
    * @generated
    */
-  int THEN = 4;
+  int THEN = 7;
 
   /**
    * The feature id for the '<em><b>Postconditions</b></em>' containment reference list.
@@ -196,7 +280,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getPrecondition()
    * @generated
    */
-  int PRECONDITION = 5;
+  int PRECONDITION = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -233,7 +317,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 6;
+  int EVENT = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -270,7 +354,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getPostcondition()
    * @generated
    */
-  int POSTCONDITION = 7;
+  int POSTCONDITION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -307,7 +391,7 @@ public interface RghPackage extends EPackage
    * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getDescription()
    * @generated
    */
-  int DESCRIPTION = 8;
+  int DESCRIPTION = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -358,6 +442,47 @@ public interface RghPackage extends EPackage
    * @generated
    */
   EClass getSteps();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context <em>Context</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Context</em>'.
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context
+   * @generated
+   */
+  EClass getContext();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context#getName()
+   * @see #getContext()
+   * @generated
+   */
+  EAttribute getContext_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Module</em>'.
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module
+   * @generated
+   */
+  EClass getModule();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation</em>'.
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation
+   * @generated
+   */
+  EClass getOperation();
 
   /**
    * Returns the meta object for class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Given <em>Given</em>}'.
@@ -589,6 +714,44 @@ public interface RghPackage extends EPackage
      * @generated
      */
     EClass STEPS = eINSTANCE.getSteps();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ContextImpl <em>Context</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ContextImpl
+     * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getContext()
+     * @generated
+     */
+    EClass CONTEXT = eINSTANCE.getContext();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTEXT__NAME = eINSTANCE.getContext_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ModuleImpl <em>Module</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ModuleImpl
+     * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getModule()
+     * @generated
+     */
+    EClass MODULE = eINSTANCE.getModule();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.OperationImpl <em>Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.OperationImpl
+     * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.RghPackageImpl#getOperation()
+     * @generated
+     */
+    EClass OPERATION = eINSTANCE.getOperation();
 
     /**
      * The meta object literal for the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.GivenImpl <em>Given</em>}' class.

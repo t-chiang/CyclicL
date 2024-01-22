@@ -7,6 +7,11 @@
         eType="#//Steps" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Steps"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Steps">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//Context"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//Context"/>
   <eClassifiers xsi:type="ecore:EClass" name="Given" eSuperTypes="#//Steps">
     <eStructuralFeatures xsi:type="ecore:EReference" name="preconditions" upperBound="-1"
         eType="#//Precondition" containment="true"/>
