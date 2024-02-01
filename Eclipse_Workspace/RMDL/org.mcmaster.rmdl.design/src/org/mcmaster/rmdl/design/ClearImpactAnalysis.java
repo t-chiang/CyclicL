@@ -19,7 +19,6 @@ public class ClearImpactAnalysis extends AbstractExternalJavaAction {
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {
 		// TODO Auto-generated method stub
-		System.out.println(((DSemanticDecorator) selection.toArray()[0]).getTarget().eClass().getName());
 		if(selection.toArray()[0] instanceof DSemanticDiagram) {
 			return true;
 		}
