@@ -18,7 +18,9 @@ public class ClearImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {
-		// TODO Auto-generated method stub
+		/*
+		 * This section makes sure that the user selection is either the model root, or a set of DesignElement nodes
+		 */
 		if(selection.toArray()[0] instanceof DSemanticDiagram) {
 			return true;
 		}
@@ -37,7 +39,12 @@ public class ClearImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public void execute(Collection<? extends EObject> selection, Map<String, Object> arg1) {
-		// TODO Auto-generated method stub
+		/*
+		 * This is the core execution of the class. It will again check the user selection and perform two different actions.
+		 * If model root is selected (DSemanticDiagram) it will reset all DesignElement nodes to their default border.
+		 * If a singular DesignElement node is selected it will reset just that DesignElement node to default border.
+		 * If a set of DesignElement nodes have been selected it will reset the entire set to default border.
+		 */
 		System.out.println("-------------Start Clear Impact Analysis-------------");
 		RGBValues newBorderColor = RGBValues.create(0, 0, 0);
 		if(selection.toArray()[0] instanceof DSemanticDiagram) {
@@ -71,6 +78,7 @@ public class ClearImpactAnalysis extends AbstractExternalJavaAction {
 						((DNode) dElement).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
 					}
 					else {
+						//If for whatever reason a type that isn't DesignElement gets through, this will throw exception to user.
 						throw new IllegalArgumentException("Clear Impact Analysis does not work on type " + ((DSemanticDecorator) s).getTarget().eClass().getName());
 					}
 				}
