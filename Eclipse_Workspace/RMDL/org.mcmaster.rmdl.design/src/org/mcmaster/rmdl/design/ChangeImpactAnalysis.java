@@ -21,24 +21,14 @@ public class ChangeImpactAnalysis extends AbstractExternalJavaAction {
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {
 		// TODO Auto-generated method stub
-		for(EObject s: selection) {
-//			System.out.println(s.getClass());
-			if (s instanceof DSemanticDiagram) {
-				return false;
-			}
-			var obj = (DSemanticDecorator) s;
-//			System.out.println(obj.getTarget() instanceof DesignElement);
-			if(obj.getTarget() instanceof DesignElement) {
-				return false;
-			}
-			if(obj.getTarget() instanceof TestCase) {
-				return false;
-			}
-			if(obj.getTarget() instanceof Review) {
-				return false;
-			}
-			if(obj.getTarget() instanceof Package) {
-				return false;
+		if (selection.toArray()[0] instanceof DSemanticDiagram) {
+			return false;
+		}
+		else {
+			for(EObject s: selection) {
+				if (!(((DSemanticDecorator) s).getTarget() instanceof Requirements)) {
+					return false;
+				}
 			}
 		}
 		return true;
@@ -47,39 +37,31 @@ public class ChangeImpactAnalysis extends AbstractExternalJavaAction {
 	@Override
 	public void execute(Collection<? extends EObject> selection, Map<String, Object> arg1) {
 		// TODO Auto-generated method stub
+		System.out.println("-------------Start Change Impact Analysis-------------");
 		for(EObject s: selection) {
 			EList<DesignElement> dElements = ((Requirements) ((DSemanticDecorator) s).getTarget()).getTraceto();
-			EList<Review> reviews = ((Requirements) ((DSemanticDecorator) s).getTarget()).getReview();
-			EList<TestCase> testcases = ((Requirements) ((DSemanticDecorator) s).getTarget()).getTestcase();
 			for (DesignElement d : dElements) {
-				System.out.println(d);
 				Collection<EObject> tempNode = new EObjectQuery(d).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
-//				DSemanticDecorator tempNode = (DSemanticDecorator) d;
-				System.out.println(tempNode.toArray()[0]);
 				RGBValues newBorderColor = RGBValues.create(255, 0, 0);
-				//			DNode tempNode = (DNode) d;
 				((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
+				((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderSize(3);
 				((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
+				((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
+			
+				EList<Requirements> reqsList = d.getTracefrom();
+				for(Requirements r: reqsList) {
+					EList<Review> revList = r.getReview();
+					EList<TestCase> testcaseList = r.getTestcase();
+					for(Review rL: revList) {
+						rL.setIsApproved(false);
+					}
+					for(TestCase t: testcaseList) {
+						t.setHasPassed(false);
+					}
+				}
 			}
 		}
-//		Iterator<? extends EObject> iter = selections.iterator();
-//		while(iter.hasNext()) {
-//			var tempObj = ((DSemanticDecorator) iter.next()).getTarget();
-//			((Requirements) tempObj).changeImpactAnalysis();
-//		}
-//		EList<DesignElement> dElements = this.traceto;
-//		EList<Review> reviews = this.review;
-//		EList<TestCase> testcases = this.testcase;
-//		for (DesignElement d : dElements) {
-//			System.out.println(d);
-//			Collection<EObject> tempNode = new EObjectQuery(d).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
-////			DSemanticDecorator tempNode = (DSemanticDecorator) d;
-//			System.out.println(tempNode.toArray()[0]);
-//			RGBValues newBorderColor = RGBValues.create(255, 0, 0);
-//			//			DNode tempNode = (DNode) d;
-//			((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
-//			((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
-//		}
+		System.out.println("-------------End Change Impact Analysis-------------");
 	}
 
 }
