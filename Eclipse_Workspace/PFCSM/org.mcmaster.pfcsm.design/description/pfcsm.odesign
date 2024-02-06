@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="pfcsm" version="12.0.0.2017041100">
   <ownedViewpoints name="Class Diagram Viewpoint" modelFileExtension="pfcsm">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Class Diagram" initialisation="true" showOnStartup="true" domainClass="pfcsm::Class_Diagram_Root" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Association']" name="Class Diagram" initialisation="true" showOnStartup="true" domainClass="pfcsm::Class_Diagram_Root" enablePopupBars="true">
       <metamodel href="../../org.mcmaster.pfcsm/model/pfcsm.ecore#/"/>
       <defaultLayer name="Default">
         <toolSections name="Custom tools">
@@ -10,6 +10,23 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="Association" mappings="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Association']" dragSource="BOTH">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Association']" containerViewExpression="var:newContainerView" sourceExpression="feature:source" targetExpression="feature:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Impact Analysis">
+            <menuItemDescription xsi:type="tool_1:GroupMenu" name="Impact Analysis">
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Change Impact Analysis" id="DesignChangeImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Clear Impact Analysis" id="DesignClearImpactAnalysis"/>
+            </menuItemDescription>
           </ownedTools>
         </toolSections>
       </defaultLayer>

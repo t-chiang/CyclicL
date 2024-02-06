@@ -8,4 +8,15 @@
 	       name="pfcsm">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.mcmaster.pfcsm.design.ChangeImpactAnalysis"
+           id="DesignChangeImpactAnalysis">
+     </javaActions>
+     <javaActions
+           actionClass="org.mcmaster.pfcsm.design.ClearImpactAnalysis"
+           id="DesignClearImpactAnalysis">
+     </javaActions>
+  </extension>
 </plugin>
