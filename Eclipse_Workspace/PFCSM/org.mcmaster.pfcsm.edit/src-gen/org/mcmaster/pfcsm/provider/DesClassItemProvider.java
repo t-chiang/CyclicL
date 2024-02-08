@@ -58,9 +58,15 @@ public class DesClassItemProvider extends ItemProviderAdapter implements IEditin
 
 			addNamePropertyDescriptor(object);
 			addIsOptionalPropertyDescriptor(object);
-			addReferenceToPropertyDescriptor(object);
-			addReferenceFromPropertyDescriptor(object);
 			addIsAbstractPropertyDescriptor(object);
+			addChildrenPropertyDescriptor(object);
+			addParentPropertyDescriptor(object);
+			addOwnerofPropertyDescriptor(object);
+			addOwnedbyPropertyDescriptor(object);
+			addUsesPropertyDescriptor(object);
+			addUsedbyPropertyDescriptor(object);
+			addXorfromPropertyDescriptor(object);
+			addXortoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -98,36 +104,6 @@ public class DesClassItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
-	 * This adds a property descriptor for the Reference To feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReferenceToPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesClass_referenceTo_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_referenceTo_feature",
-								"_UI_DesClass_type"),
-						PfcsmPackage.Literals.DES_CLASS__REFERENCE_TO, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reference From feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReferenceFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesClass_referenceFrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_referenceFrom_feature",
-								"_UI_DesClass_type"),
-						PfcsmPackage.Literals.DES_CLASS__REFERENCE_FROM, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Is Abstract feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,6 +117,126 @@ public class DesClassItemProvider extends ItemProviderAdapter implements IEditin
 								"_UI_DesClass_type"),
 						PfcsmPackage.Literals.DES_CLASS__IS_ABSTRACT, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Children feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChildrenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_children_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_children_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__CHILDREN, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_parent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_parent_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__PARENT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ownerof feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnerofPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_ownerof_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_ownerof_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__OWNEROF, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ownedby feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnedbyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_ownedby_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_ownedby_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__OWNEDBY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uses feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_uses_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_uses_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__USES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Usedby feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsedbyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_usedby_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_usedby_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__USEDBY, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Xorfrom feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addXorfromPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_xorfrom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_xorfrom_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__XORFROM, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Xorto feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addXortoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesClass_xorto_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesClass_xorto_feature",
+								"_UI_DesClass_type"),
+						PfcsmPackage.Literals.DES_CLASS__XORTO, true, false, true, null, null, null));
 	}
 
 	/**

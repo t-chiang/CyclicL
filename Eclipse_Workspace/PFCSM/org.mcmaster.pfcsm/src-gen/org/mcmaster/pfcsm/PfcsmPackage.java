@@ -86,31 +86,13 @@ public interface PfcsmPackage extends EPackage {
 	int DES_CLASS__IS_OPTIONAL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Reference To</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DES_CLASS__REFERENCE_TO = 2;
-
-	/**
-	 * The feature id for the '<em><b>Reference From</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DES_CLASS__REFERENCE_FROM = 3;
-
-	/**
 	 * The feature id for the '<em><b>Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DES_CLASS__ELEMENT = 4;
+	int DES_CLASS__ELEMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -119,7 +101,79 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DES_CLASS__IS_ABSTRACT = 5;
+	int DES_CLASS__IS_ABSTRACT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__CHILDREN = 4;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__PARENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Ownerof</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__OWNEROF = 6;
+
+	/**
+	 * The feature id for the '<em><b>Ownedby</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__OWNEDBY = 7;
+
+	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__USES = 8;
+
+	/**
+	 * The feature id for the '<em><b>Usedby</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__USEDBY = 9;
+
+	/**
+	 * The feature id for the '<em><b>Xorfrom</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__XORFROM = 10;
+
+	/**
+	 * The feature id for the '<em><b>Xorto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DES_CLASS__XORTO = 11;
 
 	/**
 	 * The number of structural features of the '<em>Des Class</em>' class.
@@ -128,7 +182,7 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DES_CLASS_FEATURE_COUNT = 6;
+	int DES_CLASS_FEATURE_COUNT = 12;
 
 	/**
 	 * The number of operations of the '<em>Des Class</em>' class.
@@ -196,31 +250,13 @@ public interface PfcsmPackage extends EPackage {
 	int REFERENCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__SOURCE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__TARGET = 1;
-
-	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__CLASS_DIAGRAM_ROOT = 2;
+	int REFERENCE__CLASS_DIAGRAM_ROOT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -229,7 +265,7 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = 3;
+	int REFERENCE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Reference</em>' class.
@@ -249,24 +285,6 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 */
 	int ASSOCIATION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__SOURCE = REFERENCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__TARGET = REFERENCE__TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
@@ -314,13 +332,31 @@ public interface PfcsmPackage extends EPackage {
 	int ASSOCIATION__ASC_TGT = REFERENCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Tgt</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__TGT = REFERENCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__SRC = REFERENCE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 4;
+	int ASSOCIATION_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Association</em>' class.
@@ -342,24 +378,6 @@ public interface PfcsmPackage extends EPackage {
 	int COMPOSITION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITION__SOURCE = REFERENCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITION__TARGET = REFERENCE__TARGET;
-
-	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -378,13 +396,31 @@ public interface PfcsmPackage extends EPackage {
 	int COMPOSITION__TGT_MULT = REFERENCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITION__SRC = REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tgt</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITION__TGT = REFERENCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Composition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITION_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 1;
+	int COMPOSITION_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Composition</em>' class.
@@ -406,24 +442,6 @@ public interface PfcsmPackage extends EPackage {
 	int INHERITANCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INHERITANCE__SOURCE = REFERENCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INHERITANCE__TARGET = REFERENCE__TARGET;
-
-	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -433,13 +451,31 @@ public interface PfcsmPackage extends EPackage {
 	int INHERITANCE__CLASS_DIAGRAM_ROOT = REFERENCE__CLASS_DIAGRAM_ROOT;
 
 	/**
+	 * The feature id for the '<em><b>Tgt</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INHERITANCE__TGT = REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INHERITANCE__SRC = REFERENCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Inheritance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHERITANCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 0;
+	int INHERITANCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Inheritance</em>' class.
@@ -461,24 +497,6 @@ public interface PfcsmPackage extends EPackage {
 	int XOR = 6;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XOR__SOURCE = REFERENCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int XOR__TARGET = REFERENCE__TARGET;
-
-	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -488,13 +506,31 @@ public interface PfcsmPackage extends EPackage {
 	int XOR__CLASS_DIAGRAM_ROOT = REFERENCE__CLASS_DIAGRAM_ROOT;
 
 	/**
+	 * The feature id for the '<em><b>Tgt</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XOR__TGT = REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XOR__SRC = REFERENCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>XOR</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XOR_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 0;
+	int XOR_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>XOR</em>' class.
@@ -535,22 +571,22 @@ public interface PfcsmPackage extends EPackage {
 	int ELEMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Association To</b></em>' reference list.
+	 * The feature id for the '<em><b>Usedby</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__ASSOCIATION_TO = 1;
+	int ELEMENT__USEDBY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Association From</b></em>' reference list.
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__ASSOCIATION_FROM = 2;
+	int ELEMENT__USES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Public</b></em>' attribute.
@@ -588,24 +624,6 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 */
 	int USES = 8;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USES__SOURCE = ASSOCIATION__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USES__TARGET = ASSOCIATION__TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
@@ -653,6 +671,24 @@ public interface PfcsmPackage extends EPackage {
 	int USES__ASC_TGT = ASSOCIATION__ASC_TGT;
 
 	/**
+	 * The feature id for the '<em><b>Tgt</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES__TGT = ASSOCIATION__TGT;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES__SRC = ASSOCIATION__SRC;
+
+	/**
 	 * The number of structural features of the '<em>Uses</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -679,24 +715,6 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 */
 	int PRODUCES = 9;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCES__SOURCE = ASSOCIATION__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRODUCES__TARGET = ASSOCIATION__TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Class diagram root</b></em>' container reference.
@@ -744,6 +762,24 @@ public interface PfcsmPackage extends EPackage {
 	int PRODUCES__ASC_TGT = ASSOCIATION__ASC_TGT;
 
 	/**
+	 * The feature id for the '<em><b>Tgt</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCES__TGT = ASSOCIATION__TGT;
+
+	/**
+	 * The feature id for the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCES__SRC = ASSOCIATION__SRC;
+
+	/**
 	 * The number of structural features of the '<em>Produces</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,22 +817,22 @@ public interface PfcsmPackage extends EPackage {
 	int ATTRIBUTE__NAME = ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Association To</b></em>' reference list.
+	 * The feature id for the '<em><b>Usedby</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__ASSOCIATION_TO = ELEMENT__ASSOCIATION_TO;
+	int ATTRIBUTE__USEDBY = ELEMENT__USEDBY;
 
 	/**
-	 * The feature id for the '<em><b>Association From</b></em>' reference list.
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__ASSOCIATION_FROM = ELEMENT__ASSOCIATION_FROM;
+	int ATTRIBUTE__USES = ELEMENT__USES;
 
 	/**
 	 * The feature id for the '<em><b>Is Public</b></em>' attribute.
@@ -835,22 +871,22 @@ public interface PfcsmPackage extends EPackage {
 	int OPERATION__NAME = ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Association To</b></em>' reference list.
+	 * The feature id for the '<em><b>Usedby</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__ASSOCIATION_TO = ELEMENT__ASSOCIATION_TO;
+	int OPERATION__USEDBY = ELEMENT__USEDBY;
 
 	/**
-	 * The feature id for the '<em><b>Association From</b></em>' reference list.
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__ASSOCIATION_FROM = ELEMENT__ASSOCIATION_FROM;
+	int OPERATION__USES = ELEMENT__USES;
 
 	/**
 	 * The feature id for the '<em><b>Is Public</b></em>' attribute.
@@ -932,28 +968,6 @@ public interface PfcsmPackage extends EPackage {
 	EAttribute getDesClass_IsOptional();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getReferenceTo <em>Reference To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Reference To</em>'.
-	 * @see org.mcmaster.pfcsm.DesClass#getReferenceTo()
-	 * @see #getDesClass()
-	 * @generated
-	 */
-	EReference getDesClass_ReferenceTo();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getReferenceFrom <em>Reference From</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Reference From</em>'.
-	 * @see org.mcmaster.pfcsm.DesClass#getReferenceFrom()
-	 * @see #getDesClass()
-	 * @generated
-	 */
-	EReference getDesClass_ReferenceFrom();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.mcmaster.pfcsm.DesClass#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -974,6 +988,94 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDesClass_IsAbstract();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Children</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getChildren()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Children();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.DesClass#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getParent()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Parent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getOwnerof <em>Ownerof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Ownerof</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getOwnerof()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Ownerof();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.DesClass#getOwnedby <em>Ownedby</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ownedby</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getOwnedby()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Ownedby();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getUses <em>Uses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getUses()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Uses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getUsedby <em>Usedby</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Usedby</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getUsedby()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Usedby();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getXorfrom <em>Xorfrom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Xorfrom</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getXorfrom()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Xorfrom();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.DesClass#getXorto <em>Xorto</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Xorto</em>'.
+	 * @see org.mcmaster.pfcsm.DesClass#getXorto()
+	 * @see #getDesClass()
+	 * @generated
+	 */
+	EReference getDesClass_Xorto();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.pfcsm.Class_Diagram_Root <em>Class Diagram Root</em>}'.
@@ -1016,28 +1118,6 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Reference#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see org.mcmaster.pfcsm.Reference#getSource()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EReference getReference_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Reference#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see org.mcmaster.pfcsm.Reference#getTarget()
-	 * @see #getReference()
-	 * @generated
-	 */
-	EReference getReference_Target();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.mcmaster.pfcsm.Reference#getClass_diagram_root <em>Class diagram root</em>}'.
@@ -1105,6 +1185,28 @@ public interface PfcsmPackage extends EPackage {
 	EReference getAssociation_AscTgt();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Association#getTgt <em>Tgt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tgt</em>'.
+	 * @see org.mcmaster.pfcsm.Association#getTgt()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EReference getAssociation_Tgt();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Association#getSrc <em>Src</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Src</em>'.
+	 * @see org.mcmaster.pfcsm.Association#getSrc()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EReference getAssociation_Src();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.pfcsm.Composition <em>Composition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1126,6 +1228,28 @@ public interface PfcsmPackage extends EPackage {
 	EAttribute getComposition_TgtMult();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Composition#getSrc <em>Src</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Src</em>'.
+	 * @see org.mcmaster.pfcsm.Composition#getSrc()
+	 * @see #getComposition()
+	 * @generated
+	 */
+	EReference getComposition_Src();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Composition#getTgt <em>Tgt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tgt</em>'.
+	 * @see org.mcmaster.pfcsm.Composition#getTgt()
+	 * @see #getComposition()
+	 * @generated
+	 */
+	EReference getComposition_Tgt();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.pfcsm.Inheritance <em>Inheritance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1136,6 +1260,28 @@ public interface PfcsmPackage extends EPackage {
 	EClass getInheritance();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Inheritance#getTgt <em>Tgt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tgt</em>'.
+	 * @see org.mcmaster.pfcsm.Inheritance#getTgt()
+	 * @see #getInheritance()
+	 * @generated
+	 */
+	EReference getInheritance_Tgt();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.Inheritance#getSrc <em>Src</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Src</em>'.
+	 * @see org.mcmaster.pfcsm.Inheritance#getSrc()
+	 * @see #getInheritance()
+	 * @generated
+	 */
+	EReference getInheritance_Src();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.pfcsm.XOR <em>XOR</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1144,6 +1290,28 @@ public interface PfcsmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getXOR();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.XOR#getTgt <em>Tgt</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tgt</em>'.
+	 * @see org.mcmaster.pfcsm.XOR#getTgt()
+	 * @see #getXOR()
+	 * @generated
+	 */
+	EReference getXOR_Tgt();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.pfcsm.XOR#getSrc <em>Src</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Src</em>'.
+	 * @see org.mcmaster.pfcsm.XOR#getSrc()
+	 * @see #getXOR()
+	 * @generated
+	 */
+	EReference getXOR_Src();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.pfcsm.Operation <em>Operation</em>}'.
@@ -1177,26 +1345,26 @@ public interface PfcsmPackage extends EPackage {
 	EAttribute getElement_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.Element#getAssociationTo <em>Association To</em>}'.
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.Element#getUsedby <em>Usedby</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Association To</em>'.
-	 * @see org.mcmaster.pfcsm.Element#getAssociationTo()
+	 * @return the meta object for the reference list '<em>Usedby</em>'.
+	 * @see org.mcmaster.pfcsm.Element#getUsedby()
 	 * @see #getElement()
 	 * @generated
 	 */
-	EReference getElement_AssociationTo();
+	EReference getElement_Usedby();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.Element#getAssociationFrom <em>Association From</em>}'.
+	 * Returns the meta object for the reference list '{@link org.mcmaster.pfcsm.Element#getUses <em>Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Association From</em>'.
-	 * @see org.mcmaster.pfcsm.Element#getAssociationFrom()
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see org.mcmaster.pfcsm.Element#getUses()
 	 * @see #getElement()
 	 * @generated
 	 */
-	EReference getElement_AssociationFrom();
+	EReference getElement_Uses();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.mcmaster.pfcsm.Element#isIsPublic <em>Is Public</em>}'.
@@ -1309,22 +1477,6 @@ public interface PfcsmPackage extends EPackage {
 		EAttribute DES_CLASS__IS_OPTIONAL = eINSTANCE.getDesClass_IsOptional();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference To</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DES_CLASS__REFERENCE_TO = eINSTANCE.getDesClass_ReferenceTo();
-
-		/**
-		 * The meta object literal for the '<em><b>Reference From</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DES_CLASS__REFERENCE_FROM = eINSTANCE.getDesClass_ReferenceFrom();
-
-		/**
 		 * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1339,6 +1491,70 @@ public interface PfcsmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DES_CLASS__IS_ABSTRACT = eINSTANCE.getDesClass_IsAbstract();
+
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__CHILDREN = eINSTANCE.getDesClass_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__PARENT = eINSTANCE.getDesClass_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Ownerof</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__OWNEROF = eINSTANCE.getDesClass_Ownerof();
+
+		/**
+		 * The meta object literal for the '<em><b>Ownedby</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__OWNEDBY = eINSTANCE.getDesClass_Ownedby();
+
+		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__USES = eINSTANCE.getDesClass_Uses();
+
+		/**
+		 * The meta object literal for the '<em><b>Usedby</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__USEDBY = eINSTANCE.getDesClass_Usedby();
+
+		/**
+		 * The meta object literal for the '<em><b>Xorfrom</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__XORFROM = eINSTANCE.getDesClass_Xorfrom();
+
+		/**
+		 * The meta object literal for the '<em><b>Xorto</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DES_CLASS__XORTO = eINSTANCE.getDesClass_Xorto();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.pfcsm.impl.Class_Diagram_RootImpl <em>Class Diagram Root</em>}' class.
@@ -1375,22 +1591,6 @@ public interface PfcsmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REFERENCE = eINSTANCE.getReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REFERENCE__SOURCE = eINSTANCE.getReference_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REFERENCE__TARGET = eINSTANCE.getReference_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Class diagram root</b></em>' container reference feature.
@@ -1443,6 +1643,22 @@ public interface PfcsmPackage extends EPackage {
 		EReference ASSOCIATION__ASC_TGT = eINSTANCE.getAssociation_AscTgt();
 
 		/**
+		 * The meta object literal for the '<em><b>Tgt</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATION__TGT = eINSTANCE.getAssociation_Tgt();
+
+		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATION__SRC = eINSTANCE.getAssociation_Src();
+
+		/**
 		 * The meta object literal for the '{@link org.mcmaster.pfcsm.impl.CompositionImpl <em>Composition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1461,6 +1677,22 @@ public interface PfcsmPackage extends EPackage {
 		EAttribute COMPOSITION__TGT_MULT = eINSTANCE.getComposition_TgtMult();
 
 		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITION__SRC = eINSTANCE.getComposition_Src();
+
+		/**
+		 * The meta object literal for the '<em><b>Tgt</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITION__TGT = eINSTANCE.getComposition_Tgt();
+
+		/**
 		 * The meta object literal for the '{@link org.mcmaster.pfcsm.impl.InheritanceImpl <em>Inheritance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1471,6 +1703,22 @@ public interface PfcsmPackage extends EPackage {
 		EClass INHERITANCE = eINSTANCE.getInheritance();
 
 		/**
+		 * The meta object literal for the '<em><b>Tgt</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INHERITANCE__TGT = eINSTANCE.getInheritance_Tgt();
+
+		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INHERITANCE__SRC = eINSTANCE.getInheritance_Src();
+
+		/**
 		 * The meta object literal for the '{@link org.mcmaster.pfcsm.impl.XORImpl <em>XOR</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1479,6 +1727,22 @@ public interface PfcsmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass XOR = eINSTANCE.getXOR();
+
+		/**
+		 * The meta object literal for the '<em><b>Tgt</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference XOR__TGT = eINSTANCE.getXOR_Tgt();
+
+		/**
+		 * The meta object literal for the '<em><b>Src</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference XOR__SRC = eINSTANCE.getXOR_Src();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.pfcsm.impl.OperationImpl <em>Operation</em>}' class.
@@ -1509,20 +1773,20 @@ public interface PfcsmPackage extends EPackage {
 		EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Association To</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Usedby</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ELEMENT__ASSOCIATION_TO = eINSTANCE.getElement_AssociationTo();
+		EReference ELEMENT__USEDBY = eINSTANCE.getElement_Usedby();
 
 		/**
-		 * The meta object literal for the '<em><b>Association From</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ELEMENT__ASSOCIATION_FROM = eINSTANCE.getElement_AssociationFrom();
+		EReference ELEMENT__USES = eINSTANCE.getElement_Uses();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Public</b></em>' attribute feature.

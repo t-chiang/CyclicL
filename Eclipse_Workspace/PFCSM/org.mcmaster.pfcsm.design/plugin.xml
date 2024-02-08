@@ -11,12 +11,12 @@
   <extension
         point="org.eclipse.sirius.externalJavaAction">
      <javaActions
-           actionClass="org.mcmaster.pfcsm.design.ClassChangeImpactAnalysis"
-           id="ClassChangeImpactAnalysis">
+           actionClass="org.mcmaster.pfcsm.design.SpiderChangeImpactAnalysis"
+           id="SpiderChangeImpactAnalysis">
      </javaActions>
      <javaActions
-           actionClass="org.mcmaster.pfcsm.design.ClearImpactAnalysis"
-           id="DesignClearImpactAnalysis">
+           actionClass="org.mcmaster.pfcsm.design.ClassClearImpactAnalysis"
+           id="ClassClearImpactAnalysis">
      </javaActions>
   </extension>
 </plugin>

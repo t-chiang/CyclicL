@@ -28,8 +28,8 @@ import org.mcmaster.pfcsm.PfcsmPackage;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getAssociationTo <em>Association To</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getAssociationFrom <em>Association From</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getUsedby <em>Usedby</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.ElementImpl#isIsPublic <em>Is Public</em>}</li>
  * </ul>
  *
@@ -57,24 +57,24 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAssociationTo() <em>Association To</em>}' reference list.
+	 * The cached value of the '{@link #getUsedby() <em>Usedby</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssociationTo()
+	 * @see #getUsedby()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Association> associationTo;
+	protected EList<Association> usedby;
 
 	/**
-	 * The cached value of the '{@link #getAssociationFrom() <em>Association From</em>}' reference list.
+	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssociationFrom()
+	 * @see #getUses()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Association> associationFrom;
+	protected EList<Association> uses;
 
 	/**
 	 * The default value of the '{@link #isIsPublic() <em>Is Public</em>}' attribute.
@@ -141,12 +141,12 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Association> getAssociationTo() {
-		if (associationTo == null) {
-			associationTo = new EObjectWithInverseResolvingEList<Association>(Association.class, this,
-					PfcsmPackage.ELEMENT__ASSOCIATION_TO, PfcsmPackage.ASSOCIATION__ASC_SRC);
+	public EList<Association> getUsedby() {
+		if (usedby == null) {
+			usedby = new EObjectWithInverseResolvingEList<Association>(Association.class, this,
+					PfcsmPackage.ELEMENT__USEDBY, PfcsmPackage.ASSOCIATION__ASC_SRC);
 		}
-		return associationTo;
+		return usedby;
 	}
 
 	/**
@@ -154,12 +154,12 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Association> getAssociationFrom() {
-		if (associationFrom == null) {
-			associationFrom = new EObjectWithInverseResolvingEList<Association>(Association.class, this,
-					PfcsmPackage.ELEMENT__ASSOCIATION_FROM, PfcsmPackage.ASSOCIATION__ASC_TGT);
+	public EList<Association> getUses() {
+		if (uses == null) {
+			uses = new EObjectWithInverseResolvingEList<Association>(Association.class, this,
+					PfcsmPackage.ELEMENT__USES, PfcsmPackage.ASSOCIATION__ASC_TGT);
 		}
-		return associationFrom;
+		return uses;
 	}
 
 	/**
@@ -193,10 +193,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.ELEMENT__ASSOCIATION_TO:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAssociationTo()).basicAdd(otherEnd, msgs);
-		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAssociationFrom()).basicAdd(otherEnd, msgs);
+		case PfcsmPackage.ELEMENT__USEDBY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getUsedby()).basicAdd(otherEnd, msgs);
+		case PfcsmPackage.ELEMENT__USES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getUses()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -209,10 +209,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.ELEMENT__ASSOCIATION_TO:
-			return ((InternalEList<?>) getAssociationTo()).basicRemove(otherEnd, msgs);
-		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
-			return ((InternalEList<?>) getAssociationFrom()).basicRemove(otherEnd, msgs);
+		case PfcsmPackage.ELEMENT__USEDBY:
+			return ((InternalEList<?>) getUsedby()).basicRemove(otherEnd, msgs);
+		case PfcsmPackage.ELEMENT__USES:
+			return ((InternalEList<?>) getUses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -227,10 +227,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case PfcsmPackage.ELEMENT__NAME:
 			return getName();
-		case PfcsmPackage.ELEMENT__ASSOCIATION_TO:
-			return getAssociationTo();
-		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
-			return getAssociationFrom();
+		case PfcsmPackage.ELEMENT__USEDBY:
+			return getUsedby();
+		case PfcsmPackage.ELEMENT__USES:
+			return getUses();
 		case PfcsmPackage.ELEMENT__IS_PUBLIC:
 			return isIsPublic();
 		}
@@ -249,13 +249,13 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		case PfcsmPackage.ELEMENT__NAME:
 			setName((String) newValue);
 			return;
-		case PfcsmPackage.ELEMENT__ASSOCIATION_TO:
-			getAssociationTo().clear();
-			getAssociationTo().addAll((Collection<? extends Association>) newValue);
+		case PfcsmPackage.ELEMENT__USEDBY:
+			getUsedby().clear();
+			getUsedby().addAll((Collection<? extends Association>) newValue);
 			return;
-		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
-			getAssociationFrom().clear();
-			getAssociationFrom().addAll((Collection<? extends Association>) newValue);
+		case PfcsmPackage.ELEMENT__USES:
+			getUses().clear();
+			getUses().addAll((Collection<? extends Association>) newValue);
 			return;
 		case PfcsmPackage.ELEMENT__IS_PUBLIC:
 			setIsPublic((Boolean) newValue);
@@ -275,11 +275,11 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		case PfcsmPackage.ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case PfcsmPackage.ELEMENT__ASSOCIATION_TO:
-			getAssociationTo().clear();
+		case PfcsmPackage.ELEMENT__USEDBY:
+			getUsedby().clear();
 			return;
-		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
-			getAssociationFrom().clear();
+		case PfcsmPackage.ELEMENT__USES:
+			getUses().clear();
 			return;
 		case PfcsmPackage.ELEMENT__IS_PUBLIC:
 			setIsPublic(IS_PUBLIC_EDEFAULT);
@@ -298,10 +298,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 		case PfcsmPackage.ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case PfcsmPackage.ELEMENT__ASSOCIATION_TO:
-			return associationTo != null && !associationTo.isEmpty();
-		case PfcsmPackage.ELEMENT__ASSOCIATION_FROM:
-			return associationFrom != null && !associationFrom.isEmpty();
+		case PfcsmPackage.ELEMENT__USEDBY:
+			return usedby != null && !usedby.isEmpty();
+		case PfcsmPackage.ELEMENT__USES:
+			return uses != null && !uses.isEmpty();
 		case PfcsmPackage.ELEMENT__IS_PUBLIC:
 			return isPublic != IS_PUBLIC_EDEFAULT;
 		}

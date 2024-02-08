@@ -24,14 +24,14 @@
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="Impact Analysis">
             <menuItemDescription xsi:type="tool_1:GroupMenu" name="Impact Analysis">
-              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Class Change Impact Analysis" id="ClassChangeImpactAnalysis"/>
-              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Clear Impact Analysis" id="DesignClearImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Spider Change Impact Analysis" id="SpiderChangeImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Class Clear Impact Analysis" id="ClassClearImpactAnalysis"/>
             </menuItemDescription>
           </ownedTools>
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Traditional Diagram Layer" activeByDefault="true" optional="false">
-        <edgeMappings name="Association" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Association" useDomainElement="true">
+        <edgeMappings name="Association" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetFinderExpression="feature:tgt" sourceFinderExpression="feature:src" domainClass="pfcsm::Association" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <beginLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:srcMult">
@@ -42,7 +42,7 @@
             </endLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Composition" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Composition" useDomainElement="true">
+        <edgeMappings name="Composition" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetFinderExpression="feature:tgt" sourceFinderExpression="feature:src" domainClass="pfcsm::Composition" useDomainElement="true">
           <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <endLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:tgtMult">
@@ -50,7 +50,7 @@
             </endLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Inheritance" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="pfcsm::Inheritance" useDomainElement="true">
+        <edgeMappings name="Inheritance" semanticCandidatesExpression="feature:reference" sourceMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetMapping="//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Class']" targetFinderExpression="feature:tgt" sourceFinderExpression="feature:src" domainClass="pfcsm::Inheritance" useDomainElement="true">
           <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -156,8 +156,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::Class_Diagram_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Association" referenceName="reference" variableName="reference">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="src" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tgt" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -170,8 +170,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::Class_Diagram_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Composition" referenceName="reference" variableName="reference">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="src" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tgt" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -184,8 +184,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::Class_Diagram_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::Inheritance" referenceName="reference" variableName="reference">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="src" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tgt" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -198,8 +198,8 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(pfcsm::Class_Diagram_Root)/]">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pfcsm::XOR" referenceName="reference" variableName="reference">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="src" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="tgt" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

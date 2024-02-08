@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.pfcsm.Reference#getSource <em>Source</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Reference#getTarget <em>Target</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Reference#getClass_diagram_root <em>Class diagram root</em>}</li>
  * </ul>
  *
@@ -23,54 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Reference extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.DesClass#getReferenceTo <em>Reference To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
-	 * @see #setSource(DesClass)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getReference_Source()
-	 * @see org.mcmaster.pfcsm.DesClass#getReferenceTo
-	 * @model opposite="referenceTo" required="true"
-	 * @generated
-	 */
-	DesClass getSource();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.Reference#getSource <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
-	 * @see #getSource()
-	 * @generated
-	 */
-	void setSource(DesClass value);
-
-	/**
-	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.DesClass#getReferenceFrom <em>Reference From</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(DesClass)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getReference_Target()
-	 * @see org.mcmaster.pfcsm.DesClass#getReferenceFrom
-	 * @model opposite="referenceFrom" required="true"
-	 * @generated
-	 */
-	DesClass getTarget();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.Reference#getTarget <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target</em>' reference.
-	 * @see #getTarget()
-	 * @generated
-	 */
-	void setTarget(DesClass value);
-
 	/**
 	 * Returns the value of the '<em><b>Class diagram root</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Class_Diagram_Root#getReference <em>Reference</em>}'.

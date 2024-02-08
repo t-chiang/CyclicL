@@ -54,8 +54,8 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addAssociationToPropertyDescriptor(object);
-			addAssociationFromPropertyDescriptor(object);
+			addUsedbyPropertyDescriptor(object);
+			addUsesPropertyDescriptor(object);
 			addIsPublicPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -77,33 +77,32 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This adds a property descriptor for the Association To feature.
+	 * This adds a property descriptor for the Usedby feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssociationToPropertyDescriptor(Object object) {
+	protected void addUsedbyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Element_associationTo_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Element_associationTo_feature",
+						getResourceLocator(), getString("_UI_Element_usedby_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Element_usedby_feature",
 								"_UI_Element_type"),
-						PfcsmPackage.Literals.ELEMENT__ASSOCIATION_TO, true, false, true, null, null, null));
+						PfcsmPackage.Literals.ELEMENT__USEDBY, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Association From feature.
+	 * This adds a property descriptor for the Uses feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssociationFromPropertyDescriptor(Object object) {
+	protected void addUsesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Element_associationFrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Element_associationFrom_feature",
-								"_UI_Element_type"),
-						PfcsmPackage.Literals.ELEMENT__ASSOCIATION_FROM, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Element_uses_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Element_uses_feature", "_UI_Element_type"),
+						PfcsmPackage.Literals.ELEMENT__USES, true, false, true, null, null, null));
 	}
 
 	/**

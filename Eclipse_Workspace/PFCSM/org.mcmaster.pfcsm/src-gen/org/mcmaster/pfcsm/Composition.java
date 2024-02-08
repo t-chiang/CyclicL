@@ -12,6 +12,8 @@ package org.mcmaster.pfcsm;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.Composition#getTgtMult <em>Tgt Mult</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Composition#getSrc <em>Src</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Composition#getTgt <em>Tgt</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.pfcsm.PfcsmPackage#getComposition()
@@ -42,4 +44,52 @@ public interface Composition extends Reference {
 	 * @generated
 	 */
 	void setTgtMult(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Src</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.DesClass#getOwnerof <em>Ownerof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Src</em>' reference.
+	 * @see #setSrc(DesClass)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getComposition_Src()
+	 * @see org.mcmaster.pfcsm.DesClass#getOwnerof
+	 * @model opposite="ownerof" required="true"
+	 * @generated
+	 */
+	DesClass getSrc();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Composition#getSrc <em>Src</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Src</em>' reference.
+	 * @see #getSrc()
+	 * @generated
+	 */
+	void setSrc(DesClass value);
+
+	/**
+	 * Returns the value of the '<em><b>Tgt</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.DesClass#getOwnedby <em>Ownedby</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tgt</em>' reference.
+	 * @see #setTgt(DesClass)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getComposition_Tgt()
+	 * @see org.mcmaster.pfcsm.DesClass#getOwnedby
+	 * @model opposite="ownedby" required="true"
+	 * @generated
+	 */
+	DesClass getTgt();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Composition#getTgt <em>Tgt</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tgt</em>' reference.
+	 * @see #getTgt()
+	 * @generated
+	 */
+	void setTgt(DesClass value);
 } // Composition
