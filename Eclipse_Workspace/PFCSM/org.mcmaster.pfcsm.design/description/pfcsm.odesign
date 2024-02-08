@@ -24,8 +24,10 @@
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="Impact Analysis">
             <menuItemDescription xsi:type="tool_1:GroupMenu" name="Impact Analysis">
-              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Spider Change Impact Analysis" id="SpiderChangeImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Spider Impact Analysis" id="SpiderChangeImpactAnalysis"/>
               <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Class Clear Impact Analysis" id="ClassClearImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Forward Impact Analysis" id="ForwardChangeImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Backward Impact Analysis" id="BackwardChangeImpactAnalysis"/>
             </menuItemDescription>
           </ownedTools>
         </toolSections>

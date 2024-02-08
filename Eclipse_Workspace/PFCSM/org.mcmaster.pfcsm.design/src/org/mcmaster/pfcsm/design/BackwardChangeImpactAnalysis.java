@@ -20,7 +20,7 @@ import org.mcmaster.pfcsm.DesClass;
 import org.mcmaster.pfcsm.Inheritance;
 import org.mcmaster.pfcsm.XOR;
 
-public class ForwardChangeImpactAnalysis extends AbstractExternalJavaAction {
+public class BackwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {
@@ -46,60 +46,61 @@ public class ForwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 	@Override
 	public void execute(Collection<? extends EObject> selection, Map<String, Object> arg1) {
 		// TODO Auto-generated method stub
-		System.out.println("-------------Start Forward Change Impact Analysis-------------");
+		System.out.println("-------------Start Change Impact Analysis-------------");
+//		System.out.println(selection.toArray()[0].getClass().getName() == "org.eclipse.sirius.diagram.model.business.internal.spec.DNodeListSpec");
 		RGBValues newBorderColor = RGBValues.create(255, 0, 0);
 		for(EObject s: selection) {
 			if(((DSemanticDecorator) s).getTarget() instanceof DesClass){
-				List<Association> assocTgtList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getUsedby();
+				List<Association> assocSrcList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getUses();
 //				List<Inheritance> inheritChildrenList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getChildren();
 //				List<Composition> composOwnerOfList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getOwnerof();
 //				Composition composOwnedBy = ((DesClass) ((DSemanticDecorator) s).getTarget()).getOwnedby();
 //				List<XOR> xorList = new ArrayList<>();
 				
-				Iterator<? extends Association> assocTgtListIt = assocTgtList.iterator();
+				Iterator<? extends Association> assocSrcListIt = assocSrcList.iterator();
 				
-				while(assocTgtListIt.hasNext()) {
-					DesClass tempObj = assocTgtListIt.next().getTgt();
+				while(assocSrcListIt.hasNext()) {
+					DesClass tempObj = assocSrcListIt.next().getSrc();
 					Collection<EObject> tempClass = new EObjectQuery(tempObj).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 					((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
 					((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderSize(3);
 					((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
 					((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
-					forwardImpactAnalysis(tempObj);
+					backwardImpactAnalysis(tempObj);
 				}
-				
-				
 			}
 			else {
 				throw new IllegalArgumentException("Change Impact Analysis does not work on type " + ((DSemanticDecorator) s).getTarget().eClass().getName());
 			}
 		}
-		System.out.println("-------------End Forward Change Impact Analysis-------------");
 	}
-	
-	
-	public void forwardImpactAnalysis(DesClass entity) {
+
+	public void backwardImpactAnalysis(DesClass entity) {
+		// TODO Auto-generated method stub
 		RGBValues newBorderColor = RGBValues.create(255, 0, 0);
 		if(entity instanceof DesClass) {
-			List<Association> assocTgtList = entity.getUsedby();
+			List<Association> assocSrcList = entity.getUses();
 //			List<Inheritance> inheritChildrenList = entity.getChildren();
 //			List<Composition> composOwnerOfList = entity.getOwnerof();
 //			Composition composOwnedBy = entity.getOwnedby();
 //			List<XOR> xorList = new ArrayList<>();
 			
-			Iterator<? extends Association> assocTgtListIt = assocTgtList.iterator();
-			while(assocTgtListIt.hasNext()) {
-				DesClass tempObj = assocTgtListIt.next().getTgt();
+			Iterator<? extends Association> assocSrcListIt = assocSrcList.iterator();
+			while(assocSrcListIt.hasNext()) {
+				DesClass tempObj = assocSrcListIt.next().getSrc();
+				System.out.println("Entity is: " + entity);
+				System.out.println("tempObj is: " + tempObj);
 				Collection<EObject> tempClass = new EObjectQuery(tempObj).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderSize(3);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
-				forwardImpactAnalysis(tempObj);
+				backwardImpactAnalysis(tempObj);
 			}
 		}
 		else {
 			throw new IllegalArgumentException("Change Impact Analysis does not work on type " + entity.eClass().getName());
 		}
 	}
+
 }

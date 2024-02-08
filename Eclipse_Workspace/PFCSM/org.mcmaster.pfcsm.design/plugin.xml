@@ -18,5 +18,13 @@
            actionClass="org.mcmaster.pfcsm.design.ClassClearImpactAnalysis"
            id="ClassClearImpactAnalysis">
      </javaActions>
+     <javaActions
+           actionClass="org.mcmaster.pfcsm.design.BackwardChangeImpactAnalysis"
+           id="BackwardChangeImpactAnalysis">
+     </javaActions>
+     <javaActions
+           actionClass="org.mcmaster.pfcsm.design.ForwardChangeImpactAnalysis"
+           id="ForwardChangeImpactAnalysis">
+     </javaActions>
   </extension>
 </plugin>
