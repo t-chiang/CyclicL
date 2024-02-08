@@ -54,7 +54,7 @@ public class ReqClearImpactAnalysis extends AbstractExternalJavaAction {
 				var tempObj = (DSemanticDecorator) e;
 				if(tempObj.getTarget() instanceof DesignElement) {
 					((DNode) tempObj).getOwnedStyle().setBorderColor(newBorderColor);
-					((DNode) tempObj).getOwnedStyle().setBorderSize(0);
+					((DNode) tempObj).getOwnedStyle().setBorderSize(1);
 					((DNode) tempObj).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
 					((DNode) tempObj).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
 				}
@@ -64,7 +64,7 @@ public class ReqClearImpactAnalysis extends AbstractExternalJavaAction {
 			if(selection.size() == 1 && ((DSemanticDecorator) selection.toArray()[0]).getTarget() instanceof DesignElement) {
 				var dElement = (DSemanticDecorator) selection.toArray()[0];
 				((DNode) dElement).getOwnedStyle().setBorderColor(newBorderColor);
-				((DNode) dElement).getOwnedStyle().setBorderSize(0);
+				((DNode) dElement).getOwnedStyle().setBorderSize(1);
 				((DNode) dElement).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
 				((DNode) dElement).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
 			}
@@ -73,7 +73,7 @@ public class ReqClearImpactAnalysis extends AbstractExternalJavaAction {
 					if(((DSemanticDecorator) s).getTarget() instanceof DesignElement) {
 						var dElement = (DSemanticDecorator) s;
 						((DNode) dElement).getOwnedStyle().setBorderColor(newBorderColor);
-						((DNode) dElement).getOwnedStyle().setBorderSize(0);
+						((DNode) dElement).getOwnedStyle().setBorderSize(1);
 						((DNode) dElement).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
 						((DNode) dElement).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
 					}
