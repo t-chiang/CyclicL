@@ -3,13 +3,13 @@
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -18,6 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.diagram.DNode;
+import org.eclipse.sirius.diagram.DiagramPackage;
+import org.eclipse.sirius.viewpoint.RGBValues;
+import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
@@ -345,6 +350,33 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 					RmdlPackage.REQUIREMENTS__TESTCASE, RmdlPackage.TEST_CASE__REQUIREMENTS);
 		}
 		return testcase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * This is the method implementation of a change impact analysis. This is to be used as a predictive measure of the impact that can occur due to a change in requirements.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void changeImpactAnalysis() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		// throw new UnsupportedOperationException();
+		EList<DesignElement> dElements = this.traceto;
+		EList<Review> reviews = this.review;
+		EList<TestCase> testcases = this.testcase;
+		for (DesignElement d : dElements) {
+			System.out.println(d);
+			Collection<EObject> tempNode = new EObjectQuery(d)
+					.getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
+			//			DSemanticDecorator tempNode = (DSemanticDecorator) d;
+			System.out.println(tempNode.toArray()[0]);
+			RGBValues newBorderColor = RGBValues.create(255, 0, 0);
+			((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
+			((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures()
+					.add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
+		}
+
 	}
 
 	/**

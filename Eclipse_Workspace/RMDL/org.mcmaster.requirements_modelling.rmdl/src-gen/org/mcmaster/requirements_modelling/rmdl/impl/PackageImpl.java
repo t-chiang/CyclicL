@@ -243,7 +243,6 @@ public class PackageImpl extends Requirement_RootImpl implements org.mcmaster.re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

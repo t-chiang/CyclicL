@@ -6,7 +6,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.action.AbstractExternalJavaAction;
 
-public class ClearImpactAnalysis extends AbstractExternalJavaAction {
+public class ClassClearImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> arg0) {

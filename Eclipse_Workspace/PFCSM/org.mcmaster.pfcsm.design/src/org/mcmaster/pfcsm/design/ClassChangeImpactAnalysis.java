@@ -1,12 +1,15 @@
 package org.mcmaster.pfcsm.design;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.action.AbstractExternalJavaAction;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.diagram.DDiagramElementContainer;
-import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
@@ -18,8 +21,7 @@ import org.mcmaster.pfcsm.Inheritance;
 import org.mcmaster.pfcsm.Reference;
 import org.mcmaster.pfcsm.XOR;
 
-
-public class ChangeImpactAnalysis extends AbstractExternalJavaAction {
+public class ClassChangeImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {

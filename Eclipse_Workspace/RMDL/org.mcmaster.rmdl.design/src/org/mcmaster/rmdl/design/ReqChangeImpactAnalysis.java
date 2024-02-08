@@ -13,10 +13,12 @@ import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
-import org.mcmaster.requirements_modelling.rmdl.*;
-import org.mcmaster.requirements_modelling.rmdl.Package;
+import org.mcmaster.requirements_modelling.rmdl.DesignElement;
+import org.mcmaster.requirements_modelling.rmdl.Requirements;
+import org.mcmaster.requirements_modelling.rmdl.Review;
+import org.mcmaster.requirements_modelling.rmdl.TestCase;
 
-public class ChangeImpactAnalysis extends AbstractExternalJavaAction {
+public class ReqChangeImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {
@@ -54,6 +56,7 @@ public class ChangeImpactAnalysis extends AbstractExternalJavaAction {
 				for (DesignElement d : dElements) {
 					Collection<EObject> tempNode = new EObjectQuery(d).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 					RGBValues newBorderColor = RGBValues.create(255, 0, 0);
+					System.out.println(tempNode.toArray()[0]);
 					((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
 					((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderSize(3);
 					((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());

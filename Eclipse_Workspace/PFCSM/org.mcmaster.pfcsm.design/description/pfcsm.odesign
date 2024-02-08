@@ -24,7 +24,7 @@
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="Impact Analysis">
             <menuItemDescription xsi:type="tool_1:GroupMenu" name="Impact Analysis">
-              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Change Impact Analysis" id="DesignChangeImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Class Change Impact Analysis" id="ClassChangeImpactAnalysis"/>
               <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Clear Impact Analysis" id="DesignClearImpactAnalysis"/>
             </menuItemDescription>
           </ownedTools>

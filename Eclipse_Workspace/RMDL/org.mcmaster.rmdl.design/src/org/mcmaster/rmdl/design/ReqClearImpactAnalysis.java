@@ -14,7 +14,7 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 
-public class ClearImpactAnalysis extends AbstractExternalJavaAction {
+public class ReqClearImpactAnalysis extends AbstractExternalJavaAction {
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> selection) {

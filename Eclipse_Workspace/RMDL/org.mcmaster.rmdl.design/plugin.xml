@@ -13,4 +13,15 @@
 			class="org.mcmaster.rmdl.xtextsirius.RghLangInjector"
 		/>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.mcmaster.rmdl.design.ReqChangeImpactAnalysis"
+           id="ReqChangeImpactAnalysis">
+     </javaActions>
+     <javaActions
+           actionClass="org.mcmaster.rmdl.design.ReqClearImpactAnalysis"
+           id="ReqClearImpactAnalysis">
+     </javaActions>
+  </extension>
 </plugin>

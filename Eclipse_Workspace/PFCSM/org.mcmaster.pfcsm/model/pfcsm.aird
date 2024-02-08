@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_BshdIOOVEe2A-omamEYMVA" selectedViews="_BuhBMOOVEe2A-omamEYMVA" version="15.1.0.202211301600">
+  <viewpoint:DAnalysis uid="_BshdIOOVEe2A-omamEYMVA" selectedViews="_BuhBMOOVEe2A-omamEYMVA _x_dlAMHYEe6xgaeetDzypA" version="15.1.0.202211301600">
     <semanticResources>pfcsm.ecore</semanticResources>
     <semanticResources>pfcsm.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_BuhBMOOVEe2A-omamEYMVA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_BvBXgOOVEe2A-omamEYMVA" name="pfcsm" repPath="#_Bu-UMOOVEe2A-omamEYMVA" changeId="1705361674864">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_BvBXgOOVEe2A-omamEYMVA" name="pfcsm" repPath="#_Bu-UMOOVEe2A-omamEYMVA" changeId="1706885815976">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="pfcsm.ecore#/"/>
       </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_x_dlAMHYEe6xgaeetDzypA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']"/>
     </ownedViews>
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram uid="_Bu-UMOOVEe2A-omamEYMVA">
@@ -365,7 +368,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpIQE3j4Ee6ieMt9z_Fj7Q" x="6" y="-24"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_vpIQFHj4Ee6ieMt9z_Fj7Q" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpIQFXj4Ee6ieMt9z_Fj7Q" x="-5" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpIQFXj4Ee6ieMt9z_Fj7Q" x="-38" y="19"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_vpHpAXj4Ee6ieMt9z_Fj7Q" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_vpHpAnj4Ee6ieMt9z_Fj7Q" fontName="Segoe UI" fontHeight="8"/>
@@ -397,7 +400,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpI3L3j4Ee6ieMt9z_Fj7Q" x="4" y="24"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_vpJeMHj4Ee6ieMt9z_Fj7Q" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpJeMXj4Ee6ieMt9z_Fj7Q" x="-5" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpJeMXj4Ee6ieMt9z_Fj7Q" x="-15" y="29"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_vpI3KXj4Ee6ieMt9z_Fj7Q" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_vpI3Knj4Ee6ieMt9z_Fj7Q" fontName="Segoe UI" fontHeight="8"/>
@@ -426,7 +429,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4H5epbP9Ee6rwuDVy4PQ4g" x="-18" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_4H5eprP9Ee6rwuDVy4PQ4g" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4H5ep7P9Ee6rwuDVy4PQ4g" x="11" y="19"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4H5ep7P9Ee6rwuDVy4PQ4g" x="34" y="23"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_4H6FsLP9Ee6rwuDVy4PQ4g" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4H6FsbP9Ee6rwuDVy4PQ4g" x="5" y="10"/>
@@ -933,6 +936,7 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']/@ownedRepresentationExtensions[name='Entities%20With%20Archetypes']/@layers[name='Archetypes']"/>
     <target xmi:type="ecore:EPackage" href="pfcsm.ecore#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

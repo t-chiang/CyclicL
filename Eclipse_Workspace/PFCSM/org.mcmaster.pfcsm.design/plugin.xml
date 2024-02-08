@@ -11,8 +11,8 @@
   <extension
         point="org.eclipse.sirius.externalJavaAction">
      <javaActions
-           actionClass="org.mcmaster.pfcsm.design.ChangeImpactAnalysis"
-           id="DesignChangeImpactAnalysis">
+           actionClass="org.mcmaster.pfcsm.design.ClassChangeImpactAnalysis"
+           id="ClassChangeImpactAnalysis">
      </javaActions>
      <javaActions
            actionClass="org.mcmaster.pfcsm.design.ClearImpactAnalysis"

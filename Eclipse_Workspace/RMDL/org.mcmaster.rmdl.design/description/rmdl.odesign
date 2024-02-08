@@ -11,6 +11,12 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Impact Analysis">
+            <menuItemDescription xsi:type="tool_1:GroupMenu" name="Impact Analysis">
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Requirements Change Impact Analysis" id="ReqChangeImpactAnalysis"/>
+              <itemDescriptions xsi:type="tool_1:ExternalJavaAction" name="Requirements Clear Impact Analysis" id="ReqClearImpactAnalysis"/>
+            </menuItemDescription>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Model Layer" activeByDefault="true">
