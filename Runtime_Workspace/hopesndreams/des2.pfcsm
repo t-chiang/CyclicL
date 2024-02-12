@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
 <pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <desclass name="DesignElement1" referenceTo="//@reference.1" referenceFrom="//@reference.0 //@reference.3"/>
-  <desclass name="DesignElement2" referenceFrom="//@reference.1"/>
-  <desclass name="DesignElement3" referenceTo="//@reference.0"/>
-  <desclass name="DesignElement4" referenceTo="//@reference.3" referenceFrom="//@reference.2"/>
-  <desclass name="DesignElement5" referenceTo="//@reference.2"/>
-  <reference xsi:type="pfcsm:Association" source="//@desclass.2" target="//@desclass.0"/>
-  <reference xsi:type="pfcsm:Association" source="//@desclass.0" target="//@desclass.1"/>
-  <reference xsi:type="pfcsm:Association" source="//@desclass.4" target="//@desclass.3"/>
-  <reference xsi:type="pfcsm:Association" source="//@desclass.3" target="//@desclass.0"/>
+  <desclass name="DesignElement1" usedby="//@reference.0 //@reference.1 //@reference.2"/>
+  <desclass name="DesignElement2" uses="//@reference.2 //@reference.4" usedby="//@reference.3"/>
+  <desclass name="DesignElement3" uses="//@reference.1"/>
+  <desclass name="DesignElement4" uses="//@reference.0 //@reference.5" usedby="//@reference.7"/>
+  <desclass name="DesignElement5" usedby="//@reference.5"/>
+  <desclass name="Class6" uses="//@reference.6 //@reference.7" usedby="//@reference.4"/>
+  <desclass name="Class7" usedby="//@reference.6"/>
+  <desclass name="Class8" uses="//@reference.3"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.3" src="//@desclass.0"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.2" src="//@desclass.0"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.1" src="//@desclass.0"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.7" src="//@desclass.1"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.1" src="//@desclass.5"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.3" src="//@desclass.4"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.5" src="//@desclass.6"/>
+  <reference xsi:type="pfcsm:Association" tgt="//@desclass.5" src="//@desclass.3"/>
 </pfcsm:Class_Diagram_Root>

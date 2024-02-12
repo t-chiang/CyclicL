@@ -12,8 +12,8 @@
   <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="2" traceto="//@designelement.1" review="//@review.1" testcase="//@testcase.1"/>
   <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="3" traceto="//@designelement.2" review="//@review.2" testcase="//@testcase.2"/>
   <requirements xsi:type="rmdl:Functional" name="FunctionalReq" ID="4" traceto="//@designelement.3" review="//@review.3" testcase="//@testcase.3"/>
-  <review reviewer="SomePerson" requirements="//@requirements.0"/>
-  <review reviewer="SomePerson" requirements="//@requirements.1"/>
-  <review reviewer="SomePerson" requirements="//@requirements.2"/>
-  <review reviewer="SomePerson" requirements="//@requirements.3"/>
+  <review reviewer="Reviewer" requirements="//@requirements.0"/>
+  <review reviewer="Reviewer" requirements="//@requirements.1"/>
+  <review reviewer="Reviewer" requirements="//@requirements.2"/>
+  <review reviewer="Reviewer" requirements="//@requirements.3"/>
 </rmdl:Requirement_Root>

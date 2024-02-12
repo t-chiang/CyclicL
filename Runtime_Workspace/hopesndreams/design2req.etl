@@ -26,7 +26,7 @@ rule concreteClass2designElement
 			requirementID++;
 			funcreq.traceto.add(desElement);
 			functest.requirements.add(funcreq);
-			rev.setreviewer("SomePerson");
+			rev.setreviewer("Reviewer");
 			rev.requirements.add(funcreq);
 			functest.setID(testID);
 			testID++;
