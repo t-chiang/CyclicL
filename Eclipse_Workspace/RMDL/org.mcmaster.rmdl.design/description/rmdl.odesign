@@ -300,11 +300,10 @@
       <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
     </ownedRepresentations>
   </ownedViewpoints>
-  <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
-    <metamodels href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
-    <categories name="Text Editor">
-      <pages name="Default Page" labelExpression="Properties" semanticCandidateExpression="var:self">
-        <extends href="../../org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@pages.0"/>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="Requirements Properties View">
+    <categories>
+      <pages>
+        <extends href="platform:/plugin/org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@pages.0"/>
       </pages>
       <pages name="Rgh Gui" labelExpression="Requirement Description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0" indented="true"/>
       <groups name="Requirements_DSL" labelExpression="description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self">

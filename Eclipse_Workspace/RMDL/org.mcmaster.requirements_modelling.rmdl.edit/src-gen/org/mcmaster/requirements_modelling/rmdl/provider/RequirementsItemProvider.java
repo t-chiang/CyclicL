@@ -56,7 +56,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addNamePropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addVerifyMethodPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
 			addTracetoPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
@@ -110,22 +109,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_description_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__DESCRIPTION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Verify Method feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVerifyMethodPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_verifyMethod_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_verifyMethod_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__VERIFY_METHOD, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -238,7 +221,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 		case RmdlPackage.REQUIREMENTS__NAME:
 		case RmdlPackage.REQUIREMENTS__ID:
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
-		case RmdlPackage.REQUIREMENTS__VERIFY_METHOD:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

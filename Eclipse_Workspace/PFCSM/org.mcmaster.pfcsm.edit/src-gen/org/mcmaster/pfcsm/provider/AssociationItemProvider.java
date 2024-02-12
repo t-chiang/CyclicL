@@ -46,8 +46,6 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 
 			addSrcMultPropertyDescriptor(object);
 			addTgtMultPropertyDescriptor(object);
-			addAscSrcPropertyDescriptor(object);
-			addAscTgtPropertyDescriptor(object);
 			addTgtPropertyDescriptor(object);
 			addSrcPropertyDescriptor(object);
 		}
@@ -84,36 +82,6 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 								"_UI_Association_type"),
 						PfcsmPackage.Literals.ASSOCIATION__TGT_MULT, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Asc Src feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAscSrcPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_ascSrc_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_ascSrc_feature",
-								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__ASC_SRC, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Asc Tgt feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAscTgtPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_ascTgt_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_ascTgt_feature",
-								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__ASC_TGT, true, false, true, null, null, null));
 	}
 
 	/**

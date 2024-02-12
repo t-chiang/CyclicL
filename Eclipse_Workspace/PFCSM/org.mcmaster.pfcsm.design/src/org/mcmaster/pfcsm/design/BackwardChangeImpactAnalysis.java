@@ -46,7 +46,7 @@ public class BackwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 	@Override
 	public void execute(Collection<? extends EObject> selection, Map<String, Object> arg1) {
 		// TODO Auto-generated method stub
-		System.out.println("-------------Start Change Impact Analysis-------------");
+		System.out.println("-------------Start Backward Change Impact Analysis-------------");
 //		System.out.println(selection.toArray()[0].getClass().getName() == "org.eclipse.sirius.diagram.model.business.internal.spec.DNodeListSpec");
 		RGBValues newBorderColor = RGBValues.create(255, 0, 0);
 		for(EObject s: selection) {
@@ -73,6 +73,7 @@ public class BackwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 				throw new IllegalArgumentException("Change Impact Analysis does not work on type " + ((DSemanticDecorator) s).getTarget().eClass().getName());
 			}
 		}
+		System.out.println("-------------End Backward Change Impact Analysis-------------");
 	}
 
 	public void backwardImpactAnalysis(DesClass entity) {
@@ -88,8 +89,6 @@ public class BackwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 			Iterator<? extends Association> assocSrcListIt = assocSrcList.iterator();
 			while(assocSrcListIt.hasNext()) {
 				DesClass tempObj = assocSrcListIt.next().getSrc();
-				System.out.println("Entity is: " + entity);
-				System.out.println("tempObj is: " + tempObj);
 				Collection<EObject> tempClass = new EObjectQuery(tempObj).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderSize(3);

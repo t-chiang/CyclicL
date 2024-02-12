@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod <em>Verify Method</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
@@ -81,7 +80,7 @@ public interface Requirements extends EObject {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Description()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getDescription();
@@ -95,28 +94,6 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Verify Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Verify Method</em>' attribute.
-	 * @see #setVerifyMethod(String)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_VerifyMethod()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getVerifyMethod();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod <em>Verify Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Verify Method</em>' attribute.
-	 * @see #getVerifyMethod()
-	 * @generated
-	 */
-	void setVerifyMethod(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.

@@ -8,9 +8,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.mcmaster.pfcsm.Attribute;
+import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
  * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Attribute} object.
@@ -40,8 +42,40 @@ public class AttributeItemProvider extends ElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addUsesPropertyDescriptor(object);
+			addProducesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Uses feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attribute_uses_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attribute_uses_feature",
+								"_UI_Attribute_type"),
+						PfcsmPackage.Literals.ATTRIBUTE__USES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Produces feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProducesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Attribute_produces_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Attribute_produces_feature",
+								"_UI_Attribute_type"),
+						PfcsmPackage.Literals.ATTRIBUTE__PRODUCES, true, false, true, null, null, null));
 	}
 
 	/**

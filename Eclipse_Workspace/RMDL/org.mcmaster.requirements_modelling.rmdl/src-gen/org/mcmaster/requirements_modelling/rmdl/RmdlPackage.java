@@ -95,22 +95,13 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENTS__DESCRIPTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Verify Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENTS__VERIFY_METHOD = 3;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__REQUIREMENT_ROOT = 4;
+	int REQUIREMENTS__REQUIREMENT_ROOT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
@@ -119,7 +110,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__TRACETO = 5;
+	int REQUIREMENTS__TRACETO = 4;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
@@ -128,7 +119,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__REVIEW = 6;
+	int REQUIREMENTS__REVIEW = 5;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -137,7 +128,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__TESTCASE = 7;
+	int REQUIREMENTS__TESTCASE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Requirements</em>' class.
@@ -146,7 +137,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS_FEATURE_COUNT = 8;
+	int REQUIREMENTS_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Requirements</em>' class.
@@ -193,15 +184,6 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTIONAL__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Verify Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTIONAL__VERIFY_METHOD = REQUIREMENTS__VERIFY_METHOD;
 
 	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
@@ -295,15 +277,6 @@ public interface RmdlPackage extends EPackage {
 	int QUALITATIVE__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Verify Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITATIVE__VERIFY_METHOD = REQUIREMENTS__VERIFY_METHOD;
-
-	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -393,15 +366,6 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Verify Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__VERIFY_METHOD = REQUIREMENTS__VERIFY_METHOD;
 
 	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
@@ -666,15 +630,6 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int SAFETY__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Verify Method</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAFETY__VERIFY_METHOD = REQUIREMENTS__VERIFY_METHOD;
 
 	/**
 	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
@@ -1001,17 +956,6 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRequirements_Description();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod <em>Verify Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Verify Method</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getVerifyMethod()
-	 * @see #getRequirements()
-	 * @generated
-	 */
-	EAttribute getRequirements_VerifyMethod();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}'.
@@ -1466,14 +1410,6 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REQUIREMENTS__DESCRIPTION = eINSTANCE.getRequirements_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Verify Method</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REQUIREMENTS__VERIFY_METHOD = eINSTANCE.getRequirements_VerifyMethod();
 
 		/**
 		 * The meta object literal for the '<em><b>Requirement root</b></em>' container reference feature.

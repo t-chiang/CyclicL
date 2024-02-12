@@ -41,7 +41,6 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getVerifyMethod <em>Verify Method</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceto <em>Traceto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getReview <em>Review</em>}</li>
@@ -110,26 +109,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getVerifyMethod() <em>Verify Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVerifyMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VERIFY_METHOD_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVerifyMethod() <em>Verify Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVerifyMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected String verifyMethod = VERIFY_METHOD_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTraceto() <em>Traceto</em>}' reference list.
@@ -242,28 +221,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENTS__DESCRIPTION, oldDescription,
 					description));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getVerifyMethod() {
-		return verifyMethod;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVerifyMethod(String newVerifyMethod) {
-		String oldVerifyMethod = verifyMethod;
-		verifyMethod = newVerifyMethod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENTS__VERIFY_METHOD,
-					oldVerifyMethod, verifyMethod));
 	}
 
 	/**
@@ -451,8 +408,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return getID();
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			return getDescription();
-		case RmdlPackage.REQUIREMENTS__VERIFY_METHOD:
-			return getVerifyMethod();
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return getRequirement_root();
 		case RmdlPackage.REQUIREMENTS__TRACETO:
@@ -482,9 +437,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			setDescription((String) newValue);
-			return;
-		case RmdlPackage.REQUIREMENTS__VERIFY_METHOD:
-			setVerifyMethod((String) newValue);
 			return;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) newValue);
@@ -522,9 +474,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case RmdlPackage.REQUIREMENTS__VERIFY_METHOD:
-			setVerifyMethod(VERIFY_METHOD_EDEFAULT);
-			return;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			setRequirement_root((Requirement_Root) null);
 			return;
@@ -555,8 +504,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return id != ID_EDEFAULT;
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case RmdlPackage.REQUIREMENTS__VERIFY_METHOD:
-			return VERIFY_METHOD_EDEFAULT == null ? verifyMethod != null : !VERIFY_METHOD_EDEFAULT.equals(verifyMethod);
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			return getRequirement_root() != null;
 		case RmdlPackage.REQUIREMENTS__TRACETO:
@@ -586,8 +533,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		result.append(id);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", verifyMethod: ");
-		result.append(verifyMethod);
 		result.append(')');
 		return result.toString();
 	}

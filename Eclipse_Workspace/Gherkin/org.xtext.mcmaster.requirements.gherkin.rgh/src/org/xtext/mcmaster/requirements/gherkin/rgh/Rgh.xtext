@@ -25,13 +25,13 @@ Operation:
 	'Operation' name=QualifiedName
 ;
 Given:
-	'Given' '{' (preconditions+=Precondition)* '}';
+	{Given} 'Given' '{' (preconditions+=Precondition)* '}';
 
 When:
-	'When' '{' (events+=Event)* '}';
+	{When} 'When' '{' (events+=Event)* '}';
 	
 Then:
-	'Then' '{' (postconditions+=Postcondition)* '}';
+	{Then} 'Then' '{' (postconditions+=Postcondition)* '}';
 	
 
 //And:
