@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -54,8 +55,24 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Reference feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReferencePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Class_Diagram_Root_reference_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Class_Diagram_Root_reference_feature",
+								"_UI_Class_Diagram_Root_type"),
+						PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -70,7 +87,7 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__CLASS);
+			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESCLASS);
 			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE);
 		}
 		return childrenFeatures;
@@ -133,7 +150,7 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Class_Diagram_Root.class)) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__CLASS:
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -152,11 +169,8 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__CLASS,
-				PfcsmFactory.eINSTANCE.createAbstractClass()));
-
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__CLASS,
-				PfcsmFactory.eINSTANCE.createConcreteClass()));
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESCLASS,
+				PfcsmFactory.eINSTANCE.createDesClass()));
 
 		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
 				PfcsmFactory.eINSTANCE.createAssociation()));

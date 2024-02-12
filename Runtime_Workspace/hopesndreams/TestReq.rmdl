@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmdl:Requirement_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <testcase ID="1" requirements="//@requirements.0"/>
+  <testcase ID="2" requirements="//@requirements.1"/>
+  <designelement name="DesignElement1" tracefrom="//@requirements.0 //@requirements.1"/>
+  <designelement name="DesignElement2" tracefrom="//@requirements.0"/>
+  <designelement name="DesignElement3" tracefrom="//@requirements.0"/>
+  <designelement name="DesignElement4" tracefrom="//@requirements.1"/>
+  <designelement name="DesignElement5" tracefrom="//@requirements.1"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="1" description="Module DesignElement2&#xD;&#xA;Given {&#xD;&#xA;&#x9;Precond one: &quot;Hopes and dreams&quot;&#xD;&#xA;}&#xD;&#xA;When {&#xD;&#xA;&#x9;Event one: &quot;Make the dream happen&quot;&#xD;&#xA;}&#xD;&#xA;Then{&#xD;&#xA;&#x9;Postcond one: &quot;Live the dream&quot;&#xD;&#xA;}" traceto="//@designelement.1 //@designelement.0 //@designelement.2" review="//@review.0" testcase="//@testcase.0"/>
+  <requirements xsi:type="rmdl:Functional" name="FunctionalReq2" ID="2" traceto="//@designelement.0 //@designelement.3 //@designelement.4" review="//@review.1" testcase="//@testcase.1"/>
+  <review reviewer="Reviewer1" requirements="//@requirements.0"/>
+  <review reviewer="Reviewer2" requirements="//@requirements.1"/>
+</rmdl:Requirement_Root>

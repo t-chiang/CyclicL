@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.Element;
+import org.mcmaster.pfcsm.DesClass;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
@@ -22,8 +22,8 @@ import org.mcmaster.pfcsm.PfcsmPackage;
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.impl.AssociationImpl#getSrcMult <em>Src Mult</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.AssociationImpl#getTgtMult <em>Tgt Mult</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.AssociationImpl#getAscSrc <em>Asc Src</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.AssociationImpl#getAscTgt <em>Asc Tgt</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.AssociationImpl#getTgt <em>Tgt</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.AssociationImpl#getSrc <em>Src</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,23 +67,23 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	protected String tgtMult = TGT_MULT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAscSrc() <em>Asc Src</em>}' reference.
+	 * The cached value of the '{@link #getTgt() <em>Tgt</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAscSrc()
+	 * @see #getTgt()
 	 * @generated
 	 * @ordered
 	 */
-	protected Element ascSrc;
+	protected DesClass tgt;
 	/**
-	 * The cached value of the '{@link #getAscTgt() <em>Asc Tgt</em>}' reference.
+	 * The cached value of the '{@link #getSrc() <em>Src</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAscTgt()
+	 * @see #getSrc()
 	 * @generated
 	 * @ordered
 	 */
-	protected Element ascTgt;
+	protected DesClass src;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,17 +153,17 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element getAscSrc() {
-		if (ascSrc != null && ascSrc.eIsProxy()) {
-			InternalEObject oldAscSrc = (InternalEObject) ascSrc;
-			ascSrc = (Element) eResolveProxy(oldAscSrc);
-			if (ascSrc != oldAscSrc) {
+	public DesClass getTgt() {
+		if (tgt != null && tgt.eIsProxy()) {
+			InternalEObject oldTgt = (InternalEObject) tgt;
+			tgt = (DesClass) eResolveProxy(oldTgt);
+			if (tgt != oldTgt) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.ASSOCIATION__ASC_SRC,
-							oldAscSrc, ascSrc));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.ASSOCIATION__TGT, oldTgt,
+							tgt));
 			}
 		}
-		return ascSrc;
+		return tgt;
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element basicGetAscSrc() {
-		return ascSrc;
+	public DesClass basicGetTgt() {
+		return tgt;
 	}
 
 	/**
@@ -180,12 +180,12 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAscSrc(Element newAscSrc, NotificationChain msgs) {
-		Element oldAscSrc = ascSrc;
-		ascSrc = newAscSrc;
+	public NotificationChain basicSetTgt(DesClass newTgt, NotificationChain msgs) {
+		DesClass oldTgt = tgt;
+		tgt = newTgt;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PfcsmPackage.ASSOCIATION__ASC_SRC, oldAscSrc, newAscSrc);
+					PfcsmPackage.ASSOCIATION__TGT, oldTgt, newTgt);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -199,21 +199,18 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAscSrc(Element newAscSrc) {
-		if (newAscSrc != ascSrc) {
+	public void setTgt(DesClass newTgt) {
+		if (newTgt != tgt) {
 			NotificationChain msgs = null;
-			if (ascSrc != null)
-				msgs = ((InternalEObject) ascSrc).eInverseRemove(this, PfcsmPackage.ELEMENT__ASSOCIATION_TO,
-						Element.class, msgs);
-			if (newAscSrc != null)
-				msgs = ((InternalEObject) newAscSrc).eInverseAdd(this, PfcsmPackage.ELEMENT__ASSOCIATION_TO,
-						Element.class, msgs);
-			msgs = basicSetAscSrc(newAscSrc, msgs);
+			if (tgt != null)
+				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DES_CLASS__USES, DesClass.class, msgs);
+			if (newTgt != null)
+				msgs = ((InternalEObject) newTgt).eInverseAdd(this, PfcsmPackage.DES_CLASS__USES, DesClass.class, msgs);
+			msgs = basicSetTgt(newTgt, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ASSOCIATION__ASC_SRC, newAscSrc,
-					newAscSrc));
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ASSOCIATION__TGT, newTgt, newTgt));
 	}
 
 	/**
@@ -221,17 +218,17 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element getAscTgt() {
-		if (ascTgt != null && ascTgt.eIsProxy()) {
-			InternalEObject oldAscTgt = (InternalEObject) ascTgt;
-			ascTgt = (Element) eResolveProxy(oldAscTgt);
-			if (ascTgt != oldAscTgt) {
+	public DesClass getSrc() {
+		if (src != null && src.eIsProxy()) {
+			InternalEObject oldSrc = (InternalEObject) src;
+			src = (DesClass) eResolveProxy(oldSrc);
+			if (src != oldSrc) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.ASSOCIATION__ASC_TGT,
-							oldAscTgt, ascTgt));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.ASSOCIATION__SRC, oldSrc,
+							src));
 			}
 		}
-		return ascTgt;
+		return src;
 	}
 
 	/**
@@ -239,8 +236,8 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element basicGetAscTgt() {
-		return ascTgt;
+	public DesClass basicGetSrc() {
+		return src;
 	}
 
 	/**
@@ -248,12 +245,12 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAscTgt(Element newAscTgt, NotificationChain msgs) {
-		Element oldAscTgt = ascTgt;
-		ascTgt = newAscTgt;
+	public NotificationChain basicSetSrc(DesClass newSrc, NotificationChain msgs) {
+		DesClass oldSrc = src;
+		src = newSrc;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PfcsmPackage.ASSOCIATION__ASC_TGT, oldAscTgt, newAscTgt);
+					PfcsmPackage.ASSOCIATION__SRC, oldSrc, newSrc);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -267,21 +264,20 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAscTgt(Element newAscTgt) {
-		if (newAscTgt != ascTgt) {
+	public void setSrc(DesClass newSrc) {
+		if (newSrc != src) {
 			NotificationChain msgs = null;
-			if (ascTgt != null)
-				msgs = ((InternalEObject) ascTgt).eInverseRemove(this, PfcsmPackage.ELEMENT__ASSOCIATION_FROM,
-						Element.class, msgs);
-			if (newAscTgt != null)
-				msgs = ((InternalEObject) newAscTgt).eInverseAdd(this, PfcsmPackage.ELEMENT__ASSOCIATION_FROM,
-						Element.class, msgs);
-			msgs = basicSetAscTgt(newAscTgt, msgs);
+			if (src != null)
+				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DES_CLASS__USEDBY, DesClass.class,
+						msgs);
+			if (newSrc != null)
+				msgs = ((InternalEObject) newSrc).eInverseAdd(this, PfcsmPackage.DES_CLASS__USEDBY, DesClass.class,
+						msgs);
+			msgs = basicSetSrc(newSrc, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ASSOCIATION__ASC_TGT, newAscTgt,
-					newAscTgt));
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ASSOCIATION__SRC, newSrc, newSrc));
 	}
 
 	/**
@@ -292,16 +288,15 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.ASSOCIATION__ASC_SRC:
-			if (ascSrc != null)
-				msgs = ((InternalEObject) ascSrc).eInverseRemove(this, PfcsmPackage.ELEMENT__ASSOCIATION_TO,
-						Element.class, msgs);
-			return basicSetAscSrc((Element) otherEnd, msgs);
-		case PfcsmPackage.ASSOCIATION__ASC_TGT:
-			if (ascTgt != null)
-				msgs = ((InternalEObject) ascTgt).eInverseRemove(this, PfcsmPackage.ELEMENT__ASSOCIATION_FROM,
-						Element.class, msgs);
-			return basicSetAscTgt((Element) otherEnd, msgs);
+		case PfcsmPackage.ASSOCIATION__TGT:
+			if (tgt != null)
+				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DES_CLASS__USES, DesClass.class, msgs);
+			return basicSetTgt((DesClass) otherEnd, msgs);
+		case PfcsmPackage.ASSOCIATION__SRC:
+			if (src != null)
+				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DES_CLASS__USEDBY, DesClass.class,
+						msgs);
+			return basicSetSrc((DesClass) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -314,10 +309,10 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.ASSOCIATION__ASC_SRC:
-			return basicSetAscSrc(null, msgs);
-		case PfcsmPackage.ASSOCIATION__ASC_TGT:
-			return basicSetAscTgt(null, msgs);
+		case PfcsmPackage.ASSOCIATION__TGT:
+			return basicSetTgt(null, msgs);
+		case PfcsmPackage.ASSOCIATION__SRC:
+			return basicSetSrc(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -334,14 +329,14 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 			return getSrcMult();
 		case PfcsmPackage.ASSOCIATION__TGT_MULT:
 			return getTgtMult();
-		case PfcsmPackage.ASSOCIATION__ASC_SRC:
+		case PfcsmPackage.ASSOCIATION__TGT:
 			if (resolve)
-				return getAscSrc();
-			return basicGetAscSrc();
-		case PfcsmPackage.ASSOCIATION__ASC_TGT:
+				return getTgt();
+			return basicGetTgt();
+		case PfcsmPackage.ASSOCIATION__SRC:
 			if (resolve)
-				return getAscTgt();
-			return basicGetAscTgt();
+				return getSrc();
+			return basicGetSrc();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -360,11 +355,11 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 		case PfcsmPackage.ASSOCIATION__TGT_MULT:
 			setTgtMult((String) newValue);
 			return;
-		case PfcsmPackage.ASSOCIATION__ASC_SRC:
-			setAscSrc((Element) newValue);
+		case PfcsmPackage.ASSOCIATION__TGT:
+			setTgt((DesClass) newValue);
 			return;
-		case PfcsmPackage.ASSOCIATION__ASC_TGT:
-			setAscTgt((Element) newValue);
+		case PfcsmPackage.ASSOCIATION__SRC:
+			setSrc((DesClass) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,11 +379,11 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 		case PfcsmPackage.ASSOCIATION__TGT_MULT:
 			setTgtMult(TGT_MULT_EDEFAULT);
 			return;
-		case PfcsmPackage.ASSOCIATION__ASC_SRC:
-			setAscSrc((Element) null);
+		case PfcsmPackage.ASSOCIATION__TGT:
+			setTgt((DesClass) null);
 			return;
-		case PfcsmPackage.ASSOCIATION__ASC_TGT:
-			setAscTgt((Element) null);
+		case PfcsmPackage.ASSOCIATION__SRC:
+			setSrc((DesClass) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -406,10 +401,10 @@ public class AssociationImpl extends ReferenceImpl implements Association {
 			return SRC_MULT_EDEFAULT == null ? srcMult != null : !SRC_MULT_EDEFAULT.equals(srcMult);
 		case PfcsmPackage.ASSOCIATION__TGT_MULT:
 			return TGT_MULT_EDEFAULT == null ? tgtMult != null : !TGT_MULT_EDEFAULT.equals(tgtMult);
-		case PfcsmPackage.ASSOCIATION__ASC_SRC:
-			return ascSrc != null;
-		case PfcsmPackage.ASSOCIATION__ASC_TGT:
-			return ascTgt != null;
+		case PfcsmPackage.ASSOCIATION__TGT:
+			return tgt != null;
+		case PfcsmPackage.ASSOCIATION__SRC:
+			return src != null;
 		}
 		return super.eIsSet(featureID);
 	}

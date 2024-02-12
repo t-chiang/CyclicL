@@ -50,40 +50,24 @@ public class ReferenceItemProvider extends ItemProviderAdapter implements IEditi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
+			addClass_diagram_rootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source feature.
+	 * This adds a property descriptor for the Class diagram root feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourcePropertyDescriptor(Object object) {
+	protected void addClass_diagram_rootPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Reference_source_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Reference_source_feature",
+						getResourceLocator(), getString("_UI_Reference_class_diagram_root_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Reference_class_diagram_root_feature",
 								"_UI_Reference_type"),
-						PfcsmPackage.Literals.REFERENCE__SOURCE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Reference_target_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Reference_target_feature",
-								"_UI_Reference_type"),
-						PfcsmPackage.Literals.REFERENCE__TARGET, true, false, true, null, null, null));
+						PfcsmPackage.Literals.REFERENCE__CLASS_DIAGRAM_ROOT, true, false, true, null, null, null));
 	}
 
 	/**

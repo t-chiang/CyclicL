@@ -45,6 +45,8 @@ public class CompositionItemProvider extends ReferenceItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTgtMultPropertyDescriptor(object);
+			addSrcPropertyDescriptor(object);
+			addTgtPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,6 +65,36 @@ public class CompositionItemProvider extends ReferenceItemProvider {
 								"_UI_Composition_type"),
 						PfcsmPackage.Literals.COMPOSITION__TGT_MULT, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Src feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSrcPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Composition_src_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Composition_src_feature",
+								"_UI_Composition_type"),
+						PfcsmPackage.Literals.COMPOSITION__SRC, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tgt feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTgtPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Composition_tgt_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Composition_tgt_feature",
+								"_UI_Composition_type"),
+						PfcsmPackage.Literals.COMPOSITION__TGT, true, false, true, null, null, null));
 	}
 
 	/**

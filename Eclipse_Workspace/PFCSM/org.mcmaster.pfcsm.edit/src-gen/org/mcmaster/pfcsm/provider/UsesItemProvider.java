@@ -8,8 +8,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Uses;
 
 /**
@@ -40,8 +42,38 @@ public class UsesItemProvider extends AssociationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAttributePropertyDescriptor(object);
+			addOperationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Uses_attribute_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Uses_attribute_feature", "_UI_Uses_type"),
+						PfcsmPackage.Literals.USES__ATTRIBUTE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Uses_operation_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Uses_operation_feature", "_UI_Uses_type"),
+						PfcsmPackage.Literals.USES__OPERATION, true, false, true, null, null, null));
 	}
 
 	/**

@@ -20,43 +20,65 @@
       <genEnumLiterals ecoreEnumLiteral="pfcsm.ecore#//DataStructure/Value"/>
       <genEnumLiterals ecoreEnumLiteral="pfcsm.ecore#//DataStructure/Array"/>
     </genEnums>
-    <genClasses ecoreClass="pfcsm.ecore#//Class">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Class/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Class/isOptional"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class/referenceTo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class/referenceFrom"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class/element"/>
+    <genClasses ecoreClass="pfcsm.ecore#//DesClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//DesClass/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//DesClass/isOptional"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//DesClass/isAbstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/ownerof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/ownedby"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/uses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/usedby"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/xorfrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//DesClass/xorto"/>
     </genClasses>
     <genClasses ecoreClass="pfcsm.ecore#//Class_Diagram_Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class_Diagram_Root/class"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class_Diagram_Root/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class_Diagram_Root/desclass"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Class_Diagram_Root/reference"/>
     </genClasses>
-    <genClasses ecoreClass="pfcsm.ecore#//AbstractClass"/>
     <genClasses ecoreClass="pfcsm.ecore#//Reference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Reference/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Reference/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Reference/class_diagram_root"/>
     </genClasses>
     <genClasses ecoreClass="pfcsm.ecore#//Association">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Association/srcMult"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Association/tgtMult"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Association/ascSrc"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Association/ascTgt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Association/tgt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Association/src"/>
     </genClasses>
     <genClasses ecoreClass="pfcsm.ecore#//Composition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Composition/tgtMult"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Composition/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Composition/tgt"/>
     </genClasses>
-    <genClasses ecoreClass="pfcsm.ecore#//Inheritance"/>
-    <genClasses ecoreClass="pfcsm.ecore#//XOR"/>
-    <genClasses ecoreClass="pfcsm.ecore#//ConcreteClass"/>
+    <genClasses ecoreClass="pfcsm.ecore#//Inheritance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Inheritance/tgt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Inheritance/src"/>
+    </genClasses>
+    <genClasses ecoreClass="pfcsm.ecore#//XOR">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//XOR/tgt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//XOR/src"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="pfcsm.ecore#//Element">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Element/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Element/associationTo"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Element/associationFrom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pfcsm.ecore#//Element/isPublic"/>
     </genClasses>
-    <genClasses ecoreClass="pfcsm.ecore#//Uses"/>
-    <genClasses ecoreClass="pfcsm.ecore#//Produces"/>
-    <genClasses ecoreClass="pfcsm.ecore#//Attribute"/>
-    <genClasses ecoreClass="pfcsm.ecore#//Operation"/>
+    <genClasses ecoreClass="pfcsm.ecore#//Uses">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Uses/attribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Uses/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="pfcsm.ecore#//Produces">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Produces/operation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Produces/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="pfcsm.ecore#//Attribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Attribute/uses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Attribute/produces"/>
+    </genClasses>
+    <genClasses ecoreClass="pfcsm.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Operation/uses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pfcsm.ecore#//Operation/produces"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -13,8 +13,8 @@ package org.mcmaster.pfcsm;
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.Association#getSrcMult <em>Src Mult</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Association#getTgtMult <em>Tgt Mult</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Association#getAscSrc <em>Asc Src</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.Association#getAscTgt <em>Asc Tgt</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Association#getTgt <em>Tgt</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Association#getSrc <em>Src</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.pfcsm.PfcsmPackage#getAssociation()
@@ -70,50 +70,50 @@ public interface Association extends Reference {
 	void setTgtMult(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Asc Src</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Element#getAssociationTo <em>Association To</em>}'.
+	 * Returns the value of the '<em><b>Tgt</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.DesClass#getUses <em>Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Asc Src</em>' reference.
-	 * @see #setAscSrc(Element)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getAssociation_AscSrc()
-	 * @see org.mcmaster.pfcsm.Element#getAssociationTo
-	 * @model opposite="associationTo" required="true"
+	 * @return the value of the '<em>Tgt</em>' reference.
+	 * @see #setTgt(DesClass)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getAssociation_Tgt()
+	 * @see org.mcmaster.pfcsm.DesClass#getUses
+	 * @model opposite="uses" required="true"
 	 * @generated
 	 */
-	Element getAscSrc();
+	DesClass getTgt();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.Association#getAscSrc <em>Asc Src</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Association#getTgt <em>Tgt</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Asc Src</em>' reference.
-	 * @see #getAscSrc()
+	 * @param value the new value of the '<em>Tgt</em>' reference.
+	 * @see #getTgt()
 	 * @generated
 	 */
-	void setAscSrc(Element value);
+	void setTgt(DesClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Asc Tgt</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Element#getAssociationFrom <em>Association From</em>}'.
+	 * Returns the value of the '<em><b>Src</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.DesClass#getUsedby <em>Usedby</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Asc Tgt</em>' reference.
-	 * @see #setAscTgt(Element)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getAssociation_AscTgt()
-	 * @see org.mcmaster.pfcsm.Element#getAssociationFrom
-	 * @model opposite="associationFrom" required="true"
+	 * @return the value of the '<em>Src</em>' reference.
+	 * @see #setSrc(DesClass)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getAssociation_Src()
+	 * @see org.mcmaster.pfcsm.DesClass#getUsedby
+	 * @model opposite="usedby" required="true"
 	 * @generated
 	 */
-	Element getAscTgt();
+	DesClass getSrc();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.Association#getAscTgt <em>Asc Tgt</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Association#getSrc <em>Src</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Asc Tgt</em>' reference.
-	 * @see #getAscTgt()
+	 * @param value the new value of the '<em>Src</em>' reference.
+	 * @see #getSrc()
 	 * @generated
 	 */
-	void setAscTgt(Element value);
+	void setSrc(DesClass value);
 } // Association

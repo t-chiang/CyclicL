@@ -9,20 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.Attribute;
-import org.mcmaster.pfcsm.Class_Diagram_Root;
-import org.mcmaster.pfcsm.Composition;
-import org.mcmaster.pfcsm.ConcreteClass;
-import org.mcmaster.pfcsm.Element;
-import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.PfcsmPackage;
-import org.mcmaster.pfcsm.Produces;
-import org.mcmaster.pfcsm.Reference;
-import org.mcmaster.pfcsm.Uses;
-import org.mcmaster.pfcsm.XOR;
+import org.mcmaster.pfcsm.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,18 +67,13 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PfcsmSwitch<Adapter> modelSwitch = new PfcsmSwitch<Adapter>() {
 		@Override
-		public Adapter caseClass(org.mcmaster.pfcsm.Class object) {
-			return createClassAdapter();
+		public Adapter caseDesClass(DesClass object) {
+			return createDesClassAdapter();
 		}
 
 		@Override
 		public Adapter caseClass_Diagram_Root(Class_Diagram_Root object) {
 			return createClass_Diagram_RootAdapter();
-		}
-
-		@Override
-		public Adapter caseAbstractClass(AbstractClass object) {
-			return createAbstractClassAdapter();
 		}
 
 		@Override
@@ -117,11 +99,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseXOR(XOR object) {
 			return createXORAdapter();
-		}
-
-		@Override
-		public Adapter caseConcreteClass(ConcreteClass object) {
-			return createConcreteClassAdapter();
 		}
 
 		@Override
@@ -169,16 +146,16 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Class <em>Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.DesClass <em>Des Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.Class
+	 * @see org.mcmaster.pfcsm.DesClass
 	 * @generated
 	 */
-	public Adapter createClassAdapter() {
+	public Adapter createDesClassAdapter() {
 		return null;
 	}
 
@@ -193,20 +170,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClass_Diagram_RootAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.AbstractClass <em>Abstract Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.AbstractClass
-	 * @generated
-	 */
-	public Adapter createAbstractClassAdapter() {
 		return null;
 	}
 
@@ -291,20 +254,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOperationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.ConcreteClass <em>Concrete Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.ConcreteClass
-	 * @generated
-	 */
-	public Adapter createConcreteClassAdapter() {
 		return null;
 	}
 

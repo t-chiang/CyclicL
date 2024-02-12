@@ -46,8 +46,8 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 
 			addSrcMultPropertyDescriptor(object);
 			addTgtMultPropertyDescriptor(object);
-			addAscSrcPropertyDescriptor(object);
-			addAscTgtPropertyDescriptor(object);
+			addTgtPropertyDescriptor(object);
+			addSrcPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,33 +85,33 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Asc Src feature.
+	 * This adds a property descriptor for the Tgt feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAscSrcPropertyDescriptor(Object object) {
+	protected void addTgtPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_ascSrc_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_ascSrc_feature",
+						getResourceLocator(), getString("_UI_Association_tgt_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Association_tgt_feature",
 								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__ASC_SRC, true, false, true, null, null, null));
+						PfcsmPackage.Literals.ASSOCIATION__TGT, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Asc Tgt feature.
+	 * This adds a property descriptor for the Src feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAscTgtPropertyDescriptor(Object object) {
+	protected void addSrcPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_ascTgt_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_ascTgt_feature",
+						getResourceLocator(), getString("_UI_Association_src_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Association_src_feature",
 								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__ASC_TGT, true, false, true, null, null, null));
+						PfcsmPackage.Literals.ASSOCIATION__SRC, true, false, true, null, null, null));
 	}
 
 	/**

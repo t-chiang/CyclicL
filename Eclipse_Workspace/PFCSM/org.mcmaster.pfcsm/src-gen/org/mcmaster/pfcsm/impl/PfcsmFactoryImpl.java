@@ -11,21 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.Attribute;
-import org.mcmaster.pfcsm.Class_Diagram_Root;
-import org.mcmaster.pfcsm.Composition;
-import org.mcmaster.pfcsm.ConcreteClass;
-import org.mcmaster.pfcsm.DataStructure;
-import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.PfcsmFactory;
-import org.mcmaster.pfcsm.PfcsmPackage;
-import org.mcmaster.pfcsm.PrimitiveType;
-import org.mcmaster.pfcsm.Produces;
-import org.mcmaster.pfcsm.Uses;
-import org.mcmaster.pfcsm.XOR;
+import org.mcmaster.pfcsm.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,10 +56,10 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case PfcsmPackage.DES_CLASS:
+			return createDesClass();
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT:
 			return createClass_Diagram_Root();
-		case PfcsmPackage.ABSTRACT_CLASS:
-			return createAbstractClass();
 		case PfcsmPackage.ASSOCIATION:
 			return createAssociation();
 		case PfcsmPackage.COMPOSITION:
@@ -82,8 +68,6 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 			return createInheritance();
 		case PfcsmPackage.XOR:
 			return createXOR();
-		case PfcsmPackage.CONCRETE_CLASS:
-			return createConcreteClass();
 		case PfcsmPackage.USES:
 			return createUses();
 		case PfcsmPackage.PRODUCES:
@@ -136,9 +120,9 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Class_Diagram_Root createClass_Diagram_Root() {
-		Class_Diagram_RootImpl class_Diagram_Root = new Class_Diagram_RootImpl();
-		return class_Diagram_Root;
+	public DesClass createDesClass() {
+		DesClassImpl desClass = new DesClassImpl();
+		return desClass;
 	}
 
 	/**
@@ -146,9 +130,9 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractClass createAbstractClass() {
-		AbstractClassImpl abstractClass = new AbstractClassImpl();
-		return abstractClass;
+	public Class_Diagram_Root createClass_Diagram_Root() {
+		Class_Diagram_RootImpl class_Diagram_Root = new Class_Diagram_RootImpl();
+		return class_Diagram_Root;
 	}
 
 	/**
@@ -199,16 +183,6 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	public Operation createOperation() {
 		OperationImpl operation = new OperationImpl();
 		return operation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConcreteClass createConcreteClass() {
-		ConcreteClassImpl concreteClass = new ConcreteClassImpl();
-		return concreteClass;
 	}
 
 	/**

@@ -1,11 +1,77 @@
+pre{
+	var desclass_created : Set;
+}
+
 rule root2root
 	transform sourceRoot : requirement!Requirement_Root
 	to targetRoot : design!Class_Diagram_Root{
-		targetRoot.class.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!ConcreteClass)));
+		targetRoot.desclass.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!DesClass)));
+		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(design!Association)));
+		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(Sequence)).flatten());
 	}
 	
-rule designElement2concreteClass
+rule designElement2desClass
 	transform desElement : requirement!DesignElement
-	to concreteClass : design!ConcreteClass{
-		concreteClass.name = desElement.name;
+	to desClass : design!DesClass{
+		desClass.name = desElement.name;
+		desclass_created.add(desClass);
+		
 	}
+	
+rule functional2association
+	transform req : requirement!Functional
+	to assoc: Sequence{
+		var traceList: Set = req.traceto.asSet();
+//		This if statement is to do a quick check if a requirement only has 2 classes it's connected traced to and creates a single association between them.
+		if(traceList.size()== 2){
+			var newAssoc = new design!Association;
+			assoc.add(newAssoc);
+			for (d in desclass_created){
+				if(d.name == traceList[0].name)
+				newAssoc.tgt = d;
+			}
+			for (d in desclass_created){
+				if(d.name == traceList[1].name)
+				newAssoc.src = d;
+			}
+		}
+//		If there is more than one class that a requirement is traced to, this will iterate through all of them to create a temporary set that will be used to create associations between all relevant classes.
+		else if(traceList.size() > 2){
+			var tempClassSet: Set;
+			for(t in traceList){
+				for(d in desclass_created){
+					if(t.name == d.name){
+						tempClassSet.add(d);
+						break;
+					}
+				}
+			}
+			var i:Integer = 0;
+			while(i < tempClassSet.size()-1){
+				if(i==0){
+					var anotherAssoc = new design!Association;
+					assoc.add(anotherAssoc);
+					anotherAssoc.src = tempClassSet[0];
+					anotherAssoc.tgt = tempClassSet[1];
+					i++;
+				}
+				else{
+					var anotherAssoc = new design!Association;
+					assoc.add(anotherAssoc);
+					anotherAssoc.src = tempClassSet[i];
+					anotherAssoc.tgt = tempClassSet[(i+1)];
+					i++;
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+//rule spec2op
+//	transform spec : requirement!Requirements
+//	to op : design!Class{
+//	
+//	}

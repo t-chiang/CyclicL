@@ -8,7 +8,9 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
  * This is the item provider adapter for a {@link org.mcmaster.pfcsm.XOR} object.
@@ -38,8 +40,38 @@ public class XORItemProvider extends ReferenceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTgtPropertyDescriptor(object);
+			addSrcPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Tgt feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTgtPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_XOR_tgt_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_XOR_tgt_feature", "_UI_XOR_type"),
+						PfcsmPackage.Literals.XOR__TGT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Src feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSrcPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_XOR_src_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_XOR_src_feature", "_UI_XOR_type"),
+						PfcsmPackage.Literals.XOR__SRC, true, false, true, null, null, null));
 	}
 
 	/**

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.pfcsm.Class#getReferenceTo <em>Reference To</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Class#getReferenceFrom <em>Reference From</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Class#getElement <em>Element</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Class#getOperation <em>Operation</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_()
@@ -110,5 +111,17 @@ public interface Class extends EObject {
 	 * @generated
 	 */
 	EList<Element> getElement();
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' attribute list.
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getClass_Operation()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getOperation();
 
 } // Class

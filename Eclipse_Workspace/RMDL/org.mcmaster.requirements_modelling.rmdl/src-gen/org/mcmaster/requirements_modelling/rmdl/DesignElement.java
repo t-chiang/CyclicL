@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getChildren <em>Children</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getSatisfies <em>Satisfies</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement()
@@ -84,17 +84,17 @@ public interface DesignElement extends EObject {
 	EList<Class> getChildren();
 
 	/**
-	 * Returns the value of the '<em><b>Satisfies</b></em>' reference list.
+	 * Returns the value of the '<em><b>Tracefrom</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby <em>Satisfiedby</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Satisfies</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Satisfies()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getSatisfiedby
-	 * @model opposite="satisfiedby" required="true"
+	 * @return the value of the '<em>Tracefrom</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Tracefrom()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto
+	 * @model opposite="traceto" required="true"
 	 * @generated
 	 */
-	EList<Requirements> getSatisfies();
+	EList<Requirements> getTracefrom();
 
 } // DesignElement

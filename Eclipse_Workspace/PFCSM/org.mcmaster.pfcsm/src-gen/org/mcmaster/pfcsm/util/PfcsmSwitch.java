@@ -7,20 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.mcmaster.pfcsm.AbstractClass;
-import org.mcmaster.pfcsm.Association;
-import org.mcmaster.pfcsm.Attribute;
-import org.mcmaster.pfcsm.Class_Diagram_Root;
-import org.mcmaster.pfcsm.Composition;
-import org.mcmaster.pfcsm.ConcreteClass;
-import org.mcmaster.pfcsm.Element;
-import org.mcmaster.pfcsm.Inheritance;
-import org.mcmaster.pfcsm.Operation;
-import org.mcmaster.pfcsm.PfcsmPackage;
-import org.mcmaster.pfcsm.Produces;
-import org.mcmaster.pfcsm.Reference;
-import org.mcmaster.pfcsm.Uses;
-import org.mcmaster.pfcsm.XOR;
+import org.mcmaster.pfcsm.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,9 +66,9 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case PfcsmPackage.CLASS: {
-			org.mcmaster.pfcsm.Class class_ = (org.mcmaster.pfcsm.Class) theEObject;
-			T result = caseClass(class_);
+		case PfcsmPackage.DES_CLASS: {
+			DesClass desClass = (DesClass) theEObject;
+			T result = caseDesClass(desClass);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -89,15 +76,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT: {
 			Class_Diagram_Root class_Diagram_Root = (Class_Diagram_Root) theEObject;
 			T result = caseClass_Diagram_Root(class_Diagram_Root);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.ABSTRACT_CLASS: {
-			AbstractClass abstractClass = (AbstractClass) theEObject;
-			T result = caseAbstractClass(abstractClass);
-			if (result == null)
-				result = caseClass(abstractClass);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -141,15 +119,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 			T result = caseXOR(xor);
 			if (result == null)
 				result = caseReference(xor);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PfcsmPackage.CONCRETE_CLASS: {
-			ConcreteClass concreteClass = (ConcreteClass) theEObject;
-			T result = caseConcreteClass(concreteClass);
-			if (result == null)
-				result = caseClass(concreteClass);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -207,17 +176,17 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Des Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Des Class</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseClass(org.mcmaster.pfcsm.Class object) {
+	public T caseDesClass(DesClass object) {
 		return null;
 	}
 
@@ -233,21 +202,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClass_Diagram_Root(Class_Diagram_Root object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractClass(AbstractClass object) {
 		return null;
 	}
 
@@ -338,21 +292,6 @@ public class PfcsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOperation(Operation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Concrete Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Concrete Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConcreteClass(ConcreteClass object) {
 		return null;
 	}
 

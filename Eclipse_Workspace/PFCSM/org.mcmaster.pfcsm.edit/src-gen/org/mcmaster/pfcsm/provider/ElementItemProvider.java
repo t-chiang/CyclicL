@@ -54,8 +54,6 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addAssociationToPropertyDescriptor(object);
-			addAssociationFromPropertyDescriptor(object);
 			addIsPublicPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -74,36 +72,6 @@ public class ElementItemProvider extends ItemProviderAdapter implements IEditing
 						getString("_UI_PropertyDescriptor_description", "_UI_Element_name_feature", "_UI_Element_type"),
 						PfcsmPackage.Literals.ELEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Association To feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssociationToPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Element_associationTo_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Element_associationTo_feature",
-								"_UI_Element_type"),
-						PfcsmPackage.Literals.ELEMENT__ASSOCIATION_TO, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Association From feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssociationFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Element_associationFrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Element_associationFrom_feature",
-								"_UI_Element_type"),
-						PfcsmPackage.Literals.ELEMENT__ASSOCIATION_FROM, true, false, true, null, null, null));
 	}
 
 	/**
