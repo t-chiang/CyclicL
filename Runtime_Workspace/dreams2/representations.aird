@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:pfcsm="http://www.example.org/pfcsm" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_e666AK81Ee6cVI35l5kcdg" selectedViews="_jcDVsMzrEe6N7vcyjhg2Ow" version="15.1.0.202211301600">
-    <semanticResources>MyPfcsm.pfcsm</semanticResources>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:pfcsm="http://www.example.org/pfcsm" xmlns:rmdl="http://www.example.org/rmdl" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_e666AK81Ee6cVI35l5kcdg" selectedViews="_jcDVsMzrEe6N7vcyjhg2Ow _M4cXIMzxEe6NOJzkG6yI4A" version="15.1.0.202211301600">
+    <semanticResources>test_req.rmdl</semanticResources>
+    <semanticResources>test_des.pfcsm</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_jcDVsMzrEe6N7vcyjhg2Ow">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jcJcUMzrEe6N7vcyjhg2Ow" name="Class Diagram" repPath="#_jcFx8MzrEe6N7vcyjhg2Ow" changeId="1708102287839">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']"/>
         <target xmi:type="pfcsm:Class_Diagram_Root" href="MyPfcsm.pfcsm#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_o_p5cMzxEe6NOJzkG6yI4A" name="test_des" repPath="#_o_pSYMzxEe6NOJzkG6yI4A" changeId="1708107753813">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']"/>
+        <target xmi:type="pfcsm:Class_Diagram_Root" href="test_des.pfcsm#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_M4cXIMzxEe6NOJzkG6yI4A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ne-LoMzxEe6NOJzkG6yI4A" name="test_req" repPath="#_Ne6hQMzxEe6NOJzkG6yI4A" changeId="1708107437890">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']"/>
+        <target xmi:type="rmdl:Requirement_Root" href="test_req.rmdl#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -29,17 +41,495 @@
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_jcYs4czrEe6N7vcyjhg2Ow"/>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_oJEecMzrEe6N7vcyjhg2Ow" name="&lt;&lt;Software>>&#xA;Entity1" width="20" height="12">
-      <target xmi:type="pfcsm:DesClass" href="MyPfcsm.pfcsm#//@desclass.0"/>
-      <semanticElements xmi:type="pfcsm:DesClass" href="MyPfcsm.pfcsm#//@desclass.0"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_oJGToMzrEe6N7vcyjhg2Ow" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="255,245,181">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='DesClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='DesClass']"/>
+      <target xmi:type="pfcsm:DesClass" href="MyPfcsm.pfcsm#//@desclass.0"/>
+      <semanticElements xmi:type="pfcsm:DesClass" href="MyPfcsm.pfcsm#//@desclass.0"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_jcGZAMzrEe6N7vcyjhg2Ow"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']"/>
     <target xmi:type="pfcsm:Class_Diagram_Root" href="MyPfcsm.pfcsm#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_Ne6hQMzxEe6NOJzkG6yI4A" synchronized="false">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_NfODQMzxEe6NOJzkG6yI4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_NfODQczxEe6NOJzkG6yI4A" type="Sirius" element="_Ne6hQMzxEe6NOJzkG6yI4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_WSwVcMzxEe6NOJzkG6yI4A" type="2001" element="_WSoZoMzxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_WSyKoMzxEe6NOJzkG6yI4A" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_WSyKoczxEe6NOJzkG6yI4A" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WSzYwMzxEe6NOJzkG6yI4A" type="3003" element="_WSqO0MzxEe6NOJzkG6yI4A">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_WSzYwczxEe6NOJzkG6yI4A" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WSzYwszxEe6NOJzkG6yI4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WSwVcczxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WSwVcszxEe6NOJzkG6yI4A" x="765" y="150" width="170" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_W3v44MzxEe6NOJzkG6yI4A" type="2001" element="_W3rncMzxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_W3v448zxEe6NOJzkG6yI4A" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_W3v45MzxEe6NOJzkG6yI4A" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_W3wf8MzxEe6NOJzkG6yI4A" type="3016" element="_W3tcoMzxEe6NOJzkG6yI4A">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_W3wf8czxEe6NOJzkG6yI4A" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W3wf8szxEe6NOJzkG6yI4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_W3v44czxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W3v44szxEe6NOJzkG6yI4A" x="855" y="420" width="211" height="150"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_YjELMczxEe6NOJzkG6yI4A" type="2001" element="_YjBu8MzxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_YjEyQMzxEe6NOJzkG6yI4A" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_YjEyQczxEe6NOJzkG6yI4A" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Zsw-MMzxEe6NOJzkG6yI4A" type="3016" element="_ZsvwEczxEe6NOJzkG6yI4A">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Zsw-MczxEe6NOJzkG6yI4A" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zsw-MszxEe6NOJzkG6yI4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_YjELMszxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjELM8zxEe6NOJzkG6yI4A" x="315" y="330" width="211" height="150"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_IZVxwMz1Ee6TZqNY0VzuBw" type="2001" element="_IZLZsMz1Ee6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_IZWY0Mz1Ee6TZqNY0VzuBw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_IZWY0cz1Ee6TZqNY0VzuBw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_I9WdwMz1Ee6TZqNY0VzuBw" type="3016" element="_I9VPp8z1Ee6TZqNY0VzuBw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_I9Wdwcz1Ee6TZqNY0VzuBw" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I9Wdwsz1Ee6TZqNY0VzuBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_IZVxwcz1Ee6TZqNY0VzuBw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IZVxwsz1Ee6TZqNY0VzuBw" x="585" y="420" width="226" height="150"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_NfODQszxEe6NOJzkG6yI4A"/>
+        <edges xmi:type="notation:Edge" xmi:id="_atCIYMzxEe6NOJzkG6yI4A" type="4001" element="_as0tAMzxEe6NOJzkG6yI4A" source="_WSwVcMzxEe6NOJzkG6yI4A" target="_YjELMczxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_atCvcMzxEe6NOJzkG6yI4A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_atCvcczxEe6NOJzkG6yI4A" x="-4" y="-7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_atEkoMzxEe6NOJzkG6yI4A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_atEkoczxEe6NOJzkG6yI4A" x="6" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_atFLsMzxEe6NOJzkG6yI4A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_atFLsczxEe6NOJzkG6yI4A" x="7" y="7"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_atCIYczxEe6NOJzkG6yI4A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_atCIYszxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_atCIY8zxEe6NOJzkG6yI4A" points="[-19, 5, 390, -112]$[-409, 117, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_atHn8MzxEe6NOJzkG6yI4A" id="(0.11176470588235295,0.63)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_atHn8czxEe6NOJzkG6yI4A" id="(0.2843601895734597,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_bLm6wMzxEe6NOJzkG6yI4A" type="4001" element="_bLkehMzxEe6NOJzkG6yI4A" source="_WSwVcMzxEe6NOJzkG6yI4A" target="_W3v44MzxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_bLm6xMzxEe6NOJzkG6yI4A" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bLm6xczxEe6NOJzkG6yI4A" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bLm6xszxEe6NOJzkG6yI4A" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bLm6x8zxEe6NOJzkG6yI4A" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bLm6yMzxEe6NOJzkG6yI4A" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bLm6yczxEe6NOJzkG6yI4A" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_bLm6wczxEe6NOJzkG6yI4A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_bLm6wszxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bLm6w8zxEe6NOJzkG6yI4A" points="[0, 0, -75, -170]$[75, 170, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bLnh0MzxEe6NOJzkG6yI4A" id="(0.7058823529411765,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bLnh0czxEe6NOJzkG6yI4A" id="(0.4976303317535545,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_J86dXsz1Ee6TZqNY0VzuBw" type="4001" element="_J83aCMz1Ee6TZqNY0VzuBw" source="_WSwVcMzxEe6NOJzkG6yI4A" target="_IZVxwMz1Ee6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_J87EYMz1Ee6TZqNY0VzuBw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J87EYcz1Ee6TZqNY0VzuBw" x="5" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J87EYsz1Ee6TZqNY0VzuBw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J87EY8z1Ee6TZqNY0VzuBw" x="-8" y="6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J87EZMz1Ee6TZqNY0VzuBw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J87EZcz1Ee6TZqNY0VzuBw" x="-8" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_J86dX8z1Ee6TZqNY0VzuBw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_J86dYMz1Ee6TZqNY0VzuBw" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J86dYcz1Ee6TZqNY0VzuBw" points="[-3, 8, 49, -170]$[-52, 178, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J87EZsz1Ee6TZqNY0VzuBw" id="(0.041176470588235294,0.92)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J87EZ8z1Ee6TZqNY0VzuBw" id="(0.5973451327433629,0.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_NfcswMzxEe6NOJzkG6yI4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_NfcswczxEe6NOJzkG6yI4A"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_WSoZoMzxEe6NOJzkG6yI4A" name="FunctionalReq1" outgoingEdges="_as0tAMzxEe6NOJzkG6yI4A _bLkehMzxEe6NOJzkG6yI4A _J83aCMz1Ee6TZqNY0VzuBw" width="17" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Functional" href="test_req.rmdl#//@requirements.0"/>
+      <semanticElements xmi:type="rmdl:Functional" href="test_req.rmdl#//@requirements.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_WSqO0MzxEe6NOJzkG6yI4A" labelSize="12" labelPosition="node" width="17" height="10" color="217,196,215">
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_W3rncMzxEe6NOJzkG6yI4A" name="&lt;&lt;Software>>&#xA;controller" incomingEdges="_bLkehMzxEe6NOJzkG6yI4A" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="rmdl:DesignElement" href="test_req.rmdl#//@designelement.0"/>
+      <semanticElements xmi:type="rmdl:DesignElement" href="test_req.rmdl#//@designelement.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_W3tcoMzxEe6NOJzkG6yI4A" labelSize="12" labelPosition="node" color="255,245,181">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_YjBu8MzxEe6NOJzkG6yI4A" name="&lt;&lt;Hardware>>&#xA;mechanism" incomingEdges="_as0tAMzxEe6NOJzkG6yI4A" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="rmdl:DesignElement" href="test_req.rmdl#//@designelement.1"/>
+      <semanticElements xmi:type="rmdl:DesignElement" href="test_req.rmdl#//@designelement.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_ZsvwEczxEe6NOJzkG6yI4A" labelSize="12" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']/@conditionnalStyles.0/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_IZLZsMz1Ee6TZqNY0VzuBw" name="&lt;&lt;Hardware>>&#xA;ECU" incomingEdges="_J83aCMz1Ee6TZqNY0VzuBw" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="rmdl:DesignElement" href="test_req.rmdl#//@designelement.2"/>
+      <semanticElements xmi:type="rmdl:DesignElement" href="test_req.rmdl#//@designelement.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_I9VPp8z1Ee6TZqNY0VzuBw" labelSize="12" labelPosition="node" color="194,239,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']/@conditionnalStyles.0/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_as0tAMzxEe6NOJzkG6yI4A" sourceNode="_WSoZoMzxEe6NOJzkG6yI4A" targetNode="_YjBu8MzxEe6NOJzkG6yI4A">
+      <target xmi:type="rmdl:Functional" href="test_req.rmdl#//@requirements.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_as8BwMzxEe6NOJzkG6yI4A" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Trace']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_as8BwczxEe6NOJzkG6yI4A" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Trace']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_bLkehMzxEe6NOJzkG6yI4A" sourceNode="_WSoZoMzxEe6NOJzkG6yI4A" targetNode="_W3rncMzxEe6NOJzkG6yI4A">
+      <target xmi:type="rmdl:Functional" href="test_req.rmdl#//@requirements.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_bLkehczxEe6NOJzkG6yI4A" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Trace']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_bLkehszxEe6NOJzkG6yI4A" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Trace']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_J83aCMz1Ee6TZqNY0VzuBw" sourceNode="_WSoZoMzxEe6NOJzkG6yI4A" targetNode="_IZLZsMz1Ee6TZqNY0VzuBw">
+      <target xmi:type="rmdl:Functional" href="test_req.rmdl#//@requirements.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_J83aCcz1Ee6TZqNY0VzuBw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Trace']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_J83aCsz1Ee6TZqNY0VzuBw" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Trace']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Ne7vYMzxEe6NOJzkG6yI4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']"/>
+    <target xmi:type="rmdl:Requirement_Root" href="test_req.rmdl#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_o_pSYMzxEe6NOJzkG6yI4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_o_qggMzxEe6NOJzkG6yI4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_o_qggczxEe6NOJzkG6yI4A" type="Sirius" element="_o_pSYMzxEe6NOJzkG6yI4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_o_uK4MzxEe6NOJzkG6yI4A" type="2003" element="_o_ruoMzxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_o_ux8MzxEe6NOJzkG6yI4A" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_o_vZAMzxEe6NOJzkG6yI4A" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_o_vZAczxEe6NOJzkG6yI4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_o_vZAszxEe6NOJzkG6yI4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_o_uK4czxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o_uK4szxEe6NOJzkG6yI4A" x="315" y="285"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_o_vZA8zxEe6NOJzkG6yI4A" type="2003" element="_o_sVsczxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_o_wAEMzxEe6NOJzkG6yI4A" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_o_wAEczxEe6NOJzkG6yI4A" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_o_wAEszxEe6NOJzkG6yI4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_o_wAE8zxEe6NOJzkG6yI4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_o_vZBMzxEe6NOJzkG6yI4A" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o_vZBczxEe6NOJzkG6yI4A" x="660" y="285"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_7GnM4MzzEe6TZqNY0VzuBw" type="2003" element="_7Gf4IMzzEe6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_7Gnz8MzzEe6TZqNY0VzuBw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_7GobAMzzEe6TZqNY0VzuBw" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_7GobAczzEe6TZqNY0VzuBw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_7GobAszzEe6TZqNY0VzuBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_7GnM4czzEe6TZqNY0VzuBw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7GnM4szzEe6TZqNY0VzuBw" x="1305" y="60" width="200" height="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_7jbEsMzzEe6TZqNY0VzuBw" type="2003" element="_7jWzQMzzEe6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_7jbEs8zzEe6TZqNY0VzuBw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_7jbEtMzzEe6TZqNY0VzuBw" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_7jbEtczzEe6TZqNY0VzuBw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_7jbEtszzEe6TZqNY0VzuBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_7jbEsczzEe6TZqNY0VzuBw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7jbEsszzEe6TZqNY0VzuBw" x="1305" y="255" width="200" height="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ibIVIMz0Ee6TZqNY0VzuBw" type="2003" element="_ibDcoMz0Ee6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_ibIVI8z0Ee6TZqNY0VzuBw" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_ibIVJMz0Ee6TZqNY0VzuBw" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_ibIVJcz0Ee6TZqNY0VzuBw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_ibIVJsz0Ee6TZqNY0VzuBw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ibIVIcz0Ee6TZqNY0VzuBw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ibIVIsz0Ee6TZqNY0VzuBw" x="915" y="60" width="200" height="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_QF-l8Mz4Ee6l1eM_dUITaA" type="2003" element="_QF2DEMz4Ee6l1eM_dUITaA">
+          <children xmi:type="notation:Node" xmi:id="_QF_NAMz4Ee6l1eM_dUITaA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_QF_0EMz4Ee6l1eM_dUITaA" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_QF_0Ecz4Ee6l1eM_dUITaA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_QF_0Esz4Ee6l1eM_dUITaA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_QF-l8cz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QF-l8sz4Ee6l1eM_dUITaA" x="675" y="60" width="200" height="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_TdIvAMz4Ee6l1eM_dUITaA" type="2003" element="_TdCoYMz4Ee6l1eM_dUITaA">
+          <children xmi:type="notation:Node" xmi:id="_TdJWEMz4Ee6l1eM_dUITaA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_TdJWEcz4Ee6l1eM_dUITaA" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_TdJWEsz4Ee6l1eM_dUITaA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_TdJWE8z4Ee6l1eM_dUITaA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_TdIvAcz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TdIvAsz4Ee6l1eM_dUITaA" x="765" y="465" width="200" height="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Two50Mz4Ee6l1eM_dUITaA" type="2003" element="_TwjaQMz4Ee6l1eM_dUITaA">
+          <children xmi:type="notation:Node" xmi:id="_Two508z4Ee6l1eM_dUITaA" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_Twpg4Mz4Ee6l1eM_dUITaA" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Twpg4cz4Ee6l1eM_dUITaA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Twpg4sz4Ee6l1eM_dUITaA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Two50cz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Two50sz4Ee6l1eM_dUITaA" x="1170" y="465" width="200" height="120"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_o_qggszxEe6NOJzkG6yI4A"/>
+        <edges xmi:type="notation:Edge" xmi:id="_kI2bMMz0Ee6TZqNY0VzuBw" type="4001" element="_kIyJxMz0Ee6TZqNY0VzuBw" source="_7GnM4MzzEe6TZqNY0VzuBw" target="_7jbEsMzzEe6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_kI2bNMz0Ee6TZqNY0VzuBw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kI2bNcz0Ee6TZqNY0VzuBw" x="-7" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kI2bNsz0Ee6TZqNY0VzuBw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kI2bN8z0Ee6TZqNY0VzuBw" x="12" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_kI2bOMz0Ee6TZqNY0VzuBw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kI2bOcz0Ee6TZqNY0VzuBw" x="-1" y="24"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_kI2bMcz0Ee6TZqNY0VzuBw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_kI2bMsz0Ee6TZqNY0VzuBw" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kI2bM8z0Ee6TZqNY0VzuBw" points="[0, 0, 0, -77]$[0, 77, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kI2bOsz0Ee6TZqNY0VzuBw" id="(0.5,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kI2bO8z0Ee6TZqNY0VzuBw" id="(0.5,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_FY4KEMz4Ee6l1eM_dUITaA" type="4001" element="_FY0fsMz4Ee6l1eM_dUITaA" source="_o_uK4MzxEe6NOJzkG6yI4A" target="_o_vZA8zxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_FY8bgMz4Ee6l1eM_dUITaA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FY8bgcz4Ee6l1eM_dUITaA" x="-52" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FY9CkMz4Ee6l1eM_dUITaA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FY9Ckcz4Ee6l1eM_dUITaA" x="-1" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FY9poMz4Ee6l1eM_dUITaA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FY9pocz4Ee6l1eM_dUITaA" x="-15" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_FY4KEcz4Ee6l1eM_dUITaA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_FY4KEsz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FY4KE8z4Ee6l1eM_dUITaA" points="[99, 0, -246, 0]$[246, 0, -99, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FZB7EMz4Ee6l1eM_dUITaA" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FZB7Ecz4Ee6l1eM_dUITaA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_FZB7Esz4Ee6l1eM_dUITaA" type="4001" element="_FY1t0Mz4Ee6l1eM_dUITaA" source="_ibIVIMz0Ee6TZqNY0VzuBw" target="_7GnM4MzzEe6TZqNY0VzuBw">
+          <children xmi:type="notation:Node" xmi:id="_FZCiIMz4Ee6l1eM_dUITaA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FZCiIcz4Ee6l1eM_dUITaA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FZCiIsz4Ee6l1eM_dUITaA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FZCiI8z4Ee6l1eM_dUITaA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FZCiJMz4Ee6l1eM_dUITaA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FZCiJcz4Ee6l1eM_dUITaA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_FZB7E8z4Ee6l1eM_dUITaA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_FZB7FMz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FZB7Fcz4Ee6l1eM_dUITaA" points="[100, 0, -290, 0]$[290, 0, -100, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FZCiJsz4Ee6l1eM_dUITaA" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FZCiJ8z4Ee6l1eM_dUITaA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_RVqFIMz4Ee6l1eM_dUITaA" type="4001" element="_RViwYsz4Ee6l1eM_dUITaA" source="_QF-l8Mz4Ee6l1eM_dUITaA" target="_o_vZA8zxEe6NOJzkG6yI4A">
+          <children xmi:type="notation:Node" xmi:id="_RVqFJMz4Ee6l1eM_dUITaA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RVqFJcz4Ee6l1eM_dUITaA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RVqsMMz4Ee6l1eM_dUITaA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RVqsMcz4Ee6l1eM_dUITaA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RVqsMsz4Ee6l1eM_dUITaA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RVqsM8z4Ee6l1eM_dUITaA" x="1" y="24"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_RVqFIcz4Ee6l1eM_dUITaA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_RVqFIsz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RVqFI8z4Ee6l1eM_dUITaA" points="[0, 0, 0, -107]$[0, 107, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RVqsNMz4Ee6l1eM_dUITaA" id="(0.5,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RVqsNcz4Ee6l1eM_dUITaA" id="(0.5757575757575758,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_V7QXQMz4Ee6l1eM_dUITaA" type="4001" element="_V7K3vMz4Ee6l1eM_dUITaA" source="_TdIvAMz4Ee6l1eM_dUITaA" target="_Two50Mz4Ee6l1eM_dUITaA">
+          <children xmi:type="notation:Node" xmi:id="_V7QXRMz4Ee6l1eM_dUITaA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V7QXRcz4Ee6l1eM_dUITaA" x="1" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_V7QXRsz4Ee6l1eM_dUITaA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V7QXR8z4Ee6l1eM_dUITaA" x="-2" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_V7QXSMz4Ee6l1eM_dUITaA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V7QXScz4Ee6l1eM_dUITaA" x="-2" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_V7QXQcz4Ee6l1eM_dUITaA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_V7QXQsz4Ee6l1eM_dUITaA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_V7QXQ8z4Ee6l1eM_dUITaA" points="[0, 0, -207, 0]$[207, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_V7QXSsz4Ee6l1eM_dUITaA" id="(1.0,0.3813559322033898)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_V7QXS8z4Ee6l1eM_dUITaA" id="(0.0,0.3813559322033898)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_o_tj0MzxEe6NOJzkG6yI4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_o_tj0czxEe6NOJzkG6yI4A"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_o_ruoMzxEe6NOJzkG6yI4A" name="&lt;&lt;Hardware>>&#xA;mechanism" outgoingEdges="_FY0fsMz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.0"/>
+      <semanticElements xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_o_ruoczxEe6NOJzkG6yI4A" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_o_sVsczxEe6NOJzkG6yI4A" name="&lt;&lt;Software>>&#xA;controller" incomingEdges="_FY0fsMz4Ee6l1eM_dUITaA _RViwYsz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Software" href="test_des.pfcsm#//@desclass.1"/>
+      <semanticElements xmi:type="pfcsm:Software" href="test_des.pfcsm#//@desclass.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_o_sVsszxEe6NOJzkG6yI4A" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Software%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Software%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_7Gf4IMzzEe6TZqNY0VzuBw" name="&lt;&lt;Hardware>>&#xA;ECU" outgoingEdges="_kIyJxMz0Ee6TZqNY0VzuBw" incomingEdges="_FY1t0Mz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.2"/>
+      <semanticElements xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7GgfMMzzEe6TZqNY0VzuBw" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_7jWzQMzzEe6TZqNY0VzuBw" name="&lt;&lt;Software>>&#xA;controller" incomingEdges="_kIyJxMz0Ee6TZqNY0VzuBw" width="20" height="12">
+      <target xmi:type="pfcsm:Software" href="test_des.pfcsm#//@desclass.3"/>
+      <semanticElements xmi:type="pfcsm:Software" href="test_des.pfcsm#//@desclass.3"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_7jWzQczzEe6TZqNY0VzuBw" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Software%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Software%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ibDcoMz0Ee6TZqNY0VzuBw" name="&lt;&lt;Hardware>>&#xA;mechanism" outgoingEdges="_FY1t0Mz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.4"/>
+      <semanticElements xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.4"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_ibEDsMz0Ee6TZqNY0VzuBw" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kIyJxMz0Ee6TZqNY0VzuBw" sourceNode="_7Gf4IMzzEe6TZqNY0VzuBw" targetNode="_7jWzQMzzEe6TZqNY0VzuBw" endLabel="1..1">
+      <target xmi:type="pfcsm:Composition" href="test_des.pfcsm#//@reference.2"/>
+      <semanticElements xmi:type="pfcsm:Composition" href="test_des.pfcsm#//@reference.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kIyJxcz0Ee6TZqNY0VzuBw" sourceArrow="FillDiamond" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Composition']/@style"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_kIyJxsz0Ee6TZqNY0VzuBw" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Composition']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_FY0fsMz4Ee6l1eM_dUITaA" sourceNode="_o_ruoMzxEe6NOJzkG6yI4A" targetNode="_o_sVsczxEe6NOJzkG6yI4A" beginLabel="1..1" endLabel="1..1">
+      <target xmi:type="pfcsm:Uses" href="test_des.pfcsm#//@reference.0"/>
+      <semanticElements xmi:type="pfcsm:Uses" href="test_des.pfcsm#//@reference.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_FY1GwMz4Ee6l1eM_dUITaA" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Use']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_FY1Gwcz4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_FY1Gwsz4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Use']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_FY1t0Mz4Ee6l1eM_dUITaA" sourceNode="_ibDcoMz0Ee6TZqNY0VzuBw" targetNode="_7Gf4IMzzEe6TZqNY0VzuBw" beginLabel="1..1" endLabel="1..1">
+      <target xmi:type="pfcsm:Uses" href="test_des.pfcsm#//@reference.3"/>
+      <semanticElements xmi:type="pfcsm:Uses" href="test_des.pfcsm#//@reference.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_FY1t0cz4Ee6l1eM_dUITaA" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Use']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_FY1t0sz4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_FY1t08z4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Use']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_QF2DEMz4Ee6l1eM_dUITaA" name="&lt;&lt;Hardware>>&#xA;ECU" outgoingEdges="_RViwYsz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.5"/>
+      <semanticElements xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.5"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_QF2DEcz4Ee6l1eM_dUITaA" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RViwYsz4Ee6l1eM_dUITaA" sourceNode="_QF2DEMz4Ee6l1eM_dUITaA" targetNode="_o_sVsczxEe6NOJzkG6yI4A" endLabel="1..1">
+      <target xmi:type="pfcsm:Composition" href="test_des.pfcsm#//@reference.4"/>
+      <semanticElements xmi:type="pfcsm:Composition" href="test_des.pfcsm#//@reference.4"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RViwY8z4Ee6l1eM_dUITaA" sourceArrow="FillDiamond" targetArrow="NoDecoration" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Composition']/@style"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_RViwZMz4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Composition']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_TdCoYMz4Ee6l1eM_dUITaA" name="&lt;&lt;Hardware>>&#xA;mechanism" outgoingEdges="_V7K3vMz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.6"/>
+      <semanticElements xmi:type="pfcsm:Hardware" href="test_des.pfcsm#//@desclass.6"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TdDPcMz4Ee6l1eM_dUITaA" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Hardware%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_TwjaQMz4Ee6l1eM_dUITaA" name="&lt;&lt;Software>>&#xA;controller" incomingEdges="_V7K3vMz4Ee6l1eM_dUITaA" width="20" height="12">
+      <target xmi:type="pfcsm:Software" href="test_des.pfcsm#//@desclass.7"/>
+      <semanticElements xmi:type="pfcsm:Software" href="test_des.pfcsm#//@desclass.7"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_TwjaQcz4Ee6l1eM_dUITaA" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Software%20Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='Software%20Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_V7K3vMz4Ee6l1eM_dUITaA" sourceNode="_TdCoYMz4Ee6l1eM_dUITaA" targetNode="_TwjaQMz4Ee6l1eM_dUITaA" beginLabel="1..1" endLabel="1..1">
+      <target xmi:type="pfcsm:Uses" href="test_des.pfcsm#//@reference.5"/>
+      <semanticElements xmi:type="pfcsm:Uses" href="test_des.pfcsm#//@reference.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_V7LewMz4Ee6l1eM_dUITaA" size="2" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Use']/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_V7Lewcz4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_V7Lewsz4Ee6l1eM_dUITaA" labelSize="12" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@edgeMappings[name='Use']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_o_pSYczxEe6NOJzkG6yI4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']"/>
+    <target xmi:type="pfcsm:Class_Diagram_Root" href="test_des.pfcsm#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

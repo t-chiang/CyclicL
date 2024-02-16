@@ -15,29 +15,20 @@ rule root2root
 	}
 	
 rule designElement2desClass
-	transform desElement: requirements!DesignElement
+	transform desElement: requirement!DesignElement
 	to desEntities: Sequence{
-		
-	}
-	
-rule designElement2desClass
-	transform desElement : requirement!DesignElement
-//	to hardware : design!Hardware,
-//		software : design!Software
-	to desClass : design!DesClass
-		{
-//		if(desElement.isHardware){
-//			delete software;
-//			hardware.name = desElement.name;
-//			hardware_created.add(hardware);
-//		}
-//		else{
-//			delete hardware;
-//			software.name = desElement.name;
-//			software_created.add(software);
-//		}
-		desClass.name = desElement.name;
-		desclass_created.add(desClass);
+		if(desElement.isHardware){
+			var newHardware = new design!Hardware;
+			newHardware.name = desElement.name;
+			desclass_created.add(newHardware);
+			desEntities.add(newHardware);
+		}
+		else{
+			var newSoftware = new design!Software;
+			newSoftware.name = desElement.name;
+			desclass_created.add(newSoftware);
+			desEntities.add(newSoftware);
+		}
 	}
 	
 rule functional2association
@@ -48,6 +39,7 @@ rule functional2association
 		if(traceList.size()== 2){
 			var newAssoc = new design!Uses;
 			assoc.add(newAssoc);
+			traceList[0].isHardware.println();
 			for (d in desclass_created){
 				if(d.name == traceList[0].name)
 				newAssoc.tgt = d;
@@ -86,14 +78,5 @@ rule functional2association
 				}
 			}
 		}
+		else {continue;}
 	}
-	
-	
-	
-	
-	
-//rule spec2op
-//	transform spec : requirement!Requirements
-//	to op : design!Class{
-//	
-//	}

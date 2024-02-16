@@ -12,13 +12,31 @@ rule root2root
 		targetRoot.review.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
 }
 
-rule concreteClass2designElement
-	transform designClass : design!DesClass
+rule hardware2designElement
+	transform hardware : design!Hardware
 	to desElement : requirement!DesignElement,
 		funcreq: requirement!Functional,
 		functest : requirement!TestCase,
 		rev : requirement!Review{
-			desElement.name = designClass.name;
+			desElement.name = hardware.name;
+			funcreq.setName("FunctionalReq");
+			funcreq.setID(requirementID);
+			requirementID++;
+			funcreq.traceto.add(desElement);
+			functest.requirements.add(funcreq);
+			rev.setreviewer("Reviewer");
+			rev.requirements.add(funcreq);
+			functest.setID(testID);
+			testID++;
+	}
+
+rule software2designElement
+	transform software : design!Hardware
+	to desElement : requirement!DesignElement,
+		funcreq: requirement!Functional,
+		functest : requirement!TestCase,
+		rev : requirement!Review{
+			desElement.name = software.name;
 			funcreq.setName("FunctionalReq");
 			funcreq.setID(requirementID);
 			requirementID++;
