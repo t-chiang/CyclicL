@@ -15,6 +15,12 @@ rule root2root
 	}
 	
 rule designElement2desClass
+	transform desElement: requirements!DesignElement
+	to desEntities: Sequence{
+		
+	}
+	
+rule designElement2desClass
 	transform desElement : requirement!DesignElement
 //	to hardware : design!Hardware,
 //		software : design!Software

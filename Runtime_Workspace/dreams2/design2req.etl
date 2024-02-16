@@ -1,5 +1,3 @@
-import "HelperFunctions.eol";
-
 pre{
 	var requirementID :Integer = 1;
 	var testID : Integer = 1;

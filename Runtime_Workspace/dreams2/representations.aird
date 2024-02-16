@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:pfcsm="http://www.example.org/pfcsm" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_e666AK81Ee6cVI35l5kcdg" selectedViews="_jcDVsMzrEe6N7vcyjhg2Ow" version="15.1.0.202211301600">
+    <semanticResources>MyPfcsm.pfcsm</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_jcDVsMzrEe6N7vcyjhg2Ow">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_jcJcUMzrEe6N7vcyjhg2Ow" name="Class Diagram" repPath="#_jcFx8MzrEe6N7vcyjhg2Ow" changeId="1708102287839">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']"/>
+        <target xmi:type="pfcsm:Class_Diagram_Root" href="MyPfcsm.pfcsm#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_jcFx8MzrEe6N7vcyjhg2Ow" synchronized="false">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_jcVCgMzrEe6N7vcyjhg2Ow" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_jcVCgczrEe6N7vcyjhg2Ow" type="Sirius" element="_jcFx8MzrEe6N7vcyjhg2Ow" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_oJMaQMzrEe6N7vcyjhg2Ow" type="2003" element="_oJEecMzrEe6N7vcyjhg2Ow">
+          <children xmi:type="notation:Node" xmi:id="_oJO2gMzrEe6N7vcyjhg2Ow" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_oJQrsMzrEe6N7vcyjhg2Ow" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_oJQrsczrEe6N7vcyjhg2Ow"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_oJQrsszrEe6N7vcyjhg2Ow"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_oJMaQczrEe6N7vcyjhg2Ow" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oJMaQszrEe6N7vcyjhg2Ow" x="1170" y="135" width="200" height="120"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_jcVCgszrEe6N7vcyjhg2Ow"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_jcYs4MzrEe6N7vcyjhg2Ow" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_jcYs4czrEe6N7vcyjhg2Ow"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_oJEecMzrEe6N7vcyjhg2Ow" name="&lt;&lt;Software>>&#xA;Entity1" width="20" height="12">
+      <target xmi:type="pfcsm:DesClass" href="MyPfcsm.pfcsm#//@desclass.0"/>
+      <semanticElements xmi:type="pfcsm:DesClass" href="MyPfcsm.pfcsm#//@desclass.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_oJGToMzrEe6N7vcyjhg2Ow" labelSize="12" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='DesClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']/@containerMappings[name='DesClass']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_jcGZAMzrEe6N7vcyjhg2Ow"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.mcmaster.pfcsm.design/description/pfcsm.odesign#//@ownedViewpoints[name='Class%20Diagram%20Viewpoint']/@ownedRepresentations[name='Class%20Diagram']/@additionalLayers[name='Traditional%20Diagram%20Layer']"/>
+    <target xmi:type="pfcsm:Class_Diagram_Root" href="MyPfcsm.pfcsm#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
