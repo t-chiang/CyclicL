@@ -104,22 +104,13 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENTS__REQUIREMENT_ROOT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENTS__TRACETO = 4;
-
-	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__REVIEW = 5;
+	int REQUIREMENTS__REVIEW = 4;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -128,7 +119,16 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__TESTCASE = 6;
+	int REQUIREMENTS__TESTCASE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS__TRACETO = 6;
 
 	/**
 	 * The number of structural features of the '<em>Requirements</em>' class.
@@ -195,15 +195,6 @@ public interface RmdlPackage extends EPackage {
 	int FUNCTIONAL__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
 
 	/**
-	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTIONAL__TRACETO = REQUIREMENTS__TRACETO;
-
-	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,6 +211,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTIONAL__TESTCASE = REQUIREMENTS__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__TRACETO = REQUIREMENTS__TRACETO;
 
 	/**
 	 * The number of structural features of the '<em>Functional</em>' class.
@@ -286,15 +286,6 @@ public interface RmdlPackage extends EPackage {
 	int QUALITATIVE__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
 
 	/**
-	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITATIVE__TRACETO = REQUIREMENTS__TRACETO;
-
-	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,6 +302,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int QUALITATIVE__TESTCASE = REQUIREMENTS__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__TRACETO = REQUIREMENTS__TRACETO;
 
 	/**
 	 * The number of structural features of the '<em>Qualitative</em>' class.
@@ -377,15 +377,6 @@ public interface RmdlPackage extends EPackage {
 	int CONSTRAINT__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
 
 	/**
-	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__TRACETO = REQUIREMENTS__TRACETO;
-
-	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,6 +393,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT__TESTCASE = REQUIREMENTS__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__TRACETO = REQUIREMENTS__TRACETO;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -450,22 +450,13 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENT_ROOT__PACKAGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENT_ROOT__DESIGNELEMENT = 2;
-
-	/**
 	 * The feature id for the '<em><b>Requirements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT_ROOT__REQUIREMENTS = 3;
+	int REQUIREMENT_ROOT__REQUIREMENTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' containment reference list.
@@ -474,7 +465,16 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT_ROOT__REVIEW = 4;
+	int REQUIREMENT_ROOT__REVIEW = 3;
+
+	/**
+	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_ROOT__DESIGNELEMENT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Requirement Root</em>' class.
@@ -523,15 +523,6 @@ public interface RmdlPackage extends EPackage {
 	int PACKAGE__PACKAGE = REQUIREMENT_ROOT__PACKAGE;
 
 	/**
-	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PACKAGE__DESIGNELEMENT = REQUIREMENT_ROOT__DESIGNELEMENT;
-
-	/**
 	 * The feature id for the '<em><b>Requirements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -548,6 +539,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE__REVIEW = REQUIREMENT_ROOT__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__DESIGNELEMENT = REQUIREMENT_ROOT__DESIGNELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -641,15 +641,6 @@ public interface RmdlPackage extends EPackage {
 	int SAFETY__REQUIREMENT_ROOT = REQUIREMENTS__REQUIREMENT_ROOT;
 
 	/**
-	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAFETY__TRACETO = REQUIREMENTS__TRACETO;
-
-	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -666,6 +657,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int SAFETY__TESTCASE = REQUIREMENTS__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__TRACETO = REQUIREMENTS__TRACETO;
 
 	/**
 	 * The number of structural features of the '<em>Safety</em>' class.
@@ -705,22 +705,22 @@ public interface RmdlPackage extends EPackage {
 	int DESIGN_ELEMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
+	 * The feature id for the '<em><b>Is Hardware</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_ELEMENT__REQUIREMENT_ROOT = 1;
+	int DESIGN_ELEMENT__IS_HARDWARE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Children</b></em>' attribute list.
+	 * The feature id for the '<em><b>Is Software</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_ELEMENT__CHILDREN = 2;
+	int DESIGN_ELEMENT__IS_SOFTWARE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Tracefrom</b></em>' reference list.
@@ -969,17 +969,6 @@ public interface RmdlPackage extends EPackage {
 	EReference getRequirements_Requirement_root();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Traceto</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto()
-	 * @see #getRequirements()
-	 * @generated
-	 */
-	EReference getRequirements_Traceto();
-
-	/**
 	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1000,6 +989,17 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirements_Testcase();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Traceto</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto()
+	 * @see #getRequirements()
+	 * @generated
+	 */
+	EReference getRequirements_Traceto();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Functional <em>Functional</em>}'.
@@ -1107,17 +1107,6 @@ public interface RmdlPackage extends EPackage {
 	EReference getRequirement_Root_Package();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Designelement</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement()
-	 * @see #getRequirement_Root()
-	 * @generated
-	 */
-	EReference getRequirement_Root_Designelement();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1138,6 +1127,17 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirement_Root_Review();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Designelement</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement()
+	 * @see #getRequirement_Root()
+	 * @generated
+	 */
+	EReference getRequirement_Root_Designelement();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Safety <em>Safety</em>}'.
@@ -1171,26 +1171,26 @@ public interface RmdlPackage extends EPackage {
 	EAttribute getDesignElement_Name();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsHardware <em>Is Hardware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Requirement root</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root()
+	 * @return the meta object for the attribute '<em>Is Hardware</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsHardware()
 	 * @see #getDesignElement()
 	 * @generated
 	 */
-	EReference getDesignElement_Requirement_root();
+	EAttribute getDesignElement_IsHardware();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getChildren <em>Children</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware <em>Is Software</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Children</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getChildren()
+	 * @return the meta object for the attribute '<em>Is Software</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware()
 	 * @see #getDesignElement()
 	 * @generated
 	 */
-	EAttribute getDesignElement_Children();
+	EAttribute getDesignElement_IsSoftware();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}'.
@@ -1420,14 +1420,6 @@ public interface RmdlPackage extends EPackage {
 		EReference REQUIREMENTS__REQUIREMENT_ROOT = eINSTANCE.getRequirements_Requirement_root();
 
 		/**
-		 * The meta object literal for the '<em><b>Traceto</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUIREMENTS__TRACETO = eINSTANCE.getRequirements_Traceto();
-
-		/**
 		 * The meta object literal for the '<em><b>Review</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1442,6 +1434,14 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUIREMENTS__TESTCASE = eINSTANCE.getRequirements_Testcase();
+
+		/**
+		 * The meta object literal for the '<em><b>Traceto</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENTS__TRACETO = eINSTANCE.getRequirements_Traceto();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FunctionalImpl <em>Functional</em>}' class.
@@ -1534,14 +1534,6 @@ public interface RmdlPackage extends EPackage {
 		EReference REQUIREMENT_ROOT__PACKAGE = eINSTANCE.getRequirement_Root_Package();
 
 		/**
-		 * The meta object literal for the '<em><b>Designelement</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUIREMENT_ROOT__DESIGNELEMENT = eINSTANCE.getRequirement_Root_Designelement();
-
-		/**
 		 * The meta object literal for the '<em><b>Requirements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1556,6 +1548,14 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUIREMENT_ROOT__REVIEW = eINSTANCE.getRequirement_Root_Review();
+
+		/**
+		 * The meta object literal for the '<em><b>Designelement</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_ROOT__DESIGNELEMENT = eINSTANCE.getRequirement_Root_Designelement();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.SafetyImpl <em>Safety</em>}' class.
@@ -1586,20 +1586,20 @@ public interface RmdlPackage extends EPackage {
 		EAttribute DESIGN_ELEMENT__NAME = eINSTANCE.getDesignElement_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Requirement root</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Is Hardware</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DESIGN_ELEMENT__REQUIREMENT_ROOT = eINSTANCE.getDesignElement_Requirement_root();
+		EAttribute DESIGN_ELEMENT__IS_HARDWARE = eINSTANCE.getDesignElement_IsHardware();
 
 		/**
-		 * The meta object literal for the '<em><b>Children</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Is Software</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DESIGN_ELEMENT__CHILDREN = eINSTANCE.getDesignElement_Children();
+		EAttribute DESIGN_ELEMENT__IS_SOFTWARE = eINSTANCE.getDesignElement_IsSoftware();
 
 		/**
 		 * The meta object literal for the '<em><b>Tracefrom</b></em>' reference list feature.

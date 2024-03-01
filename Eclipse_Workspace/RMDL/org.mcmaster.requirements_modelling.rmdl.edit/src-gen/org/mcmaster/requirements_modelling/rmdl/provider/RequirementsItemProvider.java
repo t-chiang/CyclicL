@@ -57,9 +57,9 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addRequirement_rootPropertyDescriptor(object);
-			addTracetoPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 			addTestcasePropertyDescriptor(object);
+			addTracetoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -128,21 +128,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Traceto feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTracetoPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_traceto_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Review feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,6 +155,21 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_testcase_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__TESTCASE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Traceto feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTracetoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirements_traceto_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
+								"_UI_Requirements_type"),
+						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
 	}
 
 	/**

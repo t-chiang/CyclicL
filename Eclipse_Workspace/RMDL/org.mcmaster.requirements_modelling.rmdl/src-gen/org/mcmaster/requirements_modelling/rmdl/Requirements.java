@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -120,20 +120,6 @@ public interface Requirements extends EObject {
 	void setRequirement_root(Requirement_Root value);
 
 	/**
-	 * Returns the value of the '<em><b>Traceto</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Traceto</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Traceto()
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom
-	 * @model opposite="tracefrom" required="true"
-	 * @generated
-	 */
-	EList<DesignElement> getTraceto();
-
-	/**
 	 * Returns the value of the '<em><b>Review</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Review}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}'.
@@ -160,5 +146,19 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<TestCase> getTestcase();
+
+	/**
+	 * Returns the value of the '<em><b>Traceto</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Traceto</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Traceto()
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom
+	 * @model opposite="tracefrom" required="true"
+	 * @generated
+	 */
+	EList<DesignElement> getTraceto();
 
 } // Requirements

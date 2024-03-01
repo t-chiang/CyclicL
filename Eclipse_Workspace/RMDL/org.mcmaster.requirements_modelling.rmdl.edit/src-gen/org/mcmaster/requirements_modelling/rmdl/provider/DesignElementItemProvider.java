@@ -53,8 +53,8 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addRequirement_rootPropertyDescriptor(object);
-			addChildrenPropertyDescriptor(object);
+			addIsHardwarePropertyDescriptor(object);
+			addIsSoftwarePropertyDescriptor(object);
 			addTracefromPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -77,34 +77,35 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirement root feature.
+	 * This adds a property descriptor for the Is Hardware feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequirement_rootPropertyDescriptor(Object object) {
+	protected void addIsHardwarePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_requirement_root_feature",
+						getResourceLocator(), getString("_UI_DesignElement_isHardware_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_isHardware_feature",
 								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__REQUIREMENT_ROOT, true, false, true, null, null, null));
+						RmdlPackage.Literals.DESIGN_ELEMENT__IS_HARDWARE, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Children feature.
+	 * This adds a property descriptor for the Is Software feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addChildrenPropertyDescriptor(Object object) {
+	protected void addIsSoftwarePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_children_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_children_feature",
+						getResourceLocator(), getString("_UI_DesignElement_isSoftware_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_isSoftware_feature",
 								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__CHILDREN, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						RmdlPackage.Literals.DESIGN_ELEMENT__IS_SOFTWARE, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -169,7 +170,8 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 
 		switch (notification.getFeatureID(DesignElement.class)) {
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
-		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
+		case RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE:
+		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
