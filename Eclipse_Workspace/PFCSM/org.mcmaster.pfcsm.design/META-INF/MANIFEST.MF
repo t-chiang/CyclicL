@@ -16,4 +16,5 @@ Bundle-Vendor: %providerName
 Automatic-Module-Name: org.mcmaster.pfcsm.design
 Import-Package: org.eclipse.sirius.diagram;version="7.1.0",
  org.eclipse.sirius.diagram.model.business.internal.spec;version="7.1.0",
- org.mcmaster.pfcsm
+ org.mcmaster.pfcsm,
+ org.mcmaster.requirements_modelling.rmdl

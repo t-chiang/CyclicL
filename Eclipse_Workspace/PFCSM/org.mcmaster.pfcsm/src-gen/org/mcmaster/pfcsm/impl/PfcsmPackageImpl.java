@@ -9,20 +9,22 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.mcmaster.pfcsm.Association;
+import org.mcmaster.pfcsm.Aggregation;
+import org.mcmaster.pfcsm.Alternative;
 import org.mcmaster.pfcsm.Attribute;
 import org.mcmaster.pfcsm.Class_Diagram_Root;
 import org.mcmaster.pfcsm.Composition;
 import org.mcmaster.pfcsm.DataStructure;
-import org.mcmaster.pfcsm.DesClass;
+import org.mcmaster.pfcsm.DesignEntity;
 import org.mcmaster.pfcsm.Element;
-import org.mcmaster.pfcsm.Inheritance;
+import org.mcmaster.pfcsm.Hardware;
 import org.mcmaster.pfcsm.Operation;
 import org.mcmaster.pfcsm.PfcsmFactory;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.PrimitiveType;
 import org.mcmaster.pfcsm.Produces;
 import org.mcmaster.pfcsm.Reference;
+import org.mcmaster.pfcsm.Software;
 import org.mcmaster.pfcsm.Uses;
 
 /**
@@ -37,7 +39,7 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass desClassEClass = null;
+	private EClass designEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,13 +60,6 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass associationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass compositionEClass = null;
 
 	/**
@@ -72,21 +67,35 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass inheritanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass xorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass operationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hardwareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass softwareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass aggregationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass alternativeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +208,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDesClass() {
-		return desClassEClass;
+	public EClass getDesignEntity() {
+		return designEntityEClass;
 	}
 
 	/**
@@ -208,8 +217,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDesClass_Name() {
-		return (EAttribute) desClassEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDesignEntity_Name() {
+		return (EAttribute) designEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -217,8 +226,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDesClass_IsOptional() {
-		return (EAttribute) desClassEClass.getEStructuralFeatures().get(1);
+	public EReference getDesignEntity_Element() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -226,8 +235,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Element() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(2);
+	public EAttribute getDesignEntity_IsAbstract() {
+		return (EAttribute) designEntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -235,8 +244,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDesClass_IsAbstract() {
-		return (EAttribute) desClassEClass.getEStructuralFeatures().get(3);
+	public EReference getDesignEntity_Usedby() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -244,8 +253,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Children() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(4);
+	public EReference getDesignEntity_Uses() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -253,8 +262,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Parent() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(5);
+	public EReference getDesignEntity_Ownerof() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -262,8 +271,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Ownerof() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(6);
+	public EReference getDesignEntity_Ownedby() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -271,8 +280,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Ownedby() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(7);
+	public EReference getDesignEntity_Parent() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -280,8 +289,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Uses() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(8);
+	public EReference getDesignEntity_Children() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -289,8 +298,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Usedby() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(9);
+	public EReference getDesignEntity_Alternative() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -298,17 +307,8 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDesClass_Xorfrom() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDesClass_Xorto() {
-		return (EReference) desClassEClass.getEStructuralFeatures().get(11);
+	public EReference getDesignEntity_Alternativeto() {
+		return (EReference) designEntityEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -325,7 +325,7 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClass_Diagram_Root_Desclass() {
+	public EReference getClass_Diagram_Root_Designentity() {
 		return (EReference) class_Diagram_RootEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -336,6 +336,24 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 */
 	public EReference getClass_Diagram_Root_Reference() {
 		return (EReference) class_Diagram_RootEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClass_Diagram_Root_Hardware() {
+		return (EReference) class_Diagram_RootEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClass_Diagram_Root_Software() {
+		return (EReference) class_Diagram_RootEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -354,51 +372,6 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 */
 	public EReference getReference_Class_diagram_root() {
 		return (EReference) referenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAssociation() {
-		return associationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_SrcMult() {
-		return (EAttribute) associationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TgtMult() {
-		return (EAttribute) associationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAssociation_Tgt() {
-		return (EReference) associationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAssociation_Src() {
-		return (EReference) associationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -442,60 +415,6 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInheritance() {
-		return inheritanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInheritance_Tgt() {
-		return (EReference) inheritanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInheritance_Src() {
-		return (EReference) inheritanceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getXOR() {
-		return xorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getXOR_Tgt() {
-		return (EReference) xorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getXOR_Src() {
-		return (EReference) xorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOperation() {
 		return operationEClass;
 	}
@@ -516,6 +435,114 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 */
 	public EReference getOperation_Produces() {
 		return (EReference) operationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHardware() {
+		return hardwareEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardware_Runs() {
+		return (EReference) hardwareEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSoftware() {
+		return softwareEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSoftware_Runson() {
+		return (EReference) softwareEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAggregation() {
+		return aggregationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAggregation_Tgt() {
+		return (EReference) aggregationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAggregation_Src() {
+		return (EReference) aggregationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAggregation_SrcMult() {
+		return (EAttribute) aggregationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAlternative() {
+		return alternativeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAlternative_Cardinality() {
+		return (EAttribute) alternativeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAlternative_Src() {
+		return (EReference) alternativeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAlternative_Tgt() {
+		return (EReference) alternativeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -559,8 +586,26 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getUses_SrcMult() {
+		return (EAttribute) usesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUses_TgtMult() {
+		return (EAttribute) usesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getUses_Attribute() {
-		return (EReference) usesEClass.getEStructuralFeatures().get(0);
+		return (EReference) usesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -569,7 +614,25 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 * @generated
 	 */
 	public EReference getUses_Operation() {
-		return (EReference) usesEClass.getEStructuralFeatures().get(1);
+		return (EReference) usesEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUses_Tgt() {
+		return (EReference) usesEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUses_Src() {
+		return (EReference) usesEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -597,6 +660,24 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 	 */
 	public EReference getProduces_Attribute() {
 		return (EReference) producesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProduces_SrcMult() {
+		return (EAttribute) producesEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProduces_TgtMult() {
+		return (EAttribute) producesEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -673,57 +754,50 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		desClassEClass = createEClass(DES_CLASS);
-		createEAttribute(desClassEClass, DES_CLASS__NAME);
-		createEAttribute(desClassEClass, DES_CLASS__IS_OPTIONAL);
-		createEReference(desClassEClass, DES_CLASS__ELEMENT);
-		createEAttribute(desClassEClass, DES_CLASS__IS_ABSTRACT);
-		createEReference(desClassEClass, DES_CLASS__CHILDREN);
-		createEReference(desClassEClass, DES_CLASS__PARENT);
-		createEReference(desClassEClass, DES_CLASS__OWNEROF);
-		createEReference(desClassEClass, DES_CLASS__OWNEDBY);
-		createEReference(desClassEClass, DES_CLASS__USES);
-		createEReference(desClassEClass, DES_CLASS__USEDBY);
-		createEReference(desClassEClass, DES_CLASS__XORFROM);
-		createEReference(desClassEClass, DES_CLASS__XORTO);
+		designEntityEClass = createEClass(DESIGN_ENTITY);
+		createEAttribute(designEntityEClass, DESIGN_ENTITY__NAME);
+		createEReference(designEntityEClass, DESIGN_ENTITY__ELEMENT);
+		createEAttribute(designEntityEClass, DESIGN_ENTITY__IS_ABSTRACT);
+		createEReference(designEntityEClass, DESIGN_ENTITY__USEDBY);
+		createEReference(designEntityEClass, DESIGN_ENTITY__USES);
+		createEReference(designEntityEClass, DESIGN_ENTITY__OWNEROF);
+		createEReference(designEntityEClass, DESIGN_ENTITY__OWNEDBY);
+		createEReference(designEntityEClass, DESIGN_ENTITY__PARENT);
+		createEReference(designEntityEClass, DESIGN_ENTITY__CHILDREN);
+		createEReference(designEntityEClass, DESIGN_ENTITY__ALTERNATIVE);
+		createEReference(designEntityEClass, DESIGN_ENTITY__ALTERNATIVETO);
 
 		class_Diagram_RootEClass = createEClass(CLASS_DIAGRAM_ROOT);
-		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__DESCLASS);
+		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__DESIGNENTITY);
 		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__REFERENCE);
+		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__HARDWARE);
+		createEReference(class_Diagram_RootEClass, CLASS_DIAGRAM_ROOT__SOFTWARE);
 
 		referenceEClass = createEClass(REFERENCE);
 		createEReference(referenceEClass, REFERENCE__CLASS_DIAGRAM_ROOT);
 
-		associationEClass = createEClass(ASSOCIATION);
-		createEAttribute(associationEClass, ASSOCIATION__SRC_MULT);
-		createEAttribute(associationEClass, ASSOCIATION__TGT_MULT);
-		createEReference(associationEClass, ASSOCIATION__TGT);
-		createEReference(associationEClass, ASSOCIATION__SRC);
+		usesEClass = createEClass(USES);
+		createEAttribute(usesEClass, USES__SRC_MULT);
+		createEAttribute(usesEClass, USES__TGT_MULT);
+		createEReference(usesEClass, USES__ATTRIBUTE);
+		createEReference(usesEClass, USES__OPERATION);
+		createEReference(usesEClass, USES__TGT);
+		createEReference(usesEClass, USES__SRC);
 
 		compositionEClass = createEClass(COMPOSITION);
 		createEAttribute(compositionEClass, COMPOSITION__TGT_MULT);
 		createEReference(compositionEClass, COMPOSITION__SRC);
 		createEReference(compositionEClass, COMPOSITION__TGT);
 
-		inheritanceEClass = createEClass(INHERITANCE);
-		createEReference(inheritanceEClass, INHERITANCE__TGT);
-		createEReference(inheritanceEClass, INHERITANCE__SRC);
-
-		xorEClass = createEClass(XOR);
-		createEReference(xorEClass, XOR__TGT);
-		createEReference(xorEClass, XOR__SRC);
-
 		elementEClass = createEClass(ELEMENT);
 		createEAttribute(elementEClass, ELEMENT__NAME);
 		createEAttribute(elementEClass, ELEMENT__IS_PUBLIC);
 
-		usesEClass = createEClass(USES);
-		createEReference(usesEClass, USES__ATTRIBUTE);
-		createEReference(usesEClass, USES__OPERATION);
-
 		producesEClass = createEClass(PRODUCES);
 		createEReference(producesEClass, PRODUCES__OPERATION);
 		createEReference(producesEClass, PRODUCES__ATTRIBUTE);
+		createEAttribute(producesEClass, PRODUCES__SRC_MULT);
+		createEAttribute(producesEClass, PRODUCES__TGT_MULT);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__USES);
@@ -732,6 +806,22 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		operationEClass = createEClass(OPERATION);
 		createEReference(operationEClass, OPERATION__USES);
 		createEReference(operationEClass, OPERATION__PRODUCES);
+
+		hardwareEClass = createEClass(HARDWARE);
+		createEReference(hardwareEClass, HARDWARE__RUNS);
+
+		softwareEClass = createEClass(SOFTWARE);
+		createEReference(softwareEClass, SOFTWARE__RUNSON);
+
+		aggregationEClass = createEClass(AGGREGATION);
+		createEReference(aggregationEClass, AGGREGATION__TGT);
+		createEReference(aggregationEClass, AGGREGATION__SRC);
+		createEAttribute(aggregationEClass, AGGREGATION__SRC_MULT);
+
+		alternativeEClass = createEClass(ALTERNATIVE);
+		createEAttribute(alternativeEClass, ALTERNATIVE__CARDINALITY);
+		createEReference(alternativeEClass, ALTERNATIVE__SRC);
+		createEReference(alternativeEClass, ALTERNATIVE__TGT);
 
 		// Create enums
 		primitiveTypeEEnum = createEEnum(PRIMITIVE_TYPE);
@@ -767,61 +857,66 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		associationEClass.getESuperTypes().add(this.getReference());
+		usesEClass.getESuperTypes().add(this.getReference());
 		compositionEClass.getESuperTypes().add(this.getReference());
-		inheritanceEClass.getESuperTypes().add(this.getReference());
-		xorEClass.getESuperTypes().add(this.getReference());
-		usesEClass.getESuperTypes().add(this.getAssociation());
-		producesEClass.getESuperTypes().add(this.getAssociation());
+		producesEClass.getESuperTypes().add(this.getReference());
 		attributeEClass.getESuperTypes().add(this.getElement());
 		operationEClass.getESuperTypes().add(this.getElement());
+		hardwareEClass.getESuperTypes().add(this.getDesignEntity());
+		softwareEClass.getESuperTypes().add(this.getDesignEntity());
+		aggregationEClass.getESuperTypes().add(this.getReference());
+		alternativeEClass.getESuperTypes().add(this.getReference());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(desClassEClass, DesClass.class, "DesClass", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(designEntityEClass, DesignEntity.class, "DesignEntity", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDesClass_Name(), ecorePackage.getEString(), "name", null, 1, 1, DesClass.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDesClass_IsOptional(), ecorePackage.getEBoolean(), "isOptional", null, 1, 1, DesClass.class,
+		initEAttribute(getDesignEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, DesignEntity.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Element(), this.getElement(), null, "element", null, 0, -1, DesClass.class,
+		initEReference(getDesignEntity_Element(), this.getElement(), null, "element", null, 0, -1, DesignEntity.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDesClass_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", "false", 1, 1,
-				DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getDesignEntity_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", "false", 1, 1,
+				DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Children(), this.getInheritance(), this.getInheritance_Tgt(), "children", null, 0,
-				-1, DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getDesignEntity_Usedby(), this.getUses(), this.getUses_Tgt(), "usedby", null, 0, -1,
+				DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Parent(), this.getInheritance(), this.getInheritance_Src(), "parent", null, 0, 1,
-				DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getDesignEntity_Uses(), this.getUses(), this.getUses_Src(), "uses", null, 0, -1,
+				DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Ownerof(), this.getComposition(), this.getComposition_Src(), "ownerof", null, 0, -1,
-				DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getDesignEntity_Ownerof(), this.getComposition(), this.getComposition_Src(), "ownerof", null, 0,
+				-1, DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Ownedby(), this.getComposition(), this.getComposition_Tgt(), "ownedby", null, 0, 1,
-				DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getDesignEntity_Ownedby(), this.getComposition(), this.getComposition_Tgt(), "ownedby", null, 0,
+				1, DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Uses(), this.getAssociation(), this.getAssociation_Tgt(), "uses", null, 0, -1,
-				DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Usedby(), this.getAssociation(), this.getAssociation_Src(), "usedby", null, 0, -1,
-				DesClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Xorfrom(), this.getXOR(), this.getXOR_Tgt(), "xorfrom", null, 0, -1, DesClass.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDesClass_Xorto(), this.getXOR(), this.getXOR_Src(), "xorto", null, 0, -1, DesClass.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignEntity_Parent(), this.getDesignEntity(), this.getDesignEntity_Children(), "parent",
+				null, 0, 1, DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignEntity_Children(), this.getDesignEntity(), this.getDesignEntity_Parent(), "children",
+				null, 0, -1, DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignEntity_Alternative(), this.getAlternative(), this.getAlternative_Src(), "alternative",
+				null, 0, -1, DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignEntity_Alternativeto(), this.getAlternative(), this.getAlternative_Tgt(),
+				"alternativeto", null, 0, -1, DesignEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(class_Diagram_RootEClass, Class_Diagram_Root.class, "Class_Diagram_Root", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getClass_Diagram_Root_Desclass(), this.getDesClass(), null, "desclass", null, 0, -1,
+		initEReference(getClass_Diagram_Root_Designentity(), this.getDesignEntity(), null, "designentity", null, 0, -1,
 				Class_Diagram_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClass_Diagram_Root_Reference(), this.getReference(), this.getReference_Class_diagram_root(),
 				"reference", null, 0, -1, Class_Diagram_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClass_Diagram_Root_Hardware(), this.getHardware(), null, "hardware", null, 0, -1,
+				Class_Diagram_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClass_Diagram_Root_Software(), this.getSoftware(), null, "software", null, 0, -1,
+				Class_Diagram_Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -830,61 +925,40 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssociation_SrcMult(), ecorePackage.getEString(), "srcMult", "1..1", 0, 1, Association.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TgtMult(), ecorePackage.getEString(), "tgtMult", "1..1", 0, 1, Association.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssociation_Tgt(), this.getDesClass(), this.getDesClass_Uses(), "tgt", null, 1, 1,
-				Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEClass(usesEClass, Uses.class, "Uses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUses_SrcMult(), ecorePackage.getEString(), "srcMult", "1..1", 0, 1, Uses.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUses_TgtMult(), ecorePackage.getEString(), "tgtMult", "1..1", 0, 1, Uses.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUses_Attribute(), this.getAttribute(), this.getAttribute_Uses(), "attribute", null, 0, 1,
+				Uses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssociation_Src(), this.getDesClass(), this.getDesClass_Usedby(), "src", null, 1, 1,
-				Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getUses_Operation(), this.getOperation(), this.getOperation_Uses(), "operation", null, 0, 1,
+				Uses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUses_Tgt(), this.getDesignEntity(), this.getDesignEntity_Usedby(), "tgt", null, 1, 1,
+				Uses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUses_Src(), this.getDesignEntity(), this.getDesignEntity_Uses(), "src", null, 1, 1,
+				Uses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositionEClass, Composition.class, "Composition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComposition_TgtMult(), ecorePackage.getEString(), "tgtMult", "1..1", 0, 1, Composition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposition_Src(), this.getDesClass(), this.getDesClass_Ownerof(), "src", null, 1, 1,
+		initEReference(getComposition_Src(), this.getDesignEntity(), this.getDesignEntity_Ownerof(), "src", null, 1, 1,
 				Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposition_Tgt(), this.getDesClass(), this.getDesClass_Ownedby(), "tgt", null, 1, 1,
+		initEReference(getComposition_Tgt(), this.getDesignEntity(), this.getDesignEntity_Ownedby(), "tgt", null, 1, 1,
 				Composition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(inheritanceEClass, Inheritance.class, "Inheritance", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInheritance_Tgt(), this.getDesClass(), this.getDesClass_Children(), "tgt", null, 1, 1,
-				Inheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInheritance_Src(), this.getDesClass(), this.getDesClass_Parent(), "src", null, 1, 1,
-				Inheritance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(xorEClass, org.mcmaster.pfcsm.XOR.class, "XOR", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getXOR_Tgt(), this.getDesClass(), this.getDesClass_Xorfrom(), "tgt", null, 1, 1,
-				org.mcmaster.pfcsm.XOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getXOR_Src(), this.getDesClass(), this.getDesClass_Xorto(), "src", null, 1, 1,
-				org.mcmaster.pfcsm.XOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, Element.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElement_IsPublic(), ecorePackage.getEBoolean(), "isPublic", "true", 1, 1, Element.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(usesEClass, Uses.class, "Uses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUses_Attribute(), this.getAttribute(), this.getAttribute_Uses(), "attribute", null, 1, 1,
-				Uses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUses_Operation(), this.getOperation(), this.getOperation_Uses(), "operation", null, 1, 1,
-				Uses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(producesEClass, Produces.class, "Produces", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -894,6 +968,10 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 		initEReference(getProduces_Attribute(), this.getAttribute(), this.getAttribute_Produces(), "attribute", null, 1,
 				1, Produces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProduces_SrcMult(), ecorePackage.getEString(), "srcMult", "1..1", 0, 1, Produces.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProduces_TgtMult(), ecorePackage.getEString(), "tgtMult", "1..1", 0, 1, Produces.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -911,6 +989,41 @@ public class PfcsmPackageImpl extends EPackageImpl implements PfcsmPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_Produces(), this.getProduces(), this.getProduces_Operation(), "produces", null, 0,
 				-1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(hardwareEClass, Hardware.class, "Hardware", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHardware_Runs(), this.getAggregation(), this.getAggregation_Tgt(), "runs", null, 0, -1,
+				Hardware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(softwareEClass, Software.class, "Software", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSoftware_Runson(), this.getAggregation(), this.getAggregation_Src(), "runson", null, 0, -1,
+				Software.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(aggregationEClass, Aggregation.class, "Aggregation", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAggregation_Tgt(), this.getHardware(), this.getHardware_Runs(), "tgt", null, 1, 1,
+				Aggregation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAggregation_Src(), this.getSoftware(), this.getSoftware_Runson(), "src", null, 1, 1,
+				Aggregation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAggregation_SrcMult(), ecorePackage.getEString(), "srcMult", "1..1", 0, 1, Aggregation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(alternativeEClass, Alternative.class, "Alternative", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAlternative_Cardinality(), ecorePackage.getEString(), "cardinality", "0..4", 0, 1,
+				Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternative_Src(), this.getDesignEntity(), this.getDesignEntity_Alternative(), "src", null, 0,
+				1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlternative_Tgt(), this.getDesignEntity(), this.getDesignEntity_Alternativeto(), "tgt", null,
+				0, 1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

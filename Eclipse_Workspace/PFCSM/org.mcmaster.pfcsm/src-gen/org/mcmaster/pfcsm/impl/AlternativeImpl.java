@@ -4,47 +4,51 @@ package org.mcmaster.pfcsm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.mcmaster.pfcsm.Composition;
+
+import org.mcmaster.pfcsm.Alternative;
 import org.mcmaster.pfcsm.DesignEntity;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Composition</b></em>'.
+ * An implementation of the model object '<em><b>Alternative</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.pfcsm.impl.CompositionImpl#getTgtMult <em>Tgt Mult</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.CompositionImpl#getSrc <em>Src</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.impl.CompositionImpl#getTgt <em>Tgt</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.AlternativeImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.AlternativeImpl#getSrc <em>Src</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.AlternativeImpl#getTgt <em>Tgt</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CompositionImpl extends ReferenceImpl implements Composition {
+public class AlternativeImpl extends ReferenceImpl implements Alternative {
 	/**
-	 * The default value of the '{@link #getTgtMult() <em>Tgt Mult</em>}' attribute.
+	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTgtMult()
+	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TGT_MULT_EDEFAULT = "1..1";
+	protected static final String CARDINALITY_EDEFAULT = "0..4";
+
 	/**
-	 * The cached value of the '{@link #getTgtMult() <em>Tgt Mult</em>}' attribute.
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTgtMult()
+	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
 	 */
-	protected String tgtMult = TGT_MULT_EDEFAULT;
+	protected String cardinality = CARDINALITY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSrc() <em>Src</em>}' reference.
@@ -55,6 +59,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * @ordered
 	 */
 	protected DesignEntity src;
+
 	/**
 	 * The cached value of the '{@link #getTgt() <em>Tgt</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -70,7 +75,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CompositionImpl() {
+	protected AlternativeImpl() {
 		super();
 	}
 
@@ -81,7 +86,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PfcsmPackage.Literals.COMPOSITION;
+		return PfcsmPackage.Literals.ALTERNATIVE;
 	}
 
 	/**
@@ -89,8 +94,8 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTgtMult() {
-		return tgtMult;
+	public String getCardinality() {
+		return cardinality;
 	}
 
 	/**
@@ -98,12 +103,12 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTgtMult(String newTgtMult) {
-		String oldTgtMult = tgtMult;
-		tgtMult = newTgtMult;
+	public void setCardinality(String newCardinality) {
+		String oldCardinality = cardinality;
+		cardinality = newCardinality;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.COMPOSITION__TGT_MULT, oldTgtMult,
-					tgtMult));
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ALTERNATIVE__CARDINALITY, oldCardinality,
+					cardinality));
 	}
 
 	/**
@@ -117,7 +122,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 			src = (DesignEntity) eResolveProxy(oldSrc);
 			if (src != oldSrc) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.COMPOSITION__SRC, oldSrc,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.ALTERNATIVE__SRC, oldSrc,
 							src));
 			}
 		}
@@ -143,7 +148,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 		src = newSrc;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PfcsmPackage.COMPOSITION__SRC, oldSrc, newSrc);
+					PfcsmPackage.ALTERNATIVE__SRC, oldSrc, newSrc);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -161,16 +166,16 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 		if (newSrc != src) {
 			NotificationChain msgs = null;
 			if (src != null)
-				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEROF,
+				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__ALTERNATIVE,
 						DesignEntity.class, msgs);
 			if (newSrc != null)
-				msgs = ((InternalEObject) newSrc).eInverseAdd(this, PfcsmPackage.DESIGN_ENTITY__OWNEROF,
+				msgs = ((InternalEObject) newSrc).eInverseAdd(this, PfcsmPackage.DESIGN_ENTITY__ALTERNATIVE,
 						DesignEntity.class, msgs);
 			msgs = basicSetSrc(newSrc, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.COMPOSITION__SRC, newSrc, newSrc));
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ALTERNATIVE__SRC, newSrc, newSrc));
 	}
 
 	/**
@@ -184,7 +189,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 			tgt = (DesignEntity) eResolveProxy(oldTgt);
 			if (tgt != oldTgt) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.COMPOSITION__TGT, oldTgt,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.ALTERNATIVE__TGT, oldTgt,
 							tgt));
 			}
 		}
@@ -210,7 +215,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 		tgt = newTgt;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					PfcsmPackage.COMPOSITION__TGT, oldTgt, newTgt);
+					PfcsmPackage.ALTERNATIVE__TGT, oldTgt, newTgt);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -228,16 +233,16 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 		if (newTgt != tgt) {
 			NotificationChain msgs = null;
 			if (tgt != null)
-				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEDBY,
+				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__ALTERNATIVETO,
 						DesignEntity.class, msgs);
 			if (newTgt != null)
-				msgs = ((InternalEObject) newTgt).eInverseAdd(this, PfcsmPackage.DESIGN_ENTITY__OWNEDBY,
+				msgs = ((InternalEObject) newTgt).eInverseAdd(this, PfcsmPackage.DESIGN_ENTITY__ALTERNATIVETO,
 						DesignEntity.class, msgs);
 			msgs = basicSetTgt(newTgt, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.COMPOSITION__TGT, newTgt, newTgt));
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.ALTERNATIVE__TGT, newTgt, newTgt));
 	}
 
 	/**
@@ -248,14 +253,14 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.COMPOSITION__SRC:
+		case PfcsmPackage.ALTERNATIVE__SRC:
 			if (src != null)
-				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEROF,
+				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__ALTERNATIVE,
 						DesignEntity.class, msgs);
 			return basicSetSrc((DesignEntity) otherEnd, msgs);
-		case PfcsmPackage.COMPOSITION__TGT:
+		case PfcsmPackage.ALTERNATIVE__TGT:
 			if (tgt != null)
-				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEDBY,
+				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__ALTERNATIVETO,
 						DesignEntity.class, msgs);
 			return basicSetTgt((DesignEntity) otherEnd, msgs);
 		}
@@ -270,9 +275,9 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.COMPOSITION__SRC:
+		case PfcsmPackage.ALTERNATIVE__SRC:
 			return basicSetSrc(null, msgs);
-		case PfcsmPackage.COMPOSITION__TGT:
+		case PfcsmPackage.ALTERNATIVE__TGT:
 			return basicSetTgt(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -286,13 +291,13 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PfcsmPackage.COMPOSITION__TGT_MULT:
-			return getTgtMult();
-		case PfcsmPackage.COMPOSITION__SRC:
+		case PfcsmPackage.ALTERNATIVE__CARDINALITY:
+			return getCardinality();
+		case PfcsmPackage.ALTERNATIVE__SRC:
 			if (resolve)
 				return getSrc();
 			return basicGetSrc();
-		case PfcsmPackage.COMPOSITION__TGT:
+		case PfcsmPackage.ALTERNATIVE__TGT:
 			if (resolve)
 				return getTgt();
 			return basicGetTgt();
@@ -308,13 +313,13 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PfcsmPackage.COMPOSITION__TGT_MULT:
-			setTgtMult((String) newValue);
+		case PfcsmPackage.ALTERNATIVE__CARDINALITY:
+			setCardinality((String) newValue);
 			return;
-		case PfcsmPackage.COMPOSITION__SRC:
+		case PfcsmPackage.ALTERNATIVE__SRC:
 			setSrc((DesignEntity) newValue);
 			return;
-		case PfcsmPackage.COMPOSITION__TGT:
+		case PfcsmPackage.ALTERNATIVE__TGT:
 			setTgt((DesignEntity) newValue);
 			return;
 		}
@@ -329,13 +334,13 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PfcsmPackage.COMPOSITION__TGT_MULT:
-			setTgtMult(TGT_MULT_EDEFAULT);
+		case PfcsmPackage.ALTERNATIVE__CARDINALITY:
+			setCardinality(CARDINALITY_EDEFAULT);
 			return;
-		case PfcsmPackage.COMPOSITION__SRC:
+		case PfcsmPackage.ALTERNATIVE__SRC:
 			setSrc((DesignEntity) null);
 			return;
-		case PfcsmPackage.COMPOSITION__TGT:
+		case PfcsmPackage.ALTERNATIVE__TGT:
 			setTgt((DesignEntity) null);
 			return;
 		}
@@ -350,11 +355,11 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PfcsmPackage.COMPOSITION__TGT_MULT:
-			return TGT_MULT_EDEFAULT == null ? tgtMult != null : !TGT_MULT_EDEFAULT.equals(tgtMult);
-		case PfcsmPackage.COMPOSITION__SRC:
+		case PfcsmPackage.ALTERNATIVE__CARDINALITY:
+			return CARDINALITY_EDEFAULT == null ? cardinality != null : !CARDINALITY_EDEFAULT.equals(cardinality);
+		case PfcsmPackage.ALTERNATIVE__SRC:
 			return src != null;
-		case PfcsmPackage.COMPOSITION__TGT:
+		case PfcsmPackage.ALTERNATIVE__TGT:
 			return tgt != null;
 		}
 		return super.eIsSet(featureID);
@@ -371,10 +376,10 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (tgtMult: ");
-		result.append(tgtMult);
+		result.append(" (cardinality: ");
+		result.append(cardinality);
 		result.append(')');
 		return result.toString();
 	}
 
-} //CompositionImpl
+} //AlternativeImpl

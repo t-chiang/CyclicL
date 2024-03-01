@@ -73,26 +73,26 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.DesClass} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.DesignEntity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DesClassItemProvider desClassItemProvider;
+	protected DesignEntityItemProvider designEntityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.DesClass}.
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.DesignEntity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDesClassAdapter() {
-		if (desClassItemProvider == null) {
-			desClassItemProvider = new DesClassItemProvider(this);
+	public Adapter createDesignEntityAdapter() {
+		if (designEntityItemProvider == null) {
+			designEntityItemProvider = new DesignEntityItemProvider(this);
 		}
 
-		return desClassItemProvider;
+		return designEntityItemProvider;
 	}
 
 	/**
@@ -119,29 +119,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Association} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AssociationItemProvider associationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Association}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAssociationAdapter() {
-		if (associationItemProvider == null) {
-			associationItemProvider = new AssociationItemProvider(this);
-		}
-
-		return associationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Composition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,52 +142,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Inheritance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InheritanceItemProvider inheritanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Inheritance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInheritanceAdapter() {
-		if (inheritanceItemProvider == null) {
-			inheritanceItemProvider = new InheritanceItemProvider(this);
-		}
-
-		return inheritanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.XOR} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected XORItemProvider xorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.XOR}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createXORAdapter() {
-		if (xorItemProvider == null) {
-			xorItemProvider = new XORItemProvider(this);
-		}
-
-		return xorItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Operation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +162,98 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return operationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Hardware} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HardwareItemProvider hardwareItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Hardware}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHardwareAdapter() {
+		if (hardwareItemProvider == null) {
+			hardwareItemProvider = new HardwareItemProvider(this);
+		}
+
+		return hardwareItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Software} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SoftwareItemProvider softwareItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Software}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSoftwareAdapter() {
+		if (softwareItemProvider == null) {
+			softwareItemProvider = new SoftwareItemProvider(this);
+		}
+
+		return softwareItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Aggregation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AggregationItemProvider aggregationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Aggregation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAggregationAdapter() {
+		if (aggregationItemProvider == null) {
+			aggregationItemProvider = new AggregationItemProvider(this);
+		}
+
+		return aggregationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Alternative} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AlternativeItemProvider alternativeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Alternative}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAlternativeAdapter() {
+		if (alternativeItemProvider == null) {
+			alternativeItemProvider = new AlternativeItemProvider(this);
+		}
+
+		return alternativeItemProvider;
 	}
 
 	/**
@@ -401,26 +424,28 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (desClassItemProvider != null)
-			desClassItemProvider.dispose();
+		if (designEntityItemProvider != null)
+			designEntityItemProvider.dispose();
 		if (class_Diagram_RootItemProvider != null)
 			class_Diagram_RootItemProvider.dispose();
-		if (associationItemProvider != null)
-			associationItemProvider.dispose();
-		if (compositionItemProvider != null)
-			compositionItemProvider.dispose();
-		if (inheritanceItemProvider != null)
-			inheritanceItemProvider.dispose();
-		if (xorItemProvider != null)
-			xorItemProvider.dispose();
 		if (usesItemProvider != null)
 			usesItemProvider.dispose();
+		if (compositionItemProvider != null)
+			compositionItemProvider.dispose();
 		if (producesItemProvider != null)
 			producesItemProvider.dispose();
 		if (attributeItemProvider != null)
 			attributeItemProvider.dispose();
 		if (operationItemProvider != null)
 			operationItemProvider.dispose();
+		if (hardwareItemProvider != null)
+			hardwareItemProvider.dispose();
+		if (softwareItemProvider != null)
+			softwareItemProvider.dispose();
+		if (aggregationItemProvider != null)
+			aggregationItemProvider.dispose();
+		if (alternativeItemProvider != null)
+			alternativeItemProvider.dispose();
 	}
 
 }

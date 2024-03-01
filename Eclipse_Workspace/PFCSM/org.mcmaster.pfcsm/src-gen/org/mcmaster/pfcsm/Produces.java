@@ -13,13 +13,15 @@ package org.mcmaster.pfcsm;
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.Produces#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.Produces#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Produces#getSrcMult <em>Src Mult</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.Produces#getTgtMult <em>Tgt Mult</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.pfcsm.PfcsmPackage#getProduces()
  * @model
  * @generated
  */
-public interface Produces extends Association {
+public interface Produces extends Reference {
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' reference.
@@ -68,4 +70,50 @@ public interface Produces extends Association {
 	 * @generated
 	 */
 	void setAttribute(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Src Mult</b></em>' attribute.
+	 * The default value is <code>"1..1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Src Mult</em>' attribute.
+	 * @see #setSrcMult(String)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getProduces_SrcMult()
+	 * @model default="1..1"
+	 * @generated
+	 */
+	String getSrcMult();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Produces#getSrcMult <em>Src Mult</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Src Mult</em>' attribute.
+	 * @see #getSrcMult()
+	 * @generated
+	 */
+	void setSrcMult(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tgt Mult</b></em>' attribute.
+	 * The default value is <code>"1..1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tgt Mult</em>' attribute.
+	 * @see #setTgtMult(String)
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getProduces_TgtMult()
+	 * @model default="1..1"
+	 * @generated
+	 */
+	String getTgtMult();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.pfcsm.Produces#getTgtMult <em>Tgt Mult</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tgt Mult</em>' attribute.
+	 * @see #getTgtMult()
+	 * @generated
+	 */
+	void setTgtMult(String value);
 } // Produces

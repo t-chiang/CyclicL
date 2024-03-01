@@ -10,26 +10,26 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.mcmaster.pfcsm.Association;
+import org.mcmaster.pfcsm.Aggregation;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Association} object.
+ * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Aggregation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssociationItemProvider extends ReferenceItemProvider {
+public class AggregationItemProvider extends ReferenceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssociationItemProvider(AdapterFactory adapterFactory) {
+	public AggregationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,44 +44,11 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSrcMultPropertyDescriptor(object);
-			addTgtMultPropertyDescriptor(object);
 			addTgtPropertyDescriptor(object);
 			addSrcPropertyDescriptor(object);
+			addSrcMultPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Src Mult feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSrcMultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_srcMult_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_srcMult_feature",
-								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__SRC_MULT, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Tgt Mult feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTgtMultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_tgtMult_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_tgtMult_feature",
-								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__TGT_MULT, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -93,10 +60,10 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 	protected void addTgtPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_tgt_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_tgt_feature",
-								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__TGT, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Aggregation_tgt_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Aggregation_tgt_feature",
+								"_UI_Aggregation_type"),
+						PfcsmPackage.Literals.AGGREGATION__TGT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -108,21 +75,37 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 	protected void addSrcPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Association_src_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Association_src_feature",
-								"_UI_Association_type"),
-						PfcsmPackage.Literals.ASSOCIATION__SRC, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Aggregation_src_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Aggregation_src_feature",
+								"_UI_Aggregation_type"),
+						PfcsmPackage.Literals.AGGREGATION__SRC, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns Association.gif.
+	 * This adds a property descriptor for the Src Mult feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSrcMultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Aggregation_srcMult_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Aggregation_srcMult_feature",
+								"_UI_Aggregation_type"),
+						PfcsmPackage.Literals.AGGREGATION__SRC_MULT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns Aggregation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Association"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Aggregation"));
 	}
 
 	/**
@@ -143,9 +126,9 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Association) object).getSrcMult();
-		return label == null || label.length() == 0 ? getString("_UI_Association_type")
-				: getString("_UI_Association_type") + " " + label;
+		String label = ((Aggregation) object).getSrcMult();
+		return label == null || label.length() == 0 ? getString("_UI_Aggregation_type")
+				: getString("_UI_Aggregation_type") + " " + label;
 	}
 
 	/**
@@ -159,9 +142,8 @@ public class AssociationItemProvider extends ReferenceItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Association.class)) {
-		case PfcsmPackage.ASSOCIATION__SRC_MULT:
-		case PfcsmPackage.ASSOCIATION__TGT_MULT:
+		switch (notification.getFeatureID(Aggregation.class)) {
+		case PfcsmPackage.AGGREGATION__SRC_MULT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

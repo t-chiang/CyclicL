@@ -22,13 +22,13 @@ public interface PfcsmFactory extends EFactory {
 	PfcsmFactory eINSTANCE = org.mcmaster.pfcsm.impl.PfcsmFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Des Class</em>'.
+	 * Returns a new object of class '<em>Design Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Des Class</em>'.
+	 * @return a new object of class '<em>Design Entity</em>'.
 	 * @generated
 	 */
-	DesClass createDesClass();
+	DesignEntity createDesignEntity();
 
 	/**
 	 * Returns a new object of class '<em>Class Diagram Root</em>'.
@@ -40,15 +40,6 @@ public interface PfcsmFactory extends EFactory {
 	Class_Diagram_Root createClass_Diagram_Root();
 
 	/**
-	 * Returns a new object of class '<em>Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Association</em>'.
-	 * @generated
-	 */
-	Association createAssociation();
-
-	/**
 	 * Returns a new object of class '<em>Composition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,24 +49,6 @@ public interface PfcsmFactory extends EFactory {
 	Composition createComposition();
 
 	/**
-	 * Returns a new object of class '<em>Inheritance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Inheritance</em>'.
-	 * @generated
-	 */
-	Inheritance createInheritance();
-
-	/**
-	 * Returns a new object of class '<em>XOR</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>XOR</em>'.
-	 * @generated
-	 */
-	XOR createXOR();
-
-	/**
 	 * Returns a new object of class '<em>Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +56,42 @@ public interface PfcsmFactory extends EFactory {
 	 * @generated
 	 */
 	Operation createOperation();
+
+	/**
+	 * Returns a new object of class '<em>Hardware</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hardware</em>'.
+	 * @generated
+	 */
+	Hardware createHardware();
+
+	/**
+	 * Returns a new object of class '<em>Software</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Software</em>'.
+	 * @generated
+	 */
+	Software createSoftware();
+
+	/**
+	 * Returns a new object of class '<em>Aggregation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Aggregation</em>'.
+	 * @generated
+	 */
+	Aggregation createAggregation();
+
+	/**
+	 * Returns a new object of class '<em>Alternative</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alternative</em>'.
+	 * @generated
+	 */
+	Alternative createAlternative();
 
 	/**
 	 * Returns a new object of class '<em>Uses</em>'.

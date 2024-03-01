@@ -19,18 +19,14 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.pfcsm.DesClass#isIsOptional <em>Is Optional</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.DesClass#getElement <em>Element</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.DesClass#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.DesClass#getChildren <em>Children</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.DesClass#getParent <em>Parent</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#getUsedby <em>Usedby</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.DesClass#getUses <em>Uses</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.DesClass#getOwnerof <em>Ownerof</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.DesClass#getOwnedby <em>Ownedby</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.DesClass#getUses <em>Uses</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.DesClass#getUsedby <em>Usedby</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.DesClass#getXorfrom <em>Xorfrom</em>}</li>
- *   <li>{@link org.mcmaster.pfcsm.DesClass#getXorto <em>Xorto</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface DesClass extends EObject {
@@ -114,42 +110,32 @@ public interface DesClass extends EObject {
 	void setIsAbstract(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Children</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.pfcsm.Inheritance}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Inheritance#getTgt <em>Tgt</em>}'.
+	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.pfcsm.Uses}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Uses#getSrc <em>Src</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Children</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Children()
-	 * @see org.mcmaster.pfcsm.Inheritance#getTgt
-	 * @model opposite="tgt"
-	 * @generated
-	 */
-	EList<Inheritance> getChildren();
-
-	/**
-	 * Returns the value of the '<em><b>Parent</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Inheritance#getSrc <em>Src</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent</em>' reference.
-	 * @see #setParent(Inheritance)
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Parent()
-	 * @see org.mcmaster.pfcsm.Inheritance#getSrc
+	 * @return the value of the '<em>Uses</em>' reference list.
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Uses()
+	 * @see org.mcmaster.pfcsm.Uses#getSrc
 	 * @model opposite="src"
 	 * @generated
 	 */
-	Inheritance getParent();
+	EList<Uses> getUses();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.pfcsm.DesClass#getParent <em>Parent</em>}' reference.
+	 * Returns the value of the '<em><b>Usedby</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.pfcsm.Uses}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Uses#getTgt <em>Tgt</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' reference.
-	 * @see #getParent()
+	 * @return the value of the '<em>Usedby</em>' reference list.
+	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Usedby()
+	 * @see org.mcmaster.pfcsm.Uses#getTgt
+	 * @model opposite="tgt"
 	 * @generated
 	 */
-	void setParent(Inheritance value);
+	EList<Uses> getUsedby();
 
 	/**
 	 * Returns the value of the '<em><b>Ownerof</b></em>' reference list.
@@ -188,61 +174,5 @@ public interface DesClass extends EObject {
 	 * @generated
 	 */
 	void setOwnedby(Composition value);
-
-	/**
-	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.pfcsm.Association}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Association#getTgt <em>Tgt</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uses</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Uses()
-	 * @see org.mcmaster.pfcsm.Association#getTgt
-	 * @model opposite="tgt"
-	 * @generated
-	 */
-	EList<Association> getUses();
-
-	/**
-	 * Returns the value of the '<em><b>Usedby</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.pfcsm.Association}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.Association#getSrc <em>Src</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Usedby</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Usedby()
-	 * @see org.mcmaster.pfcsm.Association#getSrc
-	 * @model opposite="src"
-	 * @generated
-	 */
-	EList<Association> getUsedby();
-
-	/**
-	 * Returns the value of the '<em><b>Xorfrom</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.pfcsm.XOR}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.XOR#getTgt <em>Tgt</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Xorfrom</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Xorfrom()
-	 * @see org.mcmaster.pfcsm.XOR#getTgt
-	 * @model opposite="tgt"
-	 * @generated
-	 */
-	EList<XOR> getXorfrom();
-
-	/**
-	 * Returns the value of the '<em><b>Xorto</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.pfcsm.XOR}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.pfcsm.XOR#getSrc <em>Src</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Xorto</em>' reference list.
-	 * @see org.mcmaster.pfcsm.PfcsmPackage#getDesClass_Xorto()
-	 * @see org.mcmaster.pfcsm.XOR#getSrc
-	 * @model opposite="src"
-	 * @generated
-	 */
-	EList<XOR> getXorto();
 
 } // DesClass

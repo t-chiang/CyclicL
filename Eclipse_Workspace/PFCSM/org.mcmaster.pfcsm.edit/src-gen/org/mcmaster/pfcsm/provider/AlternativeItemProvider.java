@@ -10,26 +10,26 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.mcmaster.pfcsm.Alternative;
 import org.mcmaster.pfcsm.PfcsmPackage;
-import org.mcmaster.pfcsm.Produces;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Produces} object.
+ * This is the item provider adapter for a {@link org.mcmaster.pfcsm.Alternative} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProducesItemProvider extends ReferenceItemProvider {
+public class AlternativeItemProvider extends ReferenceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProducesItemProvider(AdapterFactory adapterFactory) {
+	public AlternativeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,85 +44,68 @@ public class ProducesItemProvider extends ReferenceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOperationPropertyDescriptor(object);
-			addAttributePropertyDescriptor(object);
-			addSrcMultPropertyDescriptor(object);
-			addTgtMultPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
+			addSrcPropertyDescriptor(object);
+			addTgtPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Operation feature.
+	 * This adds a property descriptor for the Cardinality feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOperationPropertyDescriptor(Object object) {
+	protected void addCardinalityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Produces_operation_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Produces_operation_feature",
-								"_UI_Produces_type"),
-						PfcsmPackage.Literals.PRODUCES__OPERATION, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Attribute feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Produces_attribute_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Produces_attribute_feature",
-								"_UI_Produces_type"),
-						PfcsmPackage.Literals.PRODUCES__ATTRIBUTE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Src Mult feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSrcMultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Produces_srcMult_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Produces_srcMult_feature",
-								"_UI_Produces_type"),
-						PfcsmPackage.Literals.PRODUCES__SRC_MULT, true, false, false,
+						getResourceLocator(), getString("_UI_Alternative_cardinality_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Alternative_cardinality_feature",
+								"_UI_Alternative_type"),
+						PfcsmPackage.Literals.ALTERNATIVE__CARDINALITY, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Tgt Mult feature.
+	 * This adds a property descriptor for the Src feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTgtMultPropertyDescriptor(Object object) {
+	protected void addSrcPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Produces_tgtMult_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Produces_tgtMult_feature",
-								"_UI_Produces_type"),
-						PfcsmPackage.Literals.PRODUCES__TGT_MULT, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Alternative_src_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Alternative_src_feature",
+								"_UI_Alternative_type"),
+						PfcsmPackage.Literals.ALTERNATIVE__SRC, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns Produces.gif.
+	 * This adds a property descriptor for the Tgt feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTgtPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Alternative_tgt_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Alternative_tgt_feature",
+								"_UI_Alternative_type"),
+						PfcsmPackage.Literals.ALTERNATIVE__TGT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This returns Alternative.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Produces"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Alternative"));
 	}
 
 	/**
@@ -143,9 +126,9 @@ public class ProducesItemProvider extends ReferenceItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Produces) object).getSrcMult();
-		return label == null || label.length() == 0 ? getString("_UI_Produces_type")
-				: getString("_UI_Produces_type") + " " + label;
+		String label = ((Alternative) object).getCardinality();
+		return label == null || label.length() == 0 ? getString("_UI_Alternative_type")
+				: getString("_UI_Alternative_type") + " " + label;
 	}
 
 	/**
@@ -159,9 +142,8 @@ public class ProducesItemProvider extends ReferenceItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Produces.class)) {
-		case PfcsmPackage.PRODUCES__SRC_MULT:
-		case PfcsmPackage.PRODUCES__TGT_MULT:
+		switch (notification.getFeatureID(Alternative.class)) {
+		case PfcsmPackage.ALTERNATIVE__CARDINALITY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
