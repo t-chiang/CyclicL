@@ -6,10 +6,18 @@ pre{
 rule root2root
 	transform sourceRoot : design!Class_Diagram_Root
 	to targetRoot : requirement!Requirement_Root{
-		targetRoot.designelement.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
-		targetRoot.requirements.addAll(sourceRoot.desclass.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
-		targetRoot.testcase.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
-		targetRoot.review.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
+		targetRoot.designelement.addAll(sourceRoot.designentity.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+		targetRoot.designelement.addAll(sourceRoot.hardware.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+		targetRoot.designelement.addAll(sourceRoot.software.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+		targetRoot.requirements.addAll(sourceRoot.designentity.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.requirements.addAll(sourceRoot.hardware.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.requirements.addAll(sourceRoot.software.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.testcase.addAll(sourceRoot.designentity.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
+		targetRoot.testcase.addAll(sourceRoot.hardware.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
+		targetRoot.testcase.addAll(sourceRoot.software.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
+		targetRoot.review.addAll(sourceRoot.designentity.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
+		targetRoot.review.addAll(sourceRoot.hardware.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
+		targetRoot.review.addAll(sourceRoot.software.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
 }
 
 rule hardware2designElement

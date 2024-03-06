@@ -7,9 +7,9 @@ pre{
 rule root2root
 	transform sourceRoot : requirement!Requirement_Root
 	to targetRoot : design!Class_Diagram_Root{
-		targetRoot.desclass.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!Hardware)));
-		targetRoot.desclass.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!Software)));
-		targetRoot.desclass.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!DesClass)));
+		targetRoot.hardware.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!Hardware)));
+		targetRoot.software.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!Software)));
+		targetRoot.designentity.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isTypeOf(design!DesignEntity)));
 		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(design!Uses)));
 		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(Sequence)).flatten());
 	}
@@ -17,20 +17,23 @@ rule root2root
 rule designElement2designEntity
 	transform desElement: requirement!DesignElement
 	to desEntities: Sequence{
+		desElement.isHardware.println();
 		if(desElement.isHardware){
 			var newHardware = new design!Hardware;
 			newHardware.name = desElement.name;
+			newHardware.name.println();
+			newHardware.type.println();
 			desclass_created.add(newHardware);
 			desEntities.add(newHardware);
 		}
-		else{
-			if(desElement.isSoftware){
+		else if(desElement.isSoftware){
 				var newSoftware = new design!Software;
 				newSoftware.name = desElement.name;
 				desclass_created.add(newSoftware);
 				desEntities.add(newSoftware);
 			}
 			else{
+				("WE here").println();
 				var newDesignEntity = new design!DesignEntity;
 				newDesignEntity.name = desElement.name;
 				desclass_created.add(newDesignEntity);
@@ -38,7 +41,6 @@ rule designElement2designEntity
 			}
 		}
 		
-	}
 	
 rule functional2association
 	transform req : requirement!Functional
@@ -61,7 +63,7 @@ rule functional2association
 					}
 				}
 			}
-			else if(not(traceList[0].isHardware) and not(traceList[1].isHardware)){
+			else if((traceList[0].isSoftware) and (traceList[1].isSoftware)){
 				for (d in desclass_created){
 					if(d.name == traceList[0].name){
 						newAssoc.tgt = d;

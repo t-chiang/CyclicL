@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rmdl:Requirement_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
-  <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="1" traceto="//@designelement.1 //@designelement.0 //@designelement.2"/>
-  <designelement name="controller" tracefrom="//@requirements.0"/>
-  <designelement name="mechanism" isHardware="true" tracefrom="//@requirements.0"/>
-  <designelement name="ECU" isHardware="true" tracefrom="//@requirements.0" composedof="//@designelement.0"/>
+<rmdl:Requirement_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rmdl="http://www.example.org/rmdl">
+  <designelement name="DesignElement1"/>
 </rmdl:Requirement_Root>

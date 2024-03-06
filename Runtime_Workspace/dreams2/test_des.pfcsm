@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <desclass xsi:type="pfcsm:Hardware" name="mechanism" uses="//@reference.0"/>
-  <desclass xsi:type="pfcsm:Software" name="controller" usedby="//@reference.0" ownedby="//@reference.4"/>
-  <desclass xsi:type="pfcsm:Hardware" name="ECU" usedby="//@reference.3" ownerof="//@reference.2"/>
-  <desclass xsi:type="pfcsm:Software" name="controller" ownedby="//@reference.2"/>
-  <desclass xsi:type="pfcsm:Hardware" name="mechanism" uses="//@reference.3"/>
-  <desclass xsi:type="pfcsm:Hardware" name="ECU" ownerof="//@reference.4"/>
-  <desclass xsi:type="pfcsm:Hardware" name="mechanism" uses="//@reference.5"/>
-  <desclass xsi:type="pfcsm:Software" name="controller" usedby="//@reference.5"/>
-  <reference xsi:type="pfcsm:Uses" tgt="//@desclass.1" src="//@desclass.0"/>
-  <reference xsi:type="pfcsm:Composition"/>
-  <reference xsi:type="pfcsm:Composition" src="//@desclass.2" tgt="//@desclass.3"/>
-  <reference xsi:type="pfcsm:Uses" tgt="//@desclass.2" src="//@desclass.4"/>
-  <reference xsi:type="pfcsm:Composition" src="//@desclass.5" tgt="//@desclass.1"/>
-  <reference xsi:type="pfcsm:Uses" tgt="//@desclass.7" src="//@desclass.6"/>
+  <designentity name="DesignEntity1" uses="//@reference.0"/>
+  <designentity name="DesignEntity2" usedby="//@reference.0"/>
+  <designentity name="DesignEntity3"/>
+  <reference xsi:type="pfcsm:Uses" tgt="//@designentity.1" src="//@designentity.0"/>
+  <hardware name="Entity1"/>
+  <software name="Class1"/>
 </pfcsm:Class_Diagram_Root>

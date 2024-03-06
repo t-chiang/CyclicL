@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
+  <reference xsi:type="pfcsm:Uses" tgt="//@software.0" src="//@hardware.0"/>
+  <hardware name="Servo_Motor" uses="//@reference.0"/>
+  <software name="Servo_Controller" usedby="//@reference.0"/>
+</pfcsm:Class_Diagram_Root>

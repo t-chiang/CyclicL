@@ -14,6 +14,6 @@
   <review isApproved="true" reviewer="Reviewer2" requirements="//@requirements.1"/>
   <review reviewer="Reviewer3" requirements="//@requirements.3"/>
   <designelement name="DesignElement1" isHardware="true" tracefrom="//@requirements.0 //@requirements.4"/>
-  <designelement name="DesignElement2" tracefrom="//@requirements.0 //@requirements.2"/>
+  <designelement name="DesignElement2" isSoftware="true" tracefrom="//@requirements.0 //@requirements.2"/>
   <designelement name="DesignElement3" tracefrom="//@requirements.4 //@requirements.3 //@requirements.1"/>
 </rmdl:Requirement_Root>
