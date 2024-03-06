@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author sirch
- *
- */
-module testtttinnng {
-}

@@ -23,11 +23,13 @@ import org.mcmaster.pfcsm.Produces;
  * <ul>
  *   <li>{@link org.mcmaster.pfcsm.impl.ProducesImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.ProducesImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.ProducesImpl#getSrcMult <em>Src Mult</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.ProducesImpl#getTgtMult <em>Tgt Mult</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProducesImpl extends AssociationImpl implements Produces {
+public class ProducesImpl extends ReferenceImpl implements Produces {
 	/**
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -46,6 +48,43 @@ public class ProducesImpl extends AssociationImpl implements Produces {
 	 * @ordered
 	 */
 	protected Attribute attribute;
+
+	/**
+	 * The default value of the '{@link #getSrcMult() <em>Src Mult</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSrcMult()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SRC_MULT_EDEFAULT = "1..1";
+	/**
+	 * The cached value of the '{@link #getSrcMult() <em>Src Mult</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSrcMult()
+	 * @generated
+	 * @ordered
+	 */
+	protected String srcMult = SRC_MULT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getTgtMult() <em>Tgt Mult</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTgtMult()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TGT_MULT_EDEFAULT = "1..1";
+	/**
+	 * The cached value of the '{@link #getTgtMult() <em>Tgt Mult</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTgtMult()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tgtMult = TGT_MULT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,6 +246,50 @@ public class ProducesImpl extends AssociationImpl implements Produces {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSrcMult() {
+		return srcMult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSrcMult(String newSrcMult) {
+		String oldSrcMult = srcMult;
+		srcMult = newSrcMult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.PRODUCES__SRC_MULT, oldSrcMult,
+					srcMult));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTgtMult() {
+		return tgtMult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTgtMult(String newTgtMult) {
+		String oldTgtMult = tgtMult;
+		tgtMult = newTgtMult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PfcsmPackage.PRODUCES__TGT_MULT, oldTgtMult,
+					tgtMult));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -256,6 +339,10 @@ public class ProducesImpl extends AssociationImpl implements Produces {
 			if (resolve)
 				return getAttribute();
 			return basicGetAttribute();
+		case PfcsmPackage.PRODUCES__SRC_MULT:
+			return getSrcMult();
+		case PfcsmPackage.PRODUCES__TGT_MULT:
+			return getTgtMult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -273,6 +360,12 @@ public class ProducesImpl extends AssociationImpl implements Produces {
 			return;
 		case PfcsmPackage.PRODUCES__ATTRIBUTE:
 			setAttribute((Attribute) newValue);
+			return;
+		case PfcsmPackage.PRODUCES__SRC_MULT:
+			setSrcMult((String) newValue);
+			return;
+		case PfcsmPackage.PRODUCES__TGT_MULT:
+			setTgtMult((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -292,6 +385,12 @@ public class ProducesImpl extends AssociationImpl implements Produces {
 		case PfcsmPackage.PRODUCES__ATTRIBUTE:
 			setAttribute((Attribute) null);
 			return;
+		case PfcsmPackage.PRODUCES__SRC_MULT:
+			setSrcMult(SRC_MULT_EDEFAULT);
+			return;
+		case PfcsmPackage.PRODUCES__TGT_MULT:
+			setTgtMult(TGT_MULT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -308,8 +407,31 @@ public class ProducesImpl extends AssociationImpl implements Produces {
 			return operation != null;
 		case PfcsmPackage.PRODUCES__ATTRIBUTE:
 			return attribute != null;
+		case PfcsmPackage.PRODUCES__SRC_MULT:
+			return SRC_MULT_EDEFAULT == null ? srcMult != null : !SRC_MULT_EDEFAULT.equals(srcMult);
+		case PfcsmPackage.PRODUCES__TGT_MULT:
+			return TGT_MULT_EDEFAULT == null ? tgtMult != null : !TGT_MULT_EDEFAULT.equals(tgtMult);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (srcMult: ");
+		result.append(srcMult);
+		result.append(", tgtMult: ");
+		result.append(tgtMult);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ProducesImpl

@@ -1,0 +1,159 @@
+pre{
+	var desclass_created : Set;
+	var hardware_created : Set;
+	var software_created : Set;
+}
+
+rule root2root
+	transform sourceRoot : requirement!Requirement_Root
+	to targetRoot : design!Class_Diagram_Root{
+		targetRoot.hardware.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!Hardware)));
+		targetRoot.software.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isKindOf(design!Software)));
+		targetRoot.designentity.addAll(sourceRoot.designelement.equivalent().flatten().select(cls | cls.isTypeOf(design!DesignEntity)));
+		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(design!Uses)));
+		targetRoot.reference.addAll(sourceRoot.requirements.equivalent().flatten().select(ref | ref.isKindOf(Sequence)).flatten());
+	}
+	
+rule designElement2designEntity
+	transform desElement: requirement!DesignElement
+	to desEntities: Sequence{
+		desElement.isHardware.println();
+		if(desElement.isHardware){
+			var newHardware = new design!Hardware;
+			newHardware.name = desElement.name;
+			newHardware.name.println();
+			newHardware.type.println();
+			desclass_created.add(newHardware);
+			desEntities.add(newHardware);
+		}
+		else if(desElement.isSoftware){
+				var newSoftware = new design!Software;
+				newSoftware.name = desElement.name;
+				desclass_created.add(newSoftware);
+				desEntities.add(newSoftware);
+			}
+			else{
+				("WE here").println();
+				var newDesignEntity = new design!DesignEntity;
+				newDesignEntity.name = desElement.name;
+				desclass_created.add(newDesignEntity);
+				desEntities.add(newDesignEntity);
+			}
+		}
+		
+	
+rule functional2association
+	transform req : requirement!Functional
+	to assoc: Sequence{
+		var traceList: Set = req.traceto.asSet();
+//		This if statement is to do a quick check if a requirement only has 2 classes it's connected traced to and creates a single association between them.
+		if(traceList.size()== 2){
+			var newAssoc = new design!Uses;
+			assoc.add(newAssoc);
+//			The following sequence of if statements takes place to ensure that hardware always uses software and not the other way around.
+			if(traceList[0].isHardware and traceList[1].isHardware){
+				for (d in desclass_created){
+					if(d.name == traceList[0].name){
+						newAssoc.tgt = d;
+					}
+				}
+				for (d in desclass_created){
+					if(d.name == traceList[1].name){
+						newAssoc.src = d;
+					}
+				}
+			}
+			else if((traceList[0].isSoftware) and (traceList[1].isSoftware)){
+				for (d in desclass_created){
+					if(d.name == traceList[0].name){
+						newAssoc.tgt = d;
+					}
+				}
+				for (d in desclass_created){
+					if(d.name == traceList[1].name){
+						newAssoc.src = d;
+					}
+				}		
+			}
+			else{
+				if(traceList[0].isHardware){
+					for (d in desclass_created){
+						if(d.name == traceList[0].name){
+							newAssoc.src = d;
+						}
+					}
+					for (d in desclass_created){
+						if(d.name == traceList[1].name){
+							newAssoc.tgt = d;
+						}
+					}
+				}
+				else if(traceList[1].isHardware){
+					for (d in desclass_created){
+						if(d.name == traceList[1].name){
+							newAssoc.src = d;
+						}
+					}
+					for (d in desclass_created){
+						if(d.name == traceList[0].name){
+							newAssoc.tgt = d;
+						}
+					}
+				}
+				else{
+					for (d in desclass_created){
+						if(d.name == traceList[0].name){
+							newAssoc.tgt = d;
+						}
+					}
+					for (d in desclass_created){
+						if(d.name == traceList[1].name){
+							newAssoc.src = d;
+						}
+					}
+				}
+			}
+		}
+
+/*
+If there is more than one class that a requirement is traced to, this will iterate through all of them to create a temporary set that will be 
+used to create associations between all relevant classes. This does not currently differentiate between hardware and software.
+*/
+		else if(traceList.size() > 2){
+			var tempClassSet: Set;
+//			This for loop initializes a list of all design elements traced to by a singular requirement. The list is uses the types from the target environment.
+//			The current assumption is that traces to more than 2 design elements is likely going to be of the same type.
+			for(t in traceList){
+				for(d in desclass_created){
+					if(t.name == d.name){
+						tempClassSet.add(d);
+						break;
+					}
+				}
+			}
+			var i:Integer = 0;
+			while(i < tempClassSet.size()-1){
+				var anotherAssoc = new design!Uses;
+				assoc.add(anotherAssoc);
+				anotherAssoc.src = tempClassSet[i];
+				anotherAssoc.tgt = tempClassSet[(i+1)];
+				i++;
+			}
+		}
+		else {continue;}
+	}
+	
+	
+	
+	
+	//			for (d in desclass_created){
+//				if(d.name == traceList[0].name){
+//					newAssoc.tgt = d;
+//				}
+//			}
+//			for (d in desclass_created){
+//				if(d.name == traceList[1].name){
+//					newAssoc.src = d;
+//				}
+//			}
+//		}

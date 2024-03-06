@@ -67,8 +67,8 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected PfcsmSwitch<Adapter> modelSwitch = new PfcsmSwitch<Adapter>() {
 		@Override
-		public Adapter caseDesClass(DesClass object) {
-			return createDesClassAdapter();
+		public Adapter caseDesignEntity(DesignEntity object) {
+			return createDesignEntityAdapter();
 		}
 
 		@Override
@@ -82,8 +82,8 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseAssociation(Association object) {
-			return createAssociationAdapter();
+		public Adapter caseUses(Uses object) {
+			return createUsesAdapter();
 		}
 
 		@Override
@@ -92,23 +92,8 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseInheritance(Inheritance object) {
-			return createInheritanceAdapter();
-		}
-
-		@Override
-		public Adapter caseXOR(XOR object) {
-			return createXORAdapter();
-		}
-
-		@Override
 		public Adapter caseElement(Element object) {
 			return createElementAdapter();
-		}
-
-		@Override
-		public Adapter caseUses(Uses object) {
-			return createUsesAdapter();
 		}
 
 		@Override
@@ -124,6 +109,26 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseOperation(Operation object) {
 			return createOperationAdapter();
+		}
+
+		@Override
+		public Adapter caseHardware(Hardware object) {
+			return createHardwareAdapter();
+		}
+
+		@Override
+		public Adapter caseSoftware(Software object) {
+			return createSoftwareAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregation(Aggregation object) {
+			return createAggregationAdapter();
+		}
+
+		@Override
+		public Adapter caseAlternative(Alternative object) {
+			return createAlternativeAdapter();
 		}
 
 		@Override
@@ -146,16 +151,16 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.DesClass <em>Des Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.DesignEntity <em>Design Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.DesClass
+	 * @see org.mcmaster.pfcsm.DesignEntity
 	 * @generated
 	 */
-	public Adapter createDesClassAdapter() {
+	public Adapter createDesignEntityAdapter() {
 		return null;
 	}
 
@@ -188,20 +193,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Association <em>Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.Association
-	 * @generated
-	 */
-	public Adapter createAssociationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Composition <em>Composition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -216,34 +207,6 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Inheritance <em>Inheritance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.Inheritance
-	 * @generated
-	 */
-	public Adapter createInheritanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.XOR <em>XOR</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mcmaster.pfcsm.XOR
-	 * @generated
-	 */
-	public Adapter createXORAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -254,6 +217,62 @@ public class PfcsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Hardware <em>Hardware</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.pfcsm.Hardware
+	 * @generated
+	 */
+	public Adapter createHardwareAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Software <em>Software</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.pfcsm.Software
+	 * @generated
+	 */
+	public Adapter createSoftwareAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Aggregation <em>Aggregation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.pfcsm.Aggregation
+	 * @generated
+	 */
+	public Adapter createAggregationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.pfcsm.Alternative <em>Alternative</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.pfcsm.Alternative
+	 * @generated
+	 */
+	public Adapter createAlternativeAdapter() {
 		return null;
 	}
 

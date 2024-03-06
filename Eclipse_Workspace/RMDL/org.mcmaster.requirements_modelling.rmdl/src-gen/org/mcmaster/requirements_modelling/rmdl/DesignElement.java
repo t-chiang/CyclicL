@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getChildren <em>Children</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsHardware <em>Is Hardware</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware <em>Is Software</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}</li>
  * </ul>
  *
@@ -48,40 +48,50 @@ public interface DesignElement extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}'.
+	 * Returns the value of the '<em><b>Is Hardware</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Root)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement
-	 * @model opposite="designelement" required="true" transient="false"
+	 * @return the value of the '<em>Is Hardware</em>' attribute.
+	 * @see #setIsHardware(boolean)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_IsHardware()
+	 * @model default="false" required="true"
 	 * @generated
 	 */
-	Requirement_Root getRequirement_root();
+	boolean isIsHardware();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsHardware <em>Is Hardware</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement root</em>' container reference.
-	 * @see #getRequirement_root()
+	 * @param value the new value of the '<em>Is Hardware</em>' attribute.
+	 * @see #isIsHardware()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Root value);
+	void setIsHardware(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Children</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Class}.
+	 * Returns the value of the '<em><b>Is Software</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Children</em>' attribute list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Children()
-	 * @model
+	 * @return the value of the '<em>Is Software</em>' attribute.
+	 * @see #setIsSoftware(boolean)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_IsSoftware()
+	 * @model default="false" required="true"
 	 * @generated
 	 */
-	EList<Class> getChildren();
+	boolean isIsSoftware();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware <em>Is Software</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Software</em>' attribute.
+	 * @see #isIsSoftware()
+	 * @generated
+	 */
+	void setIsSoftware(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Tracefrom</b></em>' reference list.

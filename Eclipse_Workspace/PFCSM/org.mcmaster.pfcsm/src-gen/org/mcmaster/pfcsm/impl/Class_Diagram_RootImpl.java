@@ -18,9 +18,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.pfcsm.Class_Diagram_Root;
-import org.mcmaster.pfcsm.DesClass;
+import org.mcmaster.pfcsm.DesignEntity;
+import org.mcmaster.pfcsm.Hardware;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Reference;
+import org.mcmaster.pfcsm.Software;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,22 +32,24 @@ import org.mcmaster.pfcsm.Reference;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.pfcsm.impl.Class_Diagram_RootImpl#getDesclass <em>Desclass</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.Class_Diagram_RootImpl#getDesignentity <em>Designentity</em>}</li>
  *   <li>{@link org.mcmaster.pfcsm.impl.Class_Diagram_RootImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.Class_Diagram_RootImpl#getHardware <em>Hardware</em>}</li>
+ *   <li>{@link org.mcmaster.pfcsm.impl.Class_Diagram_RootImpl#getSoftware <em>Software</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container implements Class_Diagram_Root {
 	/**
-	 * The cached value of the '{@link #getDesclass() <em>Desclass</em>}' containment reference list.
+	 * The cached value of the '{@link #getDesignentity() <em>Designentity</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDesclass()
+	 * @see #getDesignentity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DesClass> desclass;
+	protected EList<DesignEntity> designentity;
 
 	/**
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
@@ -56,6 +60,26 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<Reference> reference;
+
+	/**
+	 * The cached value of the '{@link #getHardware() <em>Hardware</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHardware()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Hardware> hardware;
+
+	/**
+	 * The cached value of the '{@link #getSoftware() <em>Software</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSoftware()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Software> software;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,12 +105,12 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DesClass> getDesclass() {
-		if (desclass == null) {
-			desclass = new EObjectContainmentEList<DesClass>(DesClass.class, this,
-					PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS);
+	public EList<DesignEntity> getDesignentity() {
+		if (designentity == null) {
+			designentity = new EObjectContainmentEList<DesignEntity>(DesignEntity.class, this,
+					PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY);
 		}
-		return desclass;
+		return designentity;
 	}
 
 	/**
@@ -100,6 +124,32 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 					PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE, PfcsmPackage.REFERENCE__CLASS_DIAGRAM_ROOT);
 		}
 		return reference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Hardware> getHardware() {
+		if (hardware == null) {
+			hardware = new EObjectContainmentEList<Hardware>(Hardware.class, this,
+					PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE);
+		}
+		return hardware;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Software> getSoftware() {
+		if (software == null) {
+			software = new EObjectContainmentEList<Software>(Software.class, this,
+					PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE);
+		}
+		return software;
 	}
 
 	/**
@@ -125,10 +175,14 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
-			return ((InternalEList<?>) getDesclass()).basicRemove(otherEnd, msgs);
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY:
+			return ((InternalEList<?>) getDesignentity()).basicRemove(otherEnd, msgs);
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
 			return ((InternalEList<?>) getReference()).basicRemove(otherEnd, msgs);
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE:
+			return ((InternalEList<?>) getHardware()).basicRemove(otherEnd, msgs);
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE:
+			return ((InternalEList<?>) getSoftware()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,10 +195,14 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
-			return getDesclass();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY:
+			return getDesignentity();
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
 			return getReference();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE:
+			return getHardware();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE:
+			return getSoftware();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,13 +216,21 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
-			getDesclass().clear();
-			getDesclass().addAll((Collection<? extends DesClass>) newValue);
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY:
+			getDesignentity().clear();
+			getDesignentity().addAll((Collection<? extends DesignEntity>) newValue);
 			return;
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
 			getReference().clear();
 			getReference().addAll((Collection<? extends Reference>) newValue);
+			return;
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE:
+			getHardware().clear();
+			getHardware().addAll((Collection<? extends Hardware>) newValue);
+			return;
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE:
+			getSoftware().clear();
+			getSoftware().addAll((Collection<? extends Software>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,11 +244,17 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
-			getDesclass().clear();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY:
+			getDesignentity().clear();
 			return;
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
 			getReference().clear();
+			return;
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE:
+			getHardware().clear();
+			return;
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE:
+			getSoftware().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -196,10 +268,14 @@ public class Class_Diagram_RootImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
-			return desclass != null && !desclass.isEmpty();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY:
+			return designentity != null && !designentity.isEmpty();
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
 			return reference != null && !reference.isEmpty();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE:
+			return hardware != null && !hardware.isEmpty();
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE:
+			return software != null && !software.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

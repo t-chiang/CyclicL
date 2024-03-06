@@ -3,24 +3,17 @@
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
@@ -33,8 +26,8 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getRequirement_root <em>Requirement root</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getChildren <em>Children</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsHardware <em>Is Hardware</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsSoftware <em>Is Software</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getTracefrom <em>Tracefrom</em>}</li>
  * </ul>
  *
@@ -62,14 +55,44 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getChildren() <em>Children</em>}' attribute list.
+	 * The default value of the '{@link #isIsHardware() <em>Is Hardware</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChildren()
+	 * @see #isIsHardware()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Class> children;
+	protected static final boolean IS_HARDWARE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsHardware() <em>Is Hardware</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsHardware()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isHardware = IS_HARDWARE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsSoftware() <em>Is Software</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSoftware()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_SOFTWARE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsSoftware() <em>Is Software</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSoftware()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isSoftware = IS_SOFTWARE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTracefrom() <em>Tracefrom</em>}' reference list.
@@ -126,10 +149,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_Root getRequirement_root() {
-		if (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT)
-			return null;
-		return (Requirement_Root) eInternalContainer();
+	public boolean isIsHardware() {
+		return isHardware;
 	}
 
 	/**
@@ -137,10 +158,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRequirement_root(Requirement_Root newRequirement_root, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newRequirement_root, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
-				msgs);
-		return msgs;
+	public void setIsHardware(boolean newIsHardware) {
+		boolean oldIsHardware = isHardware;
+		isHardware = newIsHardware;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE,
+					oldIsHardware, isHardware));
 	}
 
 	/**
@@ -148,24 +171,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequirement_root(Requirement_Root newRequirement_root) {
-		if (newRequirement_root != eInternalContainer()
-				|| (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT
-						&& newRequirement_root != null)) {
-			if (EcoreUtil.isAncestor(this, newRequirement_root))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newRequirement_root != null)
-				msgs = ((InternalEObject) newRequirement_root).eInverseAdd(this,
-						RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT, Requirement_Root.class, msgs);
-			msgs = basicSetRequirement_root(newRequirement_root, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
-					newRequirement_root, newRequirement_root));
+	public boolean isIsSoftware() {
+		return isSoftware;
 	}
 
 	/**
@@ -173,11 +180,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Class> getChildren() {
-		if (children == null) {
-			children = new EDataTypeUniqueEList<Class>(Class.class, this, RmdlPackage.DESIGN_ELEMENT__CHILDREN);
-		}
-		return children;
+	public void setIsSoftware(boolean newIsSoftware) {
+		boolean oldIsSoftware = isSoftware;
+		isSoftware = newIsSoftware;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE,
+					oldIsSoftware, isSoftware));
 	}
 
 	/**
@@ -202,10 +210,6 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTracefrom()).basicAdd(otherEnd, msgs);
 		}
@@ -220,8 +224,6 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			return basicSetRequirement_root(null, msgs);
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return ((InternalEList<?>) getTracefrom()).basicRemove(otherEnd, msgs);
 		}
@@ -234,29 +236,14 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT,
-					Requirement_Root.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			return getName();
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			return getRequirement_root();
-		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
-			return getChildren();
+		case RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE:
+			return isIsHardware();
+		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
+			return isIsSoftware();
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return getTracefrom();
 		}
@@ -275,12 +262,11 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			setName((String) newValue);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			setRequirement_root((Requirement_Root) newValue);
+		case RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE:
+			setIsHardware((Boolean) newValue);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
-			getChildren().clear();
-			getChildren().addAll((Collection<? extends Class>) newValue);
+		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
+			setIsSoftware((Boolean) newValue);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			getTracefrom().clear();
@@ -301,11 +287,11 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			setRequirement_root((Requirement_Root) null);
+		case RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE:
+			setIsHardware(IS_HARDWARE_EDEFAULT);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
-			getChildren().clear();
+		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
+			setIsSoftware(IS_SOFTWARE_EDEFAULT);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			getTracefrom().clear();
@@ -324,10 +310,10 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			return getRequirement_root() != null;
-		case RmdlPackage.DESIGN_ELEMENT__CHILDREN:
-			return children != null && !children.isEmpty();
+		case RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE:
+			return isHardware != IS_HARDWARE_EDEFAULT;
+		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
+			return isSoftware != IS_SOFTWARE_EDEFAULT;
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return tracefrom != null && !tracefrom.isEmpty();
 		}
@@ -347,8 +333,10 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", children: ");
-		result.append(children);
+		result.append(", isHardware: ");
+		result.append(isHardware);
+		result.append(", isSoftware: ");
+		result.append(isSoftware);
 		result.append(')');
 		return result.toString();
 	}

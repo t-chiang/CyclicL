@@ -14,9 +14,9 @@ import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
-import org.mcmaster.pfcsm.Association;
+import org.mcmaster.pfcsm.Uses;
 import org.mcmaster.pfcsm.Composition;
-import org.mcmaster.pfcsm.DesClass;
+import org.mcmaster.pfcsm.DesignEntity;
 import org.mcmaster.pfcsm.Inheritance;
 import org.mcmaster.pfcsm.XOR;
 
@@ -26,7 +26,7 @@ public class ForwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 	public boolean canExecute(Collection<? extends EObject> selection) {
 		// TODO Auto-generated method stub
 		if(selection.size() == 1) {
-			if(((DSemanticDecorator) selection.toArray()[0]).getTarget() instanceof DesClass) {
+			if(((DSemanticDecorator) selection.toArray()[0]).getTarget() instanceof DesignEntity) {
 				return true;
 			}
 			else {
@@ -35,7 +35,7 @@ public class ForwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 		}
 		else {
 			for(EObject s: selection) {
-				if(!(((DSemanticDecorator) s).getTarget() instanceof DesClass)){
+				if(!(((DSemanticDecorator) s).getTarget() instanceof DesignEntity)){
 					return false;
 				}
 			}
@@ -49,17 +49,17 @@ public class ForwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 		System.out.println("-------------Start Forward Change Impact Analysis-------------");
 		RGBValues newBorderColor = RGBValues.create(255, 0, 0);
 		for(EObject s: selection) {
-			if(((DSemanticDecorator) s).getTarget() instanceof DesClass){
-				List<Association> assocTgtList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getUsedby();
-//				List<Inheritance> inheritChildrenList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getChildren();
-//				List<Composition> composOwnerOfList = ((DesClass) ((DSemanticDecorator) s).getTarget()).getOwnerof();
-//				Composition composOwnedBy = ((DesClass) ((DSemanticDecorator) s).getTarget()).getOwnedby();
+			if(((DSemanticDecorator) s).getTarget() instanceof DesignEntity){
+				List<Uses> assocTgtList = ((DesignEntity) ((DSemanticDecorator) s).getTarget()).getUsedby();
+//				List<Inheritance> inheritChildrenList = ((DesignEntity) ((DSemanticDecorator) s).getTarget()).getChildren();
+//				List<Composition> composOwnerOfList = ((DesignEntity) ((DSemanticDecorator) s).getTarget()).getOwnerof();
+//				Composition composOwnedBy = ((DesignEntity) ((DSemanticDecorator) s).getTarget()).getOwnedby();
 //				List<XOR> xorList = new ArrayList<>();
 				
-				Iterator<? extends Association> assocTgtListIt = assocTgtList.iterator();
+				Iterator<? extends Uses> assocTgtListIt = assocTgtList.iterator();
 				
 				while(assocTgtListIt.hasNext()) {
-					DesClass tempObj = assocTgtListIt.next().getTgt();
+					DesignEntity tempObj = assocTgtListIt.next().getTgt();
 					Collection<EObject> tempClass = new EObjectQuery(tempObj).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 					((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
 					((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderSize(3);
@@ -78,18 +78,18 @@ public class ForwardChangeImpactAnalysis extends AbstractExternalJavaAction {
 	}
 	
 	
-	public void forwardImpactAnalysis(DesClass entity) {
+	public void forwardImpactAnalysis(DesignEntity entity) {
 		RGBValues newBorderColor = RGBValues.create(255, 0, 0);
-		if(entity instanceof DesClass) {
-			List<Association> assocTgtList = entity.getUsedby();
+		if(entity instanceof DesignEntity) {
+			List<Uses> assocTgtList = entity.getUsedby();
 //			List<Inheritance> inheritChildrenList = entity.getChildren();
 //			List<Composition> composOwnerOfList = entity.getOwnerof();
 //			Composition composOwnedBy = entity.getOwnedby();
 //			List<XOR> xorList = new ArrayList<>();
 			
-			Iterator<? extends Association> assocTgtListIt = assocTgtList.iterator();
+			Iterator<? extends Uses> assocTgtListIt = assocTgtList.iterator();
 			while(assocTgtListIt.hasNext()) {
-				DesClass tempObj = assocTgtListIt.next().getTgt();
+				DesignEntity tempObj = assocTgtListIt.next().getTgt();
 				Collection<EObject> tempClass = new EObjectQuery(tempObj).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
 				((DDiagramElementContainer) tempClass.toArray()[0]).getOwnedStyle().setBorderSize(3);

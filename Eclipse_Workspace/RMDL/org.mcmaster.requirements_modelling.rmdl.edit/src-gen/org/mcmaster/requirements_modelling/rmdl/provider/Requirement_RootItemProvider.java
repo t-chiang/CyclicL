@@ -56,7 +56,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 			super.getPropertyDescriptors(object);
 
 			addPackagePropertyDescriptor(object);
-			addDesignelementPropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 		}
@@ -76,21 +75,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_package_feature",
 								"_UI_Requirement_Root_type"),
 						RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Designelement feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDesignelementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Root_designelement_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_designelement_feature",
-								"_UI_Requirement_Root_type"),
-						RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -137,9 +121,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -203,9 +187,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		switch (notification.getFeatureID(Requirement_Root.class)) {
 		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
 		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
-		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
 		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
+		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -229,9 +213,6 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE,
 				RmdlFactory.eINSTANCE.createPackage()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT,
-				RmdlFactory.eINSTANCE.createDesignElement()));
-
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createFunctional()));
 
@@ -246,6 +227,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW,
 				RmdlFactory.eINSTANCE.createReview()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT,
+				RmdlFactory.eINSTANCE.createDesignElement()));
 	}
 
 	/**

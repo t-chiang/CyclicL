@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Produces;
 
@@ -20,7 +22,7 @@ import org.mcmaster.pfcsm.Produces;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProducesItemProvider extends AssociationItemProvider {
+public class ProducesItemProvider extends ReferenceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -44,6 +46,8 @@ public class ProducesItemProvider extends AssociationItemProvider {
 
 			addOperationPropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
+			addSrcMultPropertyDescriptor(object);
+			addTgtMultPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +80,38 @@ public class ProducesItemProvider extends AssociationItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Produces_attribute_feature",
 								"_UI_Produces_type"),
 						PfcsmPackage.Literals.PRODUCES__ATTRIBUTE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Src Mult feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSrcMultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Produces_srcMult_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Produces_srcMult_feature",
+								"_UI_Produces_type"),
+						PfcsmPackage.Literals.PRODUCES__SRC_MULT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tgt Mult feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTgtMultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Produces_tgtMult_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Produces_tgtMult_feature",
+								"_UI_Produces_type"),
+						PfcsmPackage.Literals.PRODUCES__TGT_MULT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -122,6 +158,13 @@ public class ProducesItemProvider extends AssociationItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Produces.class)) {
+		case PfcsmPackage.PRODUCES__SRC_MULT:
+		case PfcsmPackage.PRODUCES__TGT_MULT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

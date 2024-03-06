@@ -56,26 +56,28 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case PfcsmPackage.DES_CLASS:
-			return createDesClass();
+		case PfcsmPackage.DESIGN_ENTITY:
+			return createDesignEntity();
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT:
 			return createClass_Diagram_Root();
-		case PfcsmPackage.ASSOCIATION:
-			return createAssociation();
-		case PfcsmPackage.COMPOSITION:
-			return createComposition();
-		case PfcsmPackage.INHERITANCE:
-			return createInheritance();
-		case PfcsmPackage.XOR:
-			return createXOR();
 		case PfcsmPackage.USES:
 			return createUses();
+		case PfcsmPackage.COMPOSITION:
+			return createComposition();
 		case PfcsmPackage.PRODUCES:
 			return createProduces();
 		case PfcsmPackage.ATTRIBUTE:
 			return createAttribute();
 		case PfcsmPackage.OPERATION:
 			return createOperation();
+		case PfcsmPackage.HARDWARE:
+			return createHardware();
+		case PfcsmPackage.SOFTWARE:
+			return createSoftware();
+		case PfcsmPackage.AGGREGATION:
+			return createAggregation();
+		case PfcsmPackage.ALTERNATIVE:
+			return createAlternative();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -120,9 +122,9 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesClass createDesClass() {
-		DesClassImpl desClass = new DesClassImpl();
-		return desClass;
+	public DesignEntity createDesignEntity() {
+		DesignEntityImpl designEntity = new DesignEntityImpl();
+		return designEntity;
 	}
 
 	/**
@@ -140,16 +142,6 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association createAssociation() {
-		AssociationImpl association = new AssociationImpl();
-		return association;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Composition createComposition() {
 		CompositionImpl composition = new CompositionImpl();
 		return composition;
@@ -160,29 +152,49 @@ public class PfcsmFactoryImpl extends EFactoryImpl implements PfcsmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Inheritance createInheritance() {
-		InheritanceImpl inheritance = new InheritanceImpl();
-		return inheritance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public XOR createXOR() {
-		XORImpl xor = new XORImpl();
-		return xor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Operation createOperation() {
 		OperationImpl operation = new OperationImpl();
 		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hardware createHardware() {
+		HardwareImpl hardware = new HardwareImpl();
+		return hardware;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Software createSoftware() {
+		SoftwareImpl software = new SoftwareImpl();
+		return software;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Aggregation createAggregation() {
+		AggregationImpl aggregation = new AggregationImpl();
+		return aggregation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Alternative createAlternative() {
+		AlternativeImpl alternative = new AlternativeImpl();
+		return alternative;
 	}
 
 	/**

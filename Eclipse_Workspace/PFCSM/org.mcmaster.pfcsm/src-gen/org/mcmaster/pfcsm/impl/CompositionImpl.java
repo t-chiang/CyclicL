@@ -5,11 +5,10 @@ package org.mcmaster.pfcsm.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.mcmaster.pfcsm.Composition;
-import org.mcmaster.pfcsm.DesClass;
+import org.mcmaster.pfcsm.DesignEntity;
 import org.mcmaster.pfcsm.PfcsmPackage;
 
 /**
@@ -55,7 +54,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * @generated
 	 * @ordered
 	 */
-	protected DesClass src;
+	protected DesignEntity src;
 	/**
 	 * The cached value of the '{@link #getTgt() <em>Tgt</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -64,7 +63,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * @generated
 	 * @ordered
 	 */
-	protected DesClass tgt;
+	protected DesignEntity tgt;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,10 +111,10 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesClass getSrc() {
+	public DesignEntity getSrc() {
 		if (src != null && src.eIsProxy()) {
 			InternalEObject oldSrc = (InternalEObject) src;
-			src = (DesClass) eResolveProxy(oldSrc);
+			src = (DesignEntity) eResolveProxy(oldSrc);
 			if (src != oldSrc) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.COMPOSITION__SRC, oldSrc,
@@ -130,7 +129,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesClass basicGetSrc() {
+	public DesignEntity basicGetSrc() {
 		return src;
 	}
 
@@ -139,8 +138,8 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSrc(DesClass newSrc, NotificationChain msgs) {
-		DesClass oldSrc = src;
+	public NotificationChain basicSetSrc(DesignEntity newSrc, NotificationChain msgs) {
+		DesignEntity oldSrc = src;
 		src = newSrc;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -158,15 +157,15 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSrc(DesClass newSrc) {
+	public void setSrc(DesignEntity newSrc) {
 		if (newSrc != src) {
 			NotificationChain msgs = null;
 			if (src != null)
-				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DES_CLASS__OWNEROF, DesClass.class,
-						msgs);
+				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEROF,
+						DesignEntity.class, msgs);
 			if (newSrc != null)
-				msgs = ((InternalEObject) newSrc).eInverseAdd(this, PfcsmPackage.DES_CLASS__OWNEROF, DesClass.class,
-						msgs);
+				msgs = ((InternalEObject) newSrc).eInverseAdd(this, PfcsmPackage.DESIGN_ENTITY__OWNEROF,
+						DesignEntity.class, msgs);
 			msgs = basicSetSrc(newSrc, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -179,10 +178,10 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesClass getTgt() {
+	public DesignEntity getTgt() {
 		if (tgt != null && tgt.eIsProxy()) {
 			InternalEObject oldTgt = (InternalEObject) tgt;
-			tgt = (DesClass) eResolveProxy(oldTgt);
+			tgt = (DesignEntity) eResolveProxy(oldTgt);
 			if (tgt != oldTgt) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PfcsmPackage.COMPOSITION__TGT, oldTgt,
@@ -197,7 +196,7 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesClass basicGetTgt() {
+	public DesignEntity basicGetTgt() {
 		return tgt;
 	}
 
@@ -206,8 +205,8 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTgt(DesClass newTgt, NotificationChain msgs) {
-		DesClass oldTgt = tgt;
+	public NotificationChain basicSetTgt(DesignEntity newTgt, NotificationChain msgs) {
+		DesignEntity oldTgt = tgt;
 		tgt = newTgt;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -225,15 +224,15 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTgt(DesClass newTgt) {
+	public void setTgt(DesignEntity newTgt) {
 		if (newTgt != tgt) {
 			NotificationChain msgs = null;
 			if (tgt != null)
-				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DES_CLASS__OWNEDBY, DesClass.class,
-						msgs);
+				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEDBY,
+						DesignEntity.class, msgs);
 			if (newTgt != null)
-				msgs = ((InternalEObject) newTgt).eInverseAdd(this, PfcsmPackage.DES_CLASS__OWNEDBY, DesClass.class,
-						msgs);
+				msgs = ((InternalEObject) newTgt).eInverseAdd(this, PfcsmPackage.DESIGN_ENTITY__OWNEDBY,
+						DesignEntity.class, msgs);
 			msgs = basicSetTgt(newTgt, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -251,14 +250,14 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 		switch (featureID) {
 		case PfcsmPackage.COMPOSITION__SRC:
 			if (src != null)
-				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DES_CLASS__OWNEROF, DesClass.class,
-						msgs);
-			return basicSetSrc((DesClass) otherEnd, msgs);
+				msgs = ((InternalEObject) src).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEROF,
+						DesignEntity.class, msgs);
+			return basicSetSrc((DesignEntity) otherEnd, msgs);
 		case PfcsmPackage.COMPOSITION__TGT:
 			if (tgt != null)
-				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DES_CLASS__OWNEDBY, DesClass.class,
-						msgs);
-			return basicSetTgt((DesClass) otherEnd, msgs);
+				msgs = ((InternalEObject) tgt).eInverseRemove(this, PfcsmPackage.DESIGN_ENTITY__OWNEDBY,
+						DesignEntity.class, msgs);
+			return basicSetTgt((DesignEntity) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -313,10 +312,10 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 			setTgtMult((String) newValue);
 			return;
 		case PfcsmPackage.COMPOSITION__SRC:
-			setSrc((DesClass) newValue);
+			setSrc((DesignEntity) newValue);
 			return;
 		case PfcsmPackage.COMPOSITION__TGT:
-			setTgt((DesClass) newValue);
+			setTgt((DesignEntity) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,10 +333,10 @@ public class CompositionImpl extends ReferenceImpl implements Composition {
 			setTgtMult(TGT_MULT_EDEFAULT);
 			return;
 		case PfcsmPackage.COMPOSITION__SRC:
-			setSrc((DesClass) null);
+			setSrc((DesignEntity) null);
 			return;
 		case PfcsmPackage.COMPOSITION__TGT:
-			setTgt((DesClass) null);
+			setTgt((DesignEntity) null);
 			return;
 		}
 		super.eUnset(featureID);

@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getPackage <em>Package</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getReview <em>Review</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getDesignelement <em>Designelement</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root()
@@ -56,20 +56,6 @@ public interface Requirement_Root extends EObject {
 	EList<org.mcmaster.requirements_modelling.rmdl.Package> getPackage();
 
 	/**
-	 * Returns the value of the '<em><b>Designelement</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Designelement</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Designelement()
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root
-	 * @model opposite="requirement_root" containment="true"
-	 * @generated
-	 */
-	EList<DesignElement> getDesignelement();
-
-	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}'.
@@ -96,5 +82,17 @@ public interface Requirement_Root extends EObject {
 	 * @generated
 	 */
 	EList<Review> getReview();
+
+	/**
+	 * Returns the value of the '<em><b>Designelement</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Designelement</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Root_Designelement()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<DesignElement> getDesignelement();
 
 } // Requirement_Root

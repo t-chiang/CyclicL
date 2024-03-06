@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.mcmaster.pfcsm.PfcsmPackage;
 import org.mcmaster.pfcsm.Uses;
 
@@ -20,7 +22,7 @@ import org.mcmaster.pfcsm.Uses;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UsesItemProvider extends AssociationItemProvider {
+public class UsesItemProvider extends ReferenceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -42,10 +44,44 @@ public class UsesItemProvider extends AssociationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSrcMultPropertyDescriptor(object);
+			addTgtMultPropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
 			addOperationPropertyDescriptor(object);
+			addTgtPropertyDescriptor(object);
+			addSrcPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Src Mult feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSrcMultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Uses_srcMult_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Uses_srcMult_feature", "_UI_Uses_type"),
+						PfcsmPackage.Literals.USES__SRC_MULT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tgt Mult feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTgtMultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Uses_tgtMult_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Uses_tgtMult_feature", "_UI_Uses_type"),
+						PfcsmPackage.Literals.USES__TGT_MULT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -74,6 +110,34 @@ public class UsesItemProvider extends AssociationItemProvider {
 						getResourceLocator(), getString("_UI_Uses_operation_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Uses_operation_feature", "_UI_Uses_type"),
 						PfcsmPackage.Literals.USES__OPERATION, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tgt feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTgtPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Uses_tgt_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Uses_tgt_feature", "_UI_Uses_type"),
+						PfcsmPackage.Literals.USES__TGT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Src feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSrcPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Uses_src_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Uses_src_feature", "_UI_Uses_type"),
+						PfcsmPackage.Literals.USES__SRC, true, false, true, null, null, null));
 	}
 
 	/**
@@ -120,6 +184,13 @@ public class UsesItemProvider extends AssociationItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Uses.class)) {
+		case PfcsmPackage.USES__SRC_MULT:
+		case PfcsmPackage.USES__TGT_MULT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

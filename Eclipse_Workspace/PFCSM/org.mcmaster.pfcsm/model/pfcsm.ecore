@@ -1,70 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pfcsm" nsURI="http://www.example.org/pfcsm" nsPrefix="pfcsm">
-  <eClassifiers xsi:type="ecore:EClass" name="DesClass">
+  <eClassifiers xsi:type="ecore:EClass" name="DesignEntity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOptional" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
         eType="#//Element" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
-        eType="#//Inheritance" eOpposite="#//Inheritance/tgt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Inheritance"
-        eOpposite="#//Inheritance/src"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedby" upperBound="-1"
+        eType="#//Uses" eOpposite="#//Uses/tgt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Uses"
+        eOpposite="#//Uses/src"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerof" upperBound="-1"
         eType="#//Composition" eOpposite="#//Composition/src"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedby" eType="#//Composition"
         eOpposite="#//Composition/tgt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Association"
-        eOpposite="#//Association/tgt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="usedby" upperBound="-1"
-        eType="#//Association" eOpposite="#//Association/src"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="xorfrom" upperBound="-1"
-        eType="#//XOR" eOpposite="#//XOR/tgt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="xorto" upperBound="-1"
-        eType="#//XOR" eOpposite="#//XOR/src"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/children"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//DesignEntity" eOpposite="#//DesignEntity/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternative" upperBound="-1"
+        eType="#//Alternative" eOpposite="#//Alternative/src"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternativeto" upperBound="-1"
+        eType="#//Alternative" eOpposite="#//Alternative/tgt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class_Diagram_Root">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="desclass" upperBound="-1"
-        eType="#//DesClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="designentity" upperBound="-1"
+        eType="#//DesignEntity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" upperBound="-1"
         eType="#//Reference" containment="true" eOpposite="#//Reference/class_diagram_root"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hardware" upperBound="-1"
+        eType="#//Hardware" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="software" upperBound="-1"
+        eType="#//Software" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reference" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="class_diagram_root" lowerBound="1"
         eType="#//Class_Diagram_Root" eOpposite="#//Class_Diagram_Root/reference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Reference">
+  <eClassifiers xsi:type="ecore:EClass" name="Uses" eSuperTypes="#//Reference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="1..1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tgtMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="1..1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/uses"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/usedby"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"
+        eOpposite="#//Attribute/uses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//Operation"
+        eOpposite="#//Operation/uses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/usedby"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/uses"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Composition" eSuperTypes="#//Reference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tgtMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="1..1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/ownerof"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/ownedby"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Inheritance" eSuperTypes="#//Reference">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/children"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/parent"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="XOR" eSuperTypes="#//Reference">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/xorfrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DesClass"
-        eOpposite="#//DesClass/xorto"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/ownerof"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/ownedby"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType">
     <eLiterals name="String"/>
@@ -81,17 +75,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPublic" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Uses" eSuperTypes="#//Association">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-        eType="#//Attribute" eOpposite="#//Attribute/uses"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
-        eType="#//Operation" eOpposite="#//Operation/uses"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Produces" eSuperTypes="#//Association">
+  <eClassifiers xsi:type="ecore:EClass" name="Produces" eSuperTypes="#//Reference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="#//Operation" eOpposite="#//Operation/produces"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="#//Attribute" eOpposite="#//Attribute/produces"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="1..1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tgtMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="1..1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Uses"
@@ -104,5 +96,29 @@
         eOpposite="#//Uses/operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="produces" upperBound="-1"
         eType="#//Produces" eOpposite="#//Produces/operation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hardware" eSuperTypes="#//DesignEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runs" upperBound="-1" eType="#//Aggregation"
+        eOpposite="#//Aggregation/tgt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Software" eSuperTypes="#//DesignEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runson" upperBound="-1"
+        eType="#//Aggregation" eOpposite="#//Aggregation/src"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//Reference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//Hardware"
+        eOpposite="#//Hardware/runs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//Software"
+        eOpposite="#//Software/runson"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="1..1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alternative" eSuperTypes="#//Reference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="0..4"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/alternative"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" eType="#//DesignEntity"
+        eOpposite="#//DesignEntity/alternativeto"/>
   </eClassifiers>
 </ecore:EPackage>

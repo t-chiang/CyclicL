@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
+  <designentity name="DesignEntity1" uses="//@reference.0"/>
+  <designentity name="DesignEntity2" usedby="//@reference.0"/>
+  <designentity name="DesignEntity3"/>
+  <reference xsi:type="pfcsm:Uses" tgt="//@designentity.1" src="//@designentity.0"/>
+  <hardware name="Entity1"/>
+  <software name="Class1"/>
+</pfcsm:Class_Diagram_Root>

@@ -1,0 +1,83 @@
+pre{
+	var requirementID :Integer = 1;
+	var testID : Integer = 1;
+}
+
+rule root2root
+	transform sourceRoot : design!Class_Diagram_Root
+	to targetRoot : requirement!Requirement_Root{
+		targetRoot.designelement.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!DesignElement)));
+		targetRoot.requirements.addAll(sourceRoot.desclass.equivalent().flatten().select(req | req.isKindOf(requirement!Requirements)));
+		targetRoot.testcase.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!TestCase)));
+		targetRoot.review.addAll(sourceRoot.desclass.equivalent().flatten().select(des | des.isKindOf(requirement!Review)));
+}
+
+rule hardware2designElement
+	transform hardware : design!Hardware
+	to desElement : requirement!DesignElement,
+		funcreq: requirement!Functional,
+		functest : requirement!TestCase,
+		rev : requirement!Review{
+			desElement.name = hardware.name;
+			desElement.isHardware = true;
+			funcreq.setName("FunctionalReq");
+			funcreq.setID(requirementID);
+			requirementID++;
+			funcreq.traceto.add(desElement);
+			functest.requirements.add(funcreq);
+			rev.setreviewer("Reviewer");
+			rev.requirements.add(funcreq);
+			functest.setID(testID);
+			testID++;
+	}
+
+rule software2designElement
+	transform software : design!Hardware
+	to desElement : requirement!DesignElement,
+		funcreq: requirement!Functional,
+		functest : requirement!TestCase,
+		rev : requirement!Review{
+			desElement.name = software.name;
+			desElement.isSoftware = true;
+			funcreq.setName("FunctionalReq");
+			funcreq.setID(requirementID);
+			requirementID++;
+			funcreq.traceto.add(desElement);
+			functest.requirements.add(funcreq);
+			rev.setreviewer("Reviewer");
+			rev.requirements.add(funcreq);
+			functest.setID(testID);
+			testID++;
+	}
+	
+rule designEntity2designElement
+	transform desEntity : design!DesignEntity
+	to desElement : requirement!DesignElement,
+		funcreq: requirement!Functional,
+		functest : requirement!TestCase,
+		rev : requirement!Review{
+			desElement.name = desEntity.name;
+			funcreq.setName("FunctionalReq");
+			funcreq.setID(requirementID);
+			requirementID++;
+			funcreq.traceto.add(desElement);
+			functest.requirements.add(funcreq);
+			rev.setreviewer("Reviewer");
+			rev.requirements.add(funcreq);
+			functest.setID(testID);
+			testID++;
+	}
+
+//post{
+//	var requirements : Set = requirement!Functional.equivalent();
+//	requirements.println("Set of requirements: ");
+//}
+
+
+//rule concreteClass2designElement
+//	transform source : design!ConcreteClass
+//	to target : requirement!DesignElement{
+//		target.name = source.name;
+//	}
+	
+

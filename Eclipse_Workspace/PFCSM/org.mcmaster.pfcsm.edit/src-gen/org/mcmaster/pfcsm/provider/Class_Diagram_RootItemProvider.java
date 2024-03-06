@@ -87,8 +87,10 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESCLASS);
+			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESIGNENTITY);
 			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE);
+			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__HARDWARE);
+			childrenFeatures.add(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__SOFTWARE);
 		}
 		return childrenFeatures;
 	}
@@ -150,8 +152,10 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Class_Diagram_Root.class)) {
-		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESCLASS:
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__DESIGNENTITY:
 		case PfcsmPackage.CLASS_DIAGRAM_ROOT__REFERENCE:
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__HARDWARE:
+		case PfcsmPackage.CLASS_DIAGRAM_ROOT__SOFTWARE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -169,26 +173,57 @@ public class Class_Diagram_RootItemProvider extends ItemProviderAdapter implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESCLASS,
-				PfcsmFactory.eINSTANCE.createDesClass()));
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESIGNENTITY,
+				PfcsmFactory.eINSTANCE.createDesignEntity()));
 
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
-				PfcsmFactory.eINSTANCE.createAssociation()));
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESIGNENTITY,
+				PfcsmFactory.eINSTANCE.createHardware()));
 
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
-				PfcsmFactory.eINSTANCE.createComposition()));
-
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
-				PfcsmFactory.eINSTANCE.createInheritance()));
-
-		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
-				PfcsmFactory.eINSTANCE.createXOR()));
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESIGNENTITY,
+				PfcsmFactory.eINSTANCE.createSoftware()));
 
 		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
 				PfcsmFactory.eINSTANCE.createUses()));
 
 		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createComposition()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
 				PfcsmFactory.eINSTANCE.createProduces()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createAggregation()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__REFERENCE,
+				PfcsmFactory.eINSTANCE.createAlternative()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__HARDWARE,
+				PfcsmFactory.eINSTANCE.createHardware()));
+
+		newChildDescriptors.add(createChildParameter(PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__SOFTWARE,
+				PfcsmFactory.eINSTANCE.createSoftware()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__DESIGNENTITY
+				|| childFeature == PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__HARDWARE
+				|| childFeature == PfcsmPackage.Literals.CLASS_DIAGRAM_ROOT__SOFTWARE;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

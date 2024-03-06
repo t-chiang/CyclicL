@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pfcsm:Class_Diagram_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pfcsm="http://www.example.org/pfcsm">
-  <desclass name="Vehicle" uses="//@reference.0">
+  <desclass name="Vehicle" uses="//@reference.2">
     <element xsi:type="pfcsm:Attribute" name="vehicleSpd: double"/>
     <element xsi:type="pfcsm:Attribute" name="throttle: throttle"/>
     <element xsi:type="pfcsm:Attribute" name="passingManeuver_Brake: pmb"/>
   </desclass>
-  <desclass name="Transmission" ownerof="//@reference.1 //@reference.2" usedby="//@reference.0">
+  <desclass name="Transmission" usedby="//@reference.2" ownerof="//@reference.1 //@reference.0">
     <element xsi:type="pfcsm:Attribute" name="Ne: double"/>
     <element xsi:type="pfcsm:Attribute" name="imp_tq: double"/>
     <element xsi:type="pfcsm:Attribute" name="output_tq: double"/>
@@ -17,9 +17,9 @@
     <element xsi:type="pfcsm:Operation" name="transmission_ratio(Tin, gear, Nout): Nin, Tout"/>
     <element xsi:type="pfcsm:Operation" name="getTrandSpd(transmissionSpd):double" isPublic="false"/>
   </desclass>
-  <desclass name="TorqueConverter" ownedby="//@reference.2"/>
-  <desclass name="TransmissionRatio" ownedby="//@reference.1"/>
-  <reference xsi:type="pfcsm:Association" tgt="//@desclass.0" src="//@desclass.1"/>
+  <desclass name="TorqueConverter" ownedby="//@reference.1"/>
+  <desclass name="TransmissionRatio" ownedby="//@reference.0"/>
   <reference xsi:type="pfcsm:Composition" src="//@desclass.1" tgt="//@desclass.3"/>
   <reference xsi:type="pfcsm:Composition" src="//@desclass.1" tgt="//@desclass.2"/>
+  <reference xsi:type="pfcsm:Uses" tgt="//@desclass.0" src="//@desclass.1"/>
 </pfcsm:Class_Diagram_Root>

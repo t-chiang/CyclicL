@@ -1,5 +1,0 @@
-rule pfcsm2rmdl
-	transform p : pfcsm!ModelRoot
-	to r : rmdl!ModelRoot{}
-	
-

@@ -1,7 +1,0 @@
-Given{
-	Precondition one: "Some description"
-}
-
-When{
-	Event two: "Something"
-}
