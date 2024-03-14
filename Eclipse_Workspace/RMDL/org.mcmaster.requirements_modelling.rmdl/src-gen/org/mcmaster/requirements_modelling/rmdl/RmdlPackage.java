@@ -732,13 +732,22 @@ public interface RmdlPackage extends EPackage {
 	int DESIGN_ELEMENT__TRACEFROM = 3;
 
 	/**
+	 * The feature id for the '<em><b>Requirement root</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_ELEMENT__REQUIREMENT_ROOT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Design Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_ELEMENT_FEATURE_COUNT = 4;
+	int DESIGN_ELEMENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Design Element</em>' class.
@@ -1204,6 +1213,17 @@ public interface RmdlPackage extends EPackage {
 	EReference getDesignElement_Tracefrom();
 
 	/**
+	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Requirement root</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root()
+	 * @see #getDesignElement()
+	 * @generated
+	 */
+	EReference getDesignElement_Requirement_root();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.TestCase <em>Test Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1608,6 +1628,14 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DESIGN_ELEMENT__TRACEFROM = eINSTANCE.getDesignElement_Tracefrom();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirement root</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_ELEMENT__REQUIREMENT_ROOT = eINSTANCE.getDesignElement_Requirement_root();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl <em>Test Case</em>}' class.

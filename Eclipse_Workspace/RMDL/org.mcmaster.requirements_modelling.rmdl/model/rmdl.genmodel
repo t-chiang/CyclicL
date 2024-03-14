@@ -47,6 +47,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/isHardware"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/isSoftware"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/tracefrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/requirement_root"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//TestCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/ID"/>

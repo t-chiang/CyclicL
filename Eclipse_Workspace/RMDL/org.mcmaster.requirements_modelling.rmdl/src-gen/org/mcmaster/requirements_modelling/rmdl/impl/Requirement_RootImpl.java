@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
@@ -167,8 +166,8 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<DesignElement> getDesignelement() {
 		if (designelement == null) {
-			designelement = new EObjectContainmentEList<DesignElement>(DesignElement.class, this,
-					RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT);
+			designelement = new EObjectContainmentWithInverseEList<DesignElement>(DesignElement.class, this,
+					RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT);
 		}
 		return designelement;
 	}
@@ -190,6 +189,8 @@ public class Requirement_RootImpl extends MinimalEObjectImpl.Container implement
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirements()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDesignelement()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

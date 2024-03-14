@@ -56,6 +56,7 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			addIsHardwarePropertyDescriptor(object);
 			addIsSoftwarePropertyDescriptor(object);
 			addTracefromPropertyDescriptor(object);
+			addRequirement_rootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -121,6 +122,21 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_tracefrom_feature",
 								"_UI_DesignElement_type"),
 						RmdlPackage.Literals.DESIGN_ELEMENT__TRACEFROM, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirement root feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirement_rootPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesignElement_requirement_root_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_requirement_root_feature",
+								"_UI_DesignElement_type"),
+						RmdlPackage.Literals.DESIGN_ELEMENT__REQUIREMENT_ROOT, true, false, true, null, null, null));
 	}
 
 	/**

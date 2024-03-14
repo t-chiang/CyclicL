@@ -34,7 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="review" upperBound="-1"
         eType="#//Review" containment="true" eOpposite="#//Review/requirement_root"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="designelement" upperBound="-1"
-        eType="#//DesignElement" containment="true"/>
+        eType="#//DesignElement" containment="true" eOpposite="#//DesignElement/requirement_root"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="DesignElement">
@@ -45,6 +45,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tracefrom" lowerBound="1"
         upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/traceto"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" eType="#//Requirement_Root"
+        eOpposite="#//Requirement_Root/designelement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestCase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
