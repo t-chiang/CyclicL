@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmdl:RMDL_Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <feature_model name="Full Self Driving">
+    <productfeature name="EV Controller" isOptional="true" alternativeof="//@feature_model.0/@productfeature.2">
+      <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="19"/>
+      <requirements xsi:type="rmdl:Qualitative" name="QualitativeReq1" ID="20"/>
+      <requirements xsi:type="rmdl:Safety" name="SafetyReq1" ID="21"/>
+      <requirements xsi:type="rmdl:Security" name="SecurityReq1" ID="2"/>
+      <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="23"/>
+    </productfeature>
+    <productfeature name="LKA" composes="//@feature_model.0/@productfeature.3"/>
+    <productfeature name="Full Self Driving" mandatory="//@feature_model.0/@productfeature.3" alternative="//@feature_model.0/@productfeature.0 //@feature_model.0/@productfeature.5 //@feature_model.0/@productfeature.6"/>
+    <productfeature name="Mostly Self Driving" mandatory="//@feature_model.0/@productfeature.1 //@feature_model.0/@productfeature.4" composes="//@feature_model.0/@productfeature.2" optional="//@feature_model.0/@productfeature.7">
+      <testcase ID="1" hasPassed="true"/>
+      <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="16" traceto="//@feature_model.0/@productfeature.3/@designelement.0 //@feature_model.0/@productfeature.3/@designelement.1 //@feature_model.0/@productfeature.3/@designelement.2"/>
+      <requirements xsi:type="rmdl:Safety" name="Safety1" ID="16" traceto="//@feature_model.0/@productfeature.3/@designelement.3"/>
+      <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="17" traceto="//@feature_model.0/@productfeature.3/@designelement.3"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="18" traceto="//@feature_model.0/@productfeature.3/@designelement.3"/>
+      <requirements xsi:type="rmdl:Security" name="SecurityReq1" ID="1"/>
+      <review isApproved="true" reviewer="Reviewer1"/>
+      <designelement name="LKA" tracefrom="//@feature_model.0/@productfeature.3/@requirements.0"/>
+      <designelement name="ACC" tracefrom="//@feature_model.0/@productfeature.3/@requirements.0"/>
+      <designelement name="Heated Steering Wheel" isOptional="true" tracefrom="//@feature_model.0/@productfeature.3/@requirements.0"/>
+      <designelement name="DesignElement4" isHardware="true" tracefrom="//@feature_model.0/@productfeature.3/@requirements.1 //@feature_model.0/@productfeature.3/@requirements.2 //@feature_model.0/@productfeature.3/@requirements.3"/>
+    </productfeature>
+    <productfeature name="ACC" mandatory="//@feature_model.0/@productfeature.8" composes="//@feature_model.0/@productfeature.3" optional="//@feature_model.0/@productfeature.9">
+      <requirements xsi:type="rmdl:Safety" name="Safety1" ID="17" traceto="//@feature_model.0/@productfeature.4/@designelement.0"/>
+      <requirements xsi:type="rmdl:Safety" name="Safety2" ID="18" traceto="//@feature_model.0/@productfeature.4/@designelement.1"/>
+      <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="19" traceto="//@feature_model.0/@productfeature.4/@designelement.0 //@feature_model.0/@productfeature.4/@designelement.1"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="20" traceto="//@feature_model.0/@productfeature.4/@designelement.0"/>
+      <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="21" traceto="//@feature_model.0/@productfeature.4/@designelement.1"/>
+      <designelement name="Emergnecy Braking" tracefrom="//@feature_model.0/@productfeature.4/@requirements.0 //@feature_model.0/@productfeature.4/@requirements.2 //@feature_model.0/@productfeature.4/@requirements.3"/>
+      <designelement name="Auto Braking" tracefrom="//@feature_model.0/@productfeature.4/@requirements.1 //@feature_model.0/@productfeature.4/@requirements.2 //@feature_model.0/@productfeature.4/@requirements.4"/>
+    </productfeature>
+    <productfeature name="Gas Controller" isOptional="true" alternativeof="//@feature_model.0/@productfeature.2"/>
+    <productfeature name="Hybrid Controller" isOptional="true" alternativeof="//@feature_model.0/@productfeature.2"/>
+    <productfeature name="Heated Steering Wheel" isOptional="true" optionof="//@feature_model.0/@productfeature.3"/>
+    <productfeature name="Auto Braking" composes="//@feature_model.0/@productfeature.4"/>
+    <productfeature name="Emergency Braking" isOptional="true" optionof="//@feature_model.0/@productfeature.4"/>
+  </feature_model>
+  <requirement_diagram name="No Features">
+    <requirements xsi:type="rmdl:Safety" name="Safety1" ID="6"/>
+    <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="7"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="8"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq2" ID="9"/>
+    <requirements xsi:type="rmdl:Safety" name="Safety2" ID="10"/>
+    <requirements xsi:type="rmdl:Qualitative" name="Qualitative2" ID="11"/>
+    <requirements xsi:type="rmdl:Functional" name="FunctionalReq3" ID="12"/>
+    <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="13"/>
+  </requirement_diagram>
+</rmdl:RMDL_Root>
