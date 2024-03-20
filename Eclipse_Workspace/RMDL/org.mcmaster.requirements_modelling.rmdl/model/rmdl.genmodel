@@ -25,21 +25,18 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/review"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/testcase"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/traceto"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/partof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/decomposesto"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Functional"/>
     <genClasses ecoreClass="rmdl.ecore#//Qualitative"/>
     <genClasses ecoreClass="rmdl.ecore#//Constraint"/>
-    <genClasses ecoreClass="rmdl.ecore#//Package">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Package/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Package/packageID"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Package/requirement_root"/>
-    </genClasses>
-    <genClasses ecoreClass="rmdl.ecore#//Requirement_Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/testcase"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/package"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/requirements"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/review"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Root/designelement"/>
+    <genClasses ecoreClass="rmdl.ecore#//Requirement_Diagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/testcase"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/requirements"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/review"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/designelement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement_Diagram/name"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Safety"/>
     <genClasses ecoreClass="rmdl.ecore#//DesignElement">
@@ -47,6 +44,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/isHardware"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/isSoftware"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/tracefrom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/requirement_root"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//TestCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/ID"/>
@@ -62,6 +60,24 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirement_root"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/comments"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//ProductFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//ProductFeature/isOptional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/mandatory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/composes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/alternative"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/alternativeof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/optionof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/product"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Feature_Model">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Feature_Model/productfeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Feature_Model/name"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//RMDL_Root">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//RMDL_Root/feature_model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//RMDL_Root/requirement_diagram"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

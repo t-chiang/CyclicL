@@ -24,7 +24,7 @@ import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
@@ -45,6 +45,8 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceto <em>Traceto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getPartof <em>Partof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getDecomposesto <em>Decomposesto</em>}</li>
  * </ul>
  *
  * @generated
@@ -141,6 +143,26 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	protected EList<DesignElement> traceto;
 
 	/**
+	 * The cached value of the '{@link #getPartof() <em>Partof</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartof()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirements> partof;
+
+	/**
+	 * The cached value of the '{@link #getDecomposesto() <em>Decomposesto</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDecomposesto()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirements> decomposesto;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -228,10 +250,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_Root getRequirement_root() {
+	public Requirement_Diagram getRequirement_root() {
 		if (eContainerFeatureID() != RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT)
 			return null;
-		return (Requirement_Root) eInternalContainer();
+		return (Requirement_Diagram) eInternalContainer();
 	}
 
 	/**
@@ -239,7 +261,7 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRequirement_root(Requirement_Root newRequirement_root, NotificationChain msgs) {
+	public NotificationChain basicSetRequirement_root(Requirement_Diagram newRequirement_root, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newRequirement_root, RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT,
 				msgs);
 		return msgs;
@@ -250,7 +272,7 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequirement_root(Requirement_Root newRequirement_root) {
+	public void setRequirement_root(Requirement_Diagram newRequirement_root) {
 		if (newRequirement_root != eInternalContainer()
 				|| (eContainerFeatureID() != RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT
 						&& newRequirement_root != null)) {
@@ -261,7 +283,7 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRequirement_root != null)
 				msgs = ((InternalEObject) newRequirement_root).eInverseAdd(this,
-						RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS, Requirement_Root.class, msgs);
+						RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS, Requirement_Diagram.class, msgs);
 			msgs = basicSetRequirement_root(newRequirement_root, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -311,6 +333,32 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Requirements> getPartof() {
+		if (partof == null) {
+			partof = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
+					RmdlPackage.REQUIREMENTS__PARTOF, RmdlPackage.REQUIREMENTS__DECOMPOSESTO);
+		}
+		return partof;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Requirements> getDecomposesto() {
+		if (decomposesto == null) {
+			decomposesto = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
+					RmdlPackage.REQUIREMENTS__DECOMPOSESTO, RmdlPackage.REQUIREMENTS__PARTOF);
+		}
+		return decomposesto;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * This is the method implementation of a change impact analysis. This is to be used as a predictive measure of the impact that can occur due to a change in requirements.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -348,13 +396,17 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
+			return basicSetRequirement_root((Requirement_Diagram) otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__TESTCASE:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestcase()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__TRACETO:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceto()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__PARTOF:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPartof()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDecomposesto()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -375,6 +427,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return ((InternalEList<?>) getTestcase()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENTS__TRACETO:
 			return ((InternalEList<?>) getTraceto()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__PARTOF:
+			return ((InternalEList<?>) getPartof()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
+			return ((InternalEList<?>) getDecomposesto()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -388,8 +444,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS,
-					Requirement_Root.class, msgs);
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS,
+					Requirement_Diagram.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -416,6 +472,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return getTestcase();
 		case RmdlPackage.REQUIREMENTS__TRACETO:
 			return getTraceto();
+		case RmdlPackage.REQUIREMENTS__PARTOF:
+			return getPartof();
+		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
+			return getDecomposesto();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -439,7 +499,7 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			setDescription((String) newValue);
 			return;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
-			setRequirement_root((Requirement_Root) newValue);
+			setRequirement_root((Requirement_Diagram) newValue);
 			return;
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
@@ -452,6 +512,14 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__TRACETO:
 			getTraceto().clear();
 			getTraceto().addAll((Collection<? extends DesignElement>) newValue);
+			return;
+		case RmdlPackage.REQUIREMENTS__PARTOF:
+			getPartof().clear();
+			getPartof().addAll((Collection<? extends Requirements>) newValue);
+			return;
+		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
+			getDecomposesto().clear();
+			getDecomposesto().addAll((Collection<? extends Requirements>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -475,7 +543,7 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
 		case RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT:
-			setRequirement_root((Requirement_Root) null);
+			setRequirement_root((Requirement_Diagram) null);
 			return;
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
@@ -485,6 +553,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case RmdlPackage.REQUIREMENTS__TRACETO:
 			getTraceto().clear();
+			return;
+		case RmdlPackage.REQUIREMENTS__PARTOF:
+			getPartof().clear();
+			return;
+		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
+			getDecomposesto().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -512,6 +586,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return testcase != null && !testcase.isEmpty();
 		case RmdlPackage.REQUIREMENTS__TRACETO:
 			return traceto != null && !traceto.isEmpty();
+		case RmdlPackage.REQUIREMENTS__PARTOF:
+			return partof != null && !partof.isEmpty();
+		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
+			return decomposesto != null && !decomposesto.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

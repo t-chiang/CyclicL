@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-xtext="http://altran.com/general/integration/xtextsirius/model/properties/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="rmdl" version="12.0.0.2017041100">
   <ownedViewpoints name="Requirement Modelling Viewpoint" modelFileExtension="rmdl">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirements Diagram" showOnStartup="true" domainClass="rmdl::Requirement_Root" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirements Diagram" titleExpression="Requirement_Diagram" initialisation="true" showOnStartup="true" domainClass="rmdl::Requirement_Diagram" enablePopupBars="true">
       <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
       <defaultLayer name="Default">
         <toolSections name="Custom tools">
@@ -119,14 +119,6 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="composition" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
         <toolSections name="Requirements">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Functional Requirement" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Functional%20Requirement']">
             <variable name="container"/>
@@ -135,7 +127,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'FunctionalReq'+container.requirements->filter(rmdl::Functional)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -147,7 +139,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Qualitative" referenceName="requirements">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Qualitative'+container.requirements->filter(rmdl::Qualitative)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -159,7 +151,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Constraint" referenceName="requirements">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Constraint'+container.requirements->filter(rmdl::Constraint)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -171,7 +163,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Safety" referenceName="requirements">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Safety'+container.requirements->filter(rmdl::Safety)->size()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -247,6 +239,14 @@
         </toolSections>
       </additionalLayers>
       <additionalLayers name="Unused stuff">
+        <edgeMappings name="composition" sourceMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']" targetMapping="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Diagram']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Design%20Element']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <toolSections name="Unused tools">
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Package" forceRefresh="true">
             <variable name="container"/>
@@ -265,65 +265,193 @@
     <ownedJavaExtensions qualifiedClassName="org.mcmaster.rmdl.design.Services"/>
   </ownedViewpoints>
   <ownedViewpoints name="Traceability Table Viewpoint" modelFileExtension="rmdl">
-    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Traceability Matrix" domainClass="rmdl::Requirement_Root">
-      <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="feature:requirements" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="feature:requirements" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Constraint Requirement" domainClass="rmdl::Constraint" semanticCandidatesExpression="feature:requirements" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Safety Requirement" domainClass="rmdl::Safety" semanticCandidatesExpression="feature:requirements" headerLabelExpression="[name/]"/>
-      <ownedCreateLine name="Add Functional Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Functional%20Requirement']">
-        <variables name="root" documentation="The semantic root element of the table."/>
-        <variables name="element" documentation="The semantic currently edited element."/>
-        <variables name="container" documentation="The semantic element corresponding to the view container."/>
-        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'FunctionalReq'+container.requirements->filter(rmdl::Functional)->size()"/>
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
-          </subModelOperations>
-        </firstModelOperation>
-      </ownedCreateLine>
-      <ownedCreateLine name="Add Qualitative Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Qualitative%20Requirement']">
-        <variables name="root" documentation="The semantic root element of the table."/>
-        <variables name="element" documentation="The semantic currently edited element."/>
-        <variables name="container" documentation="The semantic element corresponding to the view container."/>
-        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Qualitative" referenceName="requirements">
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Qualitative'+container.requirements->filter(rmdl::Qualitative)->size()"/>
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
-          </subModelOperations>
-        </firstModelOperation>
-      </ownedCreateLine>
-      <ownedCreateLine name="Add Constraint Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Constraint%20Requirement']">
-        <variables name="root" documentation="The semantic root element of the table."/>
-        <variables name="element" documentation="The semantic currently edited element."/>
-        <variables name="container" documentation="The semantic element corresponding to the view container."/>
-        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Constraint" referenceName="requirements">
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Constraint'+container.requirements->filter(rmdl::Constraint)->size()"/>
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
-          </subModelOperations>
-        </firstModelOperation>
-      </ownedCreateLine>
-      <ownedCreateLine name="Add Safety Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Traceability%20Matrix']/@ownedLineMappings[name='Safety%20Requirement']">
-        <variables name="root" documentation="The semantic root element of the table."/>
-        <variables name="element" documentation="The semantic currently edited element."/>
-        <variables name="container" documentation="The semantic element corresponding to the view container."/>
-        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Safety" referenceName="requirements">
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Safety'+container.requirements->filter(rmdl::Safety)->size()"/>
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::Requirement_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
-          </subModelOperations>
-        </firstModelOperation>
-      </ownedCreateLine>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Project Requirement Traceability Matrix" titleExpression="Project_Traceability_Matrix" domainClass="rmdl::RMDL_Root" initialHeaderColumnWidth="25">
+      <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
+      <ownedLineMappings name="Functional Requirement - No feature" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Qualitative Requirement - No feature" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Constraint Requirement - No feature" domainClass="rmdl::Constraint" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Safety Requirement - No feature" domainClass="rmdl::Safety" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Constraint Requirement" domainClass="rmdl::Constraint" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Safety Requirement" domainClass="rmdl::Safety" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
       <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
       <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="10" canEdit="true" featureName="description"/>
+      <ownedColumnMappings name="[requirement_root.name/]" label="Feature" headerLabelExpression="Feature" featureName="requirement_root"/>
       <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="100" canEdit="true" featureName="traceto"/>
-      <ownedColumnMappings name="[.testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="testcase" labelExpression="[testcase.ID/]"/>
+      <ownedColumnMappings name="[testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="testcase" labelExpression="[testcase.ID/]"/>
       <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="100" featureName="testcase" labelExpression="[testcase.description/]"/>
       <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" featureName="testcase" labelExpression="[testcase.type/]"/>
       <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
       <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="20" featureName="review" labelExpression="[review.isApproved/]"/>
       <ownedColumnMappings name="[review/]" label="Comments" headerLabelExpression="Comments" initialWidth="150" canEdit="true" featureName="review" labelExpression="[review.comments/]"/>
       <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Requirement Traceability Matrix (feature scope)" titleExpression="Traceability_Matrix" domainClass="rmdl::Requirement_Diagram" initialHeaderColumnWidth="30">
+      <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
+      <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Constraint Requirement" domainClass="rmdl::Constraint" semanticCandidatesExpression="[self.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Safety Requirement" domainClass="rmdl::Safety" semanticCandidatesExpression="[self.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedCreateLine name="Add Functional Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Project%20Requirement%20Traceability%20Matrix']/@ownedLineMappings[name='Functional%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'FunctionalReq'+container.requirements->filter(rmdl::Functional)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedCreateLine name="Add Qualitative Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Project%20Requirement%20Traceability%20Matrix']/@ownedLineMappings[name='Qualitative%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Qualitative" referenceName="requirements">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Qualitative'+container.requirements->filter(rmdl::Qualitative)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedCreateLine name="Add Constraint Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Project%20Requirement%20Traceability%20Matrix']/@ownedLineMappings[name='Constraint%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Constraint" referenceName="requirements">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Constraint'+container.requirements->filter(rmdl::Constraint)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedCreateLine name="Add Safety Requirement" mapping="//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Project%20Requirement%20Traceability%20Matrix']/@ownedLineMappings[name='Safety%20Requirement']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Safety" referenceName="requirements">
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Safety'+container.requirements->filter(rmdl::Safety)->size()"/>
+            <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Root).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="10" canEdit="true" featureName="ID"/>
+      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="50" canEdit="true" featureName="description"/>
+      <ownedColumnMappings name="[requirement_root.name/]" label="Feature" headerLabelExpression="Feature" initialWidth="10" featureName="requirement_root"/>
+      <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="10" canEdit="true" featureName="traceto"/>
+      <ownedColumnMappings name="[.testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="10" featureName="testcase" labelExpression="[testcase.ID/]"/>
+      <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="50" featureName="testcase" labelExpression="[testcase.description/]"/>
+      <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" initialWidth="10" featureName="testcase" labelExpression="[testcase.type/]"/>
+      <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
+      <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="20" featureName="review" labelExpression="[review.isApproved/]"/>
+      <ownedColumnMappings name="[review/]" label="Comments" headerLabelExpression="Comments" initialWidth="150" canEdit="true" featureName="review" labelExpression="[review.comments/]"/>
+      <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Feature Traceability Matrix" domainClass="rmdl::Feature_Model">
+      <ownedLineMappings name="Product Feature" domainClass="rmdl::ProductFeature" semanticCandidatesExpression="[self.productfeature/]" headerLabelExpression="[name/]"/>
+      <ownedColumnMappings name="[mandatory.name/]" label="Mandatory Features" headerLabelExpression="Mandatory Features" initialWidth="10" featureName="mandatory"/>
+      <ownedColumnMappings name="[optional.name/]" label="Optional Features" headerLabelExpression="Optional Features" initialWidth="10" featureName="optional"/>
+      <ownedColumnMappings name="[alternative.name/]" label="Alternative Compositions" headerLabelExpression="Alternative Compositions" initialWidth="10" featureName="alternative"/>
+      <ownedColumnMappings name="[composes.name/]" label="Builds Up To" headerLabelExpression="Builds up to" initialWidth="10" featureName="composes"/>
+      <ownedColumnMappings name="[optionof.name/]" label="Optionally used by" headerLabelExpression="Optionally used by" initialWidth="10" featureName="optionof"/>
+      <ownedColumnMappings name="[alternativeof.name/]" label="Alternatively build up to" headerLabelExpression="Alternatively builds up to" initialWidth="10" featureName="alternativeof"/>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <ownedViewpoints name="Feature Modelling Viewpoint" modelFileExtension="rmdl">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Feature Model" titleExpression="Feature_Model" initialisation="true" showOnStartup="true" domainClass="rmdl::Feature_Model" enablePopupBars="true">
+      <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
+      <defaultLayer name="Default">
+        <toolSections name="Custom tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="editEntityNames">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Model Layer" activeByDefault="true">
+        <nodeMappings name="Feature" labelDirectEdit="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:productfeature" domainClass="rmdl::ProductFeature">
+          <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Mandatory" sourceMapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']" targetMapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']" targetFinderExpression="feature:mandatory">
+          <style sourceArrow="FillDiamond" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Optional" sourceMapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']" targetMapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']" targetFinderExpression="feature:optional">
+          <style targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Alternative" sourceMapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']" targetMapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']" targetFinderExpression="feature:alternative">
+          <style sourceArrow="Diamond" targetArrow="OutputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Elements">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Feature" nodeMappings="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Feature']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::ProductFeature" referenceName="productfeature">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Feature'+container.productfeature->filter(rmdl::ProductFeature)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Mandatory" edgeMappings="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mandatory" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Option" edgeMappings="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Optional']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="optional" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Alternative" edgeMappings="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Optional']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="alternative" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="Unused stuff"/>
     </ownedRepresentations>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Requirements Properties View">

@@ -19,20 +19,21 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Requirement_RootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class Requirement_DiagramItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -40,7 +41,7 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_RootItemProvider(AdapterFactory adapterFactory) {
+	public Requirement_DiagramItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,26 +56,11 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPackagePropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Package feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPackagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Root_package_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_package_feature",
-								"_UI_Requirement_Root_type"),
-						RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -86,10 +72,10 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	protected void addRequirementsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Root_requirements_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_requirements_feature",
-								"_UI_Requirement_Root_type"),
-						RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Requirement_Diagram_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Diagram_requirements_feature",
+								"_UI_Requirement_Diagram_type"),
+						RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -101,10 +87,26 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	protected void addReviewPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Root_review_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Root_review_feature",
-								"_UI_Requirement_Root_type"),
-						RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Requirement_Diagram_review_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Diagram_review_feature",
+								"_UI_Requirement_Diagram_type"),
+						RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REVIEW, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Diagram_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Diagram_name_feature",
+								"_UI_Requirement_Diagram_type"),
+						RmdlPackage.Literals.REQUIREMENT_DIAGRAM__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -119,11 +121,10 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__TESTCASE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REVIEW);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__DESIGNELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -142,14 +143,14 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This returns Requirement_Root.gif.
+	 * This returns Requirement_Diagram.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Requirement_Root"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Requirement_Diagram"));
 	}
 
 	/**
@@ -170,7 +171,9 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Requirement_Root_type");
+		String label = ((Requirement_Diagram) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Requirement_Diagram_type")
+				: getString("_UI_Requirement_Diagram_type") + " " + label;
 	}
 
 	/**
@@ -184,12 +187,14 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Requirement_Root.class)) {
-		case RmdlPackage.REQUIREMENT_ROOT__TESTCASE:
-		case RmdlPackage.REQUIREMENT_ROOT__PACKAGE:
-		case RmdlPackage.REQUIREMENT_ROOT__REQUIREMENTS:
-		case RmdlPackage.REQUIREMENT_ROOT__REVIEW:
-		case RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT:
+		switch (notification.getFeatureID(Requirement_Diagram.class)) {
+		case RmdlPackage.REQUIREMENT_DIAGRAM__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -207,28 +212,25 @@ public class Requirement_RootItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__TESTCASE,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__TESTCASE,
 				RmdlFactory.eINSTANCE.createTestCase()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__PACKAGE,
-				RmdlFactory.eINSTANCE.createPackage()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createFunctional()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createQualitative()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createConstraint()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createSafety()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__REVIEW,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REVIEW,
 				RmdlFactory.eINSTANCE.createReview()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_ROOT__DESIGNELEMENT,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__DESIGNELEMENT,
 				RmdlFactory.eINSTANCE.createDesignElement()));
 	}
 

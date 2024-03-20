@@ -73,17 +73,17 @@ public interface Review extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getReview <em>Review</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getReview <em>Review</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Root)
+	 * @see #setRequirement_root(Requirement_Diagram)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getReview
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getReview
 	 * @model opposite="review" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Root getRequirement_root();
+	Requirement_Diagram getRequirement_root();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_root <em>Requirement root</em>}' container reference.
@@ -93,7 +93,7 @@ public interface Review extends EObject {
 	 * @see #getRequirement_root()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Root value);
+	void setRequirement_root(Requirement_Diagram value);
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.

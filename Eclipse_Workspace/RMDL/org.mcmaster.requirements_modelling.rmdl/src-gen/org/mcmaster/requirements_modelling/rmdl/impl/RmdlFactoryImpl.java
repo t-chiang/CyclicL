@@ -10,17 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.mcmaster.requirements_modelling.rmdl.Constraint;
-import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Functional;
-import org.mcmaster.requirements_modelling.rmdl.Qualitative;
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
-import org.mcmaster.requirements_modelling.rmdl.Review;
-import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
-import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-import org.mcmaster.requirements_modelling.rmdl.Safety;
-import org.mcmaster.requirements_modelling.rmdl.TestCase;
-import org.mcmaster.requirements_modelling.rmdl.TestType;
+import org.mcmaster.requirements_modelling.rmdl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,10 +61,8 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createQualitative();
 		case RmdlPackage.CONSTRAINT:
 			return createConstraint();
-		case RmdlPackage.PACKAGE:
-			return createPackage();
-		case RmdlPackage.REQUIREMENT_ROOT:
-			return createRequirement_Root();
+		case RmdlPackage.REQUIREMENT_DIAGRAM:
+			return createRequirement_Diagram();
 		case RmdlPackage.SAFETY:
 			return createSafety();
 		case RmdlPackage.DESIGN_ELEMENT:
@@ -83,6 +71,12 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createTestCase();
 		case RmdlPackage.REVIEW:
 			return createReview();
+		case RmdlPackage.PRODUCT_FEATURE:
+			return createProductFeature();
+		case RmdlPackage.FEATURE_MODEL:
+			return createFeature_Model();
+		case RmdlPackage.RMDL_ROOT:
+			return createRMDL_Root();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -153,19 +147,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.mcmaster.requirements_modelling.rmdl.Package createPackage() {
-		PackageImpl package_ = new PackageImpl();
-		return package_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Requirement_Root createRequirement_Root() {
-		Requirement_RootImpl requirement_Root = new Requirement_RootImpl();
-		return requirement_Root;
+	public Requirement_Diagram createRequirement_Diagram() {
+		Requirement_DiagramImpl requirement_Diagram = new Requirement_DiagramImpl();
+		return requirement_Diagram;
 	}
 
 	/**
@@ -206,6 +190,36 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	public Review createReview() {
 		ReviewImpl review = new ReviewImpl();
 		return review;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductFeature createProductFeature() {
+		ProductFeatureImpl productFeature = new ProductFeatureImpl();
+		return productFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature_Model createFeature_Model() {
+		Feature_ModelImpl feature_Model = new Feature_ModelImpl();
+		return feature_Model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RMDL_Root createRMDL_Root() {
+		RMDL_RootImpl rmdL_Root = new RMDL_RootImpl();
+		return rmdL_Root;
 	}
 
 	/**

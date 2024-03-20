@@ -98,17 +98,17 @@ public interface TestCase extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase <em>Testcase</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getTestcase <em>Testcase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Root)
+	 * @see #setRequirement_root(Requirement_Diagram)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getTestcase
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getTestcase
 	 * @model opposite="testcase" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Root getRequirement_root();
+	Requirement_Diagram getRequirement_root();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}' container reference.
@@ -118,7 +118,7 @@ public interface TestCase extends EObject {
 	 * @see #getRequirement_root()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Root value);
+	void setRequirement_root(Requirement_Diagram value);
 
 	/**
 	 * Returns the value of the '<em><b>Has Passed</b></em>' attribute.

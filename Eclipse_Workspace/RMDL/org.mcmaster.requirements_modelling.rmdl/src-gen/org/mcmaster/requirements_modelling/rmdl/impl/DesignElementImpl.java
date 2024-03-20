@@ -12,8 +12,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
@@ -29,6 +31,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsHardware <em>Is Hardware</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsSoftware <em>Is Software</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getTracefrom <em>Tracefrom</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getRequirement_root <em>Requirement root</em>}</li>
  * </ul>
  *
  * @generated
@@ -206,12 +209,63 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Requirement_Diagram getRequirement_root() {
+		if (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT)
+			return null;
+		return (Requirement_Diagram) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRequirement_root(Requirement_Diagram newRequirement_root, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newRequirement_root, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
+				msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequirement_root(Requirement_Diagram newRequirement_root) {
+		if (newRequirement_root != eInternalContainer()
+				|| (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT
+						&& newRequirement_root != null)) {
+			if (EcoreUtil.isAncestor(this, newRequirement_root))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRequirement_root != null)
+				msgs = ((InternalEObject) newRequirement_root).eInverseAdd(this,
+						RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT, Requirement_Diagram.class, msgs);
+			msgs = basicSetRequirement_root(newRequirement_root, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
+					newRequirement_root, newRequirement_root));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTracefrom()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetRequirement_root((Requirement_Diagram) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -226,8 +280,25 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		switch (featureID) {
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return ((InternalEList<?>) getTracefrom()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return basicSetRequirement_root(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT,
+					Requirement_Diagram.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -246,6 +317,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return isIsSoftware();
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return getTracefrom();
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return getRequirement_root();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,6 +345,9 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			getTracefrom().clear();
 			getTracefrom().addAll((Collection<? extends Requirements>) newValue);
 			return;
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			setRequirement_root((Requirement_Diagram) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -296,6 +372,9 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			getTracefrom().clear();
 			return;
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			setRequirement_root((Requirement_Diagram) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -316,6 +395,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return isSoftware != IS_SOFTWARE_EDEFAULT;
 		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
 			return tracefrom != null && !tracefrom.isEmpty();
+		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
+			return getRequirement_root() != null;
 		}
 		return super.eIsSet(featureID);
 	}

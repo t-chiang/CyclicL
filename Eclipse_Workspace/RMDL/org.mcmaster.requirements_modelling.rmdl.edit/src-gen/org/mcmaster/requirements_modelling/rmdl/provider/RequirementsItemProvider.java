@@ -60,6 +60,8 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addReviewPropertyDescriptor(object);
 			addTestcasePropertyDescriptor(object);
 			addTracetoPropertyDescriptor(object);
+			addPartofPropertyDescriptor(object);
+			addDecomposestoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -170,6 +172,36 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Partof feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPartofPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirements_partof_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_partof_feature",
+								"_UI_Requirements_type"),
+						RmdlPackage.Literals.REQUIREMENTS__PARTOF, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Decomposesto feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDecomposestoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirements_decomposesto_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_decomposesto_feature",
+								"_UI_Requirements_type"),
+						RmdlPackage.Literals.REQUIREMENTS__DECOMPOSESTO, true, false, true, null, null, null));
 	}
 
 	/**

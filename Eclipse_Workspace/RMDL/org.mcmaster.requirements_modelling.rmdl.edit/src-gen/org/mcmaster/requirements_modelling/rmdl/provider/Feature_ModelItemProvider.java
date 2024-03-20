@@ -9,6 +9,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,16 +23,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.requirements_modelling.rmdl.DesignElement;
+import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
+import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.DesignElement} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DesignElementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class Feature_ModelItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -37,7 +41,7 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesignElementItemProvider(AdapterFactory adapterFactory) {
+	public Feature_ModelItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,13 +56,25 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addProductfeaturePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addIsHardwarePropertyDescriptor(object);
-			addIsSoftwarePropertyDescriptor(object);
-			addTracefromPropertyDescriptor(object);
-			addRequirement_rootPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Productfeature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProductfeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feature_Model_productfeature_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feature_Model_productfeature_feature",
+								"_UI_Feature_Model_type"),
+						RmdlPackage.Literals.FEATURE_MODEL__PRODUCTFEATURE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -70,84 +86,52 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_name_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Feature_Model_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feature_Model_name_feature",
+								"_UI_Feature_Model_type"),
+						RmdlPackage.Literals.FEATURE_MODEL__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Hardware feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsHardwarePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_isHardware_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_isHardware_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__IS_HARDWARE, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RmdlPackage.Literals.FEATURE_MODEL__PRODUCTFEATURE);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Software feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsSoftwarePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_isSoftware_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_isSoftware_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__IS_SOFTWARE, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This adds a property descriptor for the Tracefrom feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTracefromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_tracefrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_tracefrom_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__TRACEFROM, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Requirement root feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequirement_rootPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_requirement_root_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__REQUIREMENT_ROOT, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns DesignElement.gif.
+	 * This returns Feature_Model.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DesignElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature_Model"));
 	}
 
 	/**
@@ -168,9 +152,9 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DesignElement) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_DesignElement_type")
-				: getString("_UI_DesignElement_type") + " " + label;
+		String label = ((Feature_Model) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Feature_Model_type")
+				: getString("_UI_Feature_Model_type") + " " + label;
 	}
 
 	/**
@@ -184,11 +168,12 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DesignElement.class)) {
-		case RmdlPackage.DESIGN_ELEMENT__NAME:
-		case RmdlPackage.DESIGN_ELEMENT__IS_HARDWARE:
-		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
+		switch (notification.getFeatureID(Feature_Model.class)) {
+		case RmdlPackage.FEATURE_MODEL__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case RmdlPackage.FEATURE_MODEL__PRODUCTFEATURE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -204,6 +189,9 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__PRODUCTFEATURE,
+				RmdlFactory.eINSTANCE.createProductFeature()));
 	}
 
 	/**
