@@ -62,9 +62,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TestType">
     <eLiterals name="UnitTest"/>
-    <eLiterals name="ClassTest" value="1"/>
-    <eLiterals name="WhiteBox" value="2"/>
-    <eLiterals name="BlackBox" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Review">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isApproved" lowerBound="1"

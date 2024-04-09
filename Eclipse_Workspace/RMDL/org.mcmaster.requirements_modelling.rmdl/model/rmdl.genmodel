@@ -13,9 +13,6 @@
       ecorePackage="rmdl.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rmdl.ecore#//TestType">
       <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/UnitTest"/>
-      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/ClassTest"/>
-      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/WhiteBox"/>
-      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/BlackBox"/>
     </genEnums>
     <genClasses ecoreClass="rmdl.ecore#//Requirements">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/name"/>
