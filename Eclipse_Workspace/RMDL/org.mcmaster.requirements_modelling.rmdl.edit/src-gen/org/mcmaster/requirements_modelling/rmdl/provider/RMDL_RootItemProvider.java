@@ -159,7 +159,7 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 				RmdlFactory.eINSTANCE.createRequirement_Diagram()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_ROOT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createProductFeature()));
+				RmdlFactory.eINSTANCE.createFeatureElement()));
 	}
 
 	/**

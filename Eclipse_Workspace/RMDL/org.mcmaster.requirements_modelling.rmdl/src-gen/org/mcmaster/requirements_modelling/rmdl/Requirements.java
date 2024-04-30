@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof <em>Partof</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto <em>Decomposesto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -190,5 +191,27 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<Requirements> getDecomposesto();
+
+	/**
+	 * Returns the value of the '<em><b>Specification</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specification</em>' attribute.
+	 * @see #setSpecification(String)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Specification()
+	 * @model
+	 * @generated
+	 */
+	String getSpecification();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Specification</em>' attribute.
+	 * @see #getSpecification()
+	 * @generated
+	 */
+	void setSpecification(String value);
 
 } // Requirements

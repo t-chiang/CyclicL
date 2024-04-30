@@ -13,9 +13,6 @@
       ecorePackage="rmdl.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="rmdl.ecore#//TestType">
       <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/UnitTest"/>
-      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/ClassTest"/>
-      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/WhiteBox"/>
-      <genEnumLiterals ecoreEnumLiteral="rmdl.ecore#//TestType/BlackBox"/>
     </genEnums>
     <genClasses ecoreClass="rmdl.ecore#//Requirements">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/name"/>
@@ -27,6 +24,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/traceto"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/partof"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/decomposesto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/specification"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Functional"/>
     <genClasses ecoreClass="rmdl.ecore#//Qualitative"/>
@@ -61,18 +59,18 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/comments"/>
     </genClasses>
-    <genClasses ecoreClass="rmdl.ecore#//ProductFeature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//ProductFeature/isOptional"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/mandatory"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/composes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/alternative"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/alternativeof"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/optional"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/optionof"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//ProductFeature/product"/>
+    <genClasses ecoreClass="rmdl.ecore#//FeatureElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//FeatureElement/isOptional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/mandatory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/composes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/alternative"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/alternativeof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/optionof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/product"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Feature_Model">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Feature_Model/productfeature"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Feature_Model/featureelement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Feature_Model/name"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//RMDL_Root">

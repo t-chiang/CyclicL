@@ -257,26 +257,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.ProductFeature} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.FeatureElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProductFeatureItemProvider productFeatureItemProvider;
+	protected FeatureElementItemProvider featureElementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.ProductFeature}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.FeatureElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createProductFeatureAdapter() {
-		if (productFeatureItemProvider == null) {
-			productFeatureItemProvider = new ProductFeatureItemProvider(this);
+	public Adapter createFeatureElementAdapter() {
+		if (featureElementItemProvider == null) {
+			featureElementItemProvider = new FeatureElementItemProvider(this);
 		}
 
-		return productFeatureItemProvider;
+		return featureElementItemProvider;
 	}
 
 	/**
@@ -440,8 +440,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			testCaseItemProvider.dispose();
 		if (reviewItemProvider != null)
 			reviewItemProvider.dispose();
-		if (productFeatureItemProvider != null)
-			productFeatureItemProvider.dispose();
+		if (featureElementItemProvider != null)
+			featureElementItemProvider.dispose();
 		if (feature_ModelItemProvider != null)
 			feature_ModelItemProvider.dispose();
 		if (rmdL_RootItemProvider != null)

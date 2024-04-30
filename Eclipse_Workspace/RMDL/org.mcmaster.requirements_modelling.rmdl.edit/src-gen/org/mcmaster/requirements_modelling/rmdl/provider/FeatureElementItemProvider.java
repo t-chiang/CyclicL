@@ -13,23 +13,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.requirements_modelling.rmdl.ProductFeature;
+import org.mcmaster.requirements_modelling.rmdl.FeatureElement;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.ProductFeature} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.FeatureElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider {
+public class FeatureElementItemProvider extends Requirement_DiagramItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeatureItemProvider(AdapterFactory adapterFactory) {
+	public FeatureElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,10 +65,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addIsOptionalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_isOptional_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_isOptional_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__IS_OPTIONAL, true, false, false,
+						getResourceLocator(), getString("_UI_FeatureElement_isOptional_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_isOptional_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__IS_OPTIONAL, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -81,10 +81,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addMandatoryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_mandatory_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_mandatory_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__MANDATORY, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_mandatory_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_mandatory_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__MANDATORY, true, false, true, null, null, null));
 	}
 
 	/**
@@ -96,10 +96,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addComposesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_composes_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_composes_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__COMPOSES, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_composes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_composes_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__COMPOSES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -111,10 +111,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addAlternativePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_alternative_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_alternative_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__ALTERNATIVE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_alternative_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_alternative_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__ALTERNATIVE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -126,10 +126,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addAlternativeofPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_alternativeof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_alternativeof_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__ALTERNATIVEOF, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_alternativeof_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_alternativeof_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__ALTERNATIVEOF, true, false, true, null, null, null));
 	}
 
 	/**
@@ -141,10 +141,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addOptionalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_optional_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_optional_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__OPTIONAL, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_optional_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_optional_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__OPTIONAL, true, false, true, null, null, null));
 	}
 
 	/**
@@ -156,10 +156,10 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addOptionofPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_optionof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_optionof_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__OPTIONOF, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_optionof_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_optionof_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__OPTIONOF, true, false, true, null, null, null));
 	}
 
 	/**
@@ -171,21 +171,21 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	protected void addProductPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ProductFeature_product_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ProductFeature_product_feature",
-								"_UI_ProductFeature_type"),
-						RmdlPackage.Literals.PRODUCT_FEATURE__PRODUCT, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_FeatureElement_product_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureElement_product_feature",
+								"_UI_FeatureElement_type"),
+						RmdlPackage.Literals.FEATURE_ELEMENT__PRODUCT, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns ProductFeature.gif.
+	 * This returns FeatureElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ProductFeature"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FeatureElement"));
 	}
 
 	/**
@@ -206,9 +206,9 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ProductFeature) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ProductFeature_type")
-				: getString("_UI_ProductFeature_type") + " " + label;
+		String label = ((FeatureElement) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_FeatureElement_type")
+				: getString("_UI_FeatureElement_type") + " " + label;
 	}
 
 	/**
@@ -222,8 +222,8 @@ public class ProductFeatureItemProvider extends Requirement_DiagramItemProvider 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ProductFeature.class)) {
-		case RmdlPackage.PRODUCT_FEATURE__IS_OPTIONAL:
+		switch (notification.getFeatureID(FeatureElement.class)) {
+		case RmdlPackage.FEATURE_ELEMENT__IS_OPTIONAL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

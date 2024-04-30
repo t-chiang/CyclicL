@@ -111,8 +111,8 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseProductFeature(ProductFeature object) {
-			return createProductFeatureAdapter();
+		public Adapter caseFeatureElement(FeatureElement object) {
+			return createFeatureElementAdapter();
 		}
 
 		@Override
@@ -271,16 +271,16 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.ProductFeature <em>Product Feature</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement <em>Feature Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.ProductFeature
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement
 	 * @generated
 	 */
-	public Adapter createProductFeatureAdapter() {
+	public Adapter createFeatureElementAdapter() {
 		return null;
 	}
 

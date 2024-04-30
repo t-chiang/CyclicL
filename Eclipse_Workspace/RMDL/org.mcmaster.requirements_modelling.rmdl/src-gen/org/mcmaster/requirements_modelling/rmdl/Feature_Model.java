@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getProductfeature <em>Productfeature</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureelement <em>Featureelement</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -25,18 +25,18 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Feature_Model extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Productfeature</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.ProductFeature}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.ProductFeature#getProduct <em>Product</em>}'.
+	 * Returns the value of the '<em><b>Featureelement</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.FeatureElement}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getProduct <em>Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Productfeature</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_Productfeature()
-	 * @see org.mcmaster.requirements_modelling.rmdl.ProductFeature#getProduct
+	 * @return the value of the '<em>Featureelement</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_Featureelement()
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getProduct
 	 * @model opposite="product" containment="true"
 	 * @generated
 	 */
-	EList<ProductFeature> getProductfeature();
+	EList<FeatureElement> getFeatureelement();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -265,29 +265,30 @@
     <ownedJavaExtensions qualifiedClassName="org.mcmaster.rmdl.design.Services"/>
   </ownedViewpoints>
   <ownedViewpoints name="Traceability Table Viewpoint" modelFileExtension="rmdl">
-    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Project Requirement Traceability Matrix" titleExpression="Project_Traceability_Matrix" domainClass="rmdl::RMDL_Root" initialHeaderColumnWidth="25">
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Project Requirement Traceability Matrix" titleExpression="Project_Traceability_Matrix" domainClass="rmdl::RMDL_Root" initialHeaderColumnWidth="150">
       <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
       <ownedLineMappings name="Functional Requirement - No feature" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
       <ownedLineMappings name="Qualitative Requirement - No feature" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
       <ownedLineMappings name="Constraint Requirement - No feature" domainClass="rmdl::Constraint" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
       <ownedLineMappings name="Safety Requirement - No feature" domainClass="rmdl::Safety" semanticCandidatesExpression="[self.requirement_diagram.requirements/]" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Constraint Requirement" domainClass="rmdl::Constraint" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
-      <ownedLineMappings name="Safety Requirement" domainClass="rmdl::Safety" semanticCandidatesExpression="[self.feature_model.productfeature.requirements/]" headerLabelExpression="[name/]"/>
-      <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="3" canEdit="true" featureName="ID"/>
-      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="10" canEdit="true" featureName="description"/>
-      <ownedColumnMappings name="[requirement_root.name/]" label="Feature" headerLabelExpression="Feature" featureName="requirement_root"/>
-      <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="100" canEdit="true" featureName="traceto"/>
+      <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.feature_model.featureelement.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.feature_model.featureelement.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Constraint Requirement" domainClass="rmdl::Constraint" semanticCandidatesExpression="[self.feature_model.featureelement.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedLineMappings name="Safety Requirement" domainClass="rmdl::Safety" semanticCandidatesExpression="[self.feature_model.featureelement.requirements/]" headerLabelExpression="[name/]"/>
+      <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="150" canEdit="true" featureName="ID"/>
+      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="150" canEdit="true" featureName="description"/>
+      <ownedColumnMappings name="[specification/]" label="Requirement Specification" headerLabelExpression="Requirement Specification" initialWidth="150" canEdit="true" featureName="specification"/>
+      <ownedColumnMappings name="[requirement_root.name/]" label="Feature" headerLabelExpression="Feature" initialWidth="150" featureName="requirement_root"/>
+      <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="150" canEdit="true" featureName="traceto"/>
       <ownedColumnMappings name="[testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="testcase" labelExpression="[testcase.ID/]"/>
-      <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="100" featureName="testcase" labelExpression="[testcase.description/]"/>
-      <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" featureName="testcase" labelExpression="[testcase.type/]"/>
-      <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
-      <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="20" featureName="review" labelExpression="[review.isApproved/]"/>
+      <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="150" featureName="testcase" labelExpression="[testcase.description/]"/>
+      <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" initialWidth="150" featureName="testcase" labelExpression="[testcase.type/]"/>
+      <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="150" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
+      <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="150" featureName="review" labelExpression="[review.isApproved/]"/>
       <ownedColumnMappings name="[review/]" label="Comments" headerLabelExpression="Comments" initialWidth="150" canEdit="true" featureName="review" labelExpression="[review.comments/]"/>
-      <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
+      <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="150" featureName="review" labelExpression="[review.reviewer/]"/>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Requirement Traceability Matrix (feature scope)" titleExpression="Traceability_Matrix" domainClass="rmdl::Requirement_Diagram" initialHeaderColumnWidth="30">
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Requirement Traceability Matrix (feature scope)" titleExpression="Traceability_Matrix" domainClass="rmdl::Requirement_Diagram" initialHeaderColumnWidth="150">
       <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
       <ownedLineMappings name="Functional Requirement" domainClass="rmdl::Functional" semanticCandidatesExpression="[self.requirements/]" headerLabelExpression="[name/]"/>
       <ownedLineMappings name="Qualitative Requirement" domainClass="rmdl::Qualitative" semanticCandidatesExpression="[self.requirements/]" headerLabelExpression="[name/]"/>
@@ -337,26 +338,27 @@
           </subModelOperations>
         </firstModelOperation>
       </ownedCreateLine>
-      <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="10" canEdit="true" featureName="ID"/>
-      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="50" canEdit="true" featureName="description"/>
-      <ownedColumnMappings name="[requirement_root.name/]" label="Feature" headerLabelExpression="Feature" initialWidth="10" featureName="requirement_root"/>
-      <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="10" canEdit="true" featureName="traceto"/>
-      <ownedColumnMappings name="[.testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="10" featureName="testcase" labelExpression="[testcase.ID/]"/>
-      <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="50" featureName="testcase" labelExpression="[testcase.description/]"/>
-      <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" initialWidth="10" featureName="testcase" labelExpression="[testcase.type/]"/>
-      <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="20" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
-      <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="20" featureName="review" labelExpression="[review.isApproved/]"/>
+      <ownedColumnMappings name="aql:self.ID" label="Requirement ID" headerLabelExpression="Requirement ID" initialWidth="150" canEdit="true" featureName="ID"/>
+      <ownedColumnMappings name="[description/]" label="Requirement description" headerLabelExpression="Requirement Description" initialWidth="150" canEdit="true" featureName="description"/>
+      <ownedColumnMappings name="[specification/]" label="Requirement Specification" headerLabelExpression="Requirement Specification" initialWidth="150" canEdit="true" featureName="specification"/>
+      <ownedColumnMappings name="[requirement_root.name/]" label="Feature" headerLabelExpression="Feature" initialWidth="150" featureName="requirement_root"/>
+      <ownedColumnMappings name="[traceto.name/]" label="Design Element" headerLabelExpression="Design Element" initialWidth="150" canEdit="true" featureName="traceto"/>
+      <ownedColumnMappings name="[.testcase.ID/]" label="Test case" headerLabelExpression="Test Case ID" initialWidth="150" featureName="testcase" labelExpression="[testcase.ID/]"/>
+      <ownedColumnMappings name="[testcase.description/]" label="Test Case Description" headerLabelExpression="Test Case Description" initialWidth="150" featureName="testcase" labelExpression="[testcase.description/]"/>
+      <ownedColumnMappings name="[testcase.type/]" label="Test Case Type" headerLabelExpression="Test Case Type" initialWidth="150" featureName="testcase" labelExpression="[testcase.type/]"/>
+      <ownedColumnMappings name="[testcase.hasPassed/]" label="Test Case Passed" headerLabelExpression="Test Case Passed" initialWidth="150" featureName="testcase" labelExpression="[testcase.hasPassed/]"/>
+      <ownedColumnMappings name="[review/]" label="Approval" headerLabelExpression="Approval" initialWidth="150" featureName="review" labelExpression="[review.isApproved/]"/>
       <ownedColumnMappings name="[review/]" label="Comments" headerLabelExpression="Comments" initialWidth="150" canEdit="true" featureName="review" labelExpression="[review.comments/]"/>
-      <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="20" featureName="review" labelExpression="[review.reviewer/]"/>
+      <ownedColumnMappings name="[review.reviewer/]" label="Reviewer" headerLabelExpression="Reviewer" initialWidth="150" featureName="review" labelExpression="[review.reviewer/]"/>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Feature Traceability Matrix" domainClass="rmdl::Feature_Model">
       <ownedLineMappings name="Product Feature" domainClass="rmdl::ProductFeature" semanticCandidatesExpression="[self.productfeature/]" headerLabelExpression="[name/]"/>
-      <ownedColumnMappings name="[mandatory.name/]" label="Mandatory Features" headerLabelExpression="Mandatory Features" initialWidth="10" featureName="mandatory"/>
-      <ownedColumnMappings name="[optional.name/]" label="Optional Features" headerLabelExpression="Optional Features" initialWidth="10" featureName="optional"/>
-      <ownedColumnMappings name="[alternative.name/]" label="Alternative Compositions" headerLabelExpression="Alternative Compositions" initialWidth="10" featureName="alternative"/>
-      <ownedColumnMappings name="[composes.name/]" label="Builds Up To" headerLabelExpression="Builds up to" initialWidth="10" featureName="composes"/>
-      <ownedColumnMappings name="[optionof.name/]" label="Optionally used by" headerLabelExpression="Optionally used by" initialWidth="10" featureName="optionof"/>
-      <ownedColumnMappings name="[alternativeof.name/]" label="Alternatively build up to" headerLabelExpression="Alternatively builds up to" initialWidth="10" featureName="alternativeof"/>
+      <ownedColumnMappings name="[mandatory.name/]" label="Mandatory Features" headerLabelExpression="Mandatory Features" initialWidth="150" featureName="mandatory"/>
+      <ownedColumnMappings name="[optional.name/]" label="Optional Features" headerLabelExpression="Optional Features" initialWidth="150" featureName="optional"/>
+      <ownedColumnMappings name="[alternative.name/]" label="Alternative Compositions" headerLabelExpression="Alternative Compositions" initialWidth="150" featureName="alternative"/>
+      <ownedColumnMappings name="[composes.name/]" label="Builds Up To" headerLabelExpression="Builds up to" initialWidth="150" featureName="composes"/>
+      <ownedColumnMappings name="[optionof.name/]" label="Optionally used by" headerLabelExpression="Optionally used by" initialWidth="150" featureName="optionof"/>
+      <ownedColumnMappings name="[alternativeof.name/]" label="Alternatively build up to" headerLabelExpression="Alternatively builds up to" initialWidth="150" featureName="alternativeof"/>
     </ownedRepresentations>
   </ownedViewpoints>
   <ownedViewpoints name="Feature Modelling Viewpoint" modelFileExtension="rmdl">
@@ -373,7 +375,7 @@
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Model Layer" activeByDefault="true">
-        <nodeMappings name="Feature" labelDirectEdit="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:productfeature" domainClass="rmdl::ProductFeature">
+        <nodeMappings name="Feature" labelDirectEdit="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:featureelement" domainClass="rmdl::FeatureElement">
           <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -410,8 +412,8 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::ProductFeature" referenceName="productfeature">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Feature'+container.productfeature->filter(rmdl::ProductFeature)->size()"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::FeatureElement" referenceName="featureelement">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Feature'+container.featureelement->filter(rmdl::FeatureElement)->size()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -459,11 +461,11 @@
       <pages>
         <extends href="platform:/plugin/org.eclipse.sirius.properties.defaultrules/model/properties.odesign#//@extensions.0/@categories.0/@pages.0"/>
       </pages>
-      <pages name="Rgh Gui" labelExpression="Requirement Description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0" indented="true"/>
+      <pages name="Rgh Gui" labelExpression="Requirement Specification" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
       <groups name="Requirements_DSL" labelExpression="description" domainClass="rmdl::Requirements" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties-xtext:XtextMultiLineValueDescription" name="Requirement Description" labelExpression="Description" lineCount="100" valueExpression="feature:description" injectorId="org.mcmaster.rmdl.xtextsirius.RghLangInjectorId" cancelOnValidationError="true">
+        <controls xsi:type="properties-xtext:XtextMultiLineValueDescription" name="Requirement Specification" labelExpression="Specification" lineCount="100" valueExpression="feature:specification" injectorId="org.mcmaster.rmdl.xtextsirius.RghLangInjectorId" cancelOnValidationError="true">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:SetValue" featureName="description" valueExpression="var:newValue"/>
+            <firstModelOperations xsi:type="tool_1:SetValue" featureName="specification" valueExpression="var:newValue"/>
           </initialOperation>
         </controls>
       </groups>

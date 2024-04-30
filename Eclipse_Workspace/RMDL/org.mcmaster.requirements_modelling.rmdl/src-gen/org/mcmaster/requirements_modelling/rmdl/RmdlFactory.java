@@ -94,13 +94,13 @@ public interface RmdlFactory extends EFactory {
 	Review createReview();
 
 	/**
-	 * Returns a new object of class '<em>Product Feature</em>'.
+	 * Returns a new object of class '<em>Feature Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Product Feature</em>'.
+	 * @return a new object of class '<em>Feature Element</em>'.
 	 * @generated
 	 */
-	ProductFeature createProductFeature();
+	FeatureElement createFeatureElement();
 
 	/**
 	 * Returns a new object of class '<em>Feature Model</em>'.

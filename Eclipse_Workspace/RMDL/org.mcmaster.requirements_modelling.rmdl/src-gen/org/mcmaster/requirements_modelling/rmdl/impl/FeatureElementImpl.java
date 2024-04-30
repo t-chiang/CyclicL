@@ -18,31 +18,31 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.mcmaster.requirements_modelling.rmdl.FeatureElement;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
-import org.mcmaster.requirements_modelling.rmdl.ProductFeature;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Product Feature</b></em>'.
+ * An implementation of the model object '<em><b>Feature Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#isIsOptional <em>Is Optional</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getMandatory <em>Mandatory</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getComposes <em>Composes</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getAlternative <em>Alternative</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getAlternativeof <em>Alternativeof</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getOptional <em>Optional</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getOptionof <em>Optionof</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ProductFeatureImpl#getProduct <em>Product</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#isIsOptional <em>Is Optional</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getComposes <em>Composes</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getAlternative <em>Alternative</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getAlternativeof <em>Alternativeof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getOptional <em>Optional</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getOptionof <em>Optionof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl#getProduct <em>Product</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProductFeatureImpl extends Requirement_DiagramImpl implements ProductFeature {
+public class FeatureElementImpl extends Requirement_DiagramImpl implements FeatureElement {
 	/**
 	 * The default value of the '{@link #isIsOptional() <em>Is Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProductFeature> mandatory;
+	protected EList<FeatureElement> mandatory;
 
 	/**
 	 * The cached value of the '{@link #getComposes() <em>Composes</em>}' reference.
@@ -81,7 +81,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 * @ordered
 	 */
-	protected ProductFeature composes;
+	protected FeatureElement composes;
 
 	/**
 	 * The cached value of the '{@link #getAlternative() <em>Alternative</em>}' reference list.
@@ -91,7 +91,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProductFeature> alternative;
+	protected EList<FeatureElement> alternative;
 
 	/**
 	 * The cached value of the '{@link #getAlternativeof() <em>Alternativeof</em>}' reference.
@@ -101,7 +101,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 * @ordered
 	 */
-	protected ProductFeature alternativeof;
+	protected FeatureElement alternativeof;
 
 	/**
 	 * The cached value of the '{@link #getOptional() <em>Optional</em>}' reference list.
@@ -111,7 +111,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProductFeature> optional;
+	protected EList<FeatureElement> optional;
 
 	/**
 	 * The cached value of the '{@link #getOptionof() <em>Optionof</em>}' reference.
@@ -121,14 +121,14 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 * @ordered
 	 */
-	protected ProductFeature optionof;
+	protected FeatureElement optionof;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProductFeatureImpl() {
+	protected FeatureElementImpl() {
 		super();
 	}
 
@@ -139,7 +139,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RmdlPackage.Literals.PRODUCT_FEATURE;
+		return RmdlPackage.Literals.FEATURE_ELEMENT;
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 		boolean oldIsOptional = isOptional;
 		isOptional = newIsOptional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.PRODUCT_FEATURE__IS_OPTIONAL,
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ELEMENT__IS_OPTIONAL,
 					oldIsOptional, isOptional));
 	}
 
@@ -169,10 +169,10 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ProductFeature> getMandatory() {
+	public EList<FeatureElement> getMandatory() {
 		if (mandatory == null) {
-			mandatory = new EObjectWithInverseResolvingEList<ProductFeature>(ProductFeature.class, this,
-					RmdlPackage.PRODUCT_FEATURE__MANDATORY, RmdlPackage.PRODUCT_FEATURE__COMPOSES);
+			mandatory = new EObjectWithInverseResolvingEList<FeatureElement>(FeatureElement.class, this,
+					RmdlPackage.FEATURE_ELEMENT__MANDATORY, RmdlPackage.FEATURE_ELEMENT__COMPOSES);
 		}
 		return mandatory;
 	}
@@ -182,13 +182,13 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeature getComposes() {
+	public FeatureElement getComposes() {
 		if (composes != null && composes.eIsProxy()) {
 			InternalEObject oldComposes = (InternalEObject) composes;
-			composes = (ProductFeature) eResolveProxy(oldComposes);
+			composes = (FeatureElement) eResolveProxy(oldComposes);
 			if (composes != oldComposes) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.PRODUCT_FEATURE__COMPOSES,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ELEMENT__COMPOSES,
 							oldComposes, composes));
 			}
 		}
@@ -200,7 +200,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeature basicGetComposes() {
+	public FeatureElement basicGetComposes() {
 		return composes;
 	}
 
@@ -209,12 +209,12 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComposes(ProductFeature newComposes, NotificationChain msgs) {
-		ProductFeature oldComposes = composes;
+	public NotificationChain basicSetComposes(FeatureElement newComposes, NotificationChain msgs) {
+		FeatureElement oldComposes = composes;
 		composes = newComposes;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.PRODUCT_FEATURE__COMPOSES, oldComposes, newComposes);
+					RmdlPackage.FEATURE_ELEMENT__COMPOSES, oldComposes, newComposes);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -228,20 +228,20 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComposes(ProductFeature newComposes) {
+	public void setComposes(FeatureElement newComposes) {
 		if (newComposes != composes) {
 			NotificationChain msgs = null;
 			if (composes != null)
-				msgs = ((InternalEObject) composes).eInverseRemove(this, RmdlPackage.PRODUCT_FEATURE__MANDATORY,
-						ProductFeature.class, msgs);
+				msgs = ((InternalEObject) composes).eInverseRemove(this, RmdlPackage.FEATURE_ELEMENT__MANDATORY,
+						FeatureElement.class, msgs);
 			if (newComposes != null)
-				msgs = ((InternalEObject) newComposes).eInverseAdd(this, RmdlPackage.PRODUCT_FEATURE__MANDATORY,
-						ProductFeature.class, msgs);
+				msgs = ((InternalEObject) newComposes).eInverseAdd(this, RmdlPackage.FEATURE_ELEMENT__MANDATORY,
+						FeatureElement.class, msgs);
 			msgs = basicSetComposes(newComposes, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.PRODUCT_FEATURE__COMPOSES, newComposes,
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ELEMENT__COMPOSES, newComposes,
 					newComposes));
 	}
 
@@ -250,10 +250,10 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ProductFeature> getAlternative() {
+	public EList<FeatureElement> getAlternative() {
 		if (alternative == null) {
-			alternative = new EObjectWithInverseResolvingEList<ProductFeature>(ProductFeature.class, this,
-					RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE, RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF);
+			alternative = new EObjectWithInverseResolvingEList<FeatureElement>(FeatureElement.class, this,
+					RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE, RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF);
 		}
 		return alternative;
 	}
@@ -263,14 +263,14 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeature getAlternativeof() {
+	public FeatureElement getAlternativeof() {
 		if (alternativeof != null && alternativeof.eIsProxy()) {
 			InternalEObject oldAlternativeof = (InternalEObject) alternativeof;
-			alternativeof = (ProductFeature) eResolveProxy(oldAlternativeof);
+			alternativeof = (FeatureElement) eResolveProxy(oldAlternativeof);
 			if (alternativeof != oldAlternativeof) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF, oldAlternativeof, alternativeof));
+							RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF, oldAlternativeof, alternativeof));
 			}
 		}
 		return alternativeof;
@@ -281,7 +281,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeature basicGetAlternativeof() {
+	public FeatureElement basicGetAlternativeof() {
 		return alternativeof;
 	}
 
@@ -290,12 +290,12 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAlternativeof(ProductFeature newAlternativeof, NotificationChain msgs) {
-		ProductFeature oldAlternativeof = alternativeof;
+	public NotificationChain basicSetAlternativeof(FeatureElement newAlternativeof, NotificationChain msgs) {
+		FeatureElement oldAlternativeof = alternativeof;
 		alternativeof = newAlternativeof;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF, oldAlternativeof, newAlternativeof);
+					RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF, oldAlternativeof, newAlternativeof);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -309,20 +309,20 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAlternativeof(ProductFeature newAlternativeof) {
+	public void setAlternativeof(FeatureElement newAlternativeof) {
 		if (newAlternativeof != alternativeof) {
 			NotificationChain msgs = null;
 			if (alternativeof != null)
-				msgs = ((InternalEObject) alternativeof).eInverseRemove(this, RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE,
-						ProductFeature.class, msgs);
+				msgs = ((InternalEObject) alternativeof).eInverseRemove(this, RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE,
+						FeatureElement.class, msgs);
 			if (newAlternativeof != null)
-				msgs = ((InternalEObject) newAlternativeof).eInverseAdd(this, RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE,
-						ProductFeature.class, msgs);
+				msgs = ((InternalEObject) newAlternativeof).eInverseAdd(this, RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE,
+						FeatureElement.class, msgs);
 			msgs = basicSetAlternativeof(newAlternativeof, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF,
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF,
 					newAlternativeof, newAlternativeof));
 	}
 
@@ -331,10 +331,10 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ProductFeature> getOptional() {
+	public EList<FeatureElement> getOptional() {
 		if (optional == null) {
-			optional = new EObjectWithInverseResolvingEList<ProductFeature>(ProductFeature.class, this,
-					RmdlPackage.PRODUCT_FEATURE__OPTIONAL, RmdlPackage.PRODUCT_FEATURE__OPTIONOF);
+			optional = new EObjectWithInverseResolvingEList<FeatureElement>(FeatureElement.class, this,
+					RmdlPackage.FEATURE_ELEMENT__OPTIONAL, RmdlPackage.FEATURE_ELEMENT__OPTIONOF);
 		}
 		return optional;
 	}
@@ -344,13 +344,13 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeature getOptionof() {
+	public FeatureElement getOptionof() {
 		if (optionof != null && optionof.eIsProxy()) {
 			InternalEObject oldOptionof = (InternalEObject) optionof;
-			optionof = (ProductFeature) eResolveProxy(oldOptionof);
+			optionof = (FeatureElement) eResolveProxy(oldOptionof);
 			if (optionof != oldOptionof) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.PRODUCT_FEATURE__OPTIONOF,
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ELEMENT__OPTIONOF,
 							oldOptionof, optionof));
 			}
 		}
@@ -362,7 +362,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProductFeature basicGetOptionof() {
+	public FeatureElement basicGetOptionof() {
 		return optionof;
 	}
 
@@ -371,12 +371,12 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOptionof(ProductFeature newOptionof, NotificationChain msgs) {
-		ProductFeature oldOptionof = optionof;
+	public NotificationChain basicSetOptionof(FeatureElement newOptionof, NotificationChain msgs) {
+		FeatureElement oldOptionof = optionof;
 		optionof = newOptionof;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.PRODUCT_FEATURE__OPTIONOF, oldOptionof, newOptionof);
+					RmdlPackage.FEATURE_ELEMENT__OPTIONOF, oldOptionof, newOptionof);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -390,20 +390,20 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOptionof(ProductFeature newOptionof) {
+	public void setOptionof(FeatureElement newOptionof) {
 		if (newOptionof != optionof) {
 			NotificationChain msgs = null;
 			if (optionof != null)
-				msgs = ((InternalEObject) optionof).eInverseRemove(this, RmdlPackage.PRODUCT_FEATURE__OPTIONAL,
-						ProductFeature.class, msgs);
+				msgs = ((InternalEObject) optionof).eInverseRemove(this, RmdlPackage.FEATURE_ELEMENT__OPTIONAL,
+						FeatureElement.class, msgs);
 			if (newOptionof != null)
-				msgs = ((InternalEObject) newOptionof).eInverseAdd(this, RmdlPackage.PRODUCT_FEATURE__OPTIONAL,
-						ProductFeature.class, msgs);
+				msgs = ((InternalEObject) newOptionof).eInverseAdd(this, RmdlPackage.FEATURE_ELEMENT__OPTIONAL,
+						FeatureElement.class, msgs);
 			msgs = basicSetOptionof(newOptionof, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.PRODUCT_FEATURE__OPTIONOF, newOptionof,
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ELEMENT__OPTIONOF, newOptionof,
 					newOptionof));
 	}
 
@@ -413,7 +413,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 */
 	public Feature_Model getProduct() {
-		if (eContainerFeatureID() != RmdlPackage.PRODUCT_FEATURE__PRODUCT)
+		if (eContainerFeatureID() != RmdlPackage.FEATURE_ELEMENT__PRODUCT)
 			return null;
 		return (Feature_Model) eInternalContainer();
 	}
@@ -424,7 +424,7 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 * @generated
 	 */
 	public NotificationChain basicSetProduct(Feature_Model newProduct, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newProduct, RmdlPackage.PRODUCT_FEATURE__PRODUCT, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newProduct, RmdlPackage.FEATURE_ELEMENT__PRODUCT, msgs);
 		return msgs;
 	}
 
@@ -435,20 +435,20 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	 */
 	public void setProduct(Feature_Model newProduct) {
 		if (newProduct != eInternalContainer()
-				|| (eContainerFeatureID() != RmdlPackage.PRODUCT_FEATURE__PRODUCT && newProduct != null)) {
+				|| (eContainerFeatureID() != RmdlPackage.FEATURE_ELEMENT__PRODUCT && newProduct != null)) {
 			if (EcoreUtil.isAncestor(this, newProduct))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newProduct != null)
-				msgs = ((InternalEObject) newProduct).eInverseAdd(this, RmdlPackage.FEATURE_MODEL__PRODUCTFEATURE,
+				msgs = ((InternalEObject) newProduct).eInverseAdd(this, RmdlPackage.FEATURE_MODEL__FEATUREELEMENT,
 						Feature_Model.class, msgs);
 			msgs = basicSetProduct(newProduct, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.PRODUCT_FEATURE__PRODUCT, newProduct,
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ELEMENT__PRODUCT, newProduct,
 					newProduct));
 	}
 
@@ -461,28 +461,28 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.PRODUCT_FEATURE__MANDATORY:
+		case RmdlPackage.FEATURE_ELEMENT__MANDATORY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMandatory()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__COMPOSES:
+		case RmdlPackage.FEATURE_ELEMENT__COMPOSES:
 			if (composes != null)
-				msgs = ((InternalEObject) composes).eInverseRemove(this, RmdlPackage.PRODUCT_FEATURE__MANDATORY,
-						ProductFeature.class, msgs);
-			return basicSetComposes((ProductFeature) otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE:
+				msgs = ((InternalEObject) composes).eInverseRemove(this, RmdlPackage.FEATURE_ELEMENT__MANDATORY,
+						FeatureElement.class, msgs);
+			return basicSetComposes((FeatureElement) otherEnd, msgs);
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAlternative()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF:
 			if (alternativeof != null)
-				msgs = ((InternalEObject) alternativeof).eInverseRemove(this, RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE,
-						ProductFeature.class, msgs);
-			return basicSetAlternativeof((ProductFeature) otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONAL:
+				msgs = ((InternalEObject) alternativeof).eInverseRemove(this, RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE,
+						FeatureElement.class, msgs);
+			return basicSetAlternativeof((FeatureElement) otherEnd, msgs);
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONAL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOptional()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONOF:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONOF:
 			if (optionof != null)
-				msgs = ((InternalEObject) optionof).eInverseRemove(this, RmdlPackage.PRODUCT_FEATURE__OPTIONAL,
-						ProductFeature.class, msgs);
-			return basicSetOptionof((ProductFeature) otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
+				msgs = ((InternalEObject) optionof).eInverseRemove(this, RmdlPackage.FEATURE_ELEMENT__OPTIONAL,
+						FeatureElement.class, msgs);
+			return basicSetOptionof((FeatureElement) otherEnd, msgs);
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetProduct((Feature_Model) otherEnd, msgs);
@@ -498,19 +498,19 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.PRODUCT_FEATURE__MANDATORY:
+		case RmdlPackage.FEATURE_ELEMENT__MANDATORY:
 			return ((InternalEList<?>) getMandatory()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__COMPOSES:
+		case RmdlPackage.FEATURE_ELEMENT__COMPOSES:
 			return basicSetComposes(null, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE:
 			return ((InternalEList<?>) getAlternative()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF:
 			return basicSetAlternativeof(null, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONAL:
 			return ((InternalEList<?>) getOptional()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONOF:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONOF:
 			return basicSetOptionof(null, msgs);
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
 			return basicSetProduct(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -524,8 +524,8 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.FEATURE_MODEL__PRODUCTFEATURE,
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.FEATURE_MODEL__FEATUREELEMENT,
 					Feature_Model.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -539,27 +539,27 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RmdlPackage.PRODUCT_FEATURE__IS_OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__IS_OPTIONAL:
 			return isIsOptional();
-		case RmdlPackage.PRODUCT_FEATURE__MANDATORY:
+		case RmdlPackage.FEATURE_ELEMENT__MANDATORY:
 			return getMandatory();
-		case RmdlPackage.PRODUCT_FEATURE__COMPOSES:
+		case RmdlPackage.FEATURE_ELEMENT__COMPOSES:
 			if (resolve)
 				return getComposes();
 			return basicGetComposes();
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE:
 			return getAlternative();
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF:
 			if (resolve)
 				return getAlternativeof();
 			return basicGetAlternativeof();
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONAL:
 			return getOptional();
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONOF:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONOF:
 			if (resolve)
 				return getOptionof();
 			return basicGetOptionof();
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
 			return getProduct();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -574,31 +574,31 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RmdlPackage.PRODUCT_FEATURE__IS_OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__IS_OPTIONAL:
 			setIsOptional((Boolean) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__MANDATORY:
+		case RmdlPackage.FEATURE_ELEMENT__MANDATORY:
 			getMandatory().clear();
-			getMandatory().addAll((Collection<? extends ProductFeature>) newValue);
+			getMandatory().addAll((Collection<? extends FeatureElement>) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__COMPOSES:
-			setComposes((ProductFeature) newValue);
+		case RmdlPackage.FEATURE_ELEMENT__COMPOSES:
+			setComposes((FeatureElement) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE:
 			getAlternative().clear();
-			getAlternative().addAll((Collection<? extends ProductFeature>) newValue);
+			getAlternative().addAll((Collection<? extends FeatureElement>) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF:
-			setAlternativeof((ProductFeature) newValue);
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF:
+			setAlternativeof((FeatureElement) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONAL:
 			getOptional().clear();
-			getOptional().addAll((Collection<? extends ProductFeature>) newValue);
+			getOptional().addAll((Collection<? extends FeatureElement>) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONOF:
-			setOptionof((ProductFeature) newValue);
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONOF:
+			setOptionof((FeatureElement) newValue);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
 			setProduct((Feature_Model) newValue);
 			return;
 		}
@@ -613,28 +613,28 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.PRODUCT_FEATURE__IS_OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__IS_OPTIONAL:
 			setIsOptional(IS_OPTIONAL_EDEFAULT);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__MANDATORY:
+		case RmdlPackage.FEATURE_ELEMENT__MANDATORY:
 			getMandatory().clear();
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__COMPOSES:
-			setComposes((ProductFeature) null);
+		case RmdlPackage.FEATURE_ELEMENT__COMPOSES:
+			setComposes((FeatureElement) null);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE:
 			getAlternative().clear();
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF:
-			setAlternativeof((ProductFeature) null);
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF:
+			setAlternativeof((FeatureElement) null);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONAL:
 			getOptional().clear();
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONOF:
-			setOptionof((ProductFeature) null);
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONOF:
+			setOptionof((FeatureElement) null);
 			return;
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
 			setProduct((Feature_Model) null);
 			return;
 		}
@@ -649,21 +649,21 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.PRODUCT_FEATURE__IS_OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__IS_OPTIONAL:
 			return isOptional != IS_OPTIONAL_EDEFAULT;
-		case RmdlPackage.PRODUCT_FEATURE__MANDATORY:
+		case RmdlPackage.FEATURE_ELEMENT__MANDATORY:
 			return mandatory != null && !mandatory.isEmpty();
-		case RmdlPackage.PRODUCT_FEATURE__COMPOSES:
+		case RmdlPackage.FEATURE_ELEMENT__COMPOSES:
 			return composes != null;
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVE:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVE:
 			return alternative != null && !alternative.isEmpty();
-		case RmdlPackage.PRODUCT_FEATURE__ALTERNATIVEOF:
+		case RmdlPackage.FEATURE_ELEMENT__ALTERNATIVEOF:
 			return alternativeof != null;
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONAL:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONAL:
 			return optional != null && !optional.isEmpty();
-		case RmdlPackage.PRODUCT_FEATURE__OPTIONOF:
+		case RmdlPackage.FEATURE_ELEMENT__OPTIONOF:
 			return optionof != null;
-		case RmdlPackage.PRODUCT_FEATURE__PRODUCT:
+		case RmdlPackage.FEATURE_ELEMENT__PRODUCT:
 			return getProduct() != null;
 		}
 		return super.eIsSet(featureID);
@@ -686,4 +686,4 @@ public class ProductFeatureImpl extends Requirement_DiagramImpl implements Produ
 		return result.toString();
 	}
 
-} //ProductFeatureImpl
+} //FeatureElementImpl

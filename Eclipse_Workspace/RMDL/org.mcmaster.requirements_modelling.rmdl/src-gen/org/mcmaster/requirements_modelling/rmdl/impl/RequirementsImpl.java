@@ -47,6 +47,7 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceto <em>Traceto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getPartof <em>Partof</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getDecomposesto <em>Decomposesto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getSpecification <em>Specification</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,6 +162,26 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected EList<Requirements> decomposesto;
+
+	/**
+	 * The default value of the '{@link #getSpecification() <em>Specification</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecification()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SPECIFICATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSpecification() <em>Specification</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecification()
+	 * @generated
+	 * @ordered
+	 */
+	protected String specification = SPECIFICATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -359,6 +380,28 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSpecification() {
+		return specification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSpecification(String newSpecification) {
+		String oldSpecification = specification;
+		specification = newSpecification;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENTS__SPECIFICATION,
+					oldSpecification, specification));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * This is the method implementation of a change impact analysis. This is to be used as a predictive measure of the impact that can occur due to a change in requirements.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -476,6 +519,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return getPartof();
 		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
 			return getDecomposesto();
+		case RmdlPackage.REQUIREMENTS__SPECIFICATION:
+			return getSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -521,6 +566,9 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			getDecomposesto().clear();
 			getDecomposesto().addAll((Collection<? extends Requirements>) newValue);
 			return;
+		case RmdlPackage.REQUIREMENTS__SPECIFICATION:
+			setSpecification((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -560,6 +608,9 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
 			getDecomposesto().clear();
 			return;
+		case RmdlPackage.REQUIREMENTS__SPECIFICATION:
+			setSpecification(SPECIFICATION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -590,6 +641,9 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return partof != null && !partof.isEmpty();
 		case RmdlPackage.REQUIREMENTS__DECOMPOSESTO:
 			return decomposesto != null && !decomposesto.isEmpty();
+		case RmdlPackage.REQUIREMENTS__SPECIFICATION:
+			return SPECIFICATION_EDEFAULT == null ? specification != null
+					: !SPECIFICATION_EDEFAULT.equals(specification);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -611,6 +665,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		result.append(id);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", specification: ");
+		result.append(specification);
 		result.append(')');
 		return result.toString();
 	}

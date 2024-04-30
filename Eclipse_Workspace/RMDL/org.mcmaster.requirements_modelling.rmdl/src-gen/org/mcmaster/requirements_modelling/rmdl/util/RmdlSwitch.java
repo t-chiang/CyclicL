@@ -136,11 +136,11 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.PRODUCT_FEATURE: {
-			ProductFeature productFeature = (ProductFeature) theEObject;
-			T result = caseProductFeature(productFeature);
+		case RmdlPackage.FEATURE_ELEMENT: {
+			FeatureElement featureElement = (FeatureElement) theEObject;
+			T result = caseFeatureElement(featureElement);
 			if (result == null)
-				result = caseRequirement_Diagram(productFeature);
+				result = caseRequirement_Diagram(featureElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -300,17 +300,17 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Product Feature</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Product Feature</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProductFeature(ProductFeature object) {
+	public T caseFeatureElement(FeatureElement object) {
 		return null;
 	}
 

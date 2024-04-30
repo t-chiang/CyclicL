@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
+import org.mcmaster.requirements_modelling.rmdl.FeatureElement;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
-import org.mcmaster.requirements_modelling.rmdl.ProductFeature;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.RMDL_Root;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
@@ -100,7 +100,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass productFeatureEClass = null;
+	private EClass featureElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,6 +275,15 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 */
 	public EReference getRequirements_Decomposesto() {
 		return (EReference) requirementsEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequirements_Specification() {
+		return (EAttribute) requirementsEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -543,8 +552,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProductFeature() {
-		return productFeatureEClass;
+	public EClass getFeatureElement() {
+		return featureElementEClass;
 	}
 
 	/**
@@ -552,8 +561,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProductFeature_IsOptional() {
-		return (EAttribute) productFeatureEClass.getEStructuralFeatures().get(0);
+	public EAttribute getFeatureElement_IsOptional() {
+		return (EAttribute) featureElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -561,8 +570,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Mandatory() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(1);
+	public EReference getFeatureElement_Mandatory() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -570,8 +579,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Composes() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(2);
+	public EReference getFeatureElement_Composes() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -579,8 +588,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Alternative() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(3);
+	public EReference getFeatureElement_Alternative() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -588,8 +597,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Alternativeof() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(4);
+	public EReference getFeatureElement_Alternativeof() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -597,8 +606,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Optional() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(5);
+	public EReference getFeatureElement_Optional() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -606,8 +615,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Optionof() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(6);
+	public EReference getFeatureElement_Optionof() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -615,8 +624,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProductFeature_Product() {
-		return (EReference) productFeatureEClass.getEStructuralFeatures().get(7);
+	public EReference getFeatureElement_Product() {
+		return (EReference) featureElementEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -633,7 +642,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeature_Model_Productfeature() {
+	public EReference getFeature_Model_Featureelement() {
 		return (EReference) feature_ModelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -721,6 +730,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEReference(requirementsEClass, REQUIREMENTS__TRACETO);
 		createEReference(requirementsEClass, REQUIREMENTS__PARTOF);
 		createEReference(requirementsEClass, REQUIREMENTS__DECOMPOSESTO);
+		createEAttribute(requirementsEClass, REQUIREMENTS__SPECIFICATION);
 
 		functionalEClass = createEClass(FUNCTIONAL);
 
@@ -759,18 +769,18 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEReference(reviewEClass, REVIEW__REQUIREMENTS);
 		createEAttribute(reviewEClass, REVIEW__COMMENTS);
 
-		productFeatureEClass = createEClass(PRODUCT_FEATURE);
-		createEAttribute(productFeatureEClass, PRODUCT_FEATURE__IS_OPTIONAL);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__MANDATORY);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__COMPOSES);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__ALTERNATIVE);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__ALTERNATIVEOF);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__OPTIONAL);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__OPTIONOF);
-		createEReference(productFeatureEClass, PRODUCT_FEATURE__PRODUCT);
+		featureElementEClass = createEClass(FEATURE_ELEMENT);
+		createEAttribute(featureElementEClass, FEATURE_ELEMENT__IS_OPTIONAL);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__MANDATORY);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__COMPOSES);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__ALTERNATIVE);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__ALTERNATIVEOF);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__OPTIONAL);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__OPTIONOF);
+		createEReference(featureElementEClass, FEATURE_ELEMENT__PRODUCT);
 
 		feature_ModelEClass = createEClass(FEATURE_MODEL);
-		createEReference(feature_ModelEClass, FEATURE_MODEL__PRODUCTFEATURE);
+		createEReference(feature_ModelEClass, FEATURE_MODEL__FEATUREELEMENT);
 		createEAttribute(feature_ModelEClass, FEATURE_MODEL__NAME);
 
 		rmdL_RootEClass = createEClass(RMDL_ROOT);
@@ -814,7 +824,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		qualitativeEClass.getESuperTypes().add(this.getRequirements());
 		constraintEClass.getESuperTypes().add(this.getRequirements());
 		safetyEClass.getESuperTypes().add(this.getRequirements());
-		productFeatureEClass.getESuperTypes().add(this.getRequirement_Diagram());
+		featureElementEClass.getESuperTypes().add(this.getRequirement_Diagram());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(requirementsEClass, Requirements.class, "Requirements", IS_ABSTRACT, !IS_INTERFACE,
@@ -845,6 +855,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getRequirements_Decomposesto(), this.getRequirements(), this.getRequirements_Partof(),
 				"decomposesto", null, 0, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequirements_Specification(), ecorePackage.getEString(), "specification", null, 0, 1,
+				Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionalEClass, Functional.class, "Functional", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -928,39 +941,39 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEAttribute(getReview_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Review.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(productFeatureEClass, ProductFeature.class, "ProductFeature", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(featureElementEClass, FeatureElement.class, "FeatureElement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProductFeature_IsOptional(), ecorePackage.getEBoolean(), "isOptional", "false", 1, 1,
-				ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getFeatureElement_IsOptional(), ecorePackage.getEBoolean(), "isOptional", "false", 1, 1,
+				FeatureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getProductFeature_Mandatory(), this.getProductFeature(), this.getProductFeature_Composes(),
-				"mandatory", null, 0, -1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getFeatureElement_Mandatory(), this.getFeatureElement(), this.getFeatureElement_Composes(),
+				"mandatory", null, 0, -1, FeatureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProductFeature_Composes(), this.getProductFeature(), this.getProductFeature_Mandatory(),
-				"composes", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getFeatureElement_Composes(), this.getFeatureElement(), this.getFeatureElement_Mandatory(),
+				"composes", null, 0, 1, FeatureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProductFeature_Alternative(), this.getProductFeature(),
-				this.getProductFeature_Alternativeof(), "alternative", null, 0, -1, ProductFeature.class, !IS_TRANSIENT,
+		initEReference(getFeatureElement_Alternative(), this.getFeatureElement(),
+				this.getFeatureElement_Alternativeof(), "alternative", null, 0, -1, FeatureElement.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getProductFeature_Alternativeof(), this.getProductFeature(),
-				this.getProductFeature_Alternative(), "alternativeof", null, 0, 1, ProductFeature.class, !IS_TRANSIENT,
+		initEReference(getFeatureElement_Alternativeof(), this.getFeatureElement(),
+				this.getFeatureElement_Alternative(), "alternativeof", null, 0, 1, FeatureElement.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getProductFeature_Optional(), this.getProductFeature(), this.getProductFeature_Optionof(),
-				"optional", null, 0, -1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getFeatureElement_Optional(), this.getFeatureElement(), this.getFeatureElement_Optionof(),
+				"optional", null, 0, -1, FeatureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProductFeature_Optionof(), this.getProductFeature(), this.getProductFeature_Optional(),
-				"optionof", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getFeatureElement_Optionof(), this.getFeatureElement(), this.getFeatureElement_Optional(),
+				"optionof", null, 0, 1, FeatureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProductFeature_Product(), this.getFeature_Model(), this.getFeature_Model_Productfeature(),
-				"product", null, 0, 1, ProductFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getFeatureElement_Product(), this.getFeature_Model(), this.getFeature_Model_Featureelement(),
+				"product", null, 0, 1, FeatureElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(feature_ModelEClass, Feature_Model.class, "Feature_Model", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeature_Model_Productfeature(), this.getProductFeature(), this.getProductFeature_Product(),
-				"productfeature", null, 0, -1, Feature_Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getFeature_Model_Featureelement(), this.getFeatureElement(), this.getFeatureElement_Product(),
+				"featureelement", null, 0, -1, Feature_Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Model_Name(), ecorePackage.getEString(), "name", null, 1, 1, Feature_Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -977,9 +990,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		// Initialize enums and add enum literals
 		initEEnum(testTypeEEnum, TestType.class, "TestType");
 		addEEnumLiteral(testTypeEEnum, TestType.UNIT_TEST);
-		addEEnumLiteral(testTypeEEnum, TestType.CLASS_TEST);
-		addEEnumLiteral(testTypeEEnum, TestType.WHITE_BOX);
-		addEEnumLiteral(testTypeEEnum, TestType.BLACK_BOX);
 
 		// Create resource
 		createResource(eNS_URI);
