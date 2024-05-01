@@ -15,10 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.mcmaster.requirements_modelling.rmdl.FeatureElement;
+import org.mcmaster.requirements_modelling.rmdl.FeatureEntity;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
@@ -30,23 +29,13 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getFeatureelement <em>Featureelement</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getFeatureentity <em>Featureentity</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements Feature_Model {
-	/**
-	 * The cached value of the '{@link #getFeatureelement() <em>Featureelement</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeatureelement()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FeatureElement> featureelement;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +57,16 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getFeatureentity() <em>Featureentity</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeatureentity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FeatureEntity> featureentity;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,19 +83,6 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	@Override
 	protected EClass eStaticClass() {
 		return RmdlPackage.Literals.FEATURE_MODEL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<FeatureElement> getFeatureelement() {
-		if (featureelement == null) {
-			featureelement = new EObjectContainmentWithInverseEList<FeatureElement>(FeatureElement.class, this,
-					RmdlPackage.FEATURE_MODEL__FEATUREELEMENT, RmdlPackage.FEATURE_ELEMENT__PRODUCT);
-		}
-		return featureelement;
 	}
 
 	/**
@@ -125,14 +111,12 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case RmdlPackage.FEATURE_MODEL__FEATUREELEMENT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFeatureelement()).basicAdd(otherEnd, msgs);
+	public EList<FeatureEntity> getFeatureentity() {
+		if (featureentity == null) {
+			featureentity = new EObjectContainmentEList<FeatureEntity>(FeatureEntity.class, this,
+					RmdlPackage.FEATURE_MODEL__FEATUREENTITY);
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return featureentity;
 	}
 
 	/**
@@ -143,8 +127,8 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.FEATURE_MODEL__FEATUREELEMENT:
-			return ((InternalEList<?>) getFeatureelement()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+			return ((InternalEList<?>) getFeatureentity()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -157,10 +141,10 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RmdlPackage.FEATURE_MODEL__FEATUREELEMENT:
-			return getFeatureelement();
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			return getName();
+		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+			return getFeatureentity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,12 +158,12 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RmdlPackage.FEATURE_MODEL__FEATUREELEMENT:
-			getFeatureelement().clear();
-			getFeatureelement().addAll((Collection<? extends FeatureElement>) newValue);
-			return;
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			setName((String) newValue);
+			return;
+		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+			getFeatureentity().clear();
+			getFeatureentity().addAll((Collection<? extends FeatureEntity>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,11 +177,11 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.FEATURE_MODEL__FEATUREELEMENT:
-			getFeatureelement().clear();
-			return;
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+			getFeatureentity().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -211,10 +195,10 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.FEATURE_MODEL__FEATUREELEMENT:
-			return featureelement != null && !featureelement.isEmpty();
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+			return featureentity != null && !featureentity.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -136,11 +136,13 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.FEATURE_ELEMENT: {
-			FeatureElement featureElement = (FeatureElement) theEObject;
-			T result = caseFeatureElement(featureElement);
+		case RmdlPackage.ELEMENT: {
+			Element element = (Element) theEObject;
+			T result = caseElement(element);
 			if (result == null)
-				result = caseRequirement_Diagram(featureElement);
+				result = caseFeatureEntity(element);
+			if (result == null)
+				result = caseRequirement_Diagram(element);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -152,9 +154,29 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.RMDL_ROOT: {
-			RMDL_Root rmdL_Root = (RMDL_Root) theEObject;
-			T result = caseRMDL_Root(rmdL_Root);
+		case RmdlPackage.RMDL_PROJECT: {
+			RMDL_Project rmdL_Project = (RMDL_Project) theEObject;
+			T result = caseRMDL_Project(rmdL_Project);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.FEATURE_ENTITY: {
+			FeatureEntity featureEntity = (FeatureEntity) theEObject;
+			T result = caseFeatureEntity(featureEntity);
+			if (result == null)
+				result = caseRequirement_Diagram(featureEntity);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.ROOT: {
+			Root root = (Root) theEObject;
+			T result = caseRoot(root);
+			if (result == null)
+				result = caseFeatureEntity(root);
+			if (result == null)
+				result = caseRequirement_Diagram(root);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -300,17 +322,17 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureElement(FeatureElement object) {
+	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -330,17 +352,47 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>RMDL Root</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>RMDL Project</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>RMDL Root</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>RMDL Project</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRMDL_Root(RMDL_Root object) {
+	public T caseRMDL_Project(RMDL_Project object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeatureEntity(FeatureEntity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Root</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRoot(Root object) {
 		return null;
 	}
 

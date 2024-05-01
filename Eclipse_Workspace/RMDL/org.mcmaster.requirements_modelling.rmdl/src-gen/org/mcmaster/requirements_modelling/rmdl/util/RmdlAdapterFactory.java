@@ -111,8 +111,8 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseFeatureElement(FeatureElement object) {
-			return createFeatureElementAdapter();
+		public Adapter caseElement(Element object) {
+			return createElementAdapter();
 		}
 
 		@Override
@@ -121,8 +121,18 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRMDL_Root(RMDL_Root object) {
-			return createRMDL_RootAdapter();
+		public Adapter caseRMDL_Project(RMDL_Project object) {
+			return createRMDL_ProjectAdapter();
+		}
+
+		@Override
+		public Adapter caseFeatureEntity(FeatureEntity object) {
+			return createFeatureEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseRoot(Root object) {
+			return createRootAdapter();
 		}
 
 		@Override
@@ -271,16 +281,16 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement <em>Feature Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement
+	 * @see org.mcmaster.requirements_modelling.rmdl.Element
 	 * @generated
 	 */
-	public Adapter createFeatureElementAdapter() {
+	public Adapter createElementAdapter() {
 		return null;
 	}
 
@@ -299,16 +309,44 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Root <em>RMDL Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project <em>RMDL Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Root
+	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Project
 	 * @generated
 	 */
-	public Adapter createRMDL_RootAdapter() {
+	public Adapter createRMDL_ProjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity <em>Feature Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity
+	 * @generated
+	 */
+	public Adapter createFeatureEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Root <em>Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Root
+	 * @generated
+	 */
+	public Adapter createRootAdapter() {
 		return null;
 	}
 

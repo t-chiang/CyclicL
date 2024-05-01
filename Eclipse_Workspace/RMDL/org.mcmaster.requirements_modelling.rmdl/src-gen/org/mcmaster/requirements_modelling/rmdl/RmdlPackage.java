@@ -949,14 +949,14 @@ public interface RmdlPackage extends EPackage {
 	int REVIEW_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl <em>Feature Element</em>}' class.
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl <em>Feature Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl
-	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getFeatureElement()
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getFeatureEntity()
 	 * @generated
 	 */
-	int FEATURE_ELEMENT = 9;
+	int FEATURE_ENTITY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' containment reference list.
@@ -965,7 +965,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__TESTCASE = REQUIREMENT_DIAGRAM__TESTCASE;
+	int FEATURE_ENTITY__TESTCASE = REQUIREMENT_DIAGRAM__TESTCASE;
 
 	/**
 	 * The feature id for the '<em><b>Requirements</b></em>' containment reference list.
@@ -974,7 +974,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__REQUIREMENTS = REQUIREMENT_DIAGRAM__REQUIREMENTS;
+	int FEATURE_ENTITY__REQUIREMENTS = REQUIREMENT_DIAGRAM__REQUIREMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' containment reference list.
@@ -983,7 +983,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__REVIEW = REQUIREMENT_DIAGRAM__REVIEW;
+	int FEATURE_ENTITY__REVIEW = REQUIREMENT_DIAGRAM__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
@@ -992,7 +992,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__DESIGNELEMENT = REQUIREMENT_DIAGRAM__DESIGNELEMENT;
+	int FEATURE_ENTITY__DESIGNELEMENT = REQUIREMENT_DIAGRAM__DESIGNELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1001,25 +1001,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__NAME = REQUIREMENT_DIAGRAM__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Is Optional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_ELEMENT__IS_OPTIONAL = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Mandatory</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_ELEMENT__MANDATORY = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 1;
+	int FEATURE_ENTITY__NAME = REQUIREMENT_DIAGRAM__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Composes</b></em>' reference.
@@ -1028,34 +1010,16 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__COMPOSES = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 2;
+	int FEATURE_ENTITY__COMPOSES = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Alternative</b></em>' reference list.
+	 * The feature id for the '<em><b>Mandatory</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__ALTERNATIVE = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Alternativeof</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_ELEMENT__ALTERNATIVEOF = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Optional</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_ELEMENT__OPTIONAL = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 5;
+	int FEATURE_ENTITY__MANDATORY = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Optionof</b></em>' reference.
@@ -1064,34 +1028,188 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__OPTIONOF = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 6;
+	int FEATURE_ENTITY__OPTIONOF = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Product</b></em>' container reference.
+	 * The feature id for the '<em><b>Optional</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT__PRODUCT = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 7;
+	int FEATURE_ENTITY__OPTIONAL = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Feature Element</em>' class.
+	 * The feature id for the '<em><b>Alternative</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT_FEATURE_COUNT = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 8;
+	int FEATURE_ENTITY__ALTERNATIVE = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of operations of the '<em>Feature Element</em>' class.
+	 * The feature id for the '<em><b>Alternativeof</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ELEMENT_OPERATION_COUNT = REQUIREMENT_DIAGRAM_OPERATION_COUNT + 0;
+	int FEATURE_ENTITY__ALTERNATIVEOF = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Feature Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_ENTITY_FEATURE_COUNT = REQUIREMENT_DIAGRAM_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Feature Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_ENTITY_OPERATION_COUNT = REQUIREMENT_DIAGRAM_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.ElementImpl <em>Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.ElementImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getElement()
+	 * @generated
+	 */
+	int ELEMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Testcase</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__TESTCASE = FEATURE_ENTITY__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__REQUIREMENTS = FEATURE_ENTITY__REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__REVIEW = FEATURE_ENTITY__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__DESIGNELEMENT = FEATURE_ENTITY__DESIGNELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__NAME = FEATURE_ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Composes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__COMPOSES = FEATURE_ENTITY__COMPOSES;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__MANDATORY = FEATURE_ENTITY__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Optionof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__OPTIONOF = FEATURE_ENTITY__OPTIONOF;
+
+	/**
+	 * The feature id for the '<em><b>Optional</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__OPTIONAL = FEATURE_ENTITY__OPTIONAL;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__ALTERNATIVE = FEATURE_ENTITY__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Alternativeof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__ALTERNATIVEOF = FEATURE_ENTITY__ALTERNATIVEOF;
+
+	/**
+	 * The feature id for the '<em><b>Is Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__IS_OPTIONAL = FEATURE_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_FEATURE_COUNT = FEATURE_ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = FEATURE_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl <em>Feature Model</em>}' class.
@@ -1104,22 +1222,22 @@ public interface RmdlPackage extends EPackage {
 	int FEATURE_MODEL = 10;
 
 	/**
-	 * The feature id for the '<em><b>Featureelement</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_MODEL__FEATUREELEMENT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_MODEL__NAME = 1;
+	int FEATURE_MODEL__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Featureentity</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_MODEL__FEATUREENTITY = 1;
 
 	/**
 	 * The number of structural features of the '<em>Feature Model</em>' class.
@@ -1140,14 +1258,14 @@ public interface RmdlPackage extends EPackage {
 	int FEATURE_MODEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_RootImpl <em>RMDL Root</em>}' class.
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl <em>RMDL Project</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RMDL_RootImpl
-	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRMDL_Root()
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRMDL_Project()
 	 * @generated
 	 */
-	int RMDL_ROOT = 11;
+	int RMDL_PROJECT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Feature model</b></em>' containment reference list.
@@ -1156,7 +1274,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RMDL_ROOT__FEATURE_MODEL = 0;
+	int RMDL_PROJECT__FEATURE_MODEL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Requirement diagram</b></em>' containment reference.
@@ -1165,25 +1283,152 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RMDL_ROOT__REQUIREMENT_DIAGRAM = 1;
+	int RMDL_PROJECT__REQUIREMENT_DIAGRAM = 1;
 
 	/**
-	 * The number of structural features of the '<em>RMDL Root</em>' class.
+	 * The number of structural features of the '<em>RMDL Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RMDL_ROOT_FEATURE_COUNT = 2;
+	int RMDL_PROJECT_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>RMDL Root</em>' class.
+	 * The number of operations of the '<em>RMDL Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RMDL_ROOT_OPERATION_COUNT = 0;
+	int RMDL_PROJECT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RootImpl <em>Root</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RootImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRoot()
+	 * @generated
+	 */
+	int ROOT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Testcase</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__TESTCASE = FEATURE_ENTITY__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Requirements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__REQUIREMENTS = FEATURE_ENTITY__REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__REVIEW = FEATURE_ENTITY__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Designelement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__DESIGNELEMENT = FEATURE_ENTITY__DESIGNELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__NAME = FEATURE_ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Composes</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__COMPOSES = FEATURE_ENTITY__COMPOSES;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__MANDATORY = FEATURE_ENTITY__MANDATORY;
+
+	/**
+	 * The feature id for the '<em><b>Optionof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__OPTIONOF = FEATURE_ENTITY__OPTIONOF;
+
+	/**
+	 * The feature id for the '<em><b>Optional</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__OPTIONAL = FEATURE_ENTITY__OPTIONAL;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__ALTERNATIVE = FEATURE_ENTITY__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Alternativeof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__ALTERNATIVEOF = FEATURE_ENTITY__ALTERNATIVEOF;
+
+	/**
+	 * The number of structural features of the '<em>Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_FEATURE_COUNT = FEATURE_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_OPERATION_COUNT = FEATURE_ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}' enum.
@@ -1193,7 +1438,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTestType()
 	 * @generated
 	 */
-	int TEST_TYPE = 12;
+	int TEST_TYPE = 14;
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Requirements <em>Requirements</em>}'.
@@ -1627,102 +1872,25 @@ public interface RmdlPackage extends EPackage {
 	EAttribute getReview_Comments();
 
 	/**
-	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement <em>Feature Element</em>}'.
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Element</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Element
 	 * @generated
 	 */
-	EClass getFeatureElement();
+	EClass getElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#isIsOptional <em>Is Optional</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Element#isIsOptional <em>Is Optional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Optional</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#isIsOptional()
-	 * @see #getFeatureElement()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Element#isIsOptional()
+	 * @see #getElement()
 	 * @generated
 	 */
-	EAttribute getFeatureElement_IsOptional();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getMandatory <em>Mandatory</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Mandatory</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getMandatory()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Mandatory();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getComposes <em>Composes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Composes</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getComposes()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Composes();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getAlternative <em>Alternative</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Alternative</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getAlternative()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Alternative();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getAlternativeof <em>Alternativeof</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Alternativeof</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getAlternativeof()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Alternativeof();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getOptional <em>Optional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Optional</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getOptional()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Optional();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getOptionof <em>Optionof</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Optionof</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getOptionof()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Optionof();
-
-	/**
-	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureElement#getProduct <em>Product</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Product</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureElement#getProduct()
-	 * @see #getFeatureElement()
-	 * @generated
-	 */
-	EReference getFeatureElement_Product();
+	EAttribute getElement_IsOptional();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model <em>Feature Model</em>}'.
@@ -1733,17 +1901,6 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFeature_Model();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureelement <em>Featureelement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Featureelement</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureelement()
-	 * @see #getFeature_Model()
-	 * @generated
-	 */
-	EReference getFeature_Model_Featureelement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getName <em>Name</em>}'.
@@ -1757,36 +1914,133 @@ public interface RmdlPackage extends EPackage {
 	EAttribute getFeature_Model_Name();
 
 	/**
-	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Root <em>RMDL Root</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureentity <em>Featureentity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>RMDL Root</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Root
+	 * @return the meta object for the containment reference list '<em>Featureentity</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureentity()
+	 * @see #getFeature_Model()
 	 * @generated
 	 */
-	EClass getRMDL_Root();
+	EReference getFeature_Model_Featureentity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Root#getFeature_model <em>Feature model</em>}'.
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project <em>RMDL Project</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>RMDL Project</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Project
+	 * @generated
+	 */
+	EClass getRMDL_Project();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project#getFeature_model <em>Feature model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Feature model</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Root#getFeature_model()
-	 * @see #getRMDL_Root()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Project#getFeature_model()
+	 * @see #getRMDL_Project()
 	 * @generated
 	 */
-	EReference getRMDL_Root_Feature_model();
+	EReference getRMDL_Project_Feature_model();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Root#getRequirement_diagram <em>Requirement diagram</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project#getRequirement_diagram <em>Requirement diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Requirement diagram</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Root#getRequirement_diagram()
-	 * @see #getRMDL_Root()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Project#getRequirement_diagram()
+	 * @see #getRMDL_Project()
 	 * @generated
 	 */
-	EReference getRMDL_Root_Requirement_diagram();
+	EReference getRMDL_Project_Requirement_diagram();
+
+	/**
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity <em>Feature Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Entity</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity
+	 * @generated
+	 */
+	EClass getFeatureEntity();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getComposes <em>Composes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Composes</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getComposes()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Composes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getMandatory <em>Mandatory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Mandatory</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getMandatory()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Mandatory();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionof <em>Optionof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Optionof</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionof()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Optionof();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptional <em>Optional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Optional</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptional()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Optional();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternative <em>Alternative</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Alternative</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternative()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Alternative();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof <em>Alternativeof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Alternativeof</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Alternativeof();
+
+	/**
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Root <em>Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Root</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Root
+	 * @generated
+	 */
+	EClass getRoot();
 
 	/**
 	 * Returns the meta object for enum '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}'.
@@ -2160,14 +2414,14 @@ public interface RmdlPackage extends EPackage {
 		EAttribute REVIEW__COMMENTS = eINSTANCE.getReview_Comments();
 
 		/**
-		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl <em>Feature Element</em>}' class.
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.ElementImpl <em>Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.mcmaster.requirements_modelling.rmdl.impl.FeatureElementImpl
-		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getFeatureElement()
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.ElementImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getElement()
 		 * @generated
 		 */
-		EClass FEATURE_ELEMENT = eINSTANCE.getFeatureElement();
+		EClass ELEMENT = eINSTANCE.getElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Optional</b></em>' attribute feature.
@@ -2175,63 +2429,7 @@ public interface RmdlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE_ELEMENT__IS_OPTIONAL = eINSTANCE.getFeatureElement_IsOptional();
-
-		/**
-		 * The meta object literal for the '<em><b>Mandatory</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__MANDATORY = eINSTANCE.getFeatureElement_Mandatory();
-
-		/**
-		 * The meta object literal for the '<em><b>Composes</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__COMPOSES = eINSTANCE.getFeatureElement_Composes();
-
-		/**
-		 * The meta object literal for the '<em><b>Alternative</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__ALTERNATIVE = eINSTANCE.getFeatureElement_Alternative();
-
-		/**
-		 * The meta object literal for the '<em><b>Alternativeof</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__ALTERNATIVEOF = eINSTANCE.getFeatureElement_Alternativeof();
-
-		/**
-		 * The meta object literal for the '<em><b>Optional</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__OPTIONAL = eINSTANCE.getFeatureElement_Optional();
-
-		/**
-		 * The meta object literal for the '<em><b>Optionof</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__OPTIONOF = eINSTANCE.getFeatureElement_Optionof();
-
-		/**
-		 * The meta object literal for the '<em><b>Product</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_ELEMENT__PRODUCT = eINSTANCE.getFeatureElement_Product();
+		EAttribute ELEMENT__IS_OPTIONAL = eINSTANCE.getElement_IsOptional();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl <em>Feature Model</em>}' class.
@@ -2244,14 +2442,6 @@ public interface RmdlPackage extends EPackage {
 		EClass FEATURE_MODEL = eINSTANCE.getFeature_Model();
 
 		/**
-		 * The meta object literal for the '<em><b>Featureelement</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_MODEL__FEATUREELEMENT = eINSTANCE.getFeature_Model_Featureelement();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2260,14 +2450,22 @@ public interface RmdlPackage extends EPackage {
 		EAttribute FEATURE_MODEL__NAME = eINSTANCE.getFeature_Model_Name();
 
 		/**
-		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_RootImpl <em>RMDL Root</em>}' class.
+		 * The meta object literal for the '<em><b>Featureentity</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RMDL_RootImpl
-		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRMDL_Root()
 		 * @generated
 		 */
-		EClass RMDL_ROOT = eINSTANCE.getRMDL_Root();
+		EReference FEATURE_MODEL__FEATUREENTITY = eINSTANCE.getFeature_Model_Featureentity();
+
+		/**
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl <em>RMDL Project</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRMDL_Project()
+		 * @generated
+		 */
+		EClass RMDL_PROJECT = eINSTANCE.getRMDL_Project();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature model</b></em>' containment reference list feature.
@@ -2275,7 +2473,7 @@ public interface RmdlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RMDL_ROOT__FEATURE_MODEL = eINSTANCE.getRMDL_Root_Feature_model();
+		EReference RMDL_PROJECT__FEATURE_MODEL = eINSTANCE.getRMDL_Project_Feature_model();
 
 		/**
 		 * The meta object literal for the '<em><b>Requirement diagram</b></em>' containment reference feature.
@@ -2283,7 +2481,75 @@ public interface RmdlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RMDL_ROOT__REQUIREMENT_DIAGRAM = eINSTANCE.getRMDL_Root_Requirement_diagram();
+		EReference RMDL_PROJECT__REQUIREMENT_DIAGRAM = eINSTANCE.getRMDL_Project_Requirement_diagram();
+
+		/**
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl <em>Feature Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getFeatureEntity()
+		 * @generated
+		 */
+		EClass FEATURE_ENTITY = eINSTANCE.getFeatureEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Composes</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__COMPOSES = eINSTANCE.getFeatureEntity_Composes();
+
+		/**
+		 * The meta object literal for the '<em><b>Mandatory</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__MANDATORY = eINSTANCE.getFeatureEntity_Mandatory();
+
+		/**
+		 * The meta object literal for the '<em><b>Optionof</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__OPTIONOF = eINSTANCE.getFeatureEntity_Optionof();
+
+		/**
+		 * The meta object literal for the '<em><b>Optional</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__OPTIONAL = eINSTANCE.getFeatureEntity_Optional();
+
+		/**
+		 * The meta object literal for the '<em><b>Alternative</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__ALTERNATIVE = eINSTANCE.getFeatureEntity_Alternative();
+
+		/**
+		 * The meta object literal for the '<em><b>Alternativeof</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__ALTERNATIVEOF = eINSTANCE.getFeatureEntity_Alternativeof();
+
+		/**
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RootImpl <em>Root</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RootImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRoot()
+		 * @generated
+		 */
+		EClass ROOT = eINSTANCE.getRoot();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}' enum.

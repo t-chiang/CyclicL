@@ -59,23 +59,25 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/comments"/>
     </genClasses>
-    <genClasses ecoreClass="rmdl.ecore#//FeatureElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//FeatureElement/isOptional"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/mandatory"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/composes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/alternative"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/alternativeof"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/optional"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/optionof"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureElement/product"/>
+    <genClasses ecoreClass="rmdl.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Element/isOptional"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Feature_Model">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Feature_Model/featureelement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Feature_Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Feature_Model/featureentity"/>
     </genClasses>
-    <genClasses ecoreClass="rmdl.ecore#//RMDL_Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//RMDL_Root/feature_model"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//RMDL_Root/requirement_diagram"/>
+    <genClasses ecoreClass="rmdl.ecore#//RMDL_Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//RMDL_Project/feature_model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//RMDL_Project/requirement_diagram"/>
     </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//FeatureEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/composes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/mandatory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/optionof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/alternative"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/alternativeof"/>
+    </genClasses>
+    <genClasses ecoreClass="rmdl.ecore#//Root"/>
   </genPackages>
 </genmodel:GenModel>

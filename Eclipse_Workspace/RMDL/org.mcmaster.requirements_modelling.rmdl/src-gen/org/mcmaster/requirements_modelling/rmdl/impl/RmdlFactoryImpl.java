@@ -71,12 +71,14 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createTestCase();
 		case RmdlPackage.REVIEW:
 			return createReview();
-		case RmdlPackage.FEATURE_ELEMENT:
-			return createFeatureElement();
+		case RmdlPackage.ELEMENT:
+			return createElement();
 		case RmdlPackage.FEATURE_MODEL:
 			return createFeature_Model();
-		case RmdlPackage.RMDL_ROOT:
-			return createRMDL_Root();
+		case RmdlPackage.RMDL_PROJECT:
+			return createRMDL_Project();
+		case RmdlPackage.ROOT:
+			return createRoot();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -197,9 +199,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureElement createFeatureElement() {
-		FeatureElementImpl featureElement = new FeatureElementImpl();
-		return featureElement;
+	public Element createElement() {
+		ElementImpl element = new ElementImpl();
+		return element;
 	}
 
 	/**
@@ -217,9 +219,19 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RMDL_Root createRMDL_Root() {
-		RMDL_RootImpl rmdL_Root = new RMDL_RootImpl();
-		return rmdL_Root;
+	public RMDL_Project createRMDL_Project() {
+		RMDL_ProjectImpl rmdL_Project = new RMDL_ProjectImpl();
+		return rmdL_Project;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Root createRoot() {
+		RootImpl root = new RootImpl();
+		return root;
 	}
 
 	/**

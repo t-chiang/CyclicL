@@ -21,17 +21,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.requirements_modelling.rmdl.RMDL_Root;
+import org.mcmaster.requirements_modelling.rmdl.RMDL_Project;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.RMDL_Root} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -39,7 +39,7 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RMDL_RootItemProvider(AdapterFactory adapterFactory) {
+	public RMDL_ProjectItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,8 +70,8 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.RMDL_ROOT__FEATURE_MODEL);
-			childrenFeatures.add(RmdlPackage.Literals.RMDL_ROOT__REQUIREMENT_DIAGRAM);
+			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL);
+			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM);
 		}
 		return childrenFeatures;
 	}
@@ -90,14 +90,14 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This returns RMDL_Root.gif.
+	 * This returns RMDL_Project.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RMDL_Root"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RMDL_Project"));
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RMDL_Root_type");
+		return getString("_UI_RMDL_Project_type");
 	}
 
 	/**
@@ -132,9 +132,9 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RMDL_Root.class)) {
-		case RmdlPackage.RMDL_ROOT__FEATURE_MODEL:
-		case RmdlPackage.RMDL_ROOT__REQUIREMENT_DIAGRAM:
+		switch (notification.getFeatureID(RMDL_Project.class)) {
+		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_DIAGRAM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -152,14 +152,17 @@ public class RMDL_RootItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_ROOT__FEATURE_MODEL,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
 				RmdlFactory.eINSTANCE.createFeature_Model()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_ROOT__REQUIREMENT_DIAGRAM,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
 				RmdlFactory.eINSTANCE.createRequirement_Diagram()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_ROOT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createFeatureElement()));
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
+				RmdlFactory.eINSTANCE.createElement()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
+				RmdlFactory.eINSTANCE.createRoot()));
 	}
 
 	/**
