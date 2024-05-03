@@ -1185,22 +1185,13 @@ public interface RmdlPackage extends EPackage {
 	int ELEMENT__ALTERNATIVEOF = FEATURE_ENTITY__ALTERNATIVEOF;
 
 	/**
-	 * The feature id for the '<em><b>Is Optional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__IS_OPTIONAL = FEATURE_ENTITY_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = FEATURE_ENTITY_FEATURE_COUNT + 1;
+	int ELEMENT_FEATURE_COUNT = FEATURE_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.
@@ -1882,17 +1873,6 @@ public interface RmdlPackage extends EPackage {
 	EClass getElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Element#isIsOptional <em>Is Optional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Optional</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Element#isIsOptional()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EAttribute getElement_IsOptional();
-
-	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model <em>Feature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2422,14 +2402,6 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ELEMENT = eINSTANCE.getElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Optional</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ELEMENT__IS_OPTIONAL = eINSTANCE.getElement_IsOptional();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl <em>Feature Model</em>}' class.

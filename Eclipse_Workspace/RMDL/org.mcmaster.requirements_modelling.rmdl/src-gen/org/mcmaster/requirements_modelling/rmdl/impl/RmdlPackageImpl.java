@@ -577,15 +577,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getElement_IsOptional() {
-		return (EAttribute) elementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFeature_Model() {
 		return feature_ModelEClass;
 	}
@@ -795,7 +786,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEAttribute(reviewEClass, REVIEW__COMMENTS);
 
 		elementEClass = createEClass(ELEMENT);
-		createEAttribute(elementEClass, ELEMENT__IS_OPTIONAL);
 
 		feature_ModelEClass = createEClass(FEATURE_MODEL);
 		createEAttribute(feature_ModelEClass, FEATURE_MODEL__NAME);
@@ -972,8 +962,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getElement_IsOptional(), ecorePackage.getEBoolean(), "isOptional", "false", 1, 1, Element.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(feature_ModelEClass, Feature_Model.class, "Feature_Model", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

@@ -8,13 +8,9 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.mcmaster.requirements_modelling.rmdl.Element;
-import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
  * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Element} object.
@@ -44,25 +40,8 @@ public class ElementItemProvider extends FeatureEntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsOptionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Optional feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsOptionalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Element_isOptional_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Element_isOptional_feature",
-								"_UI_Element_type"),
-						RmdlPackage.Literals.ELEMENT__IS_OPTIONAL, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,12 +88,6 @@ public class ElementItemProvider extends FeatureEntityItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Element.class)) {
-		case RmdlPackage.ELEMENT__IS_OPTIONAL:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
