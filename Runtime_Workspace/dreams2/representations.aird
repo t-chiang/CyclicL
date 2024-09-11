@@ -141,7 +141,7 @@
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature%20Traceability']"/>
         <target xmi:type="rmdl:Feature_Model" href="MyRmdl.rmdl#//@feature_model.0"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_mQJ3gAigEe-x5I5_TsD5sw" name="Feature-Feature Traceability Adaptive Cruise Control" repPath="#_mQIpYAigEe-x5I5_TsD5sw" changeId="1714748808625">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_mQJ3gAigEe-x5I5_TsD5sw" name="Feature-Feature Traceability Adaptive Cruise Control" repPath="#_mQIpYAigEe-x5I5_TsD5sw" changeId="1726084862445">
         <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']"/>
         <target xmi:type="rmdl:Feature_Model" href="MyRmdl.rmdl#//@feature_model.0"/>
       </ownedRepresentationDescriptors>
@@ -7503,225 +7503,225 @@
         <semanticElements xmi:type="rmdl:Root" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.1"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvpkQleEe-7zJIBUmhVng" label="Steering Wheel">
+    <lines xmi:type="table:DLine" uid="_kkRwwHB4Ee-fNI0xOTV4bg" label="Steering Wheel">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srwQrAleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkWpRnB4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQrgleEe-7zJIBUmhVng" label="[Element Wheel Heating]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkXQUXB4Ee-fNI0xOTV4bg" label="[Element Wheel Heating]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQsAleEe-7zJIBUmhVng" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkXQU3B4Ee-fNI0xOTV4bg" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQsgleEe-7zJIBUmhVng" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkXQVXB4Ee-fNI0xOTV4bg" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQtAleEe-7zJIBUmhVng" label="" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkXQV3B4Ee-fNI0xOTV4bg" label="" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQtgleEe-7zJIBUmhVng" label="" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkX3YXB4Ee-fNI0xOTV4bg" label="" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.0"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvpkwleEe-7zJIBUmhVng" label="On/Off trigger">
+    <lines xmi:type="table:DLine" uid="_kkS-4HB4Ee-fNI0xOTV4bg" label="On/Off trigger">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srwQuAleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkX3Y3B4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQugleEe-7zJIBUmhVng" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkX3ZXB4Ee-fNI0xOTV4bg" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQvAleEe-7zJIBUmhVng" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkX3Z3B4Ee-fNI0xOTV4bg" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQvgleEe-7zJIBUmhVng" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkX3aXB4Ee-fNI0xOTV4bg" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQwAleEe-7zJIBUmhVng" label="" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYecHB4Ee-fNI0xOTV4bg" label="" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQwgleEe-7zJIBUmhVng" label="" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYecnB4Ee-fNI0xOTV4bg" label="" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.2"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvplQleEe-7zJIBUmhVng" label="Manual Override">
+    <lines xmi:type="table:DLine" uid="_kkTl8XB4Ee-fNI0xOTV4bg" label="Manual Override">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srwQxAleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYedHB4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQxgleEe-7zJIBUmhVng" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYednB4Ee-fNI0xOTV4bg" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQyAleEe-7zJIBUmhVng" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYeeHB4Ee-fNI0xOTV4bg" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQygleEe-7zJIBUmhVng" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYeenB4Ee-fNI0xOTV4bg" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQzAleEe-7zJIBUmhVng" label="" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYefHB4Ee-fNI0xOTV4bg" label="" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQzgleEe-7zJIBUmhVng" label="" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkYefnB4Ee-fNI0xOTV4bg" label="" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.3"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvplwleEe-7zJIBUmhVng" label="Wheel Heating">
+    <lines xmi:type="table:DLine" uid="_kkTl83B4Ee-fNI0xOTV4bg" label="Wheel Heating">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srwQ0AleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFgHB4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQ0gleEe-7zJIBUmhVng" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFgnB4Ee-fNI0xOTV4bg" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srwQ1AleEe-7zJIBUmhVng" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFhHB4Ee-fNI0xOTV4bg" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3sQleEe-7zJIBUmhVng" label="" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFhnB4Ee-fNI0xOTV4bg" label="" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3swleEe-7zJIBUmhVng" label="Element Steering Wheel" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFiHB4Ee-fNI0xOTV4bg" label="Element Steering Wheel" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3tQleEe-7zJIBUmhVng" label="" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFinB4Ee-fNI0xOTV4bg" label="" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.4"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvpmQleEe-7zJIBUmhVng" label="Automatic Braking">
+    <lines xmi:type="table:DLine" uid="_kkUNAHB4Ee-fNI0xOTV4bg" label="Automatic Braking">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srw3twleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFjHB4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3uQleEe-7zJIBUmhVng" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFjnB4Ee-fNI0xOTV4bg" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3uwleEe-7zJIBUmhVng" label="[Element Lidar and Sonar Sensors, Element Radar and Camera Sensors]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZFkHB4Ee-fNI0xOTV4bg" label="[Element Lidar and Sonar Sensors, Element Radar and Camera Sensors]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3vQleEe-7zJIBUmhVng" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZskXB4Ee-fNI0xOTV4bg" label="Root Adaptive Cruise Control" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3vwleEe-7zJIBUmhVng" label="" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkZsk3B4Ee-fNI0xOTV4bg" label="" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3wQleEe-7zJIBUmhVng" label="" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaToXB4Ee-fNI0xOTV4bg" label="" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.5"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvpmwleEe-7zJIBUmhVng" label="Lidar and Sonar Sensors">
+    <lines xmi:type="table:DLine" uid="_kkUNAnB4Ee-fNI0xOTV4bg" label="Lidar and Sonar Sensors">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srw3wwleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTo3B4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3xQleEe-7zJIBUmhVng" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTpXB4Ee-fNI0xOTV4bg" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3xwleEe-7zJIBUmhVng" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTp3B4Ee-fNI0xOTV4bg" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3yQleEe-7zJIBUmhVng" label="" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTqXB4Ee-fNI0xOTV4bg" label="" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3ywleEe-7zJIBUmhVng" label="" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTq3B4Ee-fNI0xOTV4bg" label="" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw3zQleEe-7zJIBUmhVng" label="Element Automatic Braking" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTrXB4Ee-fNI0xOTV4bg" label="Element Automatic Braking" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.6"/>
       </cells>
     </lines>
-    <lines xmi:type="table:DLine" uid="_srvpnQleEe-7zJIBUmhVng" label="Radar and Camera Sensors">
+    <lines xmi:type="table:DLine" uid="_kkUNBHB4Ee-fNI0xOTV4bg" label="Radar and Camera Sensors">
       <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedLineMappings[name='Feature']"/>
-      <cells xmi:type="table:DCell" uid="_srw3zwleEe-7zJIBUmhVng" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTr3B4Ee-fNI0xOTV4bg" label="[]" column="_632-gAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw30QleEe-7zJIBUmhVng" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kkaTsXB4Ee-fNI0xOTV4bg" label="[]" column="_632-ggikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw30wleEe-7zJIBUmhVng" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kka6sXB4Ee-fNI0xOTV4bg" label="[]" column="_632-hAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw31QleEe-7zJIBUmhVng" label="" column="_632-hgikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kka6s3B4Ee-fNI0xOTV4bg" label="" column="_632-hgikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw31wleEe-7zJIBUmhVng" label="" column="_632-iAikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kka6tXB4Ee-fNI0xOTV4bg" label="" column="_632-iAikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       </cells>
-      <cells xmi:type="table:DCell" uid="_srw32QleEe-7zJIBUmhVng" label="Element Automatic Braking" column="_632-igikEe-2XchTTlUWjQ">
+      <cells xmi:type="table:DCell" uid="_kka6t3B4Ee-fNI0xOTV4bg" label="Element Automatic Braking" column="_632-igikEe-2XchTTlUWjQ">
         <target xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
         <semanticElements xmi:type="rmdl:Element" href="MyRmdl.rmdl#//@feature_model.0/@featureentity.7"/>
       </cells>
     </lines>
-    <columns xmi:type="table:DFeatureColumn" uid="_632-gAikEe-2XchTTlUWjQ" label="Mandatory Features" cells="_632-jAikEe-2XchTTlUWjQ _srwQrAleEe-7zJIBUmhVng _srwQuAleEe-7zJIBUmhVng _srwQxAleEe-7zJIBUmhVng _srwQ0AleEe-7zJIBUmhVng _srw3twleEe-7zJIBUmhVng _srw3wwleEe-7zJIBUmhVng _srw3zwleEe-7zJIBUmhVng" width="515" featureName="mandatory">
+    <columns xmi:type="table:DFeatureColumn" uid="_632-gAikEe-2XchTTlUWjQ" label="Mandatory Features" cells="_632-jAikEe-2XchTTlUWjQ _kkWpRnB4Ee-fNI0xOTV4bg _kkX3Y3B4Ee-fNI0xOTV4bg _kkYedHB4Ee-fNI0xOTV4bg _kkZFgHB4Ee-fNI0xOTV4bg _kkZFjHB4Ee-fNI0xOTV4bg _kkaTo3B4Ee-fNI0xOTV4bg _kkaTr3B4Ee-fNI0xOTV4bg" width="515" featureName="mandatory">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedColumnMappings[name='aql%3Aself.mandatory.name']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_632-ggikEe-2XchTTlUWjQ" label="Optional Features" cells="_633lkQikEe-2XchTTlUWjQ _srwQrgleEe-7zJIBUmhVng _srwQugleEe-7zJIBUmhVng _srwQxgleEe-7zJIBUmhVng _srwQ0gleEe-7zJIBUmhVng _srw3uQleEe-7zJIBUmhVng _srw3xQleEe-7zJIBUmhVng _srw30QleEe-7zJIBUmhVng" width="145" featureName="optional">
+    <columns xmi:type="table:DFeatureColumn" uid="_632-ggikEe-2XchTTlUWjQ" label="Optional Features" cells="_633lkQikEe-2XchTTlUWjQ _kkXQUXB4Ee-fNI0xOTV4bg _kkX3ZXB4Ee-fNI0xOTV4bg _kkYednB4Ee-fNI0xOTV4bg _kkZFgnB4Ee-fNI0xOTV4bg _kkZFjnB4Ee-fNI0xOTV4bg _kkaTpXB4Ee-fNI0xOTV4bg _kkaTsXB4Ee-fNI0xOTV4bg" width="145" featureName="optional">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedColumnMappings[name='aql%3Aself.optional.name']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_632-hAikEe-2XchTTlUWjQ" label="Alternative Compositions" cells="_633lkwikEe-2XchTTlUWjQ _srwQsAleEe-7zJIBUmhVng _srwQvAleEe-7zJIBUmhVng _srwQyAleEe-7zJIBUmhVng _srwQ1AleEe-7zJIBUmhVng _srw3uwleEe-7zJIBUmhVng _srw3xwleEe-7zJIBUmhVng _srw30wleEe-7zJIBUmhVng" width="364" featureName="alternative">
+    <columns xmi:type="table:DFeatureColumn" uid="_632-hAikEe-2XchTTlUWjQ" label="Alternative Compositions" cells="_633lkwikEe-2XchTTlUWjQ _kkXQU3B4Ee-fNI0xOTV4bg _kkX3Z3B4Ee-fNI0xOTV4bg _kkYeeHB4Ee-fNI0xOTV4bg _kkZFhHB4Ee-fNI0xOTV4bg _kkZFkHB4Ee-fNI0xOTV4bg _kkaTp3B4Ee-fNI0xOTV4bg _kka6sXB4Ee-fNI0xOTV4bg" width="364" featureName="alternative">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedColumnMappings[name='aql%3Aself.alternative.name']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_632-hgikEe-2XchTTlUWjQ" label="Builds up to" cells="_633llQikEe-2XchTTlUWjQ _srwQsgleEe-7zJIBUmhVng _srwQvgleEe-7zJIBUmhVng _srwQygleEe-7zJIBUmhVng _srw3sQleEe-7zJIBUmhVng _srw3vQleEe-7zJIBUmhVng _srw3yQleEe-7zJIBUmhVng _srw31QleEe-7zJIBUmhVng" width="174" featureName="composes">
+    <columns xmi:type="table:DFeatureColumn" uid="_632-hgikEe-2XchTTlUWjQ" label="Builds up to" cells="_633llQikEe-2XchTTlUWjQ _kkXQVXB4Ee-fNI0xOTV4bg _kkX3aXB4Ee-fNI0xOTV4bg _kkYeenB4Ee-fNI0xOTV4bg _kkZFhnB4Ee-fNI0xOTV4bg _kkZskXB4Ee-fNI0xOTV4bg _kkaTqXB4Ee-fNI0xOTV4bg _kka6s3B4Ee-fNI0xOTV4bg" width="174" featureName="composes">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedColumnMappings[name='aql%3Aself.composes.name']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_632-iAikEe-2XchTTlUWjQ" label="Optionally used by" cells="_633llwikEe-2XchTTlUWjQ _srwQtAleEe-7zJIBUmhVng _srwQwAleEe-7zJIBUmhVng _srwQzAleEe-7zJIBUmhVng _srw3swleEe-7zJIBUmhVng _srw3vwleEe-7zJIBUmhVng _srw3ywleEe-7zJIBUmhVng _srw31wleEe-7zJIBUmhVng" width="131" featureName="optionof">
+    <columns xmi:type="table:DFeatureColumn" uid="_632-iAikEe-2XchTTlUWjQ" label="Optionally used by" cells="_633llwikEe-2XchTTlUWjQ _kkXQV3B4Ee-fNI0xOTV4bg _kkYecHB4Ee-fNI0xOTV4bg _kkYefHB4Ee-fNI0xOTV4bg _kkZFiHB4Ee-fNI0xOTV4bg _kkZsk3B4Ee-fNI0xOTV4bg _kkaTq3B4Ee-fNI0xOTV4bg _kka6tXB4Ee-fNI0xOTV4bg" width="131" featureName="optionof">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedColumnMappings[name='aql%3Aself.optionof.name']"/>
     </columns>
-    <columns xmi:type="table:DFeatureColumn" uid="_632-igikEe-2XchTTlUWjQ" label="Alternatively builds up to" cells="_633lmQikEe-2XchTTlUWjQ _srwQtgleEe-7zJIBUmhVng _srwQwgleEe-7zJIBUmhVng _srwQzgleEe-7zJIBUmhVng _srw3tQleEe-7zJIBUmhVng _srw3wQleEe-7zJIBUmhVng _srw3zQleEe-7zJIBUmhVng _srw32QleEe-7zJIBUmhVng" width="147" featureName="alternativeof">
+    <columns xmi:type="table:DFeatureColumn" uid="_632-igikEe-2XchTTlUWjQ" label="Alternatively builds up to" cells="_633lmQikEe-2XchTTlUWjQ _kkX3YXB4Ee-fNI0xOTV4bg _kkYecnB4Ee-fNI0xOTV4bg _kkYefnB4Ee-fNI0xOTV4bg _kkZFinB4Ee-fNI0xOTV4bg _kkaToXB4Ee-fNI0xOTV4bg _kkaTrXB4Ee-fNI0xOTV4bg _kka6t3B4Ee-fNI0xOTV4bg" width="147" featureName="alternativeof">
       <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']/@ownedColumnMappings[name='aql%3Aself.alternativeof.name']"/>
     </columns>
     <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Traceability%20Table%20Viewpoint']/@ownedRepresentations[name='Feature-Feature%20Traceability']"/>
