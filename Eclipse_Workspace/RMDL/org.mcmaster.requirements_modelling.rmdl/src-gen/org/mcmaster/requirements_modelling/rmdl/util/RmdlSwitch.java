@@ -6,16 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-import org.mcmaster.requirements_modelling.rmdl.Constraint;
-import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Functional;
-import org.mcmaster.requirements_modelling.rmdl.Qualitative;
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
-import org.mcmaster.requirements_modelling.rmdl.Requirements;
-import org.mcmaster.requirements_modelling.rmdl.Review;
-import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-import org.mcmaster.requirements_modelling.rmdl.Safety;
-import org.mcmaster.requirements_modelling.rmdl.TestCase;
+import org.mcmaster.requirements_modelling.rmdl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,18 +99,9 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.PACKAGE: {
-			org.mcmaster.requirements_modelling.rmdl.Package package_ = (org.mcmaster.requirements_modelling.rmdl.Package) theEObject;
-			T result = casePackage(package_);
-			if (result == null)
-				result = caseRequirement_Root(package_);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case RmdlPackage.REQUIREMENT_ROOT: {
-			Requirement_Root requirement_Root = (Requirement_Root) theEObject;
-			T result = caseRequirement_Root(requirement_Root);
+		case RmdlPackage.REQUIREMENT_DIAGRAM: {
+			Requirement_Diagram requirement_Diagram = (Requirement_Diagram) theEObject;
+			T result = caseRequirement_Diagram(requirement_Diagram);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -150,6 +132,51 @@ public class RmdlSwitch<T> extends Switch<T> {
 		case RmdlPackage.REVIEW: {
 			Review review = (Review) theEObject;
 			T result = caseReview(review);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.ELEMENT: {
+			Element element = (Element) theEObject;
+			T result = caseElement(element);
+			if (result == null)
+				result = caseFeatureEntity(element);
+			if (result == null)
+				result = caseRequirement_Diagram(element);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.FEATURE_MODEL: {
+			Feature_Model feature_Model = (Feature_Model) theEObject;
+			T result = caseFeature_Model(feature_Model);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.RMDL_PROJECT: {
+			RMDL_Project rmdL_Project = (RMDL_Project) theEObject;
+			T result = caseRMDL_Project(rmdL_Project);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.FEATURE_ENTITY: {
+			FeatureEntity featureEntity = (FeatureEntity) theEObject;
+			T result = caseFeatureEntity(featureEntity);
+			if (result == null)
+				result = caseRequirement_Diagram(featureEntity);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.ROOT: {
+			Root root = (Root) theEObject;
+			T result = caseRoot(root);
+			if (result == null)
+				result = caseFeatureEntity(root);
+			if (result == null)
+				result = caseRequirement_Diagram(root);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -220,32 +247,17 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Requirement Diagram</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Requirement Diagram</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackage(org.mcmaster.requirements_modelling.rmdl.Package object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Requirement Root</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Requirement Root</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRequirement_Root(Requirement_Root object) {
+	public T caseRequirement_Diagram(Requirement_Diagram object) {
 		return null;
 	}
 
@@ -306,6 +318,81 @@ public class RmdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReview(Review object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElement(Element object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeature_Model(Feature_Model object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>RMDL Project</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>RMDL Project</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRMDL_Project(RMDL_Project object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeatureEntity(FeatureEntity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Root</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRoot(Root object) {
 		return null;
 	}
 

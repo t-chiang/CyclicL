@@ -6,35 +6,32 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
-        eType="#//Requirement_Root" eOpposite="#//Requirement_Root/requirements"/>
+        eType="#//Requirement_Diagram" eOpposite="#//Requirement_Diagram/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="review" lowerBound="1"
         upperBound="-1" eType="#//Review" eOpposite="#//Review/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" lowerBound="1"
         upperBound="-1" eType="#//TestCase" eOpposite="#//TestCase/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="traceto" lowerBound="1"
         upperBound="-1" eType="#//DesignElement" eOpposite="#//DesignElement/tracefrom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partof" upperBound="-1"
+        eType="#//Requirements" eOpposite="#//Requirements/decomposesto"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decomposesto" upperBound="-1"
+        eType="#//Requirements" eOpposite="#//Requirements/partof"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="specification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Functional" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Qualitative" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//Requirements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Requirement_Root">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageID" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
-        eType="#//Requirement_Root" eOpposite="#//Requirement_Root/package"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Requirement_Root">
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement_Diagram">
     <eStructuralFeatures xsi:type="ecore:EReference" name="testcase" upperBound="-1"
         eType="#//TestCase" containment="true" eOpposite="#//TestCase/requirement_root"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="package" upperBound="-1"
-        eType="#//Package" containment="true" eOpposite="#//Package/requirement_root"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
         eType="#//Requirements" containment="true" eOpposite="#//Requirements/requirement_root"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="review" upperBound="-1"
         eType="#//Review" containment="true" eOpposite="#//Review/requirement_root"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="designelement" upperBound="-1"
         eType="#//DesignElement" containment="true" eOpposite="#//DesignElement/requirement_root"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="#//Requirements"/>
   <eClassifiers xsi:type="ecore:EClass" name="DesignElement">
@@ -45,8 +42,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tracefrom" lowerBound="1"
         upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/traceto"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" eType="#//Requirement_Root"
-        eOpposite="#//Requirement_Root/designelement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" eType="#//Requirement_Diagram"
+        eOpposite="#//Requirement_Diagram/designelement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestCase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -54,7 +51,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
-        eType="#//Requirement_Root" eOpposite="#//Requirement_Root/testcase"/>
+        eType="#//Requirement_Diagram" eOpposite="#//Requirement_Diagram/testcase"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasPassed" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" lowerBound="1"
@@ -68,9 +65,36 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reviewer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_root" lowerBound="1"
-        eType="#//Requirement_Root" eOpposite="#//Requirement_Root/review"/>
+        eType="#//Requirement_Diagram" eOpposite="#//Requirement_Diagram/review"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" lowerBound="1"
         upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/review"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//FeatureEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature_Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureentity" lowerBound="1"
+        upperBound="-1" eType="#//FeatureEntity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RMDL_Project">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature_model" upperBound="-1"
+        eType="#//Feature_Model" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_diagram" eType="#//Requirement_Diagram"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureEntity" abstract="true" eSuperTypes="#//Requirement_Diagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composes" eType="#//FeatureEntity"
+        eOpposite="#//FeatureEntity/mandatory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mandatory" upperBound="-1"
+        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/composes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionof" eType="#//FeatureEntity"
+        eOpposite="#//FeatureEntity/optional"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optional" upperBound="-1"
+        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/optionof"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternative" upperBound="-1"
+        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/alternativeof"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternativeof" eType="#//FeatureEntity"
+        eOpposite="#//FeatureEntity/alternative"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Root" eSuperTypes="#//FeatureEntity"/>
 </ecore:EPackage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmdl:RMDL_Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <feature_model name="Example">
+    <featureentity xsi:type="rmdl:Root" name="Example" mandatory="//@feature_model.0/@featureentity.1 //@feature_model.0/@featureentity.2"/>
+    <featureentity xsi:type="rmdl:Element" name="Feature1" composes="//@feature_model.0/@featureentity.0">
+      <testcase ID="1" requirements="//@feature_model.0/@featureentity.1/@requirements.0"/>
+      <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="1" review="//@feature_model.0/@featureentity.1/@review.0" testcase="//@feature_model.0/@featureentity.1/@testcase.0" traceto="//@feature_model.0/@featureentity.1/@designelement.0"/>
+      <review reviewer="Reviewer1" requirements="//@feature_model.0/@featureentity.1/@requirements.0"/>
+      <designelement name="DesignElement1" tracefrom="//@feature_model.0/@featureentity.1/@requirements.0"/>
+    </featureentity>
+    <featureentity xsi:type="rmdl:Element" name="Feature2" composes="//@feature_model.0/@featureentity.0"/>
+  </feature_model>
+</rmdl:RMDL_Project>

@@ -119,6 +119,29 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Uses} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UsesItemProvider usesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Uses}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUsesAdapter() {
+		if (usesItemProvider == null) {
+			usesItemProvider = new UsesItemProvider(this);
+		}
+
+		return usesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Composition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +162,52 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return compositionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Produces} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProducesItemProvider producesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Produces}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProducesAdapter() {
+		if (producesItemProvider == null) {
+			producesItemProvider = new ProducesItemProvider(this);
+		}
+
+		return producesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Attribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeItemProvider attributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeAdapter() {
+		if (attributeItemProvider == null) {
+			attributeItemProvider = new AttributeItemProvider(this);
+		}
+
+		return attributeItemProvider;
 	}
 
 	/**
@@ -254,75 +323,6 @@ public class PfcsmItemProviderAdapterFactory extends PfcsmAdapterFactory
 		}
 
 		return alternativeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Uses} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UsesItemProvider usesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Uses}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUsesAdapter() {
-		if (usesItemProvider == null) {
-			usesItemProvider = new UsesItemProvider(this);
-		}
-
-		return usesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Produces} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ProducesItemProvider producesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Produces}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createProducesAdapter() {
-		if (producesItemProvider == null) {
-			producesItemProvider = new ProducesItemProvider(this);
-		}
-
-		return producesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.pfcsm.Attribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeItemProvider attributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.pfcsm.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeAdapter() {
-		if (attributeItemProvider == null) {
-			attributeItemProvider = new AttributeItemProvider(this);
-		}
-
-		return attributeItemProvider;
 	}
 
 	/**

@@ -22,6 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof <em>Partof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto <em>Decomposesto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -97,17 +100,17 @@ public interface Requirements extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements <em>Requirements</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Root)
+	 * @see #setRequirement_root(Requirement_Diagram)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Root#getRequirements
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getRequirements
 	 * @model opposite="requirements" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Root getRequirement_root();
+	Requirement_Diagram getRequirement_root();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}' container reference.
@@ -117,7 +120,7 @@ public interface Requirements extends EObject {
 	 * @see #getRequirement_root()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Root value);
+	void setRequirement_root(Requirement_Diagram value);
 
 	/**
 	 * Returns the value of the '<em><b>Review</b></em>' reference list.
@@ -160,5 +163,55 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<DesignElement> getTraceto();
+
+	/**
+	 * Returns the value of the '<em><b>Partof</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto <em>Decomposesto</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Partof</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Partof()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto
+	 * @model opposite="decomposesto"
+	 * @generated
+	 */
+	EList<Requirements> getPartof();
+
+	/**
+	 * Returns the value of the '<em><b>Decomposesto</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof <em>Partof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Decomposesto</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Decomposesto()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof
+	 * @model opposite="partof"
+	 * @generated
+	 */
+	EList<Requirements> getDecomposesto();
+
+	/**
+	 * Returns the value of the '<em><b>Specification</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specification</em>' attribute.
+	 * @see #setSpecification(String)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Specification()
+	 * @model
+	 * @generated
+	 */
+	String getSpecification();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Specification</em>' attribute.
+	 * @see #getSpecification()
+	 * @generated
+	 */
+	void setSpecification(String value);
 
 } // Requirements

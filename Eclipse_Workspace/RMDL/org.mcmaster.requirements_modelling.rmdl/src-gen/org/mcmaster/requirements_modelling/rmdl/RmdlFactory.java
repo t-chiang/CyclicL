@@ -49,22 +49,13 @@ public interface RmdlFactory extends EFactory {
 	Constraint createConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Package</em>'.
+	 * Returns a new object of class '<em>Requirement Diagram</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package</em>'.
+	 * @return a new object of class '<em>Requirement Diagram</em>'.
 	 * @generated
 	 */
-	Package createPackage();
-
-	/**
-	 * Returns a new object of class '<em>Requirement Root</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Requirement Root</em>'.
-	 * @generated
-	 */
-	Requirement_Root createRequirement_Root();
+	Requirement_Diagram createRequirement_Diagram();
 
 	/**
 	 * Returns a new object of class '<em>Safety</em>'.
@@ -101,6 +92,42 @@ public interface RmdlFactory extends EFactory {
 	 * @generated
 	 */
 	Review createReview();
+
+	/**
+	 * Returns a new object of class '<em>Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Element</em>'.
+	 * @generated
+	 */
+	Element createElement();
+
+	/**
+	 * Returns a new object of class '<em>Feature Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Model</em>'.
+	 * @generated
+	 */
+	Feature_Model createFeature_Model();
+
+	/**
+	 * Returns a new object of class '<em>RMDL Project</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>RMDL Project</em>'.
+	 * @generated
+	 */
+	RMDL_Project createRMDL_Project();
+
+	/**
+	 * Returns a new object of class '<em>Root</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Root</em>'.
+	 * @generated
+	 */
+	Root createRoot();
 
 	/**
 	 * Returns the package supported by this factory.

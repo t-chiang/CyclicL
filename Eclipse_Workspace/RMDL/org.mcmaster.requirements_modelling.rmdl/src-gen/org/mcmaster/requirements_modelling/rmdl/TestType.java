@@ -26,37 +26,7 @@ public enum TestType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNIT_TEST(0, "UnitTest", "UnitTest"),
-
-	/**
-	 * The '<em><b>Class Test</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CLASS_TEST_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CLASS_TEST(1, "ClassTest", "ClassTest"),
-
-	/**
-	 * The '<em><b>White Box</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WHITE_BOX_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	WHITE_BOX(2, "WhiteBox", "WhiteBox"),
-
-	/**
-	 * The '<em><b>Black Box</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BLACK_BOX_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BLACK_BOX(3, "BlackBox", "BlackBox");
+	UNIT_TEST(0, "UnitTest", "UnitTest");
 
 	/**
 	 * The '<em><b>Unit Test</b></em>' literal value.
@@ -70,45 +40,12 @@ public enum TestType implements Enumerator {
 	public static final int UNIT_TEST_VALUE = 0;
 
 	/**
-	 * The '<em><b>Class Test</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CLASS_TEST
-	 * @model name="ClassTest"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CLASS_TEST_VALUE = 1;
-
-	/**
-	 * The '<em><b>White Box</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #WHITE_BOX
-	 * @model name="WhiteBox"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int WHITE_BOX_VALUE = 2;
-
-	/**
-	 * The '<em><b>Black Box</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BLACK_BOX
-	 * @model name="BlackBox"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BLACK_BOX_VALUE = 3;
-
-	/**
 	 * An array of all the '<em><b>Test Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final TestType[] VALUES_ARRAY = new TestType[] { UNIT_TEST, CLASS_TEST, WHITE_BOX, BLACK_BOX, };
+	private static final TestType[] VALUES_ARRAY = new TestType[] { UNIT_TEST, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Test Type</b></em>' enumerators.
@@ -166,12 +103,6 @@ public enum TestType implements Enumerator {
 		switch (value) {
 		case UNIT_TEST_VALUE:
 			return UNIT_TEST;
-		case CLASS_TEST_VALUE:
-			return CLASS_TEST;
-		case WHITE_BOX_VALUE:
-			return WHITE_BOX;
-		case BLACK_BOX_VALUE:
-			return BLACK_BOX;
 		}
 		return null;
 	}

@@ -142,49 +142,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Package} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PackageItemProvider packageItemProvider;
+	protected Requirement_DiagramItemProvider requirement_DiagramItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Package}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPackageAdapter() {
-		if (packageItemProvider == null) {
-			packageItemProvider = new PackageItemProvider(this);
+	public Adapter createRequirement_DiagramAdapter() {
+		if (requirement_DiagramItemProvider == null) {
+			requirement_DiagramItemProvider = new Requirement_DiagramItemProvider(this);
 		}
 
-		return packageItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Requirement_RootItemProvider requirement_RootItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Root}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRequirement_RootAdapter() {
-		if (requirement_RootItemProvider == null) {
-			requirement_RootItemProvider = new Requirement_RootItemProvider(this);
-		}
-
-		return requirement_RootItemProvider;
+		return requirement_DiagramItemProvider;
 	}
 
 	/**
@@ -277,6 +254,98 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 		}
 
 		return reviewItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Element} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementItemProvider elementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Element}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementAdapter() {
+		if (elementItemProvider == null) {
+			elementItemProvider = new ElementItemProvider(this);
+		}
+
+		return elementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Feature_ModelItemProvider feature_ModelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeature_ModelAdapter() {
+		if (feature_ModelItemProvider == null) {
+			feature_ModelItemProvider = new Feature_ModelItemProvider(this);
+		}
+
+		return feature_ModelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RMDL_ProjectItemProvider rmdL_ProjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRMDL_ProjectAdapter() {
+		if (rmdL_ProjectItemProvider == null) {
+			rmdL_ProjectItemProvider = new RMDL_ProjectItemProvider(this);
+		}
+
+		return rmdL_ProjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Root} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RootItemProvider rootItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Root}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRootAdapter() {
+		if (rootItemProvider == null) {
+			rootItemProvider = new RootItemProvider(this);
+		}
+
+		return rootItemProvider;
 	}
 
 	/**
@@ -384,10 +453,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			qualitativeItemProvider.dispose();
 		if (constraintItemProvider != null)
 			constraintItemProvider.dispose();
-		if (packageItemProvider != null)
-			packageItemProvider.dispose();
-		if (requirement_RootItemProvider != null)
-			requirement_RootItemProvider.dispose();
+		if (requirement_DiagramItemProvider != null)
+			requirement_DiagramItemProvider.dispose();
 		if (safetyItemProvider != null)
 			safetyItemProvider.dispose();
 		if (designElementItemProvider != null)
@@ -396,6 +463,14 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			testCaseItemProvider.dispose();
 		if (reviewItemProvider != null)
 			reviewItemProvider.dispose();
+		if (elementItemProvider != null)
+			elementItemProvider.dispose();
+		if (feature_ModelItemProvider != null)
+			feature_ModelItemProvider.dispose();
+		if (rmdL_ProjectItemProvider != null)
+			rmdL_ProjectItemProvider.dispose();
+		if (rootItemProvider != null)
+			rootItemProvider.dispose();
 	}
 
 }

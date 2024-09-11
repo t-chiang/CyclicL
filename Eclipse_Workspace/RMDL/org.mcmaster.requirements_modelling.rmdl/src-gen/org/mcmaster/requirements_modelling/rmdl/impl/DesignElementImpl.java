@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Root;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
@@ -209,10 +209,10 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_Root getRequirement_root() {
+	public Requirement_Diagram getRequirement_root() {
 		if (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT)
 			return null;
-		return (Requirement_Root) eInternalContainer();
+		return (Requirement_Diagram) eInternalContainer();
 	}
 
 	/**
@@ -220,7 +220,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRequirement_root(Requirement_Root newRequirement_root, NotificationChain msgs) {
+	public NotificationChain basicSetRequirement_root(Requirement_Diagram newRequirement_root, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newRequirement_root, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT,
 				msgs);
 		return msgs;
@@ -231,7 +231,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequirement_root(Requirement_Root newRequirement_root) {
+	public void setRequirement_root(Requirement_Diagram newRequirement_root) {
 		if (newRequirement_root != eInternalContainer()
 				|| (eContainerFeatureID() != RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT
 						&& newRequirement_root != null)) {
@@ -242,7 +242,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRequirement_root != null)
 				msgs = ((InternalEObject) newRequirement_root).eInverseAdd(this,
-						RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT, Requirement_Root.class, msgs);
+						RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT, Requirement_Diagram.class, msgs);
 			msgs = basicSetRequirement_root(newRequirement_root, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -265,7 +265,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetRequirement_root((Requirement_Root) otherEnd, msgs);
+			return basicSetRequirement_root((Requirement_Diagram) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -295,8 +295,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_ROOT__DESIGNELEMENT,
-					Requirement_Root.class, msgs);
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT,
+					Requirement_Diagram.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -346,7 +346,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			getTracefrom().addAll((Collection<? extends Requirements>) newValue);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			setRequirement_root((Requirement_Root) newValue);
+			setRequirement_root((Requirement_Diagram) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,7 +373,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			getTracefrom().clear();
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT:
-			setRequirement_root((Requirement_Root) null);
+			setRequirement_root((Requirement_Diagram) null);
 			return;
 		}
 		super.eUnset(featureID);

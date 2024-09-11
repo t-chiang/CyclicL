@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rmdl:RMDL_Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <feature_model name="Adaptive Cruise Control">
+    <featureentity xsi:type="rmdl:Element" name="Steering Wheel" composes="//@feature_model.0/@featureentity.1" optional="//@feature_model.0/@featureentity.4">
+      <testcase ID="1" description="Test tactility of buttons" requirements="//@feature_model.0/@featureentity.0/@requirements.0"/>
+      <testcase ID="2" requirements="//@feature_model.0/@featureentity.0/@requirements.4"/>
+      <testcase ID="3" requirements="//@feature_model.0/@featureentity.0/@requirements.1"/>
+      <testcase ID="4" description="Test that heating element can be turned on/off" hasPassed="true" requirements="//@feature_model.0/@featureentity.0/@requirements.2"/>
+      <testcase ID="5" requirements="//@feature_model.0/@featureentity.0/@requirements.3"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Button Quality" ID="1" description="Interface buttons shall have tactile feel to them" review="//@feature_model.0/@featureentity.0/@review.0" testcase="//@feature_model.0/@featureentity.0/@testcase.0" traceto="//@feature_model.0/@featureentity.0/@designelement.2" specification="Given{&#xD;&#xA;&#x9;Precond none:&quot;N/A&quot;&#xD;&#xA;}&#xD;&#xA;When{&#xD;&#xA;&#x9;Event ButtonPress: &quot;User presses a button.&quot;&#xD;&#xA;}&#xD;&#xA;Then{&#xD;&#xA;&#x9;Postcond Tactility: &quot;User should feel a bump that requires 45g of force to complete depression.&quot;&#xD;"/>
+      <requirements xsi:type="rmdl:Functional" name="Button Functions" ID="2" description="Buttons shall allow user to interact with infotainment system of vehicle" review="//@feature_model.0/@featureentity.0/@review.2" testcase="//@feature_model.0/@featureentity.0/@testcase.2" traceto="//@feature_model.0/@featureentity.0/@designelement.1 //@feature_model.0/@featureentity.0/@designelement.2"/>
+      <requirements xsi:type="rmdl:Functional" name="Wheel Heating Off" ID="3" description="User shall be able to turn wheel heating on" review="//@feature_model.0/@featureentity.0/@review.2" testcase="//@feature_model.0/@featureentity.0/@testcase.3" traceto="//@feature_model.0/@featureentity.0/@designelement.0" specification="Given{&#xD;&#xA;&#x9;Precond FeatureExists: &quot;Steering wheel has heating feature.&quot;&#xD;&#xA;&#x9;Precond CarIsOn: &quot;Vehicle is on.&quot;&#xD;&#xA;}&#xD;&#xA;When{&#xD;&#xA;&#x9;Event UserTurnsOnHeating: &quot;User interacts with heating interface to turn on/off wheel heating.&quot;&#xD;&#xA;}&#xD;&#xA;Then{&#xD;&#xA;&#x9;Postcond StateChange: &quot;Wheel heating boolean changes state to on or off depending on current state.&quot;&#xD;&#xA;}"/>
+      <requirements xsi:type="rmdl:Safety" name="Wheel Heating Temperature" ID="4" description="Wheel heating shall remain within acceptable temperature for human skin" review="//@feature_model.0/@featureentity.0/@review.1" testcase="//@feature_model.0/@featureentity.0/@testcase.4" traceto="//@feature_model.0/@featureentity.0/@designelement.0"/>
+      <requirements xsi:type="rmdl:Constraint" name="Button Latency" ID="5" description="Button shall be easily swappable in the event of fading or wear and tear" review="//@feature_model.0/@featureentity.0/@review.0" testcase="//@feature_model.0/@featureentity.0/@testcase.1" traceto="//@feature_model.0/@featureentity.0/@designelement.1 //@feature_model.0/@featureentity.0/@designelement.2"/>
+      <requirements xsi:type="rmdl:Functional" name="Wheel Heating Off" ID="10" description="User shall be able to turn wheel heating off" traceto="//@feature_model.0/@featureentity.0/@designelement.0"/>
+      <review reviewer="Reviewer1" requirements="//@feature_model.0/@featureentity.0/@requirements.0 //@feature_model.0/@featureentity.0/@requirements.4"/>
+      <review isApproved="true" reviewer="Reviewer2" requirements="//@feature_model.0/@featureentity.0/@requirements.3"/>
+      <review reviewer="Reviewer3" requirements="//@feature_model.0/@featureentity.0/@requirements.2 //@feature_model.0/@featureentity.0/@requirements.1"/>
+      <designelement name="Wheel Heating" tracefrom="//@feature_model.0/@featureentity.0/@requirements.2 //@feature_model.0/@featureentity.0/@requirements.3 //@feature_model.0/@featureentity.0/@requirements.5"/>
+      <designelement name="Infotainment Control" isSoftware="true" tracefrom="//@feature_model.0/@featureentity.0/@requirements.1 //@feature_model.0/@featureentity.0/@requirements.4"/>
+      <designelement name="Infotainment Interface" isHardware="true" tracefrom="//@feature_model.0/@featureentity.0/@requirements.0 //@feature_model.0/@featureentity.0/@requirements.1 //@feature_model.0/@featureentity.0/@requirements.4"/>
+    </featureentity>
+    <featureentity xsi:type="rmdl:Root" name="Adaptive Cruise Control" mandatory="//@feature_model.0/@featureentity.0 //@feature_model.0/@featureentity.2 //@feature_model.0/@featureentity.3 //@feature_model.0/@featureentity.5"/>
+    <featureentity xsi:type="rmdl:Element" name="On/Off trigger" composes="//@feature_model.0/@featureentity.1"/>
+    <featureentity xsi:type="rmdl:Element" name="Manual Override" composes="//@feature_model.0/@featureentity.1"/>
+    <featureentity xsi:type="rmdl:Element" name="Wheel Heating" optionof="//@feature_model.0/@featureentity.0"/>
+    <featureentity xsi:type="rmdl:Element" name="Automatic Braking" composes="//@feature_model.0/@featureentity.1" alternative="//@feature_model.0/@featureentity.6 //@feature_model.0/@featureentity.7"/>
+    <featureentity xsi:type="rmdl:Element" name="Lidar and Sonar Sensors" alternativeof="//@feature_model.0/@featureentity.5">
+      <testcase ID="6" hasPassed="true" requirements="//@feature_model.0/@featureentity.6/@requirements.0"/>
+      <testcase ID="7" requirements="//@feature_model.0/@featureentity.6/@requirements.1"/>
+      <testcase ID="8" requirements="//@feature_model.0/@featureentity.6/@requirements.2"/>
+      <testcase ID="9" hasPassed="true" requirements="//@feature_model.0/@featureentity.6/@requirements.3"/>
+      <requirements xsi:type="rmdl:Functional" name="FunctionalReq1" ID="6" review="//@feature_model.0/@featureentity.6/@review.0" testcase="//@feature_model.0/@featureentity.6/@testcase.0" traceto="//@feature_model.0/@featureentity.6/@designelement.1"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Qualitative1" ID="7" review="//@feature_model.0/@featureentity.6/@review.0" testcase="//@feature_model.0/@featureentity.6/@testcase.1" traceto="//@feature_model.0/@featureentity.6/@designelement.1 //@feature_model.0/@featureentity.6/@designelement.2"/>
+      <requirements xsi:type="rmdl:Constraint" name="Constraint1" ID="8" review="//@feature_model.0/@featureentity.6/@review.0" testcase="//@feature_model.0/@featureentity.6/@testcase.2" traceto="//@feature_model.0/@featureentity.6/@designelement.2 //@feature_model.0/@featureentity.6/@designelement.0"/>
+      <requirements xsi:type="rmdl:Safety" name="Safety1" ID="9" review="//@feature_model.0/@featureentity.6/@review.1" testcase="//@feature_model.0/@featureentity.6/@testcase.3" traceto="//@feature_model.0/@featureentity.6/@designelement.0"/>
+      <review reviewer="Reviewer1" requirements="//@feature_model.0/@featureentity.6/@requirements.1 //@feature_model.0/@featureentity.6/@requirements.2 //@feature_model.0/@featureentity.6/@requirements.0"/>
+      <review isApproved="true" reviewer="Reviewer2" requirements="//@feature_model.0/@featureentity.6/@requirements.3"/>
+      <designelement name="DesignElement1" tracefrom="//@feature_model.0/@featureentity.6/@requirements.2 //@feature_model.0/@featureentity.6/@requirements.3"/>
+      <designelement name="DesignElement2" tracefrom="//@feature_model.0/@featureentity.6/@requirements.0 //@feature_model.0/@featureentity.6/@requirements.1"/>
+      <designelement name="DesignElement3" tracefrom="//@feature_model.0/@featureentity.6/@requirements.1 //@feature_model.0/@featureentity.6/@requirements.2"/>
+    </featureentity>
+    <featureentity xsi:type="rmdl:Element" name="Radar and Camera Sensors" alternativeof="//@feature_model.0/@featureentity.5"/>
+  </feature_model>
+</rmdl:RMDL_Project>
