@@ -29,12 +29,12 @@
     <genClasses ecoreClass="rmdl.ecore#//Functional"/>
     <genClasses ecoreClass="rmdl.ecore#//Qualitative"/>
     <genClasses ecoreClass="rmdl.ecore#//Constraint"/>
-    <genClasses ecoreClass="rmdl.ecore#//Requirement_Diagram">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/testcase"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/requirements"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/review"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Diagram/designelement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement_Diagram/name"/>
+    <genClasses ecoreClass="rmdl.ecore#//Requirement_Canvas">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Canvas/testcase"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Canvas/requirements"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Canvas/review"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirement_Canvas/designelement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirement_Canvas/name"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Safety"/>
     <genClasses ecoreClass="rmdl.ecore#//DesignElement">
