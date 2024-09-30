@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getReviewer <em>Reviewer</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_canvas <em>Requirement canvas</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getComments <em>Comments</em>}</li>
  * </ul>
@@ -72,28 +72,28 @@ public interface Review extends EObject {
 	void setReviewer(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getReview <em>Review</em>}'.
+	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getReview <em>Review</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Diagram)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getReview
+	 * @return the value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #setRequirement_canvas(Requirement_Canvas)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_Requirement_canvas()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getReview
 	 * @model opposite="review" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Diagram getRequirement_root();
+	Requirement_Canvas getRequirement_canvas();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_root <em>Requirement root</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_canvas <em>Requirement canvas</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement root</em>' container reference.
-	 * @see #getRequirement_root()
+	 * @param value the new value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #getRequirement_canvas()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Diagram value);
+	void setRequirement_canvas(Requirement_Canvas value);
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.

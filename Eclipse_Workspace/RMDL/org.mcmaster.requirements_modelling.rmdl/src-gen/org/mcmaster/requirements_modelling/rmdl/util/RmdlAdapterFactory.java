@@ -86,8 +86,8 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRequirement_Diagram(Requirement_Diagram object) {
-			return createRequirement_DiagramAdapter();
+		public Adapter caseRequirement_Canvas(Requirement_Canvas object) {
+			return createRequirement_CanvasAdapter();
 		}
 
 		@Override
@@ -211,16 +211,16 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram <em>Requirement Diagram</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas <em>Requirement Canvas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas
 	 * @generated
 	 */
-	public Adapter createRequirement_DiagramAdapter() {
+	public Adapter createRequirement_CanvasAdapter() {
 		return null;
 	}
 

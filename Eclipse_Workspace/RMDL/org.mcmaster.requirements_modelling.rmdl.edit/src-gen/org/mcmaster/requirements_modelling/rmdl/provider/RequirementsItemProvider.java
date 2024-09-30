@@ -56,12 +56,10 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addNamePropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addRequirement_rootPropertyDescriptor(object);
+			addRequirement_canvasPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 			addTestcasePropertyDescriptor(object);
 			addTracetoPropertyDescriptor(object);
-			addPartofPropertyDescriptor(object);
-			addDecomposestoPropertyDescriptor(object);
 			addSpecificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -116,18 +114,18 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirement root feature.
+	 * This adds a property descriptor for the Requirement canvas feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequirement_rootPropertyDescriptor(Object object) {
+	protected void addRequirement_canvasPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_requirement_root_feature",
+						getResourceLocator(), getString("_UI_Requirements_requirement_canvas_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_requirement_canvas_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__REQUIREMENT_ROOT, true, false, true, null, null, null));
+						RmdlPackage.Literals.REQUIREMENTS__REQUIREMENT_CANVAS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -173,36 +171,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Partof feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPartofPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_partof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_partof_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__PARTOF, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Decomposesto feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDecomposestoPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_decomposesto_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_decomposesto_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__DECOMPOSESTO, true, false, true, null, null, null));
 	}
 
 	/**

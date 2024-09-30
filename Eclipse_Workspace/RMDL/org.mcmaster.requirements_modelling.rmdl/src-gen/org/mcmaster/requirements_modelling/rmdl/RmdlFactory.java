@@ -49,13 +49,13 @@ public interface RmdlFactory extends EFactory {
 	Constraint createConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Requirement Diagram</em>'.
+	 * Returns a new object of class '<em>Requirement Canvas</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Requirement Diagram</em>'.
+	 * @return a new object of class '<em>Requirement Canvas</em>'.
 	 * @generated
 	 */
-	Requirement_Diagram createRequirement_Diagram();
+	Requirement_Canvas createRequirement_Canvas();
 
 	/**
 	 * Returns a new object of class '<em>Safety</em>'.

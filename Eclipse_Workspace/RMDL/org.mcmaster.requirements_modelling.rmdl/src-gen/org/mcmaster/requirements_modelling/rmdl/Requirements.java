@@ -18,12 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas <em>Requirement canvas</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof <em>Partof</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto <em>Decomposesto</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}</li>
  * </ul>
  *
@@ -99,28 +97,28 @@ public interface Requirements extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getRequirements <em>Requirements</em>}'.
+	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Diagram)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getRequirements
+	 * @return the value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #setRequirement_canvas(Requirement_Canvas)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Requirement_canvas()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirements
 	 * @model opposite="requirements" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Diagram getRequirement_root();
+	Requirement_Canvas getRequirement_canvas();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_root <em>Requirement root</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas <em>Requirement canvas</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement root</em>' container reference.
-	 * @see #getRequirement_root()
+	 * @param value the new value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #getRequirement_canvas()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Diagram value);
+	void setRequirement_canvas(Requirement_Canvas value);
 
 	/**
 	 * Returns the value of the '<em><b>Review</b></em>' reference list.
@@ -163,34 +161,6 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<DesignElement> getTraceto();
-
-	/**
-	 * Returns the value of the '<em><b>Partof</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto <em>Decomposesto</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Partof</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Partof()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getDecomposesto
-	 * @model opposite="decomposesto"
-	 * @generated
-	 */
-	EList<Requirements> getPartof();
-
-	/**
-	 * Returns the value of the '<em><b>Decomposesto</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof <em>Partof</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Decomposesto</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Decomposesto()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getPartof
-	 * @model opposite="partof"
-	 * @generated
-	 */
-	EList<Requirements> getDecomposesto();
 
 	/**
 	 * Returns the value of the '<em><b>Specification</b></em>' attribute.

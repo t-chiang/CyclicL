@@ -10,18 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Description;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Event;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Given;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Model;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Postcondition;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Precondition;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Steps;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Then;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.When;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,14 +91,9 @@ public class RghAdapterFactory extends AdapterFactoryImpl
         return createContextAdapter();
       }
       @Override
-      public Adapter caseModule(org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module object)
+      public Adapter caseFeature(Feature object)
       {
-        return createModuleAdapter();
-      }
-      @Override
-      public Adapter caseOperation(Operation object)
-      {
-        return createOperationAdapter();
+        return createFeatureAdapter();
       }
       @Override
       public Adapter caseGiven(Given object)
@@ -214,31 +198,16 @@ public class RghAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module <em>Module</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Feature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Feature
    * @generated
    */
-  public Adapter createModuleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation
-   * @generated
-   */
-  public Adapter createOperationAdapter()
+  public Adapter createFeatureAdapter()
   {
     return null;
   }

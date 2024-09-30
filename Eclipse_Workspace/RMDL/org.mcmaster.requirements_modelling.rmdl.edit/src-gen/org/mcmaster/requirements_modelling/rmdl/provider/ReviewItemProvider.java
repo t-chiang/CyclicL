@@ -55,7 +55,7 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addIsApprovedPropertyDescriptor(object);
 			addReviewerPropertyDescriptor(object);
-			addRequirement_rootPropertyDescriptor(object);
+			addRequirement_canvasPropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
 		}
@@ -95,18 +95,18 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirement root feature.
+	 * This adds a property descriptor for the Requirement canvas feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequirement_rootPropertyDescriptor(Object object) {
+	protected void addRequirement_canvasPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Review_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirement_root_feature",
+						getResourceLocator(), getString("_UI_Review_requirement_canvas_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirement_canvas_feature",
 								"_UI_Review_type"),
-						RmdlPackage.Literals.REVIEW__REQUIREMENT_ROOT, true, false, true, null, null, null));
+						RmdlPackage.Literals.REVIEW__REQUIREMENT_CANVAS, true, false, true, null, null, null));
 	}
 
 	/**

@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface FeatureEntity extends Requirement_Diagram {
+public interface FeatureEntity extends Requirement_Canvas {
 	/**
 	 * Returns the value of the '<em><b>Composes</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getMandatory <em>Mandatory</em>}'.

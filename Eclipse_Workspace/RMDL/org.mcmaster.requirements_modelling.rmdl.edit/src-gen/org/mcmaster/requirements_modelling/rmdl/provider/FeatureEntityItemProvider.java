@@ -20,7 +20,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureEntityItemProvider extends Requirement_DiagramItemProvider {
+public class FeatureEntityItemProvider extends Requirement_CanvasItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

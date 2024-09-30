@@ -99,9 +99,9 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case RmdlPackage.REQUIREMENT_DIAGRAM: {
-			Requirement_Diagram requirement_Diagram = (Requirement_Diagram) theEObject;
-			T result = caseRequirement_Diagram(requirement_Diagram);
+		case RmdlPackage.REQUIREMENT_CANVAS: {
+			Requirement_Canvas requirement_Canvas = (Requirement_Canvas) theEObject;
+			T result = caseRequirement_Canvas(requirement_Canvas);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -142,7 +142,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseFeatureEntity(element);
 			if (result == null)
-				result = caseRequirement_Diagram(element);
+				result = caseRequirement_Canvas(element);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -165,7 +165,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 			FeatureEntity featureEntity = (FeatureEntity) theEObject;
 			T result = caseFeatureEntity(featureEntity);
 			if (result == null)
-				result = caseRequirement_Diagram(featureEntity);
+				result = caseRequirement_Canvas(featureEntity);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -176,7 +176,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseFeatureEntity(root);
 			if (result == null)
-				result = caseRequirement_Diagram(root);
+				result = caseRequirement_Canvas(root);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -247,17 +247,17 @@ public class RmdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Requirement Diagram</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Requirement Canvas</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Requirement Diagram</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Requirement Canvas</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRequirement_Diagram(Requirement_Diagram object) {
+	public T caseRequirement_Canvas(Requirement_Canvas object) {
 		return null;
 	}
 

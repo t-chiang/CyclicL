@@ -71,7 +71,6 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL);
-			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM);
 		}
 		return childrenFeatures;
 	}
@@ -134,7 +133,6 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 
 		switch (notification.getFeatureID(RMDL_Project.class)) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
-		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_DIAGRAM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -154,15 +152,6 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
 				RmdlFactory.eINSTANCE.createFeature_Model()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createRequirement_Diagram()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createElement()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createRoot()));
 	}
 
 	/**

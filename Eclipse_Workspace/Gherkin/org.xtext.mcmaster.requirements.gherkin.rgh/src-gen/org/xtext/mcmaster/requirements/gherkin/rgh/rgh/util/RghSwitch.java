@@ -8,18 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Description;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Event;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Given;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Model;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Postcondition;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Precondition;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Steps;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Then;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.When;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,21 +95,10 @@ public class RghSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RghPackage.MODULE:
+      case RghPackage.FEATURE:
       {
-        org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module module = (org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module)theEObject;
-        T result = caseModule(module);
-        if (result == null) result = caseContext(module);
-        if (result == null) result = caseSteps(module);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RghPackage.OPERATION:
-      {
-        Operation operation = (Operation)theEObject;
-        T result = caseOperation(operation);
-        if (result == null) result = caseContext(operation);
-        if (result == null) result = caseSteps(operation);
+        Feature feature = (Feature)theEObject;
+        T result = caseFeature(feature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -229,33 +207,17 @@ public class RghSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModule(org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOperation(Operation object)
+  public T caseFeature(Feature object)
   {
     return null;
   }

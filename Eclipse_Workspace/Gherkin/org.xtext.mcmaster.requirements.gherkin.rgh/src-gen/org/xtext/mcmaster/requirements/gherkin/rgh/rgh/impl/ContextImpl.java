@@ -3,13 +3,20 @@
  */
 package org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Feature;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
 
 /**
@@ -20,7 +27,7 @@ import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ContextImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.impl.ContextImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +35,14 @@ import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
 public class ContextImpl extends StepsImpl implements Context
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getFeature() <em>Feature</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getFeature()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<Feature> feature;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +71,13 @@ public class ContextImpl extends StepsImpl implements Context
    * @generated
    */
   @Override
-  public String getName()
+  public EList<Feature> getFeature()
   {
-    return name;
+    if (feature == null)
+    {
+      feature = new EObjectContainmentEList<Feature>(Feature.class, this, RghPackage.CONTEXT__FEATURE);
+    }
+    return feature;
   }
 
   /**
@@ -85,12 +86,14 @@ public class ContextImpl extends StepsImpl implements Context
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RghPackage.CONTEXT__NAME, oldName, name));
+    switch (featureID)
+    {
+      case RghPackage.CONTEXT__FEATURE:
+        return ((InternalEList<?>)getFeature()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -103,8 +106,8 @@ public class ContextImpl extends StepsImpl implements Context
   {
     switch (featureID)
     {
-      case RghPackage.CONTEXT__NAME:
-        return getName();
+      case RghPackage.CONTEXT__FEATURE:
+        return getFeature();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -114,13 +117,15 @@ public class ContextImpl extends StepsImpl implements Context
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RghPackage.CONTEXT__NAME:
-        setName((String)newValue);
+      case RghPackage.CONTEXT__FEATURE:
+        getFeature().clear();
+        getFeature().addAll((Collection<? extends Feature>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +141,8 @@ public class ContextImpl extends StepsImpl implements Context
   {
     switch (featureID)
     {
-      case RghPackage.CONTEXT__NAME:
-        setName(NAME_EDEFAULT);
+      case RghPackage.CONTEXT__FEATURE:
+        getFeature().clear();
         return;
     }
     super.eUnset(featureID);
@@ -153,27 +158,10 @@ public class ContextImpl extends StepsImpl implements Context
   {
     switch (featureID)
     {
-      case RghPackage.CONTEXT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case RghPackage.CONTEXT__FEATURE:
+        return feature != null && !feature.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ContextImpl

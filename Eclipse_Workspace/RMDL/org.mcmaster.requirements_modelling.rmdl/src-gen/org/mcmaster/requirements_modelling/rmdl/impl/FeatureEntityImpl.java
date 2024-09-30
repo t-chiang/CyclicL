@@ -38,7 +38,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *
  * @generated
  */
-public abstract class FeatureEntityImpl extends Requirement_DiagramImpl implements FeatureEntity {
+public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implements FeatureEntity {
 	/**
 	 * The cached value of the '{@link #getComposes() <em>Composes</em>}' reference.
 	 * <!-- begin-user-doc -->

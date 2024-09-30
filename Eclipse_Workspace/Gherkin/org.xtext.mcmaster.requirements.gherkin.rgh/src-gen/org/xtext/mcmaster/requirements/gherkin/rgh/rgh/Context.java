@@ -3,6 +3,7 @@
  */
 package org.xtext.mcmaster.requirements.gherkin.rgh.rgh;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +14,7 @@ package org.xtext.mcmaster.requirements.gherkin.rgh.rgh;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage#getContext()
@@ -23,25 +24,15 @@ package org.xtext.mcmaster.requirements.gherkin.rgh.rgh;
 public interface Context extends Steps
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Feature</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Feature}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage#getContext_Name()
-   * @model
+   * @return the value of the '<em>Feature</em>' containment reference list.
+   * @see org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage#getContext_Feature()
+   * @model containment="true"
    * @generated
    */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  EList<Feature> getFeature();
 
 } // Context

@@ -57,7 +57,7 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			addIsHardwarePropertyDescriptor(object);
 			addIsSoftwarePropertyDescriptor(object);
 			addTracefromPropertyDescriptor(object);
-			addRequirement_rootPropertyDescriptor(object);
+			addRequirement_canvasPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,18 +126,18 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirement root feature.
+	 * This adds a property descriptor for the Requirement canvas feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequirement_rootPropertyDescriptor(Object object) {
+	protected void addRequirement_canvasPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_requirement_root_feature",
+						getResourceLocator(), getString("_UI_DesignElement_requirement_canvas_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_requirement_canvas_feature",
 								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__REQUIREMENT_ROOT, true, false, true, null, null, null));
+						RmdlPackage.Literals.DESIGN_ELEMENT__REQUIREMENT_CANVAS, true, false, true, null, null, null));
 	}
 
 	/**

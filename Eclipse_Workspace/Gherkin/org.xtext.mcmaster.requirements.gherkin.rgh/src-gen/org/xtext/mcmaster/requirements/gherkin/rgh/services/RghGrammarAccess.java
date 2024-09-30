@@ -28,6 +28,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cRequirementAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cRequirementStepsParserRuleCall_0 = (RuleCall)cRequirementAssignment.eContents().get(0);
 		
+		////import "http://www.example.org/rmdl" as rmdl
 		//Model:
 		//    (requirement+=Steps)*;
 		@Override public ParserRule getRule() { return rule; }
@@ -67,23 +68,43 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	public class ContextElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Context");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cModuleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cOperationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cContextAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCheckKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFeatureAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFeatureFeatureParserRuleCall_3_0 = (RuleCall)cFeatureAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cExistsKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Context:
-		//    Module | Operation
+		//    {Context} 'Check' '{' (feature+=Feature)* '}' 'exists'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Module | Operation
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//{Context} 'Check' '{' (feature+=Feature)* '}' 'exists'
+		public Group getGroup() { return cGroup; }
 		
-		//Module
-		public RuleCall getModuleParserRuleCall_0() { return cModuleParserRuleCall_0; }
+		//{Context}
+		public Action getContextAction_0() { return cContextAction_0; }
 		
-		//Operation
-		public RuleCall getOperationParserRuleCall_1() { return cOperationParserRuleCall_1; }
+		//'Check'
+		public Keyword getCheckKeyword_1() { return cCheckKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(feature+=Feature)*
+		public Assignment getFeatureAssignment_3() { return cFeatureAssignment_3; }
+		
+		//Feature
+		public RuleCall getFeatureFeatureParserRuleCall_3_0() { return cFeatureFeatureParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		
+		//'exists'
+		public Keyword getExistsKeyword_5() { return cExistsKeyword_5; }
 	}
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.QualifiedName");
@@ -113,53 +134,29 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
-	public class ModuleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Module");
+	public class FeatureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cModuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameDescriptionParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//Module:
-		//    'Module' name=ID
+		//Feature:
+		//    'Feature' name=Description
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Module' name=ID
+		//'Feature' name=Description
 		public Group getGroup() { return cGroup; }
 		
-		//'Module'
-		public Keyword getModuleKeyword_0() { return cModuleKeyword_0; }
+		//'Feature'
+		public Keyword getFeatureKeyword_0() { return cFeatureKeyword_0; }
 		
-		//name=ID
+		//name=Description
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class OperationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Operation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOperationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//Operation:
-		//    'Operation' name=QualifiedName
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Operation' name=QualifiedName
-		public Group getGroup() { return cGroup; }
-		
-		//'Operation'
-		public Keyword getOperationKeyword_0() { return cOperationKeyword_0; }
-		
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		//Description
+		public RuleCall getNameDescriptionParserRuleCall_1_0() { return cNameDescriptionParserRuleCall_1_0; }
 	}
 	public class GivenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.mcmaster.requirements.gherkin.rgh.Rgh.Given");
@@ -276,8 +273,6 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDescriptionDescriptionParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
 		
-		////And:
-		////    Then | When name = ID'{' (description = Description) '}';
 		//Precondition:
 		//    'Precond' name = ID ':' description = Description
 		//;
@@ -408,8 +403,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final StepsElements pSteps;
 	private final ContextElements pContext;
 	private final QualifiedNameElements pQualifiedName;
-	private final ModuleElements pModule;
-	private final OperationElements pOperation;
+	private final FeatureElements pFeature;
 	private final GivenElements pGiven;
 	private final WhenElements pWhen;
 	private final ThenElements pThen;
@@ -432,8 +426,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pSteps = new StepsElements();
 		this.pContext = new ContextElements();
 		this.pQualifiedName = new QualifiedNameElements();
-		this.pModule = new ModuleElements();
-		this.pOperation = new OperationElements();
+		this.pFeature = new FeatureElements();
 		this.pGiven = new GivenElements();
 		this.pWhen = new WhenElements();
 		this.pThen = new ThenElements();
@@ -471,6 +464,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 
 	
+	////import "http://www.example.org/rmdl" as rmdl
 	//Model:
 	//    (requirement+=Steps)*;
 	public ModelElements getModelAccess() {
@@ -492,7 +486,7 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Context:
-	//    Module | Operation
+	//    {Context} 'Check' '{' (feature+=Feature)* '}' 'exists'
 	//;
 	public ContextElements getContextAccess() {
 		return pContext;
@@ -513,26 +507,15 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getQualifiedNameAccess().getRule();
 	}
 	
-	//Module:
-	//    'Module' name=ID
+	//Feature:
+	//    'Feature' name=Description
 	//;
-	public ModuleElements getModuleAccess() {
-		return pModule;
+	public FeatureElements getFeatureAccess() {
+		return pFeature;
 	}
 	
-	public ParserRule getModuleRule() {
-		return getModuleAccess().getRule();
-	}
-	
-	//Operation:
-	//    'Operation' name=QualifiedName
-	//;
-	public OperationElements getOperationAccess() {
-		return pOperation;
-	}
-	
-	public ParserRule getOperationRule() {
-		return getOperationAccess().getRule();
+	public ParserRule getFeatureRule() {
+		return getFeatureAccess().getRule();
 	}
 	
 	//Given:
@@ -565,8 +548,6 @@ public class RghGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getThenAccess().getRule();
 	}
 	
-	////And:
-	////    Then | When name = ID'{' (description = Description) '}';
 	//Precondition:
 	//    'Precond' name = ID ':' description = Description
 	//;

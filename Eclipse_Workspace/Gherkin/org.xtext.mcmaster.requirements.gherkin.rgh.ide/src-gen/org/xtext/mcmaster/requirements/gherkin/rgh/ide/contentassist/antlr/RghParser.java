@@ -32,11 +32,10 @@ public class RghParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RghGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStepsAccess().getAlternatives(), "rule__Steps__Alternatives");
-			builder.put(grammarAccess.getContextAccess().getAlternatives(), "rule__Context__Alternatives");
+			builder.put(grammarAccess.getContextAccess().getGroup(), "rule__Context__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-			builder.put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
-			builder.put(grammarAccess.getOperationAccess().getGroup(), "rule__Operation__Group__0");
+			builder.put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 			builder.put(grammarAccess.getGivenAccess().getGroup(), "rule__Given__Group__0");
 			builder.put(grammarAccess.getWhenAccess().getGroup(), "rule__When__Group__0");
 			builder.put(grammarAccess.getThenAccess().getGroup(), "rule__Then__Group__0");
@@ -44,8 +43,8 @@ public class RghParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEventAccess().getGroup(), "rule__Event__Group__0");
 			builder.put(grammarAccess.getPostconditionAccess().getGroup(), "rule__Postcondition__Group__0");
 			builder.put(grammarAccess.getModelAccess().getRequirementAssignment(), "rule__Model__RequirementAssignment");
-			builder.put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
-			builder.put(grammarAccess.getOperationAccess().getNameAssignment_1(), "rule__Operation__NameAssignment_1");
+			builder.put(grammarAccess.getContextAccess().getFeatureAssignment_3(), "rule__Context__FeatureAssignment_3");
+			builder.put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
 			builder.put(grammarAccess.getGivenAccess().getPreconditionsAssignment_3(), "rule__Given__PreconditionsAssignment_3");
 			builder.put(grammarAccess.getWhenAccess().getEventsAssignment_3(), "rule__When__EventsAssignment_3");
 			builder.put(grammarAccess.getThenAccess().getPostconditionsAssignment_3(), "rule__Then__PostconditionsAssignment_3");

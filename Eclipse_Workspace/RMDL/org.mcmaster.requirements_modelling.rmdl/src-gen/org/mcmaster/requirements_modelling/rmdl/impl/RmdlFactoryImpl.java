@@ -61,8 +61,8 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createQualitative();
 		case RmdlPackage.CONSTRAINT:
 			return createConstraint();
-		case RmdlPackage.REQUIREMENT_DIAGRAM:
-			return createRequirement_Diagram();
+		case RmdlPackage.REQUIREMENT_CANVAS:
+			return createRequirement_Canvas();
 		case RmdlPackage.SAFETY:
 			return createSafety();
 		case RmdlPackage.DESIGN_ELEMENT:
@@ -149,9 +149,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_Diagram createRequirement_Diagram() {
-		Requirement_DiagramImpl requirement_Diagram = new Requirement_DiagramImpl();
-		return requirement_Diagram;
+	public Requirement_Canvas createRequirement_Canvas() {
+		Requirement_CanvasImpl requirement_Canvas = new Requirement_CanvasImpl();
+		return requirement_Canvas;
 	}
 
 	/**

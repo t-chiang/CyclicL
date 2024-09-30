@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsHardware <em>Is Hardware</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware <em>Is Software</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_canvas <em>Requirement canvas</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement()
@@ -109,27 +109,27 @@ public interface DesignElement extends EObject {
 	EList<Requirements> getTracefrom();
 
 	/**
-	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getDesignelement <em>Designelement</em>}'.
+	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getDesignelement <em>Designelement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Diagram)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getDesignelement
+	 * @return the value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #setRequirement_canvas(Requirement_Canvas)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Requirement_canvas()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getDesignelement
 	 * @model opposite="designelement" transient="false"
 	 * @generated
 	 */
-	Requirement_Diagram getRequirement_root();
+	Requirement_Canvas getRequirement_canvas();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_root <em>Requirement root</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_canvas <em>Requirement canvas</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement root</em>' container reference.
-	 * @see #getRequirement_root()
+	 * @param value the new value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #getRequirement_canvas()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Diagram value);
+	void setRequirement_canvas(Requirement_Canvas value);
 
 } // DesignElement
