@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getDesignelement <em>Designelement</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirementcontainer <em>Requirementcontainer</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas()
@@ -43,17 +44,17 @@ public interface Requirement_Canvas extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas <em>Requirement canvas</em>}'.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.RequirementType}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirement_canvas <em>Requirement canvas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirements</em>' containment reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_Requirements()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirement_canvas
 	 * @model opposite="requirement_canvas" containment="true"
 	 * @generated
 	 */
-	EList<Requirements> getRequirements();
+	EList<RequirementType> getRequirements();
 
 	/**
 	 * Returns the value of the '<em><b>Review</b></em>' containment reference list.
@@ -104,5 +105,19 @@ public interface Requirement_Canvas extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirementcontainer</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getRequirement_canvas <em>Requirement canvas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirementcontainer</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_Requirementcontainer()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getRequirement_canvas
+	 * @model opposite="requirement_canvas" containment="true"
+	 * @generated
+	 */
+	EList<RequirementContainer> getRequirementcontainer();
 
 } // Requirement_Canvas

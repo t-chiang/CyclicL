@@ -18,11 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas <em>Requirement canvas</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -97,30 +95,6 @@ public interface Requirements extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirements <em>Requirements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement canvas</em>' container reference.
-	 * @see #setRequirement_canvas(Requirement_Canvas)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Requirement_canvas()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirements
-	 * @model opposite="requirements" required="true" transient="false"
-	 * @generated
-	 */
-	Requirement_Canvas getRequirement_canvas();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas <em>Requirement canvas</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement canvas</em>' container reference.
-	 * @see #getRequirement_canvas()
-	 * @generated
-	 */
-	void setRequirement_canvas(Requirement_Canvas value);
-
-	/**
 	 * Returns the value of the '<em><b>Review</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Review}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}'.
@@ -161,27 +135,5 @@ public interface Requirements extends EObject {
 	 * @generated
 	 */
 	EList<DesignElement> getTraceto();
-
-	/**
-	 * Returns the value of the '<em><b>Specification</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specification</em>' attribute.
-	 * @see #setSpecification(String)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Specification()
-	 * @model
-	 * @generated
-	 */
-	String getSpecification();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Specification</em>' attribute.
-	 * @see #getSpecification()
-	 * @generated
-	 */
-	void setSpecification(String value);
 
 } // Requirements

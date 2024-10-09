@@ -18,15 +18,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/ID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/requirement_canvas"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/review"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/testcase"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/traceto"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Requirements/specification"
-          suppressedGetVisibility="false" suppressedSetVisibility="false"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/requirementcontainer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/alternative"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Requirements/alternativeopposite"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Functional"/>
     <genClasses ecoreClass="rmdl.ecore#//Qualitative"/>
@@ -80,11 +74,16 @@
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Root"/>
     <genClasses ecoreClass="rmdl.ecore#//RequirementContainer">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementContainer/ownedrequirements"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementContainer/requirement_canvas"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementContainer/requirements"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//RequirementContainer/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//RequirementContainer/ID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//RequirementContainer/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rmdl.ecore#//RequirementType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//RequirementType/specification"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/requirementcontainer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/replacedby"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//RequirementType/startingReq"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/requirement_canvas"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/dependson"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

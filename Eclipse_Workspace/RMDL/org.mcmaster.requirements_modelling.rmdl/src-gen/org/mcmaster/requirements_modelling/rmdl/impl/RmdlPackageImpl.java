@@ -17,6 +17,8 @@ import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.RMDL_Project;
+import org.mcmaster.requirements_modelling.rmdl.RequirementContainer;
+import org.mcmaster.requirements_modelling.rmdl.RequirementType;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.Review;
@@ -137,6 +139,20 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass requirementContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requirementTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum testTypeEEnum = null;
 
 	/**
@@ -244,7 +260,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequirements_Requirement_canvas() {
+	public EReference getRequirements_Review() {
 		return (EReference) requirementsEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -253,7 +269,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequirements_Review() {
+	public EReference getRequirements_Testcase() {
 		return (EReference) requirementsEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -262,26 +278,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRequirements_Testcase() {
-		return (EReference) requirementsEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRequirements_Traceto() {
-		return (EReference) requirementsEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRequirements_Specification() {
-		return (EAttribute) requirementsEClass.getEStructuralFeatures().get(7);
+		return (EReference) requirementsEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -363,6 +361,15 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 */
 	public EAttribute getRequirement_Canvas_Name() {
 		return (EAttribute) requirement_CanvasEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirement_Canvas_Requirementcontainer() {
+		return (EReference) requirement_CanvasEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -676,6 +683,96 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRequirementContainer() {
+		return requirementContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirementContainer_Ownedrequirements() {
+		return (EReference) requirementContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirementContainer_Requirement_canvas() {
+		return (EReference) requirementContainerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRequirementType() {
+		return requirementTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequirementType_Specification() {
+		return (EAttribute) requirementTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirementType_Requirementcontainer() {
+		return (EReference) requirementTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirementType_Replacedby() {
+		return (EReference) requirementTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequirementType_StartingReq() {
+		return (EAttribute) requirementTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirementType_Requirement_canvas() {
+		return (EReference) requirementTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirementType_Dependson() {
+		return (EReference) requirementTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTestType() {
 		return testTypeEEnum;
 	}
@@ -713,11 +810,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEAttribute(requirementsEClass, REQUIREMENTS__NAME);
 		createEAttribute(requirementsEClass, REQUIREMENTS__ID);
 		createEAttribute(requirementsEClass, REQUIREMENTS__DESCRIPTION);
-		createEReference(requirementsEClass, REQUIREMENTS__REQUIREMENT_CANVAS);
 		createEReference(requirementsEClass, REQUIREMENTS__REVIEW);
 		createEReference(requirementsEClass, REQUIREMENTS__TESTCASE);
 		createEReference(requirementsEClass, REQUIREMENTS__TRACETO);
-		createEAttribute(requirementsEClass, REQUIREMENTS__SPECIFICATION);
 
 		functionalEClass = createEClass(FUNCTIONAL);
 
@@ -731,6 +826,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEReference(requirement_CanvasEClass, REQUIREMENT_CANVAS__REVIEW);
 		createEReference(requirement_CanvasEClass, REQUIREMENT_CANVAS__DESIGNELEMENT);
 		createEAttribute(requirement_CanvasEClass, REQUIREMENT_CANVAS__NAME);
+		createEReference(requirement_CanvasEClass, REQUIREMENT_CANVAS__REQUIREMENTCONTAINER);
 
 		safetyEClass = createEClass(SAFETY);
 
@@ -775,6 +871,18 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 
 		rootEClass = createEClass(ROOT);
 
+		requirementContainerEClass = createEClass(REQUIREMENT_CONTAINER);
+		createEReference(requirementContainerEClass, REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS);
+		createEReference(requirementContainerEClass, REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS);
+
+		requirementTypeEClass = createEClass(REQUIREMENT_TYPE);
+		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__SPECIFICATION);
+		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__REQUIREMENTCONTAINER);
+		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__REPLACEDBY);
+		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__STARTING_REQ);
+		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__REQUIREMENT_CANVAS);
+		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__DEPENDSON);
+
 		// Create enums
 		testTypeEEnum = createEEnum(TEST_TYPE);
 	}
@@ -808,13 +916,15 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		functionalEClass.getESuperTypes().add(this.getRequirements());
-		qualitativeEClass.getESuperTypes().add(this.getRequirements());
-		constraintEClass.getESuperTypes().add(this.getRequirements());
-		safetyEClass.getESuperTypes().add(this.getRequirements());
+		functionalEClass.getESuperTypes().add(this.getRequirementType());
+		qualitativeEClass.getESuperTypes().add(this.getRequirementType());
+		constraintEClass.getESuperTypes().add(this.getRequirementType());
+		safetyEClass.getESuperTypes().add(this.getRequirementType());
 		elementEClass.getESuperTypes().add(this.getFeatureEntity());
 		featureEntityEClass.getESuperTypes().add(this.getRequirement_Canvas());
 		rootEClass.getESuperTypes().add(this.getFeatureEntity());
+		requirementContainerEClass.getESuperTypes().add(this.getRequirements());
+		requirementTypeEClass.getESuperTypes().add(this.getRequirements());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(requirementsEClass, Requirements.class, "Requirements", IS_ABSTRACT, !IS_INTERFACE,
@@ -826,10 +936,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEAttribute(getRequirements_Description(), ecorePackage.getEString(), "description", null, 0, 1,
 				Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirements_Requirement_canvas(), this.getRequirement_Canvas(),
-				this.getRequirement_Canvas_Requirements(), "requirement_canvas", null, 1, 1, Requirements.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirements_Review(), this.getReview(), this.getReview_Requirements(), "review", null, 1, -1,
 				Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -839,9 +945,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getRequirements_Traceto(), this.getDesignElement(), this.getDesignElement_Tracefrom(), "traceto",
 				null, 1, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequirements_Specification(), ecorePackage.getEString(), "specification", null, 0, 1,
-				Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionalEClass, Functional.class, "Functional", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -857,8 +960,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getRequirement_Canvas_Testcase(), this.getTestCase(), this.getTestCase_Requirement_canvas(),
 				"testcase", null, 0, -1, Requirement_Canvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirement_Canvas_Requirements(), this.getRequirements(),
-				this.getRequirements_Requirement_canvas(), "requirements", null, 0, -1, Requirement_Canvas.class,
+		initEReference(getRequirement_Canvas_Requirements(), this.getRequirementType(),
+				this.getRequirementType_Requirement_canvas(), "requirements", null, 0, -1, Requirement_Canvas.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirement_Canvas_Review(), this.getReview(), this.getReview_Requirement_canvas(), "review",
@@ -871,6 +974,10 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEAttribute(getRequirement_Canvas_Name(), ecorePackage.getEString(), "name", null, 1, 1,
 				Requirement_Canvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Canvas_Requirementcontainer(), this.getRequirementContainer(),
+				this.getRequirementContainer_Requirement_canvas(), "requirementcontainer", null, 0, -1,
+				Requirement_Canvas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(safetyEClass, Safety.class, "Safety", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -963,6 +1070,40 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(requirementContainerEClass, RequirementContainer.class, "RequirementContainer", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRequirementContainer_Ownedrequirements(), this.getRequirementType(),
+				this.getRequirementType_Requirementcontainer(), "ownedrequirements", null, 2, -1,
+				RequirementContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementContainer_Requirement_canvas(), this.getRequirement_Canvas(),
+				this.getRequirement_Canvas_Requirementcontainer(), "requirement_canvas", null, 0, 1,
+				RequirementContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(requirementTypeEClass, RequirementType.class, "RequirementType", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRequirementType_Specification(), ecorePackage.getEString(), "specification", null, 0, 1,
+				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementType_Requirementcontainer(), this.getRequirementContainer(),
+				this.getRequirementContainer_Ownedrequirements(), "requirementcontainer", null, 0, 1,
+				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementType_Replacedby(), this.getRequirementType(), null, "replacedby", null, 0, 1,
+				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequirementType_StartingReq(), ecorePackage.getEBoolean(), "startingReq", null, 0, 1,
+				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementType_Requirement_canvas(), this.getRequirement_Canvas(),
+				this.getRequirement_Canvas_Requirements(), "requirement_canvas", null, 0, 1, RequirementType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirementType_Dependson(), this.getFeatureEntity(), null, "dependson", null, 0, -1,
+				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(testTypeEEnum, TestType.class, "TestType");

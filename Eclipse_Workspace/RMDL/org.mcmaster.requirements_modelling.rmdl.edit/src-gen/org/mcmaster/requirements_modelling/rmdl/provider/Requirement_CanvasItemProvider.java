@@ -59,6 +59,7 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 			addRequirementsPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addRequirementcontainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,21 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 	}
 
 	/**
+	 * This adds a property descriptor for the Requirementcontainer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementcontainerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Requirement_Canvas_requirementcontainer_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Canvas_requirementcontainer_feature",
+						"_UI_Requirement_Canvas_type"),
+				RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -125,6 +141,7 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REVIEW);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER);
 		}
 		return childrenFeatures;
 	}
@@ -195,6 +212,7 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -232,6 +250,9 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGNELEMENT,
 				RmdlFactory.eINSTANCE.createDesignElement()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER,
+				RmdlFactory.eINSTANCE.createRequirementContainer()));
 	}
 
 	/**

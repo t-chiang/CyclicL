@@ -18,7 +18,7 @@ import org.mcmaster.requirements_modelling.rmdl.Constraint;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConstraintItemProvider extends RequirementsItemProvider {
+public class ConstraintItemProvider extends RequirementTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

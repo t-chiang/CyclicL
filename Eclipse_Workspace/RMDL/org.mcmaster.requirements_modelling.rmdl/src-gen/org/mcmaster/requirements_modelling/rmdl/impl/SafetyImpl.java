@@ -14,7 +14,7 @@ import org.mcmaster.requirements_modelling.rmdl.Safety;
  *
  * @generated
  */
-public class SafetyImpl extends RequirementsImpl implements Safety {
+public class SafetyImpl extends RequirementTypeImpl implements Safety {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

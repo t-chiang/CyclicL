@@ -130,6 +130,15 @@ public interface RmdlFactory extends EFactory {
 	Root createRoot();
 
 	/**
+	 * Returns a new object of class '<em>Requirement Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Requirement Container</em>'.
+	 * @generated
+	 */
+	RequirementContainer createRequirementContainer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

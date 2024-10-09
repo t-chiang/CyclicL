@@ -349,6 +349,29 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RequirementContainerItemProvider requirementContainerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRequirementContainerAdapter() {
+		if (requirementContainerItemProvider == null) {
+			requirementContainerItemProvider = new RequirementContainerItemProvider(this);
+		}
+
+		return requirementContainerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -471,6 +494,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			rmdL_ProjectItemProvider.dispose();
 		if (rootItemProvider != null)
 			rootItemProvider.dispose();
+		if (requirementContainerItemProvider != null)
+			requirementContainerItemProvider.dispose();
 	}
 
 }

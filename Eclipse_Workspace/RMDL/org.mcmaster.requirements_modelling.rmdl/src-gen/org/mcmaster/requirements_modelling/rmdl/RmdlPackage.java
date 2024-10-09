@@ -95,22 +95,13 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENTS__DESCRIPTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENTS__REQUIREMENT_CANVAS = 3;
-
-	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__REVIEW = 4;
+	int REQUIREMENTS__REVIEW = 3;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -119,7 +110,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__TESTCASE = 5;
+	int REQUIREMENTS__TESTCASE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
@@ -128,16 +119,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS__TRACETO = 6;
-
-	/**
-	 * The feature id for the '<em><b>Specification</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENTS__SPECIFICATION = 7;
+	int REQUIREMENTS__TRACETO = 5;
 
 	/**
 	 * The number of structural features of the '<em>Requirements</em>' class.
@@ -146,7 +128,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENTS_FEATURE_COUNT = 8;
+	int REQUIREMENTS_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Requirements</em>' class.
@@ -156,6 +138,142 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUIREMENTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl <em>Requirement Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRequirementType()
+	 * @generated
+	 */
+	int REQUIREMENT_TYPE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__NAME = REQUIREMENTS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__ID = REQUIREMENTS__ID;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__REVIEW = REQUIREMENTS__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__TESTCASE = REQUIREMENTS__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__TRACETO = REQUIREMENTS__TRACETO;
+
+	/**
+	 * The feature id for the '<em><b>Specification</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__SPECIFICATION = REQUIREMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__REQUIREMENTCONTAINER = REQUIREMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Replacedby</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__REPLACEDBY = REQUIREMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Starting Req</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__STARTING_REQ = REQUIREMENTS_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__REQUIREMENT_CANVAS = REQUIREMENTS_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE__DEPENDSON = REQUIREMENTS_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Requirement Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of operations of the '<em>Requirement Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_TYPE_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FunctionalImpl <em>Functional</em>}' class.
@@ -174,7 +292,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__NAME = REQUIREMENTS__NAME;
+	int FUNCTIONAL__NAME = REQUIREMENT_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -183,7 +301,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__ID = REQUIREMENTS__ID;
+	int FUNCTIONAL__ID = REQUIREMENT_TYPE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -192,16 +310,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTIONAL__REQUIREMENT_CANVAS = REQUIREMENTS__REQUIREMENT_CANVAS;
+	int FUNCTIONAL__DESCRIPTION = REQUIREMENT_TYPE__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
@@ -210,7 +319,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__REVIEW = REQUIREMENTS__REVIEW;
+	int FUNCTIONAL__REVIEW = REQUIREMENT_TYPE__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -219,7 +328,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__TESTCASE = REQUIREMENTS__TESTCASE;
+	int FUNCTIONAL__TESTCASE = REQUIREMENT_TYPE__TESTCASE;
 
 	/**
 	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
@@ -228,7 +337,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__TRACETO = REQUIREMENTS__TRACETO;
+	int FUNCTIONAL__TRACETO = REQUIREMENT_TYPE__TRACETO;
 
 	/**
 	 * The feature id for the '<em><b>Specification</b></em>' attribute.
@@ -237,7 +346,52 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL__SPECIFICATION = REQUIREMENTS__SPECIFICATION;
+	int FUNCTIONAL__SPECIFICATION = REQUIREMENT_TYPE__SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__REQUIREMENTCONTAINER = REQUIREMENT_TYPE__REQUIREMENTCONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Replacedby</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__REPLACEDBY = REQUIREMENT_TYPE__REPLACEDBY;
+
+	/**
+	 * The feature id for the '<em><b>Starting Req</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__STARTING_REQ = REQUIREMENT_TYPE__STARTING_REQ;
+
+	/**
+	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
+
+	/**
+	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
 
 	/**
 	 * The number of structural features of the '<em>Functional</em>' class.
@@ -246,7 +400,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 0;
+	int FUNCTIONAL_FEATURE_COUNT = REQUIREMENT_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Functional</em>' class.
@@ -255,7 +409,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTIONAL_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
+	int FUNCTIONAL_OPERATION_COUNT = REQUIREMENT_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.QualitativeImpl <em>Qualitative</em>}' class.
@@ -274,7 +428,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__NAME = REQUIREMENTS__NAME;
+	int QUALITATIVE__NAME = REQUIREMENT_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -283,7 +437,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__ID = REQUIREMENTS__ID;
+	int QUALITATIVE__ID = REQUIREMENT_TYPE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -292,16 +446,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITATIVE__REQUIREMENT_CANVAS = REQUIREMENTS__REQUIREMENT_CANVAS;
+	int QUALITATIVE__DESCRIPTION = REQUIREMENT_TYPE__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
@@ -310,7 +455,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__REVIEW = REQUIREMENTS__REVIEW;
+	int QUALITATIVE__REVIEW = REQUIREMENT_TYPE__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -319,7 +464,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__TESTCASE = REQUIREMENTS__TESTCASE;
+	int QUALITATIVE__TESTCASE = REQUIREMENT_TYPE__TESTCASE;
 
 	/**
 	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
@@ -328,7 +473,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__TRACETO = REQUIREMENTS__TRACETO;
+	int QUALITATIVE__TRACETO = REQUIREMENT_TYPE__TRACETO;
 
 	/**
 	 * The feature id for the '<em><b>Specification</b></em>' attribute.
@@ -337,7 +482,52 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE__SPECIFICATION = REQUIREMENTS__SPECIFICATION;
+	int QUALITATIVE__SPECIFICATION = REQUIREMENT_TYPE__SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__REQUIREMENTCONTAINER = REQUIREMENT_TYPE__REQUIREMENTCONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Replacedby</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__REPLACEDBY = REQUIREMENT_TYPE__REPLACEDBY;
+
+	/**
+	 * The feature id for the '<em><b>Starting Req</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__STARTING_REQ = REQUIREMENT_TYPE__STARTING_REQ;
+
+	/**
+	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
+
+	/**
+	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUALITATIVE__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
 
 	/**
 	 * The number of structural features of the '<em>Qualitative</em>' class.
@@ -346,7 +536,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 0;
+	int QUALITATIVE_FEATURE_COUNT = REQUIREMENT_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Qualitative</em>' class.
@@ -355,7 +545,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITATIVE_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
+	int QUALITATIVE_OPERATION_COUNT = REQUIREMENT_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -374,7 +564,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__NAME = REQUIREMENTS__NAME;
+	int CONSTRAINT__NAME = REQUIREMENT_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -383,7 +573,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__ID = REQUIREMENTS__ID;
+	int CONSTRAINT__ID = REQUIREMENT_TYPE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -392,16 +582,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__REQUIREMENT_CANVAS = REQUIREMENTS__REQUIREMENT_CANVAS;
+	int CONSTRAINT__DESCRIPTION = REQUIREMENT_TYPE__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
@@ -410,7 +591,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__REVIEW = REQUIREMENTS__REVIEW;
+	int CONSTRAINT__REVIEW = REQUIREMENT_TYPE__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -419,7 +600,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__TESTCASE = REQUIREMENTS__TESTCASE;
+	int CONSTRAINT__TESTCASE = REQUIREMENT_TYPE__TESTCASE;
 
 	/**
 	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
@@ -428,7 +609,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__TRACETO = REQUIREMENTS__TRACETO;
+	int CONSTRAINT__TRACETO = REQUIREMENT_TYPE__TRACETO;
 
 	/**
 	 * The feature id for the '<em><b>Specification</b></em>' attribute.
@@ -437,7 +618,52 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__SPECIFICATION = REQUIREMENTS__SPECIFICATION;
+	int CONSTRAINT__SPECIFICATION = REQUIREMENT_TYPE__SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__REQUIREMENTCONTAINER = REQUIREMENT_TYPE__REQUIREMENTCONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Replacedby</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__REPLACEDBY = REQUIREMENT_TYPE__REPLACEDBY;
+
+	/**
+	 * The feature id for the '<em><b>Starting Req</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__STARTING_REQ = REQUIREMENT_TYPE__STARTING_REQ;
+
+	/**
+	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
+
+	/**
+	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -446,7 +672,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 0;
+	int CONSTRAINT_FEATURE_COUNT = REQUIREMENT_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Constraint</em>' class.
@@ -455,7 +681,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
+	int CONSTRAINT_OPERATION_COUNT = REQUIREMENT_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl <em>Requirement Canvas</em>}' class.
@@ -513,13 +739,22 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENT_CANVAS__NAME = 4;
 
 	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CANVAS__REQUIREMENTCONTAINER = 5;
+
+	/**
 	 * The number of structural features of the '<em>Requirement Canvas</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT_CANVAS_FEATURE_COUNT = 5;
+	int REQUIREMENT_CANVAS_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Requirement Canvas</em>' class.
@@ -547,7 +782,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__NAME = REQUIREMENTS__NAME;
+	int SAFETY__NAME = REQUIREMENT_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -556,7 +791,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__ID = REQUIREMENTS__ID;
+	int SAFETY__ID = REQUIREMENT_TYPE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -565,16 +800,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAFETY__REQUIREMENT_CANVAS = REQUIREMENTS__REQUIREMENT_CANVAS;
+	int SAFETY__DESCRIPTION = REQUIREMENT_TYPE__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Review</b></em>' reference list.
@@ -583,7 +809,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__REVIEW = REQUIREMENTS__REVIEW;
+	int SAFETY__REVIEW = REQUIREMENT_TYPE__REVIEW;
 
 	/**
 	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
@@ -592,7 +818,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__TESTCASE = REQUIREMENTS__TESTCASE;
+	int SAFETY__TESTCASE = REQUIREMENT_TYPE__TESTCASE;
 
 	/**
 	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
@@ -601,7 +827,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__TRACETO = REQUIREMENTS__TRACETO;
+	int SAFETY__TRACETO = REQUIREMENT_TYPE__TRACETO;
 
 	/**
 	 * The feature id for the '<em><b>Specification</b></em>' attribute.
@@ -610,7 +836,52 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY__SPECIFICATION = REQUIREMENTS__SPECIFICATION;
+	int SAFETY__SPECIFICATION = REQUIREMENT_TYPE__SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__REQUIREMENTCONTAINER = REQUIREMENT_TYPE__REQUIREMENTCONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Replacedby</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__REPLACEDBY = REQUIREMENT_TYPE__REPLACEDBY;
+
+	/**
+	 * The feature id for the '<em><b>Starting Req</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__STARTING_REQ = REQUIREMENT_TYPE__STARTING_REQ;
+
+	/**
+	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
+
+	/**
+	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
 
 	/**
 	 * The number of structural features of the '<em>Safety</em>' class.
@@ -619,7 +890,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 0;
+	int SAFETY_FEATURE_COUNT = REQUIREMENT_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Safety</em>' class.
@@ -628,7 +899,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
+	int SAFETY_OPERATION_COUNT = REQUIREMENT_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl <em>Design Element</em>}' class.
@@ -914,6 +1185,15 @@ public interface RmdlPackage extends EPackage {
 	int FEATURE_ENTITY__NAME = REQUIREMENT_CANVAS__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_ENTITY__REQUIREMENTCONTAINER = REQUIREMENT_CANVAS__REQUIREMENTCONTAINER;
+
+	/**
 	 * The feature id for the '<em><b>Composes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1039,6 +1319,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT__NAME = FEATURE_ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__REQUIREMENTCONTAINER = FEATURE_ENTITY__REQUIREMENTCONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Composes</b></em>' reference.
@@ -1251,6 +1540,15 @@ public interface RmdlPackage extends EPackage {
 	int ROOT__NAME = FEATURE_ENTITY__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Requirementcontainer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__REQUIREMENTCONTAINER = FEATURE_ENTITY__REQUIREMENTCONTAINER;
+
+	/**
 	 * The feature id for the '<em><b>Composes</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1323,6 +1621,106 @@ public interface RmdlPackage extends EPackage {
 	int ROOT_OPERATION_COUNT = FEATURE_ENTITY_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl <em>Requirement Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRequirementContainer()
+	 * @generated
+	 */
+	int REQUIREMENT_CONTAINER = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__NAME = REQUIREMENTS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__ID = REQUIREMENTS__ID;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__DESCRIPTION = REQUIREMENTS__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__REVIEW = REQUIREMENTS__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Testcase</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__TESTCASE = REQUIREMENTS__TESTCASE;
+
+	/**
+	 * The feature id for the '<em><b>Traceto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__TRACETO = REQUIREMENTS__TRACETO;
+
+	/**
+	 * The feature id for the '<em><b>Ownedrequirements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS = REQUIREMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS = REQUIREMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Requirement Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Requirement Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_CONTAINER_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1330,7 +1728,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTestType()
 	 * @generated
 	 */
-	int TEST_TYPE = 14;
+	int TEST_TYPE = 16;
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Requirements <em>Requirements</em>}'.
@@ -1376,17 +1774,6 @@ public interface RmdlPackage extends EPackage {
 	EAttribute getRequirements_Description();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas <em>Requirement canvas</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Requirement canvas</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getRequirement_canvas()
-	 * @see #getRequirements()
-	 * @generated
-	 */
-	EReference getRequirements_Requirement_canvas();
-
-	/**
 	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1418,17 +1805,6 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirements_Traceto();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification <em>Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Specification</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getSpecification()
-	 * @see #getRequirements()
-	 * @generated
-	 */
-	EAttribute getRequirements_Specification();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Functional <em>Functional</em>}'.
@@ -1524,6 +1900,17 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRequirement_Canvas_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirementcontainer <em>Requirementcontainer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Requirementcontainer</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirementcontainer()
+	 * @see #getRequirement_Canvas()
+	 * @generated
+	 */
+	EReference getRequirement_Canvas_Requirementcontainer();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Safety <em>Safety</em>}'.
@@ -1891,6 +2278,114 @@ public interface RmdlPackage extends EPackage {
 	EClass getRoot();
 
 	/**
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer <em>Requirement Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Requirement Container</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementContainer
+	 * @generated
+	 */
+	EClass getRequirementContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedrequirements <em>Ownedrequirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ownedrequirements</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedrequirements()
+	 * @see #getRequirementContainer()
+	 * @generated
+	 */
+	EReference getRequirementContainer_Ownedrequirements();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getRequirement_canvas <em>Requirement canvas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Requirement canvas</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getRequirement_canvas()
+	 * @see #getRequirementContainer()
+	 * @generated
+	 */
+	EReference getRequirementContainer_Requirement_canvas();
+
+	/**
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType <em>Requirement Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Requirement Type</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType
+	 * @generated
+	 */
+	EClass getRequirementType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getSpecification <em>Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Specification</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getSpecification()
+	 * @see #getRequirementType()
+	 * @generated
+	 */
+	EAttribute getRequirementType_Specification();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementcontainer <em>Requirementcontainer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Requirementcontainer</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementcontainer()
+	 * @see #getRequirementType()
+	 * @generated
+	 */
+	EReference getRequirementType_Requirementcontainer();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedby <em>Replacedby</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Replacedby</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedby()
+	 * @see #getRequirementType()
+	 * @generated
+	 */
+	EReference getRequirementType_Replacedby();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#isStartingReq <em>Starting Req</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Starting Req</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#isStartingReq()
+	 * @see #getRequirementType()
+	 * @generated
+	 */
+	EAttribute getRequirementType_StartingReq();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirement_canvas <em>Requirement canvas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Requirement canvas</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirement_canvas()
+	 * @see #getRequirementType()
+	 * @generated
+	 */
+	EReference getRequirementType_Requirement_canvas();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getDependson <em>Dependson</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Dependson</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getDependson()
+	 * @see #getRequirementType()
+	 * @generated
+	 */
+	EReference getRequirementType_Dependson();
+
+	/**
 	 * Returns the meta object for enum '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1958,14 +2453,6 @@ public interface RmdlPackage extends EPackage {
 		EAttribute REQUIREMENTS__DESCRIPTION = eINSTANCE.getRequirements_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Requirement canvas</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUIREMENTS__REQUIREMENT_CANVAS = eINSTANCE.getRequirements_Requirement_canvas();
-
-		/**
 		 * The meta object literal for the '<em><b>Review</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1988,14 +2475,6 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUIREMENTS__TRACETO = eINSTANCE.getRequirements_Traceto();
-
-		/**
-		 * The meta object literal for the '<em><b>Specification</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REQUIREMENTS__SPECIFICATION = eINSTANCE.getRequirements_Specification();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.FunctionalImpl <em>Functional</em>}' class.
@@ -2076,6 +2555,14 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REQUIREMENT_CANVAS__NAME = eINSTANCE.getRequirement_Canvas_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirementcontainer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_CANVAS__REQUIREMENTCONTAINER = eINSTANCE.getRequirement_Canvas_Requirementcontainer();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.SafetyImpl <em>Safety</em>}' class.
@@ -2366,6 +2853,90 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOT = eINSTANCE.getRoot();
+
+		/**
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl <em>Requirement Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRequirementContainer()
+		 * @generated
+		 */
+		EClass REQUIREMENT_CONTAINER = eINSTANCE.getRequirementContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Ownedrequirements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS = eINSTANCE.getRequirementContainer_Ownedrequirements();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirement canvas</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS = eINSTANCE.getRequirementContainer_Requirement_canvas();
+
+		/**
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl <em>Requirement Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getRequirementType()
+		 * @generated
+		 */
+		EClass REQUIREMENT_TYPE = eINSTANCE.getRequirementType();
+
+		/**
+		 * The meta object literal for the '<em><b>Specification</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIREMENT_TYPE__SPECIFICATION = eINSTANCE.getRequirementType_Specification();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirementcontainer</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_TYPE__REQUIREMENTCONTAINER = eINSTANCE.getRequirementType_Requirementcontainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Replacedby</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_TYPE__REPLACEDBY = eINSTANCE.getRequirementType_Replacedby();
+
+		/**
+		 * The meta object literal for the '<em><b>Starting Req</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIREMENT_TYPE__STARTING_REQ = eINSTANCE.getRequirementType_StartingReq();
+
+		/**
+		 * The meta object literal for the '<em><b>Requirement canvas</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_TYPE__REQUIREMENT_CANVAS = eINSTANCE.getRequirementType_Requirement_canvas();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependson</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT_TYPE__DEPENDSON = eINSTANCE.getRequirementType_Dependson();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}' enum.

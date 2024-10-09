@@ -56,11 +56,9 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addNamePropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addRequirement_canvasPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 			addTestcasePropertyDescriptor(object);
 			addTracetoPropertyDescriptor(object);
-			addSpecificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,21 +112,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirement canvas feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequirement_canvasPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_requirement_canvas_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_requirement_canvas_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__REQUIREMENT_CANVAS, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Review feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,22 +154,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
 								"_UI_Requirements_type"),
 						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Specification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSpecificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_specification_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_specification_feature",
-								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__SPECIFICATION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -238,7 +205,6 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 		case RmdlPackage.REQUIREMENTS__NAME:
 		case RmdlPackage.REQUIREMENTS__ID:
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
-		case RmdlPackage.REQUIREMENTS__SPECIFICATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

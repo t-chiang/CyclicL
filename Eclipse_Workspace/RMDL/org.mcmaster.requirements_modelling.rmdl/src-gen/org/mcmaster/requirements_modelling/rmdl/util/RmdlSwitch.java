@@ -76,6 +76,8 @@ public class RmdlSwitch<T> extends Switch<T> {
 			Functional functional = (Functional) theEObject;
 			T result = caseFunctional(functional);
 			if (result == null)
+				result = caseRequirementType(functional);
+			if (result == null)
 				result = caseRequirements(functional);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -85,6 +87,8 @@ public class RmdlSwitch<T> extends Switch<T> {
 			Qualitative qualitative = (Qualitative) theEObject;
 			T result = caseQualitative(qualitative);
 			if (result == null)
+				result = caseRequirementType(qualitative);
+			if (result == null)
 				result = caseRequirements(qualitative);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -93,6 +97,8 @@ public class RmdlSwitch<T> extends Switch<T> {
 		case RmdlPackage.CONSTRAINT: {
 			Constraint constraint = (Constraint) theEObject;
 			T result = caseConstraint(constraint);
+			if (result == null)
+				result = caseRequirementType(constraint);
 			if (result == null)
 				result = caseRequirements(constraint);
 			if (result == null)
@@ -109,6 +115,8 @@ public class RmdlSwitch<T> extends Switch<T> {
 		case RmdlPackage.SAFETY: {
 			Safety safety = (Safety) theEObject;
 			T result = caseSafety(safety);
+			if (result == null)
+				result = caseRequirementType(safety);
 			if (result == null)
 				result = caseRequirements(safety);
 			if (result == null)
@@ -177,6 +185,24 @@ public class RmdlSwitch<T> extends Switch<T> {
 				result = caseFeatureEntity(root);
 			if (result == null)
 				result = caseRequirement_Canvas(root);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.REQUIREMENT_CONTAINER: {
+			RequirementContainer requirementContainer = (RequirementContainer) theEObject;
+			T result = caseRequirementContainer(requirementContainer);
+			if (result == null)
+				result = caseRequirements(requirementContainer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RmdlPackage.REQUIREMENT_TYPE: {
+			RequirementType requirementType = (RequirementType) theEObject;
+			T result = caseRequirementType(requirementType);
+			if (result == null)
+				result = caseRequirements(requirementType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -393,6 +419,36 @@ public class RmdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRoot(Root object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Requirement Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Requirement Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequirementContainer(RequirementContainer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Requirement Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Requirement Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequirementType(RequirementType object) {
 		return null;
 	}
 
