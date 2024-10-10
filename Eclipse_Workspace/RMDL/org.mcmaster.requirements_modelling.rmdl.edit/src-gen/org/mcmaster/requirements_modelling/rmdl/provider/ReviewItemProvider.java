@@ -53,29 +53,13 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsApprovedPropertyDescriptor(object);
 			addReviewerPropertyDescriptor(object);
 			addRequirement_canvasPropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
+			addIsApprovedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Approved feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsApprovedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Review_isApproved_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Review_isApproved_feature",
-								"_UI_Review_type"),
-						RmdlPackage.Literals.REVIEW__IS_APPROVED, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -141,6 +125,22 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Approved feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsApprovedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Review_isApproved_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_isApproved_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__IS_APPROVED, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Review.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,8 +169,9 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		Review review = (Review) object;
-		return getString("_UI_Review_type") + " " + review.isIsApproved();
+		String label = ((Review) object).getReviewer();
+		return label == null || label.length() == 0 ? getString("_UI_Review_type")
+				: getString("_UI_Review_type") + " " + label;
 	}
 
 	/**
@@ -185,9 +186,9 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Review.class)) {
-		case RmdlPackage.REVIEW__IS_APPROVED:
 		case RmdlPackage.REVIEW__REVIEWER:
 		case RmdlPackage.REVIEW__COMMENTS:
+		case RmdlPackage.REVIEW__IS_APPROVED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

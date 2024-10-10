@@ -50,11 +50,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//TestCase/requirements"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Review">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/isApproved"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/reviewer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirement_canvas"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Review/requirements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/comments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//Review/isApproved"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Element"/>
     <genClasses ecoreClass="rmdl.ecore#//Feature_Model">

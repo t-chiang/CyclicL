@@ -3,10 +3,12 @@
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import org.mcmaster.requirements_modelling.rmdl.FeatureEntity;
+import org.mcmaster.requirements_modelling.rmdl.Element;
 import org.mcmaster.requirements_modelling.rmdl.RequirementContainer;
 import org.mcmaster.requirements_modelling.rmdl.RequirementType;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
@@ -98,7 +100,7 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FeatureEntity> dependson;
+	protected EList<Element> dependson;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,9 +306,9 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FeatureEntity> getDependson() {
+	public EList<Element> getDependson() {
 		if (dependson == null) {
-			dependson = new EObjectResolvingEList<FeatureEntity>(FeatureEntity.class, this,
+			dependson = new EObjectResolvingEList<Element>(Element.class, this,
 					RmdlPackage.REQUIREMENT_TYPE__DEPENDSON);
 		}
 		return dependson;
@@ -418,7 +420,7 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 			return;
 		case RmdlPackage.REQUIREMENT_TYPE__DEPENDSON:
 			getDependson().clear();
-			getDependson().addAll((Collection<? extends FeatureEntity>) newValue);
+			getDependson().addAll((Collection<? extends Element>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

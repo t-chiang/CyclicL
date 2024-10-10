@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getReviewer <em>Reviewer</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_canvas <em>Requirement canvas</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getComments <em>Comments</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview()
@@ -26,29 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Review extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Is Approved</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Approved</em>' attribute.
-	 * @see #setIsApproved(boolean)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_IsApproved()
-	 * @model default="false" required="true"
-	 * @generated
-	 */
-	boolean isIsApproved();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Approved</em>' attribute.
-	 * @see #isIsApproved()
-	 * @generated
-	 */
-	void setIsApproved(boolean value);
-
 	/**
 	 * Returns the value of the '<em><b>Reviewer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -130,5 +107,27 @@ public interface Review extends EObject {
 	 * @generated
 	 */
 	void setComments(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Approved</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Approved</em>' attribute.
+	 * @see #setIsApproved(boolean)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_IsApproved()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isIsApproved();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Approved</em>' attribute.
+	 * @see #isIsApproved()
+	 * @generated
+	 */
+	void setIsApproved(boolean value);
 
 } // Review

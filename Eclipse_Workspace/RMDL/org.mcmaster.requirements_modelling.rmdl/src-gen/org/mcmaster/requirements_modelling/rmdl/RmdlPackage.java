@@ -1067,22 +1067,13 @@ public interface RmdlPackage extends EPackage {
 	int REVIEW = 8;
 
 	/**
-	 * The feature id for the '<em><b>Is Approved</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REVIEW__IS_APPROVED = 0;
-
-	/**
 	 * The feature id for the '<em><b>Reviewer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW__REVIEWER = 1;
+	int REVIEW__REVIEWER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Requirement canvas</b></em>' container reference.
@@ -1091,7 +1082,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW__REQUIREMENT_CANVAS = 2;
+	int REVIEW__REQUIREMENT_CANVAS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Requirements</b></em>' reference list.
@@ -1100,7 +1091,7 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW__REQUIREMENTS = 3;
+	int REVIEW__REQUIREMENTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1109,7 +1100,16 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REVIEW__COMMENTS = 4;
+	int REVIEW__COMMENTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Approved</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REVIEW__IS_APPROVED = 4;
 
 	/**
 	 * The number of structural features of the '<em>Review</em>' class.
@@ -2074,17 +2074,6 @@ public interface RmdlPackage extends EPackage {
 	EClass getReview();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Approved</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved()
-	 * @see #getReview()
-	 * @generated
-	 */
-	EAttribute getReview_IsApproved();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Review#getReviewer <em>Reviewer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2127,6 +2116,17 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getReview_Comments();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Approved</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved()
+	 * @see #getReview()
+	 * @generated
+	 */
+	EAttribute getReview_IsApproved();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Element <em>Element</em>}'.
@@ -2693,14 +2693,6 @@ public interface RmdlPackage extends EPackage {
 		EClass REVIEW = eINSTANCE.getReview();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Approved</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REVIEW__IS_APPROVED = eINSTANCE.getReview_IsApproved();
-
-		/**
 		 * The meta object literal for the '<em><b>Reviewer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2731,6 +2723,14 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REVIEW__COMMENTS = eINSTANCE.getReview_Comments();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Approved</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REVIEW__IS_APPROVED = eINSTANCE.getReview_IsApproved();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.ElementImpl <em>Element</em>}' class.

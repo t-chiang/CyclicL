@@ -142,7 +142,7 @@ public interface RequirementType extends Requirements {
 
 	/**
 	 * Returns the value of the '<em><b>Dependson</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity}.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Element}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dependson</em>' reference list.
@@ -150,6 +150,6 @@ public interface RequirementType extends Requirements {
 	 * @model
 	 * @generated
 	 */
-	EList<FeatureEntity> getDependson();
+	EList<Element> getDependson();
 
 } // RequirementType

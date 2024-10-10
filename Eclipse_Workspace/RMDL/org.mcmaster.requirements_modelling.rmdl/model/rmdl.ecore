@@ -56,14 +56,14 @@
     <eLiterals name="UnitTest"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Review">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isApproved" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reviewer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_canvas" lowerBound="1"
         eType="#//Requirement_Canvas" eOpposite="#//Requirement_Canvas/review"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" lowerBound="1"
         upperBound="-1" eType="#//Requirements" eOpposite="#//Requirements/review"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isApproved" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//FeatureEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="Feature_Model">
@@ -105,6 +105,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_canvas" eType="#//Requirement_Canvas"
         eOpposite="#//Requirement_Canvas/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependson" upperBound="-1"
-        eType="#//FeatureEntity"/>
+        eType="#//Element"/>
   </eClassifiers>
 </ecore:EPackage>

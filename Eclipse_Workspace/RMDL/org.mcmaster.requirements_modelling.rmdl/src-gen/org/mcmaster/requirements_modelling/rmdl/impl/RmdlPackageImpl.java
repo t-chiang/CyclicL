@@ -512,7 +512,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getReview_IsApproved() {
+	public EAttribute getReview_Reviewer() {
 		return (EAttribute) reviewEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -521,17 +521,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getReview_Reviewer() {
-		return (EAttribute) reviewEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getReview_Requirement_canvas() {
-		return (EReference) reviewEClass.getEStructuralFeatures().get(2);
+		return (EReference) reviewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -540,7 +531,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * @generated
 	 */
 	public EReference getReview_Requirements() {
-		return (EReference) reviewEClass.getEStructuralFeatures().get(3);
+		return (EReference) reviewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -549,6 +540,15 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * @generated
 	 */
 	public EAttribute getReview_Comments() {
+		return (EAttribute) reviewEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReview_IsApproved() {
 		return (EAttribute) reviewEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -846,11 +846,11 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEReference(testCaseEClass, TEST_CASE__REQUIREMENTS);
 
 		reviewEClass = createEClass(REVIEW);
-		createEAttribute(reviewEClass, REVIEW__IS_APPROVED);
 		createEAttribute(reviewEClass, REVIEW__REVIEWER);
 		createEReference(reviewEClass, REVIEW__REQUIREMENT_CANVAS);
 		createEReference(reviewEClass, REVIEW__REQUIREMENTS);
 		createEAttribute(reviewEClass, REVIEW__COMMENTS);
+		createEAttribute(reviewEClass, REVIEW__IS_APPROVED);
 
 		elementEClass = createEClass(ELEMENT);
 
@@ -1018,8 +1018,6 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reviewEClass, Review.class, "Review", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReview_IsApproved(), ecorePackage.getEBoolean(), "isApproved", "false", 1, 1, Review.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReview_Reviewer(), ecorePackage.getEString(), "reviewer", null, 0, 1, Review.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReview_Requirement_canvas(), this.getRequirement_Canvas(),
@@ -1030,6 +1028,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				null, 1, -1, Review.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReview_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Review.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReview_IsApproved(), ecorePackage.getEBoolean(), "isApproved", null, 1, 1, Review.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1101,7 +1101,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				this.getRequirement_Canvas_Requirements(), "requirement_canvas", null, 0, 1, RequirementType.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRequirementType_Dependson(), this.getFeatureEntity(), null, "dependson", null, 0, -1,
+		initEReference(getRequirementType_Dependson(), this.getElement(), null, "dependson", null, 0, -1,
 				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
