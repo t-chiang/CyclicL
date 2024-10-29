@@ -372,6 +372,29 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Product_Variant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Product_VariantItemProvider product_VariantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Product_Variant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProduct_VariantAdapter() {
+		if (product_VariantItemProvider == null) {
+			product_VariantItemProvider = new Product_VariantItemProvider(this);
+		}
+
+		return product_VariantItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,6 +519,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			rootItemProvider.dispose();
 		if (requirementContainerItemProvider != null)
 			requirementContainerItemProvider.dispose();
+		if (product_VariantItemProvider != null)
+			product_VariantItemProvider.dispose();
 	}
 
 }

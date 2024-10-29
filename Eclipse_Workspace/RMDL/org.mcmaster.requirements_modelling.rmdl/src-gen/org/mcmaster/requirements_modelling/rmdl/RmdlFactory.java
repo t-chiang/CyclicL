@@ -139,6 +139,15 @@ public interface RmdlFactory extends EFactory {
 	RequirementContainer createRequirementContainer();
 
 	/**
+	 * Returns a new object of class '<em>Product Variant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Product Variant</em>'.
+	 * @generated
+	 */
+	Product_Variant createProduct_Variant();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

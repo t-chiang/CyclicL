@@ -15,6 +15,7 @@ import org.mcmaster.requirements_modelling.rmdl.Element;
 import org.mcmaster.requirements_modelling.rmdl.FeatureEntity;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
+import org.mcmaster.requirements_modelling.rmdl.Product_Variant;
 import org.mcmaster.requirements_modelling.rmdl.Qualitative;
 import org.mcmaster.requirements_modelling.rmdl.RMDL_Project;
 import org.mcmaster.requirements_modelling.rmdl.RequirementContainer;
@@ -147,6 +148,13 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * @generated
 	 */
 	private EClass requirementTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass product_VariantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -593,6 +601,24 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFeature_Model_Rmdl_project() {
+		return (EReference) feature_ModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeature_Model_Product_variant() {
+		return (EReference) feature_ModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRMDL_Project() {
 		return rmdL_ProjectEClass;
 	}
@@ -773,6 +799,24 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getProduct_Variant() {
+		return product_VariantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProduct_Variant_Feature_model() {
+		return (EReference) product_VariantEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTestType() {
 		return testTypeEEnum;
 	}
@@ -857,6 +901,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		feature_ModelEClass = createEClass(FEATURE_MODEL);
 		createEAttribute(feature_ModelEClass, FEATURE_MODEL__NAME);
 		createEReference(feature_ModelEClass, FEATURE_MODEL__FEATUREENTITY);
+		createEReference(feature_ModelEClass, FEATURE_MODEL__RMDL_PROJECT);
+		createEReference(feature_ModelEClass, FEATURE_MODEL__PRODUCT_VARIANT);
 
 		rmdL_ProjectEClass = createEClass(RMDL_PROJECT);
 		createEReference(rmdL_ProjectEClass, RMDL_PROJECT__FEATURE_MODEL);
@@ -882,6 +928,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEAttribute(requirementTypeEClass, REQUIREMENT_TYPE__STARTING_REQ);
 		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__REQUIREMENT_CANVAS);
 		createEReference(requirementTypeEClass, REQUIREMENT_TYPE__DEPENDSON);
+
+		product_VariantEClass = createEClass(PRODUCT_VARIANT);
+		createEReference(product_VariantEClass, PRODUCT_VARIANT__FEATURE_MODEL);
 
 		// Create enums
 		testTypeEEnum = createEEnum(TEST_TYPE);
@@ -925,6 +974,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		rootEClass.getESuperTypes().add(this.getFeatureEntity());
 		requirementContainerEClass.getESuperTypes().add(this.getRequirements());
 		requirementTypeEClass.getESuperTypes().add(this.getRequirements());
+		product_VariantEClass.getESuperTypes().add(this.getFeature_Model());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(requirementsEClass, Requirements.class, "Requirements", IS_ABSTRACT, !IS_INTERFACE,
@@ -1041,12 +1091,19 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getFeature_Model_Featureentity(), this.getFeatureEntity(), null, "featureentity", null, 1, -1,
 				Feature_Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Model_Rmdl_project(), this.getRMDL_Project(), this.getRMDL_Project_Feature_model(),
+				"rmdl_project", null, 0, 1, Feature_Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Model_Product_variant(), this.getProduct_Variant(),
+				this.getProduct_Variant_Feature_model(), "product_variant", null, 0, -1, Feature_Model.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rmdL_ProjectEClass, RMDL_Project.class, "RMDL_Project", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRMDL_Project_Feature_model(), this.getFeature_Model(), null, "feature_model", null, 0, -1,
-				RMDL_Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRMDL_Project_Feature_model(), this.getFeature_Model(), this.getFeature_Model_Rmdl_project(),
+				"feature_model", null, 0, -1, RMDL_Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEntityEClass, FeatureEntity.class, "FeatureEntity", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1104,6 +1161,13 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		initEReference(getRequirementType_Dependson(), this.getElement(), null, "dependson", null, 0, -1,
 				RequirementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(product_VariantEClass, Product_Variant.class, "Product_Variant", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProduct_Variant_Feature_model(), this.getFeature_Model(),
+				this.getFeature_Model_Product_variant(), "feature_model", null, 1, 1, Product_Variant.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(testTypeEEnum, TestType.class, "TestType");

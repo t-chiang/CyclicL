@@ -146,6 +146,11 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseProduct_Variant(Product_Variant object) {
+			return createProduct_VariantAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -385,6 +390,20 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRequirementTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Product_Variant <em>Product Variant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Product_Variant
+	 * @generated
+	 */
+	public Adapter createProduct_VariantAdapter() {
 		return null;
 	}
 

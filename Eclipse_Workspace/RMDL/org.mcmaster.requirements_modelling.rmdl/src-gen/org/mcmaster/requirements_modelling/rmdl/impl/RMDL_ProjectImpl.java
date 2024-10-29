@@ -10,8 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
@@ -68,10 +67,25 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 	 */
 	public EList<Feature_Model> getFeature_model() {
 		if (feature_model == null) {
-			feature_model = new EObjectContainmentEList<Feature_Model>(Feature_Model.class, this,
-					RmdlPackage.RMDL_PROJECT__FEATURE_MODEL);
+			feature_model = new EObjectContainmentWithInverseEList<Feature_Model>(Feature_Model.class, this,
+					RmdlPackage.RMDL_PROJECT__FEATURE_MODEL, RmdlPackage.FEATURE_MODEL__RMDL_PROJECT);
 		}
 		return feature_model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFeature_model()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

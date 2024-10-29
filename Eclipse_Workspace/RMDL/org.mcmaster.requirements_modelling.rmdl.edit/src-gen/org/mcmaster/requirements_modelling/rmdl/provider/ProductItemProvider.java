@@ -8,22 +8,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.mcmaster.requirements_modelling.rmdl.Root;
+import org.mcmaster.requirements_modelling.rmdl.Product;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Root} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Product} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RootItemProvider extends FeatureEntityItemProvider {
+public class ProductItemProvider extends Feature_ModelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RootItemProvider(AdapterFactory adapterFactory) {
+	public ProductItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,14 +43,14 @@ public class RootItemProvider extends FeatureEntityItemProvider {
 	}
 
 	/**
-	 * This returns Root.gif.
+	 * This returns Product.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Root"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Product"));
 	}
 
 	/**
@@ -71,9 +71,9 @@ public class RootItemProvider extends FeatureEntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Root) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Root_type")
-				: getString("_UI_Root_type") + " " + label;
+		String label = ((Product) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Product_type")
+				: getString("_UI_Product_type") + " " + label;
 	}
 
 	/**

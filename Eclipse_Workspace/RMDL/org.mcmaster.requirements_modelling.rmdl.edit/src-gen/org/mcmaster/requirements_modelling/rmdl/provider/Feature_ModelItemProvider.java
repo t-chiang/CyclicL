@@ -57,6 +57,8 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRmdl_projectPropertyDescriptor(object);
+			addProduct_variantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +80,36 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
+	 * This adds a property descriptor for the Rmdl project feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRmdl_projectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feature_Model_rmdl_project_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feature_Model_rmdl_project_feature",
+								"_UI_Feature_Model_type"),
+						RmdlPackage.Literals.FEATURE_MODEL__RMDL_PROJECT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Product variant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProduct_variantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feature_Model_product_variant_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feature_Model_product_variant_feature",
+								"_UI_Feature_Model_type"),
+						RmdlPackage.Literals.FEATURE_MODEL__PRODUCT_VARIANT, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -90,6 +122,7 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RmdlPackage.Literals.FEATURE_MODEL__FEATUREENTITY);
+			childrenFeatures.add(RmdlPackage.Literals.FEATURE_MODEL__PRODUCT_VARIANT);
 		}
 		return childrenFeatures;
 	}
@@ -157,6 +190,7 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -179,6 +213,9 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__FEATUREENTITY,
 				RmdlFactory.eINSTANCE.createRoot()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__PRODUCT_VARIANT,
+				RmdlFactory.eINSTANCE.createProduct_Variant()));
 	}
 
 	/**

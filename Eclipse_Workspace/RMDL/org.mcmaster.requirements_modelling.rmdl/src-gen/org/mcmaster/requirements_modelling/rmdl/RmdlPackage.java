@@ -1430,13 +1430,31 @@ public interface RmdlPackage extends EPackage {
 	int FEATURE_MODEL__FEATUREENTITY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Rmdl project</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_MODEL__RMDL_PROJECT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Product variant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_MODEL__PRODUCT_VARIANT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Feature Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_MODEL_FEATURE_COUNT = 2;
+	int FEATURE_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Feature Model</em>' class.
@@ -1721,6 +1739,79 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENT_CONTAINER_OPERATION_COUNT = REQUIREMENTS_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Product_VariantImpl <em>Product Variant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.Product_VariantImpl
+	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getProduct_Variant()
+	 * @generated
+	 */
+	int PRODUCT_VARIANT = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT__NAME = FEATURE_MODEL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Featureentity</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT__FEATUREENTITY = FEATURE_MODEL__FEATUREENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Rmdl project</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT__RMDL_PROJECT = FEATURE_MODEL__RMDL_PROJECT;
+
+	/**
+	 * The feature id for the '<em><b>Product variant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT__PRODUCT_VARIANT = FEATURE_MODEL__PRODUCT_VARIANT;
+
+	/**
+	 * The feature id for the '<em><b>Feature model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT__FEATURE_MODEL = FEATURE_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Product Variant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT_FEATURE_COUNT = FEATURE_MODEL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Product Variant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_VARIANT_OPERATION_COUNT = FEATURE_MODEL_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1728,7 +1819,7 @@ public interface RmdlPackage extends EPackage {
 	 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getTestType()
 	 * @generated
 	 */
-	int TEST_TYPE = 16;
+	int TEST_TYPE = 17;
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Requirements <em>Requirements</em>}'.
@@ -2171,6 +2262,28 @@ public interface RmdlPackage extends EPackage {
 	EReference getFeature_Model_Featureentity();
 
 	/**
+	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getRmdl_project <em>Rmdl project</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Rmdl project</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model#getRmdl_project()
+	 * @see #getFeature_Model()
+	 * @generated
+	 */
+	EReference getFeature_Model_Rmdl_project();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getProduct_variant <em>Product variant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Product variant</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model#getProduct_variant()
+	 * @see #getFeature_Model()
+	 * @generated
+	 */
+	EReference getFeature_Model_Product_variant();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project <em>RMDL Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2384,6 +2497,27 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirementType_Dependson();
+
+	/**
+	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Product_Variant <em>Product Variant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Product Variant</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Product_Variant
+	 * @generated
+	 */
+	EClass getProduct_Variant();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.mcmaster.requirements_modelling.rmdl.Product_Variant#getFeature_model <em>Feature model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Feature model</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.Product_Variant#getFeature_model()
+	 * @see #getProduct_Variant()
+	 * @generated
+	 */
+	EReference getProduct_Variant_Feature_model();
 
 	/**
 	 * Returns the meta object for enum '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}'.
@@ -2769,6 +2903,22 @@ public interface RmdlPackage extends EPackage {
 		EReference FEATURE_MODEL__FEATUREENTITY = eINSTANCE.getFeature_Model_Featureentity();
 
 		/**
+		 * The meta object literal for the '<em><b>Rmdl project</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_MODEL__RMDL_PROJECT = eINSTANCE.getFeature_Model_Rmdl_project();
+
+		/**
+		 * The meta object literal for the '<em><b>Product variant</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_MODEL__PRODUCT_VARIANT = eINSTANCE.getFeature_Model_Product_variant();
+
+		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl <em>RMDL Project</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2937,6 +3087,24 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUIREMENT_TYPE__DEPENDSON = eINSTANCE.getRequirementType_Dependson();
+
+		/**
+		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Product_VariantImpl <em>Product Variant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.Product_VariantImpl
+		 * @see org.mcmaster.requirements_modelling.rmdl.impl.RmdlPackageImpl#getProduct_Variant()
+		 * @generated
+		 */
+		EClass PRODUCT_VARIANT = eINSTANCE.getProduct_Variant();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature model</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT_VARIANT__FEATURE_MODEL = eINSTANCE.getProduct_Variant_Feature_model();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.TestType <em>Test Type</em>}' enum.

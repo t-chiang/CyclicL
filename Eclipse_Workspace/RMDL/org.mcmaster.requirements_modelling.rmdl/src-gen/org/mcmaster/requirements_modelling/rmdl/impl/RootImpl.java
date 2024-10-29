@@ -3,7 +3,6 @@
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.Root;
 

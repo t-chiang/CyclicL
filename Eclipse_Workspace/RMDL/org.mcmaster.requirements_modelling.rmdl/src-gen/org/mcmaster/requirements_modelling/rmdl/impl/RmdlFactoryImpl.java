@@ -81,6 +81,8 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createRoot();
 		case RmdlPackage.REQUIREMENT_CONTAINER:
 			return createRequirementContainer();
+		case RmdlPackage.PRODUCT_VARIANT:
+			return createProduct_Variant();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -244,6 +246,16 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	public RequirementContainer createRequirementContainer() {
 		RequirementContainerImpl requirementContainer = new RequirementContainerImpl();
 		return requirementContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product_Variant createProduct_Variant() {
+		Product_VariantImpl product_Variant = new Product_VariantImpl();
+		return product_Variant;
 	}
 
 	/**

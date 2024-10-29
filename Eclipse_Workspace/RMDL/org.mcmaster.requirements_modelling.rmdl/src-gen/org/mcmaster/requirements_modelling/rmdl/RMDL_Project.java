@@ -26,11 +26,13 @@ public interface RMDL_Project extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Feature model</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getRmdl_project <em>Rmdl project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature model</em>' containment reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRMDL_Project_Feature_model()
-	 * @model containment="true"
+	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model#getRmdl_project
+	 * @model opposite="rmdl_project" containment="true"
 	 * @generated
 	 */
 	EList<Feature_Model> getFeature_model();

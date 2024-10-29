@@ -7,23 +7,27 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.mcmaster.requirements_modelling.rmdl.Root;
+
+import org.mcmaster.requirements_modelling.rmdl.Product_Variant;
+import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Root} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Product_Variant} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RootItemProvider extends FeatureEntityItemProvider {
+public class Product_VariantItemProvider extends Feature_ModelItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RootItemProvider(AdapterFactory adapterFactory) {
+	public Product_VariantItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -38,19 +42,35 @@ public class RootItemProvider extends FeatureEntityItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFeature_modelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns Root.gif.
+	 * This adds a property descriptor for the Feature model feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeature_modelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Product_Variant_feature_model_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Product_Variant_feature_model_feature",
+								"_UI_Product_Variant_type"),
+						RmdlPackage.Literals.PRODUCT_VARIANT__FEATURE_MODEL, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This returns Product_Variant.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Root"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Product_Variant"));
 	}
 
 	/**
@@ -71,9 +91,9 @@ public class RootItemProvider extends FeatureEntityItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Root) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Root_type")
-				: getString("_UI_Root_type") + " " + label;
+		String label = ((Product_Variant) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Product_Variant_type")
+				: getString("_UI_Product_Variant_type") + " " + label;
 	}
 
 	/**

@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -152,6 +151,9 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
 				RmdlFactory.eINSTANCE.createFeature_Model()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
+				RmdlFactory.eINSTANCE.createProduct_Variant()));
 	}
 
 	/**

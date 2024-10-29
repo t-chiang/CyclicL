@@ -70,10 +70,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="featureentity" lowerBound="1"
         upperBound="-1" eType="#//FeatureEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rmdl_project" eType="#//RMDL_Project"
+        eOpposite="#//RMDL_Project/feature_model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="product_variant" upperBound="-1"
+        eType="#//Product_Variant" containment="true" eOpposite="#//Product_Variant/feature_model"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RMDL_Project">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature_model" upperBound="-1"
-        eType="#//Feature_Model" containment="true"/>
+        eType="#//Feature_Model" containment="true" eOpposite="#//Feature_Model/rmdl_project"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureEntity" abstract="true" eSuperTypes="#//Requirement_Canvas">
     <eStructuralFeatures xsi:type="ecore:EReference" name="composes" eType="#//FeatureEntity"
@@ -106,5 +110,9 @@
         eOpposite="#//Requirement_Canvas/requirements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependson" upperBound="-1"
         eType="#//Element"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Product_Variant" eSuperTypes="#//Feature_Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature_model" lowerBound="1"
+        eType="#//Feature_Model" eOpposite="#//Feature_Model/product_variant"/>
   </eClassifiers>
 </ecore:EPackage>
