@@ -2,22 +2,13 @@
  */
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.mcmaster.requirements_modelling.rmdl.Element;
 import org.mcmaster.requirements_modelling.rmdl.RequirementContainer;
 import org.mcmaster.requirements_modelling.rmdl.RequirementType;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
@@ -36,7 +27,6 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl#getReplacedby <em>Replacedby</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl#isStartingReq <em>Starting Req</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl#getRequirement_canvas <em>Requirement canvas</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementTypeImpl#getDependson <em>Dependson</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,16 +81,6 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 	 * @ordered
 	 */
 	protected boolean startingReq = STARTING_REQ_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDependson() <em>Dependson</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDependson()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Element> dependson;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,19 +286,6 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Element> getDependson() {
-		if (dependson == null) {
-			dependson = new EObjectResolvingEList<Element>(Element.class, this,
-					RmdlPackage.REQUIREMENT_TYPE__DEPENDSON);
-		}
-		return dependson;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -388,8 +355,6 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 			return isStartingReq();
 		case RmdlPackage.REQUIREMENT_TYPE__REQUIREMENT_CANVAS:
 			return getRequirement_canvas();
-		case RmdlPackage.REQUIREMENT_TYPE__DEPENDSON:
-			return getDependson();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -418,10 +383,6 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 		case RmdlPackage.REQUIREMENT_TYPE__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) newValue);
 			return;
-		case RmdlPackage.REQUIREMENT_TYPE__DEPENDSON:
-			getDependson().clear();
-			getDependson().addAll((Collection<? extends Element>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -449,9 +410,6 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 		case RmdlPackage.REQUIREMENT_TYPE__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) null);
 			return;
-		case RmdlPackage.REQUIREMENT_TYPE__DEPENDSON:
-			getDependson().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -475,8 +433,6 @@ public abstract class RequirementTypeImpl extends RequirementsImpl implements Re
 			return startingReq != STARTING_REQ_EDEFAULT;
 		case RmdlPackage.REQUIREMENT_TYPE__REQUIREMENT_CANVAS:
 			return getRequirement_canvas() != null;
-		case RmdlPackage.REQUIREMENT_TYPE__DEPENDSON:
-			return dependson != null && !dependson.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

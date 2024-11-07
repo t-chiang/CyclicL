@@ -96,6 +96,13 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql: self.implementationof->notEmpty() ">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" labelExpression="aql:self.implementationof.name" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
           <conditionnalStyles predicateExpression="feature:isHardware">
             <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="aql: '&lt;&lt;Hardware>>\n' + self.name" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -615,7 +622,7 @@
                       <onClickOperation>
                         <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
                           <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Element" referenceName="featureentity">
-                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Feature'+container.featureentity->filter(rmdl::Element)->size()"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Feature'+ self.eContainer().eContents(rmdl::Element)->size()"/>
                           </subModelOperations>
                         </firstModelOperations>
                       </onClickOperation>
@@ -629,7 +636,6 @@
                     </controls>
                   </groups>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:For" expression="aql: self.eContainer().eContents(rmdl::Element)" iteratorName="feature"/>
               </firstModelOperations>
             </initialOperation>
             <containerViewVariable name="containerView"/>
@@ -780,6 +786,12 @@
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:PaneBasedSelectionWizardDescription">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation/>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Model Layer" activeByDefault="true">
@@ -796,6 +808,13 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.productof->notEmpty()">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" labelExpression="aql:self.productof.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <edgeMappings name="Mandatory" sourceMapping="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Feature'] //@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Root']" targetMapping="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Feature']" targetFinderExpression="feature:mandatory">
           <style sourceArrow="FillDiamond" sizeComputationExpression="2">

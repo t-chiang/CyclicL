@@ -40,6 +40,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//DesignElement/isSoftware"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/tracefrom"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/requirement_canvas"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//DesignElement/implementationof"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//TestCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//TestCase/ID"/>
@@ -73,6 +74,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/optional"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/alternative"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/alternativeof"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//FeatureEntity/productof"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Root"/>
     <genClasses ecoreClass="rmdl.ecore#//RequirementContainer">
@@ -85,7 +87,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/replacedby"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rmdl.ecore#//RequirementType/startingReq"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/requirement_canvas"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//RequirementType/dependson"/>
     </genClasses>
     <genClasses ecoreClass="rmdl.ecore#//Product_Variant">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rmdl.ecore#//Product_Variant/feature_model"/>

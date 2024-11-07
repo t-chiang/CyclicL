@@ -47,7 +47,6 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 			addSpecificationPropertyDescriptor(object);
 			addReplacedbyPropertyDescriptor(object);
 			addStartingReqPropertyDescriptor(object);
-			addDependsonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,21 +96,6 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 								"_UI_RequirementType_type"),
 						RmdlPackage.Literals.REQUIREMENT_TYPE__STARTING_REQ, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Dependson feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDependsonPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_RequirementType_dependson_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_RequirementType_dependson_feature",
-								"_UI_RequirementType_type"),
-						RmdlPackage.Literals.REQUIREMENT_TYPE__DEPENDSON, true, false, true, null, null, null));
 	}
 
 	/**

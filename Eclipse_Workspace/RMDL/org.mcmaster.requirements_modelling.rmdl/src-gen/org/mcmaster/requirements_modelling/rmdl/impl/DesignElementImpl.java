@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
+import org.mcmaster.requirements_modelling.rmdl.Element;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
@@ -32,6 +33,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsSoftware <em>Is Software</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getTracefrom <em>Tracefrom</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getRequirement_canvas <em>Requirement canvas</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getImplementationof <em>Implementationof</em>}</li>
  * </ul>
  *
  * @generated
@@ -106,6 +108,16 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * @ordered
 	 */
 	protected EList<Requirements> tracefrom;
+
+	/**
+	 * The cached value of the '{@link #getImplementationof() <em>Implementationof</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplementationof()
+	 * @generated
+	 * @ordered
+	 */
+	protected Element implementationof;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +269,46 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Element getImplementationof() {
+		if (implementationof != null && implementationof.eIsProxy()) {
+			InternalEObject oldImplementationof = (InternalEObject) implementationof;
+			implementationof = (Element) eResolveProxy(oldImplementationof);
+			if (implementationof != oldImplementationof) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF, oldImplementationof, implementationof));
+			}
+		}
+		return implementationof;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Element basicGetImplementationof() {
+		return implementationof;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplementationof(Element newImplementationof) {
+		Element oldImplementationof = implementationof;
+		implementationof = newImplementationof;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF,
+					oldImplementationof, implementationof));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -320,6 +372,10 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return getTracefrom();
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			return getRequirement_canvas();
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
+			if (resolve)
+				return getImplementationof();
+			return basicGetImplementationof();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,6 +405,9 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) newValue);
 			return;
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
+			setImplementationof((Element) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -376,6 +435,9 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) null);
 			return;
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
+			setImplementationof((Element) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -398,6 +460,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return tracefrom != null && !tracefrom.isEmpty();
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			return getRequirement_canvas() != null;
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
+			return implementationof != null;
 		}
 		return super.eIsSet(featureID);
 	}

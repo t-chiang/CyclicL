@@ -2,8 +2,6 @@
  */
 package org.mcmaster.requirements_modelling.rmdl;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Requirement Type</b></em>'.
@@ -18,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedby <em>Replacedby</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#isStartingReq <em>Starting Req</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirement_canvas <em>Requirement canvas</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getDependson <em>Dependson</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType()
@@ -139,17 +136,5 @@ public interface RequirementType extends Requirements {
 	 * @generated
 	 */
 	void setRequirement_canvas(Requirement_Canvas value);
-
-	/**
-	 * Returns the value of the '<em><b>Dependson</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Element}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dependson</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_Dependson()
-	 * @model
-	 * @generated
-	 */
-	EList<Element> getDependson();
 
 } // RequirementType

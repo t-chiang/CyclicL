@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware <em>Is Software</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_canvas <em>Requirement canvas</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getImplementationof <em>Implementationof</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement()
@@ -131,5 +132,27 @@ public interface DesignElement extends EObject {
 	 * @generated
 	 */
 	void setRequirement_canvas(Requirement_Canvas value);
+
+	/**
+	 * Returns the value of the '<em><b>Implementationof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implementationof</em>' reference.
+	 * @see #setImplementationof(Element)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_Implementationof()
+	 * @model
+	 * @generated
+	 */
+	Element getImplementationof();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getImplementationof <em>Implementationof</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implementationof</em>' reference.
+	 * @see #getImplementationof()
+	 * @generated
+	 */
+	void setImplementationof(Element value);
 
 } // DesignElement

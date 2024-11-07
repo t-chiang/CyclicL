@@ -249,22 +249,13 @@ public interface RmdlPackage extends EPackage {
 	int REQUIREMENT_TYPE__REQUIREMENT_CANVAS = REQUIREMENTS_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENT_TYPE__DEPENDSON = REQUIREMENTS_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Requirement Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT_TYPE_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 6;
+	int REQUIREMENT_TYPE_FEATURE_COUNT = REQUIREMENTS_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Requirement Type</em>' class.
@@ -383,15 +374,6 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTIONAL__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
-
-	/**
-	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTIONAL__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
 
 	/**
 	 * The number of structural features of the '<em>Functional</em>' class.
@@ -521,15 +503,6 @@ public interface RmdlPackage extends EPackage {
 	int QUALITATIVE__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
 
 	/**
-	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUALITATIVE__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
-
-	/**
 	 * The number of structural features of the '<em>Qualitative</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -655,15 +628,6 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
-
-	/**
-	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -875,15 +839,6 @@ public interface RmdlPackage extends EPackage {
 	int SAFETY__REQUIREMENT_CANVAS = REQUIREMENT_TYPE__REQUIREMENT_CANVAS;
 
 	/**
-	 * The feature id for the '<em><b>Dependson</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAFETY__DEPENDSON = REQUIREMENT_TYPE__DEPENDSON;
-
-	/**
 	 * The number of structural features of the '<em>Safety</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,13 +912,22 @@ public interface RmdlPackage extends EPackage {
 	int DESIGN_ELEMENT__REQUIREMENT_CANVAS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Implementationof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_ELEMENT__IMPLEMENTATIONOF = 5;
+
+	/**
 	 * The number of structural features of the '<em>Design Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_ELEMENT_FEATURE_COUNT = 5;
+	int DESIGN_ELEMENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Design Element</em>' class.
@@ -1248,13 +1212,22 @@ public interface RmdlPackage extends EPackage {
 	int FEATURE_ENTITY__ALTERNATIVEOF = REQUIREMENT_CANVAS_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Productof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_ENTITY__PRODUCTOF = REQUIREMENT_CANVAS_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Feature Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_ENTITY_FEATURE_COUNT = REQUIREMENT_CANVAS_FEATURE_COUNT + 6;
+	int FEATURE_ENTITY_FEATURE_COUNT = REQUIREMENT_CANVAS_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Feature Entity</em>' class.
@@ -1382,6 +1355,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT__ALTERNATIVEOF = FEATURE_ENTITY__ALTERNATIVEOF;
+
+	/**
+	 * The feature id for the '<em><b>Productof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__PRODUCTOF = FEATURE_ENTITY__PRODUCTOF;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -1619,6 +1601,15 @@ public interface RmdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOT__ALTERNATIVEOF = FEATURE_ENTITY__ALTERNATIVEOF;
+
+	/**
+	 * The feature id for the '<em><b>Productof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT__PRODUCTOF = FEATURE_ENTITY__PRODUCTOF;
 
 	/**
 	 * The number of structural features of the '<em>Root</em>' class.
@@ -2079,6 +2070,17 @@ public interface RmdlPackage extends EPackage {
 	EReference getDesignElement_Requirement_canvas();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getImplementationof <em>Implementationof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Implementationof</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getImplementationof()
+	 * @see #getDesignElement()
+	 * @generated
+	 */
+	EReference getDesignElement_Implementationof();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.TestCase <em>Test Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2381,6 +2383,17 @@ public interface RmdlPackage extends EPackage {
 	EReference getFeatureEntity_Alternativeof();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductof <em>Productof</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Productof</em>'.
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductof()
+	 * @see #getFeatureEntity()
+	 * @generated
+	 */
+	EReference getFeatureEntity_Productof();
+
+	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Root <em>Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2486,17 +2499,6 @@ public interface RmdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirementType_Requirement_canvas();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getDependson <em>Dependson</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Dependson</em>'.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getDependson()
-	 * @see #getRequirementType()
-	 * @generated
-	 */
-	EReference getRequirementType_Dependson();
 
 	/**
 	 * Returns the meta object for class '{@link org.mcmaster.requirements_modelling.rmdl.Product_Variant <em>Product Variant</em>}'.
@@ -2759,6 +2761,14 @@ public interface RmdlPackage extends EPackage {
 		EReference DESIGN_ELEMENT__REQUIREMENT_CANVAS = eINSTANCE.getDesignElement_Requirement_canvas();
 
 		/**
+		 * The meta object literal for the '<em><b>Implementationof</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_ELEMENT__IMPLEMENTATIONOF = eINSTANCE.getDesignElement_Implementationof();
+
+		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.TestCaseImpl <em>Test Case</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2995,6 +3005,14 @@ public interface RmdlPackage extends EPackage {
 		EReference FEATURE_ENTITY__ALTERNATIVEOF = eINSTANCE.getFeatureEntity_Alternativeof();
 
 		/**
+		 * The meta object literal for the '<em><b>Productof</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_ENTITY__PRODUCTOF = eINSTANCE.getFeatureEntity_Productof();
+
+		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.RootImpl <em>Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3079,14 +3097,6 @@ public interface RmdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUIREMENT_TYPE__REQUIREMENT_CANVAS = eINSTANCE.getRequirementType_Requirement_canvas();
-
-		/**
-		 * The meta object literal for the '<em><b>Dependson</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REQUIREMENT_TYPE__DEPENDSON = eINSTANCE.getRequirementType_Dependson();
 
 		/**
 		 * The meta object literal for the '{@link org.mcmaster.requirements_modelling.rmdl.impl.Product_VariantImpl <em>Product Variant</em>}' class.

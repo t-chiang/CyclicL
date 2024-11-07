@@ -58,6 +58,7 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			addIsSoftwarePropertyDescriptor(object);
 			addTracefromPropertyDescriptor(object);
 			addRequirement_canvasPropertyDescriptor(object);
+			addImplementationofPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -138,6 +139,21 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_requirement_canvas_feature",
 								"_UI_DesignElement_type"),
 						RmdlPackage.Literals.DESIGN_ELEMENT__REQUIREMENT_CANVAS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Implementationof feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementationofPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesignElement_implementationof_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_implementationof_feature",
+								"_UI_DesignElement_type"),
+						RmdlPackage.Literals.DESIGN_ELEMENT__IMPLEMENTATIONOF, true, false, true, null, null, null));
 	}
 
 	/**
