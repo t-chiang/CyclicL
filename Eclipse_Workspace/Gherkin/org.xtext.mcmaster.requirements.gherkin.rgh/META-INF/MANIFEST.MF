@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
  org.eclipse.emf.common,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.mcmaster.requirements_modelling.rmdl;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.xtext.mcmaster.requirements.gherkin.rgh.services,
  org.xtext.mcmaster.requirements.gherkin.rgh.parser.antlr.internal,

@@ -61,8 +61,8 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createQualitative();
 		case RmdlPackage.CONSTRAINT:
 			return createConstraint();
-		case RmdlPackage.REQUIREMENT_DIAGRAM:
-			return createRequirement_Diagram();
+		case RmdlPackage.REQUIREMENT_CANVAS:
+			return createRequirement_Canvas();
 		case RmdlPackage.SAFETY:
 			return createSafety();
 		case RmdlPackage.DESIGN_ELEMENT:
@@ -79,6 +79,10 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createRMDL_Project();
 		case RmdlPackage.ROOT:
 			return createRoot();
+		case RmdlPackage.REQUIREMENT_CONTAINER:
+			return createRequirementContainer();
+		case RmdlPackage.PRODUCT_VARIANT:
+			return createProduct_Variant();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -149,9 +153,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_Diagram createRequirement_Diagram() {
-		Requirement_DiagramImpl requirement_Diagram = new Requirement_DiagramImpl();
-		return requirement_Diagram;
+	public Requirement_Canvas createRequirement_Canvas() {
+		Requirement_CanvasImpl requirement_Canvas = new Requirement_CanvasImpl();
+		return requirement_Canvas;
 	}
 
 	/**
@@ -232,6 +236,26 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	public Root createRoot() {
 		RootImpl root = new RootImpl();
 		return root;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RequirementContainer createRequirementContainer() {
+		RequirementContainerImpl requirementContainer = new RequirementContainerImpl();
+		return requirementContainer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product_Variant createProduct_Variant() {
+		Product_VariantImpl product_Variant = new Product_VariantImpl();
+		return product_Variant;
 	}
 
 	/**

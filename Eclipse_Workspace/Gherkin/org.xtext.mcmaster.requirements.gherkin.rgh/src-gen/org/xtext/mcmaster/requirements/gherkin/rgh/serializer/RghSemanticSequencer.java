@@ -14,11 +14,12 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Description;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Event;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Feature;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Given;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Model;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Postcondition;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Precondition;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghPackage;
@@ -40,23 +41,23 @@ public class RghSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RghPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case RghPackage.CONTEXT:
+				sequence_Context(context, (Context) semanticObject); 
+				return; 
 			case RghPackage.DESCRIPTION:
 				sequence_Description(context, (Description) semanticObject); 
 				return; 
 			case RghPackage.EVENT:
 				sequence_Event(context, (Event) semanticObject); 
 				return; 
+			case RghPackage.FEATURE:
+				sequence_Feature(context, (Feature) semanticObject); 
+				return; 
 			case RghPackage.GIVEN:
 				sequence_Given(context, (Given) semanticObject); 
 				return; 
 			case RghPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
-				return; 
-			case RghPackage.MODULE:
-				sequence_Module(context, (org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module) semanticObject); 
-				return; 
-			case RghPackage.OPERATION:
-				sequence_Operation(context, (Operation) semanticObject); 
 				return; 
 			case RghPackage.POSTCONDITION:
 				sequence_Postcondition(context, (Postcondition) semanticObject); 
@@ -74,6 +75,21 @@ public class RghSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Steps returns Context
+	 *     Context returns Context
+	 *
+	 * Constraint:
+	 *     feature+=Feature*
+	 * </pre>
+	 */
+	protected void sequence_Context(ISerializationContext context, Context semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * <pre>
@@ -121,6 +137,26 @@ public class RghSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Feature returns Feature
+	 *
+	 * Constraint:
+	 *     name=Description
+	 * </pre>
+	 */
+	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RghPackage.Literals.FEATURE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RghPackage.Literals.FEATURE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFeatureAccess().getNameDescriptionParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Steps returns Given
 	 *     Given returns Given
 	 *
@@ -144,50 +180,6 @@ public class RghSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Steps returns Module
-	 *     Context returns Module
-	 *     Module returns Module
-	 *
-	 * Constraint:
-	 *     name=ID
-	 * </pre>
-	 */
-	protected void sequence_Module(ISerializationContext context, org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RghPackage.Literals.CONTEXT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RghPackage.Literals.CONTEXT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModuleAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Steps returns Operation
-	 *     Context returns Operation
-	 *     Operation returns Operation
-	 *
-	 * Constraint:
-	 *     name=QualifiedName
-	 * </pre>
-	 */
-	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RghPackage.Literals.CONTEXT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RghPackage.Literals.CONTEXT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperationAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

@@ -12,5 +12,5 @@ package org.mcmaster.requirements_modelling.rmdl;
  * @model
  * @generated
  */
-public interface Qualitative extends Requirements {
+public interface Qualitative extends RequirementType {
 } // Qualitative

@@ -56,7 +56,7 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 			addIDPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addRequirement_rootPropertyDescriptor(object);
+			addRequirement_canvasPropertyDescriptor(object);
 			addHasPassedPropertyDescriptor(object);
 			addRequirementsPropertyDescriptor(object);
 		}
@@ -111,18 +111,18 @@ public class TestCaseItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirement root feature.
+	 * This adds a property descriptor for the Requirement canvas feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequirement_rootPropertyDescriptor(Object object) {
+	protected void addRequirement_canvasPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TestCase_requirement_root_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_requirement_root_feature",
+						getResourceLocator(), getString("_UI_TestCase_requirement_canvas_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TestCase_requirement_canvas_feature",
 								"_UI_TestCase_type"),
-						RmdlPackage.Literals.TEST_CASE__REQUIREMENT_ROOT, true, false, true, null, null, null));
+						RmdlPackage.Literals.TEST_CASE__REQUIREMENT_CANVAS, true, false, true, null, null, null));
 	}
 
 	/**

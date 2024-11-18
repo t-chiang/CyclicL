@@ -18,7 +18,7 @@ import org.mcmaster.requirements_modelling.rmdl.Safety;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SafetyItemProvider extends RequirementsItemProvider {
+public class SafetyItemProvider extends RequirementTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

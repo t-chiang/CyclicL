@@ -11,10 +11,11 @@
     </genClasses>
     <genClasses ecoreClass="Rgh.ecore#//Steps"/>
     <genClasses ecoreClass="Rgh.ecore#//Context">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rgh.ecore#//Context/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rgh.ecore#//Context/feature"/>
     </genClasses>
-    <genClasses ecoreClass="Rgh.ecore#//Module"/>
-    <genClasses ecoreClass="Rgh.ecore#//Operation"/>
+    <genClasses ecoreClass="Rgh.ecore#//Feature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rgh.ecore#//Feature/name"/>
+    </genClasses>
     <genClasses ecoreClass="Rgh.ecore#//Given">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rgh.ecore#//Given/preconditions"/>
     </genClasses>

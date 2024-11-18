@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -71,7 +70,6 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL);
-			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM);
 		}
 		return childrenFeatures;
 	}
@@ -134,7 +132,6 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 
 		switch (notification.getFeatureID(RMDL_Project.class)) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
-		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_DIAGRAM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -155,14 +152,8 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
 				RmdlFactory.eINSTANCE.createFeature_Model()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createRequirement_Diagram()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createElement()));
-
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_DIAGRAM,
-				RmdlFactory.eINSTANCE.createRoot()));
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
+				RmdlFactory.eINSTANCE.createProduct_Variant()));
 	}
 
 	/**

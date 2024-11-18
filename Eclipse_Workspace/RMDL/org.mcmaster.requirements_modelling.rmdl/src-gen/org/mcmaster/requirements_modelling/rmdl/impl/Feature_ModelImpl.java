@@ -16,10 +16,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.requirements_modelling.rmdl.FeatureEntity;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
+import org.mcmaster.requirements_modelling.rmdl.Product_Variant;
+import org.mcmaster.requirements_modelling.rmdl.RMDL_Project;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
@@ -32,6 +36,8 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getFeatureentity <em>Featureentity</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getRmdl_project <em>Rmdl project</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getProduct_variant <em>Product variant</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +72,16 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	 * @ordered
 	 */
 	protected EList<FeatureEntity> featureentity;
+
+	/**
+	 * The cached value of the '{@link #getProduct_variant() <em>Product variant</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProduct_variant()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Product_Variant> product_variant;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,13 +141,109 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RMDL_Project getRmdl_project() {
+		if (eContainerFeatureID() != RmdlPackage.FEATURE_MODEL__RMDL_PROJECT)
+			return null;
+		return (RMDL_Project) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRmdl_project(RMDL_Project newRmdl_project, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newRmdl_project, RmdlPackage.FEATURE_MODEL__RMDL_PROJECT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRmdl_project(RMDL_Project newRmdl_project) {
+		if (newRmdl_project != eInternalContainer()
+				|| (eContainerFeatureID() != RmdlPackage.FEATURE_MODEL__RMDL_PROJECT && newRmdl_project != null)) {
+			if (EcoreUtil.isAncestor(this, newRmdl_project))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRmdl_project != null)
+				msgs = ((InternalEObject) newRmdl_project).eInverseAdd(this, RmdlPackage.RMDL_PROJECT__FEATURE_MODEL,
+						RMDL_Project.class, msgs);
+			msgs = basicSetRmdl_project(newRmdl_project, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_MODEL__RMDL_PROJECT,
+					newRmdl_project, newRmdl_project));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Product_Variant> getProduct_variant() {
+		if (product_variant == null) {
+			product_variant = new EObjectContainmentWithInverseEList<Product_Variant>(Product_Variant.class, this,
+					RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT, RmdlPackage.PRODUCT_VARIANT__FEATURE_MODEL);
+		}
+		return product_variant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetRmdl_project((RMDL_Project) otherEnd, msgs);
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getProduct_variant()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
 			return ((InternalEList<?>) getFeatureentity()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			return basicSetRmdl_project(null, msgs);
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
+			return ((InternalEList<?>) getProduct_variant()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.RMDL_PROJECT__FEATURE_MODEL,
+					RMDL_Project.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -146,6 +258,10 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 			return getName();
 		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
 			return getFeatureentity();
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			return getRmdl_project();
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
+			return getProduct_variant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,6 +282,13 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 			getFeatureentity().clear();
 			getFeatureentity().addAll((Collection<? extends FeatureEntity>) newValue);
 			return;
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			setRmdl_project((RMDL_Project) newValue);
+			return;
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
+			getProduct_variant().clear();
+			getProduct_variant().addAll((Collection<? extends Product_Variant>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -184,6 +307,12 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
 			getFeatureentity().clear();
 			return;
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			setRmdl_project((RMDL_Project) null);
+			return;
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
+			getProduct_variant().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,6 +329,10 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
 			return featureentity != null && !featureentity.isEmpty();
+		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
+			return getRmdl_project() != null;
+		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
+			return product_variant != null && !product_variant.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

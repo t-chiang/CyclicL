@@ -19,13 +19,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptional <em>Optional</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof <em>Alternativeof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductof <em>Productof</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity()
  * @model abstract="true"
  * @generated
  */
-public interface FeatureEntity extends Requirement_Diagram {
+public interface FeatureEntity extends Requirement_Canvas {
 	/**
 	 * Returns the value of the '<em><b>Composes</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getMandatory <em>Mandatory</em>}'.
@@ -139,5 +140,27 @@ public interface FeatureEntity extends Requirement_Diagram {
 	 * @generated
 	 */
 	void setAlternativeof(FeatureEntity value);
+
+	/**
+	 * Returns the value of the '<em><b>Productof</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Productof</em>' reference.
+	 * @see #setProductof(FeatureEntity)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Productof()
+	 * @model
+	 * @generated
+	 */
+	FeatureEntity getProductof();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductof <em>Productof</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Productof</em>' reference.
+	 * @see #getProductof()
+	 * @generated
+	 */
+	void setProductof(FeatureEntity value);
 
 } // FeatureEntity

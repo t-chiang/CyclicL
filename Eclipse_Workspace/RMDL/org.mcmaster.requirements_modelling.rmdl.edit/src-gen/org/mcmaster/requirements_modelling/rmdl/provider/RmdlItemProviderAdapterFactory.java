@@ -142,26 +142,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Requirement_DiagramItemProvider requirement_DiagramItemProvider;
+	protected Requirement_CanvasItemProvider requirement_CanvasItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRequirement_DiagramAdapter() {
-		if (requirement_DiagramItemProvider == null) {
-			requirement_DiagramItemProvider = new Requirement_DiagramItemProvider(this);
+	public Adapter createRequirement_CanvasAdapter() {
+		if (requirement_CanvasItemProvider == null) {
+			requirement_CanvasItemProvider = new Requirement_CanvasItemProvider(this);
 		}
 
-		return requirement_DiagramItemProvider;
+		return requirement_CanvasItemProvider;
 	}
 
 	/**
@@ -349,6 +349,52 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RequirementContainerItemProvider requirementContainerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRequirementContainerAdapter() {
+		if (requirementContainerItemProvider == null) {
+			requirementContainerItemProvider = new RequirementContainerItemProvider(this);
+		}
+
+		return requirementContainerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Product_Variant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Product_VariantItemProvider product_VariantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Product_Variant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProduct_VariantAdapter() {
+		if (product_VariantItemProvider == null) {
+			product_VariantItemProvider = new Product_VariantItemProvider(this);
+		}
+
+		return product_VariantItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,8 +499,8 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			qualitativeItemProvider.dispose();
 		if (constraintItemProvider != null)
 			constraintItemProvider.dispose();
-		if (requirement_DiagramItemProvider != null)
-			requirement_DiagramItemProvider.dispose();
+		if (requirement_CanvasItemProvider != null)
+			requirement_CanvasItemProvider.dispose();
 		if (safetyItemProvider != null)
 			safetyItemProvider.dispose();
 		if (designElementItemProvider != null)
@@ -471,6 +517,10 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			rmdL_ProjectItemProvider.dispose();
 		if (rootItemProvider != null)
 			rootItemProvider.dispose();
+		if (requirementContainerItemProvider != null)
+			requirementContainerItemProvider.dispose();
+		if (product_VariantItemProvider != null)
+			product_VariantItemProvider.dispose();
 	}
 
 }

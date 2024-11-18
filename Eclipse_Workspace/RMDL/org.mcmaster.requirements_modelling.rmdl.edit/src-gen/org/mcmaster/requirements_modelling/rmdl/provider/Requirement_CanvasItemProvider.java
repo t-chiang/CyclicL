@@ -23,17 +23,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
 import org.mcmaster.requirements_modelling.rmdl.RmdlFactory;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Requirement_DiagramItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class Requirement_CanvasItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +41,7 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Requirement_DiagramItemProvider(AdapterFactory adapterFactory) {
+	public Requirement_CanvasItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,6 +59,7 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 			addRequirementsPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addRequirementcontainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,10 +73,10 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	protected void addRequirementsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Diagram_requirements_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Diagram_requirements_feature",
-								"_UI_Requirement_Diagram_type"),
-						RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Requirement_Canvas_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Canvas_requirements_feature",
+								"_UI_Requirement_Canvas_type"),
+						RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -87,10 +88,10 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	protected void addReviewPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Diagram_review_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Diagram_review_feature",
-								"_UI_Requirement_Diagram_type"),
-						RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REVIEW, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Requirement_Canvas_review_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Canvas_review_feature",
+								"_UI_Requirement_Canvas_type"),
+						RmdlPackage.Literals.REQUIREMENT_CANVAS__REVIEW, true, false, true, null, null, null));
 	}
 
 	/**
@@ -102,11 +103,26 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirement_Diagram_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Diagram_name_feature",
-								"_UI_Requirement_Diagram_type"),
-						RmdlPackage.Literals.REQUIREMENT_DIAGRAM__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Requirement_Canvas_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Canvas_name_feature",
+								"_UI_Requirement_Canvas_type"),
+						RmdlPackage.Literals.REQUIREMENT_CANVAS__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirementcontainer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementcontainerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Requirement_Canvas_requirementcontainer_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Canvas_requirementcontainer_feature",
+						"_UI_Requirement_Canvas_type"),
+				RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -121,10 +137,11 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__TESTCASE);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REVIEW);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__TESTCASE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REVIEW);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER);
 		}
 		return childrenFeatures;
 	}
@@ -143,14 +160,14 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	}
 
 	/**
-	 * This returns Requirement_Diagram.gif.
+	 * This returns Requirement_Canvas.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Requirement_Diagram"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Requirement_Canvas"));
 	}
 
 	/**
@@ -171,9 +188,9 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Requirement_Diagram) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Requirement_Diagram_type")
-				: getString("_UI_Requirement_Diagram_type") + " " + label;
+		String label = ((Requirement_Canvas) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Requirement_Canvas_type")
+				: getString("_UI_Requirement_Canvas_type") + " " + label;
 	}
 
 	/**
@@ -187,14 +204,15 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Requirement_Diagram.class)) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__NAME:
+		switch (notification.getFeatureID(Requirement_Canvas.class)) {
+		case RmdlPackage.REQUIREMENT_CANVAS__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -212,26 +230,29 @@ public class Requirement_DiagramItemProvider extends ItemProviderAdapter impleme
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__TESTCASE,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__TESTCASE,
 				RmdlFactory.eINSTANCE.createTestCase()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createFunctional()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createQualitative()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createConstraint()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createSafety()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__REVIEW,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REVIEW,
 				RmdlFactory.eINSTANCE.createReview()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_DIAGRAM__DESIGNELEMENT,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGNELEMENT,
 				RmdlFactory.eINSTANCE.createDesignElement()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER,
+				RmdlFactory.eINSTANCE.createRequirementContainer()));
 	}
 
 	/**

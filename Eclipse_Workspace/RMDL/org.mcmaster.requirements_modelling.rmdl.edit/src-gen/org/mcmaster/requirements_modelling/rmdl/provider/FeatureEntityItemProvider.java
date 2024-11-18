@@ -20,7 +20,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureEntityItemProvider extends Requirement_DiagramItemProvider {
+public class FeatureEntityItemProvider extends Requirement_CanvasItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,6 +48,7 @@ public class FeatureEntityItemProvider extends Requirement_DiagramItemProvider {
 			addOptionalPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addAlternativeofPropertyDescriptor(object);
+			addProductofPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -140,6 +141,21 @@ public class FeatureEntityItemProvider extends Requirement_DiagramItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_alternativeof_feature",
 								"_UI_FeatureEntity_type"),
 						RmdlPackage.Literals.FEATURE_ENTITY__ALTERNATIVEOF, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Productof feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProductofPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_FeatureEntity_productof_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_productof_feature",
+								"_UI_FeatureEntity_type"),
+						RmdlPackage.Literals.FEATURE_ENTITY__PRODUCTOF, true, false, true, null, null, null));
 	}
 
 	/**

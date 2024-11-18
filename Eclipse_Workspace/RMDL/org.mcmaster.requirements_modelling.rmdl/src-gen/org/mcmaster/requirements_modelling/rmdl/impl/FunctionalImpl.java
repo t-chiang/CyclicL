@@ -14,7 +14,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *
  * @generated
  */
-public class FunctionalImpl extends RequirementsImpl implements Functional {
+public class FunctionalImpl extends RequirementTypeImpl implements Functional {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

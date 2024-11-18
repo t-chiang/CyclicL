@@ -19,30 +19,32 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
-import org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram;
-import org.mcmaster.requirements_modelling.rmdl.Requirements;
+import org.mcmaster.requirements_modelling.rmdl.RequirementContainer;
+import org.mcmaster.requirements_modelling.rmdl.RequirementType;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
 import org.mcmaster.requirements_modelling.rmdl.Review;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 import org.mcmaster.requirements_modelling.rmdl.TestCase;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Requirement Diagram</b></em>'.
+ * An implementation of the model object '<em><b>Requirement Canvas</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_DiagramImpl#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_DiagramImpl#getRequirements <em>Requirements</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_DiagramImpl#getReview <em>Review</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_DiagramImpl#getDesignelement <em>Designelement</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_DiagramImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl#getTestcase <em>Testcase</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl#getRequirements <em>Requirements</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl#getReview <em>Review</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl#getDesignelement <em>Designelement</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Requirement_CanvasImpl#getRequirementcontainer <em>Requirementcontainer</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implements Requirement_Diagram {
+public class Requirement_CanvasImpl extends MinimalEObjectImpl.Container implements Requirement_Canvas {
 	/**
 	 * The cached value of the '{@link #getTestcase() <em>Testcase</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -61,7 +63,7 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Requirements> requirements;
+	protected EList<RequirementType> requirements;
 
 	/**
 	 * The cached value of the '{@link #getReview() <em>Review</em>}' containment reference list.
@@ -104,11 +106,21 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getRequirementcontainer() <em>Requirementcontainer</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirementcontainer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RequirementContainer> requirementcontainer;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Requirement_DiagramImpl() {
+	protected Requirement_CanvasImpl() {
 		super();
 	}
 
@@ -119,7 +131,7 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RmdlPackage.Literals.REQUIREMENT_DIAGRAM;
+		return RmdlPackage.Literals.REQUIREMENT_CANVAS;
 	}
 
 	/**
@@ -130,7 +142,7 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	public EList<TestCase> getTestcase() {
 		if (testcase == null) {
 			testcase = new EObjectContainmentWithInverseEList<TestCase>(TestCase.class, this,
-					RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE, RmdlPackage.TEST_CASE__REQUIREMENT_ROOT);
+					RmdlPackage.REQUIREMENT_CANVAS__TESTCASE, RmdlPackage.TEST_CASE__REQUIREMENT_CANVAS);
 		}
 		return testcase;
 	}
@@ -140,10 +152,10 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Requirements> getRequirements() {
+	public EList<RequirementType> getRequirements() {
 		if (requirements == null) {
-			requirements = new EObjectContainmentWithInverseEList<Requirements>(Requirements.class, this,
-					RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS, RmdlPackage.REQUIREMENTS__REQUIREMENT_ROOT);
+			requirements = new EObjectContainmentWithInverseEList<RequirementType>(RequirementType.class, this,
+					RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS, RmdlPackage.REQUIREMENT_TYPE__REQUIREMENT_CANVAS);
 		}
 		return requirements;
 	}
@@ -156,7 +168,7 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	public EList<Review> getReview() {
 		if (review == null) {
 			review = new EObjectContainmentWithInverseEList<Review>(Review.class, this,
-					RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW, RmdlPackage.REVIEW__REQUIREMENT_ROOT);
+					RmdlPackage.REQUIREMENT_CANVAS__REVIEW, RmdlPackage.REVIEW__REQUIREMENT_CANVAS);
 		}
 		return review;
 	}
@@ -169,7 +181,7 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	public EList<DesignElement> getDesignelement() {
 		if (designelement == null) {
 			designelement = new EObjectContainmentWithInverseEList<DesignElement>(DesignElement.class, this,
-					RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_ROOT);
+					RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT, RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS);
 		}
 		return designelement;
 	}
@@ -192,8 +204,21 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENT_DIAGRAM__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENT_CANVAS__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RequirementContainer> getRequirementcontainer() {
+		if (requirementcontainer == null) {
+			requirementcontainer = new EObjectContainmentWithInverseEList<RequirementContainer>(
+					RequirementContainer.class, this, RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER,
+					RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS);
+		}
+		return requirementcontainer;
 	}
 
 	/**
@@ -205,14 +230,17 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestcase()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirements()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDesignelement()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirementcontainer()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -225,14 +253,16 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
 			return ((InternalEList<?>) getTestcase()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 			return ((InternalEList<?>) getRequirements()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 			return ((InternalEList<?>) getReview()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
 			return ((InternalEList<?>) getDesignelement()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
+			return ((InternalEList<?>) getRequirementcontainer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -245,16 +275,18 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
 			return getTestcase();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 			return getRequirements();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 			return getReview();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
 			return getDesignelement();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__NAME:
+		case RmdlPackage.REQUIREMENT_CANVAS__NAME:
 			return getName();
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
+			return getRequirementcontainer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,24 +300,28 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
 			getTestcase().clear();
 			getTestcase().addAll((Collection<? extends TestCase>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 			getRequirements().clear();
-			getRequirements().addAll((Collection<? extends Requirements>) newValue);
+			getRequirements().addAll((Collection<? extends RequirementType>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 			getReview().clear();
 			getReview().addAll((Collection<? extends Review>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
 			getDesignelement().clear();
 			getDesignelement().addAll((Collection<? extends DesignElement>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__NAME:
+		case RmdlPackage.REQUIREMENT_CANVAS__NAME:
 			setName((String) newValue);
+			return;
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
+			getRequirementcontainer().clear();
+			getRequirementcontainer().addAll((Collection<? extends RequirementContainer>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -299,20 +335,23 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
 			getTestcase().clear();
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 			getRequirements().clear();
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 			getReview().clear();
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
 			getDesignelement().clear();
 			return;
-		case RmdlPackage.REQUIREMENT_DIAGRAM__NAME:
+		case RmdlPackage.REQUIREMENT_CANVAS__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
+			getRequirementcontainer().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -326,16 +365,18 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_DIAGRAM__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
 			return testcase != null && !testcase.isEmpty();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 			return requirements != null && !requirements.isEmpty();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__REVIEW:
+		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
 			return review != null && !review.isEmpty();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
 			return designelement != null && !designelement.isEmpty();
-		case RmdlPackage.REQUIREMENT_DIAGRAM__NAME:
+		case RmdlPackage.REQUIREMENT_CANVAS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
+			return requirementcontainer != null && !requirementcontainer.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -357,4 +398,4 @@ public class Requirement_DiagramImpl extends MinimalEObjectImpl.Container implem
 		return result.toString();
 	}
 
-} //Requirement_DiagramImpl
+} //Requirement_CanvasImpl

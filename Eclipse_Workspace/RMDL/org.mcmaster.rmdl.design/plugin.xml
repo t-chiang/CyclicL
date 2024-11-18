@@ -24,4 +24,7 @@
            id="ReqClearImpactAnalysis">
      </javaActions>
   </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+  </extension>
 </plugin>

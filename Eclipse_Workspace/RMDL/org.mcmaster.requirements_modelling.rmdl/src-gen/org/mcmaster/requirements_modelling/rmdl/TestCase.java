@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getType <em>Type</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_canvas <em>Requirement canvas</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#isHasPassed <em>Has Passed</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements <em>Requirements</em>}</li>
  * </ul>
@@ -97,28 +97,28 @@ public interface TestCase extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirement root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getTestcase <em>Testcase</em>}'.
+	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestcase <em>Testcase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirement root</em>' container reference.
-	 * @see #setRequirement_root(Requirement_Diagram)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirement_root()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Diagram#getTestcase
+	 * @return the value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #setRequirement_canvas(Requirement_Canvas)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirement_canvas()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestcase
 	 * @model opposite="testcase" required="true" transient="false"
 	 * @generated
 	 */
-	Requirement_Diagram getRequirement_root();
+	Requirement_Canvas getRequirement_canvas();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_root <em>Requirement root</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_canvas <em>Requirement canvas</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirement root</em>' container reference.
-	 * @see #getRequirement_root()
+	 * @param value the new value of the '<em>Requirement canvas</em>' container reference.
+	 * @see #getRequirement_canvas()
 	 * @generated
 	 */
-	void setRequirement_root(Requirement_Diagram value);
+	void setRequirement_canvas(Requirement_Canvas value);
 
 	/**
 	 * Returns the value of the '<em><b>Has Passed</b></em>' attribute.

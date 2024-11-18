@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Context;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Description;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Event;
+import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Feature;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Given;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Model;
-import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Operation;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Postcondition;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Precondition;
 import org.xtext.mcmaster.requirements.gherkin.rgh.rgh.RghFactory;
@@ -58,14 +58,7 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass moduleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass operationEClass = null;
+  private EClass featureEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -228,9 +221,9 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
    * @generated
    */
   @Override
-  public EAttribute getContext_Name()
+  public EReference getContext_Feature()
   {
-    return (EAttribute)contextEClass.getEStructuralFeatures().get(0);
+    return (EReference)contextEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -239,9 +232,9 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
    * @generated
    */
   @Override
-  public EClass getModule()
+  public EClass getFeature()
   {
-    return moduleEClass;
+    return featureEClass;
   }
 
   /**
@@ -250,9 +243,9 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
    * @generated
    */
   @Override
-  public EClass getOperation()
+  public EReference getFeature_Name()
   {
-    return operationEClass;
+    return (EReference)featureEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -479,11 +472,10 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
     stepsEClass = createEClass(STEPS);
 
     contextEClass = createEClass(CONTEXT);
-    createEAttribute(contextEClass, CONTEXT__NAME);
+    createEReference(contextEClass, CONTEXT__FEATURE);
 
-    moduleEClass = createEClass(MODULE);
-
-    operationEClass = createEClass(OPERATION);
+    featureEClass = createEClass(FEATURE);
+    createEReference(featureEClass, FEATURE__NAME);
 
     givenEClass = createEClass(GIVEN);
     createEReference(givenEClass, GIVEN__PRECONDITIONS);
@@ -540,8 +532,6 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
 
     // Add supertypes to classes
     contextEClass.getESuperTypes().add(this.getSteps());
-    moduleEClass.getESuperTypes().add(this.getContext());
-    operationEClass.getESuperTypes().add(this.getContext());
     givenEClass.getESuperTypes().add(this.getSteps());
     whenEClass.getESuperTypes().add(this.getSteps());
     thenEClass.getESuperTypes().add(this.getSteps());
@@ -553,11 +543,10 @@ public class RghPackageImpl extends EPackageImpl implements RghPackage
     initEClass(stepsEClass, Steps.class, "Steps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getContext_Name(), ecorePackage.getEString(), "name", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContext_Feature(), this.getFeature(), null, "feature", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(moduleEClass, org.xtext.mcmaster.requirements.gherkin.rgh.rgh.Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFeature_Name(), this.getDescription(), null, "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(givenEClass, Given.class, "Given", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGiven_Preconditions(), this.getPrecondition(), null, "preconditions", null, 0, -1, Given.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -51,22 +51,13 @@ public interface RghFactory extends EFactory
   Context createContext();
 
   /**
-   * Returns a new object of class '<em>Module</em>'.
+   * Returns a new object of class '<em>Feature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Module</em>'.
+   * @return a new object of class '<em>Feature</em>'.
    * @generated
    */
-  Module createModule();
-
-  /**
-   * Returns a new object of class '<em>Operation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation</em>'.
-   * @generated
-   */
-  Operation createOperation();
+  Feature createFeature();
 
   /**
    * Returns a new object of class '<em>Given</em>'.
