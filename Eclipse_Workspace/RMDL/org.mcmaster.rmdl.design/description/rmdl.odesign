@@ -59,6 +59,13 @@
               </initialOperation>
             </itemDescriptions>
           </ownedTools>
+          <ownedTools xsi:type="tool:ContainerDropDescription" dragSource="BOTH">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation/>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Model Layer" activeByDefault="true">
@@ -97,7 +104,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
           <conditionnalStyles predicateExpression="aql: self.implementationof->notEmpty() ">
-            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" labelExpression="aql:self.implementationof.name" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" labelExpression="aql: '&lt;&lt;Feature>>\n' + self.implementationof.name" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -545,7 +552,7 @@
     </ownedRepresentations>
   </ownedViewpoints>
   <ownedViewpoints name="Feature Modelling Viewpoint" modelFileExtension="rmdl">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Feature Model" titleExpression="aql: 'Feature Model ' + self.name" initialisation="true" domainClass="rmdl::Feature_Model" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Feature Model" titleExpression="aql: 'Feature Model ' + self.name" initialisation="true" pasteDescriptions="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Unused%20stuff']/@toolSections.0/@ownedTools[name='Paste%20Feature%20with%20Requirements']" domainClass="rmdl::Feature_Model" enablePopupBars="true">
       <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
       <defaultLayer name="Default">
         <toolSections name="Custom tools">
@@ -641,12 +648,48 @@
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:PasteDescription" forceRefresh="true">
+          <ownedTools xsi:type="tool_1:PasteDescription" name="Paste Feature with Requirements" forceRefresh="true">
             <container name="container"/>
             <containerView name="containerView"/>
             <copiedView name="copiedView"/>
             <copiedElement name="copiedElement"/>
-            <initialOperation/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:For" expression="copiedElement">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Element" referenceName="featureentity">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="productof" valueExpression="aql:copiedElement"/>
+                    <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                      <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                        <initialOperation/>
+                      </buttons>
+                      <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                        <initialOperation/>
+                      </buttons>
+                      <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@defaultLayer/@toolSections.0/@ownedTools[name='Paste%20Feature%20with%20Requirements']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                      <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:copiedElement.composes->notEmpty()">
+                      <subModelOperations xsi:type="tool_1:For" expression="aql: container.eContents()">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: i.name == copiedElement.composes.name">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="composes" valueExpression="aql: i"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation/>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation/>
+                        </buttons>
+                        <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@defaultLayer/@toolSections.0/@ownedTools[name='Paste%20Feature%20with%20Requirements']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.2/@subModelOperations.1/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="composes" valueExpression="aql: container.eContents(rmdl::Root)"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>
@@ -765,11 +808,32 @@
           </ownedTools>
         </toolSections>
       </additionalLayers>
-      <additionalLayers name="Unused stuff"/>
+      <additionalLayers name="Unused stuff">
+        <toolSections>
+          <ownedTools xsi:type="tool_1:PasteDescription" name="Paste Feature with Requirements" forceRefresh="true">
+            <container name="container"/>
+            <containerView name="containerView"/>
+            <copiedView name="copiedView"/>
+            <copiedElement name="copiedElement"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:copiedElement">
+                <subModelOperations xsi:type="tool_1:For" expression="copiedElement">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Element" referenceName="featureentity">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:copiedElement.name"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']" sourceExpression="aql: copiedElement.">
+                    <subModelOperations xsi:type="tool_1:SetValue"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
     </ownedRepresentations>
   </ownedViewpoints>
   <ownedViewpoints name="Product Variant Viewpoint" modelFileExtension="rmdl">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Product Variant" titleExpression="aql: 'Product Variant ' + self.name" domainClass="rmdl::Feature_Model" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Product Variant" titleExpression="aql: 'Product Variant ' + self.name" pasteDescriptions="//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Unused%20stuff']/@toolSections.0/@ownedTools[name='Paste%20Feature%20with%20Requirements']" domainClass="rmdl::Feature_Model" enablePopupBars="true">
       <metamodel href="../../org.mcmaster.requirements_modelling.rmdl/model/rmdl.ecore#/"/>
       <defaultLayer name="Default">
         <toolSections name="Custom tools">
@@ -781,26 +845,162 @@
           </ownedTools>
           <ownedTools xsi:type="tool:DiagramCreationDescription" name="Create Requirement Canvas" forceRefresh="true" diagramDescription="//@ownedViewpoints[name='Requirement%20Modelling%20Viewpoint']/@ownedRepresentations[name='Requirements%20Canvas']">
             <initialOperation>
-              <firstModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Feature']" containerViewExpression="feature:featureentity"/>
+              <firstModelOperations xsi:type="tool_1:Let" variableName="container" valueExpression="aql:self">
+                <subModelOperations xsi:type="tool_1:For" expression="aql:container.productof.eContents(rmdl::Review)" iteratorName="review">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="aql: container.name">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='Create%20Requirement%20Canvas']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Review" referenceName="review" variableName="reviewInstance">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="reviewer" valueExpression="aql:review.name"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:For" expression="aql:container.productof.eContents(rmdl::TestCase)" iteratorName="testcase">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="aql: container.name">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='Create%20Requirement%20Canvas']/@initialOperation/@firstModelOperations/@subModelOperations.1/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclIsTypeOf(rmdl::TestCase)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::TestCase" referenceName="testcase">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:testcase.name"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:For" expression="aql:container.productof.eContents(rmdl::DesignElement)" iteratorName="designelement">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="aql: container.name">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='Create%20Requirement%20Canvas']/@initialOperation/@firstModelOperations/@subModelOperations.2/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclIsTypeOf(rmdl::DesignElement)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::DesignElement" referenceName="designelement">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:designelement.name"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:For" expression="aql:container.productof.eContents(rmdl::RrequirementType)" iteratorName="requirement">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="aql: container.name">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='Create%20Requirement%20Canvas']/@initialOperation/@firstModelOperations/@subModelOperations.3/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclIsTypeOf(rmdl::Functional)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:i.name"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Project).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclIsTypeOf(rmdl::Safety)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:i.name"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Project).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                        <subModelOperations xsi:type="tool_1:SetValue"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclIsTypeOf(rmdl::Qualitative)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:i.name"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Project).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                        <subModelOperations xsi:type="tool_1:SetValue"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclIsTypeOf(rmdl::Constraint)">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Functional" referenceName="requirements">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:i.name"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="ID" valueExpression="aql:self.eContainer(rmdl::RMDL_Project).eAllContents() -> filter(rmdl::Requirements)->size()"/>
+                        <subModelOperations xsi:type="tool_1:SetValue"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
             </initialOperation>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:PaneBasedSelectionWizardDescription">
-            <element name="element"/>
-            <containerView name="containerView"/>
+          <ownedTools xsi:type="tool_1:PasteDescription" name="Paste Feature with Requirements" forceRefresh="true">
             <container name="container"/>
-            <initialOperation/>
+            <containerView name="containerView"/>
+            <copiedView name="copiedView"/>
+            <copiedElement name="copiedElement"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:For" expression="copiedElement">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rmdl::Element" referenceName="featureentity">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:copiedElement.name"/>
+                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:copiedElement.composes->notEmpty()">
+                      <subModelOperations xsi:type="tool_1:For" expression="aql: container.eContents()">
+                        <subModelOperations xsi:type="tool_1:If" conditionExpression="aql: i.name == copiedElement.composes.name">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="composes" valueExpression="aql: i"/>
+                          <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                            <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                              <initialOperation/>
+                            </buttons>
+                            <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                              <initialOperation/>
+                            </buttons>
+                            <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='Paste%20Feature%20with%20Requirements']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@subModelOperations.0/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                            <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>
       <additionalLayers name="Model Layer" activeByDefault="true">
         <nodeMappings name="Product Root" labelDirectEdit="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:featureentity" domainClass="rmdl::Root">
-          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" labelSize="12" labelPosition="node" resizeKind="NSEW" width="16" height="8">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="aql: '&lt;&lt;Product>>\n' + self.name" labelPosition="node" resizeKind="NSEW" width="16" height="8">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.productof->notEmpty()">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="aql: '&lt;&lt;Product>>\n' + self.productof.name" labelPosition="node" resizeKind="NSEW" width="16" height="8">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="Product Feature" detailDescriptions="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='Create%20Requirement%20Canvas']" labelDirectEdit="//@ownedViewpoints[name='Product%20Variant%20Viewpoint']/@ownedRepresentations[name='Product%20Variant']/@defaultLayer/@toolSections.0/@ownedTools[name='editEntityNames']" semanticCandidatesExpression="feature:featureentity" domainClass="rmdl::Element">
           <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
@@ -809,7 +1009,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="aql:self.productof->notEmpty()">
-            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" labelExpression="aql:self.productof.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="3" labelSize="12" showIcon="false" labelExpression="aql:'&lt;&lt;Product>>\n' + self.productof.name" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
