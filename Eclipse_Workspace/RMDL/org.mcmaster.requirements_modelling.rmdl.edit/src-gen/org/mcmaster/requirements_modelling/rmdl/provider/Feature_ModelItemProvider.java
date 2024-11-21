@@ -121,7 +121,7 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.FEATURE_MODEL__FEATUREENTITY);
+			childrenFeatures.add(RmdlPackage.Literals.FEATURE_MODEL__FEATURE_ENTITY);
 			childrenFeatures.add(RmdlPackage.Literals.FEATURE_MODEL__PRODUCT_VARIANT);
 		}
 		return childrenFeatures;
@@ -189,7 +189,7 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case RmdlPackage.FEATURE_MODEL__FEATUREENTITY:
+		case RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY:
 		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -208,10 +208,10 @@ public class Feature_ModelItemProvider extends ItemProviderAdapter implements IE
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__FEATUREENTITY,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__FEATURE_ENTITY,
 				RmdlFactory.eINSTANCE.createElement()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__FEATUREENTITY,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__FEATURE_ENTITY,
 				RmdlFactory.eINSTANCE.createRoot()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.FEATURE_MODEL__PRODUCT_VARIANT,

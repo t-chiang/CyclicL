@@ -15,11 +15,12 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getComposes <em>Composes</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getMandatory <em>Mandatory</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionof <em>Optionof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionOf <em>Option Of</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptional <em>Optional</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternative <em>Alternative</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof <em>Alternativeof</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductof <em>Productof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeOf <em>Alternative Of</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductOf <em>Product Of</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getVariants <em>Variants</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity()
@@ -66,39 +67,39 @@ public interface FeatureEntity extends Requirement_Canvas {
 	EList<FeatureEntity> getMandatory();
 
 	/**
-	 * Returns the value of the '<em><b>Optionof</b></em>' reference.
+	 * Returns the value of the '<em><b>Option Of</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptional <em>Optional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Optionof</em>' reference.
-	 * @see #setOptionof(FeatureEntity)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Optionof()
+	 * @return the value of the '<em>Option Of</em>' reference.
+	 * @see #setOptionOf(FeatureEntity)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_OptionOf()
 	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptional
 	 * @model opposite="optional"
 	 * @generated
 	 */
-	FeatureEntity getOptionof();
+	FeatureEntity getOptionOf();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionof <em>Optionof</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionOf <em>Option Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Optionof</em>' reference.
-	 * @see #getOptionof()
+	 * @param value the new value of the '<em>Option Of</em>' reference.
+	 * @see #getOptionOf()
 	 * @generated
 	 */
-	void setOptionof(FeatureEntity value);
+	void setOptionOf(FeatureEntity value);
 
 	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionof <em>Optionof</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionOf <em>Option Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Optional</em>' reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Optional()
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionof
-	 * @model opposite="optionof"
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getOptionOf
+	 * @model opposite="optionOf"
 	 * @generated
 	 */
 	EList<FeatureEntity> getOptional();
@@ -106,61 +107,77 @@ public interface FeatureEntity extends Requirement_Canvas {
 	/**
 	 * Returns the value of the '<em><b>Alternative</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof <em>Alternativeof</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeOf <em>Alternative Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Alternative</em>' reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Alternative()
-	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof
-	 * @model opposite="alternativeof"
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeOf
+	 * @model opposite="alternativeOf"
 	 * @generated
 	 */
 	EList<FeatureEntity> getAlternative();
 
 	/**
-	 * Returns the value of the '<em><b>Alternativeof</b></em>' reference.
+	 * Returns the value of the '<em><b>Alternative Of</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternative <em>Alternative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alternativeof</em>' reference.
-	 * @see #setAlternativeof(FeatureEntity)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Alternativeof()
+	 * @return the value of the '<em>Alternative Of</em>' reference.
+	 * @see #setAlternativeOf(FeatureEntity)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_AlternativeOf()
 	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternative
 	 * @model opposite="alternative"
 	 * @generated
 	 */
-	FeatureEntity getAlternativeof();
+	FeatureEntity getAlternativeOf();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeof <em>Alternativeof</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getAlternativeOf <em>Alternative Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Alternativeof</em>' reference.
-	 * @see #getAlternativeof()
+	 * @param value the new value of the '<em>Alternative Of</em>' reference.
+	 * @see #getAlternativeOf()
 	 * @generated
 	 */
-	void setAlternativeof(FeatureEntity value);
+	void setAlternativeOf(FeatureEntity value);
 
 	/**
-	 * Returns the value of the '<em><b>Productof</b></em>' reference.
+	 * Returns the value of the '<em><b>Product Of</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getVariants <em>Variants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Productof</em>' reference.
-	 * @see #setProductof(FeatureEntity)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Productof()
-	 * @model
+	 * @return the value of the '<em>Product Of</em>' reference.
+	 * @see #setProductOf(FeatureEntity)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_ProductOf()
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getVariants
+	 * @model opposite="variants"
 	 * @generated
 	 */
-	FeatureEntity getProductof();
+	FeatureEntity getProductOf();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductof <em>Productof</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductOf <em>Product Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Productof</em>' reference.
-	 * @see #getProductof()
+	 * @param value the new value of the '<em>Product Of</em>' reference.
+	 * @see #getProductOf()
 	 * @generated
 	 */
-	void setProductof(FeatureEntity value);
+	void setProductOf(FeatureEntity value);
+
+	/**
+	 * Returns the value of the '<em><b>Variants</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductOf <em>Product Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variants</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeatureEntity_Variants()
+	 * @see org.mcmaster.requirements_modelling.rmdl.FeatureEntity#getProductOf
+	 * @model opposite="productOf"
+	 * @generated
+	 */
+	EList<FeatureEntity> getVariants();
 
 } // FeatureEntity

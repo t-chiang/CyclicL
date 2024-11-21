@@ -31,9 +31,9 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsHardware <em>Is Hardware</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#isIsSoftware <em>Is Software</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getTracefrom <em>Tracefrom</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getTraceFrom <em>Trace From</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getRequirement_canvas <em>Requirement canvas</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getImplementationof <em>Implementationof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.DesignElementImpl#getImplementationOf <em>Implementation Of</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,24 +100,24 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	protected boolean isSoftware = IS_SOFTWARE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTracefrom() <em>Tracefrom</em>}' reference list.
+	 * The cached value of the '{@link #getTraceFrom() <em>Trace From</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTracefrom()
+	 * @see #getTraceFrom()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Requirements> tracefrom;
+	protected EList<Requirements> traceFrom;
 
 	/**
-	 * The cached value of the '{@link #getImplementationof() <em>Implementationof</em>}' reference.
+	 * The cached value of the '{@link #getImplementationOf() <em>Implementation Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImplementationof()
+	 * @see #getImplementationOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected Element implementationof;
+	protected Element implementationOf;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,12 +208,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Requirements> getTracefrom() {
-		if (tracefrom == null) {
-			tracefrom = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
-					RmdlPackage.DESIGN_ELEMENT__TRACEFROM, RmdlPackage.REQUIREMENTS__TRACETO);
+	public EList<Requirements> getTraceFrom() {
+		if (traceFrom == null) {
+			traceFrom = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
+					RmdlPackage.DESIGN_ELEMENT__TRACE_FROM, RmdlPackage.REQUIREMENTS__TRACE_TO);
 		}
-		return tracefrom;
+		return traceFrom;
 	}
 
 	/**
@@ -255,7 +255,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRequirement_canvas != null)
 				msgs = ((InternalEObject) newRequirement_canvas).eInverseAdd(this,
-						RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT, Requirement_Canvas.class, msgs);
+						RmdlPackage.REQUIREMENT_CANVAS__DESIGN_ELEMENT, Requirement_Canvas.class, msgs);
 			msgs = basicSetRequirement_canvas(newRequirement_canvas, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -269,17 +269,17 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element getImplementationof() {
-		if (implementationof != null && implementationof.eIsProxy()) {
-			InternalEObject oldImplementationof = (InternalEObject) implementationof;
-			implementationof = (Element) eResolveProxy(oldImplementationof);
-			if (implementationof != oldImplementationof) {
+	public Element getImplementationOf() {
+		if (implementationOf != null && implementationOf.eIsProxy()) {
+			InternalEObject oldImplementationOf = (InternalEObject) implementationOf;
+			implementationOf = (Element) eResolveProxy(oldImplementationOf);
+			if (implementationOf != oldImplementationOf) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF, oldImplementationof, implementationof));
+							RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATION_OF, oldImplementationOf, implementationOf));
 			}
 		}
-		return implementationof;
+		return implementationOf;
 	}
 
 	/**
@@ -287,8 +287,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element basicGetImplementationof() {
-		return implementationof;
+	public Element basicGetImplementationOf() {
+		return implementationOf;
 	}
 
 	/**
@@ -296,12 +296,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setImplementationof(Element newImplementationof) {
-		Element oldImplementationof = implementationof;
-		implementationof = newImplementationof;
+	public void setImplementationOf(Element newImplementationOf) {
+		Element oldImplementationOf = implementationOf;
+		implementationOf = newImplementationOf;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF,
-					oldImplementationof, implementationof));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATION_OF,
+					oldImplementationOf, implementationOf));
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTracefrom()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__TRACE_FROM:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceFrom()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
@@ -331,8 +331,8 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
-			return ((InternalEList<?>) getTracefrom()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.DESIGN_ELEMENT__TRACE_FROM:
+			return ((InternalEList<?>) getTraceFrom()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			return basicSetRequirement_canvas(null, msgs);
 		}
@@ -348,7 +348,7 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT,
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_CANVAS__DESIGN_ELEMENT,
 					Requirement_Canvas.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -368,14 +368,14 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return isIsHardware();
 		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
 			return isIsSoftware();
-		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
-			return getTracefrom();
+		case RmdlPackage.DESIGN_ELEMENT__TRACE_FROM:
+			return getTraceFrom();
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			return getRequirement_canvas();
-		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATION_OF:
 			if (resolve)
-				return getImplementationof();
-			return basicGetImplementationof();
+				return getImplementationOf();
+			return basicGetImplementationOf();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,15 +398,15 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
 			setIsSoftware((Boolean) newValue);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
-			getTracefrom().clear();
-			getTracefrom().addAll((Collection<? extends Requirements>) newValue);
+		case RmdlPackage.DESIGN_ELEMENT__TRACE_FROM:
+			getTraceFrom().clear();
+			getTraceFrom().addAll((Collection<? extends Requirements>) newValue);
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) newValue);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
-			setImplementationof((Element) newValue);
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATION_OF:
+			setImplementationOf((Element) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -429,14 +429,14 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
 			setIsSoftware(IS_SOFTWARE_EDEFAULT);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
-			getTracefrom().clear();
+		case RmdlPackage.DESIGN_ELEMENT__TRACE_FROM:
+			getTraceFrom().clear();
 			return;
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) null);
 			return;
-		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
-			setImplementationof((Element) null);
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATION_OF:
+			setImplementationOf((Element) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -456,12 +456,12 @@ public class DesignElementImpl extends MinimalEObjectImpl.Container implements D
 			return isHardware != IS_HARDWARE_EDEFAULT;
 		case RmdlPackage.DESIGN_ELEMENT__IS_SOFTWARE:
 			return isSoftware != IS_SOFTWARE_EDEFAULT;
-		case RmdlPackage.DESIGN_ELEMENT__TRACEFROM:
-			return tracefrom != null && !tracefrom.isEmpty();
+		case RmdlPackage.DESIGN_ELEMENT__TRACE_FROM:
+			return traceFrom != null && !traceFrom.isEmpty();
 		case RmdlPackage.DESIGN_ELEMENT__REQUIREMENT_CANVAS:
 			return getRequirement_canvas() != null;
-		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATIONOF:
-			return implementationof != null;
+		case RmdlPackage.DESIGN_ELEMENT__IMPLEMENTATION_OF:
+			return implementationOf != null;
 		}
 		return super.eIsSet(featureID);
 	}

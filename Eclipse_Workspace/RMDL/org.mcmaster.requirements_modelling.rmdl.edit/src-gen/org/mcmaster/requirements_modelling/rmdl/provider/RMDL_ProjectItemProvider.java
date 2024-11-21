@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -53,8 +54,24 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequirement_canvasPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirement canvas feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirement_canvasPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RMDL_Project_requirement_canvas_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RMDL_Project_requirement_canvas_feature",
+								"_UI_RMDL_Project_type"),
+						RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -70,6 +87,7 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL);
+			childrenFeatures.add(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS);
 		}
 		return childrenFeatures;
 	}
@@ -132,6 +150,7 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 
 		switch (notification.getFeatureID(RMDL_Project.class)) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -154,6 +173,15 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__FEATURE_MODEL,
 				RmdlFactory.eINSTANCE.createProduct_Variant()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS,
+				RmdlFactory.eINSTANCE.createRequirement_Canvas()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS,
+				RmdlFactory.eINSTANCE.createElement()));
+
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS,
+				RmdlFactory.eINSTANCE.createRoot()));
 	}
 
 	/**

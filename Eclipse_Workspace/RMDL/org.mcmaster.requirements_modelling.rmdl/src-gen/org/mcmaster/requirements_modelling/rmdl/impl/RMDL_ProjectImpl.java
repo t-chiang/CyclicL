@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.RMDL_Project;
+import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
 
 /**
@@ -26,6 +27,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl#getFeature_model <em>Feature model</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RMDL_ProjectImpl#getRequirement_canvas <em>Requirement canvas</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +42,16 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 	 * @ordered
 	 */
 	protected EList<Feature_Model> feature_model;
+
+	/**
+	 * The cached value of the '{@link #getRequirement_canvas() <em>Requirement canvas</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirement_canvas()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirement_Canvas> requirement_canvas;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,12 +90,28 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Requirement_Canvas> getRequirement_canvas() {
+		if (requirement_canvas == null) {
+			requirement_canvas = new EObjectContainmentWithInverseEList<Requirement_Canvas>(Requirement_Canvas.class,
+					this, RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS, RmdlPackage.REQUIREMENT_CANVAS__RMDL_PROJECT);
+		}
+		return requirement_canvas;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFeature_model()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequirement_canvas()).basicAdd(otherEnd,
+					msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -98,6 +126,8 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 		switch (featureID) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
 			return ((InternalEList<?>) getFeature_model()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
+			return ((InternalEList<?>) getRequirement_canvas()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -112,6 +142,8 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 		switch (featureID) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
 			return getFeature_model();
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
+			return getRequirement_canvas();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,6 +161,10 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 			getFeature_model().clear();
 			getFeature_model().addAll((Collection<? extends Feature_Model>) newValue);
 			return;
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
+			getRequirement_canvas().clear();
+			getRequirement_canvas().addAll((Collection<? extends Requirement_Canvas>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,6 +180,9 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
 			getFeature_model().clear();
 			return;
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
+			getRequirement_canvas().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -158,6 +197,8 @@ public class RMDL_ProjectImpl extends MinimalEObjectImpl.Container implements RM
 		switch (featureID) {
 		case RmdlPackage.RMDL_PROJECT__FEATURE_MODEL:
 			return feature_model != null && !feature_model.isEmpty();
+		case RmdlPackage.RMDL_PROJECT__REQUIREMENT_CANVAS:
+			return requirement_canvas != null && !requirement_canvas.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

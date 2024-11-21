@@ -56,9 +56,9 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			addNamePropertyDescriptor(object);
 			addIsHardwarePropertyDescriptor(object);
 			addIsSoftwarePropertyDescriptor(object);
-			addTracefromPropertyDescriptor(object);
+			addTraceFromPropertyDescriptor(object);
 			addRequirement_canvasPropertyDescriptor(object);
-			addImplementationofPropertyDescriptor(object);
+			addImplementationOfPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,18 +112,18 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Tracefrom feature.
+	 * This adds a property descriptor for the Trace From feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTracefromPropertyDescriptor(Object object) {
+	protected void addTraceFromPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_tracefrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_tracefrom_feature",
+						getResourceLocator(), getString("_UI_DesignElement_traceFrom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_traceFrom_feature",
 								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__TRACEFROM, true, false, true, null, null, null));
+						RmdlPackage.Literals.DESIGN_ELEMENT__TRACE_FROM, true, false, true, null, null, null));
 	}
 
 	/**
@@ -142,18 +142,18 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Implementationof feature.
+	 * This adds a property descriptor for the Implementation Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImplementationofPropertyDescriptor(Object object) {
+	protected void addImplementationOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_implementationof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_implementationof_feature",
+						getResourceLocator(), getString("_UI_DesignElement_implementationOf_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_implementationOf_feature",
 								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__IMPLEMENTATIONOF, true, false, true, null, null, null));
+						RmdlPackage.Literals.DESIGN_ELEMENT__IMPLEMENTATION_OF, true, false, true, null, null, null));
 	}
 
 	/**

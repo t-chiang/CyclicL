@@ -9,7 +9,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -17,11 +16,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.sirius.business.api.query.EObjectQuery;
-import org.eclipse.sirius.diagram.DNode;
-import org.eclipse.sirius.diagram.DiagramPackage;
-import org.eclipse.sirius.viewpoint.RGBValues;
-import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
 import org.mcmaster.requirements_modelling.rmdl.Review;
@@ -40,8 +34,8 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getReview <em>Review</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceto <em>Traceto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTestCase <em>Test Case</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceTo <em>Trace To</em>}</li>
  * </ul>
  *
  * @generated
@@ -118,24 +112,24 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	protected EList<Review> review;
 
 	/**
-	 * The cached value of the '{@link #getTestcase() <em>Testcase</em>}' reference list.
+	 * The cached value of the '{@link #getTestCase() <em>Test Case</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTestcase()
+	 * @see #getTestCase()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TestCase> testcase;
+	protected EList<TestCase> testCase;
 
 	/**
-	 * The cached value of the '{@link #getTraceto() <em>Traceto</em>}' reference list.
+	 * The cached value of the '{@link #getTraceTo() <em>Trace To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTraceto()
+	 * @see #getTraceTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DesignElement> traceto;
+	protected EList<DesignElement> traceTo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -238,12 +232,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TestCase> getTestcase() {
-		if (testcase == null) {
-			testcase = new EObjectWithInverseResolvingEList.ManyInverse<TestCase>(TestCase.class, this,
-					RmdlPackage.REQUIREMENTS__TESTCASE, RmdlPackage.TEST_CASE__REQUIREMENTS);
+	public EList<TestCase> getTestCase() {
+		if (testCase == null) {
+			testCase = new EObjectWithInverseResolvingEList.ManyInverse<TestCase>(TestCase.class, this,
+					RmdlPackage.REQUIREMENTS__TEST_CASE, RmdlPackage.TEST_CASE__REQUIREMENTS);
 		}
-		return testcase;
+		return testCase;
 	}
 
 	/**
@@ -251,12 +245,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DesignElement> getTraceto() {
-		if (traceto == null) {
-			traceto = new EObjectWithInverseResolvingEList.ManyInverse<DesignElement>(DesignElement.class, this,
-					RmdlPackage.REQUIREMENTS__TRACETO, RmdlPackage.DESIGN_ELEMENT__TRACEFROM);
+	public EList<DesignElement> getTraceTo() {
+		if (traceTo == null) {
+			traceTo = new EObjectWithInverseResolvingEList.ManyInverse<DesignElement>(DesignElement.class, this,
+					RmdlPackage.REQUIREMENTS__TRACE_TO, RmdlPackage.DESIGN_ELEMENT__TRACE_FROM);
 		}
-		return traceto;
+		return traceTo;
 	}
 
 	/**
@@ -269,20 +263,20 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		// throw new UnsupportedOperationException();
-		EList<DesignElement> dElements = this.traceto;
-		EList<Review> reviews = this.review;
-		EList<TestCase> testcases = this.testcase;
-		for (DesignElement d : dElements) {
-			System.out.println(d);
-			Collection<EObject> tempNode = new EObjectQuery(d)
-					.getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
-			//			DSemanticDecorator tempNode = (DSemanticDecorator) d;
-			System.out.println(tempNode.toArray()[0]);
-			RGBValues newBorderColor = RGBValues.create(255, 0, 0);
-			((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
-			((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures()
-					.add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
-		}
+		//		EList<DesignElement> dElements = this.traceto;
+		//		EList<Review> reviews = this.review;
+		//		EList<TestCase> testcases = this.testcase;
+		//		for (DesignElement d : dElements) {
+		//			System.out.println(d);
+		//			Collection<EObject> tempNode = new EObjectQuery(d)
+		//					.getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
+		//			//			DSemanticDecorator tempNode = (DSemanticDecorator) d;
+		//			System.out.println(tempNode.toArray()[0]);
+		//			RGBValues newBorderColor = RGBValues.create(255, 0, 0);
+		//			((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
+		//			((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures()
+		//					.add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
+		//		}
 
 	}
 
@@ -297,10 +291,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TESTCASE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestcase()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TRACETO:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceto()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TEST_CASE:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestCase()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceTo()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -315,10 +309,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return ((InternalEList<?>) getReview()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TESTCASE:
-			return ((InternalEList<?>) getTestcase()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TRACETO:
-			return ((InternalEList<?>) getTraceto()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TEST_CASE:
+			return ((InternalEList<?>) getTestCase()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			return ((InternalEList<?>) getTraceTo()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -339,10 +333,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return getDescription();
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return getReview();
-		case RmdlPackage.REQUIREMENTS__TESTCASE:
-			return getTestcase();
-		case RmdlPackage.REQUIREMENTS__TRACETO:
-			return getTraceto();
+		case RmdlPackage.REQUIREMENTS__TEST_CASE:
+			return getTestCase();
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			return getTraceTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -369,13 +363,13 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			getReview().clear();
 			getReview().addAll((Collection<? extends Review>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENTS__TESTCASE:
-			getTestcase().clear();
-			getTestcase().addAll((Collection<? extends TestCase>) newValue);
+		case RmdlPackage.REQUIREMENTS__TEST_CASE:
+			getTestCase().clear();
+			getTestCase().addAll((Collection<? extends TestCase>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENTS__TRACETO:
-			getTraceto().clear();
-			getTraceto().addAll((Collection<? extends DesignElement>) newValue);
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			getTraceTo().clear();
+			getTraceTo().addAll((Collection<? extends DesignElement>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -401,11 +395,11 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
 			return;
-		case RmdlPackage.REQUIREMENTS__TESTCASE:
-			getTestcase().clear();
+		case RmdlPackage.REQUIREMENTS__TEST_CASE:
+			getTestCase().clear();
 			return;
-		case RmdlPackage.REQUIREMENTS__TRACETO:
-			getTraceto().clear();
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			getTraceTo().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -427,10 +421,10 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return review != null && !review.isEmpty();
-		case RmdlPackage.REQUIREMENTS__TESTCASE:
-			return testcase != null && !testcase.isEmpty();
-		case RmdlPackage.REQUIREMENTS__TRACETO:
-			return traceto != null && !traceto.isEmpty();
+		case RmdlPackage.REQUIREMENTS__TEST_CASE:
+			return testCase != null && !testCase.isEmpty();
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			return traceTo != null && !traceTo.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

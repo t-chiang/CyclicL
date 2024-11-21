@@ -57,8 +57,8 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
-			addTestcasePropertyDescriptor(object);
-			addTracetoPropertyDescriptor(object);
+			addTestCasePropertyDescriptor(object);
+			addTraceToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -127,33 +127,33 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Testcase feature.
+	 * This adds a property descriptor for the Test Case feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTestcasePropertyDescriptor(Object object) {
+	protected void addTestCasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_testcase_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_testcase_feature",
+						getResourceLocator(), getString("_UI_Requirements_testCase_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_testCase_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__TESTCASE, true, false, true, null, null, null));
+						RmdlPackage.Literals.REQUIREMENTS__TEST_CASE, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Traceto feature.
+	 * This adds a property descriptor for the Trace To feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTracetoPropertyDescriptor(Object object) {
+	protected void addTraceToPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_traceto_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceto_feature",
+						getResourceLocator(), getString("_UI_Requirements_traceTo_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_traceTo_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__TRACETO, true, false, true, null, null, null));
+						RmdlPackage.Literals.REQUIREMENTS__TRACE_TO, true, false, true, null, null, null));
 	}
 
 	/**

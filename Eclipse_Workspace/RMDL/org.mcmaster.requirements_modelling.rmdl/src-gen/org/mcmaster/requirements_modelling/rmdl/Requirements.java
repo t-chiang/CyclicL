@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceto <em>Traceto</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestCase <em>Test Case</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceTo <em>Trace To</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements()
@@ -109,31 +109,31 @@ public interface Requirements extends EObject {
 	EList<Review> getReview();
 
 	/**
-	 * Returns the value of the '<em><b>Testcase</b></em>' reference list.
+	 * Returns the value of the '<em><b>Test Case</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.TestCase}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Testcase</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Testcase()
+	 * @return the value of the '<em>Test Case</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_TestCase()
 	 * @see org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements
 	 * @model opposite="requirements" required="true"
 	 * @generated
 	 */
-	EList<TestCase> getTestcase();
+	EList<TestCase> getTestCase();
 
 	/**
-	 * Returns the value of the '<em><b>Traceto</b></em>' reference list.
+	 * Returns the value of the '<em><b>Trace To</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom <em>Tracefrom</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTraceFrom <em>Trace From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Traceto</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Traceto()
-	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getTracefrom
-	 * @model opposite="tracefrom" required="true"
+	 * @return the value of the '<em>Trace To</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_TraceTo()
+	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getTraceFrom
+	 * @model opposite="traceFrom" required="true"
 	 * @generated
 	 */
-	EList<DesignElement> getTraceto();
+	EList<DesignElement> getTraceTo();
 
 } // Requirements

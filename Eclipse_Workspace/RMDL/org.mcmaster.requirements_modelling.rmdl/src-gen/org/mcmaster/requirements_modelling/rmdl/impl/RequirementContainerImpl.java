@@ -28,7 +28,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl#getOwnedrequirements <em>Ownedrequirements</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl#getOwnedRequirements <em>Owned Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementContainerImpl#getRequirement_canvas <em>Requirement canvas</em>}</li>
  * </ul>
  *
@@ -36,14 +36,14 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  */
 public class RequirementContainerImpl extends RequirementsImpl implements RequirementContainer {
 	/**
-	 * The cached value of the '{@link #getOwnedrequirements() <em>Ownedrequirements</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedRequirements() <em>Owned Requirements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedrequirements()
+	 * @see #getOwnedRequirements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RequirementType> ownedrequirements;
+	protected EList<RequirementType> ownedRequirements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,13 +69,13 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RequirementType> getOwnedrequirements() {
-		if (ownedrequirements == null) {
-			ownedrequirements = new EObjectContainmentWithInverseEList<RequirementType>(RequirementType.class, this,
-					RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS,
-					RmdlPackage.REQUIREMENT_TYPE__REQUIREMENTCONTAINER);
+	public EList<RequirementType> getOwnedRequirements() {
+		if (ownedRequirements == null) {
+			ownedRequirements = new EObjectContainmentWithInverseEList<RequirementType>(RequirementType.class, this,
+					RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS,
+					RmdlPackage.REQUIREMENT_TYPE__REQUIREMENT_CONTAINER);
 		}
-		return ownedrequirements;
+		return ownedRequirements;
 	}
 
 	/**
@@ -135,8 +135,8 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedrequirements()).basicAdd(otherEnd,
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedRequirements()).basicAdd(otherEnd,
 					msgs);
 		case RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS:
 			if (eInternalContainer() != null)
@@ -154,8 +154,8 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
-			return ((InternalEList<?>) getOwnedrequirements()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
+			return ((InternalEList<?>) getOwnedRequirements()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS:
 			return basicSetRequirement_canvas(null, msgs);
 		}
@@ -185,8 +185,8 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
-			return getOwnedrequirements();
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
+			return getOwnedRequirements();
 		case RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS:
 			return getRequirement_canvas();
 		}
@@ -202,9 +202,9 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
-			getOwnedrequirements().clear();
-			getOwnedrequirements().addAll((Collection<? extends RequirementType>) newValue);
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
+			getOwnedRequirements().clear();
+			getOwnedRequirements().addAll((Collection<? extends RequirementType>) newValue);
 			return;
 		case RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) newValue);
@@ -221,8 +221,8 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
-			getOwnedrequirements().clear();
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
+			getOwnedRequirements().clear();
 			return;
 		case RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) null);
@@ -239,8 +239,8 @@ public class RequirementContainerImpl extends RequirementsImpl implements Requir
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
-			return ownedrequirements != null && !ownedrequirements.isEmpty();
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
+			return ownedRequirements != null && !ownedRequirements.isEmpty();
 		case RmdlPackage.REQUIREMENT_CONTAINER__REQUIREMENT_CANVAS:
 			return getRequirement_canvas() != null;
 		}

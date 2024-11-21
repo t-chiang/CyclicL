@@ -15,12 +15,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestcase <em>Testcase</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestCase <em>Test Case</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getReview <em>Review</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getDesignelement <em>Designelement</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getDesignElement <em>Design Element</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRequirementcontainer <em>Requirementcontainer</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRmdl_project <em>Rmdl project</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas()
@@ -29,18 +30,18 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Requirement_Canvas extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Testcase</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Test Case</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.TestCase}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_canvas <em>Requirement canvas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Testcase</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_Testcase()
+	 * @return the value of the '<em>Test Case</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_TestCase()
 	 * @see org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirement_canvas
 	 * @model opposite="requirement_canvas" containment="true"
 	 * @generated
 	 */
-	EList<TestCase> getTestcase();
+	EList<TestCase> getTestCase();
 
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' containment reference list.
@@ -71,18 +72,18 @@ public interface Requirement_Canvas extends EObject {
 	EList<Review> getReview();
 
 	/**
-	 * Returns the value of the '<em><b>Designelement</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Design Element</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.DesignElement}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_canvas <em>Requirement canvas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Designelement</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_Designelement()
+	 * @return the value of the '<em>Design Element</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_DesignElement()
 	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_canvas
 	 * @model opposite="requirement_canvas" containment="true"
 	 * @generated
 	 */
-	EList<DesignElement> getDesignelement();
+	EList<DesignElement> getDesignElement();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -119,5 +120,29 @@ public interface Requirement_Canvas extends EObject {
 	 * @generated
 	 */
 	EList<RequirementContainer> getRequirementcontainer();
+
+	/**
+	 * Returns the value of the '<em><b>Rmdl project</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RMDL_Project#getRequirement_canvas <em>Requirement canvas</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rmdl project</em>' container reference.
+	 * @see #setRmdl_project(RMDL_Project)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirement_Canvas_Rmdl_project()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RMDL_Project#getRequirement_canvas
+	 * @model opposite="requirement_canvas" transient="false"
+	 * @generated
+	 */
+	RMDL_Project getRmdl_project();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getRmdl_project <em>Rmdl project</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rmdl project</em>' container reference.
+	 * @see #getRmdl_project()
+	 * @generated
+	 */
+	void setRmdl_project(RMDL_Project value);
 
 } // Requirement_Canvas

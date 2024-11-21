@@ -45,25 +45,25 @@ public class RequirementContainerItemProvider extends RequirementsItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOwnedrequirementsPropertyDescriptor(object);
+			addOwnedRequirementsPropertyDescriptor(object);
 			addRequirement_canvasPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Ownedrequirements feature.
+	 * This adds a property descriptor for the Owned Requirements feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOwnedrequirementsPropertyDescriptor(Object object) {
+	protected void addOwnedRequirementsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_RequirementContainer_ownedrequirements_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_RequirementContainer_ownedrequirements_feature",
+				getString("_UI_RequirementContainer_ownedRequirements_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_RequirementContainer_ownedRequirements_feature",
 						"_UI_RequirementContainer_type"),
-				RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS, true, false, true, null, null, null));
+				RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class RequirementContainerItemProvider extends RequirementsItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -157,7 +157,7 @@ public class RequirementContainerItemProvider extends RequirementsItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RequirementContainer.class)) {
-		case RmdlPackage.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS:
+		case RmdlPackage.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -175,16 +175,16 @@ public class RequirementContainerItemProvider extends RequirementsItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createFunctional()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createQualitative()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createConstraint()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNEDREQUIREMENTS,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CONTAINER__OWNED_REQUIREMENTS,
 				RmdlFactory.eINSTANCE.createSafety()));
 	}
 

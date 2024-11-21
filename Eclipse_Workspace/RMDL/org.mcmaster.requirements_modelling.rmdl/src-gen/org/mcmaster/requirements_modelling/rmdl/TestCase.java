@@ -98,14 +98,14 @@ public interface TestCase extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestcase <em>Testcase</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestCase <em>Test Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement canvas</em>' container reference.
 	 * @see #setRequirement_canvas(Requirement_Canvas)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirement_canvas()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestcase
-	 * @model opposite="testcase" required="true" transient="false"
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getTestCase
+	 * @model opposite="testCase" required="true" transient="false"
 	 * @generated
 	 */
 	Requirement_Canvas getRequirement_canvas();
@@ -146,13 +146,13 @@ public interface TestCase extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestCase <em>Test Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirements</em>' reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getTestCase_Requirements()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase
-	 * @model opposite="testcase" required="true"
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTestCase
+	 * @model opposite="testCase" required="true"
 	 * @generated
 	 */
 	EList<Requirements> getRequirements();

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureentity <em>Featureentity</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeatureEntity <em>Feature Entity</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getRmdl_project <em>Rmdl project</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getProduct_variant <em>Product variant</em>}</li>
  * </ul>
@@ -49,16 +49,16 @@ public interface Feature_Model extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Featureentity</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Feature Entity</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.FeatureEntity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Featureentity</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_Featureentity()
+	 * @return the value of the '<em>Feature Entity</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_FeatureEntity()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<FeatureEntity> getFeatureentity();
+	EList<FeatureEntity> getFeatureEntity();
 
 	/**
 	 * Returns the value of the '<em><b>Rmdl project</b></em>' container reference.

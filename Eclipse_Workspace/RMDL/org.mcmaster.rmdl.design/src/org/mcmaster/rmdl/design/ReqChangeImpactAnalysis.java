@@ -51,35 +51,35 @@ public class ReqChangeImpactAnalysis extends AbstractExternalJavaAction {
 		 */
 		System.out.println("-------------Start Change Impact Analysis-------------");
 		for(EObject s: selection) {
-			if(((DSemanticDecorator) s).getTarget() instanceof Requirements) {
-				EList<DesignElement> dElements = ((Requirements) ((DSemanticDecorator) s).getTarget()).getTraceto();
-				for (DesignElement d : dElements) {
-					Collection<EObject> tempNode = new EObjectQuery(d).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
-					RGBValues newBorderColor = RGBValues.create(255, 0, 0);
-					System.out.println(tempNode.toArray()[0]);
-					((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
-					((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderSize(3);
-					((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
-					((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
-				
-					EList<Requirements> reqsList = d.getTracefrom();
-					for(Requirements r: reqsList) {
-						EList<Review> revList = r.getReview();
-						EList<TestCase> testcaseList = r.getTestcase();
-						for(Review rL: revList) {
-							rL.setIsApproved(false);
-						}
-						for(TestCase t: testcaseList) {
-							t.setHasPassed(false);
-						}
-					}
-				}
-			}
-			else {
-				throw new IllegalArgumentException("Change Impact Analysis does not work on type " + ((DSemanticDecorator) s).getTarget().eClass().getName());
-			}
+//			if(((DSemanticDecorator) s).getTarget() instanceof Requirements) {
+//				EList<DesignElement> dElements = ((Requirements) ((DSemanticDecorator) s).getTarget()).getTraceto();
+//				for (DesignElement d : dElements) {
+//					Collection<EObject> tempNode = new EObjectQuery(d).getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
+//					RGBValues newBorderColor = RGBValues.create(255, 0, 0);
+//					System.out.println(tempNode.toArray()[0]);
+//					((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderColor(newBorderColor);
+//					((DNode) tempNode.toArray()[0]).getOwnedStyle().setBorderSize(3);
+//					((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_COLOR.getName());
+//					((DNode) tempNode.toArray()[0]).getOwnedStyle().getCustomFeatures().add(DiagramPackage.Literals.BORDERED_STYLE__BORDER_SIZE.getName());
+//				
+//					EList<Requirements> reqsList = d.getTracefrom();
+//					for(Requirements r: reqsList) {
+//						EList<Review> revList = r.getReview();
+//						EList<TestCase> testcaseList = r.getTestcase();
+//						for(Review rL: revList) {
+//							rL.setIsApproved(false);
+//						}
+//						for(TestCase t: testcaseList) {
+//							t.setHasPassed(false);
+//						}
+//					}
+//				}
+//			}
+//			else {
+//				throw new IllegalArgumentException("Change Impact Analysis does not work on type " + ((DSemanticDecorator) s).getTarget().eClass().getName());
+//			}
 		}
-		System.out.println("-------------End Change Impact Analysis-------------");
+//		System.out.println("-------------End Change Impact Analysis-------------");
 	}
 
 }

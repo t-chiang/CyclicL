@@ -2,6 +2,8 @@
  */
 package org.mcmaster.requirements_modelling.rmdl;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Requirement Type</b></em>'.
@@ -12,10 +14,12 @@ package org.mcmaster.requirements_modelling.rmdl;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getSpecification <em>Specification</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementcontainer <em>Requirementcontainer</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedby <em>Replacedby</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementContainer <em>Requirement Container</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedBy <em>Replaced By</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#isStartingReq <em>Starting Req</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirement_canvas <em>Requirement canvas</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementOrigin <em>Requirement Origin</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementVariant <em>Requirement Variant</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType()
@@ -46,50 +50,50 @@ public interface RequirementType extends Requirements {
 	void setSpecification(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirementcontainer</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedrequirements <em>Ownedrequirements</em>}'.
+	 * Returns the value of the '<em><b>Requirement Container</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedRequirements <em>Owned Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirementcontainer</em>' container reference.
-	 * @see #setRequirementcontainer(RequirementContainer)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_Requirementcontainer()
-	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedrequirements
-	 * @model opposite="ownedrequirements" transient="false"
+	 * @return the value of the '<em>Requirement Container</em>' container reference.
+	 * @see #setRequirementContainer(RequirementContainer)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_RequirementContainer()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedRequirements
+	 * @model opposite="ownedRequirements" transient="false"
 	 * @generated
 	 */
-	RequirementContainer getRequirementcontainer();
+	RequirementContainer getRequirementContainer();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementcontainer <em>Requirementcontainer</em>}' container reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementContainer <em>Requirement Container</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requirementcontainer</em>' container reference.
-	 * @see #getRequirementcontainer()
+	 * @param value the new value of the '<em>Requirement Container</em>' container reference.
+	 * @see #getRequirementContainer()
 	 * @generated
 	 */
-	void setRequirementcontainer(RequirementContainer value);
+	void setRequirementContainer(RequirementContainer value);
 
 	/**
-	 * Returns the value of the '<em><b>Replacedby</b></em>' reference.
+	 * Returns the value of the '<em><b>Replaced By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Replacedby</em>' reference.
-	 * @see #setReplacedby(RequirementType)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_Replacedby()
+	 * @return the value of the '<em>Replaced By</em>' reference.
+	 * @see #setReplacedBy(RequirementType)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_ReplacedBy()
 	 * @model
 	 * @generated
 	 */
-	RequirementType getReplacedby();
+	RequirementType getReplacedBy();
 
 	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedby <em>Replacedby</em>}' reference.
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getReplacedBy <em>Replaced By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Replacedby</em>' reference.
-	 * @see #getReplacedby()
+	 * @param value the new value of the '<em>Replaced By</em>' reference.
+	 * @see #getReplacedBy()
 	 * @generated
 	 */
-	void setReplacedby(RequirementType value);
+	void setReplacedBy(RequirementType value);
 
 	/**
 	 * Returns the value of the '<em><b>Starting Req</b></em>' attribute.
@@ -136,5 +140,43 @@ public interface RequirementType extends Requirements {
 	 * @generated
 	 */
 	void setRequirement_canvas(Requirement_Canvas value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirement Origin</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementVariant <em>Requirement Variant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirement Origin</em>' reference.
+	 * @see #setRequirementOrigin(RequirementType)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_RequirementOrigin()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementVariant
+	 * @model opposite="requirementVariant"
+	 * @generated
+	 */
+	RequirementType getRequirementOrigin();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementOrigin <em>Requirement Origin</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requirement Origin</em>' reference.
+	 * @see #getRequirementOrigin()
+	 * @generated
+	 */
+	void setRequirementOrigin(RequirementType value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirement Variant</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.RequirementType}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementOrigin <em>Requirement Origin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirement Variant</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementType_RequirementVariant()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementOrigin
+	 * @model opposite="requirementOrigin"
+	 * @generated
+	 */
+	EList<RequirementType> getRequirementVariant();
 
 } // RequirementType

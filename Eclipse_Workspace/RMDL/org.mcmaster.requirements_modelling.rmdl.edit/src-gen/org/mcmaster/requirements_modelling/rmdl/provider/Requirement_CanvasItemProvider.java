@@ -60,6 +60,7 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 			addReviewPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addRequirementcontainerPropertyDescriptor(object);
+			addRmdl_projectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,6 +127,21 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 	}
 
 	/**
+	 * This adds a property descriptor for the Rmdl project feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRmdl_projectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Requirement_Canvas_rmdl_project_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirement_Canvas_rmdl_project_feature",
+								"_UI_Requirement_Canvas_type"),
+						RmdlPackage.Literals.REQUIREMENT_CANVAS__RMDL_PROJECT, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -137,10 +153,10 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__TESTCASE);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__TEST_CASE);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REVIEW);
-			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGNELEMENT);
+			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGN_ELEMENT);
 			childrenFeatures.add(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER);
 		}
 		return childrenFeatures;
@@ -208,10 +224,10 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 		case RmdlPackage.REQUIREMENT_CANVAS__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case RmdlPackage.REQUIREMENT_CANVAS__TESTCASE:
+		case RmdlPackage.REQUIREMENT_CANVAS__TEST_CASE:
 		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTS:
 		case RmdlPackage.REQUIREMENT_CANVAS__REVIEW:
-		case RmdlPackage.REQUIREMENT_CANVAS__DESIGNELEMENT:
+		case RmdlPackage.REQUIREMENT_CANVAS__DESIGN_ELEMENT:
 		case RmdlPackage.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -230,7 +246,7 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__TESTCASE,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__TEST_CASE,
 				RmdlFactory.eINSTANCE.createTestCase()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTS,
@@ -248,7 +264,7 @@ public class Requirement_CanvasItemProvider extends ItemProviderAdapter implemen
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REVIEW,
 				RmdlFactory.eINSTANCE.createReview()));
 
-		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGNELEMENT,
+		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__DESIGN_ELEMENT,
 				RmdlFactory.eINSTANCE.createDesignElement()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.REQUIREMENT_CANVAS__REQUIREMENTCONTAINER,

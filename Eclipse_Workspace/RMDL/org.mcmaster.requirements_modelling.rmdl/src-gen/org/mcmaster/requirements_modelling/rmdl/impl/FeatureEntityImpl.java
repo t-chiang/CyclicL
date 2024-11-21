@@ -30,11 +30,12 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getComposes <em>Composes</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getMandatory <em>Mandatory</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getOptionof <em>Optionof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getOptionOf <em>Option Of</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getOptional <em>Optional</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getAlternative <em>Alternative</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getAlternativeof <em>Alternativeof</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getProductof <em>Productof</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getAlternativeOf <em>Alternative Of</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getProductOf <em>Product Of</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.FeatureEntityImpl#getVariants <em>Variants</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,14 +62,14 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	protected EList<FeatureEntity> mandatory;
 
 	/**
-	 * The cached value of the '{@link #getOptionof() <em>Optionof</em>}' reference.
+	 * The cached value of the '{@link #getOptionOf() <em>Option Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOptionof()
+	 * @see #getOptionOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureEntity optionof;
+	protected FeatureEntity optionOf;
 
 	/**
 	 * The cached value of the '{@link #getOptional() <em>Optional</em>}' reference list.
@@ -91,24 +92,34 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	protected EList<FeatureEntity> alternative;
 
 	/**
-	 * The cached value of the '{@link #getAlternativeof() <em>Alternativeof</em>}' reference.
+	 * The cached value of the '{@link #getAlternativeOf() <em>Alternative Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAlternativeof()
+	 * @see #getAlternativeOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureEntity alternativeof;
+	protected FeatureEntity alternativeOf;
 
 	/**
-	 * The cached value of the '{@link #getProductof() <em>Productof</em>}' reference.
+	 * The cached value of the '{@link #getProductOf() <em>Product Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProductof()
+	 * @see #getProductOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureEntity productof;
+	protected FeatureEntity productOf;
+
+	/**
+	 * The cached value of the '{@link #getVariants() <em>Variants</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FeatureEntity> variants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,17 +226,17 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureEntity getOptionof() {
-		if (optionof != null && optionof.eIsProxy()) {
-			InternalEObject oldOptionof = (InternalEObject) optionof;
-			optionof = (FeatureEntity) eResolveProxy(oldOptionof);
-			if (optionof != oldOptionof) {
+	public FeatureEntity getOptionOf() {
+		if (optionOf != null && optionOf.eIsProxy()) {
+			InternalEObject oldOptionOf = (InternalEObject) optionOf;
+			optionOf = (FeatureEntity) eResolveProxy(oldOptionOf);
+			if (optionOf != oldOptionOf) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ENTITY__OPTIONOF,
-							oldOptionof, optionof));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ENTITY__OPTION_OF,
+							oldOptionOf, optionOf));
 			}
 		}
-		return optionof;
+		return optionOf;
 	}
 
 	/**
@@ -233,8 +244,8 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureEntity basicGetOptionof() {
-		return optionof;
+	public FeatureEntity basicGetOptionOf() {
+		return optionOf;
 	}
 
 	/**
@@ -242,12 +253,12 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOptionof(FeatureEntity newOptionof, NotificationChain msgs) {
-		FeatureEntity oldOptionof = optionof;
-		optionof = newOptionof;
+	public NotificationChain basicSetOptionOf(FeatureEntity newOptionOf, NotificationChain msgs) {
+		FeatureEntity oldOptionOf = optionOf;
+		optionOf = newOptionOf;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.FEATURE_ENTITY__OPTIONOF, oldOptionof, newOptionof);
+					RmdlPackage.FEATURE_ENTITY__OPTION_OF, oldOptionOf, newOptionOf);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -261,21 +272,21 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOptionof(FeatureEntity newOptionof) {
-		if (newOptionof != optionof) {
+	public void setOptionOf(FeatureEntity newOptionOf) {
+		if (newOptionOf != optionOf) {
 			NotificationChain msgs = null;
-			if (optionof != null)
-				msgs = ((InternalEObject) optionof).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__OPTIONAL,
+			if (optionOf != null)
+				msgs = ((InternalEObject) optionOf).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__OPTIONAL,
 						FeatureEntity.class, msgs);
-			if (newOptionof != null)
-				msgs = ((InternalEObject) newOptionof).eInverseAdd(this, RmdlPackage.FEATURE_ENTITY__OPTIONAL,
+			if (newOptionOf != null)
+				msgs = ((InternalEObject) newOptionOf).eInverseAdd(this, RmdlPackage.FEATURE_ENTITY__OPTIONAL,
 						FeatureEntity.class, msgs);
-			msgs = basicSetOptionof(newOptionof, msgs);
+			msgs = basicSetOptionOf(newOptionOf, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ENTITY__OPTIONOF, newOptionof,
-					newOptionof));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ENTITY__OPTION_OF, newOptionOf,
+					newOptionOf));
 	}
 
 	/**
@@ -286,7 +297,7 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	public EList<FeatureEntity> getOptional() {
 		if (optional == null) {
 			optional = new EObjectWithInverseResolvingEList<FeatureEntity>(FeatureEntity.class, this,
-					RmdlPackage.FEATURE_ENTITY__OPTIONAL, RmdlPackage.FEATURE_ENTITY__OPTIONOF);
+					RmdlPackage.FEATURE_ENTITY__OPTIONAL, RmdlPackage.FEATURE_ENTITY__OPTION_OF);
 		}
 		return optional;
 	}
@@ -299,7 +310,7 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	public EList<FeatureEntity> getAlternative() {
 		if (alternative == null) {
 			alternative = new EObjectWithInverseResolvingEList<FeatureEntity>(FeatureEntity.class, this,
-					RmdlPackage.FEATURE_ENTITY__ALTERNATIVE, RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF);
+					RmdlPackage.FEATURE_ENTITY__ALTERNATIVE, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF);
 		}
 		return alternative;
 	}
@@ -309,17 +320,17 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureEntity getAlternativeof() {
-		if (alternativeof != null && alternativeof.eIsProxy()) {
-			InternalEObject oldAlternativeof = (InternalEObject) alternativeof;
-			alternativeof = (FeatureEntity) eResolveProxy(oldAlternativeof);
-			if (alternativeof != oldAlternativeof) {
+	public FeatureEntity getAlternativeOf() {
+		if (alternativeOf != null && alternativeOf.eIsProxy()) {
+			InternalEObject oldAlternativeOf = (InternalEObject) alternativeOf;
+			alternativeOf = (FeatureEntity) eResolveProxy(oldAlternativeOf);
+			if (alternativeOf != oldAlternativeOf) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF,
-							oldAlternativeof, alternativeof));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF, oldAlternativeOf, alternativeOf));
 			}
 		}
-		return alternativeof;
+		return alternativeOf;
 	}
 
 	/**
@@ -327,8 +338,8 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureEntity basicGetAlternativeof() {
-		return alternativeof;
+	public FeatureEntity basicGetAlternativeOf() {
+		return alternativeOf;
 	}
 
 	/**
@@ -336,12 +347,12 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAlternativeof(FeatureEntity newAlternativeof, NotificationChain msgs) {
-		FeatureEntity oldAlternativeof = alternativeof;
-		alternativeof = newAlternativeof;
+	public NotificationChain basicSetAlternativeOf(FeatureEntity newAlternativeOf, NotificationChain msgs) {
+		FeatureEntity oldAlternativeOf = alternativeOf;
+		alternativeOf = newAlternativeOf;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF, oldAlternativeof, newAlternativeof);
+					RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF, oldAlternativeOf, newAlternativeOf);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -355,21 +366,21 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAlternativeof(FeatureEntity newAlternativeof) {
-		if (newAlternativeof != alternativeof) {
+	public void setAlternativeOf(FeatureEntity newAlternativeOf) {
+		if (newAlternativeOf != alternativeOf) {
 			NotificationChain msgs = null;
-			if (alternativeof != null)
-				msgs = ((InternalEObject) alternativeof).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE,
+			if (alternativeOf != null)
+				msgs = ((InternalEObject) alternativeOf).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE,
 						FeatureEntity.class, msgs);
-			if (newAlternativeof != null)
-				msgs = ((InternalEObject) newAlternativeof).eInverseAdd(this, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE,
+			if (newAlternativeOf != null)
+				msgs = ((InternalEObject) newAlternativeOf).eInverseAdd(this, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE,
 						FeatureEntity.class, msgs);
-			msgs = basicSetAlternativeof(newAlternativeof, msgs);
+			msgs = basicSetAlternativeOf(newAlternativeOf, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF,
-					newAlternativeof, newAlternativeof));
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF,
+					newAlternativeOf, newAlternativeOf));
 	}
 
 	/**
@@ -377,17 +388,17 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureEntity getProductof() {
-		if (productof != null && productof.eIsProxy()) {
-			InternalEObject oldProductof = (InternalEObject) productof;
-			productof = (FeatureEntity) eResolveProxy(oldProductof);
-			if (productof != oldProductof) {
+	public FeatureEntity getProductOf() {
+		if (productOf != null && productOf.eIsProxy()) {
+			InternalEObject oldProductOf = (InternalEObject) productOf;
+			productOf = (FeatureEntity) eResolveProxy(oldProductOf);
+			if (productOf != oldProductOf) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ENTITY__PRODUCTOF,
-							oldProductof, productof));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RmdlPackage.FEATURE_ENTITY__PRODUCT_OF,
+							oldProductOf, productOf));
 			}
 		}
-		return productof;
+		return productOf;
 	}
 
 	/**
@@ -395,8 +406,8 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureEntity basicGetProductof() {
-		return productof;
+	public FeatureEntity basicGetProductOf() {
+		return productOf;
 	}
 
 	/**
@@ -404,12 +415,53 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProductof(FeatureEntity newProductof) {
-		FeatureEntity oldProductof = productof;
-		productof = newProductof;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ENTITY__PRODUCTOF, oldProductof,
-					productof));
+	public NotificationChain basicSetProductOf(FeatureEntity newProductOf, NotificationChain msgs) {
+		FeatureEntity oldProductOf = productOf;
+		productOf = newProductOf;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					RmdlPackage.FEATURE_ENTITY__PRODUCT_OF, oldProductOf, newProductOf);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProductOf(FeatureEntity newProductOf) {
+		if (newProductOf != productOf) {
+			NotificationChain msgs = null;
+			if (productOf != null)
+				msgs = ((InternalEObject) productOf).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__VARIANTS,
+						FeatureEntity.class, msgs);
+			if (newProductOf != null)
+				msgs = ((InternalEObject) newProductOf).eInverseAdd(this, RmdlPackage.FEATURE_ENTITY__VARIANTS,
+						FeatureEntity.class, msgs);
+			msgs = basicSetProductOf(newProductOf, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.FEATURE_ENTITY__PRODUCT_OF, newProductOf,
+					newProductOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<FeatureEntity> getVariants() {
+		if (variants == null) {
+			variants = new EObjectWithInverseResolvingEList<FeatureEntity>(FeatureEntity.class, this,
+					RmdlPackage.FEATURE_ENTITY__VARIANTS, RmdlPackage.FEATURE_ENTITY__PRODUCT_OF);
+		}
+		return variants;
 	}
 
 	/**
@@ -428,20 +480,27 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 			return basicSetComposes((FeatureEntity) otherEnd, msgs);
 		case RmdlPackage.FEATURE_ENTITY__MANDATORY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMandatory()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.FEATURE_ENTITY__OPTIONOF:
-			if (optionof != null)
-				msgs = ((InternalEObject) optionof).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__OPTIONAL,
+		case RmdlPackage.FEATURE_ENTITY__OPTION_OF:
+			if (optionOf != null)
+				msgs = ((InternalEObject) optionOf).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__OPTIONAL,
 						FeatureEntity.class, msgs);
-			return basicSetOptionof((FeatureEntity) otherEnd, msgs);
+			return basicSetOptionOf((FeatureEntity) otherEnd, msgs);
 		case RmdlPackage.FEATURE_ENTITY__OPTIONAL:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOptional()).basicAdd(otherEnd, msgs);
 		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAlternative()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF:
-			if (alternativeof != null)
-				msgs = ((InternalEObject) alternativeof).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE,
+		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF:
+			if (alternativeOf != null)
+				msgs = ((InternalEObject) alternativeOf).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__ALTERNATIVE,
 						FeatureEntity.class, msgs);
-			return basicSetAlternativeof((FeatureEntity) otherEnd, msgs);
+			return basicSetAlternativeOf((FeatureEntity) otherEnd, msgs);
+		case RmdlPackage.FEATURE_ENTITY__PRODUCT_OF:
+			if (productOf != null)
+				msgs = ((InternalEObject) productOf).eInverseRemove(this, RmdlPackage.FEATURE_ENTITY__VARIANTS,
+						FeatureEntity.class, msgs);
+			return basicSetProductOf((FeatureEntity) otherEnd, msgs);
+		case RmdlPackage.FEATURE_ENTITY__VARIANTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getVariants()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -458,14 +517,18 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 			return basicSetComposes(null, msgs);
 		case RmdlPackage.FEATURE_ENTITY__MANDATORY:
 			return ((InternalEList<?>) getMandatory()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.FEATURE_ENTITY__OPTIONOF:
-			return basicSetOptionof(null, msgs);
+		case RmdlPackage.FEATURE_ENTITY__OPTION_OF:
+			return basicSetOptionOf(null, msgs);
 		case RmdlPackage.FEATURE_ENTITY__OPTIONAL:
 			return ((InternalEList<?>) getOptional()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE:
 			return ((InternalEList<?>) getAlternative()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF:
-			return basicSetAlternativeof(null, msgs);
+		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF:
+			return basicSetAlternativeOf(null, msgs);
+		case RmdlPackage.FEATURE_ENTITY__PRODUCT_OF:
+			return basicSetProductOf(null, msgs);
+		case RmdlPackage.FEATURE_ENTITY__VARIANTS:
+			return ((InternalEList<?>) getVariants()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -484,22 +547,24 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 			return basicGetComposes();
 		case RmdlPackage.FEATURE_ENTITY__MANDATORY:
 			return getMandatory();
-		case RmdlPackage.FEATURE_ENTITY__OPTIONOF:
+		case RmdlPackage.FEATURE_ENTITY__OPTION_OF:
 			if (resolve)
-				return getOptionof();
-			return basicGetOptionof();
+				return getOptionOf();
+			return basicGetOptionOf();
 		case RmdlPackage.FEATURE_ENTITY__OPTIONAL:
 			return getOptional();
 		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE:
 			return getAlternative();
-		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF:
+		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF:
 			if (resolve)
-				return getAlternativeof();
-			return basicGetAlternativeof();
-		case RmdlPackage.FEATURE_ENTITY__PRODUCTOF:
+				return getAlternativeOf();
+			return basicGetAlternativeOf();
+		case RmdlPackage.FEATURE_ENTITY__PRODUCT_OF:
 			if (resolve)
-				return getProductof();
-			return basicGetProductof();
+				return getProductOf();
+			return basicGetProductOf();
+		case RmdlPackage.FEATURE_ENTITY__VARIANTS:
+			return getVariants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -520,8 +585,8 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 			getMandatory().clear();
 			getMandatory().addAll((Collection<? extends FeatureEntity>) newValue);
 			return;
-		case RmdlPackage.FEATURE_ENTITY__OPTIONOF:
-			setOptionof((FeatureEntity) newValue);
+		case RmdlPackage.FEATURE_ENTITY__OPTION_OF:
+			setOptionOf((FeatureEntity) newValue);
 			return;
 		case RmdlPackage.FEATURE_ENTITY__OPTIONAL:
 			getOptional().clear();
@@ -531,11 +596,15 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 			getAlternative().clear();
 			getAlternative().addAll((Collection<? extends FeatureEntity>) newValue);
 			return;
-		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF:
-			setAlternativeof((FeatureEntity) newValue);
+		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF:
+			setAlternativeOf((FeatureEntity) newValue);
 			return;
-		case RmdlPackage.FEATURE_ENTITY__PRODUCTOF:
-			setProductof((FeatureEntity) newValue);
+		case RmdlPackage.FEATURE_ENTITY__PRODUCT_OF:
+			setProductOf((FeatureEntity) newValue);
+			return;
+		case RmdlPackage.FEATURE_ENTITY__VARIANTS:
+			getVariants().clear();
+			getVariants().addAll((Collection<? extends FeatureEntity>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -555,8 +624,8 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 		case RmdlPackage.FEATURE_ENTITY__MANDATORY:
 			getMandatory().clear();
 			return;
-		case RmdlPackage.FEATURE_ENTITY__OPTIONOF:
-			setOptionof((FeatureEntity) null);
+		case RmdlPackage.FEATURE_ENTITY__OPTION_OF:
+			setOptionOf((FeatureEntity) null);
 			return;
 		case RmdlPackage.FEATURE_ENTITY__OPTIONAL:
 			getOptional().clear();
@@ -564,11 +633,14 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE:
 			getAlternative().clear();
 			return;
-		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF:
-			setAlternativeof((FeatureEntity) null);
+		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF:
+			setAlternativeOf((FeatureEntity) null);
 			return;
-		case RmdlPackage.FEATURE_ENTITY__PRODUCTOF:
-			setProductof((FeatureEntity) null);
+		case RmdlPackage.FEATURE_ENTITY__PRODUCT_OF:
+			setProductOf((FeatureEntity) null);
+			return;
+		case RmdlPackage.FEATURE_ENTITY__VARIANTS:
+			getVariants().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -586,16 +658,18 @@ public abstract class FeatureEntityImpl extends Requirement_CanvasImpl implement
 			return composes != null;
 		case RmdlPackage.FEATURE_ENTITY__MANDATORY:
 			return mandatory != null && !mandatory.isEmpty();
-		case RmdlPackage.FEATURE_ENTITY__OPTIONOF:
-			return optionof != null;
+		case RmdlPackage.FEATURE_ENTITY__OPTION_OF:
+			return optionOf != null;
 		case RmdlPackage.FEATURE_ENTITY__OPTIONAL:
 			return optional != null && !optional.isEmpty();
 		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE:
 			return alternative != null && !alternative.isEmpty();
-		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVEOF:
-			return alternativeof != null;
-		case RmdlPackage.FEATURE_ENTITY__PRODUCTOF:
-			return productof != null;
+		case RmdlPackage.FEATURE_ENTITY__ALTERNATIVE_OF:
+			return alternativeOf != null;
+		case RmdlPackage.FEATURE_ENTITY__PRODUCT_OF:
+			return productOf != null;
+		case RmdlPackage.FEATURE_ENTITY__VARIANTS:
+			return variants != null && !variants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

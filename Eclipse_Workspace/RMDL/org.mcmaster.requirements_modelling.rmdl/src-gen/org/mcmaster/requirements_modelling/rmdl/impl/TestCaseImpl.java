@@ -251,7 +251,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRequirement_canvas != null)
 				msgs = ((InternalEObject) newRequirement_canvas).eInverseAdd(this,
-						RmdlPackage.REQUIREMENT_CANVAS__TESTCASE, Requirement_Canvas.class, msgs);
+						RmdlPackage.REQUIREMENT_CANVAS__TEST_CASE, Requirement_Canvas.class, msgs);
 			msgs = basicSetRequirement_canvas(newRequirement_canvas, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -290,7 +290,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	public EList<Requirements> getRequirements() {
 		if (requirements == null) {
 			requirements = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
-					RmdlPackage.TEST_CASE__REQUIREMENTS, RmdlPackage.REQUIREMENTS__TESTCASE);
+					RmdlPackage.TEST_CASE__REQUIREMENTS, RmdlPackage.REQUIREMENTS__TEST_CASE);
 		}
 		return requirements;
 	}
@@ -339,7 +339,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case RmdlPackage.TEST_CASE__REQUIREMENT_CANVAS:
-			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_CANVAS__TESTCASE,
+			return eInternalContainer().eInverseRemove(this, RmdlPackage.REQUIREMENT_CANVAS__TEST_CASE,
 					Requirement_Canvas.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);

@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedrequirements <em>Ownedrequirements</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getOwnedRequirements <em>Owned Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.RequirementContainer#getRequirement_canvas <em>Requirement canvas</em>}</li>
  * </ul>
  *
@@ -23,18 +23,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface RequirementContainer extends Requirements {
 	/**
-	 * Returns the value of the '<em><b>Ownedrequirements</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Requirements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.RequirementType}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementcontainer <em>Requirementcontainer</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementContainer <em>Requirement Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ownedrequirements</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementContainer_Ownedrequirements()
-	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementcontainer
-	 * @model opposite="requirementcontainer" containment="true" lower="2"
+	 * @return the value of the '<em>Owned Requirements</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirementContainer_OwnedRequirements()
+	 * @see org.mcmaster.requirements_modelling.rmdl.RequirementType#getRequirementContainer
+	 * @model opposite="requirementContainer" containment="true" lower="2"
 	 * @generated
 	 */
-	EList<RequirementType> getOwnedrequirements();
+	EList<RequirementType> getOwnedRequirements();
 
 	/**
 	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.

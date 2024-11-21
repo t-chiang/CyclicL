@@ -45,8 +45,10 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addSpecificationPropertyDescriptor(object);
-			addReplacedbyPropertyDescriptor(object);
+			addReplacedByPropertyDescriptor(object);
 			addStartingReqPropertyDescriptor(object);
+			addRequirementOriginPropertyDescriptor(object);
+			addRequirementVariantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -68,18 +70,18 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Replacedby feature.
+	 * This adds a property descriptor for the Replaced By feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReplacedbyPropertyDescriptor(Object object) {
+	protected void addReplacedByPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_RequirementType_replacedby_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_RequirementType_replacedby_feature",
+						getResourceLocator(), getString("_UI_RequirementType_replacedBy_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RequirementType_replacedBy_feature",
 								"_UI_RequirementType_type"),
-						RmdlPackage.Literals.REQUIREMENT_TYPE__REPLACEDBY, true, false, true, null, null, null));
+						RmdlPackage.Literals.REQUIREMENT_TYPE__REPLACED_BY, true, false, true, null, null, null));
 	}
 
 	/**
@@ -96,6 +98,37 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 								"_UI_RequirementType_type"),
 						RmdlPackage.Literals.REQUIREMENT_TYPE__STARTING_REQ, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirement Origin feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementOriginPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RequirementType_requirementOrigin_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RequirementType_requirementOrigin_feature",
+								"_UI_RequirementType_type"),
+						RmdlPackage.Literals.REQUIREMENT_TYPE__REQUIREMENT_ORIGIN, true, false, true, null, null,
+						null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirement Variant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementVariantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_RequirementType_requirementVariant_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_RequirementType_requirementVariant_feature",
+						"_UI_RequirementType_type"),
+				RmdlPackage.Literals.REQUIREMENT_TYPE__REQUIREMENT_VARIANT, true, false, true, null, null, null));
 	}
 
 	/**

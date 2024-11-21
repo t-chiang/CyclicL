@@ -44,11 +44,12 @@ public class FeatureEntityItemProvider extends Requirement_CanvasItemProvider {
 
 			addComposesPropertyDescriptor(object);
 			addMandatoryPropertyDescriptor(object);
-			addOptionofPropertyDescriptor(object);
+			addOptionOfPropertyDescriptor(object);
 			addOptionalPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
-			addAlternativeofPropertyDescriptor(object);
-			addProductofPropertyDescriptor(object);
+			addAlternativeOfPropertyDescriptor(object);
+			addProductOfPropertyDescriptor(object);
+			addVariantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,18 +85,18 @@ public class FeatureEntityItemProvider extends Requirement_CanvasItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Optionof feature.
+	 * This adds a property descriptor for the Option Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOptionofPropertyDescriptor(Object object) {
+	protected void addOptionOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_FeatureEntity_optionof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_optionof_feature",
+						getResourceLocator(), getString("_UI_FeatureEntity_optionOf_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_optionOf_feature",
 								"_UI_FeatureEntity_type"),
-						RmdlPackage.Literals.FEATURE_ENTITY__OPTIONOF, true, false, true, null, null, null));
+						RmdlPackage.Literals.FEATURE_ENTITY__OPTION_OF, true, false, true, null, null, null));
 	}
 
 	/**
@@ -129,33 +130,48 @@ public class FeatureEntityItemProvider extends Requirement_CanvasItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Alternativeof feature.
+	 * This adds a property descriptor for the Alternative Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAlternativeofPropertyDescriptor(Object object) {
+	protected void addAlternativeOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_FeatureEntity_alternativeof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_alternativeof_feature",
+						getResourceLocator(), getString("_UI_FeatureEntity_alternativeOf_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_alternativeOf_feature",
 								"_UI_FeatureEntity_type"),
-						RmdlPackage.Literals.FEATURE_ENTITY__ALTERNATIVEOF, true, false, true, null, null, null));
+						RmdlPackage.Literals.FEATURE_ENTITY__ALTERNATIVE_OF, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Productof feature.
+	 * This adds a property descriptor for the Product Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProductofPropertyDescriptor(Object object) {
+	protected void addProductOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_FeatureEntity_productof_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_productof_feature",
+						getResourceLocator(), getString("_UI_FeatureEntity_productOf_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_productOf_feature",
 								"_UI_FeatureEntity_type"),
-						RmdlPackage.Literals.FEATURE_ENTITY__PRODUCTOF, true, false, true, null, null, null));
+						RmdlPackage.Literals.FEATURE_ENTITY__PRODUCT_OF, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Variants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVariantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_FeatureEntity_variants_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureEntity_variants_feature",
+								"_UI_FeatureEntity_type"),
+						RmdlPackage.Literals.FEATURE_ENTITY__VARIANTS, true, false, true, null, null, null));
 	}
 
 	/**
