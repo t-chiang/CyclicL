@@ -1,0 +1,6 @@
+rule featureRoot2productRoot
+	transform sourceRoot : rmdl!Root
+	to targetRoot : rmdl!Root{
+		
+	}
+	
