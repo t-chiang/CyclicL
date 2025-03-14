@@ -16,7 +16,7 @@ import org.mcmaster.requirements_modelling.rmdl.Root;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RootItemProvider extends FeatureEntityItemProvider {
+public class RootItemProvider extends Feature_EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -18,7 +18,7 @@ import org.mcmaster.requirements_modelling.rmdl.Element;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElementItemProvider extends FeatureEntityItemProvider {
+public class ElementItemProvider extends Feature_EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -13,7 +13,7 @@ import org.mcmaster.requirements_modelling.rmdl.Root;
  *
  * @generated
  */
-public class RootImpl extends FeatureEntityImpl implements Root {
+public class RootImpl extends Feature_EntityImpl implements Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

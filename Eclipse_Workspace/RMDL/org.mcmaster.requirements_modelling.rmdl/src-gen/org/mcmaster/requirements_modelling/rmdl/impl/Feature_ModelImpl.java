@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.mcmaster.requirements_modelling.rmdl.FeatureEntity;
+import org.mcmaster.requirements_modelling.rmdl.Feature_Entity;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.Product_Variant;
 import org.mcmaster.requirements_modelling.rmdl.RMDL_Project;
@@ -35,7 +34,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getFeatureEntity <em>Feature Entity</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getFeature_entity <em>Feature entity</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getRmdl_project <em>Rmdl project</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.Feature_ModelImpl#getProduct_variant <em>Product variant</em>}</li>
  * </ul>
@@ -64,14 +63,14 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFeatureEntity() <em>Feature Entity</em>}' containment reference list.
+	 * The cached value of the '{@link #getFeature_entity() <em>Feature entity</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeatureEntity()
+	 * @see #getFeature_entity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FeatureEntity> featureEntity;
+	protected EList<Feature_Entity> feature_entity;
 
 	/**
 	 * The cached value of the '{@link #getProduct_variant() <em>Product variant</em>}' containment reference list.
@@ -128,12 +127,12 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FeatureEntity> getFeatureEntity() {
-		if (featureEntity == null) {
-			featureEntity = new EObjectContainmentEList<FeatureEntity>(FeatureEntity.class, this,
+	public EList<Feature_Entity> getFeature_entity() {
+		if (feature_entity == null) {
+			feature_entity = new EObjectContainmentEList<Feature_Entity>(Feature_Entity.class, this,
 					RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY);
 		}
-		return featureEntity;
+		return feature_entity;
 	}
 
 	/**
@@ -222,7 +221,7 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY:
-			return ((InternalEList<?>) getFeatureEntity()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getFeature_entity()).basicRemove(otherEnd, msgs);
 		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
 			return basicSetRmdl_project(null, msgs);
 		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
@@ -257,7 +256,7 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			return getName();
 		case RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY:
-			return getFeatureEntity();
+			return getFeature_entity();
 		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
 			return getRmdl_project();
 		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:
@@ -279,8 +278,8 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 			setName((String) newValue);
 			return;
 		case RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY:
-			getFeatureEntity().clear();
-			getFeatureEntity().addAll((Collection<? extends FeatureEntity>) newValue);
+			getFeature_entity().clear();
+			getFeature_entity().addAll((Collection<? extends Feature_Entity>) newValue);
 			return;
 		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
 			setRmdl_project((RMDL_Project) newValue);
@@ -305,7 +304,7 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 			setName(NAME_EDEFAULT);
 			return;
 		case RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY:
-			getFeatureEntity().clear();
+			getFeature_entity().clear();
 			return;
 		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
 			setRmdl_project((RMDL_Project) null);
@@ -328,7 +327,7 @@ public class Feature_ModelImpl extends MinimalEObjectImpl.Container implements F
 		case RmdlPackage.FEATURE_MODEL__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RmdlPackage.FEATURE_MODEL__FEATURE_ENTITY:
-			return featureEntity != null && !featureEntity.isEmpty();
+			return feature_entity != null && !feature_entity.isEmpty();
 		case RmdlPackage.FEATURE_MODEL__RMDL_PROJECT:
 			return getRmdl_project() != null;
 		case RmdlPackage.FEATURE_MODEL__PRODUCT_VARIANT:

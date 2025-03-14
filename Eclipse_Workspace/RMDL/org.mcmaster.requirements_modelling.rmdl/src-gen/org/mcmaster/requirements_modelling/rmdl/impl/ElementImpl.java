@@ -14,7 +14,7 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  *
  * @generated
  */
-public class ElementImpl extends FeatureEntityImpl implements Element {
+public class ElementImpl extends Feature_EntityImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

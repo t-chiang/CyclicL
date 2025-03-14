@@ -68,11 +68,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isApproved" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//FeatureEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//Feature_Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="Feature_Model">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="featureEntity" lowerBound="1"
-        upperBound="-1" eType="#//FeatureEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature_entity" lowerBound="1"
+        upperBound="-1" eType="#//Feature_Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rmdl_project" eType="#//RMDL_Project"
         eOpposite="#//RMDL_Project/feature_model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="product_variant" upperBound="-1"
@@ -84,25 +84,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement_canvas" upperBound="-1"
         eType="#//Requirement_Canvas" containment="true" eOpposite="#//Requirement_Canvas/rmdl_project"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureEntity" abstract="true" eSuperTypes="#//Requirement_Canvas">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="composes" eType="#//FeatureEntity"
-        eOpposite="#//FeatureEntity/mandatory"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature_Entity" abstract="true" eSuperTypes="#//Requirement_Canvas">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composes" eType="#//Feature_Entity"
+        eOpposite="#//Feature_Entity/mandatory"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mandatory" upperBound="-1"
-        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/composes"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="optionOf" eType="#//FeatureEntity"
-        eOpposite="#//FeatureEntity/optional"/>
+        eType="#//Feature_Entity" eOpposite="#//Feature_Entity/composes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionOf" eType="#//Feature_Entity"
+        eOpposite="#//Feature_Entity/optional"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="optional" upperBound="-1"
-        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/optionOf"/>
+        eType="#//Feature_Entity" eOpposite="#//Feature_Entity/optionOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alternative" upperBound="-1"
-        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/alternativeOf"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alternativeOf" eType="#//FeatureEntity"
-        eOpposite="#//FeatureEntity/alternative"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="productOf" eType="#//FeatureEntity"
-        eOpposite="#//FeatureEntity/variants"/>
+        eType="#//Feature_Entity" eOpposite="#//Feature_Entity/alternativeOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternativeOf" eType="#//Feature_Entity"
+        eOpposite="#//Feature_Entity/alternative"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productOf" eType="#//Feature_Entity"
+        eOpposite="#//Feature_Entity/variants"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variants" upperBound="-1"
-        eType="#//FeatureEntity" eOpposite="#//FeatureEntity/productOf"/>
+        eType="#//Feature_Entity" eOpposite="#//Feature_Entity/productOf"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Root" eSuperTypes="#//FeatureEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Root" eSuperTypes="#//Feature_Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="RequirementContainer" eSuperTypes="#//Requirements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRequirements" lowerBound="2"
         upperBound="-1" eType="#//RequirementType" containment="true" eOpposite="#//RequirementType/requirementContainer"/>

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.mcmaster.requirements_modelling.rmdl.Constraint;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
 import org.mcmaster.requirements_modelling.rmdl.Element;
-import org.mcmaster.requirements_modelling.rmdl.FeatureEntity;
+import org.mcmaster.requirements_modelling.rmdl.Feature_Entity;
 import org.mcmaster.requirements_modelling.rmdl.Feature_Model;
 import org.mcmaster.requirements_modelling.rmdl.Functional;
 import org.mcmaster.requirements_modelling.rmdl.Product_Variant;
@@ -126,7 +126,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureEntityEClass = null;
+	private EClass feature_EntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -610,7 +610,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeature_Model_FeatureEntity() {
+	public EReference getFeature_Model_Feature_entity() {
 		return (EReference) feature_ModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -664,8 +664,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureEntity() {
-		return featureEntityEClass;
+	public EClass getFeature_Entity() {
+		return feature_EntityEClass;
 	}
 
 	/**
@@ -673,8 +673,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_Composes() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(0);
+	public EReference getFeature_Entity_Composes() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -682,8 +682,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_Mandatory() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(1);
+	public EReference getFeature_Entity_Mandatory() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -691,8 +691,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_OptionOf() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(2);
+	public EReference getFeature_Entity_OptionOf() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -700,8 +700,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_Optional() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(3);
+	public EReference getFeature_Entity_Optional() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -709,8 +709,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_Alternative() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(4);
+	public EReference getFeature_Entity_Alternative() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -718,8 +718,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_AlternativeOf() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(5);
+	public EReference getFeature_Entity_AlternativeOf() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -727,8 +727,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_ProductOf() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(6);
+	public EReference getFeature_Entity_ProductOf() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -736,8 +736,8 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureEntity_Variants() {
-		return (EReference) featureEntityEClass.getEStructuralFeatures().get(7);
+	public EReference getFeature_Entity_Variants() {
+		return (EReference) feature_EntityEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -964,15 +964,15 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		createEReference(rmdL_ProjectEClass, RMDL_PROJECT__FEATURE_MODEL);
 		createEReference(rmdL_ProjectEClass, RMDL_PROJECT__REQUIREMENT_CANVAS);
 
-		featureEntityEClass = createEClass(FEATURE_ENTITY);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__COMPOSES);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__MANDATORY);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__OPTION_OF);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__OPTIONAL);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__ALTERNATIVE);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__ALTERNATIVE_OF);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__PRODUCT_OF);
-		createEReference(featureEntityEClass, FEATURE_ENTITY__VARIANTS);
+		feature_EntityEClass = createEClass(FEATURE_ENTITY);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__COMPOSES);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__MANDATORY);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__OPTION_OF);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__OPTIONAL);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__ALTERNATIVE);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__ALTERNATIVE_OF);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__PRODUCT_OF);
+		createEReference(feature_EntityEClass, FEATURE_ENTITY__VARIANTS);
 
 		rootEClass = createEClass(ROOT);
 
@@ -1029,9 +1029,9 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 		qualitativeEClass.getESuperTypes().add(this.getRequirementType());
 		constraintEClass.getESuperTypes().add(this.getRequirementType());
 		safetyEClass.getESuperTypes().add(this.getRequirementType());
-		elementEClass.getESuperTypes().add(this.getFeatureEntity());
-		featureEntityEClass.getESuperTypes().add(this.getRequirement_Canvas());
-		rootEClass.getESuperTypes().add(this.getFeatureEntity());
+		elementEClass.getESuperTypes().add(this.getFeature_Entity());
+		feature_EntityEClass.getESuperTypes().add(this.getRequirement_Canvas());
+		rootEClass.getESuperTypes().add(this.getFeature_Entity());
 		requirementContainerEClass.getESuperTypes().add(this.getRequirements());
 		requirementTypeEClass.getESuperTypes().add(this.getRequirements());
 		product_VariantEClass.getESuperTypes().add(this.getFeature_Model());
@@ -1155,7 +1155,7 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeature_Model_Name(), ecorePackage.getEString(), "name", null, 1, 1, Feature_Model.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_Model_FeatureEntity(), this.getFeatureEntity(), null, "featureEntity", null, 1, -1,
+		initEReference(getFeature_Model_Feature_entity(), this.getFeature_Entity(), null, "feature_entity", null, 1, -1,
 				Feature_Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_Model_Rmdl_project(), this.getRMDL_Project(), this.getRMDL_Project_Feature_model(),
@@ -1176,32 +1176,34 @@ public class RmdlPackageImpl extends EPackageImpl implements RmdlPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureEntityEClass, FeatureEntity.class, "FeatureEntity", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(feature_EntityEClass, Feature_Entity.class, "Feature_Entity", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureEntity_Composes(), this.getFeatureEntity(), this.getFeatureEntity_Mandatory(),
-				"composes", null, 0, 1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getFeature_Entity_Composes(), this.getFeature_Entity(), this.getFeature_Entity_Mandatory(),
+				"composes", null, 0, 1, Feature_Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_Mandatory(), this.getFeatureEntity(), this.getFeatureEntity_Composes(),
-				"mandatory", null, 0, -1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getFeature_Entity_Mandatory(), this.getFeature_Entity(), this.getFeature_Entity_Composes(),
+				"mandatory", null, 0, -1, Feature_Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_OptionOf(), this.getFeatureEntity(), this.getFeatureEntity_Optional(),
-				"optionOf", null, 0, 1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getFeature_Entity_OptionOf(), this.getFeature_Entity(), this.getFeature_Entity_Optional(),
+				"optionOf", null, 0, 1, Feature_Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_Optional(), this.getFeatureEntity(), this.getFeatureEntity_OptionOf(),
-				"optional", null, 0, -1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_Alternative(), this.getFeatureEntity(), this.getFeatureEntity_AlternativeOf(),
-				"alternative", null, 0, -1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getFeature_Entity_Optional(), this.getFeature_Entity(), this.getFeature_Entity_OptionOf(),
+				"optional", null, 0, -1, Feature_Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_AlternativeOf(), this.getFeatureEntity(), this.getFeatureEntity_Alternative(),
-				"alternativeOf", null, 0, 1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getFeature_Entity_Alternative(), this.getFeature_Entity(),
+				this.getFeature_Entity_AlternativeOf(), "alternative", null, 0, -1, Feature_Entity.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getFeature_Entity_AlternativeOf(), this.getFeature_Entity(),
+				this.getFeature_Entity_Alternative(), "alternativeOf", null, 0, 1, Feature_Entity.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getFeature_Entity_ProductOf(), this.getFeature_Entity(), this.getFeature_Entity_Variants(),
+				"productOf", null, 0, 1, Feature_Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_ProductOf(), this.getFeatureEntity(), this.getFeatureEntity_Variants(),
-				"productOf", null, 0, 1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureEntity_Variants(), this.getFeatureEntity(), this.getFeatureEntity_ProductOf(),
-				"variants", null, 0, -1, FeatureEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Entity_Variants(), this.getFeature_Entity(), this.getFeature_Entity_ProductOf(),
+				"variants", null, 0, -1, Feature_Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

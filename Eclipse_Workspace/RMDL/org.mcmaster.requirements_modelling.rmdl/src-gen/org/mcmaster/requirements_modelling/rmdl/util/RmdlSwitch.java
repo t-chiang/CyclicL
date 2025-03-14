@@ -148,7 +148,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 			Element element = (Element) theEObject;
 			T result = caseElement(element);
 			if (result == null)
-				result = caseFeatureEntity(element);
+				result = caseFeature_Entity(element);
 			if (result == null)
 				result = caseRequirement_Canvas(element);
 			if (result == null)
@@ -170,10 +170,10 @@ public class RmdlSwitch<T> extends Switch<T> {
 			return result;
 		}
 		case RmdlPackage.FEATURE_ENTITY: {
-			FeatureEntity featureEntity = (FeatureEntity) theEObject;
-			T result = caseFeatureEntity(featureEntity);
+			Feature_Entity feature_Entity = (Feature_Entity) theEObject;
+			T result = caseFeature_Entity(feature_Entity);
 			if (result == null)
-				result = caseRequirement_Canvas(featureEntity);
+				result = caseRequirement_Canvas(feature_Entity);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -182,7 +182,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 			Root root = (Root) theEObject;
 			T result = caseRoot(root);
 			if (result == null)
-				result = caseFeatureEntity(root);
+				result = caseFeature_Entity(root);
 			if (result == null)
 				result = caseRequirement_Canvas(root);
 			if (result == null)
@@ -412,7 +412,7 @@ public class RmdlSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureEntity(FeatureEntity object) {
+	public T caseFeature_Entity(Feature_Entity object) {
 		return null;
 	}
 

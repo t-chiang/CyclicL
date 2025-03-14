@@ -12,5 +12,5 @@ package org.mcmaster.requirements_modelling.rmdl;
  * @model
  * @generated
  */
-public interface Root extends FeatureEntity {
+public interface Root extends Feature_Entity {
 } // Root
