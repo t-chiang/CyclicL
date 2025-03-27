@@ -111,8 +111,8 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseElement(Element object) {
-			return createElementAdapter();
+		public Adapter caseFeature_Model_Element(Feature_Model_Element object) {
+			return createFeature_Model_ElementAdapter();
 		}
 
 		@Override
@@ -131,8 +131,8 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRoot(Root object) {
-			return createRootAdapter();
+		public Adapter caseFeature_Model_Root(Feature_Model_Root object) {
+			return createFeature_Model_RootAdapter();
 		}
 
 		@Override
@@ -296,16 +296,16 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Element <em>Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Element <em>Feature Model Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Element
+	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model_Element
 	 * @generated
 	 */
-	public Adapter createElementAdapter() {
+	public Adapter createFeature_Model_ElementAdapter() {
 		return null;
 	}
 
@@ -352,16 +352,16 @@ public class RmdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Root <em>Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root <em>Feature Model Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mcmaster.requirements_modelling.rmdl.Root
+	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root
 	 * @generated
 	 */
-	public Adapter createRootAdapter() {
+	public Adapter createFeature_Model_RootAdapter() {
 		return null;
 	}
 

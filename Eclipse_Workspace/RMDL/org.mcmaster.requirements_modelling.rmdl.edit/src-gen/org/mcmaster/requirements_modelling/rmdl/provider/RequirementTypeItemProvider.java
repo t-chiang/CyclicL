@@ -65,7 +65,7 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 						getResourceLocator(), getString("_UI_RequirementType_specification_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_RequirementType_specification_feature",
 								"_UI_RequirementType_type"),
-						RmdlPackage.Literals.REQUIREMENT_TYPE__SPECIFICATION, true, false, false,
+						RmdlPackage.Literals.REQUIREMENT_TYPE__SPECIFICATION, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -149,7 +149,7 @@ public class RequirementTypeItemProvider extends RequirementsItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RequirementType) object).getName();
+		String label = crop(((RequirementType) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_RequirementType_type")
 				: getString("_UI_RequirementType_type") + " " + label;
 	}

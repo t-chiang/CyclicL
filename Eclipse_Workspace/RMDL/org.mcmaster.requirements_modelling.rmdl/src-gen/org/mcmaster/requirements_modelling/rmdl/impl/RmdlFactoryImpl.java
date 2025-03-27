@@ -71,14 +71,14 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 			return createTestCase();
 		case RmdlPackage.REVIEW:
 			return createReview();
-		case RmdlPackage.ELEMENT:
-			return createElement();
+		case RmdlPackage.FEATURE_MODEL_ELEMENT:
+			return createFeature_Model_Element();
 		case RmdlPackage.FEATURE_MODEL:
 			return createFeature_Model();
 		case RmdlPackage.RMDL_PROJECT:
 			return createRMDL_Project();
-		case RmdlPackage.ROOT:
-			return createRoot();
+		case RmdlPackage.FEATURE_MODEL_ROOT:
+			return createFeature_Model_Root();
 		case RmdlPackage.REQUIREMENT_CONTAINER:
 			return createRequirementContainer();
 		case RmdlPackage.PRODUCT_VARIANT:
@@ -203,9 +203,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Element createElement() {
-		ElementImpl element = new ElementImpl();
-		return element;
+	public Feature_Model_Element createFeature_Model_Element() {
+		Feature_Model_ElementImpl feature_Model_Element = new Feature_Model_ElementImpl();
+		return feature_Model_Element;
 	}
 
 	/**
@@ -233,9 +233,9 @@ public class RmdlFactoryImpl extends EFactoryImpl implements RmdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Root createRoot() {
-		RootImpl root = new RootImpl();
-		return root;
+	public Feature_Model_Root createFeature_Model_Root() {
+		Feature_Model_RootImpl feature_Model_Root = new Feature_Model_RootImpl();
+		return feature_Model_Root;
 	}
 
 	/**

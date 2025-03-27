@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:rmdl="http://www.example.org/rmdl" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_5K3PEAW5EfCE57SAelPPrA" selectedViews="_9_TOcAW5EfCE57SAelPPrA" version="15.4.1.202403191723">
+    <semanticResources>Automotive.rmdl</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_9_TOcAW5EfCE57SAelPPrA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_9_bKQgW5EfCE57SAelPPrA" name="Feature Model Adaptive Cruise Control" repPath="#_9_bKQAW5EfCE57SAelPPrA" changeId="1742495861949">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']"/>
+        <target xmi:type="rmdl:Feature_Model" href="Automotive.rmdl#//@feature_model.0"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_9_bKQAW5EfCE57SAelPPrA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_9_bxUAW5EfCE57SAelPPrA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_9_bxUQW5EfCE57SAelPPrA" type="Sirius" element="_9_bKQAW5EfCE57SAelPPrA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_Ii4h8gW6EfCE57SAelPPrA" type="2001" element="_Ii364AW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_Ii4h9QW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Ii4h9gW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Ii4h9wW6EfCE57SAelPPrA" type="3003" element="_Ii364QW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Ii4h-AW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ii4h-QW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Ii4h8wW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ii4h9AW6EfCE57SAelPPrA" x="1272" y="156" width="160" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_JOcncAW6EfCE57SAelPPrA" type="2001" element="_JObZUAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_JOcncwW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_JOcndAW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JOcndQW6EfCE57SAelPPrA" type="3016" element="_JObZUQW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_JOcndgW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JOcndwW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_JOcncQW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JOcncgW6EfCE57SAelPPrA" x="1032" y="348" width="100" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Kh065gW6EfCE57SAelPPrA" type="2001" element="_Kh0T0AW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_Kh1h8AW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Kh1h8QW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Kh1h8gW6EfCE57SAelPPrA" type="3016" element="_Kh0T0QW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Kh1h8wW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kh1h9AW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Kh065wW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kh066AW6EfCE57SAelPPrA" x="1188" y="348" width="133" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_MqTqWAW6EfCE57SAelPPrA" type="2001" element="_MqTDQAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_MqURYAW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_MqURYQW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_MqURYgW6EfCE57SAelPPrA" type="3016" element="_MqTDQQW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_MqURYwW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MqURZAW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_MqTqWQW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MqTqWgW6EfCE57SAelPPrA" x="1356" y="348" width="100" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_N3YhegW6EfCE57SAelPPrA" type="2001" element="_N3X6YAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_N3YhfQW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_N3YhfgW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_N3YhfwW6EfCE57SAelPPrA" type="3016" element="_N3X6YQW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_N3YhgAW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N3YhgQW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_N3YhewW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N3YhfAW6EfCE57SAelPPrA" x="1488" y="348" width="100" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_PZE9sAW6EfCE57SAelPPrA" type="2001" element="_PZDvkAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_PZE9swW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_PZE9tAW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_PZE9tQW6EfCE57SAelPPrA" type="3016" element="_PZDvkQW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_PZE9tgW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PZE9twW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_PZE9sQW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PZE9sgW6EfCE57SAelPPrA" x="1026" y="492" width="112" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_R_xTLgW6EfCE57SAelPPrA" type="2001" element="_R_wFAAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_R_x6MAW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_R_x6MQW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_R_x6MgW6EfCE57SAelPPrA" type="3016" element="_R_wFAQW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_R_x6MwW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R_x6NAW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_R_xTLwW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R_xTMAW6EfCE57SAelPPrA" x="1404" y="492" width="136" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_UM_YsAW6EfCE57SAelPPrA" type="2001" element="_UM-xkAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_UM_YswW6EfCE57SAelPPrA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_UM_YtAW6EfCE57SAelPPrA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_UM_YtQW6EfCE57SAelPPrA" type="3016" element="_UM-xkQW6EfCE57SAelPPrA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_UM_YtgW6EfCE57SAelPPrA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UM_YtwW6EfCE57SAelPPrA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_UM_YsQW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UM_YsgW6EfCE57SAelPPrA" x="1560" y="492" width="145" height="100"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_9_bxUgW5EfCE57SAelPPrA"/>
+        <edges xmi:type="notation:Edge" xmi:id="_WVJYBAW6EfCE57SAelPPrA" type="4001" element="_WVIw4AW6EfCE57SAelPPrA" source="_Ii4h8gW6EfCE57SAelPPrA" target="_JOcncAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_WVJYCAW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WVJYCQW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WVJYCgW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WVJYCwW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WVJYDAW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WVJYDQW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_WVJYBQW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_WVJYBgW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WVJYBwW6EfCE57SAelPPrA" points="[0, 0, 176, -160]$[-176, 160, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WVJYDgW6EfCE57SAelPPrA" id="(0.225,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WVJYDwW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_WrDWmAW6EfCE57SAelPPrA" type="4001" element="_WrCvcgW6EfCE57SAelPPrA" source="_Ii4h8gW6EfCE57SAelPPrA" target="_Kh065gW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_WrDWnAW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WrDWnQW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WrDWngW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WrDWnwW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_WrDWoAW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WrDWoQW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_WrDWmQW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_WrDWmgW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WrDWmwW6EfCE57SAelPPrA" points="[0, 0, 48, -112]$[-48, 112, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WrD9kAW6EfCE57SAelPPrA" id="(0.225,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_WrD9kQW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_W9bgBgW6EfCE57SAelPPrA" type="4001" element="_W9aR2AW6EfCE57SAelPPrA" source="_Ii4h8gW6EfCE57SAelPPrA" target="_MqTqWAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_W9bgCgW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W9bgCwW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_W9bgDAW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W9bgDQW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_W9bgDgW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W9bgDwW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_W9bgBwW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_W9bgCAW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_W9bgCQW6EfCE57SAelPPrA" points="[0, 0, -48, -112]$[48, 112, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_W9cHAAW6EfCE57SAelPPrA" id="(0.225,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_W9cHAQW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_XQb7gAW6EfCE57SAelPPrA" type="4001" element="_XQatbAW6EfCE57SAelPPrA" source="_Ii4h8gW6EfCE57SAelPPrA" target="_N3YhegW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_XQb7hAW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XQb7hQW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_XQb7hgW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XQb7hwW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_XQb7iAW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XQb7iQW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_XQb7gQW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_XQb7ggW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XQb7gwW6EfCE57SAelPPrA" points="[0, 0, -180, -112]$[180, 112, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XQb7igW6EfCE57SAelPPrA" id="(0.225,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XQb7iwW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_X0JFgAW6EfCE57SAelPPrA" type="4001" element="_X0H3YAW6EfCE57SAelPPrA" source="_JOcncAW6EfCE57SAelPPrA" target="_PZE9sAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_X0JFhAW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0JFhQW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_X0JFhgW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0JFhwW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_X0JFiAW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X0JFiQW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_X0JFgQW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_X0JFggW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X0JFgwW6EfCE57SAelPPrA" points="[0, 0, 0, -44]$[0, 44, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X0JFigW6EfCE57SAelPPrA" id="(0.5,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X0JFiwW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_YKDEOAW6EfCE57SAelPPrA" type="4001" element="_YKB18AW6EfCE57SAelPPrA" source="_N3YhegW6EfCE57SAelPPrA" target="_R_xTLgW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_YKDEPAW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YKDEPQW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_YKDrIAW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YKDrIQW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_YKDrIgW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YKDrIwW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_YKDEOQW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_YKDEOgW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YKDEOwW6EfCE57SAelPPrA" points="[0, 0, 60, -44]$[-60, 44, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YKDrJAW6EfCE57SAelPPrA" id="(0.36,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YKDrJQW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_YdVMlQW6EfCE57SAelPPrA" type="4001" element="_YdT-VAW6EfCE57SAelPPrA" source="_N3YhegW6EfCE57SAelPPrA" target="_UM_YsAW6EfCE57SAelPPrA">
+          <children xmi:type="notation:Node" xmi:id="_YdVMmQW6EfCE57SAelPPrA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YdVMmgW6EfCE57SAelPPrA" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_YdVMmwW6EfCE57SAelPPrA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YdVMnAW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_YdVMnQW6EfCE57SAelPPrA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YdVMngW6EfCE57SAelPPrA" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_YdVMlgW6EfCE57SAelPPrA" routing="Tree"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_YdVMlwW6EfCE57SAelPPrA" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YdVMmAW6EfCE57SAelPPrA" points="[0, 0, -84, -44]$[84, 44, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YdVMnwW6EfCE57SAelPPrA" id="(0.36,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YdVMoAW6EfCE57SAelPPrA" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_9_cYYAW5EfCE57SAelPPrA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_9_cYYQW5EfCE57SAelPPrA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Ii364AW6EfCE57SAelPPrA" name="Adaptive Cruise Control" outgoingEdges="_WVIw4AW6EfCE57SAelPPrA _WrCvcgW6EfCE57SAelPPrA _W9aR2AW6EfCE57SAelPPrA _XQatbAW6EfCE57SAelPPrA" width="16" height="8" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Root" href="Automotive.rmdl#//@feature_model.0/@feature_model_root"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Root" href="Automotive.rmdl#//@feature_model.0/@feature_model_root"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_Ii364QW6EfCE57SAelPPrA" labelSize="12" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" width="16" height="8" color="209,209,209">
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Root']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Root']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JObZUAW6EfCE57SAelPPrA" name="Steering wheel" outgoingEdges="_X0H3YAW6EfCE57SAelPPrA" incomingEdges="_WVIw4AW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.0"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.0"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_JObZUQW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_Kh0T0AW6EfCE57SAelPPrA" name="On/Off trigger" incomingEdges="_WrCvcgW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.1"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.1"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_Kh0T0QW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_MqTDQAW6EfCE57SAelPPrA" name="Manual override" incomingEdges="_W9aR2AW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.2"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.2"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_MqTDQQW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_N3X6YAW6EfCE57SAelPPrA" name="Automatic braking" outgoingEdges="_YKB18AW6EfCE57SAelPPrA _YdT-VAW6EfCE57SAelPPrA" incomingEdges="_XQatbAW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.3"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.3"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_N3X6YQW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_PZDvkAW6EfCE57SAelPPrA" name="Wheel heating" incomingEdges="_X0H3YAW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.4"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.4"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_PZDvkQW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_R_wFAAW6EfCE57SAelPPrA" name="Lidar and sonar sensors" incomingEdges="_YKB18AW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.5"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.5"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_R_wFAQW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_UM-xkAW6EfCE57SAelPPrA" name="Radar and camera sensors" incomingEdges="_YdT-VAW6EfCE57SAelPPrA" width="10" height="10" resizeKind="NSEW">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.6"/>
+      <semanticElements xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.6"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_UM-xkQW6EfCE57SAelPPrA" labelSize="12" showIcon="false" borderSize="3" borderSizeComputationExpression="3" labelPosition="node" color="255,255,255">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@nodeMappings[name='Product%20Family%20Feature']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_WVIw4AW6EfCE57SAelPPrA" sourceNode="_Ii364AW6EfCE57SAelPPrA" targetNode="_JObZUAW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Root" href="Automotive.rmdl#//@feature_model.0/@feature_model_root"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_WVIw4QW6EfCE57SAelPPrA" targetArrow="InputArrowWithFillDiamond" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_WVIw4gW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_WrCvcgW6EfCE57SAelPPrA" sourceNode="_Ii364AW6EfCE57SAelPPrA" targetNode="_Kh0T0AW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Root" href="Automotive.rmdl#//@feature_model.0/@feature_model_root"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_WrCvcwW6EfCE57SAelPPrA" targetArrow="InputArrowWithFillDiamond" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_WrCvdAW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_W9aR2AW6EfCE57SAelPPrA" sourceNode="_Ii364AW6EfCE57SAelPPrA" targetNode="_MqTDQAW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Root" href="Automotive.rmdl#//@feature_model.0/@feature_model_root"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_W9aR2QW6EfCE57SAelPPrA" targetArrow="InputArrowWithFillDiamond" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_W9aR2gW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_XQatbAW6EfCE57SAelPPrA" sourceNode="_Ii364AW6EfCE57SAelPPrA" targetNode="_N3X6YAW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Root" href="Automotive.rmdl#//@feature_model.0/@feature_model_root"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_XQatbQW6EfCE57SAelPPrA" targetArrow="InputArrowWithFillDiamond" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_XQatbgW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Mandatory']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_X0H3YAW6EfCE57SAelPPrA" sourceNode="_JObZUAW6EfCE57SAelPPrA" targetNode="_PZDvkAW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_X0H3YQW6EfCE57SAelPPrA" targetArrow="CirclePlus" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Optional']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_X0H3YgW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Optional']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_YKB18AW6EfCE57SAelPPrA" sourceNode="_N3X6YAW6EfCE57SAelPPrA" targetNode="_R_wFAAW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_YKCdAAW6EfCE57SAelPPrA" targetArrow="InputArrowWithDiamondAndDot" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Alternative']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_YKCdAQW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Alternative']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_YdT-VAW6EfCE57SAelPPrA" sourceNode="_N3X6YAW6EfCE57SAelPPrA" targetNode="_UM-xkAW6EfCE57SAelPPrA">
+      <target xmi:type="rmdl:Feature_Model_Element" href="Automotive.rmdl#//@feature_model.0/@feature_model_element.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_YdT-VQW6EfCE57SAelPPrA" targetArrow="InputArrowWithDiamondAndDot" foldingStyle="SOURCE" size="2" routingStyle="tree" centered="Both" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Alternative']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_YdT-VgW6EfCE57SAelPPrA" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']/@edgeMappings[name='Alternative']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_9_bKQQW5EfCE57SAelPPrA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.mcmaster.rmdl.design/description/rmdl.odesign#//@ownedViewpoints[name='Feature%20Modelling%20Viewpoint']/@ownedRepresentations[name='Feature%20Model']/@additionalLayers[name='Model%20Layer']"/>
+    <target xmi:type="rmdl:Feature_Model" href="Automotive.rmdl#//@feature_model.0"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

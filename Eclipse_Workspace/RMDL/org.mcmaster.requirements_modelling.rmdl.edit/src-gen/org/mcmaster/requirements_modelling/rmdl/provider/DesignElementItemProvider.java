@@ -56,9 +56,9 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 			addNamePropertyDescriptor(object);
 			addIsHardwarePropertyDescriptor(object);
 			addIsSoftwarePropertyDescriptor(object);
-			addTraceFromPropertyDescriptor(object);
 			addRequirement_canvasPropertyDescriptor(object);
 			addImplementationOfPropertyDescriptor(object);
+			addTraceFromPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,21 +112,6 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Trace From feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTraceFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_DesignElement_traceFrom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_traceFrom_feature",
-								"_UI_DesignElement_type"),
-						RmdlPackage.Literals.DESIGN_ELEMENT__TRACE_FROM, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Requirement canvas feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,6 +139,21 @@ public class DesignElementItemProvider extends ItemProviderAdapter implements IE
 						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_implementationOf_feature",
 								"_UI_DesignElement_type"),
 						RmdlPackage.Literals.DESIGN_ELEMENT__IMPLEMENTATION_OF, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Trace From feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTraceFromPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_DesignElement_traceFrom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_DesignElement_traceFrom_feature",
+								"_UI_DesignElement_type"),
+						RmdlPackage.Literals.DESIGN_ELEMENT__TRACE_FROM, true, false, true, null, null, null));
 	}
 
 	/**

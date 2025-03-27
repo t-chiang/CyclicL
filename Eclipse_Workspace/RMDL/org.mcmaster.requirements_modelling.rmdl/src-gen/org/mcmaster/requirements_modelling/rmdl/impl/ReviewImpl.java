@@ -5,7 +5,6 @@ package org.mcmaster.requirements_modelling.rmdl.impl;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -14,7 +13,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas;
 import org.mcmaster.requirements_modelling.rmdl.Requirements;
@@ -31,9 +29,9 @@ import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ReviewImpl#getReviewer <em>Reviewer</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ReviewImpl#getRequirement_canvas <em>Requirement canvas</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ReviewImpl#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ReviewImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ReviewImpl#isIsApproved <em>Is Approved</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.ReviewImpl#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,16 +56,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * @ordered
 	 */
 	protected String reviewer = REVIEWER_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequirements()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Requirements> requirements;
 
 	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
@@ -108,6 +96,16 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * @ordered
 	 */
 	protected boolean isApproved = IS_APPROVED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRequirements() <em>Requirements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requirements> requirements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,19 +199,6 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Requirements> getRequirements() {
-		if (requirements == null) {
-			requirements = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
-					RmdlPackage.REVIEW__REQUIREMENTS, RmdlPackage.REQUIREMENTS__REVIEW);
-		}
-		return requirements;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getComments() {
 		return comments;
 	}
@@ -250,6 +235,19 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REVIEW__IS_APPROVED, oldIsApproved,
 					isApproved));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Requirements> getRequirements() {
+		if (requirements == null) {
+			requirements = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
+					RmdlPackage.REVIEW__REQUIREMENTS, RmdlPackage.REQUIREMENTS__REVIEW);
+		}
+		return requirements;
 	}
 
 	/**
@@ -314,12 +312,12 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return getReviewer();
 		case RmdlPackage.REVIEW__REQUIREMENT_CANVAS:
 			return getRequirement_canvas();
-		case RmdlPackage.REVIEW__REQUIREMENTS:
-			return getRequirements();
 		case RmdlPackage.REVIEW__COMMENTS:
 			return getComments();
 		case RmdlPackage.REVIEW__IS_APPROVED:
 			return isIsApproved();
+		case RmdlPackage.REVIEW__REQUIREMENTS:
+			return getRequirements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,15 +337,15 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 		case RmdlPackage.REVIEW__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) newValue);
 			return;
-		case RmdlPackage.REVIEW__REQUIREMENTS:
-			getRequirements().clear();
-			getRequirements().addAll((Collection<? extends Requirements>) newValue);
-			return;
 		case RmdlPackage.REVIEW__COMMENTS:
 			setComments((String) newValue);
 			return;
 		case RmdlPackage.REVIEW__IS_APPROVED:
 			setIsApproved((Boolean) newValue);
+			return;
+		case RmdlPackage.REVIEW__REQUIREMENTS:
+			getRequirements().clear();
+			getRequirements().addAll((Collection<? extends Requirements>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -367,14 +365,14 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 		case RmdlPackage.REVIEW__REQUIREMENT_CANVAS:
 			setRequirement_canvas((Requirement_Canvas) null);
 			return;
-		case RmdlPackage.REVIEW__REQUIREMENTS:
-			getRequirements().clear();
-			return;
 		case RmdlPackage.REVIEW__COMMENTS:
 			setComments(COMMENTS_EDEFAULT);
 			return;
 		case RmdlPackage.REVIEW__IS_APPROVED:
 			setIsApproved(IS_APPROVED_EDEFAULT);
+			return;
+		case RmdlPackage.REVIEW__REQUIREMENTS:
+			getRequirements().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -392,12 +390,12 @@ public class ReviewImpl extends MinimalEObjectImpl.Container implements Review {
 			return REVIEWER_EDEFAULT == null ? reviewer != null : !REVIEWER_EDEFAULT.equals(reviewer);
 		case RmdlPackage.REVIEW__REQUIREMENT_CANVAS:
 			return getRequirement_canvas() != null;
-		case RmdlPackage.REVIEW__REQUIREMENTS:
-			return requirements != null && !requirements.isEmpty();
 		case RmdlPackage.REVIEW__COMMENTS:
 			return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
 		case RmdlPackage.REVIEW__IS_APPROVED:
 			return isApproved != IS_APPROVED_EDEFAULT;
+		case RmdlPackage.REVIEW__REQUIREMENTS:
+			return requirements != null && !requirements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

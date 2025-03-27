@@ -73,7 +73,7 @@ public class FunctionalItemProvider extends RequirementTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Functional) object).getName();
+		String label = crop(((Functional) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_Functional_type")
 				: getString("_UI_Functional_type") + " " + label;
 	}

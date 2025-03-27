@@ -56,8 +56,9 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 			addNamePropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addRationalePropertyDescriptor(object);
 			addReviewPropertyDescriptor(object);
-			addTestCasePropertyDescriptor(object);
+			addTestcasePropertyDescriptor(object);
 			addTraceToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -75,7 +76,7 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 						getResourceLocator(), getString("_UI_Requirements_name_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_name_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__NAME, true, false, false,
+						RmdlPackage.Literals.REQUIREMENTS__NAME, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -102,12 +103,26 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Requirements_description_feature"),
+				getString("_UI_Requirements_description_description"), RmdlPackage.Literals.REQUIREMENTS__DESCRIPTION,
+				true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rationale feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRationalePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_description_feature",
+						getResourceLocator(), getString("_UI_Requirements_rationale_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_rationale_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__DESCRIPTION, true, false, false,
+						RmdlPackage.Literals.REQUIREMENTS__RATIONALE, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -127,18 +142,18 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This adds a property descriptor for the Test Case feature.
+	 * This adds a property descriptor for the Testcase feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTestCasePropertyDescriptor(Object object) {
+	protected void addTestcasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Requirements_testCase_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_testCase_feature",
+						getResourceLocator(), getString("_UI_Requirements_testcase_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Requirements_testcase_feature",
 								"_UI_Requirements_type"),
-						RmdlPackage.Literals.REQUIREMENTS__TEST_CASE, true, false, true, null, null, null));
+						RmdlPackage.Literals.REQUIREMENTS__TESTCASE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -185,7 +200,7 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Requirements) object).getName();
+		String label = crop(((Requirements) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_Requirements_type")
 				: getString("_UI_Requirements_type") + " " + label;
 	}
@@ -205,6 +220,7 @@ public class RequirementsItemProvider extends ItemProviderAdapter implements IEd
 		case RmdlPackage.REQUIREMENTS__NAME:
 		case RmdlPackage.REQUIREMENTS__ID:
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
+		case RmdlPackage.REQUIREMENTS__RATIONALE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

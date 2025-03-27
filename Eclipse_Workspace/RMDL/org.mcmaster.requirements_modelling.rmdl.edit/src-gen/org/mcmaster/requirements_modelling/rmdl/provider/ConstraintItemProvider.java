@@ -73,7 +73,7 @@ public class ConstraintItemProvider extends RequirementTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Constraint) object).getName();
+		String label = crop(((Constraint) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_Constraint_type")
 				: getString("_UI_Constraint_type") + " " + label;
 	}

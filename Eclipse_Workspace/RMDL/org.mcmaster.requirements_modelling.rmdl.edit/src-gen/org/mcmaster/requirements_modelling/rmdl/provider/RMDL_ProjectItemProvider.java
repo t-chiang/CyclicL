@@ -178,10 +178,10 @@ public class RMDL_ProjectItemProvider extends ItemProviderAdapter implements IEd
 				RmdlFactory.eINSTANCE.createRequirement_Canvas()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS,
-				RmdlFactory.eINSTANCE.createElement()));
+				RmdlFactory.eINSTANCE.createFeature_Model_Element()));
 
 		newChildDescriptors.add(createChildParameter(RmdlPackage.Literals.RMDL_PROJECT__REQUIREMENT_CANVAS,
-				RmdlFactory.eINSTANCE.createRoot()));
+				RmdlFactory.eINSTANCE.createFeature_Model_Root()));
 	}
 
 	/**

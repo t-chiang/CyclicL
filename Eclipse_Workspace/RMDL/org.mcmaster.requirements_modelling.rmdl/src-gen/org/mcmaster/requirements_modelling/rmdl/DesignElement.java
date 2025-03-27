@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsHardware <em>Is Hardware</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#isIsSoftware <em>Is Software</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTraceFrom <em>Trace From</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getRequirement_canvas <em>Requirement canvas</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getImplementationOf <em>Implementation Of</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getTraceFrom <em>Trace From</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement()
@@ -96,20 +96,6 @@ public interface DesignElement extends EObject {
 	void setIsSoftware(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Trace From</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceTo <em>Trace To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Trace From</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_TraceFrom()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceTo
-	 * @model opposite="traceTo" required="true"
-	 * @generated
-	 */
-	EList<Requirements> getTraceFrom();
-
-	/**
 	 * Returns the value of the '<em><b>Requirement canvas</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirement_Canvas#getDesignElement <em>Design Element</em>}'.
 	 * <!-- begin-user-doc -->
@@ -138,12 +124,12 @@ public interface DesignElement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Implementation Of</em>' reference.
-	 * @see #setImplementationOf(Element)
+	 * @see #setImplementationOf(Feature_Model_Element)
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_ImplementationOf()
 	 * @model
 	 * @generated
 	 */
-	Element getImplementationOf();
+	Feature_Model_Element getImplementationOf();
 
 	/**
 	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.DesignElement#getImplementationOf <em>Implementation Of</em>}' reference.
@@ -153,6 +139,20 @@ public interface DesignElement extends EObject {
 	 * @see #getImplementationOf()
 	 * @generated
 	 */
-	void setImplementationOf(Element value);
+	void setImplementationOf(Feature_Model_Element value);
+
+	/**
+	 * Returns the value of the '<em><b>Trace From</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceTo <em>Trace To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Trace From</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getDesignElement_TraceFrom()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceTo
+	 * @model opposite="traceTo"
+	 * @generated
+	 */
+	EList<Requirements> getTraceFrom();
 
 } // DesignElement

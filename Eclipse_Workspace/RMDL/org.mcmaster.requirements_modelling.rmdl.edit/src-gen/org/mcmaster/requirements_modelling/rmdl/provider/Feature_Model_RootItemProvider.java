@@ -10,22 +10,22 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.mcmaster.requirements_modelling.rmdl.Qualitative;
+import org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root;
 
 /**
- * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Qualitative} object.
+ * This is the item provider adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class QualitativeItemProvider extends RequirementTypeItemProvider {
+public class Feature_Model_RootItemProvider extends Feature_EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QualitativeItemProvider(AdapterFactory adapterFactory) {
+	public Feature_Model_RootItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,14 +45,14 @@ public class QualitativeItemProvider extends RequirementTypeItemProvider {
 	}
 
 	/**
-	 * This returns Qualitative.gif.
+	 * This returns Feature_Model_Root.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Qualitative"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature_Model_Root"));
 	}
 
 	/**
@@ -73,9 +73,9 @@ public class QualitativeItemProvider extends RequirementTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = crop(((Qualitative) object).getName());
-		return label == null || label.length() == 0 ? getString("_UI_Qualitative_type")
-				: getString("_UI_Qualitative_type") + " " + label;
+		String label = ((Feature_Model_Root) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Feature_Model_Root_type")
+				: getString("_UI_Feature_Model_Root_type") + " " + label;
 	}
 
 	/**

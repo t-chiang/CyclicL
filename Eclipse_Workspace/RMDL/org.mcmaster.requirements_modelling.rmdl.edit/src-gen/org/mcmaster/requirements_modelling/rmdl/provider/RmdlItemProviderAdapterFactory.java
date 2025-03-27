@@ -257,26 +257,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Element} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Element} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ElementItemProvider elementItemProvider;
+	protected Feature_Model_ElementItemProvider feature_Model_ElementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Element}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Element}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createElementAdapter() {
-		if (elementItemProvider == null) {
-			elementItemProvider = new ElementItemProvider(this);
+	public Adapter createFeature_Model_ElementAdapter() {
+		if (feature_Model_ElementItemProvider == null) {
+			feature_Model_ElementItemProvider = new Feature_Model_ElementItemProvider(this);
 		}
 
-		return elementItemProvider;
+		return feature_Model_ElementItemProvider;
 	}
 
 	/**
@@ -326,26 +326,26 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Root} instances.
+	 * This keeps track of the one adapter used for all {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RootItemProvider rootItemProvider;
+	protected Feature_Model_RootItemProvider feature_Model_RootItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Root}.
+	 * This creates an adapter for a {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRootAdapter() {
-		if (rootItemProvider == null) {
-			rootItemProvider = new RootItemProvider(this);
+	public Adapter createFeature_Model_RootAdapter() {
+		if (feature_Model_RootItemProvider == null) {
+			feature_Model_RootItemProvider = new Feature_Model_RootItemProvider(this);
 		}
 
-		return rootItemProvider;
+		return feature_Model_RootItemProvider;
 	}
 
 	/**
@@ -509,14 +509,14 @@ public class RmdlItemProviderAdapterFactory extends RmdlAdapterFactory
 			testCaseItemProvider.dispose();
 		if (reviewItemProvider != null)
 			reviewItemProvider.dispose();
-		if (elementItemProvider != null)
-			elementItemProvider.dispose();
+		if (feature_Model_ElementItemProvider != null)
+			feature_Model_ElementItemProvider.dispose();
 		if (feature_ModelItemProvider != null)
 			feature_ModelItemProvider.dispose();
 		if (rmdL_ProjectItemProvider != null)
 			rmdL_ProjectItemProvider.dispose();
-		if (rootItemProvider != null)
-			rootItemProvider.dispose();
+		if (feature_Model_RootItemProvider != null)
+			feature_Model_RootItemProvider.dispose();
 		if (requirementContainerItemProvider != null)
 			requirementContainerItemProvider.dispose();
 		if (product_VariantItemProvider != null)

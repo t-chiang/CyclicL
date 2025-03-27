@@ -3,23 +3,24 @@
 package org.mcmaster.requirements_modelling.rmdl.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.mcmaster.requirements_modelling.rmdl.Feature_Model_Root;
 import org.mcmaster.requirements_modelling.rmdl.RmdlPackage;
-import org.mcmaster.requirements_modelling.rmdl.Root;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Root</b></em>'.
+ * An implementation of the model object '<em><b>Feature Model Root</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class RootImpl extends Feature_EntityImpl implements Root {
+public class Feature_Model_RootImpl extends Feature_EntityImpl implements Feature_Model_Root {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RootImpl() {
+	protected Feature_Model_RootImpl() {
 		super();
 	}
 
@@ -30,7 +31,7 @@ public class RootImpl extends Feature_EntityImpl implements Root {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RmdlPackage.Literals.ROOT;
+		return RmdlPackage.Literals.FEATURE_MODEL_ROOT;
 	}
 
-} //RootImpl
+} //Feature_Model_RootImpl

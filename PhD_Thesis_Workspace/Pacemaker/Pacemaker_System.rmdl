@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmdl:RMDL_Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rmdl="http://www.example.org/rmdl">
+  <feature_model name="PG_Device">
+    <feature_model_root name="PG_Device" mandatory="//@feature_model.0/@feature_model_element.0 //@feature_model.0/@feature_model_element.1 //@feature_model.0/@feature_model_element.3 //@feature_model.0/@feature_model_element.4 //@feature_model.0/@feature_model_element.5"/>
+    <feature_model_element name="Provide historical data" composes="//@feature_model.0/@feature_model_root" mandatory="//@feature_model.0/@feature_model_element.2 //@feature_model.0/@feature_model_element.6"/>
+    <feature_model_element name="Provide diagnostic features" composes="//@feature_model.0/@feature_model_root" mandatory="//@feature_model.0/@feature_model_element.7 //@feature_model.0/@feature_model_element.8 //@feature_model.0/@feature_model_element.9 //@feature_model.0/@feature_model_element.10 //@feature_model.0/@feature_model_element.11"/>
+    <feature_model_element name="Sensor output data" composes="//@feature_model.0/@feature_model_element.0"/>
+    <feature_model_element name="Monitor and regulate patient heart rate" composes="//@feature_model.0/@feature_model_root"/>
+    <feature_model_element name="Detect and provide therapy for bradycardia conditions" composes="//@feature_model.0/@feature_model_root"/>
+    <feature_model_element name="Provide programmable pacing" composes="//@feature_model.0/@feature_model_root" mandatory="//@feature_model.0/@feature_model_element.12 //@feature_model.0/@feature_model_element.13 //@feature_model.0/@feature_model_element.14 //@feature_model.0/@feature_model_element.16 //@feature_model.0/@feature_model_element.17">
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to access PG_Device via DCM" ID="1" description="" rationale="" specification="Given{&#xA;&#x9;Precond one: &quot;The pacemaker PG_Device is active and can connect to the DCM&quot;&#xA;}&#xA;When{&#xA;&#x9;Event one: &quot;Doctor wants to program pacemaker to mitigate patient bradycardia symptoms via DCM interface&quot;&#xA;&#x9;Event two: &quot;The doctor attempts to access the PG_Device via DCM&quot;&#xA;}&#xA;Then{&#xA;&#x9;Postcond one: &quot;The doctor is able to connect to a PG_Device&quot;&#xA;}"/>
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to verify that they are connected to correct PG_Device" ID="2" specification="Given{&#xD;&#xA;&#x9;Precond one: &quot;The doctor is able to connect to a PG_Device&quot;&#xD;&#xA;}&#xD;&#xA;When{&#xD;&#xA;&#x9;Event one: &quot;The doctor wants to verify they are connected to the correct device&quot;&#xD;&#xA;}&#xD;&#xA;Then{&#xD;&#xA;&#x9;Postcond one: &quot;The PG_Device shall communicate to doctor via DCM identification to allow doctor to verify device identity&quot;&#xD;&#xA;}&#xD;"/>
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to select the desired pacing operation mode" ID="3" description="Pacing options are: AAT, VVT, AOO, AAI, VOO, VVI, VDD, DOO, DDI, DDD, AOOR, AAIR, VOOR, VVIR, VDDR, DOOR, DDIR, DDDR&#xD;&#xA;These pacing modes were acquired from the PACEMAKER specification document from Boston Scientific" specification="Given{&#xD;&#xA;&#x9;Precond one: &quot;The doctor has verified they are connected to the correct device&quot;&#xD;&#xA;}&#xD;&#xA;When{&#xD;&#xA;&#x9;Event one: &quot;The doctor wants to change or select the desired pacing mode&quot;&#xD;&#xA;}&#xD;&#xA;Then{&#xD;&#xA;&#x9;Postcond one: &quot;The doctor shall be able to select from the available pacing options&quot;&#xD;&#xA;}&#xD;&#xA;"/>
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to set the various parameters based on the chosen pacing operation mode" ID="4" description="This refers to the pace pulse characteristics, rate sensing settings, delays etc"/>
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to push programmed mode and parameters to the PG_Device" ID="5"/>
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to disconnect DCM from PG_Device" ID="6"/>
+      <requirements xsi:type="rmdl:Functional" name="Doctor shall be able to log off from DCM" ID="7"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Doctor connects to the wrong PG_Device via DCM" ID="8"/>
+      <requirements xsi:type="rmdl:Safety" name="Doctor makes a mistake programming the PG_Device via DCM" ID="9"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Communication fails or is interrupted during push from DCM to PG_Device" ID="10"/>
+      <requirements xsi:type="rmdl:Qualitative" name="Doctor is unable to access the PG_Device via DCM" ID="11"/>
+    </feature_model_element>
+    <feature_model_element name="Atrial and ventrical rate histogram" composes="//@feature_model.0/@feature_model_element.0"/>
+    <feature_model_element name="Real time telemetry markers" composes="//@feature_model.0/@feature_model_element.1"/>
+    <feature_model_element name="EGMs" composes="//@feature_model.0/@feature_model_element.1"/>
+    <feature_model_element name="P and R wave measurements" composes="//@feature_model.0/@feature_model_element.1"/>
+    <feature_model_element name="Lead impedance" composes="//@feature_model.0/@feature_model_element.1"/>
+    <feature_model_element name="Battery status tests" composes="//@feature_model.0/@feature_model_element.1"/>
+    <feature_model_element name="Permanent" composes="//@feature_model.0/@feature_model_element.5"/>
+    <feature_model_element name="Temporary" composes="//@feature_model.0/@feature_model_element.5"/>
+    <feature_model_element name="Rate-adaptive" composes="//@feature_model.0/@feature_model_element.5" mandatory="//@feature_model.0/@feature_model_element.15 //@feature_model.0/@feature_model_element.19 //@feature_model.0/@feature_model_element.18"/>
+    <feature_model_element name="Measure physical activity of patient" composes="//@feature_model.0/@feature_model_element.14"/>
+    <feature_model_element name="Dual-chamber" composes="//@feature_model.0/@feature_model_element.5"/>
+    <feature_model_element name="Single-chamber" composes="//@feature_model.0/@feature_model_element.5"/>
+    <feature_model_element name="Single-chamber rate-adaptive" composes="//@feature_model.0/@feature_model_element.14"/>
+    <feature_model_element name="Dual-chamber rate-adaptive" composes="//@feature_model.0/@feature_model_element.14"/>
+  </feature_model>
+</rmdl:RMDL_Project>

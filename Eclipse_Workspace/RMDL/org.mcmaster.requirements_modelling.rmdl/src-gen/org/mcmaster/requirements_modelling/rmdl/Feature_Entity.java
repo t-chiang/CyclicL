@@ -19,8 +19,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getOptional <em>Optional</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getAlternativeOf <em>Alternative Of</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getProductOf <em>Product Of</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getVariants <em>Variants</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Entity()
@@ -141,43 +139,5 @@ public interface Feature_Entity extends Requirement_Canvas {
 	 * @generated
 	 */
 	void setAlternativeOf(Feature_Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>Product Of</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getVariants <em>Variants</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Product Of</em>' reference.
-	 * @see #setProductOf(Feature_Entity)
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Entity_ProductOf()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getVariants
-	 * @model opposite="variants"
-	 * @generated
-	 */
-	Feature_Entity getProductOf();
-
-	/**
-	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getProductOf <em>Product Of</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Product Of</em>' reference.
-	 * @see #getProductOf()
-	 * @generated
-	 */
-	void setProductOf(Feature_Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>Variants</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getProductOf <em>Product Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variants</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Entity_Variants()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Feature_Entity#getProductOf
-	 * @model opposite="productOf"
-	 * @generated
-	 */
-	EList<Feature_Entity> getVariants();
 
 } // Feature_Entity

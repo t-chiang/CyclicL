@@ -94,13 +94,13 @@ public interface RmdlFactory extends EFactory {
 	Review createReview();
 
 	/**
-	 * Returns a new object of class '<em>Element</em>'.
+	 * Returns a new object of class '<em>Feature Model Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Element</em>'.
+	 * @return a new object of class '<em>Feature Model Element</em>'.
 	 * @generated
 	 */
-	Element createElement();
+	Feature_Model_Element createFeature_Model_Element();
 
 	/**
 	 * Returns a new object of class '<em>Feature Model</em>'.
@@ -121,13 +121,13 @@ public interface RmdlFactory extends EFactory {
 	RMDL_Project createRMDL_Project();
 
 	/**
-	 * Returns a new object of class '<em>Root</em>'.
+	 * Returns a new object of class '<em>Feature Model Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Root</em>'.
+	 * @return a new object of class '<em>Feature Model Root</em>'.
 	 * @generated
 	 */
-	Root createRoot();
+	Feature_Model_Root createFeature_Model_Root();
 
 	/**
 	 * Returns a new object of class '<em>Requirement Container</em>'.

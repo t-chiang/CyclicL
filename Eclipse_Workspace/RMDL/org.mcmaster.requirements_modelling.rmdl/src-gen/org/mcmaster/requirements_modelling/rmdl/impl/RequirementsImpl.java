@@ -5,15 +5,11 @@ package org.mcmaster.requirements_modelling.rmdl.impl;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mcmaster.requirements_modelling.rmdl.DesignElement;
@@ -33,8 +29,9 @@ import org.mcmaster.requirements_modelling.rmdl.TestCase;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getReview <em>Review</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTestCase <em>Test Case</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.impl.RequirementsImpl#getTraceTo <em>Trace To</em>}</li>
  * </ul>
  *
@@ -102,6 +99,26 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRationale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RATIONALE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRationale()
+	 * @generated
+	 * @ordered
+	 */
+	protected String rationale = RATIONALE_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getReview() <em>Review</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,14 +129,14 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	protected EList<Review> review;
 
 	/**
-	 * The cached value of the '{@link #getTestCase() <em>Test Case</em>}' reference list.
+	 * The cached value of the '{@link #getTestcase() <em>Testcase</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTestCase()
+	 * @see #getTestcase()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TestCase> testCase;
+	protected EList<TestCase> testcase;
 
 	/**
 	 * The cached value of the '{@link #getTraceTo() <em>Trace To</em>}' reference list.
@@ -219,6 +236,28 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRationale() {
+		return rationale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRationale(String newRationale) {
+		String oldRationale = rationale;
+		rationale = newRationale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RmdlPackage.REQUIREMENTS__RATIONALE, oldRationale,
+					rationale));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Review> getReview() {
 		if (review == null) {
 			review = new EObjectWithInverseResolvingEList.ManyInverse<Review>(Review.class, this,
@@ -232,12 +271,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TestCase> getTestCase() {
-		if (testCase == null) {
-			testCase = new EObjectWithInverseResolvingEList.ManyInverse<TestCase>(TestCase.class, this,
-					RmdlPackage.REQUIREMENTS__TEST_CASE, RmdlPackage.TEST_CASE__REQUIREMENTS);
+	public EList<TestCase> getTestcase() {
+		if (testcase == null) {
+			testcase = new EObjectWithInverseResolvingEList.ManyInverse<TestCase>(TestCase.class, this,
+					RmdlPackage.REQUIREMENTS__TESTCASE, RmdlPackage.TEST_CASE__REQUIREMENTS);
 		}
-		return testCase;
+		return testcase;
 	}
 
 	/**
@@ -251,6 +290,43 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 					RmdlPackage.REQUIREMENTS__TRACE_TO, RmdlPackage.DESIGN_ELEMENT__TRACE_FROM);
 		}
 		return traceTo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RmdlPackage.REQUIREMENTS__REVIEW:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TESTCASE:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestcase()).basicAdd(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceTo()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RmdlPackage.REQUIREMENTS__REVIEW:
+			return ((InternalEList<?>) getReview()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TESTCASE:
+			return ((InternalEList<?>) getTestcase()).basicRemove(otherEnd, msgs);
+		case RmdlPackage.REQUIREMENTS__TRACE_TO:
+			return ((InternalEList<?>) getTraceTo()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -285,43 +361,6 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case RmdlPackage.REQUIREMENTS__REVIEW:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getReview()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TEST_CASE:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTestCase()).basicAdd(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TRACE_TO:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTraceTo()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case RmdlPackage.REQUIREMENTS__REVIEW:
-			return ((InternalEList<?>) getReview()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TEST_CASE:
-			return ((InternalEList<?>) getTestCase()).basicRemove(otherEnd, msgs);
-		case RmdlPackage.REQUIREMENTS__TRACE_TO:
-			return ((InternalEList<?>) getTraceTo()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -331,10 +370,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return getID();
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			return getDescription();
+		case RmdlPackage.REQUIREMENTS__RATIONALE:
+			return getRationale();
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return getReview();
-		case RmdlPackage.REQUIREMENTS__TEST_CASE:
-			return getTestCase();
+		case RmdlPackage.REQUIREMENTS__TESTCASE:
+			return getTestcase();
 		case RmdlPackage.REQUIREMENTS__TRACE_TO:
 			return getTraceTo();
 		}
@@ -359,13 +400,16 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
+		case RmdlPackage.REQUIREMENTS__RATIONALE:
+			setRationale((String) newValue);
+			return;
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
 			getReview().addAll((Collection<? extends Review>) newValue);
 			return;
-		case RmdlPackage.REQUIREMENTS__TEST_CASE:
-			getTestCase().clear();
-			getTestCase().addAll((Collection<? extends TestCase>) newValue);
+		case RmdlPackage.REQUIREMENTS__TESTCASE:
+			getTestcase().clear();
+			getTestcase().addAll((Collection<? extends TestCase>) newValue);
 			return;
 		case RmdlPackage.REQUIREMENTS__TRACE_TO:
 			getTraceTo().clear();
@@ -392,11 +436,14 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
+		case RmdlPackage.REQUIREMENTS__RATIONALE:
+			setRationale(RATIONALE_EDEFAULT);
+			return;
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			getReview().clear();
 			return;
-		case RmdlPackage.REQUIREMENTS__TEST_CASE:
-			getTestCase().clear();
+		case RmdlPackage.REQUIREMENTS__TESTCASE:
+			getTestcase().clear();
 			return;
 		case RmdlPackage.REQUIREMENTS__TRACE_TO:
 			getTraceTo().clear();
@@ -419,10 +466,12 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 			return id != ID_EDEFAULT;
 		case RmdlPackage.REQUIREMENTS__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case RmdlPackage.REQUIREMENTS__RATIONALE:
+			return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
 		case RmdlPackage.REQUIREMENTS__REVIEW:
 			return review != null && !review.isEmpty();
-		case RmdlPackage.REQUIREMENTS__TEST_CASE:
-			return testCase != null && !testCase.isEmpty();
+		case RmdlPackage.REQUIREMENTS__TESTCASE:
+			return testcase != null && !testcase.isEmpty();
 		case RmdlPackage.REQUIREMENTS__TRACE_TO:
 			return traceTo != null && !traceTo.isEmpty();
 		}
@@ -446,6 +495,8 @@ public abstract class RequirementsImpl extends MinimalEObjectImpl.Container impl
 		result.append(id);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", rationale: ");
+		result.append(rationale);
 		result.append(')');
 		return result.toString();
 	}

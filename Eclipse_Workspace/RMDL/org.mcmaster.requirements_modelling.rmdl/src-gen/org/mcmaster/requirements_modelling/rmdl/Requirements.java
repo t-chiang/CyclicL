@@ -3,7 +3,6 @@
 package org.mcmaster.requirements_modelling.rmdl;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,8 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getName <em>Name</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getID <em>ID</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRationale <em>Rationale</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestCase <em>Test Case</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTestcase <em>Testcase</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getTraceTo <em>Trace To</em>}</li>
  * </ul>
  *
@@ -95,6 +95,28 @@ public interface Requirements extends EObject {
 	void setDescription(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Rationale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rationale</em>' attribute.
+	 * @see #setRationale(String)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Rationale()
+	 * @model
+	 * @generated
+	 */
+	String getRationale();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getRationale <em>Rationale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rationale</em>' attribute.
+	 * @see #getRationale()
+	 * @generated
+	 */
+	void setRationale(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Review</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Review}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}'.
@@ -109,18 +131,18 @@ public interface Requirements extends EObject {
 	EList<Review> getReview();
 
 	/**
-	 * Returns the value of the '<em><b>Test Case</b></em>' reference list.
+	 * Returns the value of the '<em><b>Testcase</b></em>' reference list.
 	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.TestCase}.
 	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Test Case</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_TestCase()
+	 * @return the value of the '<em>Testcase</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_Testcase()
 	 * @see org.mcmaster.requirements_modelling.rmdl.TestCase#getRequirements
 	 * @model opposite="requirements" required="true"
 	 * @generated
 	 */
-	EList<TestCase> getTestCase();
+	EList<TestCase> getTestcase();
 
 	/**
 	 * Returns the value of the '<em><b>Trace To</b></em>' reference list.
@@ -131,7 +153,7 @@ public interface Requirements extends EObject {
 	 * @return the value of the '<em>Trace To</em>' reference list.
 	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getRequirements_TraceTo()
 	 * @see org.mcmaster.requirements_modelling.rmdl.DesignElement#getTraceFrom
-	 * @model opposite="traceFrom" required="true"
+	 * @model opposite="traceFrom"
 	 * @generated
 	 */
 	EList<DesignElement> getTraceTo();

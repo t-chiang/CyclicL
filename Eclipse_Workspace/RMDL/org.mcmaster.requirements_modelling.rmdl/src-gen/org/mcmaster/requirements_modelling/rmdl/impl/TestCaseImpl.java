@@ -290,7 +290,7 @@ public class TestCaseImpl extends MinimalEObjectImpl.Container implements TestCa
 	public EList<Requirements> getRequirements() {
 		if (requirements == null) {
 			requirements = new EObjectWithInverseResolvingEList.ManyInverse<Requirements>(Requirements.class, this,
-					RmdlPackage.TEST_CASE__REQUIREMENTS, RmdlPackage.REQUIREMENTS__TEST_CASE);
+					RmdlPackage.TEST_CASE__REQUIREMENTS, RmdlPackage.REQUIREMENTS__TESTCASE);
 		}
 		return requirements;
 	}

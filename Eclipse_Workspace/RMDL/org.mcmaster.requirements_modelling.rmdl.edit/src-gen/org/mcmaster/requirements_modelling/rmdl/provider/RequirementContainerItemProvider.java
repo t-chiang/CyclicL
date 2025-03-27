@@ -140,7 +140,7 @@ public class RequirementContainerItemProvider extends RequirementsItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RequirementContainer) object).getName();
+		String label = crop(((RequirementContainer) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_RequirementContainer_type")
 				: getString("_UI_RequirementContainer_type") + " " + label;
 	}

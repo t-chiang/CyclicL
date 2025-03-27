@@ -55,9 +55,9 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addReviewerPropertyDescriptor(object);
 			addRequirement_canvasPropertyDescriptor(object);
-			addRequirementsPropertyDescriptor(object);
 			addCommentsPropertyDescriptor(object);
 			addIsApprovedPropertyDescriptor(object);
+			addRequirementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,21 +94,6 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Requirements feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequirementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Review_requirements_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirements_feature",
-								"_UI_Review_type"),
-						RmdlPackage.Literals.REVIEW__REQUIREMENTS, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Comments feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +123,21 @@ public class ReviewItemProvider extends ItemProviderAdapter implements IEditingD
 								"_UI_Review_type"),
 						RmdlPackage.Literals.REVIEW__IS_APPROVED, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requirements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequirementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Review_requirements_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Review_requirements_feature",
+								"_UI_Review_type"),
+						RmdlPackage.Literals.REVIEW__REQUIREMENTS, true, false, true, null, null, null));
 	}
 
 	/**

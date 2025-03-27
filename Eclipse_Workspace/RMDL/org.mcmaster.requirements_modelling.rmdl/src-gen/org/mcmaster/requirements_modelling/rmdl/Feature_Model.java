@@ -16,9 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getName <em>Name</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeature_entity <em>Feature entity</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getRmdl_project <em>Rmdl project</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getProduct_variant <em>Product variant</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeature_model_root <em>Feature model root</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeature_model_element <em>Feature model element</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model()
@@ -47,18 +48,6 @@ public interface Feature_Model extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Feature entity</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Feature_Entity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feature entity</em>' containment reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_Feature_entity()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Feature_Entity> getFeature_entity();
 
 	/**
 	 * Returns the value of the '<em><b>Rmdl project</b></em>' container reference.
@@ -97,5 +86,39 @@ public interface Feature_Model extends EObject {
 	 * @generated
 	 */
 	EList<Product_Variant> getProduct_variant();
+
+	/**
+	 * Returns the value of the '<em><b>Feature model root</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Feature model root</em>' containment reference.
+	 * @see #setFeature_model_root(Feature_Model_Root)
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_Feature_model_root()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Feature_Model_Root getFeature_model_root();
+
+	/**
+	 * Sets the value of the '{@link org.mcmaster.requirements_modelling.rmdl.Feature_Model#getFeature_model_root <em>Feature model root</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Feature model root</em>' containment reference.
+	 * @see #getFeature_model_root()
+	 * @generated
+	 */
+	void setFeature_model_root(Feature_Model_Root value);
+
+	/**
+	 * Returns the value of the '<em><b>Feature model element</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Feature_Model_Element}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Feature model element</em>' containment reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getFeature_Model_Feature_model_element()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Feature_Model_Element> getFeature_model_element();
 
 } // Feature_Model

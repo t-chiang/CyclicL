@@ -73,7 +73,7 @@ public class SafetyItemProvider extends RequirementTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Safety) object).getName();
+		String label = crop(((Safety) object).getName());
 		return label == null || label.length() == 0 ? getString("_UI_Safety_type")
 				: getString("_UI_Safety_type") + " " + label;
 	}

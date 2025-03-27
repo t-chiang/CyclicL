@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getReviewer <em>Reviewer</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirement_canvas <em>Requirement canvas</em>}</li>
- *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getComments <em>Comments</em>}</li>
  *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#isIsApproved <em>Is Approved</em>}</li>
+ *   <li>{@link org.mcmaster.requirements_modelling.rmdl.Review#getRequirements <em>Requirements</em>}</li>
  * </ul>
  *
  * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview()
@@ -73,20 +73,6 @@ public interface Review extends EObject {
 	void setRequirement_canvas(Requirement_Canvas value);
 
 	/**
-	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.
-	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
-	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requirements</em>' reference list.
-	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_Requirements()
-	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getReview
-	 * @model opposite="review" required="true"
-	 * @generated
-	 */
-	EList<Requirements> getRequirements();
-
-	/**
 	 * Returns the value of the '<em><b>Comments</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,5 +115,19 @@ public interface Review extends EObject {
 	 * @generated
 	 */
 	void setIsApproved(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirements</b></em>' reference list.
+	 * The list contents are of type {@link org.mcmaster.requirements_modelling.rmdl.Requirements}.
+	 * It is bidirectional and its opposite is '{@link org.mcmaster.requirements_modelling.rmdl.Requirements#getReview <em>Review</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirements</em>' reference list.
+	 * @see org.mcmaster.requirements_modelling.rmdl.RmdlPackage#getReview_Requirements()
+	 * @see org.mcmaster.requirements_modelling.rmdl.Requirements#getReview
+	 * @model opposite="review" required="true"
+	 * @generated
+	 */
+	EList<Requirements> getRequirements();
 
 } // Review
